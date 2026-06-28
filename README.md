@@ -1,0 +1,1 @@
+Sakura's Hub is your all-in-one destination for Roblox scripts, utility tools, and curated free resources. Whether you're looking for working game exploits, a secure password generator, an encrypted vault, or just a well-organized list of free streaming sites and apps — everything is here.
