@@ -1,0 +1,300 @@
+[
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-29",
+    "changes": [
+      "Script rework",
+      "Max buy system per shoe",
+      "Config tab rework",
+      "Cleaned up unused code"
+    ]
+  },
+  {
+    "version": "Ninja Legends",
+    "date": "2026-05-19",
+    "changes": [
+      "Added to Script Loader"
+    ]
+  },
+  {
+    "version": "Sneaker Square",
+    "date": "2026-05-19",
+    "changes": [
+      "Added to Script Loader (still working on it)"
+    ]
+  },
+  {
+    "version": "Sneaker Con",
+    "date": "2026-05-19",
+    "changes": [
+      "Fixed rarity buttons",
+      "Fixed module caching"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-19",
+    "changes": [
+      "Fixed random nil error",
+      "Fixed auto dig webhooks"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-18",
+    "changes": [
+      "Reworked shoe app auto buy",
+      "Reworked full auto buy for shoe app",
+      "Reworked auto dig for latest update",
+      "Added new treasure support"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-14",
+    "changes": [
+      "Added walking auto buy",
+      "Fixed walking auto buy",
+      "Added fail system",
+      "Fixed 13 reported issues",
+      "Various reworks",
+      "Adjustable speeds in settings"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-13",
+    "changes": [
+      "Added walking auto buy",
+      "Added options to settings tab"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-12",
+    "changes": [
+      "Config system",
+      "Added 1k lines of code"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-12",
+    "changes": [
+      "Added blacklist system",
+      "Removed purchase verification webhook"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-11",
+    "changes": [
+      "Script rewrite",
+      "Faster performance with caching",
+      "Gambling in sell tab (fast list mode)",
+      "Added 1k lines of code"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-11",
+    "changes": [
+      "Fixed overpay guard",
+      "Fixed auto sell",
+      "Fixed auto sell on unsellable",
+      "Fixed sneaker module",
+      "Fixed stocky integration",
+      "Fixed refresh button in sell and list tabs",
+      "New notification system"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-11",
+    "changes": [
+      "Fixed crashes",
+      "Notification toggle in stats & misc",
+      "Black screen mode for long AFK",
+      "Shoe buy counter on page load"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-09",
+    "changes": [
+      "Added shoe app tab",
+      "Shoe app data pull button",
+      "Auto spam buy for shoe drops",
+      "Auto buy shoe drops under 60s in Full Automation"
+    ]
+  },
+  {
+    "version": "Sneaker Con Shoe Sniper",
+    "date": "2026-05-09",
+    "changes": [
+      "List tab with all shoes for sale and stock x prices",
+      "Sell tab with click-to-sell at stock x or markup",
+      "Fixed sell price toggle",
+      "Auto buy in sell tab",
+      "Persistent settings and webhook saving",
+      "Table slot check",
+      "Faster $1 shoe mode",
+      "Stock x caching for speed",
+      "Unsellable-only toggle",
+      "Reduced lag",
+      "Fixed crash on server change",
+      "Renamed to Shoe Sniper"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-08",
+    "changes": [
+      "Removed risky auto dig and misc tabs",
+      "Added stats tab",
+      "Merged risky auto dig into auto dig tab",
+      "Moved misc features to stats tab",
+      "Fixed auto buy clicking into NPC",
+      "Reworked webhook system",
+      "Webhooks for semi automation",
+      "Webhook and blacklist saving",
+      "UI improvements",
+      "Added support checker"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-06",
+    "changes": [
+      "Reworked webhook sending",
+      "Improved detection system",
+      "No-shoes detection no longer triggers during auto sell",
+      "Removed unnecessary webhook detections",
+      "Cleaner code structure"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-06",
+    "changes": [
+      "New webhook settings and detections"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-06",
+    "changes": [
+      "Remade auto sell - hits green bar more consistently",
+      "Remade auto dig - checks plot ownership",
+      "Remade risky auto dig - checks ownership",
+      "Webhook improvements for full automation",
+      "No more triple stopped popups",
+      "Fail system for full automation",
+      "Better auto sell NPC finder",
+      "Moved socials to info tab"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-05",
+    "changes": [
+      "SRS V3 released!",
+      "Removed main tab",
+      "Added Semi Automation tab",
+      "Full Automation (Buy + Sell Cycle)",
+      "Fast, medium, and slow Full Automation modes",
+      "Webhook button for Full Automation stats",
+      "Reworked internals",
+      "Fixed nil errors"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-05-01",
+    "changes": [
+      "Added mini game in misc tab for AFK",
+      "Noclip toggle in auto dig tab",
+      "Added info tab"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-04-25",
+    "changes": [
+      "Auto sell turns off when auto buy activates",
+      "Auto buy modes no longer conflict with each other"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-04-24",
+    "changes": [
+      "Reworked auto buy",
+      "Updated text and labels",
+      "Added uptime timer",
+      "Added FPS tracker",
+      "Added ping tracker",
+      "Updated info tab",
+      "Changed anti AFK method",
+      "Removed old anti AFK script"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-04-24",
+    "changes": [
+      "Added medium auto buy",
+      "Code cleanup",
+      "5s cooldown due to game AFK rework"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-04-23",
+    "changes": [
+      "Added fast auto buy from v1",
+      "Added removal reason to info tab",
+      "Rejoin server feature",
+      "Updated auto buy blacklist"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-04-22",
+    "changes": [
+      "Added risky auto dig (TP instead of walk)",
+      "Info tab with known issues and fixes",
+      "Code cleanup for readability"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-03-28",
+    "changes": [
+      "Safer auto buy",
+      "5s refresh delay, 0.5s buy delay",
+      "24/7 stable operation",
+      "Auto buy rewrite"
+    ]
+  },
+  {
+    "version": "Script Loader",
+    "date": "2026-03-20",
+    "changes": [
+      "Removed UI for faster loading",
+      "Works with all executors",
+      "Removed universal support",
+      "Removed break a lucky block"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-03-20",
+    "changes": [
+      "Added grail tables",
+      "Tips and common fixes",
+      "UI updates",
+      "Auto buy: 1s refresh, 0.3s buy delay"
+    ]
+  }
+]
