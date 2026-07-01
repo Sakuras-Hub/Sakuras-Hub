@@ -22,9 +22,9 @@ css_code = """
     font-weight: 600; letter-spacing: 0.5px; border: 1px solid var(--border);
     background: var(--surface);
   }
-  .monitor-view .monitor-stat.stat-up { color:
-  .monitor-view .monitor-stat.stat-down { color:
-  .monitor-view .monitor-stat.stat-blocked { color:
+  .monitor-view .monitor-stat.stat-up { color: #3fb950; }
+  .monitor-view .monitor-stat.stat-down { color: #f55e6a; }
+  .monitor-view .monitor-stat.stat-blocked { color: #d29922; }
   .monitor-view .monitor-stat.stat-total { color: var(--muted); }
   .monitor-view .monitor-wrap {
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
@@ -45,9 +45,9 @@ css_code = """
   .monitor-view .monitor-wrap .st-cell { white-space: nowrap; }
   .monitor-view .monitor-wrap .st-cell .st-dot { font-size: 0.85rem; }
   .monitor-view .monitor-wrap .st-cell .st-label { font-size: 0.7rem; font-weight: 600; margin-left: 3px; }
-  .monitor-view .monitor-wrap .st-cell .st-label.label-up { color:
-  .monitor-view .monitor-wrap .st-cell .st-label.label-down { color:
-  .monitor-view .monitor-wrap .st-cell .st-label.label-blocked { color:
+  .monitor-view .monitor-wrap .st-cell .st-label.label-up { color: #3fb950; }
+  .monitor-view .monitor-wrap .st-cell .st-label.label-down { color: #f55e6a; }
+  .monitor-view .monitor-wrap .st-cell .st-label.label-blocked { color: #d29922; }
   .monitor-view .monitor-wrap .name-cell { color: var(--accent-text); }
   .monitor-view .monitor-wrap .url-cell a { color: var(--muted); text-decoration: none; }
   .monitor-view .monitor-wrap .url-cell a:hover { color: var(--accent-text); }
@@ -143,7 +143,7 @@ if pin != -1:
       var mtBtn = document.createElement('button');
       mtBtn.id = 'monitorToggle';
       mtBtn.className = 'fl-nsfw-toggle';
-      mtBtn.textContent = '📊 Monitor';
+      mtBtn.textContent = '\\ud83d\\udcca Monitor';
       mtBtn.style.cssText = 'margin-left:6px';
       mtBtn.addEventListener('click', function(e) { e.stopPropagation(); toggleMonitor(); });
       var nsfwToggle = flBar.querySelector('#listNsfwToggle');
@@ -153,7 +153,7 @@ if pin != -1:
           if (monitorActive) {
             ev.stopImmediatePropagation();
             listShowNSFW = !listShowNSFW;
-            this.textContent = listShowNSFW ? '🔞 Hide NSFW' : '🔞 Show NSFW';
+            this.textContent = listShowNSFW ? '\\ud83d\\udd1e Hide NSFW' : '\\ud83d\\udd1e Show NSFW';
             this.classList.toggle('active', listShowNSFW);
             renderMonitorSection();
           }
@@ -182,7 +182,7 @@ if pin != -1:
     if (monitorActive) {
       renderMonitorSection();
       var bt = document.getElementById('monitorToggle');
-      if (bt) { bt.textContent = '✖ Close Monitor'; bt.classList.add('active'); }
+      if (bt) { bt.textContent = '\\u2716 Close Monitor'; bt.classList.add('active'); }
       if (listFilter && listFilter !== 'all') {
         var selItem = document.querySelector('.fl-dd-item.selected');
         var trig = document.querySelector('#flCategory .fl-trigger');
