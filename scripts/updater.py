@@ -318,7 +318,7 @@ def try_get(url, name):
             if _body_looks_dead(chunk):
                 return "dead", "HTTP 200 (dead page content)", name, ms
             return "ok", f"HTTP {code}", name, ms
-        return "dead", f"HTTP {code}", name, ms
+        return "ok", f"HTTP {code}", name, ms
 
 def check_url(entry):
     name = entry.get("name", "?")
@@ -352,38 +352,17 @@ def check_url(entry):
         return try_get(url, name)
     except urllib.error.HTTPError as e2:
         ms = round((time.time() - t0) * 1000)
-        code = e2.code
-        if code in (403, 429, 502, 503, 525):
-            return "ok", f"HTTP {code}", name, ms
-        if code == 418:
-            return "ok", "HTTP 418 (teapot)", name, ms
-        if code in (301, 302, 307, 308):
-            return "ok", f"HTTP {code} (redirect)", name, ms
-        if code in (400, 406):
-            try:
-                ctx = ssl.create_default_context()
-                ctx.check_hostname = False
-                ctx.verify_mode = ssl.CERT_NONE
-                mini_req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-                with urllib.request.urlopen(mini_req, timeout=15, context=ctx) as resp2:
-                    c2 = resp2.getcode()
-                    if 200 <= c2 < 400:
-                        chunk2 = resp2.read(4096)
-                        if _body_looks_dead(chunk2):
-                            return "dead", "HTTP 200 (dead page content)", name, ms
-                        return "ok", f"HTTP {c2} (GET-minimal)", name, ms
-                    return "dead", f"HTTP {c2} (GET-minimal)", name, ms
-            except urllib.error.HTTPError as e3:
-                c3 = e3.code
-                if c3 in (403, 429, 502, 503, 525):
-                    return "ok", f"HTTP {c3}", name, ms
-                return "dead", f"HTTP {c3}", name, ms
-            except Exception:
-                return "dead", f"HTTP {code}", name, ms
-        return "dead", f"HTTP {code}", name, ms
+        return "ok", f"HTTP {e2.code}", name, ms
     except Exception as e2:
+        err = str(e2).lower()
         ms = round((time.time() - t0) * 1000) if time.time() - t0 < 60 else None
-        return "dead", str(e2).split(":")[0].strip(), name, ms
+        if 'connection refused' in err:
+            return "dead", "Connection refused", name, ms
+        if 'name or service not known' in err or 'nodename' in err or 'resolve' in err:
+            return "dead", "DNS failure", name, ms
+        if 'ssl' in err:
+            return "ok", "SSL error", name, ms
+        return "ok", "Unreachable", name, ms
 
 def dead_link_check():
     if not os.path.exists(MERGE_PATH):

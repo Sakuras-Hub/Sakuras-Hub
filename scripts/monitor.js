@@ -87,11 +87,12 @@ function mc_fmtMs(ms) {
 
 function mc_fmtCode(s) {
   if (s.status === 'blocked') return 'BLOCKED';
-  if (s.status === 'dead' && s.detail) {
-    var m = s.detail.match(/\d{3}/); return m ? '\u2717' + m[0] : 'DOWN';
+  if (s.detail) {
+    var m = s.detail.match(/HTTP (\d{3})/);
+    if (m) return (s.status === 'dead' ? '\u2717' : '\u2713') + m[1];
+    if (s.status !== 'dead') return '\u2713' + s.detail.slice(0, 6);
   }
-  if (s.detail) { var m = s.detail.match(/\d{3}/); return m ? '\u2713' + m[0] : ''; }
-  return '';
+  return s.status === 'dead' ? 'DOWN' : '';
 }
 
 function mc_codeCls(s) {
