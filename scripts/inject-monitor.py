@@ -149,7 +149,6 @@ if pin != -1:
       var nsfwToggle = flBar.querySelector('#listNsfwToggle');
       if (nsfwToggle) {
         flBar.insertBefore(mtBtn, nsfwToggle.nextSibling);
-        // Intercept NSFW toggle when monitor is active
         nsfwToggle.addEventListener('click', function(ev) {
           if (monitorActive) {
             ev.stopImmediatePropagation();
@@ -162,7 +161,6 @@ if pin != -1:
       } else {
         flBar.appendChild(mtBtn);
       }
-      // Intercept category dropdown when monitor is active
       var catMenu = flBar.querySelector('#flCategory .fl-dd-menu');
       if (catMenu) {
         catMenu.addEventListener('click', function(ev) {
@@ -185,7 +183,6 @@ if pin != -1:
       renderMonitorSection();
       var bt = document.getElementById('monitorToggle');
       if (bt) { bt.textContent = '✖ Close Monitor'; bt.classList.add('active'); }
-      // Restore category trigger text after rebuild
       if (listFilter && listFilter !== 'all') {
         var selItem = document.querySelector('.fl-dd-item.selected');
         var trig = document.querySelector('#flCategory .fl-trigger');

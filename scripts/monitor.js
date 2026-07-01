@@ -12,38 +12,7 @@
       b.id = 'monitorToggle'; b.className = 'fl-nsfw-toggle';
       b.textContent = '\ud83d\udcca Monitor'; b.style.cssText = 'margin-left:6px';
       b.addEventListener('click', function(e) { e.stopPropagation(); toggleMonitor(); });
-      flBar.appendChild(b); return;
-    }
-    var wr = document.querySelector('.tabbar-wrap');
-    if (wr && !document.querySelector('#monTabBtn')) {
-      var b = document.createElement('button');
-      b.id = 'monTabBtn';
-      b.textContent = '\ud83d\udcca Monitor';
-      b.style.cssText = 'background:none;border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:11px;font-weight:600;margin:6px 10px 6px auto;font-family:inherit';
-      b.addEventListener('click', function() {
-        if (document.querySelector('.monitor-view')) {
-          var btn = document.getElementById('monitorToggle');
-          if (btn) btn.click();
-          return;
-        }
-        if (typeof mode !== 'undefined' && mode !== 'list') {
-          var mt = document.getElementById('modeToggle');
-          if (mt) mt.click();
-        }
-        var iv = setInterval(function() {
-          if (document.querySelector('.fl-bar') || document.querySelector('.monitor-view')) {
-            clearInterval(iv);
-            if (!document.querySelector('.monitor-view')) {
-              monitorActive = true;
-              renderMonitorSection();
-              var btn = document.getElementById('monitorToggle');
-              if (btn) { btn.textContent = '\u2716 Close Monitor'; btn.classList.add('active'); }
-            }
-          }
-        }, 100);
-        setTimeout(function() { clearInterval(iv); }, 10000);
-      });
-      wr.appendChild(b);
+      flBar.appendChild(b);
     }
   }
   mc_initToggle();
