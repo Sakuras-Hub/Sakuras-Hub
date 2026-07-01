@@ -362,7 +362,11 @@ def check_url(entry):
             return "dead", "DNS failure", name, ms
         if 'ssl' in err:
             return "ok", "SSL error", name, ms
-        return "ok", "Unreachable", name, ms
+        if 'timed out' in err:
+            return "dead", "Timeout", name, ms
+        if 'errno 110' in err or 'connection reset' in err or 'eof' in err:
+            return "ok", "Connection error", name, ms
+        return "dead", "Unreachable", name, ms
 
 def dead_link_check():
     if not os.path.exists(MERGE_PATH):

@@ -1,11 +1,88 @@
 {
-  "updated": "2026-07-01 06:47:59 UTC",
+  "updated": "2026-07-01 07:04:45 UTC",
   "total": 846,
-  "up": 846,
-  "down": 0,
+  "up": 839,
+  "down": 7,
   "blocked": 0,
   "skipped": 0,
   "sites": [
+    {
+      "status": "dead",
+      "detail": "Timeout",
+      "name": "AKROSS",
+      "url": "https://www.akross.ru/index.cgi?l=e",
+      "section": "AMV",
+      "rank": 2,
+      "slug": "akross",
+      "nsfw": false,
+      "ms": 45702
+    },
+    {
+      "status": "dead",
+      "detail": "Timeout",
+      "name": "KickAssAnime",
+      "url": "https://kaa.lt/",
+      "section": "Anime Streaming",
+      "rank": 14,
+      "slug": "KickAssAnime",
+      "nsfw": false,
+      "ms": 45440
+    },
+    {
+      "status": "dead",
+      "detail": "Timeout",
+      "name": "Anidap",
+      "url": "https://anidap.se/home",
+      "section": "Anime Streaming",
+      "rank": 24,
+      "slug": "anidap",
+      "nsfw": false,
+      "ms": 45300
+    },
+    {
+      "status": "dead",
+      "detail": "Timeout",
+      "name": "AnimeKizz",
+      "url": "https://animekizz.live/",
+      "section": "Anime Streaming",
+      "rank": 43,
+      "slug": "animekizz",
+      "nsfw": false,
+      "ms": 45339
+    },
+    {
+      "status": "dead",
+      "detail": "Unreachable",
+      "name": "AnimeEpisodeSeries",
+      "url": "https://animeepisodeseries.com/",
+      "section": "Anime Streaming",
+      "rank": 64,
+      "slug": "animeepisodeseries",
+      "nsfw": false,
+      "ms": 36196
+    },
+    {
+      "status": "dead",
+      "detail": "Unreachable",
+      "name": "CoolsAnime",
+      "url": "https://coolsanime.site/",
+      "section": "Download",
+      "rank": 42,
+      "slug": "coolsanime",
+      "nsfw": false,
+      "ms": 36165
+    },
+    {
+      "status": "dead",
+      "detail": "Unreachable",
+      "name": "MTL Novel",
+      "url": "https://www.mtlnovel.com/",
+      "section": "Novel Reading",
+      "rank": 44,
+      "slug": "mtlnovel",
+      "nsfw": false,
+      "ms": 36128
+    },
     {
       "status": "ok",
       "detail": "HTTP 200",
@@ -15,18 +92,7 @@
       "rank": 1,
       "slug": "amvorg",
       "nsfw": false,
-      "ms": 1435
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "AKROSS",
-      "url": "https://www.akross.ru/index.cgi?l=e",
-      "section": "AMV",
-      "rank": 2,
-      "slug": "akross",
-      "nsfw": false,
-      "ms": 25820
+      "ms": 1553
     },
     {
       "status": "ok",
@@ -37,7 +103,7 @@
       "rank": 3,
       "slug": "amvnews",
       "nsfw": false,
-      "ms": 1387
+      "ms": 3469
     },
     {
       "status": "ok",
@@ -48,7 +114,7 @@
       "rank": 4,
       "slug": "hmvmaniaamv",
       "nsfw": true,
-      "ms": 949
+      "ms": 1348
     },
     {
       "status": "ok",
@@ -59,7 +125,7 @@
       "rank": 5,
       "slug": "amvhell",
       "nsfw": false,
-      "ms": 444
+      "ms": 1206
     },
     {
       "status": "ok",
@@ -70,7 +136,7 @@
       "rank": 6,
       "slug": "animeclips",
       "nsfw": false,
-      "ms": 444
+      "ms": 516
     },
     {
       "status": "ok",
@@ -81,7 +147,7 @@
       "rank": 1,
       "slug": "anikoto",
       "nsfw": false,
-      "ms": 486
+      "ms": 528
     },
     {
       "status": "ok",
@@ -92,7 +158,7 @@
       "rank": 2,
       "slug": "animepahe",
       "nsfw": false,
-      "ms": 650
+      "ms": 705
     },
     {
       "status": "ok",
@@ -103,7 +169,7 @@
       "rank": 3,
       "slug": "AllAnime",
       "nsfw": false,
-      "ms": 515
+      "ms": 571
     },
     {
       "status": "ok",
@@ -114,7 +180,7 @@
       "rank": 4,
       "slug": "reanime",
       "nsfw": false,
-      "ms": 621
+      "ms": 1060
     },
     {
       "status": "ok",
@@ -125,7 +191,7 @@
       "rank": 5,
       "slug": "animetsu",
       "nsfw": false,
-      "ms": 611
+      "ms": 1083
     },
     {
       "status": "ok",
@@ -136,7 +202,7 @@
       "rank": 6,
       "slug": "miruro",
       "nsfw": false,
-      "ms": 668
+      "ms": 722
     },
     {
       "status": "ok",
@@ -147,7 +213,7 @@
       "rank": 7,
       "slug": "anizone",
       "nsfw": false,
-      "ms": 1198
+      "ms": 1214
     },
     {
       "status": "ok",
@@ -158,7 +224,7 @@
       "rank": 8,
       "slug": "anitakuto",
       "nsfw": false,
-      "ms": 1194
+      "ms": 1525
     },
     {
       "status": "ok",
@@ -169,7 +235,7 @@
       "rank": 9,
       "slug": "senshi",
       "nsfw": false,
-      "ms": 1007
+      "ms": 602
     },
     {
       "status": "ok",
@@ -180,18 +246,18 @@
       "rank": 10,
       "slug": "anidbstream",
       "nsfw": false,
-      "ms": 670
+      "ms": 732
     },
     {
       "status": "ok",
-      "detail": "HTTP 525",
+      "detail": "HTTP 200",
       "name": "AnimeVerse",
       "url": "https://animeverse.to/",
       "section": "Anime Streaming",
       "rank": 11,
       "slug": "animeverse",
       "nsfw": false,
-      "ms": 1068
+      "ms": 631
     },
     {
       "status": "ok",
@@ -202,7 +268,7 @@
       "rank": 12,
       "slug": "uniquestream",
       "nsfw": false,
-      "ms": 322
+      "ms": 425
     },
     {
       "status": "ok",
@@ -213,18 +279,7 @@
       "rank": 13,
       "slug": "animenexus",
       "nsfw": false,
-      "ms": 608
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "KickAssAnime",
-      "url": "https://kaa.lt/",
-      "section": "Anime Streaming",
-      "rank": 14,
-      "slug": "KickAssAnime",
-      "nsfw": false,
-      "ms": 880
+      "ms": 772
     },
     {
       "status": "ok",
@@ -235,7 +290,7 @@
       "rank": 15,
       "slug": "AnimeOnsen",
       "nsfw": false,
-      "ms": 778
+      "ms": 712
     },
     {
       "status": "ok",
@@ -246,7 +301,7 @@
       "rank": 16,
       "slug": "anifyto",
       "nsfw": false,
-      "ms": 874
+      "ms": 730
     },
     {
       "status": "ok",
@@ -257,7 +312,7 @@
       "rank": 17,
       "slug": "animedefenders",
       "nsfw": false,
-      "ms": 628
+      "ms": 375
     },
     {
       "status": "ok",
@@ -268,7 +323,7 @@
       "rank": 18,
       "slug": "anisnatch",
       "nsfw": false,
-      "ms": 275
+      "ms": 336
     },
     {
       "status": "ok",
@@ -279,7 +334,7 @@
       "rank": 19,
       "slug": "otakuu",
       "nsfw": false,
-      "ms": 578
+      "ms": 19654
     },
     {
       "status": "ok",
@@ -290,7 +345,7 @@
       "rank": 20,
       "slug": "AnimeParadise",
       "nsfw": false,
-      "ms": 902
+      "ms": 846
     },
     {
       "status": "ok",
@@ -301,7 +356,7 @@
       "rank": 21,
       "slug": "animestreamio",
       "nsfw": false,
-      "ms": 1387
+      "ms": 1368
     },
     {
       "status": "ok",
@@ -312,7 +367,7 @@
       "rank": 22,
       "slug": "123animes",
       "nsfw": false,
-      "ms": 589
+      "ms": 799
     },
     {
       "status": "ok",
@@ -323,18 +378,7 @@
       "rank": 23,
       "slug": "AnimeHeaven",
       "nsfw": false,
-      "ms": 694
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "Anidap",
-      "url": "https://anidap.se/home",
-      "section": "Anime Streaming",
-      "rank": 24,
-      "slug": "anidap",
-      "nsfw": false,
-      "ms": 789
+      "ms": 412
     },
     {
       "status": "ok",
@@ -345,7 +389,7 @@
       "rank": 25,
       "slug": "lunaranime",
       "nsfw": false,
-      "ms": 374
+      "ms": 372
     },
     {
       "status": "ok",
@@ -356,7 +400,7 @@
       "rank": 26,
       "slug": "ANIMEGG",
       "nsfw": false,
-      "ms": 513
+      "ms": 483
     },
     {
       "status": "ok",
@@ -367,7 +411,7 @@
       "rank": 27,
       "slug": "AnimeHub",
       "nsfw": false,
-      "ms": 539
+      "ms": 677
     },
     {
       "status": "ok",
@@ -378,7 +422,7 @@
       "rank": 28,
       "slug": "Moopa",
       "nsfw": false,
-      "ms": 834
+      "ms": 1418
     },
     {
       "status": "ok",
@@ -389,7 +433,7 @@
       "rank": 29,
       "slug": "1anime",
       "nsfw": false,
-      "ms": 1123
+      "ms": 1128
     },
     {
       "status": "ok",
@@ -400,7 +444,7 @@
       "rank": 30,
       "slug": "anicore",
       "nsfw": false,
-      "ms": 216
+      "ms": 204
     },
     {
       "status": "ok",
@@ -411,7 +455,7 @@
       "rank": 31,
       "slug": "animotvslash",
       "nsfw": false,
-      "ms": 1577
+      "ms": 1036
     },
     {
       "status": "ok",
@@ -422,7 +466,7 @@
       "rank": 32,
       "slug": "AniWorld",
       "nsfw": false,
-      "ms": 451
+      "ms": 470
     },
     {
       "status": "ok",
@@ -433,7 +477,7 @@
       "rank": 33,
       "slug": "fireanime",
       "nsfw": false,
-      "ms": 927
+      "ms": 792
     },
     {
       "status": "ok",
@@ -444,7 +488,7 @@
       "rank": 34,
       "slug": "animeloads",
       "nsfw": false,
-      "ms": 1069
+      "ms": 463
     },
     {
       "status": "ok",
@@ -455,7 +499,7 @@
       "rank": 35,
       "slug": "WCO",
       "nsfw": false,
-      "ms": 398
+      "ms": 400
     },
     {
       "status": "ok",
@@ -466,7 +510,7 @@
       "rank": 36,
       "slug": "kisskhanime",
       "nsfw": true,
-      "ms": 409
+      "ms": 329
     },
     {
       "status": "ok",
@@ -477,7 +521,7 @@
       "rank": 37,
       "slug": "otakustreamers",
       "nsfw": false,
-      "ms": 695
+      "ms": 671
     },
     {
       "status": "ok",
@@ -488,7 +532,7 @@
       "rank": 38,
       "slug": "AnimeNoSub",
       "nsfw": false,
-      "ms": 893
+      "ms": 991
     },
     {
       "status": "ok",
@@ -499,7 +543,7 @@
       "rank": 39,
       "slug": "kimoitv",
       "nsfw": false,
-      "ms": 873
+      "ms": 801
     },
     {
       "status": "ok",
@@ -510,7 +554,7 @@
       "rank": 40,
       "slug": "av1please",
       "nsfw": false,
-      "ms": 782
+      "ms": 758
     },
     {
       "status": "ok",
@@ -521,7 +565,7 @@
       "rank": 41,
       "slug": "animesheaven",
       "nsfw": false,
-      "ms": 503
+      "ms": 443
     },
     {
       "status": "ok",
@@ -532,18 +576,7 @@
       "rank": 42,
       "slug": "animedex",
       "nsfw": false,
-      "ms": 1281
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "AnimeKizz",
-      "url": "https://animekizz.live/",
-      "section": "Anime Streaming",
-      "rank": 43,
-      "slug": "animekizz",
-      "nsfw": false,
-      "ms": 502
+      "ms": 1763
     },
     {
       "status": "ok",
@@ -554,7 +587,7 @@
       "rank": 44,
       "slug": "justanime",
       "nsfw": false,
-      "ms": 853
+      "ms": 772
     },
     {
       "status": "ok",
@@ -565,7 +598,7 @@
       "rank": 45,
       "slug": "fanime",
       "nsfw": false,
-      "ms": 686
+      "ms": 687
     },
     {
       "status": "ok",
@@ -576,7 +609,7 @@
       "rank": 46,
       "slug": "animerulz",
       "nsfw": false,
-      "ms": 849
+      "ms": 776
     },
     {
       "status": "ok",
@@ -587,7 +620,7 @@
       "rank": 47,
       "slug": "animeyubi",
       "nsfw": false,
-      "ms": 379
+      "ms": 771
     },
     {
       "status": "ok",
@@ -598,7 +631,7 @@
       "rank": 48,
       "slug": "anivibeto",
       "nsfw": false,
-      "ms": 641
+      "ms": 613
     },
     {
       "status": "ok",
@@ -609,7 +642,7 @@
       "rank": 49,
       "slug": "Animelon",
       "nsfw": false,
-      "ms": 304
+      "ms": 252
     },
     {
       "status": "ok",
@@ -620,7 +653,7 @@
       "rank": 50,
       "slug": "yomito",
       "nsfw": false,
-      "ms": 638
+      "ms": 802
     },
     {
       "status": "ok",
@@ -631,7 +664,7 @@
       "rank": 51,
       "slug": "anikotoclones",
       "nsfw": false,
-      "ms": 1107
+      "ms": 1013
     },
     {
       "status": "ok",
@@ -642,7 +675,7 @@
       "rank": 52,
       "slug": "animegers",
       "nsfw": false,
-      "ms": 1141
+      "ms": 553
     },
     {
       "status": "ok",
@@ -653,7 +686,7 @@
       "rank": 53,
       "slug": "kawaiianime",
       "nsfw": false,
-      "ms": 646
+      "ms": 594
     },
     {
       "status": "ok",
@@ -664,7 +697,7 @@
       "rank": 54,
       "slug": "anigum",
       "nsfw": false,
-      "ms": 431
+      "ms": 402
     },
     {
       "status": "ok",
@@ -675,7 +708,7 @@
       "rank": 55,
       "slug": "anistream",
       "nsfw": false,
-      "ms": 692
+      "ms": 397
     },
     {
       "status": "ok",
@@ -686,7 +719,7 @@
       "rank": 56,
       "slug": "aniwaveclones",
       "nsfw": false,
-      "ms": 919
+      "ms": 518
     },
     {
       "status": "ok",
@@ -697,7 +730,7 @@
       "rank": 57,
       "slug": "oceanveilnet",
       "nsfw": false,
-      "ms": 207
+      "ms": 190
     },
     {
       "status": "ok",
@@ -708,7 +741,7 @@
       "rank": 58,
       "slug": "retrocrush",
       "nsfw": false,
-      "ms": 389
+      "ms": 400
     },
     {
       "status": "ok",
@@ -719,7 +752,7 @@
       "rank": 59,
       "slug": "aniversehd",
       "nsfw": false,
-      "ms": 374
+      "ms": 404
     },
     {
       "status": "ok",
@@ -730,7 +763,7 @@
       "rank": 60,
       "slug": "shinora",
       "nsfw": false,
-      "ms": 744
+      "ms": 726
     },
     {
       "status": "ok",
@@ -741,7 +774,7 @@
       "rank": 61,
       "slug": "enmalol",
       "nsfw": false,
-      "ms": 229
+      "ms": 196
     },
     {
       "status": "ok",
@@ -752,7 +785,7 @@
       "rank": 62,
       "slug": "databasegdriveplayer",
       "nsfw": false,
-      "ms": 767
+      "ms": 502
     },
     {
       "status": "ok",
@@ -763,18 +796,7 @@
       "rank": 63,
       "slug": "animedunya",
       "nsfw": false,
-      "ms": 320
-    },
-    {
-      "status": "ok",
-      "detail": "Unreachable",
-      "name": "AnimeEpisodeSeries",
-      "url": "https://animeepisodeseries.com/",
-      "section": "Anime Streaming",
-      "rank": 64,
-      "slug": "animeepisodeseries",
-      "nsfw": false,
-      "ms": 36211
+      "ms": 266
     },
     {
       "status": "ok",
@@ -785,7 +807,7 @@
       "rank": 65,
       "slug": "kayoanimetv",
       "nsfw": false,
-      "ms": 1121
+      "ms": 1194
     },
     {
       "status": "ok",
@@ -796,7 +818,7 @@
       "rank": 66,
       "slug": "animeworldin",
       "nsfw": true,
-      "ms": 327
+      "ms": 335
     },
     {
       "status": "ok",
@@ -807,7 +829,7 @@
       "rank": 67,
       "slug": "animedekho",
       "nsfw": false,
-      "ms": 996
+      "ms": 975
     },
     {
       "status": "ok",
@@ -818,7 +840,7 @@
       "rank": 68,
       "slug": "yenime",
       "nsfw": false,
-      "ms": 555
+      "ms": 492
     },
     {
       "status": "ok",
@@ -829,7 +851,7 @@
       "rank": 69,
       "slug": "anistream",
       "nsfw": false,
-      "ms": 614
+      "ms": 599
     },
     {
       "status": "ok",
@@ -840,7 +862,7 @@
       "rank": 70,
       "slug": "hianime",
       "nsfw": false,
-      "ms": 1782
+      "ms": 1927
     },
     {
       "status": "ok",
@@ -851,7 +873,7 @@
       "rank": 1,
       "slug": "mihon",
       "nsfw": false,
-      "ms": 257
+      "ms": 229
     },
     {
       "status": "ok",
@@ -862,7 +884,7 @@
       "rank": 2,
       "slug": "kotatsuapp",
       "nsfw": false,
-      "ms": 577
+      "ms": 694
     },
     {
       "status": "ok",
@@ -873,7 +895,7 @@
       "rank": 3,
       "slug": "komikkumihon",
       "nsfw": false,
-      "ms": 644
+      "ms": 670
     },
     {
       "status": "ok",
@@ -884,7 +906,7 @@
       "rank": 4,
       "slug": "aniyomi",
       "nsfw": false,
-      "ms": 274
+      "ms": 291
     },
     {
       "status": "ok",
@@ -895,7 +917,7 @@
       "rank": 5,
       "slug": "tachiyomisy",
       "nsfw": false,
-      "ms": 163
+      "ms": 196
     },
     {
       "status": "ok",
@@ -906,7 +928,7 @@
       "rank": 6,
       "slug": "mangayomi",
       "nsfw": false,
-      "ms": 627
+      "ms": 602
     },
     {
       "status": "ok",
@@ -917,7 +939,7 @@
       "rank": 7,
       "slug": "anymex",
       "nsfw": false,
-      "ms": 253
+      "ms": 265
     },
     {
       "status": "ok",
@@ -928,7 +950,7 @@
       "rank": 8,
       "slug": "anikku",
       "nsfw": false,
-      "ms": 148
+      "ms": 135
     },
     {
       "status": "ok",
@@ -939,7 +961,7 @@
       "rank": 9,
       "slug": "cloudstream",
       "nsfw": false,
-      "ms": 655
+      "ms": 502
     },
     {
       "status": "ok",
@@ -950,7 +972,7 @@
       "rank": 10,
       "slug": "miru",
       "nsfw": false,
-      "ms": 257
+      "ms": 276
     },
     {
       "status": "ok",
@@ -961,7 +983,7 @@
       "rank": 11,
       "slug": "lnreader",
       "nsfw": false,
-      "ms": 260
+      "ms": 250
     },
     {
       "status": "ok",
@@ -972,7 +994,7 @@
       "rank": 12,
       "slug": "quicknovel",
       "nsfw": false,
-      "ms": 544
+      "ms": 585
     },
     {
       "status": "ok",
@@ -983,7 +1005,7 @@
       "rank": 13,
       "slug": "yokai",
       "nsfw": false,
-      "ms": 592
+      "ms": 539
     },
     {
       "status": "ok",
@@ -994,7 +1016,7 @@
       "rank": 14,
       "slug": "manatan",
       "nsfw": false,
-      "ms": 15321
+      "ms": 15264
     },
     {
       "status": "ok",
@@ -1005,7 +1027,7 @@
       "rank": 15,
       "slug": "seanime",
       "nsfw": false,
-      "ms": 806
+      "ms": 1298
     },
     {
       "status": "ok",
@@ -1016,7 +1038,7 @@
       "rank": 16,
       "slug": "tsundoku",
       "nsfw": false,
-      "ms": 111
+      "ms": 159
     },
     {
       "status": "ok",
@@ -1027,7 +1049,7 @@
       "rank": 17,
       "slug": "mirujs",
       "nsfw": false,
-      "ms": 207
+      "ms": 204
     },
     {
       "status": "ok",
@@ -1038,7 +1060,7 @@
       "rank": 18,
       "slug": "tachidesk",
       "nsfw": false,
-      "ms": 721
+      "ms": 715
     },
     {
       "status": "ok",
@@ -1049,7 +1071,7 @@
       "rank": 19,
       "slug": "houdoku",
       "nsfw": false,
-      "ms": 324
+      "ms": 363
     },
     {
       "status": "ok",
@@ -1060,7 +1082,7 @@
       "rank": 20,
       "slug": "fmd2",
       "nsfw": false,
-      "ms": 561
+      "ms": 705
     },
     {
       "status": "ok",
@@ -1071,7 +1093,7 @@
       "rank": 21,
       "slug": "hakuneko",
       "nsfw": false,
-      "ms": 249
+      "ms": 264
     },
     {
       "status": "ok",
@@ -1082,7 +1104,7 @@
       "rank": 22,
       "slug": "venera",
       "nsfw": false,
-      "ms": 666
+      "ms": 618
     },
     {
       "status": "ok",
@@ -1093,7 +1115,7 @@
       "rank": 23,
       "slug": "shiru",
       "nsfw": false,
-      "ms": 512
+      "ms": 610
     },
     {
       "status": "ok",
@@ -1104,7 +1126,7 @@
       "rank": 24,
       "slug": "nekomangaorg",
       "nsfw": false,
-      "ms": 547
+      "ms": 687
     },
     {
       "status": "ok",
@@ -1115,7 +1137,7 @@
       "rank": 25,
       "slug": "lncrawlerapp",
       "nsfw": false,
-      "ms": 1069
+      "ms": 1072
     },
     {
       "status": "ok",
@@ -1126,7 +1148,7 @@
       "rank": 26,
       "slug": "shonenx",
       "nsfw": false,
-      "ms": 194
+      "ms": 184
     },
     {
       "status": "ok",
@@ -1137,7 +1159,7 @@
       "rank": 27,
       "slug": "dantotsu",
       "nsfw": false,
-      "ms": 474
+      "ms": 471
     },
     {
       "status": "ok",
@@ -1148,7 +1170,7 @@
       "rank": 28,
       "slug": "mangatoon",
       "nsfw": false,
-      "ms": 1181
+      "ms": 1286
     },
     {
       "status": "ok",
@@ -1159,7 +1181,7 @@
       "rank": 29,
       "slug": "ireader",
       "nsfw": false,
-      "ms": 846
+      "ms": 853
     },
     {
       "status": "ok",
@@ -1170,7 +1192,7 @@
       "rank": 30,
       "slug": "jhentai",
       "nsfw": true,
-      "ms": 671
+      "ms": 775
     },
     {
       "status": "ok",
@@ -1181,7 +1203,7 @@
       "rank": 31,
       "slug": "ehviewer",
       "nsfw": false,
-      "ms": 508
+      "ms": 671
     },
     {
       "status": "ok",
@@ -1192,7 +1214,7 @@
       "rank": 32,
       "slug": "ehpanda",
       "nsfw": false,
-      "ms": 243
+      "ms": 183
     },
     {
       "status": "ok",
@@ -1203,7 +1225,7 @@
       "rank": 33,
       "slug": "soraios",
       "nsfw": false,
-      "ms": 486
+      "ms": 585
     },
     {
       "status": "ok",
@@ -1214,7 +1236,7 @@
       "rank": 34,
       "slug": "animechicken",
       "nsfw": false,
-      "ms": 689
+      "ms": 598
     },
     {
       "status": "ok",
@@ -1225,7 +1247,7 @@
       "rank": 35,
       "slug": "awery",
       "nsfw": false,
-      "ms": 701
+      "ms": 566
     },
     {
       "status": "ok",
@@ -1236,7 +1258,7 @@
       "rank": 36,
       "slug": "mojuru",
       "nsfw": false,
-      "ms": 325
+      "ms": 340
     },
     {
       "status": "ok",
@@ -1247,7 +1269,7 @@
       "rank": 37,
       "slug": "hentoid",
       "nsfw": false,
-      "ms": 1269
+      "ms": 1354
     },
     {
       "status": "ok",
@@ -1258,7 +1280,7 @@
       "rank": 38,
       "slug": "animetvapp",
       "nsfw": false,
-      "ms": 553
+      "ms": 524
     },
     {
       "status": "ok",
@@ -1269,7 +1291,7 @@
       "rank": 39,
       "slug": "dartotsu",
       "nsfw": false,
-      "ms": 854
+      "ms": 706
     },
     {
       "status": "ok",
@@ -1280,7 +1302,7 @@
       "rank": 40,
       "slug": "tachiyomij2k",
       "nsfw": false,
-      "ms": 198
+      "ms": 176
     },
     {
       "status": "ok",
@@ -1291,7 +1313,7 @@
       "rank": 41,
       "slug": "noveldokusha",
       "nsfw": false,
-      "ms": 655
+      "ms": 697
     },
     {
       "status": "ok",
@@ -1302,7 +1324,7 @@
       "rank": 42,
       "slug": "totoro",
       "nsfw": false,
-      "ms": 606
+      "ms": 705
     },
     {
       "status": "ok",
@@ -1313,7 +1335,7 @@
       "rank": 43,
       "slug": "zenshin",
       "nsfw": false,
-      "ms": 610
+      "ms": 567
     },
     {
       "status": "ok",
@@ -1324,7 +1346,7 @@
       "rank": 44,
       "slug": "paperback",
       "nsfw": false,
-      "ms": 336
+      "ms": 254
     },
     {
       "status": "ok",
@@ -1335,7 +1357,7 @@
       "rank": 45,
       "slug": "ketsuapp",
       "nsfw": false,
-      "ms": 638
+      "ms": 661
     },
     {
       "status": "ok",
@@ -1346,7 +1368,7 @@
       "rank": 46,
       "slug": "animestreamapp",
       "nsfw": false,
-      "ms": 559
+      "ms": 476
     },
     {
       "status": "ok",
@@ -1357,7 +1379,7 @@
       "rank": 47,
       "slug": "azyxapp",
       "nsfw": false,
-      "ms": 655
+      "ms": 654
     },
     {
       "status": "ok",
@@ -1368,7 +1390,7 @@
       "rank": 48,
       "slug": "shosetsu",
       "nsfw": false,
-      "ms": 754
+      "ms": 576
     },
     {
       "status": "ok",
@@ -1379,7 +1401,7 @@
       "rank": 49,
       "slug": "kotatsudesktop",
       "nsfw": false,
-      "ms": 716
+      "ms": 513
     },
     {
       "status": "ok",
@@ -1390,7 +1412,7 @@
       "rank": 50,
       "slug": "zantaku",
       "nsfw": false,
-      "ms": 485
+      "ms": 498
     },
     {
       "status": "ok",
@@ -1401,7 +1423,7 @@
       "rank": 51,
       "slug": "globalmangaup",
       "nsfw": false,
-      "ms": 591
+      "ms": 679
     },
     {
       "status": "ok",
@@ -1412,7 +1434,7 @@
       "rank": 52,
       "slug": "unyo",
       "nsfw": false,
-      "ms": 1127
+      "ms": 979
     },
     {
       "status": "ok",
@@ -1423,7 +1445,7 @@
       "rank": 53,
       "slug": "komikku",
       "nsfw": false,
-      "ms": 1216
+      "ms": 1226
     },
     {
       "status": "ok",
@@ -1434,7 +1456,7 @@
       "rank": 54,
       "slug": "aidoku",
       "nsfw": false,
-      "ms": 302
+      "ms": 246
     },
     {
       "status": "ok",
@@ -1445,7 +1467,7 @@
       "rank": 55,
       "slug": "tachimanga",
       "nsfw": false,
-      "ms": 518
+      "ms": 302
     },
     {
       "status": "ok",
@@ -1456,7 +1478,7 @@
       "rank": 56,
       "slug": "otakuworld",
       "nsfw": false,
-      "ms": 710
+      "ms": 635
     },
     {
       "status": "ok",
@@ -1467,7 +1489,7 @@
       "rank": 57,
       "slug": "animity",
       "nsfw": false,
-      "ms": 688
+      "ms": 596
     },
     {
       "status": "ok",
@@ -1478,7 +1500,7 @@
       "rank": 58,
       "slug": "mangapin",
       "nsfw": false,
-      "ms": 400
+      "ms": 270
     },
     {
       "status": "ok",
@@ -1489,7 +1511,7 @@
       "rank": 59,
       "slug": "exhentaimanager",
       "nsfw": true,
-      "ms": 683
+      "ms": 699
     },
     {
       "status": "ok",
@@ -1500,7 +1522,7 @@
       "rank": 60,
       "slug": "senpwaiapp",
       "nsfw": false,
-      "ms": 650
+      "ms": 614
     },
     {
       "status": "ok",
@@ -1511,7 +1533,7 @@
       "rank": 61,
       "slug": "teemii",
       "nsfw": false,
-      "ms": 146
+      "ms": 130
     },
     {
       "status": "ok",
@@ -1522,7 +1544,7 @@
       "rank": 62,
       "slug": "anisurge",
       "nsfw": false,
-      "ms": 625
+      "ms": 912
     },
     {
       "status": "ok",
@@ -1533,7 +1555,7 @@
       "rank": 63,
       "slug": "kitsuneapp",
       "nsfw": false,
-      "ms": 704
+      "ms": 668
     },
     {
       "status": "ok",
@@ -1544,7 +1566,7 @@
       "rank": 64,
       "slug": "boorusphere",
       "nsfw": false,
-      "ms": 660
+      "ms": 566
     },
     {
       "status": "ok",
@@ -1555,7 +1577,7 @@
       "rank": 65,
       "slug": "kaguyaapp",
       "nsfw": false,
-      "ms": 784
+      "ms": 815
     },
     {
       "status": "ok",
@@ -1566,7 +1588,7 @@
       "rank": 66,
       "slug": "inknest",
       "nsfw": false,
-      "ms": 208
+      "ms": 120
     },
     {
       "status": "ok",
@@ -1577,7 +1599,7 @@
       "rank": 67,
       "slug": "mangazone",
       "nsfw": false,
-      "ms": 283
+      "ms": 244
     },
     {
       "status": "ok",
@@ -1588,7 +1610,7 @@
       "rank": 68,
       "slug": "csclab",
       "nsfw": false,
-      "ms": 388
+      "ms": 392
     },
     {
       "status": "ok",
@@ -1599,7 +1621,7 @@
       "rank": 69,
       "slug": "anivu",
       "nsfw": false,
-      "ms": 1145
+      "ms": 893
     },
     {
       "status": "ok",
@@ -1610,7 +1632,7 @@
       "rank": 70,
       "slug": "suwatte",
       "nsfw": false,
-      "ms": 350
+      "ms": 172
     },
     {
       "status": "ok",
@@ -1621,7 +1643,7 @@
       "rank": 71,
       "slug": "akuse",
       "nsfw": false,
-      "ms": 725
+      "ms": 676
     },
     {
       "status": "ok",
@@ -1632,7 +1654,7 @@
       "rank": 72,
       "slug": "comikey",
       "nsfw": false,
-      "ms": 239
+      "ms": 588
     },
     {
       "status": "ok",
@@ -1643,7 +1665,7 @@
       "rank": 73,
       "slug": "ranobe",
       "nsfw": false,
-      "ms": 648
+      "ms": 728
     },
     {
       "status": "ok",
@@ -1654,7 +1676,7 @@
       "rank": 74,
       "slug": "choutenapp",
       "nsfw": false,
-      "ms": 618
+      "ms": 575
     },
     {
       "status": "ok",
@@ -1665,7 +1687,7 @@
       "rank": 75,
       "slug": "kaizoyu",
       "nsfw": false,
-      "ms": 513
+      "ms": 638
     },
     {
       "status": "ok",
@@ -1676,7 +1698,7 @@
       "rank": 76,
       "slug": "saikou",
       "nsfw": false,
-      "ms": 553
+      "ms": 713
     },
     {
       "status": "ok",
@@ -1687,7 +1709,7 @@
       "rank": 77,
       "slug": "migu",
       "nsfw": false,
-      "ms": 309
+      "ms": 247
     },
     {
       "status": "ok",
@@ -1698,7 +1720,7 @@
       "rank": 78,
       "slug": "anilabto",
       "nsfw": false,
-      "ms": 654
+      "ms": 569
     },
     {
       "status": "ok",
@@ -1709,7 +1731,7 @@
       "rank": 79,
       "slug": "playtorrio",
       "nsfw": false,
-      "ms": 298
+      "ms": 190
     },
     {
       "status": "ok",
@@ -1720,7 +1742,7 @@
       "rank": 80,
       "slug": "onstreamapks",
       "nsfw": false,
-      "ms": 763
+      "ms": 668
     },
     {
       "status": "ok",
@@ -1731,7 +1753,7 @@
       "rank": 81,
       "slug": "hdobox",
       "nsfw": false,
-      "ms": 709
+      "ms": 666
     },
     {
       "status": "ok",
@@ -1742,7 +1764,7 @@
       "rank": 82,
       "slug": "netmirror",
       "nsfw": false,
-      "ms": 395
+      "ms": 360
     },
     {
       "status": "ok",
@@ -1753,7 +1775,7 @@
       "rank": 83,
       "slug": "pikashow",
       "nsfw": false,
-      "ms": 942
+      "ms": 1105
     },
     {
       "status": "ok",
@@ -1764,7 +1786,7 @@
       "rank": 84,
       "slug": "beetv",
       "nsfw": false,
-      "ms": 2342
+      "ms": 1292
     },
     {
       "status": "ok",
@@ -1775,18 +1797,18 @@
       "rank": 85,
       "slug": "moviebox",
       "nsfw": false,
-      "ms": 843
+      "ms": 1187
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "Rule 34",
       "url": "https://rule34.xxx/",
       "section": "Art/Imageboards",
       "rank": 1,
       "slug": "r34",
       "nsfw": true,
-      "ms": 349
+      "ms": 198
     },
     {
       "status": "ok",
@@ -1797,7 +1819,7 @@
       "rank": 2,
       "slug": "gelbooru",
       "nsfw": true,
-      "ms": 398
+      "ms": 365
     },
     {
       "status": "ok",
@@ -1808,7 +1830,7 @@
       "rank": 3,
       "slug": "danbooru",
       "nsfw": true,
-      "ms": 325
+      "ms": 314
     },
     {
       "status": "ok",
@@ -1819,7 +1841,7 @@
       "rank": 4,
       "slug": "safebooru",
       "nsfw": false,
-      "ms": 372
+      "ms": 318
     },
     {
       "status": "ok",
@@ -1830,7 +1852,7 @@
       "rank": 5,
       "slug": "sakugabooru",
       "nsfw": false,
-      "ms": 1206
+      "ms": 1237
     },
     {
       "status": "ok",
@@ -1841,7 +1863,7 @@
       "rank": 6,
       "slug": "pixivpics",
       "nsfw": false,
-      "ms": 254
+      "ms": 204
     },
     {
       "status": "ok",
@@ -1852,7 +1874,7 @@
       "rank": 7,
       "slug": "pixiv",
       "nsfw": false,
-      "ms": 393
+      "ms": 272
     },
     {
       "status": "ok",
@@ -1863,7 +1885,7 @@
       "rank": 8,
       "slug": "artstreet",
       "nsfw": false,
-      "ms": 934
+      "ms": 823
     },
     {
       "status": "ok",
@@ -1874,7 +1896,7 @@
       "rank": 9,
       "slug": "kusowanka",
       "nsfw": true,
-      "ms": 549
+      "ms": 892
     },
     {
       "status": "ok",
@@ -1885,7 +1907,7 @@
       "rank": 10,
       "slug": "yande",
       "nsfw": true,
-      "ms": 1226
+      "ms": 1139
     },
     {
       "status": "ok",
@@ -1896,7 +1918,7 @@
       "rank": 11,
       "slug": "gsbooru",
       "nsfw": false,
-      "ms": 529
+      "ms": 532
     },
     {
       "status": "ok",
@@ -1907,7 +1929,7 @@
       "rank": 12,
       "slug": "konachan",
       "nsfw": true,
-      "ms": 750
+      "ms": 357
     },
     {
       "status": "ok",
@@ -1918,7 +1940,7 @@
       "rank": 13,
       "slug": "hypnohub",
       "nsfw": true,
-      "ms": 369
+      "ms": 321
     },
     {
       "status": "ok",
@@ -1929,7 +1951,7 @@
       "rank": 14,
       "slug": "setteidreams",
       "nsfw": false,
-      "ms": 282
+      "ms": 219
     },
     {
       "status": "ok",
@@ -1940,7 +1962,7 @@
       "rank": 15,
       "slug": "booruwf",
       "nsfw": false,
-      "ms": 250
+      "ms": 294
     },
     {
       "status": "ok",
@@ -1951,7 +1973,7 @@
       "rank": 16,
       "slug": "kemono",
       "nsfw": false,
-      "ms": 400
+      "ms": 447
     },
     {
       "status": "ok",
@@ -1962,7 +1984,7 @@
       "rank": 17,
       "slug": "shuushuu",
       "nsfw": false,
-      "ms": 378
+      "ms": 301
     },
     {
       "status": "ok",
@@ -1973,7 +1995,7 @@
       "rank": 18,
       "slug": "tbiborg",
       "nsfw": true,
-      "ms": 359
+      "ms": 419
     },
     {
       "status": "ok",
@@ -1984,7 +2006,7 @@
       "rank": 19,
       "slug": "aibooru",
       "nsfw": true,
-      "ms": 339
+      "ms": 361
     },
     {
       "status": "ok",
@@ -1995,7 +2017,7 @@
       "rank": 20,
       "slug": "nozomila",
       "nsfw": true,
-      "ms": 441
+      "ms": 456
     },
     {
       "status": "ok",
@@ -2006,7 +2028,7 @@
       "rank": 21,
       "slug": "allthefallen",
       "nsfw": true,
-      "ms": 485
+      "ms": 459
     },
     {
       "status": "ok",
@@ -2017,7 +2039,7 @@
       "rank": 22,
       "slug": "booruio",
       "nsfw": true,
-      "ms": 405
+      "ms": 435
     },
     {
       "status": "ok",
@@ -2028,7 +2050,7 @@
       "rank": 23,
       "slug": "hentaigamecg",
       "nsfw": true,
-      "ms": 1144
+      "ms": 1083
     },
     {
       "status": "ok",
@@ -2039,7 +2061,7 @@
       "rank": 24,
       "slug": "xbooru",
       "nsfw": true,
-      "ms": 399
+      "ms": 386
     },
     {
       "status": "ok",
@@ -2050,7 +2072,7 @@
       "rank": 25,
       "slug": "r34xyz",
       "nsfw": true,
-      "ms": 437
+      "ms": 371
     },
     {
       "status": "ok",
@@ -2061,7 +2083,7 @@
       "rank": 26,
       "slug": "scrollx",
       "nsfw": true,
-      "ms": 270
+      "ms": 244
     },
     {
       "status": "ok",
@@ -2072,7 +2094,7 @@
       "rank": 27,
       "slug": "pixbooru",
       "nsfw": true,
-      "ms": 518
+      "ms": 423
     },
     {
       "status": "ok",
@@ -2083,7 +2105,7 @@
       "rank": 28,
       "slug": "mikubooru",
       "nsfw": false,
-      "ms": 698
+      "ms": 676
     },
     {
       "status": "ok",
@@ -2094,7 +2116,7 @@
       "rank": 29,
       "slug": "swfchan",
       "nsfw": false,
-      "ms": 396
+      "ms": 954
     },
     {
       "status": "ok",
@@ -2105,7 +2127,7 @@
       "rank": 30,
       "slug": "tsundora",
       "nsfw": false,
-      "ms": 188
+      "ms": 230
     },
     {
       "status": "ok",
@@ -2116,7 +2138,7 @@
       "rank": 31,
       "slug": "animepic",
       "nsfw": false,
-      "ms": 867
+      "ms": 844
     },
     {
       "status": "ok",
@@ -2127,7 +2149,7 @@
       "rank": 32,
       "slug": "booruorg",
       "nsfw": false,
-      "ms": 1014
+      "ms": 1009
     },
     {
       "status": "ok",
@@ -2138,7 +2160,7 @@
       "rank": 33,
       "slug": "twitterart",
       "nsfw": false,
-      "ms": 349
+      "ms": 323
     },
     {
       "status": "ok",
@@ -2149,7 +2171,7 @@
       "rank": 34,
       "slug": "minitokyo",
       "nsfw": false,
-      "ms": 2638
+      "ms": 3628
     },
     {
       "status": "ok",
@@ -2160,7 +2182,7 @@
       "rank": 1,
       "slug": "kisskh",
       "nsfw": false,
-      "ms": 314
+      "ms": 356
     },
     {
       "status": "ok",
@@ -2171,7 +2193,7 @@
       "rank": 2,
       "slug": "asianctvco",
       "nsfw": false,
-      "ms": 693
+      "ms": 713
     },
     {
       "status": "ok",
@@ -2182,7 +2204,7 @@
       "rank": 3,
       "slug": "kdramaweb",
       "nsfw": false,
-      "ms": 4154
+      "ms": 3842
     },
     {
       "status": "ok",
@@ -2193,7 +2215,7 @@
       "rank": 4,
       "slug": "dramanicee",
       "nsfw": false,
-      "ms": 734
+      "ms": 752
     },
     {
       "status": "ok",
@@ -2204,7 +2226,7 @@
       "rank": 5,
       "slug": "tokuzilla",
       "nsfw": false,
-      "ms": 1129
+      "ms": 1457
     },
     {
       "status": "ok",
@@ -2215,7 +2237,7 @@
       "rank": 6,
       "slug": "zokaj",
       "nsfw": false,
-      "ms": 447
+      "ms": 393
     },
     {
       "status": "ok",
@@ -2226,18 +2248,18 @@
       "rank": 7,
       "slug": "toku555",
       "nsfw": false,
-      "ms": 597
+      "ms": 563
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "Anime-Loads",
       "url": "https://www.anime-loads.org/asialive",
       "section": "Asian Drama",
       "rank": 8,
       "slug": "animeloadsdrama",
       "nsfw": false,
-      "ms": 540
+      "ms": 1054
     },
     {
       "status": "ok",
@@ -2248,7 +2270,7 @@
       "rank": 9,
       "slug": "kisskhweb",
       "nsfw": false,
-      "ms": 842
+      "ms": 918
     },
     {
       "status": "ok",
@@ -2259,7 +2281,7 @@
       "rank": 10,
       "slug": "onlykdrama",
       "nsfw": false,
-      "ms": 278
+      "ms": 184
     },
     {
       "status": "ok",
@@ -2270,7 +2292,7 @@
       "rank": 11,
       "slug": "dramaday",
       "nsfw": false,
-      "ms": 391
+      "ms": 304
     },
     {
       "status": "ok",
@@ -2281,7 +2303,7 @@
       "rank": 12,
       "slug": "mkvdramame",
       "nsfw": false,
-      "ms": 415
+      "ms": 761
     },
     {
       "status": "ok",
@@ -2292,7 +2314,7 @@
       "rank": 13,
       "slug": "myasiantv",
       "nsfw": false,
-      "ms": 1750
+      "ms": 1572
     },
     {
       "status": "ok",
@@ -2303,7 +2325,7 @@
       "rank": 14,
       "slug": "asiaflix",
       "nsfw": false,
-      "ms": 202
+      "ms": 184
     },
     {
       "status": "ok",
@@ -2314,7 +2336,7 @@
       "rank": 15,
       "slug": "kissoppa",
       "nsfw": false,
-      "ms": 765
+      "ms": 732
     },
     {
       "status": "ok",
@@ -2325,7 +2347,7 @@
       "rank": 16,
       "slug": "asianview",
       "nsfw": false,
-      "ms": 767
+      "ms": 379
     },
     {
       "status": "ok",
@@ -2336,7 +2358,7 @@
       "rank": 17,
       "slug": "kissasiantv",
       "nsfw": false,
-      "ms": 5277
+      "ms": 5101
     },
     {
       "status": "ok",
@@ -2347,7 +2369,7 @@
       "rank": 18,
       "slug": "kissasiacam",
       "nsfw": false,
-      "ms": 674
+      "ms": 659
     },
     {
       "status": "ok",
@@ -2358,7 +2380,7 @@
       "rank": 19,
       "slug": "onetouchtv",
       "nsfw": false,
-      "ms": 227
+      "ms": 215
     },
     {
       "status": "ok",
@@ -2369,7 +2391,7 @@
       "rank": 20,
       "slug": "asiansubs",
       "nsfw": false,
-      "ms": 872
+      "ms": 831
     },
     {
       "status": "ok",
@@ -2380,7 +2402,7 @@
       "rank": 1,
       "slug": "ezcosplay",
       "nsfw": false,
-      "ms": 644
+      "ms": 596
     },
     {
       "status": "ok",
@@ -2391,7 +2413,7 @@
       "rank": 2,
       "slug": "miccostumes",
       "nsfw": false,
-      "ms": 3888
+      "ms": 3916
     },
     {
       "status": "ok",
@@ -2402,7 +2424,7 @@
       "rank": 3,
       "slug": "moeflavor",
       "nsfw": false,
-      "ms": 319
+      "ms": 317
     },
     {
       "status": "ok",
@@ -2413,7 +2435,7 @@
       "rank": 4,
       "slug": "uwowocosplay",
       "nsfw": false,
-      "ms": 678
+      "ms": 324
     },
     {
       "status": "ok",
@@ -2424,7 +2446,7 @@
       "rank": 5,
       "slug": "dokidokicos",
       "nsfw": false,
-      "ms": 687
+      "ms": 302
     },
     {
       "status": "ok",
@@ -2435,7 +2457,7 @@
       "rank": 6,
       "slug": "cosrea",
       "nsfw": false,
-      "ms": 716
+      "ms": 796
     },
     {
       "status": "ok",
@@ -2446,7 +2468,7 @@
       "rank": 7,
       "slug": "meowcos",
       "nsfw": false,
-      "ms": 750
+      "ms": 674
     },
     {
       "status": "ok",
@@ -2457,7 +2479,7 @@
       "rank": 8,
       "slug": "simcosplay",
       "nsfw": false,
-      "ms": 765
+      "ms": 615
     },
     {
       "status": "ok",
@@ -2468,7 +2490,7 @@
       "rank": 9,
       "slug": "procosplay",
       "nsfw": false,
-      "ms": 589
+      "ms": 552
     },
     {
       "status": "ok",
@@ -2479,7 +2501,7 @@
       "rank": 1,
       "slug": "myanimelist",
       "nsfw": false,
-      "ms": 470
+      "ms": 361
     },
     {
       "status": "ok",
@@ -2490,7 +2512,7 @@
       "rank": 2,
       "slug": "anilist",
       "nsfw": false,
-      "ms": 323
+      "ms": 236
     },
     {
       "status": "ok",
@@ -2501,7 +2523,7 @@
       "rank": 3,
       "slug": "mangabaka",
       "nsfw": false,
-      "ms": 661
+      "ms": 677
     },
     {
       "status": "ok",
@@ -2512,7 +2534,7 @@
       "rank": 4,
       "slug": "comicktracker",
       "nsfw": false,
-      "ms": 256
+      "ms": 208
     },
     {
       "status": "ok",
@@ -2523,7 +2545,7 @@
       "rank": 5,
       "slug": "anidb",
       "nsfw": false,
-      "ms": 336
+      "ms": 324
     },
     {
       "status": "ok",
@@ -2534,7 +2556,7 @@
       "rank": 6,
       "slug": "kuroiru",
       "nsfw": false,
-      "ms": 347
+      "ms": 360
     },
     {
       "status": "ok",
@@ -2545,7 +2567,7 @@
       "rank": 7,
       "slug": "vndbwiki",
       "nsfw": false,
-      "ms": 571
+      "ms": 565
     },
     {
       "status": "ok",
@@ -2556,7 +2578,7 @@
       "rank": 8,
       "slug": "vnclubdb",
       "nsfw": false,
-      "ms": 661
+      "ms": 650
     },
     {
       "status": "ok",
@@ -2567,7 +2589,7 @@
       "rank": 9,
       "slug": "ranobedb",
       "nsfw": false,
-      "ms": 326
+      "ms": 364
     },
     {
       "status": "ok",
@@ -2578,7 +2600,7 @@
       "rank": 10,
       "slug": "novelupdates",
       "nsfw": false,
-      "ms": 359
+      "ms": 338
     },
     {
       "status": "ok",
@@ -2589,7 +2611,7 @@
       "rank": 11,
       "slug": "vocadb",
       "nsfw": false,
-      "ms": 183
+      "ms": 177
     },
     {
       "status": "ok",
@@ -2600,7 +2622,7 @@
       "rank": 12,
       "slug": "simkl",
       "nsfw": false,
-      "ms": 256
+      "ms": 274
     },
     {
       "status": "ok",
@@ -2611,7 +2633,7 @@
       "rank": 13,
       "slug": "mydramalist",
       "nsfw": false,
-      "ms": 278
+      "ms": 256
     },
     {
       "status": "ok",
@@ -2622,7 +2644,7 @@
       "rank": 14,
       "slug": "aplanet",
       "nsfw": false,
-      "ms": 438
+      "ms": 454
     },
     {
       "status": "ok",
@@ -2633,7 +2655,7 @@
       "rank": 15,
       "slug": "kenmei",
       "nsfw": false,
-      "ms": 247
+      "ms": 290
     },
     {
       "status": "ok",
@@ -2644,7 +2666,7 @@
       "rank": 16,
       "slug": "vgmdb",
       "nsfw": false,
-      "ms": 468
+      "ms": 436
     },
     {
       "status": "ok",
@@ -2655,7 +2677,7 @@
       "rank": 17,
       "slug": "anisonpreviews",
       "nsfw": false,
-      "ms": 458
+      "ms": 426
     },
     {
       "status": "ok",
@@ -2666,7 +2688,7 @@
       "rank": 18,
       "slug": "kitsu",
       "nsfw": false,
-      "ms": 337
+      "ms": 352
     },
     {
       "status": "ok",
@@ -2677,7 +2699,7 @@
       "rank": 19,
       "slug": "mywaifulist",
       "nsfw": false,
-      "ms": 396
+      "ms": 293
     },
     {
       "status": "ok",
@@ -2688,7 +2710,7 @@
       "rank": 20,
       "slug": "mudae",
       "nsfw": false,
-      "ms": 767
+      "ms": 446
     },
     {
       "status": "ok",
@@ -2699,7 +2721,7 @@
       "rank": 21,
       "slug": "konsumr",
       "nsfw": false,
-      "ms": 269
+      "ms": 536
     },
     {
       "status": "ok",
@@ -2710,7 +2732,7 @@
       "rank": 22,
       "slug": "kaguya",
       "nsfw": false,
-      "ms": 858
+      "ms": 429
     },
     {
       "status": "ok",
@@ -2721,7 +2743,7 @@
       "rank": 23,
       "slug": "mymangaindex",
       "nsfw": false,
-      "ms": 384
+      "ms": 367
     },
     {
       "status": "ok",
@@ -2732,7 +2754,7 @@
       "rank": 24,
       "slug": "pornhwadb",
       "nsfw": false,
-      "ms": 646
+      "ms": 439
     },
     {
       "status": "ok",
@@ -2743,7 +2765,7 @@
       "rank": 25,
       "slug": "novellistdb",
       "nsfw": false,
-      "ms": 372
+      "ms": 199
     },
     {
       "status": "ok",
@@ -2754,7 +2776,7 @@
       "rank": 26,
       "slug": "shikimori",
       "nsfw": false,
-      "ms": 936
+      "ms": 1305
     },
     {
       "status": "ok",
@@ -2765,7 +2787,7 @@
       "rank": 27,
       "slug": "anibasenet",
       "nsfw": false,
-      "ms": 449
+      "ms": 352
     },
     {
       "status": "ok",
@@ -2776,7 +2798,7 @@
       "rank": 28,
       "slug": "novelcodex",
       "nsfw": false,
-      "ms": 1252
+      "ms": 1306
     },
     {
       "status": "ok",
@@ -2787,7 +2809,7 @@
       "rank": 29,
       "slug": "wholesomelist",
       "nsfw": false,
-      "ms": 496
+      "ms": 456
     },
     {
       "status": "ok",
@@ -2798,7 +2820,7 @@
       "rank": 30,
       "slug": "doujinshiinfo",
       "nsfw": true,
-      "ms": 1220
+      "ms": 1091
     },
     {
       "status": "ok",
@@ -2809,7 +2831,7 @@
       "rank": 31,
       "slug": "kurozora",
       "nsfw": false,
-      "ms": 469
+      "ms": 831
     },
     {
       "status": "ok",
@@ -2820,7 +2842,7 @@
       "rank": 32,
       "slug": "anisearch",
       "nsfw": false,
-      "ms": 2280
+      "ms": 1359
     },
     {
       "status": "ok",
@@ -2831,7 +2853,7 @@
       "rank": 33,
       "slug": "animeoshi",
       "nsfw": false,
-      "ms": 420
+      "ms": 4712
     },
     {
       "status": "ok",
@@ -2842,7 +2864,7 @@
       "rank": 34,
       "slug": "medialib",
       "nsfw": false,
-      "ms": 1467
+      "ms": 1540
     },
     {
       "status": "ok",
@@ -2853,7 +2875,7 @@
       "rank": 35,
       "slug": "notify",
       "nsfw": false,
-      "ms": 3673
+      "ms": 3594
     },
     {
       "status": "ok",
@@ -2864,7 +2886,7 @@
       "rank": 36,
       "slug": "ann",
       "nsfw": false,
-      "ms": 340
+      "ms": 631
     },
     {
       "status": "ok",
@@ -2875,7 +2897,7 @@
       "rank": 37,
       "slug": "animecharactersdb",
       "nsfw": false,
-      "ms": 2569
+      "ms": 2767
     },
     {
       "status": "ok",
@@ -2886,7 +2908,7 @@
       "rank": 38,
       "slug": "absoluteterritory",
       "nsfw": false,
-      "ms": 548
+      "ms": 502
     },
     {
       "status": "ok",
@@ -2897,7 +2919,7 @@
       "rank": 1,
       "slug": "animekhor",
       "nsfw": false,
-      "ms": 432
+      "ms": 678
     },
     {
       "status": "ok",
@@ -2908,7 +2930,7 @@
       "rank": 2,
       "slug": "AnimeXin",
       "nsfw": false,
-      "ms": 442
+      "ms": 744
     },
     {
       "status": "ok",
@@ -2919,7 +2941,7 @@
       "rank": 3,
       "slug": "donghuastream",
       "nsfw": false,
-      "ms": 882
+      "ms": 772
     },
     {
       "status": "ok",
@@ -2930,7 +2952,7 @@
       "rank": 4,
       "slug": "myanimelive",
       "nsfw": false,
-      "ms": 304
+      "ms": 320
     },
     {
       "status": "ok",
@@ -2941,7 +2963,7 @@
       "rank": 5,
       "slug": "LManime",
       "nsfw": false,
-      "ms": 444
+      "ms": 411
     },
     {
       "status": "ok",
@@ -2952,7 +2974,7 @@
       "rank": 6,
       "slug": "animecube",
       "nsfw": false,
-      "ms": 766
+      "ms": 477
     },
     {
       "status": "ok",
@@ -2963,7 +2985,7 @@
       "rank": 7,
       "slug": "anoboye",
       "nsfw": false,
-      "ms": 728
+      "ms": 918
     },
     {
       "status": "ok",
@@ -2974,7 +2996,7 @@
       "rank": 8,
       "slug": "naruldonghua",
       "nsfw": false,
-      "ms": 677
+      "ms": 608
     },
     {
       "status": "ok",
@@ -2985,7 +3007,7 @@
       "rank": 9,
       "slug": "luciferdonghua",
       "nsfw": false,
-      "ms": 201
+      "ms": 192
     },
     {
       "status": "ok",
@@ -2996,7 +3018,7 @@
       "rank": 10,
       "slug": "anime4i",
       "nsfw": false,
-      "ms": 262
+      "ms": 424
     },
     {
       "status": "ok",
@@ -3007,7 +3029,7 @@
       "rank": 11,
       "slug": "crimsonfansubs",
       "nsfw": false,
-      "ms": 337
+      "ms": 363
     },
     {
       "status": "ok",
@@ -3018,7 +3040,7 @@
       "rank": 12,
       "slug": "chikianimation",
       "nsfw": false,
-      "ms": 743
+      "ms": 808
     },
     {
       "status": "ok",
@@ -3040,7 +3062,7 @@
       "rank": 14,
       "slug": "dongstream",
       "nsfw": false,
-      "ms": 704
+      "ms": 816
     },
     {
       "status": "ok",
@@ -3051,7 +3073,7 @@
       "rank": 15,
       "slug": "cksub",
       "nsfw": false,
-      "ms": 913
+      "ms": 2034
     },
     {
       "status": "ok",
@@ -3062,7 +3084,7 @@
       "rank": 16,
       "slug": "wowtopix",
       "nsfw": false,
-      "ms": 810
+      "ms": 797
     },
     {
       "status": "ok",
@@ -3073,7 +3095,7 @@
       "rank": 1,
       "slug": "nyaasi",
       "nsfw": false,
-      "ms": 465
+      "ms": 408
     },
     {
       "status": "ok",
@@ -3084,7 +3106,7 @@
       "rank": 2,
       "slug": "animetosho",
       "nsfw": false,
-      "ms": 597
+      "ms": 579
     },
     {
       "status": "ok",
@@ -3095,7 +3117,7 @@
       "rank": 3,
       "slug": "subsplease",
       "nsfw": false,
-      "ms": 363
+      "ms": 367
     },
     {
       "status": "ok",
@@ -3106,7 +3128,7 @@
       "rank": 4,
       "slug": "tokyotosho",
       "nsfw": false,
-      "ms": 6672
+      "ms": 4864
     },
     {
       "status": "ok",
@@ -3117,7 +3139,7 @@
       "rank": 5,
       "slug": "releasesmoe",
       "nsfw": false,
-      "ms": 652
+      "ms": 677
     },
     {
       "status": "ok",
@@ -3128,7 +3150,7 @@
       "rank": 6,
       "slug": "nekobt",
       "nsfw": false,
-      "ms": 615
+      "ms": 561
     },
     {
       "status": "ok",
@@ -3139,7 +3161,7 @@
       "rank": 7,
       "slug": "anirena",
       "nsfw": false,
-      "ms": 473
+      "ms": 519
     },
     {
       "status": "ok",
@@ -3150,7 +3172,7 @@
       "rank": 8,
       "slug": "tokyoinsider",
       "nsfw": false,
-      "ms": 1814
+      "ms": 1893
     },
     {
       "status": "ok",
@@ -3161,7 +3183,7 @@
       "rank": 9,
       "slug": "animeout",
       "nsfw": false,
-      "ms": 252
+      "ms": 179
     },
     {
       "status": "ok",
@@ -3172,7 +3194,7 @@
       "rank": 10,
       "slug": "asiamediablog",
       "nsfw": false,
-      "ms": 670
+      "ms": 462
     },
     {
       "status": "ok",
@@ -3183,7 +3205,7 @@
       "rank": 11,
       "slug": "mangazip",
       "nsfw": false,
-      "ms": 255
+      "ms": 210
     },
     {
       "status": "ok",
@@ -3194,7 +3216,7 @@
       "rank": 12,
       "slug": "dlraw",
       "nsfw": false,
-      "ms": 687
+      "ms": 701
     },
     {
       "status": "ok",
@@ -3205,7 +3227,7 @@
       "rank": 13,
       "slug": "dlrawse",
       "nsfw": false,
-      "ms": 1107
+      "ms": 1116
     },
     {
       "status": "ok",
@@ -3216,7 +3238,7 @@
       "rank": 14,
       "slug": "dlzip",
       "nsfw": false,
-      "ms": 537
+      "ms": 555
     },
     {
       "status": "ok",
@@ -3227,7 +3249,7 @@
       "rank": 15,
       "slug": "bszip",
       "nsfw": false,
-      "ms": 211
+      "ms": 392
     },
     {
       "status": "ok",
@@ -3238,7 +3260,7 @@
       "rank": 16,
       "slug": "animesakura",
       "nsfw": false,
-      "ms": 1128
+      "ms": 1399
     },
     {
       "status": "ok",
@@ -3249,7 +3271,7 @@
       "rank": 17,
       "slug": "kayoanime",
       "nsfw": false,
-      "ms": 819
+      "ms": 871
     },
     {
       "status": "ok",
@@ -3260,7 +3282,7 @@
       "rank": 18,
       "slug": "av1encodes",
       "nsfw": false,
-      "ms": 782
+      "ms": 758
     },
     {
       "status": "ok",
@@ -3271,7 +3293,7 @@
       "rank": 19,
       "slug": "hi10anime",
       "nsfw": false,
-      "ms": 1337
+      "ms": 2496
     },
     {
       "status": "ok",
@@ -3282,7 +3304,7 @@
       "rank": 20,
       "slug": "moriyashrine",
       "nsfw": false,
-      "ms": 171
+      "ms": 345
     },
     {
       "status": "ok",
@@ -3293,7 +3315,7 @@
       "rank": 21,
       "slug": "pandabackup",
       "nsfw": false,
-      "ms": 773
+      "ms": 838
     },
     {
       "status": "ok",
@@ -3304,7 +3326,7 @@
       "rank": 22,
       "slug": "zekozimo",
       "nsfw": false,
-      "ms": 275
+      "ms": 289
     },
     {
       "status": "ok",
@@ -3315,7 +3337,7 @@
       "rank": 23,
       "slug": "noobsubs",
       "nsfw": false,
-      "ms": 1577
+      "ms": 1435
     },
     {
       "status": "ok",
@@ -3326,7 +3348,7 @@
       "rank": 24,
       "slug": "kitsunekko",
       "nsfw": false,
-      "ms": 1029
+      "ms": 1016
     },
     {
       "status": "ok",
@@ -3337,7 +3359,7 @@
       "rank": 25,
       "slug": "sneedex",
       "nsfw": false,
-      "ms": 362
+      "ms": 413
     },
     {
       "status": "ok",
@@ -3359,7 +3381,7 @@
       "rank": 27,
       "slug": "animkinfo",
       "nsfw": false,
-      "ms": 3660
+      "ms": 699
     },
     {
       "status": "ok",
@@ -3370,7 +3392,7 @@
       "rank": 28,
       "slug": "nibl",
       "nsfw": false,
-      "ms": 677
+      "ms": 732
     },
     {
       "status": "ok",
@@ -3381,7 +3403,7 @@
       "rank": 29,
       "slug": "shanaproject",
       "nsfw": false,
-      "ms": 570
+      "ms": 504
     },
     {
       "status": "ok",
@@ -3392,7 +3414,7 @@
       "rank": 30,
       "slug": "neokyo",
       "nsfw": false,
-      "ms": 401
+      "ms": 379
     },
     {
       "status": "ok",
@@ -3403,7 +3425,7 @@
       "rank": 31,
       "slug": "acgnx",
       "nsfw": false,
-      "ms": 480
+      "ms": 411
     },
     {
       "status": "ok",
@@ -3414,7 +3436,7 @@
       "rank": 32,
       "slug": "sakuracircle",
       "nsfw": true,
-      "ms": 1405
+      "ms": 1181
     },
     {
       "status": "ok",
@@ -3425,7 +3447,7 @@
       "rank": 33,
       "slug": "acgrip",
       "nsfw": false,
-      "ms": 742
+      "ms": 668
     },
     {
       "status": "ok",
@@ -3436,7 +3458,7 @@
       "rank": 34,
       "slug": "bangumimoe",
       "nsfw": false,
-      "ms": 362
+      "ms": 355
     },
     {
       "status": "ok",
@@ -3447,7 +3469,7 @@
       "rank": 35,
       "slug": "nipponsei",
       "nsfw": false,
-      "ms": 252
+      "ms": 184
     },
     {
       "status": "ok",
@@ -3458,7 +3480,7 @@
       "rank": 36,
       "slug": "dkb",
       "nsfw": false,
-      "ms": 416
+      "ms": 399
     },
     {
       "status": "ok",
@@ -3469,7 +3491,7 @@
       "rank": 37,
       "slug": "amenzb",
       "nsfw": false,
-      "ms": 618
+      "ms": 694
     },
     {
       "status": "ok",
@@ -3480,7 +3502,7 @@
       "rank": 38,
       "slug": "kanime",
       "nsfw": false,
-      "ms": 495
+      "ms": 448
     },
     {
       "status": "ok",
@@ -3491,7 +3513,7 @@
       "rank": 39,
       "slug": "animekaizoku",
       "nsfw": false,
-      "ms": 926
+      "ms": 752
     },
     {
       "status": "ok",
@@ -3502,7 +3524,7 @@
       "rank": 40,
       "slug": "toonworld4all",
       "nsfw": false,
-      "ms": 1381
+      "ms": 1472
     },
     {
       "status": "ok",
@@ -3513,18 +3535,7 @@
       "rank": 41,
       "slug": "cartoonsarea",
       "nsfw": false,
-      "ms": 1107
-    },
-    {
-      "status": "ok",
-      "detail": "Unreachable",
-      "name": "CoolsAnime",
-      "url": "https://coolsanime.site/",
-      "section": "Download",
-      "rank": 42,
-      "slug": "coolsanime",
-      "nsfw": false,
-      "ms": 36220
+      "ms": 1049
     },
     {
       "status": "ok",
@@ -3535,7 +3546,7 @@
       "rank": 43,
       "slug": "sdtoons",
       "nsfw": false,
-      "ms": 835
+      "ms": 652
     },
     {
       "status": "ok",
@@ -3546,7 +3557,7 @@
       "rank": 44,
       "slug": "animerss",
       "nsfw": false,
-      "ms": 763
+      "ms": 1001
     },
     {
       "status": "ok",
@@ -3557,7 +3568,7 @@
       "rank": 45,
       "slug": "jpfiles",
       "nsfw": false,
-      "ms": 1338
+      "ms": 1255
     },
     {
       "status": "ok",
@@ -3568,7 +3579,7 @@
       "rank": 46,
       "slug": "chauthanh",
       "nsfw": false,
-      "ms": 463
+      "ms": 571
     },
     {
       "status": "ok",
@@ -3579,7 +3590,7 @@
       "rank": 47,
       "slug": "toonshub",
       "nsfw": false,
-      "ms": 1141
+      "ms": 1104
     },
     {
       "status": "ok",
@@ -3590,7 +3601,7 @@
       "rank": 48,
       "slug": "anidl",
       "nsfw": false,
-      "ms": 881
+      "ms": 492
     },
     {
       "status": "ok",
@@ -3601,7 +3612,7 @@
       "rank": 1,
       "slug": "redditforums",
       "nsfw": false,
-      "ms": 226
+      "ms": 207
     },
     {
       "status": "ok",
@@ -3612,7 +3623,7 @@
       "rank": 2,
       "slug": "malforum",
       "nsfw": false,
-      "ms": 517
+      "ms": 487
     },
     {
       "status": "ok",
@@ -3623,7 +3634,7 @@
       "rank": 3,
       "slug": "anilistforum",
       "nsfw": false,
-      "ms": 272
+      "ms": 285
     },
     {
       "status": "ok",
@@ -3634,7 +3645,7 @@
       "rank": 4,
       "slug": "anidbforum",
       "nsfw": false,
-      "ms": 523
+      "ms": 413
     },
     {
       "status": "ok",
@@ -3645,7 +3656,7 @@
       "rank": 5,
       "slug": "animesharing",
       "nsfw": false,
-      "ms": 462
+      "ms": 419
     },
     {
       "status": "ok",
@@ -3656,7 +3667,7 @@
       "rank": 6,
       "slug": "fuwanovelforums",
       "nsfw": false,
-      "ms": 625
+      "ms": 617
     },
     {
       "status": "ok",
@@ -3667,7 +3678,7 @@
       "rank": 7,
       "slug": "ulmforg",
       "nsfw": true,
-      "ms": 1059
+      "ms": 1042
     },
     {
       "status": "ok",
@@ -3678,7 +3689,7 @@
       "rank": 8,
       "slug": "animeforums",
       "nsfw": false,
-      "ms": 688
+      "ms": 647
     },
     {
       "status": "ok",
@@ -3689,18 +3700,18 @@
       "rank": 9,
       "slug": "discussanime",
       "nsfw": false,
-      "ms": 1206
+      "ms": 1576
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "ANN Forum",
       "url": "https://www.animenewsnetwork.com/bbs/phpBB2/",
       "section": "Forums/Community",
       "rank": 10,
       "slug": "annforum",
       "nsfw": false,
-      "ms": 310
+      "ms": 420
     },
     {
       "status": "ok",
@@ -3711,7 +3722,7 @@
       "rank": 11,
       "slug": "animeuknewsforum",
       "nsfw": false,
-      "ms": 910
+      "ms": 817
     },
     {
       "status": "ok",
@@ -3722,7 +3733,7 @@
       "rank": 12,
       "slug": "4ch",
       "nsfw": false,
-      "ms": 435
+      "ms": 488
     },
     {
       "status": "ok",
@@ -3733,7 +3744,7 @@
       "rank": 13,
       "slug": "hikari3",
       "nsfw": false,
-      "ms": 1256
+      "ms": 1315
     },
     {
       "status": "ok",
@@ -3744,7 +3755,7 @@
       "rank": 14,
       "slug": "39chan",
       "nsfw": false,
-      "ms": 250
+      "ms": 256
     },
     {
       "status": "ok",
@@ -3755,7 +3766,7 @@
       "rank": 15,
       "slug": "mangadexforum",
       "nsfw": false,
-      "ms": 457
+      "ms": 502
     },
     {
       "status": "ok",
@@ -3766,7 +3777,7 @@
       "rank": 16,
       "slug": "wapchan",
       "nsfw": false,
-      "ms": 408
+      "ms": 376
     },
     {
       "status": "ok",
@@ -3777,7 +3788,7 @@
       "rank": 17,
       "slug": "1animenationforum",
       "nsfw": false,
-      "ms": 431
+      "ms": 493
     },
     {
       "status": "ok",
@@ -3788,7 +3799,7 @@
       "rank": 18,
       "slug": "2animeforum",
       "nsfw": false,
-      "ms": 326
+      "ms": 368
     },
     {
       "status": "ok",
@@ -3799,7 +3810,7 @@
       "rank": 19,
       "slug": "3kissumoe",
       "nsfw": false,
-      "ms": 410
+      "ms": 284
     },
     {
       "status": "ok",
@@ -3810,7 +3821,7 @@
       "rank": 20,
       "slug": "4animesukiforum",
       "nsfw": false,
-      "ms": 307
+      "ms": 260
     },
     {
       "status": "ok",
@@ -3821,7 +3832,7 @@
       "rank": 21,
       "slug": "5varishangout",
       "nsfw": false,
-      "ms": 1085
+      "ms": 1494
     },
     {
       "status": "ok",
@@ -3832,7 +3843,7 @@
       "rank": 22,
       "slug": "6mangahelpers",
       "nsfw": false,
-      "ms": 539
+      "ms": 260
     },
     {
       "status": "ok",
@@ -3843,7 +3854,7 @@
       "rank": 23,
       "slug": "7anisocial",
       "nsfw": false,
-      "ms": 545
+      "ms": 520
     },
     {
       "status": "ok",
@@ -3854,7 +3865,7 @@
       "rank": 1,
       "slug": "prydwengg",
       "nsfw": false,
-      "ms": 395
+      "ms": 426
     },
     {
       "status": "ok",
@@ -3865,7 +3876,7 @@
       "rank": 2,
       "slug": "game8",
       "nsfw": false,
-      "ms": 236
+      "ms": 250
     },
     {
       "status": "ok",
@@ -3876,7 +3887,7 @@
       "rank": 3,
       "slug": "gacharevenue",
       "nsfw": false,
-      "ms": 812
+      "ms": 803
     },
     {
       "status": "ok",
@@ -3887,7 +3898,7 @@
       "rank": 4,
       "slug": "seelie",
       "nsfw": false,
-      "ms": 371
+      "ms": 372
     },
     {
       "status": "ok",
@@ -3898,7 +3909,7 @@
       "rank": 5,
       "slug": "wishsimulator",
       "nsfw": false,
-      "ms": 198
+      "ms": 284
     },
     {
       "status": "ok",
@@ -3909,7 +3920,7 @@
       "rank": 6,
       "slug": "wuwatracker",
       "nsfw": false,
-      "ms": 287
+      "ms": 537
     },
     {
       "status": "ok",
@@ -3920,7 +3931,7 @@
       "rank": 7,
       "slug": "stardb",
       "nsfw": false,
-      "ms": 1249
+      "ms": 1124
     },
     {
       "status": "ok",
@@ -3931,7 +3942,7 @@
       "rank": 8,
       "slug": "genshingg",
       "nsfw": false,
-      "ms": 290
+      "ms": 220
     },
     {
       "status": "ok",
@@ -3942,7 +3953,7 @@
       "rank": 9,
       "slug": "encoremoe",
       "nsfw": false,
-      "ms": 378
+      "ms": 713
     },
     {
       "status": "ok",
@@ -3953,7 +3964,7 @@
       "rank": 10,
       "slug": "gachareddit",
       "nsfw": false,
-      "ms": 154
+      "ms": 125
     },
     {
       "status": "ok",
@@ -3964,7 +3975,7 @@
       "rank": 11,
       "slug": "ennead",
       "nsfw": false,
-      "ms": 206
+      "ms": 232
     },
     {
       "status": "ok",
@@ -3975,7 +3986,7 @@
       "rank": 12,
       "slug": "gongeous",
       "nsfw": false,
-      "ms": 287
+      "ms": 408
     },
     {
       "status": "ok",
@@ -3986,7 +3997,7 @@
       "rank": 13,
       "slug": "twintaillauncher",
       "nsfw": false,
-      "ms": 748
+      "ms": 768
     },
     {
       "status": "ok",
@@ -3997,7 +4008,7 @@
       "rank": 14,
       "slug": "collapselauncher",
       "nsfw": false,
-      "ms": 188
+      "ms": 199
     },
     {
       "status": "ok",
@@ -4008,7 +4019,7 @@
       "rank": 15,
       "slug": "launchermoe",
       "nsfw": false,
-      "ms": 794
+      "ms": 633
     },
     {
       "status": "ok",
@@ -4019,7 +4030,7 @@
       "rank": 1,
       "slug": "vndb",
       "nsfw": false,
-      "ms": 571
+      "ms": 565
     },
     {
       "status": "ok",
@@ -4030,7 +4041,7 @@
       "rank": 2,
       "slug": "kimochi",
       "nsfw": true,
-      "ms": 187
+      "ms": 210
     },
     {
       "status": "ok",
@@ -4041,7 +4052,7 @@
       "rank": 3,
       "slug": "fapforfun",
       "nsfw": true,
-      "ms": 672
+      "ms": 686
     },
     {
       "status": "ok",
@@ -4052,7 +4063,7 @@
       "rank": 4,
       "slug": "ggbasesgame",
       "nsfw": true,
-      "ms": 818
+      "ms": 660
     },
     {
       "status": "ok",
@@ -4063,7 +4074,7 @@
       "rank": 5,
       "slug": "ryuugames",
       "nsfw": true,
-      "ms": 756
+      "ms": 506
     },
     {
       "status": "ok",
@@ -4074,7 +4085,7 @@
       "rank": 6,
       "slug": "erogedownload",
       "nsfw": true,
-      "ms": 267
+      "ms": 303
     },
     {
       "status": "ok",
@@ -4085,7 +4096,7 @@
       "rank": 7,
       "slug": "otomigames",
       "nsfw": true,
-      "ms": 389
+      "ms": 531
     },
     {
       "status": "ok",
@@ -4096,7 +4107,7 @@
       "rank": 8,
       "slug": "nutaku",
       "nsfw": true,
-      "ms": 389
+      "ms": 369
     },
     {
       "status": "ok",
@@ -4107,7 +4118,7 @@
       "rank": 9,
       "slug": "erolabs",
       "nsfw": true,
-      "ms": 377
+      "ms": 423
     },
     {
       "status": "ok",
@@ -4118,7 +4129,7 @@
       "rank": 10,
       "slug": "avn",
       "nsfw": false,
-      "ms": 214
+      "ms": 167
     },
     {
       "status": "ok",
@@ -4129,7 +4140,7 @@
       "rank": 11,
       "slug": "rroms",
       "nsfw": false,
-      "ms": 141
+      "ms": 296
     },
     {
       "status": "ok",
@@ -4140,7 +4151,7 @@
       "rank": 12,
       "slug": "hshop",
       "nsfw": false,
-      "ms": 368
+      "ms": 542
     },
     {
       "status": "ok",
@@ -4151,7 +4162,7 @@
       "rank": 13,
       "slug": "f95zone",
       "nsfw": true,
-      "ms": 430
+      "ms": 424
     },
     {
       "status": "ok",
@@ -4162,7 +4173,7 @@
       "rank": 14,
       "slug": "hgame18",
       "nsfw": true,
-      "ms": 674
+      "ms": 573
     },
     {
       "status": "ok",
@@ -4173,7 +4184,7 @@
       "rank": 15,
       "slug": "myhentaiorg",
       "nsfw": true,
-      "ms": 847
+      "ms": 790
     },
     {
       "status": "ok",
@@ -4184,7 +4195,7 @@
       "rank": 16,
       "slug": "hsuki",
       "nsfw": true,
-      "ms": 3027
+      "ms": 2132
     },
     {
       "status": "ok",
@@ -4195,7 +4206,7 @@
       "rank": 17,
       "slug": "hcapital",
       "nsfw": true,
-      "ms": 904
+      "ms": 1059
     },
     {
       "status": "ok",
@@ -4206,7 +4217,7 @@
       "rank": 18,
       "slug": "desonovel",
       "nsfw": false,
-      "ms": 315
+      "ms": 283
     },
     {
       "status": "ok",
@@ -4217,7 +4228,7 @@
       "rank": 19,
       "slug": "doujinstylegame",
       "nsfw": true,
-      "ms": 651
+      "ms": 1171
     },
     {
       "status": "ok",
@@ -4228,18 +4239,18 @@
       "rank": 20,
       "slug": "cpgrepacks",
       "nsfw": false,
-      "ms": 1114
+      "ms": 1145
     },
     {
       "status": "ok",
-      "detail": "Unreachable",
+      "detail": "Connection error",
       "name": "yinghu.asia",
       "url": "https://gal.yinghu.asia/",
       "section": "Games",
       "rank": 21,
       "slug": "yinghu",
       "nsfw": false,
-      "ms": 106
+      "ms": 90
     },
     {
       "status": "ok",
@@ -4250,7 +4261,7 @@
       "rank": 22,
       "slug": "betterrepack",
       "nsfw": false,
-      "ms": 747
+      "ms": 708
     },
     {
       "status": "ok",
@@ -4261,7 +4272,7 @@
       "rank": 23,
       "slug": "hentaibedta",
       "nsfw": true,
-      "ms": 1232
+      "ms": 1271
     },
     {
       "status": "ok",
@@ -4272,7 +4283,7 @@
       "rank": 24,
       "slug": "vnpocket",
       "nsfw": true,
-      "ms": 958
+      "ms": 1017
     },
     {
       "status": "ok",
@@ -4283,7 +4294,7 @@
       "rank": 25,
       "slug": "japanesepccompendium",
       "nsfw": false,
-      "ms": 323
+      "ms": 405
     },
     {
       "status": "ok",
@@ -4294,7 +4305,7 @@
       "rank": 26,
       "slug": "craneanime",
       "nsfw": false,
-      "ms": 737
+      "ms": 717
     },
     {
       "status": "ok",
@@ -4305,7 +4316,7 @@
       "rank": 27,
       "slug": "visualdise",
       "nsfw": false,
-      "ms": 565
+      "ms": 314
     },
     {
       "status": "ok",
@@ -4316,7 +4327,7 @@
       "rank": 28,
       "slug": "qooapp",
       "nsfw": false,
-      "ms": 1312
+      "ms": 1161
     },
     {
       "status": "ok",
@@ -4327,7 +4338,7 @@
       "rank": 29,
       "slug": "g123jp",
       "nsfw": false,
-      "ms": 701
+      "ms": 1103
     },
     {
       "status": "ok",
@@ -4338,7 +4349,7 @@
       "rank": 30,
       "slug": "johrengames",
       "nsfw": true,
-      "ms": 593
+      "ms": 353
     },
     {
       "status": "ok",
@@ -4349,7 +4360,7 @@
       "rank": 31,
       "slug": "retrogametalk",
       "nsfw": false,
-      "ms": 450
+      "ms": 465
     },
     {
       "status": "ok",
@@ -4360,7 +4371,7 @@
       "rank": 32,
       "slug": "axekin",
       "nsfw": false,
-      "ms": 933
+      "ms": 448
     },
     {
       "status": "ok",
@@ -4371,7 +4382,7 @@
       "rank": 33,
       "slug": "epicroms",
       "nsfw": false,
-      "ms": 698
+      "ms": 755
     },
     {
       "status": "ok",
@@ -4382,7 +4393,7 @@
       "rank": 34,
       "slug": "romshq",
       "nsfw": false,
-      "ms": 677
+      "ms": 636
     },
     {
       "status": "ok",
@@ -4393,7 +4404,7 @@
       "rank": 35,
       "slug": "steamrip",
       "nsfw": false,
-      "ms": 459
+      "ms": 700
     },
     {
       "status": "ok",
@@ -4404,7 +4415,7 @@
       "rank": 36,
       "slug": "onlinefix",
       "nsfw": false,
-      "ms": 670
+      "ms": 371
     },
     {
       "status": "ok",
@@ -4415,7 +4426,7 @@
       "rank": 37,
       "slug": "freegogpcgames",
       "nsfw": false,
-      "ms": 814
+      "ms": 352
     },
     {
       "status": "ok",
@@ -4426,7 +4437,7 @@
       "rank": 1,
       "slug": "exhentai",
       "nsfw": true,
-      "ms": 726
+      "ms": 380
     },
     {
       "status": "ok",
@@ -4437,7 +4448,7 @@
       "rank": 2,
       "slug": "asmhentai",
       "nsfw": true,
-      "ms": 476
+      "ms": 443
     },
     {
       "status": "ok",
@@ -4448,7 +4459,7 @@
       "rank": 3,
       "slug": "hentainexus",
       "nsfw": true,
-      "ms": 504
+      "ms": 466
     },
     {
       "status": "ok",
@@ -4459,7 +4470,7 @@
       "rank": 4,
       "slug": "kskmoe",
       "nsfw": true,
-      "ms": 817
+      "ms": 917
     },
     {
       "status": "ok",
@@ -4470,7 +4481,7 @@
       "rank": 5,
       "slug": "nhentai",
       "nsfw": true,
-      "ms": 835
+      "ms": 1303
     },
     {
       "status": "ok",
@@ -4481,7 +4492,7 @@
       "rank": 6,
       "slug": "eahentai",
       "nsfw": true,
-      "ms": 490
+      "ms": 306
     },
     {
       "status": "ok",
@@ -4492,7 +4503,7 @@
       "rank": 7,
       "slug": "hitomi",
       "nsfw": true,
-      "ms": 288
+      "ms": 308
     },
     {
       "status": "ok",
@@ -4503,7 +4514,7 @@
       "rank": 8,
       "slug": "faccina",
       "nsfw": true,
-      "ms": 843
+      "ms": 985
     },
     {
       "status": "ok",
@@ -4514,7 +4525,7 @@
       "rank": 9,
       "slug": "hentaipaw",
       "nsfw": true,
-      "ms": 235
+      "ms": 228
     },
     {
       "status": "ok",
@@ -4525,7 +4536,7 @@
       "rank": 10,
       "slug": "pururin",
       "nsfw": true,
-      "ms": 571
+      "ms": 555
     },
     {
       "status": "ok",
@@ -4536,7 +4547,7 @@
       "rank": 11,
       "slug": "hdoujin",
       "nsfw": true,
-      "ms": 204
+      "ms": 263
     },
     {
       "status": "ok",
@@ -4547,7 +4558,7 @@
       "rank": 12,
       "slug": "hentaihand",
       "nsfw": true,
-      "ms": 669
+      "ms": 744
     },
     {
       "status": "ok",
@@ -4558,7 +4569,7 @@
       "rank": 13,
       "slug": "3hentai",
       "nsfw": true,
-      "ms": 412
+      "ms": 423
     },
     {
       "status": "ok",
@@ -4569,7 +4580,7 @@
       "rank": 14,
       "slug": "naisho",
       "nsfw": true,
-      "ms": 1418
+      "ms": 1373
     },
     {
       "status": "ok",
@@ -4580,7 +4591,7 @@
       "rank": 15,
       "slug": "cinguru",
       "nsfw": true,
-      "ms": 207
+      "ms": 233
     },
     {
       "status": "ok",
@@ -4591,7 +4602,7 @@
       "rank": 16,
       "slug": "hentaifox",
       "nsfw": true,
-      "ms": 469
+      "ms": 451
     },
     {
       "status": "ok",
@@ -4602,7 +4613,7 @@
       "rank": 17,
       "slug": "akumamoe",
       "nsfw": true,
-      "ms": 580
+      "ms": 474
     },
     {
       "status": "ok",
@@ -4613,7 +4624,7 @@
       "rank": 18,
       "slug": "simplyhentai",
       "nsfw": true,
-      "ms": 1028
+      "ms": 911
     },
     {
       "status": "ok",
@@ -4624,7 +4635,7 @@
       "rank": 19,
       "slug": "hentainame",
       "nsfw": true,
-      "ms": 415
+      "ms": 348
     },
     {
       "status": "ok",
@@ -4635,7 +4646,7 @@
       "rank": 20,
       "slug": "18kami",
       "nsfw": true,
-      "ms": 430
+      "ms": 308
     },
     {
       "status": "ok",
@@ -4646,7 +4657,7 @@
       "rank": 21,
       "slug": "imhentai",
       "nsfw": true,
-      "ms": 463
+      "ms": 399
     },
     {
       "status": "ok",
@@ -4657,7 +4668,7 @@
       "rank": 22,
       "slug": "hentai2",
       "nsfw": true,
-      "ms": 1536
+      "ms": 1580
     },
     {
       "status": "ok",
@@ -4668,7 +4679,7 @@
       "rank": 23,
       "slug": "myreadingmanga",
       "nsfw": true,
-      "ms": 351
+      "ms": 324
     },
     {
       "status": "ok",
@@ -4679,7 +4690,7 @@
       "rank": 24,
       "slug": "hentaizap",
       "nsfw": true,
-      "ms": 980
+      "ms": 952
     },
     {
       "status": "ok",
@@ -4690,7 +4701,7 @@
       "rank": 25,
       "slug": "caitlin",
       "nsfw": true,
-      "ms": 1121
+      "ms": 1861
     },
     {
       "status": "ok",
@@ -4701,7 +4712,7 @@
       "rank": 26,
       "slug": "hentaihug",
       "nsfw": true,
-      "ms": 354
+      "ms": 326
     },
     {
       "status": "ok",
@@ -4712,7 +4723,7 @@
       "rank": 27,
       "slug": "hentai2read",
       "nsfw": true,
-      "ms": 522
+      "ms": 558
     },
     {
       "status": "ok",
@@ -4723,7 +4734,7 @@
       "rank": 28,
       "slug": "yaoimangaonline",
       "nsfw": true,
-      "ms": 343
+      "ms": 362
     },
     {
       "status": "ok",
@@ -4734,7 +4745,7 @@
       "rank": 29,
       "slug": "hentairead",
       "nsfw": true,
-      "ms": 330
+      "ms": 326
     },
     {
       "status": "ok",
@@ -4745,7 +4756,7 @@
       "rank": 30,
       "slug": "doujiva",
       "nsfw": true,
-      "ms": 411
+      "ms": 399
     },
     {
       "status": "ok",
@@ -4756,7 +4767,7 @@
       "rank": 31,
       "slug": "hentaiforce",
       "nsfw": true,
-      "ms": 304
+      "ms": 359
     },
     {
       "status": "ok",
@@ -4767,7 +4778,7 @@
       "rank": 32,
       "slug": "fhentai",
       "nsfw": true,
-      "ms": 327
+      "ms": 347
     },
     {
       "status": "ok",
@@ -4778,7 +4789,7 @@
       "rank": 33,
       "slug": "hentaikisu",
       "nsfw": true,
-      "ms": 930
+      "ms": 538
     },
     {
       "status": "ok",
@@ -4789,7 +4800,7 @@
       "rank": 34,
       "slug": "9hentai",
       "nsfw": true,
-      "ms": 647
+      "ms": 611
     },
     {
       "status": "ok",
@@ -4800,7 +4811,7 @@
       "rank": 35,
       "slug": "doujinsexy",
       "nsfw": true,
-      "ms": 942
+      "ms": 586
     },
     {
       "status": "ok",
@@ -4811,7 +4822,7 @@
       "rank": 36,
       "slug": "hentailoop",
       "nsfw": true,
-      "ms": 388
+      "ms": 387
     },
     {
       "status": "ok",
@@ -4822,7 +4833,7 @@
       "rank": 37,
       "slug": "hentaivox",
       "nsfw": true,
-      "ms": 276
+      "ms": 305
     },
     {
       "status": "ok",
@@ -4833,7 +4844,7 @@
       "rank": 38,
       "slug": "hentaifc",
       "nsfw": true,
-      "ms": 1011
+      "ms": 1063
     },
     {
       "status": "ok",
@@ -4844,7 +4855,7 @@
       "rank": 39,
       "slug": "doujinli",
       "nsfw": true,
-      "ms": 316
+      "ms": 424
     },
     {
       "status": "ok",
@@ -4855,7 +4866,7 @@
       "rank": 40,
       "slug": "doujinscom",
       "nsfw": true,
-      "ms": 565
+      "ms": 587
     },
     {
       "status": "ok",
@@ -4866,7 +4877,7 @@
       "rank": 41,
       "slug": "hentaihere",
       "nsfw": true,
-      "ms": 442
+      "ms": 460
     },
     {
       "status": "ok",
@@ -4877,7 +4888,7 @@
       "rank": 42,
       "slug": "mangamaniacs",
       "nsfw": true,
-      "ms": 719
+      "ms": 730
     },
     {
       "status": "ok",
@@ -4888,7 +4899,7 @@
       "rank": 43,
       "slug": "baramangaonline",
       "nsfw": true,
-      "ms": 1082
+      "ms": 1125
     },
     {
       "status": "ok",
@@ -4899,7 +4910,7 @@
       "rank": 44,
       "slug": "mangalotus",
       "nsfw": true,
-      "ms": 287
+      "ms": 439
     },
     {
       "status": "ok",
@@ -4910,7 +4921,7 @@
       "rank": 45,
       "slug": "erovault",
       "nsfw": true,
-      "ms": 1118
+      "ms": 1047
     },
     {
       "status": "ok",
@@ -4921,7 +4932,7 @@
       "rank": 46,
       "slug": "mangahen",
       "nsfw": true,
-      "ms": 1027
+      "ms": 1080
     },
     {
       "status": "ok",
@@ -4932,7 +4943,7 @@
       "rank": 47,
       "slug": "hentailand",
       "nsfw": true,
-      "ms": 841
+      "ms": 810
     },
     {
       "status": "ok",
@@ -4943,7 +4954,7 @@
       "rank": 48,
       "slug": "fakku",
       "nsfw": true,
-      "ms": 182
+      "ms": 231
     },
     {
       "status": "ok",
@@ -4954,7 +4965,7 @@
       "rank": 49,
       "slug": "doujinio",
       "nsfw": true,
-      "ms": 902
+      "ms": 1324
     },
     {
       "status": "ok",
@@ -4965,7 +4976,7 @@
       "rank": 1,
       "slug": "hentaitv",
       "nsfw": true,
-      "ms": 425
+      "ms": 422
     },
     {
       "status": "ok",
@@ -4976,7 +4987,7 @@
       "rank": 2,
       "slug": "hentaicity",
       "nsfw": true,
-      "ms": 1282
+      "ms": 656
     },
     {
       "status": "ok",
@@ -4987,7 +4998,7 @@
       "rank": 3,
       "slug": "hstreammoe",
       "nsfw": true,
-      "ms": 1133
+      "ms": 977
     },
     {
       "status": "ok",
@@ -4998,7 +5009,7 @@
       "rank": 4,
       "slug": "hentaihaven",
       "nsfw": true,
-      "ms": 380
+      "ms": 330
     },
     {
       "status": "ok",
@@ -5020,7 +5031,7 @@
       "rank": 6,
       "slug": "hahomoe",
       "nsfw": true,
-      "ms": 1279
+      "ms": 1855
     },
     {
       "status": "ok",
@@ -5031,7 +5042,7 @@
       "rank": 7,
       "slug": "hentaverse",
       "nsfw": true,
-      "ms": 412
+      "ms": 829
     },
     {
       "status": "ok",
@@ -5042,7 +5053,7 @@
       "rank": 8,
       "slug": "hentaish",
       "nsfw": true,
-      "ms": 1054
+      "ms": 988
     },
     {
       "status": "ok",
@@ -5053,7 +5064,7 @@
       "rank": 9,
       "slug": "zhentube",
       "nsfw": true,
-      "ms": 906
+      "ms": 954
     },
     {
       "status": "ok",
@@ -5064,7 +5075,7 @@
       "rank": 10,
       "slug": "watchhentai",
       "nsfw": true,
-      "ms": 364
+      "ms": 629
     },
     {
       "status": "ok",
@@ -5075,7 +5086,7 @@
       "rank": 11,
       "slug": "underhentai",
       "nsfw": true,
-      "ms": 503
+      "ms": 409
     },
     {
       "status": "ok",
@@ -5086,7 +5097,7 @@
       "rank": 12,
       "slug": "hentaistream",
       "nsfw": true,
-      "ms": 951
+      "ms": 997
     },
     {
       "status": "ok",
@@ -5097,7 +5108,7 @@
       "rank": 13,
       "slug": "hentaiplay",
       "nsfw": true,
-      "ms": 849
+      "ms": 799
     },
     {
       "status": "ok",
@@ -5108,7 +5119,7 @@
       "rank": 14,
       "slug": "onlyhentaistuff",
       "nsfw": true,
-      "ms": 760
+      "ms": 658
     },
     {
       "status": "ok",
@@ -5119,7 +5130,7 @@
       "rank": 15,
       "slug": "hanime1me",
       "nsfw": true,
-      "ms": 491
+      "ms": 532
     },
     {
       "status": "ok",
@@ -5130,7 +5141,7 @@
       "rank": 16,
       "slug": "hentaiocean",
       "nsfw": true,
-      "ms": 800
+      "ms": 471
     },
     {
       "status": "ok",
@@ -5141,7 +5152,7 @@
       "rank": 17,
       "slug": "hentaiworldtv",
       "nsfw": true,
-      "ms": 925
+      "ms": 446
     },
     {
       "status": "ok",
@@ -5152,7 +5163,7 @@
       "rank": 18,
       "slug": "myhentaimovie",
       "nsfw": true,
-      "ms": 470
+      "ms": 446
     },
     {
       "status": "ok",
@@ -5163,7 +5174,7 @@
       "rank": 19,
       "slug": "akihcom",
       "nsfw": true,
-      "ms": 412
+      "ms": 1002
     },
     {
       "status": "ok",
@@ -5174,7 +5185,7 @@
       "rank": 20,
       "slug": "hentaini",
       "nsfw": true,
-      "ms": 545
+      "ms": 1107
     },
     {
       "status": "ok",
@@ -5185,7 +5196,7 @@
       "rank": 21,
       "slug": "hentai2w",
       "nsfw": true,
-      "ms": 383
+      "ms": 416
     },
     {
       "status": "ok",
@@ -5196,7 +5207,7 @@
       "rank": 22,
       "slug": "oceanveil",
       "nsfw": true,
-      "ms": 207
+      "ms": 190
     },
     {
       "status": "ok",
@@ -5207,7 +5218,7 @@
       "rank": 23,
       "slug": "oppaistream",
       "nsfw": true,
-      "ms": 1007
+      "ms": 772
     },
     {
       "status": "ok",
@@ -5218,7 +5229,7 @@
       "rank": 24,
       "slug": "hentaigasm",
       "nsfw": true,
-      "ms": 3848
+      "ms": 762
     },
     {
       "status": "ok",
@@ -5229,7 +5240,7 @@
       "rank": 25,
       "slug": "hmvmania",
       "nsfw": true,
-      "ms": 306
+      "ms": 338
     },
     {
       "status": "ok",
@@ -5240,7 +5251,7 @@
       "rank": 26,
       "slug": "hentai0",
       "nsfw": true,
-      "ms": 552
+      "ms": 674
     },
     {
       "status": "ok",
@@ -5251,7 +5262,7 @@
       "rank": 27,
       "slug": "iwaratv",
       "nsfw": true,
-      "ms": 341
+      "ms": 796
     },
     {
       "status": "ok",
@@ -5262,7 +5273,7 @@
       "rank": 28,
       "slug": "hentaifoxtv",
       "nsfw": true,
-      "ms": 778
+      "ms": 797
     },
     {
       "status": "ok",
@@ -5273,7 +5284,7 @@
       "rank": 29,
       "slug": "hentaibros",
       "nsfw": true,
-      "ms": 248
+      "ms": 250
     },
     {
       "status": "ok",
@@ -5284,7 +5295,7 @@
       "rank": 30,
       "slug": "hentaiser",
       "nsfw": true,
-      "ms": 852
+      "ms": 939
     },
     {
       "status": "ok",
@@ -5295,7 +5306,7 @@
       "rank": 31,
       "slug": "hentaiforme",
       "nsfw": true,
-      "ms": 983
+      "ms": 969
     },
     {
       "status": "ok",
@@ -5306,7 +5317,7 @@
       "rank": 32,
       "slug": "kisshentaiz",
       "nsfw": true,
-      "ms": 1151
+      "ms": 1054
     },
     {
       "status": "ok",
@@ -5317,7 +5328,7 @@
       "rank": 33,
       "slug": "hentaivideoworld",
       "nsfw": true,
-      "ms": 407
+      "ms": 394
     },
     {
       "status": "ok",
@@ -5328,7 +5339,7 @@
       "rank": 34,
       "slug": "eshentai",
       "nsfw": true,
-      "ms": 1360
+      "ms": 1256
     },
     {
       "status": "ok",
@@ -5339,7 +5350,7 @@
       "rank": 35,
       "slug": "xanimeporn",
       "nsfw": true,
-      "ms": 958
+      "ms": 989
     },
     {
       "status": "ok",
@@ -5350,7 +5361,7 @@
       "rank": 36,
       "slug": "hentaifreakorg",
       "nsfw": true,
-      "ms": 1098
+      "ms": 1033
     },
     {
       "status": "ok",
@@ -5361,7 +5372,7 @@
       "rank": 37,
       "slug": "hentaimoon",
       "nsfw": true,
-      "ms": 776
+      "ms": 815
     },
     {
       "status": "ok",
@@ -5372,7 +5383,7 @@
       "rank": 38,
       "slug": "muchohentai",
       "nsfw": true,
-      "ms": 1568
+      "ms": 964
     },
     {
       "status": "ok",
@@ -5383,7 +5394,7 @@
       "rank": 39,
       "slug": "toonbaba",
       "nsfw": true,
-      "ms": 778
+      "ms": 854
     },
     {
       "status": "ok",
@@ -5394,7 +5405,7 @@
       "rank": 40,
       "slug": "hentaicloud",
       "nsfw": true,
-      "ms": 1691
+      "ms": 1700
     },
     {
       "status": "ok",
@@ -5405,7 +5416,7 @@
       "rank": 41,
       "slug": "hentia",
       "nsfw": true,
-      "ms": 363
+      "ms": 744
     },
     {
       "status": "ok",
@@ -5416,7 +5427,7 @@
       "rank": 42,
       "slug": "hentaisea",
       "nsfw": true,
-      "ms": 1350
+      "ms": 1566
     },
     {
       "status": "ok",
@@ -5427,7 +5438,7 @@
       "rank": 1,
       "slug": "daddyhd",
       "nsfw": false,
-      "ms": 803
+      "ms": 840
     },
     {
       "status": "ok",
@@ -5438,7 +5449,7 @@
       "rank": 2,
       "slug": "ntvstream",
       "nsfw": false,
-      "ms": 2368
+      "ms": 2143
     },
     {
       "status": "ok",
@@ -5449,7 +5460,7 @@
       "rank": 3,
       "slug": "publiciptv",
       "nsfw": false,
-      "ms": 400
+      "ms": 324
     },
     {
       "status": "ok",
@@ -5460,7 +5471,7 @@
       "rank": 4,
       "slug": "sportplus",
       "nsfw": false,
-      "ms": 641
+      "ms": 616
     },
     {
       "status": "ok",
@@ -5471,7 +5482,7 @@
       "rank": 5,
       "slug": "istreameast",
       "nsfw": false,
-      "ms": 677
+      "ms": 916
     },
     {
       "status": "ok",
@@ -5482,7 +5493,7 @@
       "rank": 6,
       "slug": "sportsurge",
       "nsfw": false,
-      "ms": 368
+      "ms": 377
     },
     {
       "status": "ok",
@@ -5493,7 +5504,7 @@
       "rank": 7,
       "slug": "tvgarden",
       "nsfw": false,
-      "ms": 475
+      "ms": 552
     },
     {
       "status": "ok",
@@ -5504,7 +5515,7 @@
       "rank": 8,
       "slug": "globetv",
       "nsfw": false,
-      "ms": 673
+      "ms": 794
     },
     {
       "status": "ok",
@@ -5515,7 +5526,7 @@
       "rank": 1,
       "slug": "comix",
       "nsfw": false,
-      "ms": 442
+      "ms": 478
     },
     {
       "status": "ok",
@@ -5526,7 +5537,7 @@
       "rank": 2,
       "slug": "mangaball",
       "nsfw": false,
-      "ms": 842
+      "ms": 599
     },
     {
       "status": "ok",
@@ -5537,7 +5548,7 @@
       "rank": 3,
       "slug": "mangadotnet",
       "nsfw": false,
-      "ms": 504
+      "ms": 575
     },
     {
       "status": "ok",
@@ -5548,7 +5559,7 @@
       "rank": 4,
       "slug": "atsumoe",
       "nsfw": false,
-      "ms": 403
+      "ms": 1034
     },
     {
       "status": "ok",
@@ -5559,7 +5570,7 @@
       "rank": 5,
       "slug": "mangasee",
       "nsfw": false,
-      "ms": 540
+      "ms": 553
     },
     {
       "status": "ok",
@@ -5570,7 +5581,7 @@
       "rank": 6,
       "slug": "mangago",
       "nsfw": false,
-      "ms": 397
+      "ms": 475
     },
     {
       "status": "ok",
@@ -5581,7 +5592,7 @@
       "rank": 7,
       "slug": "onisaga",
       "nsfw": false,
-      "ms": 410
+      "ms": 465
     },
     {
       "status": "ok",
@@ -5592,7 +5603,7 @@
       "rank": 8,
       "slug": "vyvymanga",
       "nsfw": false,
-      "ms": 559
+      "ms": 1134
     },
     {
       "status": "ok",
@@ -5603,7 +5614,7 @@
       "rank": 9,
       "slug": "mangapeak",
       "nsfw": false,
-      "ms": 640
+      "ms": 531
     },
     {
       "status": "ok",
@@ -5614,7 +5625,7 @@
       "rank": 10,
       "slug": "allmanga",
       "nsfw": false,
-      "ms": 239
+      "ms": 144
     },
     {
       "status": "ok",
@@ -5625,7 +5636,7 @@
       "rank": 11,
       "slug": "mangacloud",
       "nsfw": false,
-      "ms": 331
+      "ms": 260
     },
     {
       "status": "ok",
@@ -5636,7 +5647,7 @@
       "rank": 12,
       "slug": "mangakatana",
       "nsfw": false,
-      "ms": 1157
+      "ms": 1191
     },
     {
       "status": "ok",
@@ -5647,7 +5658,7 @@
       "rank": 13,
       "slug": "mangabuddy",
       "nsfw": false,
-      "ms": 396
+      "ms": 372
     },
     {
       "status": "ok",
@@ -5658,7 +5669,7 @@
       "rank": 14,
       "slug": "cubariproxy",
       "nsfw": false,
-      "ms": 195
+      "ms": 164
     },
     {
       "status": "ok",
@@ -5669,7 +5680,7 @@
       "rank": 15,
       "slug": "mangahub",
       "nsfw": false,
-      "ms": 669
+      "ms": 630
     },
     {
       "status": "ok",
@@ -5680,7 +5691,7 @@
       "rank": 16,
       "slug": "scansgg",
       "nsfw": false,
-      "ms": 848
+      "ms": 807
     },
     {
       "status": "ok",
@@ -5691,7 +5702,7 @@
       "rank": 17,
       "slug": "dynastyscans",
       "nsfw": false,
-      "ms": 677
+      "ms": 693
     },
     {
       "status": "ok",
@@ -5702,7 +5713,7 @@
       "rank": 18,
       "slug": "likemangaio",
       "nsfw": false,
-      "ms": 444
+      "ms": 391
     },
     {
       "status": "ok",
@@ -5713,7 +5724,7 @@
       "rank": 19,
       "slug": "coolmic",
       "nsfw": false,
-      "ms": 344
+      "ms": 312
     },
     {
       "status": "ok",
@@ -5724,7 +5735,7 @@
       "rank": 20,
       "slug": "azuki",
       "nsfw": false,
-      "ms": 2032
+      "ms": 2151
     },
     {
       "status": "ok",
@@ -5735,7 +5746,7 @@
       "rank": 21,
       "slug": "taadd",
       "nsfw": false,
-      "ms": 1254
+      "ms": 1579
     },
     {
       "status": "ok",
@@ -5746,7 +5757,7 @@
       "rank": 22,
       "slug": "manganato",
       "nsfw": false,
-      "ms": 542
+      "ms": 532
     },
     {
       "status": "ok",
@@ -5757,7 +5768,7 @@
       "rank": 23,
       "slug": "zinmanga",
       "nsfw": false,
-      "ms": 502
+      "ms": 510
     },
     {
       "status": "ok",
@@ -5768,7 +5779,7 @@
       "rank": 24,
       "slug": "fanfox",
       "nsfw": false,
-      "ms": 267
+      "ms": 336
     },
     {
       "status": "ok",
@@ -5779,7 +5790,7 @@
       "rank": 25,
       "slug": "mfreak",
       "nsfw": false,
-      "ms": 541
+      "ms": 633
     },
     {
       "status": "ok",
@@ -5790,7 +5801,7 @@
       "rank": 26,
       "slug": "mangatown",
       "nsfw": false,
-      "ms": 440
+      "ms": 557
     },
     {
       "status": "ok",
@@ -5801,7 +5812,7 @@
       "rank": 27,
       "slug": "mangahome",
       "nsfw": false,
-      "ms": 242
+      "ms": 302
     },
     {
       "status": "ok",
@@ -5812,7 +5823,7 @@
       "rank": 28,
       "slug": "linkmanga",
       "nsfw": false,
-      "ms": 807
+      "ms": 853
     },
     {
       "status": "ok",
@@ -5823,7 +5834,7 @@
       "rank": 29,
       "slug": "reimanga",
       "nsfw": false,
-      "ms": 260
+      "ms": 970
     },
     {
       "status": "ok",
@@ -5834,7 +5845,7 @@
       "rank": 30,
       "slug": "mangabtt",
       "nsfw": false,
-      "ms": 250
+      "ms": 246
     },
     {
       "status": "ok",
@@ -5845,7 +5856,7 @@
       "rank": 31,
       "slug": "ninekon",
       "nsfw": false,
-      "ms": 460
+      "ms": 392
     },
     {
       "status": "ok",
@@ -5856,7 +5867,7 @@
       "rank": 32,
       "slug": "manhuaplus",
       "nsfw": false,
-      "ms": 1838
+      "ms": 1005
     },
     {
       "status": "ok",
@@ -5867,7 +5878,7 @@
       "rank": 33,
       "slug": "mangapill",
       "nsfw": false,
-      "ms": 494
+      "ms": 552
     },
     {
       "status": "ok",
@@ -5878,7 +5889,7 @@
       "rank": 34,
       "slug": "mangakawaii",
       "nsfw": false,
-      "ms": 351
+      "ms": 357
     },
     {
       "status": "ok",
@@ -5889,7 +5900,7 @@
       "rank": 35,
       "slug": "mangageko",
       "nsfw": false,
-      "ms": 421
+      "ms": 377
     },
     {
       "status": "ok",
@@ -5900,7 +5911,7 @@
       "rank": 36,
       "slug": "godacomic",
       "nsfw": false,
-      "ms": 256
+      "ms": 203
     },
     {
       "status": "ok",
@@ -5922,7 +5933,7 @@
       "rank": 38,
       "slug": "pixivcomic",
       "nsfw": false,
-      "ms": 799
+      "ms": 800
     },
     {
       "status": "ok",
@@ -5933,7 +5944,7 @@
       "rank": 39,
       "slug": "inkr",
       "nsfw": false,
-      "ms": 332
+      "ms": 279
     },
     {
       "status": "ok",
@@ -5944,7 +5955,7 @@
       "rank": 40,
       "slug": "lunaranimemanga",
       "nsfw": false,
-      "ms": 368
+      "ms": 320
     },
     {
       "status": "ok",
@@ -5955,7 +5966,7 @@
       "rank": 41,
       "slug": "kissmangain",
       "nsfw": false,
-      "ms": 361
+      "ms": 367
     },
     {
       "status": "ok",
@@ -5966,7 +5977,7 @@
       "rank": 42,
       "slug": "yaoiscan",
       "nsfw": false,
-      "ms": 444
+      "ms": 415
     },
     {
       "status": "ok",
@@ -5977,7 +5988,7 @@
       "rank": 43,
       "slug": "demonicscans",
       "nsfw": false,
-      "ms": 245
+      "ms": 1427
     },
     {
       "status": "ok",
@@ -5988,7 +5999,7 @@
       "rank": 44,
       "slug": "mangadex",
       "nsfw": false,
-      "ms": 242
+      "ms": 201
     },
     {
       "status": "ok",
@@ -5999,7 +6010,7 @@
       "rank": 45,
       "slug": "rawotaku",
       "nsfw": false,
-      "ms": 453
+      "ms": 606
     },
     {
       "status": "ok",
@@ -6010,7 +6021,7 @@
       "rank": 46,
       "slug": "klto9",
       "nsfw": false,
-      "ms": 1077
+      "ms": 1342
     },
     {
       "status": "ok",
@@ -6021,7 +6032,7 @@
       "rank": 47,
       "slug": "hachiraw",
       "nsfw": false,
-      "ms": 432
+      "ms": 474
     },
     {
       "status": "ok",
@@ -6032,7 +6043,7 @@
       "rank": 48,
       "slug": "mangaraw4u",
       "nsfw": false,
-      "ms": 609
+      "ms": 642
     },
     {
       "status": "ok",
@@ -6043,7 +6054,7 @@
       "rank": 49,
       "slug": "nicomanga",
       "nsfw": false,
-      "ms": 782
+      "ms": 817
     },
     {
       "status": "ok",
@@ -6054,7 +6065,7 @@
       "rank": 50,
       "slug": "rawuwu",
       "nsfw": false,
-      "ms": 540
+      "ms": 504
     },
     {
       "status": "ok",
@@ -6065,7 +6076,7 @@
       "rank": 51,
       "slug": "rawsakura",
       "nsfw": false,
-      "ms": 387
+      "ms": 352
     },
     {
       "status": "ok",
@@ -6076,7 +6087,7 @@
       "rank": 52,
       "slug": "bilingualmanga",
       "nsfw": false,
-      "ms": 231
+      "ms": 189
     },
     {
       "status": "ok",
@@ -6087,7 +6098,7 @@
       "rank": 53,
       "slug": "nihonkuni",
       "nsfw": false,
-      "ms": 1488
+      "ms": 1493
     },
     {
       "status": "ok",
@@ -6098,7 +6109,7 @@
       "rank": 54,
       "slug": "mangaraw",
       "nsfw": false,
-      "ms": 362
+      "ms": 307
     },
     {
       "status": "ok",
@@ -6109,7 +6120,7 @@
       "rank": 55,
       "slug": "rawkuma",
       "nsfw": false,
-      "ms": 399
+      "ms": 315
     },
     {
       "status": "ok",
@@ -6120,7 +6131,7 @@
       "rank": 56,
       "slug": "mangarawbest",
       "nsfw": false,
-      "ms": 957
+      "ms": 479
     },
     {
       "status": "ok",
@@ -6131,7 +6142,7 @@
       "rank": 57,
       "slug": "welomaraw",
       "nsfw": false,
-      "ms": 540
+      "ms": 476
     },
     {
       "status": "ok",
@@ -6142,7 +6153,7 @@
       "rank": 58,
       "slug": "spoilerplus",
       "nsfw": false,
-      "ms": 404
+      "ms": 363
     },
     {
       "status": "ok",
@@ -6153,7 +6164,7 @@
       "rank": 59,
       "slug": "rawlazy",
       "nsfw": false,
-      "ms": 1544
+      "ms": 1372
     },
     {
       "status": "ok",
@@ -6164,7 +6175,7 @@
       "rank": 60,
       "slug": "raw1001",
       "nsfw": false,
-      "ms": 992
+      "ms": 719
     },
     {
       "status": "ok",
@@ -6175,7 +6186,7 @@
       "rank": 61,
       "slug": "happymh",
       "nsfw": false,
-      "ms": 492
+      "ms": 424
     },
     {
       "status": "ok",
@@ -6186,7 +6197,7 @@
       "rank": 62,
       "slug": "baozimhorg",
       "nsfw": false,
-      "ms": 386
+      "ms": 172
     },
     {
       "status": "ok",
@@ -6197,7 +6208,7 @@
       "rank": 63,
       "slug": "twmanga",
       "nsfw": false,
-      "ms": 1105
+      "ms": 1034
     },
     {
       "status": "ok",
@@ -6208,7 +6219,7 @@
       "rank": 64,
       "slug": "senmanga",
       "nsfw": false,
-      "ms": 415
+      "ms": 397
     },
     {
       "status": "ok",
@@ -6219,7 +6230,7 @@
       "rank": 65,
       "slug": "rawfree",
       "nsfw": false,
-      "ms": 635
+      "ms": 605
     },
     {
       "status": "ok",
@@ -6230,7 +6241,7 @@
       "rank": 66,
       "slug": "mangaplaza",
       "nsfw": false,
-      "ms": 342
+      "ms": 380
     },
     {
       "status": "ok",
@@ -6241,7 +6252,7 @@
       "rank": 67,
       "slug": "mangamirai",
       "nsfw": false,
-      "ms": 533
+      "ms": 529
     },
     {
       "status": "ok",
@@ -6252,7 +6263,7 @@
       "rank": 68,
       "slug": "mangamikan",
       "nsfw": false,
-      "ms": 658
+      "ms": 594
     },
     {
       "status": "ok",
@@ -6263,18 +6274,18 @@
       "rank": 69,
       "slug": "mangaberri",
       "nsfw": false,
-      "ms": 649
+      "ms": 536
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "MangaCherri",
       "url": "https://mangacherri.com/home.php",
       "section": "Manga Reading",
       "rank": 70,
       "slug": "mangacherri",
       "nsfw": false,
-      "ms": 449
+      "ms": 570
     },
     {
       "status": "ok",
@@ -6285,7 +6296,7 @@
       "rank": 71,
       "slug": "dankemoe",
       "nsfw": false,
-      "ms": 218
+      "ms": 343
     },
     {
       "status": "ok",
@@ -6296,7 +6307,7 @@
       "rank": 72,
       "slug": "hachirumi",
       "nsfw": false,
-      "ms": 806
+      "ms": 943
     },
     {
       "status": "ok",
@@ -6307,7 +6318,7 @@
       "rank": 73,
       "slug": "silentquill",
       "nsfw": false,
-      "ms": 1370
+      "ms": 1772
     },
     {
       "status": "ok",
@@ -6318,7 +6329,7 @@
       "rank": 74,
       "slug": "akarimanga",
       "nsfw": false,
-      "ms": 512
+      "ms": 357
     },
     {
       "status": "ok",
@@ -6329,7 +6340,7 @@
       "rank": 75,
       "slug": "nineanime",
       "nsfw": false,
-      "ms": 897
+      "ms": 1086
     },
     {
       "status": "ok",
@@ -6340,7 +6351,7 @@
       "rank": 76,
       "slug": "manhuabuddy",
       "nsfw": false,
-      "ms": 474
+      "ms": 591
     },
     {
       "status": "ok",
@@ -6351,7 +6362,7 @@
       "rank": 77,
       "slug": "readmangacc",
       "nsfw": false,
-      "ms": 642
+      "ms": 1142
     },
     {
       "status": "ok",
@@ -6362,7 +6373,7 @@
       "rank": 78,
       "slug": "pawmanga",
       "nsfw": false,
-      "ms": 315
+      "ms": 400
     },
     {
       "status": "ok",
@@ -6373,7 +6384,7 @@
       "rank": 79,
       "slug": "lilymanga",
       "nsfw": false,
-      "ms": 564
+      "ms": 472
     },
     {
       "status": "ok",
@@ -6384,7 +6395,7 @@
       "rank": 80,
       "slug": "comicless",
       "nsfw": false,
-      "ms": 382
+      "ms": 281
     },
     {
       "status": "ok",
@@ -6395,7 +6406,7 @@
       "rank": 81,
       "slug": "mangadoom",
       "nsfw": false,
-      "ms": 1296
+      "ms": 1293
     },
     {
       "status": "ok",
@@ -6406,7 +6417,7 @@
       "rank": 82,
       "slug": "mangakakalottv",
       "nsfw": false,
-      "ms": 1204
+      "ms": 1252
     },
     {
       "status": "ok",
@@ -6417,7 +6428,7 @@
       "rank": 83,
       "slug": "mangareadorg",
       "nsfw": false,
-      "ms": 1627
+      "ms": 967
     },
     {
       "status": "ok",
@@ -6428,7 +6439,7 @@
       "rank": 84,
       "slug": "mangagoio",
       "nsfw": false,
-      "ms": 811
+      "ms": 757
     },
     {
       "status": "ok",
@@ -6439,7 +6450,7 @@
       "rank": 85,
       "slug": "aquamanga",
       "nsfw": false,
-      "ms": 800
+      "ms": 649
     },
     {
       "status": "ok",
@@ -6450,7 +6461,7 @@
       "rank": 86,
       "slug": "todaymanga",
       "nsfw": false,
-      "ms": 1654
+      "ms": 1792
     },
     {
       "status": "ok",
@@ -6461,7 +6472,7 @@
       "rank": 87,
       "slug": "mangahotto",
       "nsfw": false,
-      "ms": 569
+      "ms": 487
     },
     {
       "status": "ok",
@@ -6472,7 +6483,7 @@
       "rank": 88,
       "slug": "mangablaze",
       "nsfw": false,
-      "ms": 594
+      "ms": 523
     },
     {
       "status": "ok",
@@ -6483,7 +6494,7 @@
       "rank": 89,
       "slug": "coffeemanga",
       "nsfw": false,
-      "ms": 567
+      "ms": 534
     },
     {
       "status": "ok",
@@ -6494,7 +6505,7 @@
       "rank": 90,
       "slug": "mangasushi",
       "nsfw": false,
-      "ms": 888
+      "ms": 1510
     },
     {
       "status": "ok",
@@ -6505,7 +6516,7 @@
       "rank": 91,
       "slug": "kagane",
       "nsfw": false,
-      "ms": 752
+      "ms": 650
     },
     {
       "status": "ok",
@@ -6516,7 +6527,7 @@
       "rank": 92,
       "slug": "mangago",
       "nsfw": false,
-      "ms": 595
+      "ms": 444
     },
     {
       "status": "ok",
@@ -6527,7 +6538,7 @@
       "rank": 1,
       "slug": "projectsuki",
       "nsfw": false,
-      "ms": 1146
+      "ms": 1087
     },
     {
       "status": "ok",
@@ -6538,7 +6549,7 @@
       "rank": 2,
       "slug": "madaradex",
       "nsfw": true,
-      "ms": 899
+      "ms": 444
     },
     {
       "status": "ok",
@@ -6549,7 +6560,7 @@
       "rank": 3,
       "slug": "readoppai",
       "nsfw": true,
-      "ms": 677
+      "ms": 802
     },
     {
       "status": "ok",
@@ -6560,7 +6571,7 @@
       "rank": 4,
       "slug": "hentai20",
       "nsfw": true,
-      "ms": 229
+      "ms": 194
     },
     {
       "status": "ok",
@@ -6571,7 +6582,7 @@
       "rank": 5,
       "slug": "toomicsfree",
       "nsfw": true,
-      "ms": 798
+      "ms": 665
     },
     {
       "status": "ok",
@@ -6582,7 +6593,7 @@
       "rank": 6,
       "slug": "hiperdex",
       "nsfw": true,
-      "ms": 411
+      "ms": 343
     },
     {
       "status": "ok",
@@ -6593,7 +6604,7 @@
       "rank": 7,
       "slug": "comicland",
       "nsfw": true,
-      "ms": 230
+      "ms": 201
     },
     {
       "status": "ok",
@@ -6604,7 +6615,7 @@
       "rank": 8,
       "slug": "pornhwaz",
       "nsfw": true,
-      "ms": 368
+      "ms": 367
     },
     {
       "status": "ok",
@@ -6615,7 +6626,7 @@
       "rank": 9,
       "slug": "manhwaz",
       "nsfw": false,
-      "ms": 522
+      "ms": 594
     },
     {
       "status": "ok",
@@ -6626,7 +6637,7 @@
       "rank": 10,
       "slug": "mangagg",
       "nsfw": false,
-      "ms": 865
+      "ms": 907
     },
     {
       "status": "ok",
@@ -6637,7 +6648,7 @@
       "rank": 11,
       "slug": "toonily",
       "nsfw": false,
-      "ms": 420
+      "ms": 312
     },
     {
       "status": "ok",
@@ -6648,7 +6659,7 @@
       "rank": 12,
       "slug": "manhwatop",
       "nsfw": false,
-      "ms": 837
+      "ms": 869
     },
     {
       "status": "ok",
@@ -6659,7 +6670,7 @@
       "rank": 13,
       "slug": "kuramanga",
       "nsfw": false,
-      "ms": 577
+      "ms": 552
     },
     {
       "status": "ok",
@@ -6670,7 +6681,7 @@
       "rank": 14,
       "slug": "topmanhua",
       "nsfw": false,
-      "ms": 749
+      "ms": 727
     },
     {
       "status": "ok",
@@ -6681,7 +6692,7 @@
       "rank": 15,
       "slug": "cocomic",
       "nsfw": false,
-      "ms": 369
+      "ms": 437
     },
     {
       "status": "ok",
@@ -6692,7 +6703,7 @@
       "rank": 16,
       "slug": "galaxymanga",
       "nsfw": false,
-      "ms": 899
+      "ms": 1232
     },
     {
       "status": "ok",
@@ -6703,7 +6714,7 @@
       "rank": 17,
       "slug": "manta",
       "nsfw": false,
-      "ms": 435
+      "ms": 428
     },
     {
       "status": "ok",
@@ -6714,7 +6725,7 @@
       "rank": 18,
       "slug": "manhwatoonme",
       "nsfw": false,
-      "ms": 1451
+      "ms": 1793
     },
     {
       "status": "ok",
@@ -6725,7 +6736,7 @@
       "rank": 19,
       "slug": "manga18fx",
       "nsfw": true,
-      "ms": 440
+      "ms": 428
     },
     {
       "status": "ok",
@@ -6736,7 +6747,7 @@
       "rank": 20,
       "slug": "mangator",
       "nsfw": true,
-      "ms": 202
+      "ms": 224
     },
     {
       "status": "ok",
@@ -6747,7 +6758,7 @@
       "rank": 21,
       "slug": "webtoonxyz",
       "nsfw": true,
-      "ms": 363
+      "ms": 372
     },
     {
       "status": "ok",
@@ -6758,7 +6769,7 @@
       "rank": 22,
       "slug": "manhwahentai",
       "nsfw": true,
-      "ms": 233
+      "ms": 547
     },
     {
       "status": "ok",
@@ -6769,7 +6780,7 @@
       "rank": 23,
       "slug": "toonflix",
       "nsfw": false,
-      "ms": 1401
+      "ms": 1293
     },
     {
       "status": "ok",
@@ -6780,7 +6791,7 @@
       "rank": 24,
       "slug": "nicelink22",
       "nsfw": false,
-      "ms": 441
+      "ms": 606
     },
     {
       "status": "ok",
@@ -6791,7 +6802,7 @@
       "rank": 25,
       "slug": "toonkor",
       "nsfw": false,
-      "ms": 1290
+      "ms": 1144
     },
     {
       "status": "ok",
@@ -6802,7 +6813,7 @@
       "rank": 26,
       "slug": "blacktoon",
       "nsfw": false,
-      "ms": 1204
+      "ms": 957
     },
     {
       "status": "ok",
@@ -6813,7 +6824,7 @@
       "rank": 27,
       "slug": "happytoon",
       "nsfw": true,
-      "ms": 348
+      "ms": 341
     },
     {
       "status": "ok",
@@ -6824,7 +6835,7 @@
       "rank": 28,
       "slug": "xtoon2",
       "nsfw": false,
-      "ms": 606
+      "ms": 665
     },
     {
       "status": "ok",
@@ -6835,7 +6846,7 @@
       "rank": 29,
       "slug": "funbe512",
       "nsfw": false,
-      "ms": 932
+      "ms": 1104
     },
     {
       "status": "ok",
@@ -6846,7 +6857,7 @@
       "rank": 30,
       "slug": "kingofshojo",
       "nsfw": false,
-      "ms": 785
+      "ms": 800
     },
     {
       "status": "ok",
@@ -6857,7 +6868,7 @@
       "rank": 31,
       "slug": "omegascans",
       "nsfw": true,
-      "ms": 422
+      "ms": 373
     },
     {
       "status": "ok",
@@ -6868,7 +6879,7 @@
       "rank": 32,
       "slug": "toongod",
       "nsfw": true,
-      "ms": 331
+      "ms": 316
     },
     {
       "status": "ok",
@@ -6879,7 +6890,7 @@
       "rank": 33,
       "slug": "manhwabuddy",
       "nsfw": true,
-      "ms": 612
+      "ms": 601
     },
     {
       "status": "ok",
@@ -6890,7 +6901,7 @@
       "rank": 34,
       "slug": "mangadistrict",
       "nsfw": true,
-      "ms": 421
+      "ms": 843
     },
     {
       "status": "ok",
@@ -6901,7 +6912,7 @@
       "rank": 35,
       "slug": "manga18",
       "nsfw": true,
-      "ms": 537
+      "ms": 515
     },
     {
       "status": "ok",
@@ -6912,7 +6923,7 @@
       "rank": 36,
       "slug": "manhwa18",
       "nsfw": true,
-      "ms": 610
+      "ms": 585
     },
     {
       "status": "ok",
@@ -6923,7 +6934,7 @@
       "rank": 37,
       "slug": "mangatx",
       "nsfw": true,
-      "ms": 684
+      "ms": 687
     },
     {
       "status": "ok",
@@ -6934,7 +6945,7 @@
       "rank": 38,
       "slug": "manhwaden",
       "nsfw": true,
-      "ms": 1400
+      "ms": 1471
     },
     {
       "status": "ok",
@@ -6945,7 +6956,7 @@
       "rank": 39,
       "slug": "manhwasusu",
       "nsfw": true,
-      "ms": 733
+      "ms": 674
     },
     {
       "status": "ok",
@@ -6956,7 +6967,7 @@
       "rank": 40,
       "slug": "theblank",
       "nsfw": true,
-      "ms": 352
+      "ms": 295
     },
     {
       "status": "ok",
@@ -6967,7 +6978,7 @@
       "rank": 41,
       "slug": "luacomic",
       "nsfw": false,
-      "ms": 687
+      "ms": 615
     },
     {
       "status": "ok",
@@ -6978,7 +6989,7 @@
       "rank": 42,
       "slug": "asuragg",
       "nsfw": false,
-      "ms": 208
+      "ms": 216
     },
     {
       "status": "ok",
@@ -6989,7 +7000,7 @@
       "rank": 43,
       "slug": "templescan",
       "nsfw": false,
-      "ms": 580
+      "ms": 507
     },
     {
       "status": "ok",
@@ -7000,7 +7011,7 @@
       "rank": 44,
       "slug": "flamescans",
       "nsfw": false,
-      "ms": 384
+      "ms": 346
     },
     {
       "status": "ok",
@@ -7011,7 +7022,7 @@
       "rank": 45,
       "slug": "rokaricomics",
       "nsfw": false,
-      "ms": 373
+      "ms": 351
     },
     {
       "status": "ok",
@@ -7022,7 +7033,7 @@
       "rank": 46,
       "slug": "resetscans",
       "nsfw": false,
-      "ms": 1554
+      "ms": 1436
     },
     {
       "status": "ok",
@@ -7033,7 +7044,7 @@
       "rank": 47,
       "slug": "hivescans",
       "nsfw": false,
-      "ms": 880
+      "ms": 3168
     },
     {
       "status": "ok",
@@ -7044,7 +7055,7 @@
       "rank": 48,
       "slug": "divascans",
       "nsfw": false,
-      "ms": 756
+      "ms": 663
     },
     {
       "status": "ok",
@@ -7055,7 +7066,7 @@
       "rank": 49,
       "slug": "plutoscans",
       "nsfw": false,
-      "ms": 509
+      "ms": 753
     },
     {
       "status": "ok",
@@ -7066,7 +7077,7 @@
       "rank": 50,
       "slug": "utoon",
       "nsfw": false,
-      "ms": 712
+      "ms": 3599
     },
     {
       "status": "ok",
@@ -7077,7 +7088,7 @@
       "rank": 51,
       "slug": "erosscans",
       "nsfw": false,
-      "ms": 1722
+      "ms": 1459
     },
     {
       "status": "ok",
@@ -7088,7 +7099,7 @@
       "rank": 52,
       "slug": "manhuafast",
       "nsfw": false,
-      "ms": 444
+      "ms": 330
     },
     {
       "status": "ok",
@@ -7099,7 +7110,7 @@
       "rank": 53,
       "slug": "mangack",
       "nsfw": false,
-      "ms": 324
+      "ms": 458
     },
     {
       "status": "ok",
@@ -7110,7 +7121,7 @@
       "rank": 54,
       "slug": "manhwaepisodes",
       "nsfw": true,
-      "ms": 452
+      "ms": 393
     },
     {
       "status": "ok",
@@ -7121,7 +7132,7 @@
       "rank": 55,
       "slug": "manhuarmmtl",
       "nsfw": false,
-      "ms": 1875
+      "ms": 1643
     },
     {
       "status": "ok",
@@ -7132,7 +7143,7 @@
       "rank": 1,
       "slug": "chiaki",
       "nsfw": false,
-      "ms": 298
+      "ms": 271
     },
     {
       "status": "ok",
@@ -7143,7 +7154,7 @@
       "rank": 2,
       "slug": "malsync",
       "nsfw": false,
-      "ms": 242
+      "ms": 224
     },
     {
       "status": "ok",
@@ -7154,7 +7165,7 @@
       "rank": 3,
       "slug": "saucenao",
       "nsfw": false,
-      "ms": 321
+      "ms": 269
     },
     {
       "status": "ok",
@@ -7165,7 +7176,7 @@
       "rank": 4,
       "slug": "tracemoe",
       "nsfw": false,
-      "ms": 305
+      "ms": 223
     },
     {
       "status": "ok",
@@ -7176,7 +7187,7 @@
       "rank": 5,
       "slug": "cubari",
       "nsfw": false,
-      "ms": 352
+      "ms": 258
     },
     {
       "status": "ok",
@@ -7187,7 +7198,7 @@
       "rank": 6,
       "slug": "duemoe",
       "nsfw": false,
-      "ms": 435
+      "ms": 357
     },
     {
       "status": "ok",
@@ -7198,7 +7209,7 @@
       "rank": 7,
       "slug": "karamoeapp",
       "nsfw": false,
-      "ms": 1416
+      "ms": 1266
     },
     {
       "status": "ok",
@@ -7209,7 +7220,7 @@
       "rank": 8,
       "slug": "taigamoe",
       "nsfw": false,
-      "ms": 446
+      "ms": 444
     },
     {
       "status": "ok",
@@ -7220,7 +7231,7 @@
       "rank": 9,
       "slug": "shoko",
       "nsfw": false,
-      "ms": 248
+      "ms": 612
     },
     {
       "status": "ok",
@@ -7231,7 +7242,7 @@
       "rank": 10,
       "slug": "trackma",
       "nsfw": false,
-      "ms": 149
+      "ms": 124
     },
     {
       "status": "ok",
@@ -7242,7 +7253,7 @@
       "rank": 11,
       "slug": "komga",
       "nsfw": false,
-      "ms": 244
+      "ms": 209
     },
     {
       "status": "ok",
@@ -7253,7 +7264,7 @@
       "rank": 12,
       "slug": "opencomic",
       "nsfw": false,
-      "ms": 585
+      "ms": 645
     },
     {
       "status": "ok",
@@ -7264,7 +7275,7 @@
       "rank": 13,
       "slug": "onegaimoe",
       "nsfw": false,
-      "ms": 336
+      "ms": 202
     },
     {
       "status": "ok",
@@ -7275,7 +7286,7 @@
       "rank": 14,
       "slug": "panelsdesu",
       "nsfw": false,
-      "ms": 273
+      "ms": 261
     },
     {
       "status": "ok",
@@ -7286,7 +7297,7 @@
       "rank": 15,
       "slug": "iqdb",
       "nsfw": false,
-      "ms": 796
+      "ms": 805
     },
     {
       "status": "ok",
@@ -7297,7 +7308,7 @@
       "rank": 16,
       "slug": "mydublist",
       "nsfw": false,
-      "ms": 277
+      "ms": 258
     },
     {
       "status": "ok",
@@ -7308,7 +7319,7 @@
       "rank": 17,
       "slug": "fancaps",
       "nsfw": false,
-      "ms": 247
+      "ms": 167
     },
     {
       "status": "ok",
@@ -7319,7 +7330,7 @@
       "rank": 18,
       "slug": "tundra",
       "nsfw": false,
-      "ms": 161
+      "ms": 165
     },
     {
       "status": "ok",
@@ -7330,7 +7341,7 @@
       "rank": 19,
       "slug": "nyaatui",
       "nsfw": false,
-      "ms": 910
+      "ms": 659
     },
     {
       "status": "ok",
@@ -7341,7 +7352,7 @@
       "rank": 20,
       "slug": "anicour",
       "nsfw": false,
-      "ms": 619
+      "ms": 644
     },
     {
       "status": "ok",
@@ -7352,7 +7363,7 @@
       "rank": 21,
       "slug": "wrongopinions",
       "nsfw": false,
-      "ms": 275
+      "ms": 237
     },
     {
       "status": "ok",
@@ -7363,7 +7374,7 @@
       "rank": 22,
       "slug": "relatedanime",
       "nsfw": false,
-      "ms": 268
+      "ms": 318
     },
     {
       "status": "ok",
@@ -7374,7 +7385,7 @@
       "rank": 23,
       "slug": "randomanime",
       "nsfw": false,
-      "ms": 292
+      "ms": 322
     },
     {
       "status": "ok",
@@ -7385,7 +7396,7 @@
       "rank": 24,
       "slug": "spinmoe",
       "nsfw": false,
-      "ms": 1982
+      "ms": 2196
     },
     {
       "status": "ok",
@@ -7396,7 +7407,7 @@
       "rank": 25,
       "slug": "animebracket",
       "nsfw": false,
-      "ms": 527
+      "ms": 423
     },
     {
       "status": "ok",
@@ -7407,7 +7418,7 @@
       "rank": 26,
       "slug": "pnganime",
       "nsfw": false,
-      "ms": 482
+      "ms": 394
     },
     {
       "status": "ok",
@@ -7418,7 +7429,7 @@
       "rank": 1,
       "slug": "1shows",
       "nsfw": false,
-      "ms": 280
+      "ms": 175
     },
     {
       "status": "ok",
@@ -7429,7 +7440,7 @@
       "rank": 2,
       "slug": "1tube",
       "nsfw": false,
-      "ms": 280
+      "ms": 178
     },
     {
       "status": "ok",
@@ -7440,7 +7451,7 @@
       "rank": 3,
       "slug": "alienflix",
       "nsfw": false,
-      "ms": 1317
+      "ms": 1009
     },
     {
       "status": "ok",
@@ -7451,7 +7462,7 @@
       "rank": 4,
       "slug": "wooflix",
       "nsfw": false,
-      "ms": 707
+      "ms": 653
     },
     {
       "status": "ok",
@@ -7462,7 +7473,7 @@
       "rank": 5,
       "slug": "cinemabz",
       "nsfw": false,
-      "ms": 350
+      "ms": 449
     },
     {
       "status": "ok",
@@ -7473,7 +7484,7 @@
       "rank": 6,
       "slug": "spenflix",
       "nsfw": false,
-      "ms": 35059
+      "ms": 35156
     },
     {
       "status": "ok",
@@ -7484,7 +7495,7 @@
       "rank": 7,
       "slug": "filmcave",
       "nsfw": false,
-      "ms": 485
+      "ms": 277
     },
     {
       "status": "ok",
@@ -7495,7 +7506,7 @@
       "rank": 8,
       "slug": "corsflix",
       "nsfw": false,
-      "ms": 230
+      "ms": 184
     },
     {
       "status": "ok",
@@ -7506,7 +7517,7 @@
       "rank": 9,
       "slug": "streamx",
       "nsfw": false,
-      "ms": 3804
+      "ms": 504
     },
     {
       "status": "ok",
@@ -7517,7 +7528,7 @@
       "rank": 10,
       "slug": "cinezo",
       "nsfw": false,
-      "ms": 530
+      "ms": 461
     },
     {
       "status": "ok",
@@ -7528,7 +7539,7 @@
       "rank": 11,
       "slug": "cineby",
       "nsfw": false,
-      "ms": 1190
+      "ms": 1176
     },
     {
       "status": "ok",
@@ -7539,7 +7550,7 @@
       "rank": 12,
       "slug": "donkeyto",
       "nsfw": false,
-      "ms": 692
+      "ms": 427
     },
     {
       "status": "ok",
@@ -7550,7 +7561,7 @@
       "rank": 13,
       "slug": "willow",
       "nsfw": false,
-      "ms": 421
+      "ms": 259
     },
     {
       "status": "ok",
@@ -7561,7 +7572,7 @@
       "rank": 14,
       "slug": "neputo",
       "nsfw": false,
-      "ms": 542
+      "ms": 326
     },
     {
       "status": "ok",
@@ -7572,7 +7583,7 @@
       "rank": 15,
       "slug": "fmovies",
       "nsfw": false,
-      "ms": 1022
+      "ms": 771
     },
     {
       "status": "ok",
@@ -7583,7 +7594,7 @@
       "rank": 16,
       "slug": "67movies",
       "nsfw": false,
-      "ms": 367
+      "ms": 183
     },
     {
       "status": "ok",
@@ -7594,7 +7605,7 @@
       "rank": 17,
       "slug": "smashystream",
       "nsfw": false,
-      "ms": 319
+      "ms": 256
     },
     {
       "status": "ok",
@@ -7605,7 +7616,7 @@
       "rank": 1,
       "slug": "karamoe",
       "nsfw": false,
-      "ms": 949
+      "ms": 2035
     },
     {
       "status": "ok",
@@ -7616,7 +7627,7 @@
       "rank": 2,
       "slug": "animesonglyrics",
       "nsfw": false,
-      "ms": 265
+      "ms": 285
     },
     {
       "status": "ok",
@@ -7627,7 +7638,7 @@
       "rank": 3,
       "slug": "lyricalnonsense",
       "nsfw": false,
-      "ms": 212
+      "ms": 164
     },
     {
       "status": "ok",
@@ -7638,7 +7649,7 @@
       "rank": 4,
       "slug": "animethemes",
       "nsfw": false,
-      "ms": 449
+      "ms": 739
     },
     {
       "status": "ok",
@@ -7649,7 +7660,7 @@
       "rank": 5,
       "slug": "anisononline",
       "nsfw": false,
-      "ms": 659
+      "ms": 649
     },
     {
       "status": "ok",
@@ -7660,7 +7671,7 @@
       "rank": 6,
       "slug": "anisongdb",
       "nsfw": false,
-      "ms": 759
+      "ms": 451
     },
     {
       "status": "ok",
@@ -7671,7 +7682,7 @@
       "rank": 7,
       "slug": "listenmoe",
       "nsfw": false,
-      "ms": 760
+      "ms": 416
     },
     {
       "status": "ok",
@@ -7682,7 +7693,7 @@
       "rank": 8,
       "slug": "radio",
       "nsfw": false,
-      "ms": 861
+      "ms": 854
     },
     {
       "status": "ok",
@@ -7693,7 +7704,7 @@
       "rank": 9,
       "slug": "sittingonclouds",
       "nsfw": false,
-      "ms": 731
+      "ms": 720
     },
     {
       "status": "ok",
@@ -7704,7 +7715,7 @@
       "rank": 10,
       "slug": "okamimiost",
       "nsfw": false,
-      "ms": 663
+      "ms": 749
     },
     {
       "status": "ok",
@@ -7715,7 +7726,7 @@
       "rank": 11,
       "slug": "doujinstyle",
       "nsfw": true,
-      "ms": 651
+      "ms": 1171
     },
     {
       "status": "ok",
@@ -7726,7 +7737,7 @@
       "rank": 12,
       "slug": "tmlc",
       "nsfw": false,
-      "ms": 554
+      "ms": 442
     },
     {
       "status": "ok",
@@ -7737,7 +7748,7 @@
       "rank": 13,
       "slug": "touhoukuukunen",
       "nsfw": false,
-      "ms": 711
+      "ms": 671
     },
     {
       "status": "ok",
@@ -7748,7 +7759,7 @@
       "rank": 14,
       "slug": "khinsider",
       "nsfw": false,
-      "ms": 523
+      "ms": 598
     },
     {
       "status": "ok",
@@ -7759,7 +7770,7 @@
       "rank": 15,
       "slug": "sonixgvn",
       "nsfw": false,
-      "ms": 345
+      "ms": 264
     },
     {
       "status": "ok",
@@ -7770,7 +7781,7 @@
       "rank": 16,
       "slug": "osanime",
       "nsfw": false,
-      "ms": 342
+      "ms": 315
     },
     {
       "status": "ok",
@@ -7781,7 +7792,7 @@
       "rank": 17,
       "slug": "musicdex",
       "nsfw": false,
-      "ms": 685
+      "ms": 661
     },
     {
       "status": "ok",
@@ -7792,7 +7803,7 @@
       "rank": 18,
       "slug": "allanimusic",
       "nsfw": false,
-      "ms": 183
+      "ms": 127
     },
     {
       "status": "ok",
@@ -7803,7 +7814,7 @@
       "rank": 19,
       "slug": "openingsmoe",
       "nsfw": false,
-      "ms": 614
+      "ms": 608
     },
     {
       "status": "ok",
@@ -7814,7 +7825,7 @@
       "rank": 20,
       "slug": "sakuraost",
       "nsfw": false,
-      "ms": 359
+      "ms": 342
     },
     {
       "status": "ok",
@@ -7825,7 +7836,7 @@
       "rank": 21,
       "slug": "squidify",
       "nsfw": false,
-      "ms": 493
+      "ms": 587
     },
     {
       "status": "ok",
@@ -7836,7 +7847,7 @@
       "rank": 22,
       "slug": "jpopsingles",
       "nsfw": false,
-      "ms": 853
+      "ms": 1659
     },
     {
       "status": "ok",
@@ -7847,7 +7858,7 @@
       "rank": 23,
       "slug": "yggdrasilradio",
       "nsfw": false,
-      "ms": 362
+      "ms": 474
     },
     {
       "status": "ok",
@@ -7858,7 +7869,7 @@
       "rank": 24,
       "slug": "radioanime24",
       "nsfw": false,
-      "ms": 832
+      "ms": 1140
     },
     {
       "status": "ok",
@@ -7869,7 +7880,7 @@
       "rank": 25,
       "slug": "gensokyoradio",
       "nsfw": false,
-      "ms": 441
+      "ms": 507
     },
     {
       "status": "ok",
@@ -7880,7 +7891,7 @@
       "rank": 26,
       "slug": "onepiecetracklist",
       "nsfw": false,
-      "ms": 465
+      "ms": 496
     },
     {
       "status": "ok",
@@ -7891,7 +7902,7 @@
       "rank": 27,
       "slug": "aniplaylist",
       "nsfw": false,
-      "ms": 461
+      "ms": 378
     },
     {
       "status": "ok",
@@ -7902,7 +7913,7 @@
       "rank": 28,
       "slug": "mangazipmusic",
       "nsfw": false,
-      "ms": 157
+      "ms": 232
     },
     {
       "status": "ok",
@@ -7913,7 +7924,7 @@
       "rank": 1,
       "slug": "novelfire",
       "nsfw": false,
-      "ms": 375
+      "ms": 381
     },
     {
       "status": "ok",
@@ -7924,7 +7935,7 @@
       "rank": 2,
       "slug": "novelarchive",
       "nsfw": false,
-      "ms": 691
+      "ms": 641
     },
     {
       "status": "ok",
@@ -7935,7 +7946,7 @@
       "rank": 3,
       "slug": "lightnovelworldorg",
       "nsfw": false,
-      "ms": 382
+      "ms": 513
     },
     {
       "status": "ok",
@@ -7946,7 +7957,7 @@
       "rank": 4,
       "slug": "novelbuddy",
       "nsfw": false,
-      "ms": 434
+      "ms": 707
     },
     {
       "status": "ok",
@@ -7957,7 +7968,7 @@
       "rank": 5,
       "slug": "noveldex",
       "nsfw": false,
-      "ms": 430
+      "ms": 300
     },
     {
       "status": "ok",
@@ -7968,7 +7979,7 @@
       "rank": 6,
       "slug": "wuxiap",
       "nsfw": false,
-      "ms": 395
+      "ms": 549
     },
     {
       "status": "ok",
@@ -7979,7 +7990,7 @@
       "rank": 7,
       "slug": "wuxiaclick",
       "nsfw": false,
-      "ms": 677
+      "ms": 769
     },
     {
       "status": "ok",
@@ -7990,7 +8001,7 @@
       "rank": 8,
       "slug": "innread",
       "nsfw": false,
-      "ms": 1156
+      "ms": 1200
     },
     {
       "status": "ok",
@@ -8001,7 +8012,7 @@
       "rank": 9,
       "slug": "ranobestop",
       "nsfw": false,
-      "ms": 517
+      "ms": 663
     },
     {
       "status": "ok",
@@ -8012,7 +8023,7 @@
       "rank": 10,
       "slug": "novelsonline",
       "nsfw": false,
-      "ms": 1395
+      "ms": 1867
     },
     {
       "status": "ok",
@@ -8023,7 +8034,7 @@
       "rank": 11,
       "slug": "bakatsuki",
       "nsfw": false,
-      "ms": 688
+      "ms": 604
     },
     {
       "status": "ok",
@@ -8034,7 +8045,7 @@
       "rank": 12,
       "slug": "fullnovels",
       "nsfw": false,
-      "ms": 344
+      "ms": 397
     },
     {
       "status": "ok",
@@ -8045,7 +8056,7 @@
       "rank": 13,
       "slug": "novelcool",
       "nsfw": false,
-      "ms": 510
+      "ms": 513
     },
     {
       "status": "ok",
@@ -8056,7 +8067,7 @@
       "rank": 14,
       "slug": "lncrawler",
       "nsfw": false,
-      "ms": 700
+      "ms": 773
     },
     {
       "status": "ok",
@@ -8067,7 +8078,7 @@
       "rank": 15,
       "slug": "novelusb",
       "nsfw": false,
-      "ms": 34850
+      "ms": 34925
     },
     {
       "status": "ok",
@@ -8078,7 +8089,7 @@
       "rank": 16,
       "slug": "novelhall",
       "nsfw": false,
-      "ms": 213
+      "ms": 406
     },
     {
       "status": "ok",
@@ -8089,7 +8100,7 @@
       "rank": 17,
       "slug": "mvlempyr",
       "nsfw": false,
-      "ms": 574
+      "ms": 588
     },
     {
       "status": "ok",
@@ -8100,7 +8111,7 @@
       "rank": 18,
       "slug": "fucknovelpia",
       "nsfw": false,
-      "ms": 347
+      "ms": 419
     },
     {
       "status": "ok",
@@ -8111,7 +8122,7 @@
       "rank": 19,
       "slug": "lnori",
       "nsfw": false,
-      "ms": 269
+      "ms": 319
     },
     {
       "status": "ok",
@@ -8122,7 +8133,7 @@
       "rank": 20,
       "slug": "annasarchive",
       "nsfw": false,
-      "ms": 862
+      "ms": 628
     },
     {
       "status": "ok",
@@ -8133,7 +8144,7 @@
       "rank": 21,
       "slug": "elscioneserver",
       "nsfw": false,
-      "ms": 725
+      "ms": 712
     },
     {
       "status": "ok",
@@ -8144,7 +8155,7 @@
       "rank": 22,
       "slug": "foxaholic",
       "nsfw": false,
-      "ms": 360
+      "ms": 342
     },
     {
       "status": "ok",
@@ -8155,7 +8166,7 @@
       "rank": 23,
       "slug": "kurehaone",
       "nsfw": false,
-      "ms": 2543
+      "ms": 4130
     },
     {
       "status": "ok",
@@ -8166,7 +8177,7 @@
       "rank": 24,
       "slug": "jnovels",
       "nsfw": false,
-      "ms": 659
+      "ms": 652
     },
     {
       "status": "ok",
@@ -8177,7 +8188,7 @@
       "rank": 25,
       "slug": "armaelllib",
       "nsfw": false,
-      "ms": 812
+      "ms": 799
     },
     {
       "status": "ok",
@@ -8188,7 +8199,7 @@
       "rank": 26,
       "slug": "chrysanthemumgarden",
       "nsfw": false,
-      "ms": 283
+      "ms": 258
     },
     {
       "status": "ok",
@@ -8199,7 +8210,7 @@
       "rank": 27,
       "slug": "justlightnovels",
       "nsfw": false,
-      "ms": 359
+      "ms": 310
     },
     {
       "status": "ok",
@@ -8221,7 +8232,7 @@
       "rank": 29,
       "slug": "cherreads",
       "nsfw": false,
-      "ms": 575
+      "ms": 600
     },
     {
       "status": "ok",
@@ -8232,7 +8243,7 @@
       "rank": 30,
       "slug": "wuxiaworld",
       "nsfw": false,
-      "ms": 722
+      "ms": 805
     },
     {
       "status": "ok",
@@ -8243,7 +8254,7 @@
       "rank": 31,
       "slug": "katreadingarchive",
       "nsfw": false,
-      "ms": 349
+      "ms": 318
     },
     {
       "status": "ok",
@@ -8254,7 +8265,7 @@
       "rank": 32,
       "slug": "asianovelnet",
       "nsfw": false,
-      "ms": 650
+      "ms": 692
     },
     {
       "status": "ok",
@@ -8265,7 +8276,7 @@
       "rank": 33,
       "slug": "royalroad",
       "nsfw": false,
-      "ms": 700
+      "ms": 705
     },
     {
       "status": "ok",
@@ -8276,7 +8287,7 @@
       "rank": 34,
       "slug": "wuxiaworldcom",
       "nsfw": false,
-      "ms": 202
+      "ms": 201
     },
     {
       "status": "ok",
@@ -8287,7 +8298,7 @@
       "rank": 35,
       "slug": "webnovelcom",
       "nsfw": false,
-      "ms": 681
+      "ms": 661
     },
     {
       "status": "ok",
@@ -8298,7 +8309,7 @@
       "rank": 36,
       "slug": "scribblehub",
       "nsfw": false,
-      "ms": 783
+      "ms": 732
     },
     {
       "status": "ok",
@@ -8309,7 +8320,7 @@
       "rank": 37,
       "slug": "allnovelfull",
       "nsfw": false,
-      "ms": 332
+      "ms": 357
     },
     {
       "status": "ok",
@@ -8320,7 +8331,7 @@
       "rank": 38,
       "slug": "woopread",
       "nsfw": false,
-      "ms": 417
+      "ms": 855
     },
     {
       "status": "ok",
@@ -8331,7 +8342,7 @@
       "rank": 39,
       "slug": "ranovel",
       "nsfw": false,
-      "ms": 2052
+      "ms": 1997
     },
     {
       "status": "ok",
@@ -8342,7 +8353,7 @@
       "rank": 40,
       "slug": "wuxiadreams",
       "nsfw": false,
-      "ms": 782
+      "ms": 776
     },
     {
       "status": "ok",
@@ -8353,7 +8364,7 @@
       "rank": 41,
       "slug": "novelpia",
       "nsfw": false,
-      "ms": 352
+      "ms": 307
     },
     {
       "status": "ok",
@@ -8364,7 +8375,7 @@
       "rank": 42,
       "slug": "9kafe",
       "nsfw": false,
-      "ms": 224
+      "ms": 199
     },
     {
       "status": "ok",
@@ -8375,18 +8386,7 @@
       "rank": 43,
       "slug": "wtrlab",
       "nsfw": false,
-      "ms": 481
-    },
-    {
-      "status": "ok",
-      "detail": "Unreachable",
-      "name": "MTL Novel",
-      "url": "https://www.mtlnovel.com/",
-      "section": "Novel Reading",
-      "rank": 44,
-      "slug": "mtlnovel",
-      "nsfw": false,
-      "ms": 36153
+      "ms": 383
     },
     {
       "status": "ok",
@@ -8397,7 +8397,7 @@
       "rank": 45,
       "slug": "lnmtl",
       "nsfw": false,
-      "ms": 452
+      "ms": 368
     },
     {
       "status": "ok",
@@ -8408,7 +8408,7 @@
       "rank": 46,
       "slug": "mtlnation",
       "nsfw": false,
-      "ms": 1066
+      "ms": 889
     },
     {
       "status": "ok",
@@ -8419,7 +8419,7 @@
       "rank": 47,
       "slug": "readnovelmtl",
       "nsfw": false,
-      "ms": 360
+      "ms": 320
     },
     {
       "status": "ok",
@@ -8430,7 +8430,7 @@
       "rank": 48,
       "slug": "requiemtls",
       "nsfw": false,
-      "ms": 683
+      "ms": 1539
     },
     {
       "status": "ok",
@@ -8441,7 +8441,7 @@
       "rank": 49,
       "slug": "novelhi",
       "nsfw": false,
-      "ms": 239
+      "ms": 227
     },
     {
       "status": "ok",
@@ -8452,7 +8452,7 @@
       "rank": 50,
       "slug": "mtlbooks",
       "nsfw": false,
-      "ms": 810
+      "ms": 781
     },
     {
       "status": "ok",
@@ -8463,7 +8463,7 @@
       "rank": 1,
       "slug": "AnimeMusicQuiz",
       "nsfw": false,
-      "ms": 607
+      "ms": 616
     },
     {
       "status": "ok",
@@ -8474,7 +8474,7 @@
       "rank": 2,
       "slug": "aniguessr",
       "nsfw": false,
-      "ms": 648
+      "ms": 684
     },
     {
       "status": "ok",
@@ -8485,7 +8485,7 @@
       "rank": 3,
       "slug": "chiakiquiz",
       "nsfw": false,
-      "ms": 394
+      "ms": 424
     },
     {
       "status": "ok",
@@ -8496,7 +8496,7 @@
       "rank": 4,
       "slug": "aniconnections",
       "nsfw": false,
-      "ms": 245
+      "ms": 258
     },
     {
       "status": "ok",
@@ -8507,7 +8507,7 @@
       "rank": 5,
       "slug": "erogemusicquiz",
       "nsfw": false,
-      "ms": 329
+      "ms": 351
     },
     {
       "status": "ok",
@@ -8518,7 +8518,7 @@
       "rank": 6,
       "slug": "guesstheopening",
       "nsfw": false,
-      "ms": 230
+      "ms": 307
     },
     {
       "status": "ok",
@@ -8529,7 +8529,7 @@
       "rank": 7,
       "slug": "animeopeningquiz",
       "nsfw": false,
-      "ms": 673
+      "ms": 660
     },
     {
       "status": "ok",
@@ -8540,7 +8540,7 @@
       "rank": 8,
       "slug": "animesongsorg",
       "nsfw": false,
-      "ms": 538
+      "ms": 550
     },
     {
       "status": "ok",
@@ -8551,7 +8551,7 @@
       "rank": 9,
       "slug": "animerdle",
       "nsfw": false,
-      "ms": 215
+      "ms": 216
     },
     {
       "status": "ok",
@@ -8562,7 +8562,7 @@
       "rank": 10,
       "slug": "animetrivia",
       "nsfw": false,
-      "ms": 383
+      "ms": 309
     },
     {
       "status": "ok",
@@ -8573,7 +8573,7 @@
       "rank": 11,
       "slug": "animeguess",
       "nsfw": false,
-      "ms": 385
+      "ms": 392
     },
     {
       "status": "ok",
@@ -8584,7 +8584,7 @@
       "rank": 1,
       "slug": "animestats",
       "nsfw": false,
-      "ms": 911
+      "ms": 833
     },
     {
       "status": "ok",
@@ -8595,7 +8595,7 @@
       "rank": 2,
       "slug": "animekarmalist",
       "nsfw": false,
-      "ms": 299
+      "ms": 241
     },
     {
       "status": "ok",
@@ -8606,7 +8606,7 @@
       "rank": 3,
       "slug": "anitrendz",
       "nsfw": false,
-      "ms": 804
+      "ms": 658
     },
     {
       "status": "ok",
@@ -8617,7 +8617,7 @@
       "rank": 4,
       "slug": "animecorner",
       "nsfw": false,
-      "ms": 383
+      "ms": 289
     },
     {
       "status": "ok",
@@ -8628,7 +8628,7 @@
       "rank": 5,
       "slug": "mangatumeo",
       "nsfw": false,
-      "ms": 352
+      "ms": 332
     },
     {
       "status": "ok",
@@ -8639,7 +8639,7 @@
       "rank": 6,
       "slug": "mangacodex",
       "nsfw": false,
-      "ms": 1221
+      "ms": 1214
     },
     {
       "status": "ok",
@@ -8650,7 +8650,7 @@
       "rank": 7,
       "slug": "jajanken",
       "nsfw": false,
-      "ms": 527
+      "ms": 595
     },
     {
       "status": "ok",
@@ -8661,7 +8661,7 @@
       "rank": 1,
       "slug": "livechart",
       "nsfw": false,
-      "ms": 363
+      "ms": 308
     },
     {
       "status": "ok",
@@ -8672,7 +8672,7 @@
       "rank": 2,
       "slug": "anichart",
       "nsfw": false,
-      "ms": 240
+      "ms": 204
     },
     {
       "status": "ok",
@@ -8683,7 +8683,7 @@
       "rank": 3,
       "slug": "syoboi",
       "nsfw": false,
-      "ms": 617
+      "ms": 514
     },
     {
       "status": "ok",
@@ -8694,7 +8694,7 @@
       "rank": 4,
       "slug": "animeschedule",
       "nsfw": false,
-      "ms": 539
+      "ms": 439
     },
     {
       "status": "ok",
@@ -8705,7 +8705,7 @@
       "rank": 5,
       "slug": "upcomingdubanime",
       "nsfw": false,
-      "ms": 677
+      "ms": 551
     },
     {
       "status": "ok",
@@ -8716,7 +8716,7 @@
       "rank": 6,
       "slug": "teamupdubschedule",
       "nsfw": false,
-      "ms": 250
+      "ms": 223
     },
     {
       "status": "ok",
@@ -8727,7 +8727,7 @@
       "rank": 7,
       "slug": "otakucalendar",
       "nsfw": false,
-      "ms": 901
+      "ms": 1288
     },
     {
       "status": "ok",
@@ -8738,7 +8738,7 @@
       "rank": 8,
       "slug": "lnrelease",
       "nsfw": false,
-      "ms": 150
+      "ms": 143
     },
     {
       "status": "ok",
@@ -8749,7 +8749,7 @@
       "rank": 9,
       "slug": "yattatachi",
       "nsfw": false,
-      "ms": 378
+      "ms": 369
     },
     {
       "status": "ok",
@@ -8760,7 +8760,7 @@
       "rank": 10,
       "slug": "animeairing",
       "nsfw": false,
-      "ms": 596
+      "ms": 528
     },
     {
       "status": "ok",
@@ -8771,7 +8771,7 @@
       "rank": 11,
       "slug": "anicountdown",
       "nsfw": false,
-      "ms": 454
+      "ms": 389
     },
     {
       "status": "ok",
@@ -8782,7 +8782,7 @@
       "rank": 12,
       "slug": "senpaimoe",
       "nsfw": false,
-      "ms": 816
+      "ms": 820
     },
     {
       "status": "ok",
@@ -8793,7 +8793,7 @@
       "rank": 13,
       "slug": "anicajp",
       "nsfw": false,
-      "ms": 771
+      "ms": 731
     },
     {
       "status": "ok",
@@ -8804,7 +8804,7 @@
       "rank": 1,
       "slug": "holodex",
       "nsfw": false,
-      "ms": 305
+      "ms": 208
     },
     {
       "status": "ok",
@@ -8815,7 +8815,7 @@
       "rank": 2,
       "slug": "amatsukaze",
       "nsfw": false,
-      "ms": 501
+      "ms": 594
     },
     {
       "status": "ok",
@@ -8826,7 +8826,7 @@
       "rank": 3,
       "slug": "vtubie",
       "nsfw": false,
-      "ms": 393
+      "ms": 492
     },
     {
       "status": "ok",
@@ -8837,7 +8837,7 @@
       "rank": 4,
       "slug": "hololist",
       "nsfw": false,
-      "ms": 497
+      "ms": 417
     },
     {
       "status": "ok",
@@ -8848,7 +8848,7 @@
       "rank": 5,
       "slug": "ragtagmoe",
       "nsfw": false,
-      "ms": 1333
+      "ms": 1083
     },
     {
       "status": "ok",
@@ -8859,7 +8859,7 @@
       "rank": 6,
       "slug": "patchwork",
       "nsfw": false,
-      "ms": 490
+      "ms": 316
     },
     {
       "status": "ok",
@@ -8870,7 +8870,7 @@
       "rank": 7,
       "slug": "asmrarchive",
       "nsfw": false,
-      "ms": 902
+      "ms": 905
     },
     {
       "status": "ok",
@@ -8881,7 +8881,7 @@
       "rank": 8,
       "slug": "ovumoe",
       "nsfw": false,
-      "ms": 645
+      "ms": 411
     },
     {
       "status": "ok",
@@ -8892,7 +8892,7 @@
       "rank": 9,
       "slug": "hololyzer",
       "nsfw": false,
-      "ms": 1820
+      "ms": 1892
     },
     {
       "status": "ok",
@@ -8903,7 +8903,7 @@
       "rank": 10,
       "slug": "mogu",
       "nsfw": false,
-      "ms": 724
+      "ms": 768
     },
     {
       "status": "ok",
@@ -8914,7 +8914,7 @@
       "rank": 11,
       "slug": "vrabi",
       "nsfw": false,
-      "ms": 182
+      "ms": 179
     },
     {
       "status": "ok",
@@ -8925,7 +8925,7 @@
       "rank": 12,
       "slug": "holoclips",
       "nsfw": false,
-      "ms": 421
+      "ms": 369
     },
     {
       "status": "ok",
@@ -8936,7 +8936,7 @@
       "rank": 13,
       "slug": "trackholo",
       "nsfw": false,
-      "ms": 612
+      "ms": 580
     },
     {
       "status": "ok",
@@ -8958,7 +8958,7 @@
       "rank": 15,
       "slug": "goodvtubersubs",
       "nsfw": false,
-      "ms": 256
+      "ms": 244
     },
     {
       "status": "ok",
@@ -8969,7 +8969,7 @@
       "rank": 16,
       "slug": "vtuberschedules",
       "nsfw": false,
-      "ms": 225
+      "ms": 248
     },
     {
       "status": "ok",
@@ -8980,7 +8980,7 @@
       "rank": 1,
       "slug": "cinebyapp",
       "nsfw": false,
-      "ms": 332
+      "ms": 338
     },
     {
       "status": "ok",
@@ -8991,7 +8991,7 @@
       "rank": 2,
       "slug": "shuttletv",
       "nsfw": false,
-      "ms": 480
+      "ms": 897
     },
     {
       "status": "ok",
@@ -9002,7 +9002,7 @@
       "rank": 3,
       "slug": "hydrahd",
       "nsfw": false,
-      "ms": 340
+      "ms": 323
     },
     {
       "status": "ok",
@@ -9013,7 +9013,7 @@
       "rank": 4,
       "slug": "m4uhd",
       "nsfw": false,
-      "ms": 776
+      "ms": 772
     },
     {
       "status": "ok",
@@ -9024,7 +9024,7 @@
       "rank": 5,
       "slug": "cinemaos",
       "nsfw": false,
-      "ms": 642
+      "ms": 736
     },
     {
       "status": "ok",
@@ -9035,7 +9035,7 @@
       "rank": 6,
       "slug": "watchroo",
       "nsfw": false,
-      "ms": 774
+      "ms": 862
     },
     {
       "status": "ok",
@@ -9046,7 +9046,7 @@
       "rank": 7,
       "slug": "vidboxto",
       "nsfw": false,
-      "ms": 564
+      "ms": 612
     },
     {
       "status": "ok",
@@ -9057,7 +9057,7 @@
       "rank": 8,
       "slug": "hexawatch",
       "nsfw": false,
-      "ms": 595
+      "ms": 392
     },
     {
       "status": "ok",
@@ -9068,7 +9068,7 @@
       "rank": 1,
       "slug": "japanesewithanimewiki",
       "nsfw": true,
-      "ms": 396
+      "ms": 425
     },
     {
       "status": "ok",
@@ -9079,7 +9079,7 @@
       "rank": 2,
       "slug": "wotaku",
       "nsfw": false,
-      "ms": 574
+      "ms": 396
     },
     {
       "status": "ok",
@@ -9090,7 +9090,7 @@
       "rank": 3,
       "slug": "anifillerlist",
       "nsfw": false,
-      "ms": 388
+      "ms": 1318
     },
     {
       "status": "ok",
@@ -9101,7 +9101,7 @@
       "rank": 4,
       "slug": "animefillerguide",
       "nsfw": false,
-      "ms": 498
+      "ms": 448
     },
     {
       "status": "ok",
@@ -9112,7 +9112,7 @@
       "rank": 5,
       "slug": "vnclub",
       "nsfw": false,
-      "ms": 661
+      "ms": 650
     },
     {
       "status": "ok",
@@ -9123,7 +9123,7 @@
       "rank": 6,
       "slug": "animechrono",
       "nsfw": false,
-      "ms": 926
+      "ms": 518
     },
     {
       "status": "ok",
@@ -9134,7 +9134,7 @@
       "rank": 7,
       "slug": "miyomi",
       "nsfw": false,
-      "ms": 365
+      "ms": 285
     },
     {
       "status": "ok",
@@ -9145,7 +9145,7 @@
       "rank": 8,
       "slug": "hentaitagsearch",
       "nsfw": true,
-      "ms": 358
+      "ms": 515
     },
     {
       "status": "ok",
@@ -9156,7 +9156,7 @@
       "rank": 9,
       "slug": "touhouwiki",
       "nsfw": false,
-      "ms": 459
+      "ms": 317
     },
     {
       "status": "ok",
@@ -9167,7 +9167,7 @@
       "rank": 10,
       "slug": "recommendmeanime",
       "nsfw": false,
-      "ms": 568
+      "ms": 387
     },
     {
       "status": "ok",
@@ -9178,7 +9178,7 @@
       "rank": 11,
       "slug": "fmhy",
       "nsfw": false,
-      "ms": 344
+      "ms": 180
     },
     {
       "status": "ok",
@@ -9189,7 +9189,7 @@
       "rank": 12,
       "slug": "indexfansubcar",
       "nsfw": false,
-      "ms": 365
+      "ms": 331
     },
     {
       "status": "ok",
@@ -9200,7 +9200,7 @@
       "rank": 13,
       "slug": "theindex",
       "nsfw": false,
-      "ms": 271
+      "ms": 319
     },
     {
       "status": "ok",
@@ -9211,7 +9211,7 @@
       "rank": 14,
       "slug": "quicksandscans",
       "nsfw": false,
-      "ms": 241
+      "ms": 178
     },
     {
       "status": "ok",
@@ -9222,7 +9222,7 @@
       "rank": 15,
       "slug": "fansubguide",
       "nsfw": false,
-      "ms": 847
+      "ms": 899
     },
     {
       "status": "ok",
@@ -9233,7 +9233,7 @@
       "rank": 16,
       "slug": "wdalf",
       "nsfw": false,
-      "ms": 378
+      "ms": 352
     },
     {
       "status": "ok",
@@ -9244,7 +9244,7 @@
       "rank": 17,
       "slug": "howtoanime",
       "nsfw": false,
-      "ms": 782
+      "ms": 653
     },
     {
       "status": "ok",
@@ -9255,7 +9255,7 @@
       "rank": 18,
       "slug": "animeguides",
       "nsfw": false,
-      "ms": 428
+      "ms": 395
     },
     {
       "status": "ok",
@@ -9266,7 +9266,7 @@
       "rank": 19,
       "slug": "encodemoe",
       "nsfw": false,
-      "ms": 213
+      "ms": 377
     },
     {
       "status": "ok",
@@ -9277,7 +9277,7 @@
       "rank": 20,
       "slug": "synthvinfo",
       "nsfw": false,
-      "ms": 276
+      "ms": 240
     },
     {
       "status": "ok",
@@ -9288,7 +9288,7 @@
       "rank": 21,
       "slug": "fuwanovelforum",
       "nsfw": false,
-      "ms": 778
+      "ms": 1330
     },
     {
       "status": "ok",
@@ -9299,31 +9299,31 @@
       "rank": 22,
       "slug": "trueharemcarrd",
       "nsfw": false,
-      "ms": 501
+      "ms": 503
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "Fandom - Anime",
       "url": "https://www.fandom.com/topics/anime",
       "section": "Wiki/Guides",
       "rank": 23,
       "slug": "fandomcom",
       "nsfw": false,
-      "ms": 523
+      "ms": 675
     }
   ],
   "sections": {
     "AMV": {
       "total": 6,
-      "up": 6,
-      "down": 0,
+      "up": 5,
+      "down": 1,
       "blocked": 0
     },
     "Anime Streaming": {
       "total": 70,
-      "up": 70,
-      "down": 0,
+      "up": 66,
+      "down": 4,
       "blocked": 0
     },
     "Apps": {
@@ -9364,8 +9364,8 @@
     },
     "Download": {
       "total": 48,
-      "up": 48,
-      "down": 0,
+      "up": 47,
+      "down": 1,
       "blocked": 0
     },
     "Forums/Community": {
@@ -9436,8 +9436,8 @@
     },
     "Novel Reading": {
       "total": 50,
-      "up": 50,
-      "down": 0,
+      "up": 49,
+      "down": 1,
       "blocked": 0
     },
     "Quiz": {
