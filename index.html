@@ -1,4 +1,4 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/kdbxweb@2.1.1/dist/kdbxweb.min.js"></script>
 <style>
-
+  
   :root {
     --accent: #FF00FF;
     --accent-rgb: 255, 0, 255;
@@ -119,6 +119,11 @@
     opacity: 0.25;
     user-select: none;
   }
+
+
+
+
+
 
   .btn-press:active {
     transform: scale(.96);
@@ -363,7 +368,7 @@
   .welcome-hero {
     text-align: center; padding: 40px 20px 28px;
   }
-
+  
   .welcome-icon {
     font-size: 2.6rem; line-height: 1; margin-bottom: 14px;
     color: var(--accent);
@@ -401,6 +406,8 @@
     color: var(--text);
     box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   }
+
+  
 
   /* ── Getting Started (compact) ── */
   .welcome-steps {
@@ -1056,141 +1063,8 @@
   .monitor-view .monitor-wrap .sec-cell { color: var(--muted); }
   .monitor-view .monitor-wrap .det-cell { color: var(--muted2); font-size: 0.72rem; }
   .monitor-view .monitor-updated { margin-top: 10px; color: var(--muted2); font-size: 0.72rem; text-align: right; }
+  .bars-cell .mc-bar{width:4px;height:10px;border-radius:2px;transition:all .3s}.bars-cell .mc-bar.up{background:#3fb950}.bars-cell .mc-bar.down{background:#f55e6a}.bars-cell .mc-bar.blocked{background:#d29922}.bars-cell .mc-bar.new{opacity:.7;transform:scaleY(1.15)}
 
-  .monitor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 14px;
-  }
-  .monitor-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 14px 14px 12px;
-    transition: border-color .15s var(--easing-out), transform .15s var(--easing-out);
-  }
-  .monitor-card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-1px);
-  }
-  .mc-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .mc-name-wrap {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-    overflow: hidden;
-  }
-  .mc-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 0 8px currentColor;
-    transition: background-color .2s, box-shadow .2s;
-  }
-  .mc-dot.up { background: var(--success); color: var(--success); }
-  .mc-dot.down { background: var(--danger); color: var(--danger); }
-  .mc-dot.blocked { background: #d29922; color: #d29922; }
-  .mc-dot.pending { background: var(--muted2); color: var(--muted2); box-shadow: none; }
-  .mc-name {
-    font-weight: 700;
-    font-size: 0.92rem;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .mc-ms {
-    flex-shrink: 0;
-    font-size: 0.68rem;
-    color: var(--muted);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 2px 7px;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: color .2s;
-  }
-  .mc-ms.down { color: var(--danger); }
-  .mc-url {
-    font-size: 0.74rem;
-    color: var(--muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 9px;
-    text-decoration: none;
-    display: block;
-  }
-  .mc-url:hover { color: var(--accent-text); }
-  .mc-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    height: 16px;
-    overflow: hidden;
-  }
-  .mc-bar {
-    flex: 1 1 auto;
-    min-width: 2px;
-    height: 100%;
-    border-radius: 1px;
-    background: var(--muted2);
-    opacity: 0.35;
-    transition: background-color .25s, opacity .25s;
-  }
-  .mc-bar.up { background: var(--success); opacity: 1; }
-  .mc-bar.down { background: var(--danger); opacity: 1; }
-  .mc-bar.blocked { background: #d29922; opacity: 1; }
-  .mc-bar.new {
-    animation: barIn .25s var(--easing-out);
-  }
-  @keyframes barIn {
-    from { transform: scaleY(0.2); opacity: 0; }
-    to { transform: scaleY(1); opacity: 1; }
-  }
-  .monitor-search-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .monitor-search-row input {
-    flex: 1 1 220px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 8px 12px;
-    color: var(--text);
-    font-size: 0.85rem;
-    outline: none;
-  }
-  .monitor-search-row input:focus { border-color: var(--border-hover); }
-  .monitor-live-badge {
-    font-size: 0.68rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-  }
-  .monitor-live-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--success);
-    box-shadow: 0 0 8px var(--success);
-    animation: pulse 2s infinite;
-  }
 
   @media (max-width: 640px) {
     .container { padding: 0 12px 40px; }
@@ -1224,7 +1098,7 @@
     .preset-name { font-size: 0.78rem; }
     .preset-tag { font-size: 0.55rem; padding: 1px 6px; }
     .preset-search { font-size: 0.75rem; padding: 8px 12px; min-height: 36px; margin-bottom: 10px; }
-
+    
     .suit-embed { min-height: calc(100dvh - 160px); }
     .suit-tabbar { padding: 5px 10px; gap: 4px; }
     .suit-tab-btn { font-size: 10px; padding: 4px 10px; min-height: 28px; gap: 3px; }
@@ -1275,6 +1149,8 @@
   .suit-panel .suit-results { flex: 1; display: flex; flex-direction: column; min-height: 0; }
   .suit-panel .suit-results .suit-listbox { flex: 1; max-height: none; min-height: 100px; }
   .vault-main { flex: 1; }
+
+
 
   .suit-tabbar { display: flex; align-items: center; gap: 5px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 6px 12px; background: rgba(17, 15, 28, 0.45); backdrop-filter: blur(18px) saturate(1.5); -webkit-backdrop-filter: blur(18px) saturate(1.5); border: 1px solid var(--border); border-radius: 13px; overscroll-behavior: contain; margin-bottom:12px; }
   .suit-tab-btn { background: rgba(var(--accent-rgb), 0.06); color: var(--accent-text); border: 1px solid transparent; padding: 6px 14px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; transition: all .28s; white-space: nowrap; flex-shrink: 0; min-height: 34px; border-radius: 6px; display: flex; align-items: center; gap: 5px; opacity: 0.7; }
@@ -1429,6 +1305,8 @@
   .helpful-entry-body a::after { content: ' ↗'; font-size: 0.7em; opacity: 0.45; transition: opacity .18s; }
   .helpful-entry-body a:hover { color: var(--accent-text); border-bottom-color: var(--accent); }
   .helpful-entry-body a:hover::after { opacity: 1; }
+
+  
 
   @media (max-width: 640px) {
     .helpful-entry-head { padding: 12px 14px 8px; }
@@ -10981,96 +10859,12 @@ var MONITOR_DATA = {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const LIST_KEY = 'sakura_list_data';
 const PRESETS_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/info.json';
 
 const CAT_META = {
   'movies-tv':    { label: 'Movies / TV',       emoji: '🎬' },
-  'anime':        { label: 'Anime',              emoji: '⛩�?'  },
+  'anime':        { label: 'Anime',              emoji: '⛩️'  },
   'hentai':       { label: 'Hentai',             emoji: '🔞' },
   'manga':        { label: 'Manga',              emoji: '📖' },
   'manhwa':       { label: 'Manhwa',             emoji: '🇰🇷' },
@@ -11080,26 +10874,26 @@ const CAT_META = {
   'games':        { label: 'Free Games',         emoji: '🎮' },
   'apps':         { label: 'Apps',               emoji: '📱' },
   'gacha':        { label: 'Gacha',              emoji: '🎰' },
-  'download':     { label: 'Download',           emoji: '⬇�?'  },
+  'download':     { label: 'Download',           emoji: '⬇️'  },
   'music':        { label: 'Music',              emoji: '🎵' },
-  'amv':          { label: 'AMV',                emoji: '🎞�?'  },
+  'amv':          { label: 'AMV',                emoji: '🎞️'  },
   'cosplay':      { label: 'Cosplay',            emoji: '🦸' },
   'schedule':     { label: 'Schedule',           emoji: '📅' },
-  'database':     { label: 'Database',           emoji: '🗃�?'  },
-  'tools':        { label: 'Tools',              emoji: '🛠�?'  },
+  'database':     { label: 'Database',           emoji: '🗃️'  },
+  'tools':        { label: 'Tools',              emoji: '🛠️'  },
   'quiz':         { label: 'Quiz',               emoji: '🧠' },
   'trends':       { label: 'Trends',             emoji: '📈' },
-  'guides':       { label: 'Guides',             emoji: '🗺�?'  },
+  'guides':       { label: 'Guides',             emoji: '🗺️'  },
   'western':      { label: 'Western',            emoji: '🤠' },
-  'imageboards':  { label: 'Imageboards',        emoji: '🖼�?'  },
+  'imageboards':  { label: 'Imageboards',        emoji: '🖼️'  },
   'vtuber':       { label: 'VTuber',             emoji: '🟣' },
   'forums':       { label: 'Forums',             emoji: '💬' },
   'xxx':          { label: 'XXX',                emoji: '🔞' },
   'sports':       { label: 'Sports',             emoji: '⚽' },
   'news':         { label: 'News',               emoji: '📰' },
-  'search':       { label: 'Search Engines',     emoji: '�?' },
+  'search':       { label: 'Search Engines',     emoji: '🔍' },
   'software':     { label: 'Software',           emoji: '💻' },
-  'other':        { label: 'Other',              emoji: '�?' },
+  'other':        { label: 'Other',              emoji: '📁' },
 };
 
 function loadData() {
@@ -11487,7 +11281,7 @@ function renderWelcomePage(si) {
     + '</div>'
 
     + '<div class="wl-donations">'
-    + '<h3>�?��? Donations</h3>'
+    + '<h3>❤️ Donations</h3>'
     + '<div class="wl-donations-body"><div class="wl-donations-body-inner">'
     + chipsHtml
     + '</div></div>'
@@ -11566,7 +11360,7 @@ function renderScriptTab(si) {
   let active = scriptSubTab;
   let subBar = '<div class="tabbar" style="margin-bottom:14px;padding:6px 10px">'
     + '<button class="tab-btn' + (active === 'script' ? ' active' : '') + '" onclick="switchScriptSubTab(\'script\')">📜 Script</button>'
-    + '<button class="tab-btn' + (active === 'features' ? ' active' : '') + '" onclick="switchScriptSubTab(\'features\')">�? Features</button>'
+    + '<button class="tab-btn' + (active === 'features' ? ' active' : '') + '" onclick="switchScriptSubTab(\'features\')">⭐ Features</button>'
     + '<button class="tab-btn' + (active === 'changelog' ? ' active' : '') + '" onclick="switchScriptSubTab(\'changelog\')">📋 Changelog</button>'
     + '</div>';
 
@@ -11619,32 +11413,32 @@ function renderFeaturesContent() {
       ['🔄', 'Full Automation', 'Complete buy + sell cycle. Runs 24/7 with slow, medium, and fast speeds. Includes auto-buy for shoe app drops.'],
       ['🤖', 'Semi Automation', 'Individual auto buy (slow/medium/fast) and auto sell toggles. Run buy or sell separately.'],
       ['📱', 'Shoe App Auto Buy', 'Watches for shoe drops and spams buy when they release. Standalone or inside Full Automation.'],
-      ['�?�?', 'Auto Dig', 'Digs for treasure at your plot. Risky mode teleports instead of walking.'],
+      ['⛏️', 'Auto Dig', 'Digs for treasure at your plot. Risky mode teleports instead of walking.'],
       ['🛒', 'PC Auto Buy', 'Auto buy for Player Catalog (PC) with slow, medium, and fast modes.'],
       ['🔔', 'Webhook Alerts', 'Sends buy, sell, and session stats to Discord. Detection alerts for game close, disconnects, errors, FPS drops, ping spikes.'],
       ['📊', 'Stats & Misc', 'Uptime, FPS, ping, notifications, black screen mode, noclip, flying, infinite jump, anti AFK.'],
       ['📋', 'Blacklist', 'Blacklist shoes by rarity (Common through Grail). Settings save between sessions.'],
     ])
     + section('Sneaker Con Shoe Sniper', [
-      ['�?', 'Scanner Modes', 'Snipe mode watches all tables. $1 mode buys cheap shoes. Walk-to-buy variants walk before buying.'],
+      ['🔍', 'Scanner Modes', 'Snipe mode watches all tables. $1 mode buys cheap shoes. Walk-to-buy variants walk before buying.'],
       ['📋', 'Shoe List', 'Shows every shoe for sale with stock x prices. Refresh to see current listings.'],
       ['💰', 'Sell Tab', 'Sell shoes at stock x price or fixed price. Fast list mode for quick listings.'],
-      ['⚙�?', 'Settings & Configs', 'Adjustable delays, price filters, stock y margin, overpay limit. Save/load config codes.'],
+      ['⚙️', 'Settings & Configs', 'Adjustable delays, price filters, stock y margin, overpay limit. Save/load config codes.'],
       ['🚫', 'Blacklist & Max Buy', 'Blacklist specific shoes. Set per-shoe max buy prices.'],
       ['📊', 'Stats', 'Money spent, shoes bought/sold, uptime, net profit. Webhook alerts on game close.'],
     ])
     + section('Ninja Legends', [
-      ['⚔�?', 'Farming', 'Auto-Swing, Auto-Sell, Auto-Full Sell, Auto-Chi, Auto-Pet Levels.'],
+      ['⚔️', 'Farming', 'Auto-Swing, Auto-Sell, Auto-Full Sell, Auto-Chi, Auto-Pet Levels.'],
       ['👹', 'Boss Farming', 'Auto-Robot, Eternal, Ancient, Santa, or All bosses. Teleports and attacks automatically.'],
       ['🛒', 'Auto Buy', 'Auto-Rank, Sword, Belt, Skills, Shurikens. Buys from every island.'],
-      ['�?�', 'Pet Stuff', 'Open crystals, Auto-Evolve, Eternalise, Immortalize, Legend, Elementalize. Sell by tier.'],
-      ['🛠�?', 'Misc', 'Fast/Slow Shuriken, Invisibility, Collect All Chests, Unlock Islands, Max Jumps, ESP.'],
-      ['🗺�?', 'Teleports', 'Any island, shop, skills shop, KOTH, training areas.'],
+      ['🐾', 'Pet Stuff', 'Open crystals, Auto-Evolve, Eternalise, Immortalize, Legend, Elementalize. Sell by tier.'],
+      ['🛠️', 'Misc', 'Fast/Slow Shuriken, Invisibility, Collect All Chests, Unlock Islands, Max Jumps, ESP.'],
+      ['🗺️', 'Teleports', 'Any island, shop, skills shop, KOTH, training areas.'],
     ])
     + section('[UPD] Sneaker Square', [
       ['💰', 'Auto Rob NPCs', 'Walks to plaza NPCs, holds rob prompt, collects money. Stuck detection and recovery.'],
       ['📦', 'Auto Box Opener', 'Presses E on configurable delay to open nearby boxes while robbing.'],
-      ['🗺�?', 'Zone System', 'Stays in plaza zone. Auto-walks you back if you leave. Progress bar shows rob status.'],
+      ['🗺️', 'Zone System', 'Stays in plaza zone. Auto-walks you back if you leave. Progress bar shows rob status.'],
     ])
     ;
 }
@@ -11820,10 +11614,10 @@ function renderChangelogContent() {
 }
 
 let HELPFUL_ICONS = {
-  'vpn': '🛡�?', 'proxy': '�?', 'download': '⬇�?', 'privacy': '🔒',
-  'ad block': '🚫', 'ad blocker': '🚫', 'torrent': '🔄', 'browser': '�?', 'tool': '🛠�?',
+  'vpn': '🛡️', 'proxy': '🌐', 'download': '⬇️', 'privacy': '🔒',
+  'ad block': '🚫', 'ad blocker': '🚫', 'torrent': '🔄', 'browser': '🌐', 'tool': '🛠️',
   'activator': '💻', 'windows': '💻', 'apk': '📱', 'android tv': '📺',
-  'android': '📱', 'tv box': '📺', 'game': '🎮', 'install': '⚙�?',
+  'android': '📱', 'tv box': '📺', 'game': '🎮', 'install': '⚙️',
 };
 function getHelpfulIcon(title) {
   let t = title.toLowerCase();
@@ -11888,6 +11682,8 @@ function fallbackCopy(text, btn) {
   document.body.removeChild(ta);
 }
 
+
+
 function getFaviconUrl(siteUrl) {
   try {
     const host = new URL(siteUrl).hostname;
@@ -11912,7 +11708,7 @@ function normalizeTags(tags) {
 function renderPresetPanel(section, si) {
   const sites = section.sites || [];
   let html = '';
-  html += '<input class="preset-search" id="ps-' + si + '" type="text" placeholder="�?  Search sites..." autocomplete="off" autocorrect="off" spellcheck="false" oninput="filterPresetPanel(' + si + ')">';
+  html += '<input class="preset-search" id="ps-' + si + '" type="text" placeholder="🔍  Search sites..." autocomplete="off" autocorrect="off" spellcheck="false" oninput="filterPresetPanel(' + si + ')">';
   html += '<div class="preset-count" id="pc-' + si + '">' + sites.length + ' site' + (sites.length !== 1 ? 's' : '') + '</div>';
   html += '<div class="preset-grid" id="pg-' + si + '">';
   sites.forEach(function(site) {
@@ -11950,10 +11746,11 @@ function filterPresetPanel(si) {
   if (countEl) countEl.textContent = visible + ' site' + (visible !== 1 ? 's' : '');
 }
 
+
 function autoEmoji(catId) {
   let id = catId.toLowerCase();
   if (id.indexOf('movie') !== -1 || id.indexOf('film') !== -1 || id.indexOf('tv') !== -1) return '🎬';
-  if (id.indexOf('anime') !== -1) return '⛩�?';
+  if (id.indexOf('anime') !== -1) return '⛩️';
   if (id.indexOf('manga') !== -1) return '📖';
   if (id.indexOf('manhwa') !== -1) return '🇰🇷';
   if (id.indexOf('novel') !== -1) return '📚';
@@ -11962,24 +11759,24 @@ function autoEmoji(catId) {
   if (id.indexOf('game') !== -1) return '🎮';
   if (id.indexOf('app') !== -1) return '📱';
   if (id.indexOf('gacha') !== -1) return '🎰';
-  if (id.indexOf('download') !== -1) return '⬇�?';
+  if (id.indexOf('download') !== -1) return '⬇️';
   if (id.indexOf('music') !== -1) return '🎵';
-  if (id.indexOf('amv') !== -1) return '🎞�?';
+  if (id.indexOf('amv') !== -1) return '🎞️';
   if (id.indexOf('cosplay') !== -1) return '🦸';
   if (id.indexOf('schedule') !== -1) return '📅';
-  if (id.indexOf('database') !== -1 || id.indexOf('db') !== -1) return '🗃�?';
-  if (id.indexOf('tool') !== -1) return '🛠�?';
+  if (id.indexOf('database') !== -1 || id.indexOf('db') !== -1) return '🗃️';
+  if (id.indexOf('tool') !== -1) return '🛠️';
   if (id.indexOf('quiz') !== -1) return '🧠';
   if (id.indexOf('trend') !== -1) return '📈';
-  if (id.indexOf('guide') !== -1) return '🗺�?';
+  if (id.indexOf('guide') !== -1) return '🗺️';
   if (id.indexOf('western') !== -1) return '🤠';
-  if (id.indexOf('image') !== -1 || id.indexOf('board') !== -1) return '🖼�?';
+  if (id.indexOf('image') !== -1 || id.indexOf('board') !== -1) return '🖼️';
   if (id.indexOf('vtuber') !== -1 || id.indexOf('vtube') !== -1) return '🟣';
   if (id.indexOf('forum') !== -1 || id.indexOf('community') !== -1) return '💬';
   if (id.indexOf('hentai') !== -1 || id.indexOf('adult') !== -1) return '🔞';
   if (id.indexOf('xxx') !== -1) return '🔞';
   if (id.indexOf('news') !== -1) return '📰';
-  if (id.indexOf('search') !== -1) return '�?';
+  if (id.indexOf('search') !== -1) return '🔍';
   if (id.indexOf('software') !== -1) return '💻';
   return '🔗';
 }
@@ -12055,7 +11852,7 @@ function toggleMode() {
         .catch(function(err) {
           let msg = err.message || String(err) || 'unknown error';
           console.error('ListView fetch failed:', err);
-          document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠�? Could not load list</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(msg) + '</p><p style="color:var(--muted);font-size:0.75rem;margin-top:12px">Make sure you have internet access, or load presets first.</p></div></div>';
+          document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Could not load list</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(msg) + '</p><p style="color:var(--muted);font-size:0.75rem;margin-top:12px">Make sure you have internet access, or load presets first.</p></div></div>';
         });
       return;
     }
@@ -12063,7 +11860,7 @@ function toggleMode() {
     render();
   } catch (err) {
     console.error('toggleMode error:', err);
-    document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠�? Error</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(err.message || String(err)) + '</p></div></div>';
+    document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Error</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(err.message || String(err)) + '</p></div></div>';
   }
 }
 
@@ -13072,11 +12869,11 @@ function renderSuitMode() {
 
     let suitHtml = '<div id="suit-root">'
       + '<div class="suit-tabbar" style="margin-bottom:16px;">'
-      + '<button class="suit-tab-btn active" onclick="suitSwitchTab(\'passwords\')">�? Passwords</button>'
+      + '<button class="suit-tab-btn active" onclick="suitSwitchTab(\'passwords\')">🔐 Passwords</button>'
       + '<button class="suit-tab-btn" onclick="suitSwitchTab(\'usernames\')">👤 Usernames</button>'
       + '<button class="suit-tab-btn" onclick="suitSwitchTab(\'pins\')">🔢 PINs</button>'
       + '<button class="suit-tab-btn" onclick="suitSwitchTab(\'email\')">📧 Email</button>'
-      + '<button class="suit-tab-btn" onclick="suitSwitchTab(\'vault\')">🗄�? Vault</button>'
+      + '<button class="suit-tab-btn" onclick="suitSwitchTab(\'vault\')">🗄️ Vault</button>'
       + '</div>'
 
       + '<div class="suit-panel panel active" id="suit-panel-passwords">'
@@ -13233,7 +13030,7 @@ function renderSuitMode() {
       + '<div class="suit-panel panel" id="suit-panel-vault">'
       + '<div id="suit-vault-locked">'
       + '<div class="suit-vault-lock">'
-      + '<div style="font-size:52px;color:var(--accent);text-shadow:0 0 24px var(--accent);">�?</div>'
+      + '<div style="font-size:52px;color:var(--accent);text-shadow:0 0 24px var(--accent);">🔐</div>'
       + '<div style="font-size:22px;font-weight:700;">KeePass Vault</div>'
       + '<div style="color:var(--muted);font-size:13px;text-align:center;max-width:380px;line-height:1.5;">'
       + 'AES-256 encrypted KeePass (.kdbx) vault. Your data never leaves your device.'
@@ -13256,7 +13053,7 @@ function renderSuitMode() {
       + '<span id="suit-vault-stats" style="font-size:12px;color:var(--muted);font-family:\'Inter\', sans-serif;"></span>'
       + '</div>'
       + '<div style="background:rgba(255,165,0,.08);border:1px solid #f59e0b;padding:8px 12px;font-size:11px;color:#f59e0b;font-family:\'Inter\', sans-serif;">'
-      + '⚠�? Remember to tap "Save .kdbx" after making changes.'
+      + '⚠️ Remember to tap "Save .kdbx" after making changes.'
       + '</div>'
       + '<div class="vault-main" style="display:flex;flex-direction:column;min-height:380px;">'
       + '<div class="suit-vault-sidebar" id="suit-vault-sidebar"></div>'
@@ -13279,7 +13076,7 @@ function renderSuitMode() {
       + '<div class="suit-form-row"><label>Password</label>'
       + '<div style="display:flex;gap:6px;flex-wrap:wrap;">'
       + '<input type="password" id="suit-ent-pw" class="suit-input" placeholder="••••••••" style="flex:1;min-width:100px;">'
-      + '<button class="suit-btn-ghost" onclick="suitToggleEntPw()" style="min-height:44px;">�?</button>'
+      + '<button class="suit-btn-ghost" onclick="suitToggleEntPw()" style="min-height:44px;">👁</button>'
       + '<button class="suit-btn-ghost" onclick="suitFillGenPassword()" style="min-height:44px;">Generate</button>'
       + '</div></div>'
       + '<div class="suit-form-row"><label>URL</label><input type="text" id="suit-ent-url" class="suit-input" placeholder="https://..."></div>'
@@ -13297,7 +13094,7 @@ function renderSuitMode() {
   } catch(err) {
     console.error('renderSuitMode error:', err);
     let p = document.getElementById('panels');
-    if(p) p.innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠�? Error loading Sakura\'s Suit</h3><p style="color:#ff6677;font-size:0.82rem">' + esc(err.message || String(err)) + '</p></div></div>';
+    if(p) p.innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Error loading Sakura\'s Suit</h3><p style="color:#ff6677;font-size:0.82rem">' + esc(err.message || String(err)) + '</p></div></div>';
   }
 }
 
@@ -13358,7 +13155,7 @@ function renderListMode() {
 
     let html = '<div class="panel active">';
 
-    html += '<input class="preset-search" id="listSearch" type="text" placeholder="�?  Search sites..." autocomplete="off" autocorrect="off" spellcheck="false">';
+    html += '<input class="preset-search" id="listSearch" type="text" placeholder="🔍  Search sites..." autocomplete="off" autocorrect="off" spellcheck="false">';
 
     html += '<div class="fl-bar">';
     html += '<div class="fl-select-wrap">';
@@ -13398,17 +13195,18 @@ function renderListMode() {
       var mtBtn = document.createElement('button');
       mtBtn.id = 'monitorToggle';
       mtBtn.className = 'fl-nsfw-toggle';
-      mtBtn.textContent = '\ud83d\udcca Monitor';
+      mtBtn.textContent = '📊 Monitor';
       mtBtn.style.cssText = 'margin-left:6px';
       mtBtn.addEventListener('click', function(e) { e.stopPropagation(); toggleMonitor(); });
       var nsfwToggle = flBar.querySelector('#listNsfwToggle');
       if (nsfwToggle) {
         flBar.insertBefore(mtBtn, nsfwToggle.nextSibling);
+        // Intercept NSFW toggle when monitor is active
         nsfwToggle.addEventListener('click', function(ev) {
           if (monitorActive) {
             ev.stopImmediatePropagation();
             listShowNSFW = !listShowNSFW;
-            this.textContent = listShowNSFW ? '\ud83d\udd1e Hide NSFW' : '\ud83d\udd1e Show NSFW';
+            this.textContent = listShowNSFW ? '🔞 Hide NSFW' : '🔞 Show NSFW';
             this.classList.toggle('active', listShowNSFW);
             renderMonitorSection();
           }
@@ -13416,6 +13214,7 @@ function renderListMode() {
       } else {
         flBar.appendChild(mtBtn);
       }
+      // Intercept category dropdown when monitor is active
       var catMenu = flBar.querySelector('#flCategory .fl-dd-menu');
       if (catMenu) {
         catMenu.addEventListener('click', function(ev) {
@@ -13437,7 +13236,8 @@ function renderListMode() {
     if (monitorActive) {
       renderMonitorSection();
       var bt = document.getElementById('monitorToggle');
-      if (bt) { bt.textContent = '\u2716 Close Monitor'; bt.classList.add('active'); }
+      if (bt) { bt.textContent = '✖ Close Monitor'; bt.classList.add('active'); }
+      // Restore category trigger text after rebuild
       if (listFilter && listFilter !== 'all') {
         var selItem = document.querySelector('.fl-dd-item.selected');
         var trig = document.querySelector('#flCategory .fl-trigger');
@@ -13446,7 +13246,7 @@ function renderListMode() {
     }
 
 
-        let ls = document.getElementById('listSearch');
+    let ls = document.getElementById('listSearch');
     if (ls) ls.addEventListener('input', filterListMode);
     let nt = document.getElementById('listNsfwToggle');
     if (nt) nt.addEventListener('click', toggleListNSFW);
@@ -13455,7 +13255,7 @@ function renderListMode() {
   } catch (err) {
     console.error('renderListMode error:', err);
     let p = document.getElementById('panels');
-    if (p) p.innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠�? Render error</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(err.message || String(err)) + '</p></div></div>';
+    if (p) p.innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Render error</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(err.message || String(err)) + '</p></div></div>';
   }
 }
 
@@ -13691,6 +13491,8 @@ function scrollTabs(dir) {
   bar.scrollBy({ left: amount, behavior: 'smooth' });
 }
 
+
+
 (function initCardEntrance() {
   const origRender = render;
   render = function() {
@@ -13719,10 +13521,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
 const MAIN_SAKURA_DATA = JSON.stringify([
   {
     "id": "welcome",
-    "title": "�?� Welcome",
+    "title": "🏠 Welcome",
     "entries": [
       {
         "id": "welcome-1",
@@ -13810,7 +13613,7 @@ const MAIN_SAKURA_DATA = JSON.stringify([
   },
   {
     "id": "common-issues",
-    "title": "⚠�? Common Issues",
+    "title": "⚠️ Common Issues",
     "entries": [
       {
         "id": "mqt54id3l4nd",
@@ -13827,7 +13630,6 @@ const MAIN_SAKURA_DATA = JSON.stringify([
     ]
   }
 ]);
-
 
 
 
