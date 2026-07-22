@@ -11242,7 +11242,18 @@ function navigateTo(path) {
           render();
           setTimeout(function() { applyListNav(category); }, 200);
         })
-        .catch(function() { toast('Could not load list', '#ff4466'); });
+        .catch(function() {
+          let fallback = buildFallbackSites();
+          if (fallback.length) {
+            listSites = fallback;
+            try { saveListToStorage(); } catch(e) {}
+            mode = 'list';
+            render();
+            setTimeout(function() { applyListNav(category); }, 200);
+            return;
+          }
+          toast('Could not load list', '#ff4466');
+        });
       return;
     }
     mode = 'list';
@@ -11987,6 +11998,28 @@ function buildListCard(site) {
   return h;
 }
 
+function buildFallbackSites() {
+  let out = [];
+  let sites = (typeof MONITOR_DATA !== 'undefined' && MONITOR_DATA && MONITOR_DATA.sites) ? MONITOR_DATA.sites : [];
+  sites.forEach(function(s) {
+    if (!s || !s.url) return;
+    let tags = [s.status === 'dead' ? 'Down' : 'Online'];
+    out.push({
+      url: s.url,
+      name: s.name,
+      section: s.section || 'Other',
+      nsfw: !!s.nsfw,
+      tags: tags,
+      avoid: false,
+      avoid_reason: '',
+      rank: s.rank || 0,
+      emoji: '',
+      pricing: ''
+    });
+  });
+  return out;
+}
+
 function extractSitesFromData() {
   let out = [];
   if (!data || !data.length) return out;
@@ -12039,6 +12072,15 @@ function toggleMode() {
           toast('Loaded ' + sites.length + ' sites', '#22c55e');
         })
         .catch(function(err) {
+          let fallback = buildFallbackSites();
+          if (fallback.length) {
+            listSites = fallback;
+            try { saveListToStorage(); } catch(e) {}
+            mode = 'list';
+            render();
+            toast('Loaded ' + fallback.length + ' sites (offline)', '#8b5cf6');
+            return;
+          }
           let msg = err.message || String(err) || 'unknown error';
           console.error('ListView fetch failed:', err);
           document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Could not load list</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(msg) + '</p><p style="color:var(--muted);font-size:0.75rem;margin-top:12px">Make sure you have internet access, or load presets first.</p></div></div>';
@@ -13830,6 +13872,21 @@ function initListDropdown() {
     bar.scrollLeft += delta;
     window.updateTabScrollButtons();
   }, { passive: false });
+
+  // Touch swipe for mobile
+  let touchStartX = 0, touchStartScroll = 0;
+  bar.addEventListener('touchstart', (e) => {
+    if (bar.scrollWidth <= bar.clientWidth) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartScroll = bar.scrollLeft;
+  }, { passive: true });
+
+  bar.addEventListener('touchmove', (e) => {
+    if (bar.scrollWidth <= bar.clientWidth) return;
+    const dx = touchStartX - e.touches[0].clientX;
+    bar.scrollLeft = touchStartScroll + dx;
+    window.updateTabScrollButtons();
+  }, { passive: true });
 
   bar.addEventListener('scroll', window.updateTabScrollButtons);
   window.addEventListener('resize', window.updateTabScrollButtons);
