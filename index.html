@@ -925,6 +925,44 @@
     border-radius: 4px; padding: 3px 8px; white-space: nowrap;
     font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.5px;
   }
+  .preset-meta {
+    display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+  }
+  .preset-avoid-badge {
+    font-size: 0.68rem; color: #ff4466;
+    background: rgba(255, 68, 102, 0.12); border: 1px solid rgba(255, 68, 102, 0.30);
+    border-radius: 4px; padding: 3px 8px;
+    font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1.3;
+  }
+  .preset-avoid {
+    border-color: rgba(255, 68, 102, 0.2) !important;
+    background: rgba(255, 68, 102, 0.04) !important;
+  }
+  .preset-avoid:hover {
+    border-color: rgba(255, 68, 102, 0.4) !important;
+    background: rgba(255, 68, 102, 0.08) !important;
+  }
+  .preset-pricing {
+    font-size: 0.65rem; color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.07); border: 1px solid rgba(var(--accent-rgb), 0.12);
+    border-radius: 4px; padding: 3px 8px; white-space: nowrap;
+    font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 0.3px;
+  }
+  .preset-section-tag {
+    font-size: 0.65rem; color: #a78bfa;
+    background: rgba(138, 108, 255, 0.07); border: 1px solid rgba(138, 108, 255, 0.12);
+    border-radius: 4px; padding: 3px 8px; white-space: nowrap;
+    font-family: 'Inter', sans-serif; letter-spacing: 0.3px;
+  }
+  .preset-card:hover .preset-section-tag {
+    background: rgba(138, 108, 255, 0.12); color: #c4b5fd;
+  }
+  .preset-tag-more {
+    color: var(--muted) !important;
+    border-color: rgba(var(--accent-rgb), 0.06) !important;
+    background: rgba(var(--accent-rgb), 0.03) !important;
+  }
   .preset-arrow {
     font-size: 0.9rem; color: rgba(var(--accent-rgb), 0.25);
     flex-shrink: 0; transition: color .25s, transform .25s; position: relative; z-index: 1;
@@ -1013,7 +1051,19 @@
   }
   .fl-nsfw-toggle:hover { background: rgba(var(--danger-rgb), 0.13); border-color: rgba(var(--danger-rgb), 0.30); }
   .fl-nsfw-toggle.active { background: rgba(var(--danger-rgb), 0.18); border-color: rgba(var(--danger-rgb), 0.40); }
+  .fl-avoid-toggle {
+    background: rgba(255, 68, 102, 0.08); border: 1px solid rgba(255, 68, 102, 0.20);
+    border-radius: var(--radius-lg); color: #ff4466;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.8px;
+    padding: 8px 16px; text-transform: uppercase;
+    min-height: 40px; white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .fl-avoid-toggle:hover { background: rgba(255, 68, 102, 0.15); border-color: rgba(255, 68, 102, 0.35); }
+  .fl-avoid-toggle.active { background: rgba(255, 68, 102, 0.22); border-color: rgba(255, 68, 102, 0.45); box-shadow: 0 0 20px rgba(255, 68, 102, 0.15); }
   .fl-section { margin-bottom: 32px; }
+.fl-hide { display: none !important; }
   .fl-section-header {
     font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800;
     letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-text);
@@ -1063,7 +1113,7 @@
   .monitor-view .monitor-wrap .sec-cell { color: var(--muted); }
   .monitor-view .monitor-wrap .det-cell { color: var(--muted2); font-size: 0.72rem; }
   .monitor-view .monitor-updated { margin-top: 10px; color: var(--muted2); font-size: 0.72rem; text-align: right; }
-  .bars-cell .mc-bar{width:4px;height:10px;border-radius:2px;transition:all .3s}.bars-cell .mc-bar.up{background:#3fb950}.bars-cell .mc-bar.down{background:#f55e6a}.bars-cell .mc-bar.blocked{background:#d29922}.bars-cell .mc-bar.new{opacity:.7;transform:scaleY(1.15)}
+  
 
 
   @media (max-width: 640px) {
@@ -1377,58 +1427,37 @@ let mode = 'info';
 let listSites = null;
 let listFilter = 'all';
 let listShowNSFW = false;
+let listShowAvoid = false;
 
 var MONITOR_DATA = {
-  "updated": "2026-07-01 07:04:45 UTC",
+  "updated": "2026-07-04 08:41:29 UTC",
   "total": 846,
-  "up": 839,
-  "down": 7,
+  "up": 834,
+  "down": 12,
   "blocked": 0,
   "skipped": 0,
   "sites": [
     {
       "status": "dead",
-      "detail": "Timeout",
-      "name": "AKROSS",
-      "url": "https://www.akross.ru/index.cgi?l=e",
-      "section": "AMV",
-      "rank": 2,
-      "slug": "akross",
+      "detail": "HTTP 520 (Server Error)",
+      "name": "AnimeHub",
+      "url": "https://animehub.ac/",
+      "section": "Anime Streaming",
+      "rank": 27,
+      "slug": "AnimeHub",
       "nsfw": false,
-      "ms": 45702
+      "ms": 1017
     },
     {
       "status": "dead",
-      "detail": "Timeout",
-      "name": "KickAssAnime",
-      "url": "https://kaa.lt/",
+      "detail": "HTTP 502 (Server Error)",
+      "name": "Anime-Loads",
+      "url": "https://www.anime-loads.org/",
       "section": "Anime Streaming",
-      "rank": 14,
-      "slug": "KickAssAnime",
+      "rank": 34,
+      "slug": "animeloads",
       "nsfw": false,
-      "ms": 45440
-    },
-    {
-      "status": "dead",
-      "detail": "Timeout",
-      "name": "Anidap",
-      "url": "https://anidap.se/home",
-      "section": "Anime Streaming",
-      "rank": 24,
-      "slug": "anidap",
-      "nsfw": false,
-      "ms": 45300
-    },
-    {
-      "status": "dead",
-      "detail": "Timeout",
-      "name": "AnimeKizz",
-      "url": "https://animekizz.live/",
-      "section": "Anime Streaming",
-      "rank": 43,
-      "slug": "animekizz",
-      "nsfw": false,
-      "ms": 45339
+      "ms": 1216
     },
     {
       "status": "dead",
@@ -1439,7 +1468,29 @@ var MONITOR_DATA = {
       "rank": 64,
       "slug": "animeepisodeseries",
       "nsfw": false,
-      "ms": 36196
+      "ms": 36144
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 520 (Server Error)",
+      "name": "Asianc TV",
+      "url": "https://asianctv.cc",
+      "section": "Asian Drama",
+      "rank": 2,
+      "slug": "asianctvco",
+      "nsfw": false,
+      "ms": 28817
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 502 (Server Error)",
+      "name": "Anime-Loads",
+      "url": "https://www.anime-loads.org/asialive",
+      "section": "Asian Drama",
+      "rank": 8,
+      "slug": "animeloadsdrama",
+      "nsfw": false,
+      "ms": 1276
     },
     {
       "status": "dead",
@@ -1450,7 +1501,62 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "coolsanime",
       "nsfw": false,
-      "ms": 36165
+      "ms": 36154
+    },
+    {
+      "status": "dead",
+      "detail": "Timeout",
+      "name": "HentaiZap",
+      "url": "https://hentaizap.com/",
+      "section": "Hentai Reading",
+      "rank": 24,
+      "slug": "hentaizap",
+      "nsfw": true,
+      "ms": 45207
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 520 (Server Error)",
+      "name": "Caitlin.top",
+      "url": "https://caitlin.top/index.php?route=comic/list",
+      "section": "Hentai Reading",
+      "rank": 25,
+      "slug": "caitlin",
+      "nsfw": true,
+      "ms": 2523
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 503 (Server Error)",
+      "name": "GlobeTV",
+      "url": "https://globetv.app/",
+      "section": "Live TV & Sports",
+      "rank": 8,
+      "slug": "globetv",
+      "nsfw": false,
+      "ms": 922
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 503 (Server Error)",
+      "name": "Reset Scans",
+      "url": "https://reset-scans.org/",
+      "section": "Manhwa Reading",
+      "rank": 46,
+      "slug": "resetscans",
+      "nsfw": false,
+      "ms": 1423
+    },
+    {
+      "status": "dead",
+      "detail": "HTTP 522 (Server Error)",
+      "name": "Spenflix",
+      "url": "https://watch.spencerdevs.xyz/",
+      "section": "Movies & TV Streaming",
+      "rank": 6,
+      "slug": "spenflix",
+      "nsfw": false,
+      "ms": 34800
     },
     {
       "status": "dead",
@@ -1461,18 +1567,29 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "mtlnovel",
       "nsfw": false,
-      "ms": 36128
+      "ms": 36193
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "AnimeMusicVideos.org",
       "url": "https://www.animemusicvideos.org/",
       "section": "AMV",
       "rank": 1,
       "slug": "amvorg",
       "nsfw": false,
-      "ms": 1553
+      "ms": 527
+    },
+    {
+      "status": "ok",
+      "detail": "HTTP 200",
+      "name": "AKROSS",
+      "url": "https://www.akross.ru/index.cgi?l=e",
+      "section": "AMV",
+      "rank": 2,
+      "slug": "akross",
+      "nsfw": false,
+      "ms": 782
     },
     {
       "status": "ok",
@@ -1483,7 +1600,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "amvnews",
       "nsfw": false,
-      "ms": 3469
+      "ms": 1570
     },
     {
       "status": "ok",
@@ -1494,7 +1611,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "hmvmaniaamv",
       "nsfw": true,
-      "ms": 1348
+      "ms": 574
     },
     {
       "status": "ok",
@@ -1505,7 +1622,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "amvhell",
       "nsfw": false,
-      "ms": 1206
+      "ms": 641
     },
     {
       "status": "ok",
@@ -1516,7 +1633,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "animeclips",
       "nsfw": false,
-      "ms": 516
+      "ms": 661
     },
     {
       "status": "ok",
@@ -1527,7 +1644,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "anikoto",
       "nsfw": false,
-      "ms": 528
+      "ms": 380
     },
     {
       "status": "ok",
@@ -1538,7 +1655,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "animepahe",
       "nsfw": false,
-      "ms": 705
+      "ms": 534
     },
     {
       "status": "ok",
@@ -1549,18 +1666,18 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "AllAnime",
       "nsfw": false,
-      "ms": 571
+      "ms": 453
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "Re:Anime",
       "url": "https://reanime.to/home",
       "section": "Anime Streaming",
       "rank": 4,
       "slug": "reanime",
       "nsfw": false,
-      "ms": 1060
+      "ms": 676
     },
     {
       "status": "ok",
@@ -1571,7 +1688,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "animetsu",
       "nsfw": false,
-      "ms": 1083
+      "ms": 573
     },
     {
       "status": "ok",
@@ -1582,7 +1699,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "miruro",
       "nsfw": false,
-      "ms": 722
+      "ms": 600
     },
     {
       "status": "ok",
@@ -1593,7 +1710,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "anizone",
       "nsfw": false,
-      "ms": 1214
+      "ms": 1108
     },
     {
       "status": "ok",
@@ -1604,7 +1721,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "anitakuto",
       "nsfw": false,
-      "ms": 1525
+      "ms": 1199
     },
     {
       "status": "ok",
@@ -1615,18 +1732,18 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "senshi",
       "nsfw": false,
-      "ms": 602
+      "ms": 1020
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "AniDB",
       "url": "https://anidb.app/home",
       "section": "Anime Streaming",
       "rank": 10,
       "slug": "anidbstream",
       "nsfw": false,
-      "ms": 732
+      "ms": 525
     },
     {
       "status": "ok",
@@ -1637,7 +1754,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "animeverse",
       "nsfw": false,
-      "ms": 631
+      "ms": 1547
     },
     {
       "status": "ok",
@@ -1648,7 +1765,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "uniquestream",
       "nsfw": false,
-      "ms": 425
+      "ms": 415
     },
     {
       "status": "ok",
@@ -1659,7 +1776,18 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "animenexus",
       "nsfw": false,
-      "ms": 772
+      "ms": 743
+    },
+    {
+      "status": "ok",
+      "detail": "HTTP 200",
+      "name": "KickAssAnime",
+      "url": "https://kaa.lt/",
+      "section": "Anime Streaming",
+      "rank": 14,
+      "slug": "KickAssAnime",
+      "nsfw": false,
+      "ms": 996
     },
     {
       "status": "ok",
@@ -1670,7 +1798,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "AnimeOnsen",
       "nsfw": false,
-      "ms": 712
+      "ms": 729
     },
     {
       "status": "ok",
@@ -1681,7 +1809,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "anifyto",
       "nsfw": false,
-      "ms": 730
+      "ms": 1732
     },
     {
       "status": "ok",
@@ -1692,7 +1820,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "animedefenders",
       "nsfw": false,
-      "ms": 375
+      "ms": 388
     },
     {
       "status": "ok",
@@ -1703,7 +1831,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "anisnatch",
       "nsfw": false,
-      "ms": 336
+      "ms": 242
     },
     {
       "status": "ok",
@@ -1714,7 +1842,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "otakuu",
       "nsfw": false,
-      "ms": 19654
+      "ms": 360
     },
     {
       "status": "ok",
@@ -1725,7 +1853,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "AnimeParadise",
       "nsfw": false,
-      "ms": 846
+      "ms": 394
     },
     {
       "status": "ok",
@@ -1736,7 +1864,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "animestreamio",
       "nsfw": false,
-      "ms": 1368
+      "ms": 1611
     },
     {
       "status": "ok",
@@ -1747,7 +1875,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "123animes",
       "nsfw": false,
-      "ms": 799
+      "ms": 776
     },
     {
       "status": "ok",
@@ -1758,7 +1886,18 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "AnimeHeaven",
       "nsfw": false,
-      "ms": 412
+      "ms": 352
+    },
+    {
+      "status": "ok",
+      "detail": "HTTP 200",
+      "name": "Anidap",
+      "url": "https://anidap.se/home",
+      "section": "Anime Streaming",
+      "rank": 24,
+      "slug": "anidap",
+      "nsfw": false,
+      "ms": 632
     },
     {
       "status": "ok",
@@ -1769,7 +1908,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "lunaranime",
       "nsfw": false,
-      "ms": 372
+      "ms": 520
     },
     {
       "status": "ok",
@@ -1780,18 +1919,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "ANIMEGG",
       "nsfw": false,
-      "ms": 483
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "AnimeHub",
-      "url": "https://animehub.ac/",
-      "section": "Anime Streaming",
-      "rank": 27,
-      "slug": "AnimeHub",
-      "nsfw": false,
-      "ms": 677
+      "ms": 397
     },
     {
       "status": "ok",
@@ -1802,7 +1930,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "Moopa",
       "nsfw": false,
-      "ms": 1418
+      "ms": 1368
     },
     {
       "status": "ok",
@@ -1813,7 +1941,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "1anime",
       "nsfw": false,
-      "ms": 1128
+      "ms": 1247
     },
     {
       "status": "ok",
@@ -1824,18 +1952,18 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "anicore",
       "nsfw": false,
-      "ms": 204
+      "ms": 1356
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Animotvslash",
       "url": "https://www.animotvslash.org/",
       "section": "Anime Streaming",
       "rank": 31,
       "slug": "animotvslash",
       "nsfw": false,
-      "ms": 1036
+      "ms": 252
     },
     {
       "status": "ok",
@@ -1846,7 +1974,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "AniWorld",
       "nsfw": false,
-      "ms": 470
+      "ms": 422
     },
     {
       "status": "ok",
@@ -1857,18 +1985,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "fireanime",
       "nsfw": false,
-      "ms": 792
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "Anime-Loads",
-      "url": "https://www.anime-loads.org/",
-      "section": "Anime Streaming",
-      "rank": 34,
-      "slug": "animeloads",
-      "nsfw": false,
-      "ms": 463
+      "ms": 1119
     },
     {
       "status": "ok",
@@ -1879,7 +1996,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "WCO",
       "nsfw": false,
-      "ms": 400
+      "ms": 725
     },
     {
       "status": "ok",
@@ -1890,7 +2007,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "kisskhanime",
       "nsfw": true,
-      "ms": 329
+      "ms": 572
     },
     {
       "status": "ok",
@@ -1901,7 +2018,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "otakustreamers",
       "nsfw": false,
-      "ms": 671
+      "ms": 1059
     },
     {
       "status": "ok",
@@ -1912,7 +2029,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "AnimeNoSub",
       "nsfw": false,
-      "ms": 991
+      "ms": 883
     },
     {
       "status": "ok",
@@ -1923,7 +2040,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "kimoitv",
       "nsfw": false,
-      "ms": 801
+      "ms": 706
     },
     {
       "status": "ok",
@@ -1934,7 +2051,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "av1please",
       "nsfw": false,
-      "ms": 758
+      "ms": 707
     },
     {
       "status": "ok",
@@ -1945,7 +2062,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "animesheaven",
       "nsfw": false,
-      "ms": 443
+      "ms": 436
     },
     {
       "status": "ok",
@@ -1956,7 +2073,18 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "animedex",
       "nsfw": false,
-      "ms": 1763
+      "ms": 498
+    },
+    {
+      "status": "ok",
+      "detail": "HTTP 200",
+      "name": "AnimeKizz",
+      "url": "https://animekizz.live/",
+      "section": "Anime Streaming",
+      "rank": 43,
+      "slug": "animekizz",
+      "nsfw": false,
+      "ms": 467
     },
     {
       "status": "ok",
@@ -1967,7 +2095,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "justanime",
       "nsfw": false,
-      "ms": 772
+      "ms": 810
     },
     {
       "status": "ok",
@@ -1978,7 +2106,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "fanime",
       "nsfw": false,
-      "ms": 687
+      "ms": 648
     },
     {
       "status": "ok",
@@ -1989,7 +2117,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "animerulz",
       "nsfw": false,
-      "ms": 776
+      "ms": 764
     },
     {
       "status": "ok",
@@ -2000,7 +2128,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "animeyubi",
       "nsfw": false,
-      "ms": 771
+      "ms": 762
     },
     {
       "status": "ok",
@@ -2011,7 +2139,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "anivibeto",
       "nsfw": false,
-      "ms": 613
+      "ms": 621
     },
     {
       "status": "ok",
@@ -2022,7 +2150,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "Animelon",
       "nsfw": false,
-      "ms": 252
+      "ms": 226
     },
     {
       "status": "ok",
@@ -2033,7 +2161,7 @@ var MONITOR_DATA = {
       "rank": 50,
       "slug": "yomito",
       "nsfw": false,
-      "ms": 802
+      "ms": 218
     },
     {
       "status": "ok",
@@ -2044,7 +2172,7 @@ var MONITOR_DATA = {
       "rank": 51,
       "slug": "anikotoclones",
       "nsfw": false,
-      "ms": 1013
+      "ms": 1010
     },
     {
       "status": "ok",
@@ -2055,7 +2183,7 @@ var MONITOR_DATA = {
       "rank": 52,
       "slug": "animegers",
       "nsfw": false,
-      "ms": 553
+      "ms": 2047
     },
     {
       "status": "ok",
@@ -2066,7 +2194,7 @@ var MONITOR_DATA = {
       "rank": 53,
       "slug": "kawaiianime",
       "nsfw": false,
-      "ms": 594
+      "ms": 528
     },
     {
       "status": "ok",
@@ -2077,7 +2205,7 @@ var MONITOR_DATA = {
       "rank": 54,
       "slug": "anigum",
       "nsfw": false,
-      "ms": 402
+      "ms": 368
     },
     {
       "status": "ok",
@@ -2088,7 +2216,7 @@ var MONITOR_DATA = {
       "rank": 55,
       "slug": "anistream",
       "nsfw": false,
-      "ms": 397
+      "ms": 613
     },
     {
       "status": "ok",
@@ -2099,7 +2227,7 @@ var MONITOR_DATA = {
       "rank": 56,
       "slug": "aniwaveclones",
       "nsfw": false,
-      "ms": 518
+      "ms": 809
     },
     {
       "status": "ok",
@@ -2110,7 +2238,7 @@ var MONITOR_DATA = {
       "rank": 57,
       "slug": "oceanveilnet",
       "nsfw": false,
-      "ms": 190
+      "ms": 164
     },
     {
       "status": "ok",
@@ -2121,7 +2249,7 @@ var MONITOR_DATA = {
       "rank": 58,
       "slug": "retrocrush",
       "nsfw": false,
-      "ms": 400
+      "ms": 360
     },
     {
       "status": "ok",
@@ -2132,7 +2260,7 @@ var MONITOR_DATA = {
       "rank": 59,
       "slug": "aniversehd",
       "nsfw": false,
-      "ms": 404
+      "ms": 361
     },
     {
       "status": "ok",
@@ -2143,7 +2271,7 @@ var MONITOR_DATA = {
       "rank": 60,
       "slug": "shinora",
       "nsfw": false,
-      "ms": 726
+      "ms": 337
     },
     {
       "status": "ok",
@@ -2165,7 +2293,7 @@ var MONITOR_DATA = {
       "rank": 62,
       "slug": "databasegdriveplayer",
       "nsfw": false,
-      "ms": 502
+      "ms": 651
     },
     {
       "status": "ok",
@@ -2187,7 +2315,7 @@ var MONITOR_DATA = {
       "rank": 65,
       "slug": "kayoanimetv",
       "nsfw": false,
-      "ms": 1194
+      "ms": 1180
     },
     {
       "status": "ok",
@@ -2198,7 +2326,7 @@ var MONITOR_DATA = {
       "rank": 66,
       "slug": "animeworldin",
       "nsfw": true,
-      "ms": 335
+      "ms": 320
     },
     {
       "status": "ok",
@@ -2209,7 +2337,7 @@ var MONITOR_DATA = {
       "rank": 67,
       "slug": "animedekho",
       "nsfw": false,
-      "ms": 975
+      "ms": 1024
     },
     {
       "status": "ok",
@@ -2220,7 +2348,7 @@ var MONITOR_DATA = {
       "rank": 68,
       "slug": "yenime",
       "nsfw": false,
-      "ms": 492
+      "ms": 475
     },
     {
       "status": "ok",
@@ -2231,7 +2359,7 @@ var MONITOR_DATA = {
       "rank": 69,
       "slug": "anistream",
       "nsfw": false,
-      "ms": 599
+      "ms": 580
     },
     {
       "status": "ok",
@@ -2242,7 +2370,7 @@ var MONITOR_DATA = {
       "rank": 70,
       "slug": "hianime",
       "nsfw": false,
-      "ms": 1927
+      "ms": 1710
     },
     {
       "status": "ok",
@@ -2253,7 +2381,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "mihon",
       "nsfw": false,
-      "ms": 229
+      "ms": 192
     },
     {
       "status": "ok",
@@ -2264,7 +2392,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "kotatsuapp",
       "nsfw": false,
-      "ms": 694
+      "ms": 523
     },
     {
       "status": "ok",
@@ -2275,7 +2403,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "komikkumihon",
       "nsfw": false,
-      "ms": 670
+      "ms": 499
     },
     {
       "status": "ok",
@@ -2286,7 +2414,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "aniyomi",
       "nsfw": false,
-      "ms": 291
+      "ms": 218
     },
     {
       "status": "ok",
@@ -2297,7 +2425,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "tachiyomisy",
       "nsfw": false,
-      "ms": 196
+      "ms": 126
     },
     {
       "status": "ok",
@@ -2308,7 +2436,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "mangayomi",
       "nsfw": false,
-      "ms": 602
+      "ms": 465
     },
     {
       "status": "ok",
@@ -2319,7 +2447,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "anymex",
       "nsfw": false,
-      "ms": 265
+      "ms": 166
     },
     {
       "status": "ok",
@@ -2330,7 +2458,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "anikku",
       "nsfw": false,
-      "ms": 135
+      "ms": 206
     },
     {
       "status": "ok",
@@ -2341,7 +2469,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "cloudstream",
       "nsfw": false,
-      "ms": 502
+      "ms": 552
     },
     {
       "status": "ok",
@@ -2352,7 +2480,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "miru",
       "nsfw": false,
-      "ms": 276
+      "ms": 192
     },
     {
       "status": "ok",
@@ -2363,7 +2491,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "lnreader",
       "nsfw": false,
-      "ms": 250
+      "ms": 439
     },
     {
       "status": "ok",
@@ -2374,7 +2502,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "quicknovel",
       "nsfw": false,
-      "ms": 585
+      "ms": 472
     },
     {
       "status": "ok",
@@ -2385,7 +2513,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "yokai",
       "nsfw": false,
-      "ms": 539
+      "ms": 566
     },
     {
       "status": "ok",
@@ -2396,7 +2524,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "manatan",
       "nsfw": false,
-      "ms": 15264
+      "ms": 15231
     },
     {
       "status": "ok",
@@ -2407,7 +2535,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "seanime",
       "nsfw": false,
-      "ms": 1298
+      "ms": 1249
     },
     {
       "status": "ok",
@@ -2418,7 +2546,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "tsundoku",
       "nsfw": false,
-      "ms": 159
+      "ms": 139
     },
     {
       "status": "ok",
@@ -2429,7 +2557,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "mirujs",
       "nsfw": false,
-      "ms": 204
+      "ms": 181
     },
     {
       "status": "ok",
@@ -2440,7 +2568,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "tachidesk",
       "nsfw": false,
-      "ms": 715
+      "ms": 564
     },
     {
       "status": "ok",
@@ -2451,7 +2579,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "houdoku",
       "nsfw": false,
-      "ms": 363
+      "ms": 315
     },
     {
       "status": "ok",
@@ -2462,7 +2590,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "fmd2",
       "nsfw": false,
-      "ms": 705
+      "ms": 493
     },
     {
       "status": "ok",
@@ -2473,7 +2601,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "hakuneko",
       "nsfw": false,
-      "ms": 264
+      "ms": 192
     },
     {
       "status": "ok",
@@ -2484,7 +2612,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "venera",
       "nsfw": false,
-      "ms": 618
+      "ms": 499
     },
     {
       "status": "ok",
@@ -2495,7 +2623,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "shiru",
       "nsfw": false,
-      "ms": 610
+      "ms": 547
     },
     {
       "status": "ok",
@@ -2506,7 +2634,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "nekomangaorg",
       "nsfw": false,
-      "ms": 687
+      "ms": 592
     },
     {
       "status": "ok",
@@ -2517,7 +2645,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "lncrawlerapp",
       "nsfw": false,
-      "ms": 1072
+      "ms": 987
     },
     {
       "status": "ok",
@@ -2528,7 +2656,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "shonenx",
       "nsfw": false,
-      "ms": 184
+      "ms": 198
     },
     {
       "status": "ok",
@@ -2539,7 +2667,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "dantotsu",
       "nsfw": false,
-      "ms": 471
+      "ms": 390
     },
     {
       "status": "ok",
@@ -2550,7 +2678,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "mangatoon",
       "nsfw": false,
-      "ms": 1286
+      "ms": 985
     },
     {
       "status": "ok",
@@ -2561,7 +2689,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "ireader",
       "nsfw": false,
-      "ms": 853
+      "ms": 673
     },
     {
       "status": "ok",
@@ -2572,7 +2700,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "jhentai",
       "nsfw": true,
-      "ms": 775
+      "ms": 647
     },
     {
       "status": "ok",
@@ -2583,7 +2711,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "ehviewer",
       "nsfw": false,
-      "ms": 671
+      "ms": 416
     },
     {
       "status": "ok",
@@ -2594,7 +2722,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "ehpanda",
       "nsfw": false,
-      "ms": 183
+      "ms": 223
     },
     {
       "status": "ok",
@@ -2605,7 +2733,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "soraios",
       "nsfw": false,
-      "ms": 585
+      "ms": 599
     },
     {
       "status": "ok",
@@ -2616,7 +2744,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "animechicken",
       "nsfw": false,
-      "ms": 598
+      "ms": 563
     },
     {
       "status": "ok",
@@ -2627,7 +2755,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "awery",
       "nsfw": false,
-      "ms": 566
+      "ms": 584
     },
     {
       "status": "ok",
@@ -2638,7 +2766,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "mojuru",
       "nsfw": false,
-      "ms": 340
+      "ms": 308
     },
     {
       "status": "ok",
@@ -2649,7 +2777,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "hentoid",
       "nsfw": false,
-      "ms": 1354
+      "ms": 1150
     },
     {
       "status": "ok",
@@ -2660,7 +2788,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "animetvapp",
       "nsfw": false,
-      "ms": 524
+      "ms": 486
     },
     {
       "status": "ok",
@@ -2671,7 +2799,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "dartotsu",
       "nsfw": false,
-      "ms": 706
+      "ms": 486
     },
     {
       "status": "ok",
@@ -2682,7 +2810,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "tachiyomij2k",
       "nsfw": false,
-      "ms": 176
+      "ms": 140
     },
     {
       "status": "ok",
@@ -2693,7 +2821,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "noveldokusha",
       "nsfw": false,
-      "ms": 697
+      "ms": 514
     },
     {
       "status": "ok",
@@ -2704,7 +2832,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "totoro",
       "nsfw": false,
-      "ms": 705
+      "ms": 541
     },
     {
       "status": "ok",
@@ -2715,7 +2843,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "zenshin",
       "nsfw": false,
-      "ms": 567
+      "ms": 582
     },
     {
       "status": "ok",
@@ -2726,7 +2854,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "paperback",
       "nsfw": false,
-      "ms": 254
+      "ms": 202
     },
     {
       "status": "ok",
@@ -2737,7 +2865,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "ketsuapp",
       "nsfw": false,
-      "ms": 661
+      "ms": 675
     },
     {
       "status": "ok",
@@ -2748,7 +2876,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "animestreamapp",
       "nsfw": false,
-      "ms": 476
+      "ms": 493
     },
     {
       "status": "ok",
@@ -2759,7 +2887,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "azyxapp",
       "nsfw": false,
-      "ms": 654
+      "ms": 1159
     },
     {
       "status": "ok",
@@ -2770,7 +2898,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "shosetsu",
       "nsfw": false,
-      "ms": 576
+      "ms": 455
     },
     {
       "status": "ok",
@@ -2781,7 +2909,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "kotatsudesktop",
       "nsfw": false,
-      "ms": 513
+      "ms": 535
     },
     {
       "status": "ok",
@@ -2792,7 +2920,7 @@ var MONITOR_DATA = {
       "rank": 50,
       "slug": "zantaku",
       "nsfw": false,
-      "ms": 498
+      "ms": 392
     },
     {
       "status": "ok",
@@ -2803,7 +2931,7 @@ var MONITOR_DATA = {
       "rank": 51,
       "slug": "globalmangaup",
       "nsfw": false,
-      "ms": 679
+      "ms": 531
     },
     {
       "status": "ok",
@@ -2814,7 +2942,7 @@ var MONITOR_DATA = {
       "rank": 52,
       "slug": "unyo",
       "nsfw": false,
-      "ms": 979
+      "ms": 834
     },
     {
       "status": "ok",
@@ -2825,7 +2953,7 @@ var MONITOR_DATA = {
       "rank": 53,
       "slug": "komikku",
       "nsfw": false,
-      "ms": 1226
+      "ms": 1131
     },
     {
       "status": "ok",
@@ -2836,7 +2964,7 @@ var MONITOR_DATA = {
       "rank": 54,
       "slug": "aidoku",
       "nsfw": false,
-      "ms": 246
+      "ms": 213
     },
     {
       "status": "ok",
@@ -2847,7 +2975,7 @@ var MONITOR_DATA = {
       "rank": 55,
       "slug": "tachimanga",
       "nsfw": false,
-      "ms": 302
+      "ms": 167
     },
     {
       "status": "ok",
@@ -2858,7 +2986,7 @@ var MONITOR_DATA = {
       "rank": 56,
       "slug": "otakuworld",
       "nsfw": false,
-      "ms": 635
+      "ms": 567
     },
     {
       "status": "ok",
@@ -2869,7 +2997,7 @@ var MONITOR_DATA = {
       "rank": 57,
       "slug": "animity",
       "nsfw": false,
-      "ms": 596
+      "ms": 642
     },
     {
       "status": "ok",
@@ -2880,7 +3008,7 @@ var MONITOR_DATA = {
       "rank": 58,
       "slug": "mangapin",
       "nsfw": false,
-      "ms": 270
+      "ms": 168
     },
     {
       "status": "ok",
@@ -2891,7 +3019,7 @@ var MONITOR_DATA = {
       "rank": 59,
       "slug": "exhentaimanager",
       "nsfw": true,
-      "ms": 699
+      "ms": 670
     },
     {
       "status": "ok",
@@ -2902,7 +3030,7 @@ var MONITOR_DATA = {
       "rank": 60,
       "slug": "senpwaiapp",
       "nsfw": false,
-      "ms": 614
+      "ms": 616
     },
     {
       "status": "ok",
@@ -2913,7 +3041,7 @@ var MONITOR_DATA = {
       "rank": 61,
       "slug": "teemii",
       "nsfw": false,
-      "ms": 130
+      "ms": 204
     },
     {
       "status": "ok",
@@ -2924,7 +3052,7 @@ var MONITOR_DATA = {
       "rank": 62,
       "slug": "anisurge",
       "nsfw": false,
-      "ms": 912
+      "ms": 831
     },
     {
       "status": "ok",
@@ -2935,7 +3063,7 @@ var MONITOR_DATA = {
       "rank": 63,
       "slug": "kitsuneapp",
       "nsfw": false,
-      "ms": 668
+      "ms": 727
     },
     {
       "status": "ok",
@@ -2946,7 +3074,7 @@ var MONITOR_DATA = {
       "rank": 64,
       "slug": "boorusphere",
       "nsfw": false,
-      "ms": 566
+      "ms": 647
     },
     {
       "status": "ok",
@@ -2957,7 +3085,7 @@ var MONITOR_DATA = {
       "rank": 65,
       "slug": "kaguyaapp",
       "nsfw": false,
-      "ms": 815
+      "ms": 607
     },
     {
       "status": "ok",
@@ -2968,7 +3096,7 @@ var MONITOR_DATA = {
       "rank": 66,
       "slug": "inknest",
       "nsfw": false,
-      "ms": 120
+      "ms": 154
     },
     {
       "status": "ok",
@@ -2979,7 +3107,7 @@ var MONITOR_DATA = {
       "rank": 67,
       "slug": "mangazone",
       "nsfw": false,
-      "ms": 244
+      "ms": 242
     },
     {
       "status": "ok",
@@ -2990,7 +3118,7 @@ var MONITOR_DATA = {
       "rank": 68,
       "slug": "csclab",
       "nsfw": false,
-      "ms": 392
+      "ms": 290
     },
     {
       "status": "ok",
@@ -3001,7 +3129,7 @@ var MONITOR_DATA = {
       "rank": 69,
       "slug": "anivu",
       "nsfw": false,
-      "ms": 893
+      "ms": 679
     },
     {
       "status": "ok",
@@ -3012,7 +3140,7 @@ var MONITOR_DATA = {
       "rank": 70,
       "slug": "suwatte",
       "nsfw": false,
-      "ms": 172
+      "ms": 361
     },
     {
       "status": "ok",
@@ -3023,7 +3151,7 @@ var MONITOR_DATA = {
       "rank": 71,
       "slug": "akuse",
       "nsfw": false,
-      "ms": 676
+      "ms": 669
     },
     {
       "status": "ok",
@@ -3034,7 +3162,7 @@ var MONITOR_DATA = {
       "rank": 72,
       "slug": "comikey",
       "nsfw": false,
-      "ms": 588
+      "ms": 310
     },
     {
       "status": "ok",
@@ -3045,7 +3173,7 @@ var MONITOR_DATA = {
       "rank": 73,
       "slug": "ranobe",
       "nsfw": false,
-      "ms": 728
+      "ms": 568
     },
     {
       "status": "ok",
@@ -3056,7 +3184,7 @@ var MONITOR_DATA = {
       "rank": 74,
       "slug": "choutenapp",
       "nsfw": false,
-      "ms": 575
+      "ms": 551
     },
     {
       "status": "ok",
@@ -3067,7 +3195,7 @@ var MONITOR_DATA = {
       "rank": 75,
       "slug": "kaizoyu",
       "nsfw": false,
-      "ms": 638
+      "ms": 678
     },
     {
       "status": "ok",
@@ -3078,7 +3206,7 @@ var MONITOR_DATA = {
       "rank": 76,
       "slug": "saikou",
       "nsfw": false,
-      "ms": 713
+      "ms": 559
     },
     {
       "status": "ok",
@@ -3089,7 +3217,7 @@ var MONITOR_DATA = {
       "rank": 77,
       "slug": "migu",
       "nsfw": false,
-      "ms": 247
+      "ms": 211
     },
     {
       "status": "ok",
@@ -3100,7 +3228,7 @@ var MONITOR_DATA = {
       "rank": 78,
       "slug": "anilabto",
       "nsfw": false,
-      "ms": 569
+      "ms": 627
     },
     {
       "status": "ok",
@@ -3111,7 +3239,7 @@ var MONITOR_DATA = {
       "rank": 79,
       "slug": "playtorrio",
       "nsfw": false,
-      "ms": 190
+      "ms": 243
     },
     {
       "status": "ok",
@@ -3122,7 +3250,7 @@ var MONITOR_DATA = {
       "rank": 80,
       "slug": "onstreamapks",
       "nsfw": false,
-      "ms": 668
+      "ms": 421
     },
     {
       "status": "ok",
@@ -3133,7 +3261,7 @@ var MONITOR_DATA = {
       "rank": 81,
       "slug": "hdobox",
       "nsfw": false,
-      "ms": 666
+      "ms": 647
     },
     {
       "status": "ok",
@@ -3144,7 +3272,7 @@ var MONITOR_DATA = {
       "rank": 82,
       "slug": "netmirror",
       "nsfw": false,
-      "ms": 360
+      "ms": 375
     },
     {
       "status": "ok",
@@ -3155,7 +3283,7 @@ var MONITOR_DATA = {
       "rank": 83,
       "slug": "pikashow",
       "nsfw": false,
-      "ms": 1105
+      "ms": 1139
     },
     {
       "status": "ok",
@@ -3166,7 +3294,7 @@ var MONITOR_DATA = {
       "rank": 84,
       "slug": "beetv",
       "nsfw": false,
-      "ms": 1292
+      "ms": 1335
     },
     {
       "status": "ok",
@@ -3177,18 +3305,18 @@ var MONITOR_DATA = {
       "rank": 85,
       "slug": "moviebox",
       "nsfw": false,
-      "ms": 1187
+      "ms": 1230
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Rule 34",
       "url": "https://rule34.xxx/",
       "section": "Art/Imageboards",
       "rank": 1,
       "slug": "r34",
       "nsfw": true,
-      "ms": 198
+      "ms": 337
     },
     {
       "status": "ok",
@@ -3199,7 +3327,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "gelbooru",
       "nsfw": true,
-      "ms": 365
+      "ms": 382
     },
     {
       "status": "ok",
@@ -3210,7 +3338,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "danbooru",
       "nsfw": true,
-      "ms": 314
+      "ms": 338
     },
     {
       "status": "ok",
@@ -3221,7 +3349,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "safebooru",
       "nsfw": false,
-      "ms": 318
+      "ms": 356
     },
     {
       "status": "ok",
@@ -3232,7 +3360,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "sakugabooru",
       "nsfw": false,
-      "ms": 1237
+      "ms": 1611
     },
     {
       "status": "ok",
@@ -3243,7 +3371,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "pixivpics",
       "nsfw": false,
-      "ms": 204
+      "ms": 234
     },
     {
       "status": "ok",
@@ -3254,7 +3382,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "pixiv",
       "nsfw": false,
-      "ms": 272
+      "ms": 313
     },
     {
       "status": "ok",
@@ -3265,7 +3393,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "artstreet",
       "nsfw": false,
-      "ms": 823
+      "ms": 934
     },
     {
       "status": "ok",
@@ -3276,7 +3404,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "kusowanka",
       "nsfw": true,
-      "ms": 892
+      "ms": 936
     },
     {
       "status": "ok",
@@ -3287,7 +3415,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "yande",
       "nsfw": true,
-      "ms": 1139
+      "ms": 1220
     },
     {
       "status": "ok",
@@ -3298,7 +3426,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "gsbooru",
       "nsfw": false,
-      "ms": 532
+      "ms": 481
     },
     {
       "status": "ok",
@@ -3309,7 +3437,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "konachan",
       "nsfw": true,
-      "ms": 357
+      "ms": 675
     },
     {
       "status": "ok",
@@ -3320,7 +3448,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "hypnohub",
       "nsfw": true,
-      "ms": 321
+      "ms": 355
     },
     {
       "status": "ok",
@@ -3331,7 +3459,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "setteidreams",
       "nsfw": false,
-      "ms": 219
+      "ms": 241
     },
     {
       "status": "ok",
@@ -3342,7 +3470,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "booruwf",
       "nsfw": false,
-      "ms": 294
+      "ms": 442
     },
     {
       "status": "ok",
@@ -3353,7 +3481,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "kemono",
       "nsfw": false,
-      "ms": 447
+      "ms": 462
     },
     {
       "status": "ok",
@@ -3364,7 +3492,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "shuushuu",
       "nsfw": false,
-      "ms": 301
+      "ms": 387
     },
     {
       "status": "ok",
@@ -3375,7 +3503,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "tbiborg",
       "nsfw": true,
-      "ms": 419
+      "ms": 328
     },
     {
       "status": "ok",
@@ -3386,7 +3514,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "aibooru",
       "nsfw": true,
-      "ms": 361
+      "ms": 280
     },
     {
       "status": "ok",
@@ -3397,7 +3525,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "nozomila",
       "nsfw": true,
-      "ms": 456
+      "ms": 422
     },
     {
       "status": "ok",
@@ -3408,7 +3536,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "allthefallen",
       "nsfw": true,
-      "ms": 459
+      "ms": 779
     },
     {
       "status": "ok",
@@ -3419,7 +3547,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "booruio",
       "nsfw": true,
-      "ms": 435
+      "ms": 382
     },
     {
       "status": "ok",
@@ -3430,7 +3558,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "hentaigamecg",
       "nsfw": true,
-      "ms": 1083
+      "ms": 968
     },
     {
       "status": "ok",
@@ -3441,7 +3569,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "xbooru",
       "nsfw": true,
-      "ms": 386
+      "ms": 420
     },
     {
       "status": "ok",
@@ -3452,7 +3580,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "r34xyz",
       "nsfw": true,
-      "ms": 371
+      "ms": 910
     },
     {
       "status": "ok",
@@ -3463,7 +3591,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "scrollx",
       "nsfw": true,
-      "ms": 244
+      "ms": 237
     },
     {
       "status": "ok",
@@ -3474,7 +3602,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "pixbooru",
       "nsfw": true,
-      "ms": 423
+      "ms": 438
     },
     {
       "status": "ok",
@@ -3485,7 +3613,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "mikubooru",
       "nsfw": false,
-      "ms": 676
+      "ms": 682
     },
     {
       "status": "ok",
@@ -3496,7 +3624,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "swfchan",
       "nsfw": false,
-      "ms": 954
+      "ms": 925
     },
     {
       "status": "ok",
@@ -3507,7 +3635,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "tsundora",
       "nsfw": false,
-      "ms": 230
+      "ms": 160
     },
     {
       "status": "ok",
@@ -3518,7 +3646,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "animepic",
       "nsfw": false,
-      "ms": 844
+      "ms": 964
     },
     {
       "status": "ok",
@@ -3529,7 +3657,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "booruorg",
       "nsfw": false,
-      "ms": 1009
+      "ms": 937
     },
     {
       "status": "ok",
@@ -3540,7 +3668,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "twitterart",
       "nsfw": false,
-      "ms": 323
+      "ms": 348
     },
     {
       "status": "ok",
@@ -3551,7 +3679,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "minitokyo",
       "nsfw": false,
-      "ms": 3628
+      "ms": 2827
     },
     {
       "status": "ok",
@@ -3562,29 +3690,18 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "kisskh",
       "nsfw": false,
-      "ms": 356
+      "ms": 524
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
-      "name": "Asianc TV",
-      "url": "https://asianctv.cc",
-      "section": "Asian Drama",
-      "rank": 2,
-      "slug": "asianctvco",
-      "nsfw": false,
-      "ms": 713
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 301",
       "name": "Kdramaweb",
       "url": "https://dramacool.com.tr/",
       "section": "Asian Drama",
       "rank": 3,
       "slug": "kdramaweb",
       "nsfw": false,
-      "ms": 3842
+      "ms": 5691
     },
     {
       "status": "ok",
@@ -3595,7 +3712,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "dramanicee",
       "nsfw": false,
-      "ms": 752
+      "ms": 367
     },
     {
       "status": "ok",
@@ -3606,7 +3723,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "tokuzilla",
       "nsfw": false,
-      "ms": 1457
+      "ms": 779
     },
     {
       "status": "ok",
@@ -3617,7 +3734,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "zokaj",
       "nsfw": false,
-      "ms": 393
+      "ms": 375
     },
     {
       "status": "ok",
@@ -3628,18 +3745,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "toku555",
       "nsfw": false,
-      "ms": 563
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "Anime-Loads",
-      "url": "https://www.anime-loads.org/asialive",
-      "section": "Asian Drama",
-      "rank": 8,
-      "slug": "animeloadsdrama",
-      "nsfw": false,
-      "ms": 1054
+      "ms": 1163
     },
     {
       "status": "ok",
@@ -3650,7 +3756,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "kisskhweb",
       "nsfw": false,
-      "ms": 918
+      "ms": 810
     },
     {
       "status": "ok",
@@ -3661,7 +3767,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "onlykdrama",
       "nsfw": false,
-      "ms": 184
+      "ms": 232
     },
     {
       "status": "ok",
@@ -3672,7 +3778,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "dramaday",
       "nsfw": false,
-      "ms": 304
+      "ms": 308
     },
     {
       "status": "ok",
@@ -3683,7 +3789,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "mkvdramame",
       "nsfw": false,
-      "ms": 761
+      "ms": 701
     },
     {
       "status": "ok",
@@ -3694,7 +3800,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "myasiantv",
       "nsfw": false,
-      "ms": 1572
+      "ms": 1633
     },
     {
       "status": "ok",
@@ -3705,7 +3811,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "asiaflix",
       "nsfw": false,
-      "ms": 184
+      "ms": 183
     },
     {
       "status": "ok",
@@ -3716,7 +3822,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "kissoppa",
       "nsfw": false,
-      "ms": 732
+      "ms": 289
     },
     {
       "status": "ok",
@@ -3727,7 +3833,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "asianview",
       "nsfw": false,
-      "ms": 379
+      "ms": 735
     },
     {
       "status": "ok",
@@ -3738,7 +3844,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "kissasiantv",
       "nsfw": false,
-      "ms": 5101
+      "ms": 5151
     },
     {
       "status": "ok",
@@ -3749,7 +3855,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "kissasiacam",
       "nsfw": false,
-      "ms": 659
+      "ms": 697
     },
     {
       "status": "ok",
@@ -3760,7 +3866,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "onetouchtv",
       "nsfw": false,
-      "ms": 215
+      "ms": 209
     },
     {
       "status": "ok",
@@ -3771,7 +3877,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "asiansubs",
       "nsfw": false,
-      "ms": 831
+      "ms": 1662
     },
     {
       "status": "ok",
@@ -3782,7 +3888,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "ezcosplay",
       "nsfw": false,
-      "ms": 596
+      "ms": 539
     },
     {
       "status": "ok",
@@ -3793,7 +3899,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "miccostumes",
       "nsfw": false,
-      "ms": 3916
+      "ms": 3874
     },
     {
       "status": "ok",
@@ -3804,7 +3910,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "moeflavor",
       "nsfw": false,
-      "ms": 317
+      "ms": 781
     },
     {
       "status": "ok",
@@ -3815,7 +3921,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "uwowocosplay",
       "nsfw": false,
-      "ms": 324
+      "ms": 582
     },
     {
       "status": "ok",
@@ -3826,7 +3932,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "dokidokicos",
       "nsfw": false,
-      "ms": 302
+      "ms": 301
     },
     {
       "status": "ok",
@@ -3837,7 +3943,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "cosrea",
       "nsfw": false,
-      "ms": 796
+      "ms": 1249
     },
     {
       "status": "ok",
@@ -3848,7 +3954,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "meowcos",
       "nsfw": false,
-      "ms": 674
+      "ms": 668
     },
     {
       "status": "ok",
@@ -3859,7 +3965,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "simcosplay",
       "nsfw": false,
-      "ms": 615
+      "ms": 597
     },
     {
       "status": "ok",
@@ -3870,7 +3976,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "procosplay",
       "nsfw": false,
-      "ms": 552
+      "ms": 505
     },
     {
       "status": "ok",
@@ -3881,7 +3987,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "myanimelist",
       "nsfw": false,
-      "ms": 361
+      "ms": 319
     },
     {
       "status": "ok",
@@ -3892,7 +3998,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "anilist",
       "nsfw": false,
-      "ms": 236
+      "ms": 220
     },
     {
       "status": "ok",
@@ -3903,7 +4009,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "mangabaka",
       "nsfw": false,
-      "ms": 677
+      "ms": 640
     },
     {
       "status": "ok",
@@ -3914,7 +4020,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "comicktracker",
       "nsfw": false,
-      "ms": 208
+      "ms": 204
     },
     {
       "status": "ok",
@@ -3925,7 +4031,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "anidb",
       "nsfw": false,
-      "ms": 324
+      "ms": 330
     },
     {
       "status": "ok",
@@ -3936,7 +4042,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "kuroiru",
       "nsfw": false,
-      "ms": 360
+      "ms": 334
     },
     {
       "status": "ok",
@@ -3947,7 +4053,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "vndbwiki",
       "nsfw": false,
-      "ms": 565
+      "ms": 572
     },
     {
       "status": "ok",
@@ -3958,7 +4064,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "vnclubdb",
       "nsfw": false,
-      "ms": 650
+      "ms": 641
     },
     {
       "status": "ok",
@@ -3969,7 +4075,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "ranobedb",
       "nsfw": false,
-      "ms": 364
+      "ms": 362
     },
     {
       "status": "ok",
@@ -3980,7 +4086,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "novelupdates",
       "nsfw": false,
-      "ms": 338
+      "ms": 322
     },
     {
       "status": "ok",
@@ -3991,7 +4097,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "vocadb",
       "nsfw": false,
-      "ms": 177
+      "ms": 203
     },
     {
       "status": "ok",
@@ -4002,7 +4108,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "simkl",
       "nsfw": false,
-      "ms": 274
+      "ms": 281
     },
     {
       "status": "ok",
@@ -4013,7 +4119,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "mydramalist",
       "nsfw": false,
-      "ms": 256
+      "ms": 240
     },
     {
       "status": "ok",
@@ -4024,7 +4130,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "aplanet",
       "nsfw": false,
-      "ms": 454
+      "ms": 490
     },
     {
       "status": "ok",
@@ -4035,7 +4141,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "kenmei",
       "nsfw": false,
-      "ms": 290
+      "ms": 213
     },
     {
       "status": "ok",
@@ -4046,7 +4152,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "vgmdb",
       "nsfw": false,
-      "ms": 436
+      "ms": 322
     },
     {
       "status": "ok",
@@ -4057,7 +4163,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "anisonpreviews",
       "nsfw": false,
-      "ms": 426
+      "ms": 408
     },
     {
       "status": "ok",
@@ -4068,7 +4174,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "kitsu",
       "nsfw": false,
-      "ms": 352
+      "ms": 345
     },
     {
       "status": "ok",
@@ -4079,7 +4185,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "mywaifulist",
       "nsfw": false,
-      "ms": 293
+      "ms": 335
     },
     {
       "status": "ok",
@@ -4090,7 +4196,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "mudae",
       "nsfw": false,
-      "ms": 446
+      "ms": 741
     },
     {
       "status": "ok",
@@ -4101,7 +4207,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "konsumr",
       "nsfw": false,
-      "ms": 536
+      "ms": 212
     },
     {
       "status": "ok",
@@ -4112,7 +4218,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "kaguya",
       "nsfw": false,
-      "ms": 429
+      "ms": 483
     },
     {
       "status": "ok",
@@ -4123,7 +4229,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "mymangaindex",
       "nsfw": false,
-      "ms": 367
+      "ms": 1004
     },
     {
       "status": "ok",
@@ -4134,7 +4240,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "pornhwadb",
       "nsfw": false,
-      "ms": 439
+      "ms": 506
     },
     {
       "status": "ok",
@@ -4145,7 +4251,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "novellistdb",
       "nsfw": false,
-      "ms": 199
+      "ms": 258
     },
     {
       "status": "ok",
@@ -4156,7 +4262,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "shikimori",
       "nsfw": false,
-      "ms": 1305
+      "ms": 933
     },
     {
       "status": "ok",
@@ -4167,7 +4273,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "anibasenet",
       "nsfw": false,
-      "ms": 352
+      "ms": 369
     },
     {
       "status": "ok",
@@ -4178,7 +4284,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "novelcodex",
       "nsfw": false,
-      "ms": 1306
+      "ms": 882
     },
     {
       "status": "ok",
@@ -4189,7 +4295,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "wholesomelist",
       "nsfw": false,
-      "ms": 456
+      "ms": 560
     },
     {
       "status": "ok",
@@ -4200,7 +4306,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "doujinshiinfo",
       "nsfw": true,
-      "ms": 1091
+      "ms": 1381
     },
     {
       "status": "ok",
@@ -4211,7 +4317,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "kurozora",
       "nsfw": false,
-      "ms": 831
+      "ms": 765
     },
     {
       "status": "ok",
@@ -4222,7 +4328,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "anisearch",
       "nsfw": false,
-      "ms": 1359
+      "ms": 2034
     },
     {
       "status": "ok",
@@ -4233,7 +4339,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "animeoshi",
       "nsfw": false,
-      "ms": 4712
+      "ms": 11601
     },
     {
       "status": "ok",
@@ -4244,7 +4350,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "medialib",
       "nsfw": false,
-      "ms": 1540
+      "ms": 1376
     },
     {
       "status": "ok",
@@ -4255,7 +4361,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "notify",
       "nsfw": false,
-      "ms": 3594
+      "ms": 3607
     },
     {
       "status": "ok",
@@ -4266,7 +4372,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "ann",
       "nsfw": false,
-      "ms": 631
+      "ms": 436
     },
     {
       "status": "ok",
@@ -4277,7 +4383,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "animecharactersdb",
       "nsfw": false,
-      "ms": 2767
+      "ms": 2531
     },
     {
       "status": "ok",
@@ -4288,7 +4394,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "absoluteterritory",
       "nsfw": false,
-      "ms": 502
+      "ms": 491
     },
     {
       "status": "ok",
@@ -4299,7 +4405,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "animekhor",
       "nsfw": false,
-      "ms": 678
+      "ms": 366
     },
     {
       "status": "ok",
@@ -4310,7 +4416,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "AnimeXin",
       "nsfw": false,
-      "ms": 744
+      "ms": 699
     },
     {
       "status": "ok",
@@ -4321,7 +4427,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "donghuastream",
       "nsfw": false,
-      "ms": 772
+      "ms": 599
     },
     {
       "status": "ok",
@@ -4332,7 +4438,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "myanimelive",
       "nsfw": false,
-      "ms": 320
+      "ms": 219
     },
     {
       "status": "ok",
@@ -4343,7 +4449,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "LManime",
       "nsfw": false,
-      "ms": 411
+      "ms": 342
     },
     {
       "status": "ok",
@@ -4354,7 +4460,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "animecube",
       "nsfw": false,
-      "ms": 477
+      "ms": 489
     },
     {
       "status": "ok",
@@ -4365,7 +4471,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "anoboye",
       "nsfw": false,
-      "ms": 918
+      "ms": 1076
     },
     {
       "status": "ok",
@@ -4376,7 +4482,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "naruldonghua",
       "nsfw": false,
-      "ms": 608
+      "ms": 894
     },
     {
       "status": "ok",
@@ -4387,7 +4493,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "luciferdonghua",
       "nsfw": false,
-      "ms": 192
+      "ms": 148
     },
     {
       "status": "ok",
@@ -4398,7 +4504,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "anime4i",
       "nsfw": false,
-      "ms": 424
+      "ms": 417
     },
     {
       "status": "ok",
@@ -4409,7 +4515,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "crimsonfansubs",
       "nsfw": false,
-      "ms": 363
+      "ms": 288
     },
     {
       "status": "ok",
@@ -4420,7 +4526,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "chikianimation",
       "nsfw": false,
-      "ms": 808
+      "ms": 338
     },
     {
       "status": "ok",
@@ -4431,7 +4537,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "mydonghua",
       "nsfw": false,
-      "ms": 331
+      "ms": 286
     },
     {
       "status": "ok",
@@ -4442,7 +4548,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "dongstream",
       "nsfw": false,
-      "ms": 816
+      "ms": 652
     },
     {
       "status": "ok",
@@ -4453,7 +4559,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "cksub",
       "nsfw": false,
-      "ms": 2034
+      "ms": 703
     },
     {
       "status": "ok",
@@ -4464,7 +4570,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "wowtopix",
       "nsfw": false,
-      "ms": 797
+      "ms": 696
     },
     {
       "status": "ok",
@@ -4475,7 +4581,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "nyaasi",
       "nsfw": false,
-      "ms": 408
+      "ms": 403
     },
     {
       "status": "ok",
@@ -4486,7 +4592,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "animetosho",
       "nsfw": false,
-      "ms": 579
+      "ms": 712
     },
     {
       "status": "ok",
@@ -4497,7 +4603,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "subsplease",
       "nsfw": false,
-      "ms": 367
+      "ms": 390
     },
     {
       "status": "ok",
@@ -4508,7 +4614,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "tokyotosho",
       "nsfw": false,
-      "ms": 4864
+      "ms": 4456
     },
     {
       "status": "ok",
@@ -4519,7 +4625,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "releasesmoe",
       "nsfw": false,
-      "ms": 677
+      "ms": 629
     },
     {
       "status": "ok",
@@ -4530,7 +4636,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "nekobt",
       "nsfw": false,
-      "ms": 561
+      "ms": 532
     },
     {
       "status": "ok",
@@ -4541,7 +4647,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "anirena",
       "nsfw": false,
-      "ms": 519
+      "ms": 880
     },
     {
       "status": "ok",
@@ -4552,7 +4658,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "tokyoinsider",
       "nsfw": false,
-      "ms": 1893
+      "ms": 1683
     },
     {
       "status": "ok",
@@ -4563,7 +4669,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "animeout",
       "nsfw": false,
-      "ms": 179
+      "ms": 192
     },
     {
       "status": "ok",
@@ -4574,7 +4680,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "asiamediablog",
       "nsfw": false,
-      "ms": 462
+      "ms": 564
     },
     {
       "status": "ok",
@@ -4585,7 +4691,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "mangazip",
       "nsfw": false,
-      "ms": 210
+      "ms": 192
     },
     {
       "status": "ok",
@@ -4596,7 +4702,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "dlraw",
       "nsfw": false,
-      "ms": 701
+      "ms": 716
     },
     {
       "status": "ok",
@@ -4607,7 +4713,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "dlrawse",
       "nsfw": false,
-      "ms": 1116
+      "ms": 1005
     },
     {
       "status": "ok",
@@ -4618,7 +4724,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "dlzip",
       "nsfw": false,
-      "ms": 555
+      "ms": 524
     },
     {
       "status": "ok",
@@ -4629,7 +4735,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "bszip",
       "nsfw": false,
-      "ms": 392
+      "ms": 348
     },
     {
       "status": "ok",
@@ -4640,7 +4746,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "animesakura",
       "nsfw": false,
-      "ms": 1399
+      "ms": 1046
     },
     {
       "status": "ok",
@@ -4651,7 +4757,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "kayoanime",
       "nsfw": false,
-      "ms": 871
+      "ms": 735
     },
     {
       "status": "ok",
@@ -4662,7 +4768,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "av1encodes",
       "nsfw": false,
-      "ms": 758
+      "ms": 707
     },
     {
       "status": "ok",
@@ -4673,7 +4779,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "hi10anime",
       "nsfw": false,
-      "ms": 2496
+      "ms": 2010
     },
     {
       "status": "ok",
@@ -4684,7 +4790,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "moriyashrine",
       "nsfw": false,
-      "ms": 345
+      "ms": 165
     },
     {
       "status": "ok",
@@ -4695,7 +4801,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "pandabackup",
       "nsfw": false,
-      "ms": 838
+      "ms": 2486
     },
     {
       "status": "ok",
@@ -4706,7 +4812,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "zekozimo",
       "nsfw": false,
-      "ms": 289
+      "ms": 221
     },
     {
       "status": "ok",
@@ -4717,7 +4823,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "noobsubs",
       "nsfw": false,
-      "ms": 1435
+      "ms": 1231
     },
     {
       "status": "ok",
@@ -4728,7 +4834,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "kitsunekko",
       "nsfw": false,
-      "ms": 1016
+      "ms": 899
     },
     {
       "status": "ok",
@@ -4739,7 +4845,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "sneedex",
       "nsfw": false,
-      "ms": 413
+      "ms": 342
     },
     {
       "status": "ok",
@@ -4750,7 +4856,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "jimaku",
       "nsfw": false,
-      "ms": 352
+      "ms": 378
     },
     {
       "status": "ok",
@@ -4761,7 +4867,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "animkinfo",
       "nsfw": false,
-      "ms": 699
+      "ms": 2836
     },
     {
       "status": "ok",
@@ -4772,7 +4878,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "nibl",
       "nsfw": false,
-      "ms": 732
+      "ms": 685
     },
     {
       "status": "ok",
@@ -4783,7 +4889,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "shanaproject",
       "nsfw": false,
-      "ms": 504
+      "ms": 624
     },
     {
       "status": "ok",
@@ -4794,7 +4900,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "neokyo",
       "nsfw": false,
-      "ms": 379
+      "ms": 300
     },
     {
       "status": "ok",
@@ -4805,7 +4911,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "acgnx",
       "nsfw": false,
-      "ms": 411
+      "ms": 296
     },
     {
       "status": "ok",
@@ -4816,7 +4922,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "sakuracircle",
       "nsfw": true,
-      "ms": 1181
+      "ms": 1133
     },
     {
       "status": "ok",
@@ -4827,7 +4933,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "acgrip",
       "nsfw": false,
-      "ms": 668
+      "ms": 580
     },
     {
       "status": "ok",
@@ -4838,7 +4944,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "bangumimoe",
       "nsfw": false,
-      "ms": 355
+      "ms": 364
     },
     {
       "status": "ok",
@@ -4849,7 +4955,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "nipponsei",
       "nsfw": false,
-      "ms": 184
+      "ms": 178
     },
     {
       "status": "ok",
@@ -4860,7 +4966,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "dkb",
       "nsfw": false,
-      "ms": 399
+      "ms": 380
     },
     {
       "status": "ok",
@@ -4871,7 +4977,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "amenzb",
       "nsfw": false,
-      "ms": 694
+      "ms": 281
     },
     {
       "status": "ok",
@@ -4882,7 +4988,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "kanime",
       "nsfw": false,
-      "ms": 448
+      "ms": 430
     },
     {
       "status": "ok",
@@ -4893,7 +4999,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "animekaizoku",
       "nsfw": false,
-      "ms": 752
+      "ms": 919
     },
     {
       "status": "ok",
@@ -4904,7 +5010,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "toonworld4all",
       "nsfw": false,
-      "ms": 1472
+      "ms": 1351
     },
     {
       "status": "ok",
@@ -4915,7 +5021,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "cartoonsarea",
       "nsfw": false,
-      "ms": 1049
+      "ms": 918
     },
     {
       "status": "ok",
@@ -4926,7 +5032,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "sdtoons",
       "nsfw": false,
-      "ms": 652
+      "ms": 630
     },
     {
       "status": "ok",
@@ -4937,7 +5043,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "animerss",
       "nsfw": false,
-      "ms": 1001
+      "ms": 632
     },
     {
       "status": "ok",
@@ -4948,7 +5054,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "jpfiles",
       "nsfw": false,
-      "ms": 1255
+      "ms": 1349
     },
     {
       "status": "ok",
@@ -4959,7 +5065,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "chauthanh",
       "nsfw": false,
-      "ms": 571
+      "ms": 320
     },
     {
       "status": "ok",
@@ -4970,7 +5076,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "toonshub",
       "nsfw": false,
-      "ms": 1104
+      "ms": 913
     },
     {
       "status": "ok",
@@ -4981,7 +5087,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "anidl",
       "nsfw": false,
-      "ms": 492
+      "ms": 779
     },
     {
       "status": "ok",
@@ -4992,7 +5098,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "redditforums",
       "nsfw": false,
-      "ms": 207
+      "ms": 159
     },
     {
       "status": "ok",
@@ -5003,7 +5109,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "malforum",
       "nsfw": false,
-      "ms": 487
+      "ms": 446
     },
     {
       "status": "ok",
@@ -5014,7 +5120,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "anilistforum",
       "nsfw": false,
-      "ms": 285
+      "ms": 201
     },
     {
       "status": "ok",
@@ -5025,7 +5131,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "anidbforum",
       "nsfw": false,
-      "ms": 413
+      "ms": 257
     },
     {
       "status": "ok",
@@ -5036,18 +5142,18 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "animesharing",
       "nsfw": false,
-      "ms": 419
+      "ms": 323
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Fuwanovel Forum",
       "url": "https://forums.fuwanovel.moe/",
       "section": "Forums/Community",
       "rank": 6,
       "slug": "fuwanovelforums",
       "nsfw": false,
-      "ms": 617
+      "ms": 288
     },
     {
       "status": "ok",
@@ -5058,7 +5164,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "ulmforg",
       "nsfw": true,
-      "ms": 1042
+      "ms": 928
     },
     {
       "status": "ok",
@@ -5069,7 +5175,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "animeforums",
       "nsfw": false,
-      "ms": 647
+      "ms": 533
     },
     {
       "status": "ok",
@@ -5080,7 +5186,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "discussanime",
       "nsfw": false,
-      "ms": 1576
+      "ms": 662
     },
     {
       "status": "ok",
@@ -5091,7 +5197,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "annforum",
       "nsfw": false,
-      "ms": 420
+      "ms": 251
     },
     {
       "status": "ok",
@@ -5102,7 +5208,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "animeuknewsforum",
       "nsfw": false,
-      "ms": 817
+      "ms": 807
     },
     {
       "status": "ok",
@@ -5113,7 +5219,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "4ch",
       "nsfw": false,
-      "ms": 488
+      "ms": 369
     },
     {
       "status": "ok",
@@ -5124,7 +5230,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "hikari3",
       "nsfw": false,
-      "ms": 1315
+      "ms": 1183
     },
     {
       "status": "ok",
@@ -5135,7 +5241,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "39chan",
       "nsfw": false,
-      "ms": 256
+      "ms": 268
     },
     {
       "status": "ok",
@@ -5146,7 +5252,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "mangadexforum",
       "nsfw": false,
-      "ms": 502
+      "ms": 817
     },
     {
       "status": "ok",
@@ -5157,7 +5263,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "wapchan",
       "nsfw": false,
-      "ms": 376
+      "ms": 361
     },
     {
       "status": "ok",
@@ -5168,7 +5274,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "1animenationforum",
       "nsfw": false,
-      "ms": 493
+      "ms": 360
     },
     {
       "status": "ok",
@@ -5179,7 +5285,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "2animeforum",
       "nsfw": false,
-      "ms": 368
+      "ms": 341
     },
     {
       "status": "ok",
@@ -5190,7 +5296,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "3kissumoe",
       "nsfw": false,
-      "ms": 284
+      "ms": 487
     },
     {
       "status": "ok",
@@ -5201,7 +5307,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "4animesukiforum",
       "nsfw": false,
-      "ms": 260
+      "ms": 316
     },
     {
       "status": "ok",
@@ -5212,7 +5318,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "5varishangout",
       "nsfw": false,
-      "ms": 1494
+      "ms": 1375
     },
     {
       "status": "ok",
@@ -5223,7 +5329,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "6mangahelpers",
       "nsfw": false,
-      "ms": 260
+      "ms": 359
     },
     {
       "status": "ok",
@@ -5234,7 +5340,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "7anisocial",
       "nsfw": false,
-      "ms": 520
+      "ms": 503
     },
     {
       "status": "ok",
@@ -5245,7 +5351,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "prydwengg",
       "nsfw": false,
-      "ms": 426
+      "ms": 364
     },
     {
       "status": "ok",
@@ -5256,7 +5362,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "game8",
       "nsfw": false,
-      "ms": 250
+      "ms": 196
     },
     {
       "status": "ok",
@@ -5267,7 +5373,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "gacharevenue",
       "nsfw": false,
-      "ms": 803
+      "ms": 777
     },
     {
       "status": "ok",
@@ -5278,7 +5384,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "seelie",
       "nsfw": false,
-      "ms": 372
+      "ms": 443
     },
     {
       "status": "ok",
@@ -5289,7 +5395,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "wishsimulator",
       "nsfw": false,
-      "ms": 284
+      "ms": 241
     },
     {
       "status": "ok",
@@ -5300,7 +5406,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "wuwatracker",
       "nsfw": false,
-      "ms": 537
+      "ms": 464
     },
     {
       "status": "ok",
@@ -5311,7 +5417,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "stardb",
       "nsfw": false,
-      "ms": 1124
+      "ms": 1100
     },
     {
       "status": "ok",
@@ -5322,7 +5428,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "genshingg",
       "nsfw": false,
-      "ms": 220
+      "ms": 201
     },
     {
       "status": "ok",
@@ -5333,7 +5439,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "encoremoe",
       "nsfw": false,
-      "ms": 713
+      "ms": 692
     },
     {
       "status": "ok",
@@ -5344,7 +5450,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "gachareddit",
       "nsfw": false,
-      "ms": 125
+      "ms": 108
     },
     {
       "status": "ok",
@@ -5355,7 +5461,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "ennead",
       "nsfw": false,
-      "ms": 232
+      "ms": 250
     },
     {
       "status": "ok",
@@ -5366,7 +5472,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "gongeous",
       "nsfw": false,
-      "ms": 408
+      "ms": 332
     },
     {
       "status": "ok",
@@ -5377,7 +5483,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "twintaillauncher",
       "nsfw": false,
-      "ms": 768
+      "ms": 699
     },
     {
       "status": "ok",
@@ -5388,7 +5494,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "collapselauncher",
       "nsfw": false,
-      "ms": 199
+      "ms": 202
     },
     {
       "status": "ok",
@@ -5399,7 +5505,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "launchermoe",
       "nsfw": false,
-      "ms": 633
+      "ms": 741
     },
     {
       "status": "ok",
@@ -5410,7 +5516,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "vndb",
       "nsfw": false,
-      "ms": 565
+      "ms": 572
     },
     {
       "status": "ok",
@@ -5421,7 +5527,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "kimochi",
       "nsfw": true,
-      "ms": 210
+      "ms": 196
     },
     {
       "status": "ok",
@@ -5432,7 +5538,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "fapforfun",
       "nsfw": true,
-      "ms": 686
+      "ms": 727
     },
     {
       "status": "ok",
@@ -5443,7 +5549,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "ggbasesgame",
       "nsfw": true,
-      "ms": 660
+      "ms": 828
     },
     {
       "status": "ok",
@@ -5454,7 +5560,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "ryuugames",
       "nsfw": true,
-      "ms": 506
+      "ms": 712
     },
     {
       "status": "ok",
@@ -5465,7 +5571,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "erogedownload",
       "nsfw": true,
-      "ms": 303
+      "ms": 202
     },
     {
       "status": "ok",
@@ -5476,7 +5582,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "otomigames",
       "nsfw": true,
-      "ms": 531
+      "ms": 367
     },
     {
       "status": "ok",
@@ -5487,7 +5593,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "nutaku",
       "nsfw": true,
-      "ms": 369
+      "ms": 327
     },
     {
       "status": "ok",
@@ -5498,7 +5604,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "erolabs",
       "nsfw": true,
-      "ms": 423
+      "ms": 401
     },
     {
       "status": "ok",
@@ -5509,7 +5615,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "avn",
       "nsfw": false,
-      "ms": 167
+      "ms": 946
     },
     {
       "status": "ok",
@@ -5520,7 +5626,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "rroms",
       "nsfw": false,
-      "ms": 296
+      "ms": 149
     },
     {
       "status": "ok",
@@ -5531,7 +5637,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "hshop",
       "nsfw": false,
-      "ms": 542
+      "ms": 466
     },
     {
       "status": "ok",
@@ -5542,7 +5648,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "f95zone",
       "nsfw": true,
-      "ms": 424
+      "ms": 442
     },
     {
       "status": "ok",
@@ -5553,7 +5659,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "hgame18",
       "nsfw": true,
-      "ms": 573
+      "ms": 547
     },
     {
       "status": "ok",
@@ -5564,7 +5670,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "myhentaiorg",
       "nsfw": true,
-      "ms": 790
+      "ms": 917
     },
     {
       "status": "ok",
@@ -5575,7 +5681,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "hsuki",
       "nsfw": true,
-      "ms": 2132
+      "ms": 2687
     },
     {
       "status": "ok",
@@ -5586,7 +5692,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "hcapital",
       "nsfw": true,
-      "ms": 1059
+      "ms": 780
     },
     {
       "status": "ok",
@@ -5597,7 +5703,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "desonovel",
       "nsfw": false,
-      "ms": 283
+      "ms": 240
     },
     {
       "status": "ok",
@@ -5608,7 +5714,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "doujinstylegame",
       "nsfw": true,
-      "ms": 1171
+      "ms": 548
     },
     {
       "status": "ok",
@@ -5619,7 +5725,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "cpgrepacks",
       "nsfw": false,
-      "ms": 1145
+      "ms": 781
     },
     {
       "status": "ok",
@@ -5630,7 +5736,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "yinghu",
       "nsfw": false,
-      "ms": 90
+      "ms": 237
     },
     {
       "status": "ok",
@@ -5641,7 +5747,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "betterrepack",
       "nsfw": false,
-      "ms": 708
+      "ms": 692
     },
     {
       "status": "ok",
@@ -5652,7 +5758,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "hentaibedta",
       "nsfw": true,
-      "ms": 1271
+      "ms": 1241
     },
     {
       "status": "ok",
@@ -5663,7 +5769,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "vnpocket",
       "nsfw": true,
-      "ms": 1017
+      "ms": 515
     },
     {
       "status": "ok",
@@ -5674,7 +5780,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "japanesepccompendium",
       "nsfw": false,
-      "ms": 405
+      "ms": 269
     },
     {
       "status": "ok",
@@ -5685,7 +5791,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "craneanime",
       "nsfw": false,
-      "ms": 717
+      "ms": 681
     },
     {
       "status": "ok",
@@ -5696,7 +5802,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "visualdise",
       "nsfw": false,
-      "ms": 314
+      "ms": 215
     },
     {
       "status": "ok",
@@ -5707,7 +5813,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "qooapp",
       "nsfw": false,
-      "ms": 1161
+      "ms": 1196
     },
     {
       "status": "ok",
@@ -5718,7 +5824,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "g123jp",
       "nsfw": false,
-      "ms": 1103
+      "ms": 592
     },
     {
       "status": "ok",
@@ -5729,7 +5835,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "johrengames",
       "nsfw": true,
-      "ms": 353
+      "ms": 540
     },
     {
       "status": "ok",
@@ -5740,7 +5846,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "retrogametalk",
       "nsfw": false,
-      "ms": 465
+      "ms": 420
     },
     {
       "status": "ok",
@@ -5751,7 +5857,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "axekin",
       "nsfw": false,
-      "ms": 448
+      "ms": 858
     },
     {
       "status": "ok",
@@ -5762,7 +5868,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "epicroms",
       "nsfw": false,
-      "ms": 755
+      "ms": 668
     },
     {
       "status": "ok",
@@ -5773,7 +5879,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "romshq",
       "nsfw": false,
-      "ms": 636
+      "ms": 376
     },
     {
       "status": "ok",
@@ -5784,7 +5890,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "steamrip",
       "nsfw": false,
-      "ms": 700
+      "ms": 344
     },
     {
       "status": "ok",
@@ -5795,7 +5901,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "onlinefix",
       "nsfw": false,
-      "ms": 371
+      "ms": 325
     },
     {
       "status": "ok",
@@ -5806,7 +5912,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "freegogpcgames",
       "nsfw": false,
-      "ms": 352
+      "ms": 326
     },
     {
       "status": "ok",
@@ -5817,7 +5923,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "exhentai",
       "nsfw": true,
-      "ms": 380
+      "ms": 295
     },
     {
       "status": "ok",
@@ -5828,7 +5934,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "asmhentai",
       "nsfw": true,
-      "ms": 443
+      "ms": 372
     },
     {
       "status": "ok",
@@ -5839,7 +5945,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "hentainexus",
       "nsfw": true,
-      "ms": 466
+      "ms": 401
     },
     {
       "status": "ok",
@@ -5850,7 +5956,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "kskmoe",
       "nsfw": true,
-      "ms": 917
+      "ms": 700
     },
     {
       "status": "ok",
@@ -5861,7 +5967,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "nhentai",
       "nsfw": true,
-      "ms": 1303
+      "ms": 337
     },
     {
       "status": "ok",
@@ -5872,7 +5978,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "eahentai",
       "nsfw": true,
-      "ms": 306
+      "ms": 226
     },
     {
       "status": "ok",
@@ -5883,7 +5989,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "hitomi",
       "nsfw": true,
-      "ms": 308
+      "ms": 342
     },
     {
       "status": "ok",
@@ -5894,7 +6000,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "faccina",
       "nsfw": true,
-      "ms": 985
+      "ms": 1055
     },
     {
       "status": "ok",
@@ -5905,7 +6011,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "hentaipaw",
       "nsfw": true,
-      "ms": 228
+      "ms": 190
     },
     {
       "status": "ok",
@@ -5916,7 +6022,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "pururin",
       "nsfw": true,
-      "ms": 555
+      "ms": 489
     },
     {
       "status": "ok",
@@ -5927,7 +6033,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "hdoujin",
       "nsfw": true,
-      "ms": 263
+      "ms": 193
     },
     {
       "status": "ok",
@@ -5938,7 +6044,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "hentaihand",
       "nsfw": true,
-      "ms": 744
+      "ms": 792
     },
     {
       "status": "ok",
@@ -5949,7 +6055,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "3hentai",
       "nsfw": true,
-      "ms": 423
+      "ms": 397
     },
     {
       "status": "ok",
@@ -5960,7 +6066,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "naisho",
       "nsfw": true,
-      "ms": 1373
+      "ms": 1141
     },
     {
       "status": "ok",
@@ -5971,7 +6077,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "cinguru",
       "nsfw": true,
-      "ms": 233
+      "ms": 211
     },
     {
       "status": "ok",
@@ -5982,7 +6088,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "hentaifox",
       "nsfw": true,
-      "ms": 451
+      "ms": 402
     },
     {
       "status": "ok",
@@ -5993,7 +6099,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "akumamoe",
       "nsfw": true,
-      "ms": 474
+      "ms": 486
     },
     {
       "status": "ok",
@@ -6004,7 +6110,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "simplyhentai",
       "nsfw": true,
-      "ms": 911
+      "ms": 885
     },
     {
       "status": "ok",
@@ -6015,7 +6121,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "hentainame",
       "nsfw": true,
-      "ms": 348
+      "ms": 312
     },
     {
       "status": "ok",
@@ -6026,7 +6132,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "18kami",
       "nsfw": true,
-      "ms": 308
+      "ms": 303
     },
     {
       "status": "ok",
@@ -6037,7 +6143,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "imhentai",
       "nsfw": true,
-      "ms": 399
+      "ms": 403
     },
     {
       "status": "ok",
@@ -6048,7 +6154,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "hentai2",
       "nsfw": true,
-      "ms": 1580
+      "ms": 1530
     },
     {
       "status": "ok",
@@ -6059,29 +6165,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "myreadingmanga",
       "nsfw": true,
-      "ms": 324
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "HentaiZap",
-      "url": "https://hentaizap.com/",
-      "section": "Hentai Reading",
-      "rank": 24,
-      "slug": "hentaizap",
-      "nsfw": true,
-      "ms": 952
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "Caitlin.top",
-      "url": "https://caitlin.top/index.php?route=comic/list",
-      "section": "Hentai Reading",
-      "rank": 25,
-      "slug": "caitlin",
-      "nsfw": true,
-      "ms": 1861
+      "ms": 287
     },
     {
       "status": "ok",
@@ -6092,7 +6176,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "hentaihug",
       "nsfw": true,
-      "ms": 326
+      "ms": 279
     },
     {
       "status": "ok",
@@ -6103,7 +6187,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "hentai2read",
       "nsfw": true,
-      "ms": 558
+      "ms": 492
     },
     {
       "status": "ok",
@@ -6114,7 +6198,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "yaoimangaonline",
       "nsfw": true,
-      "ms": 362
+      "ms": 273
     },
     {
       "status": "ok",
@@ -6125,7 +6209,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "hentairead",
       "nsfw": true,
-      "ms": 326
+      "ms": 286
     },
     {
       "status": "ok",
@@ -6136,7 +6220,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "doujiva",
       "nsfw": true,
-      "ms": 399
+      "ms": 401
     },
     {
       "status": "ok",
@@ -6147,7 +6231,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "hentaiforce",
       "nsfw": true,
-      "ms": 359
+      "ms": 300
     },
     {
       "status": "ok",
@@ -6158,7 +6242,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "fhentai",
       "nsfw": true,
-      "ms": 347
+      "ms": 278
     },
     {
       "status": "ok",
@@ -6169,7 +6253,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "hentaikisu",
       "nsfw": true,
-      "ms": 538
+      "ms": 455
     },
     {
       "status": "ok",
@@ -6180,7 +6264,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "9hentai",
       "nsfw": true,
-      "ms": 611
+      "ms": 664
     },
     {
       "status": "ok",
@@ -6191,7 +6275,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "doujinsexy",
       "nsfw": true,
-      "ms": 586
+      "ms": 516
     },
     {
       "status": "ok",
@@ -6202,7 +6286,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "hentailoop",
       "nsfw": true,
-      "ms": 387
+      "ms": 162
     },
     {
       "status": "ok",
@@ -6213,7 +6297,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "hentaivox",
       "nsfw": true,
-      "ms": 305
+      "ms": 274
     },
     {
       "status": "ok",
@@ -6224,7 +6308,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "hentaifc",
       "nsfw": true,
-      "ms": 1063
+      "ms": 1009
     },
     {
       "status": "ok",
@@ -6235,7 +6319,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "doujinli",
       "nsfw": true,
-      "ms": 424
+      "ms": 354
     },
     {
       "status": "ok",
@@ -6246,7 +6330,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "doujinscom",
       "nsfw": true,
-      "ms": 587
+      "ms": 538
     },
     {
       "status": "ok",
@@ -6257,7 +6341,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "hentaihere",
       "nsfw": true,
-      "ms": 460
+      "ms": 448
     },
     {
       "status": "ok",
@@ -6268,7 +6352,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "mangamaniacs",
       "nsfw": true,
-      "ms": 730
+      "ms": 692
     },
     {
       "status": "ok",
@@ -6279,7 +6363,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "baramangaonline",
       "nsfw": true,
-      "ms": 1125
+      "ms": 919
     },
     {
       "status": "ok",
@@ -6290,7 +6374,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "mangalotus",
       "nsfw": true,
-      "ms": 439
+      "ms": 423
     },
     {
       "status": "ok",
@@ -6301,7 +6385,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "erovault",
       "nsfw": true,
-      "ms": 1047
+      "ms": 1072
     },
     {
       "status": "ok",
@@ -6312,7 +6396,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "mangahen",
       "nsfw": true,
-      "ms": 1080
+      "ms": 1004
     },
     {
       "status": "ok",
@@ -6323,7 +6407,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "hentailand",
       "nsfw": true,
-      "ms": 810
+      "ms": 760
     },
     {
       "status": "ok",
@@ -6334,7 +6418,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "fakku",
       "nsfw": true,
-      "ms": 231
+      "ms": 176
     },
     {
       "status": "ok",
@@ -6345,7 +6429,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "doujinio",
       "nsfw": true,
-      "ms": 1324
+      "ms": 1009
     },
     {
       "status": "ok",
@@ -6356,7 +6440,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "hentaitv",
       "nsfw": true,
-      "ms": 422
+      "ms": 412
     },
     {
       "status": "ok",
@@ -6367,7 +6451,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "hentaicity",
       "nsfw": true,
-      "ms": 656
+      "ms": 1074
     },
     {
       "status": "ok",
@@ -6378,7 +6462,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "hstreammoe",
       "nsfw": true,
-      "ms": 977
+      "ms": 1035
     },
     {
       "status": "ok",
@@ -6389,7 +6473,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "hentaihaven",
       "nsfw": true,
-      "ms": 330
+      "ms": 346
     },
     {
       "status": "ok",
@@ -6400,7 +6484,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "hanime",
       "nsfw": true,
-      "ms": 230
+      "ms": 181
     },
     {
       "status": "ok",
@@ -6411,7 +6495,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "hahomoe",
       "nsfw": true,
-      "ms": 1855
+      "ms": 1272
     },
     {
       "status": "ok",
@@ -6422,7 +6506,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "hentaverse",
       "nsfw": true,
-      "ms": 829
+      "ms": 351
     },
     {
       "status": "ok",
@@ -6433,7 +6517,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "hentaish",
       "nsfw": true,
-      "ms": 988
+      "ms": 906
     },
     {
       "status": "ok",
@@ -6444,7 +6528,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "zhentube",
       "nsfw": true,
-      "ms": 954
+      "ms": 919
     },
     {
       "status": "ok",
@@ -6455,7 +6539,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "watchhentai",
       "nsfw": true,
-      "ms": 629
+      "ms": 338
     },
     {
       "status": "ok",
@@ -6466,7 +6550,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "underhentai",
       "nsfw": true,
-      "ms": 409
+      "ms": 380
     },
     {
       "status": "ok",
@@ -6477,7 +6561,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "hentaistream",
       "nsfw": true,
-      "ms": 997
+      "ms": 919
     },
     {
       "status": "ok",
@@ -6488,7 +6572,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "hentaiplay",
       "nsfw": true,
-      "ms": 799
+      "ms": 752
     },
     {
       "status": "ok",
@@ -6499,7 +6583,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "onlyhentaistuff",
       "nsfw": true,
-      "ms": 658
+      "ms": 617
     },
     {
       "status": "ok",
@@ -6510,7 +6594,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "hanime1me",
       "nsfw": true,
-      "ms": 532
+      "ms": 500
     },
     {
       "status": "ok",
@@ -6521,7 +6605,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "hentaiocean",
       "nsfw": true,
-      "ms": 471
+      "ms": 788
     },
     {
       "status": "ok",
@@ -6532,7 +6616,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "hentaiworldtv",
       "nsfw": true,
-      "ms": 446
+      "ms": 402
     },
     {
       "status": "ok",
@@ -6543,7 +6627,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "myhentaimovie",
       "nsfw": true,
-      "ms": 446
+      "ms": 389
     },
     {
       "status": "ok",
@@ -6554,7 +6638,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "akihcom",
       "nsfw": true,
-      "ms": 1002
+      "ms": 820
     },
     {
       "status": "ok",
@@ -6565,7 +6649,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "hentaini",
       "nsfw": true,
-      "ms": 1107
+      "ms": 785
     },
     {
       "status": "ok",
@@ -6576,7 +6660,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "hentai2w",
       "nsfw": true,
-      "ms": 416
+      "ms": 380
     },
     {
       "status": "ok",
@@ -6587,7 +6671,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "oceanveil",
       "nsfw": true,
-      "ms": 190
+      "ms": 164
     },
     {
       "status": "ok",
@@ -6598,7 +6682,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "oppaistream",
       "nsfw": true,
-      "ms": 772
+      "ms": 1788
     },
     {
       "status": "ok",
@@ -6609,7 +6693,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "hentaigasm",
       "nsfw": true,
-      "ms": 762
+      "ms": 1613
     },
     {
       "status": "ok",
@@ -6620,7 +6704,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "hmvmania",
       "nsfw": true,
-      "ms": 338
+      "ms": 294
     },
     {
       "status": "ok",
@@ -6631,7 +6715,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "hentai0",
       "nsfw": true,
-      "ms": 674
+      "ms": 559
     },
     {
       "status": "ok",
@@ -6642,7 +6726,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "iwaratv",
       "nsfw": true,
-      "ms": 796
+      "ms": 324
     },
     {
       "status": "ok",
@@ -6653,7 +6737,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "hentaifoxtv",
       "nsfw": true,
-      "ms": 797
+      "ms": 380
     },
     {
       "status": "ok",
@@ -6664,7 +6748,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "hentaibros",
       "nsfw": true,
-      "ms": 250
+      "ms": 191
     },
     {
       "status": "ok",
@@ -6675,7 +6759,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "hentaiser",
       "nsfw": true,
-      "ms": 939
+      "ms": 758
     },
     {
       "status": "ok",
@@ -6686,7 +6770,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "hentaiforme",
       "nsfw": true,
-      "ms": 969
+      "ms": 965
     },
     {
       "status": "ok",
@@ -6697,7 +6781,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "kisshentaiz",
       "nsfw": true,
-      "ms": 1054
+      "ms": 909
     },
     {
       "status": "ok",
@@ -6708,7 +6792,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "hentaivideoworld",
       "nsfw": true,
-      "ms": 394
+      "ms": 544
     },
     {
       "status": "ok",
@@ -6719,7 +6803,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "eshentai",
       "nsfw": true,
-      "ms": 1256
+      "ms": 972
     },
     {
       "status": "ok",
@@ -6730,7 +6814,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "xanimeporn",
       "nsfw": true,
-      "ms": 989
+      "ms": 805
     },
     {
       "status": "ok",
@@ -6741,7 +6825,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "hentaifreakorg",
       "nsfw": true,
-      "ms": 1033
+      "ms": 1024
     },
     {
       "status": "ok",
@@ -6752,7 +6836,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "hentaimoon",
       "nsfw": true,
-      "ms": 815
+      "ms": 624
     },
     {
       "status": "ok",
@@ -6763,7 +6847,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "muchohentai",
       "nsfw": true,
-      "ms": 964
+      "ms": 1072
     },
     {
       "status": "ok",
@@ -6774,7 +6858,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "toonbaba",
       "nsfw": true,
-      "ms": 854
+      "ms": 515
     },
     {
       "status": "ok",
@@ -6785,7 +6869,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "hentaicloud",
       "nsfw": true,
-      "ms": 1700
+      "ms": 1180
     },
     {
       "status": "ok",
@@ -6796,7 +6880,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "hentia",
       "nsfw": true,
-      "ms": 744
+      "ms": 628
     },
     {
       "status": "ok",
@@ -6807,7 +6891,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "hentaisea",
       "nsfw": true,
-      "ms": 1566
+      "ms": 1088
     },
     {
       "status": "ok",
@@ -6818,7 +6902,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "daddyhd",
       "nsfw": false,
-      "ms": 840
+      "ms": 808
     },
     {
       "status": "ok",
@@ -6829,7 +6913,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "ntvstream",
       "nsfw": false,
-      "ms": 2143
+      "ms": 2724
     },
     {
       "status": "ok",
@@ -6840,7 +6924,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "publiciptv",
       "nsfw": false,
-      "ms": 324
+      "ms": 280
     },
     {
       "status": "ok",
@@ -6851,7 +6935,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "sportplus",
       "nsfw": false,
-      "ms": 616
+      "ms": 564
     },
     {
       "status": "ok",
@@ -6862,7 +6946,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "istreameast",
       "nsfw": false,
-      "ms": 916
+      "ms": 312
     },
     {
       "status": "ok",
@@ -6873,7 +6957,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "sportsurge",
       "nsfw": false,
-      "ms": 377
+      "ms": 240
     },
     {
       "status": "ok",
@@ -6884,18 +6968,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "tvgarden",
       "nsfw": false,
-      "ms": 552
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 200",
-      "name": "GlobeTV",
-      "url": "https://globetv.app/",
-      "section": "Live TV & Sports",
-      "rank": 8,
-      "slug": "globetv",
-      "nsfw": false,
-      "ms": 794
+      "ms": 372
     },
     {
       "status": "ok",
@@ -6906,7 +6979,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "comix",
       "nsfw": false,
-      "ms": 478
+      "ms": 424
     },
     {
       "status": "ok",
@@ -6917,7 +6990,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "mangaball",
       "nsfw": false,
-      "ms": 599
+      "ms": 406
     },
     {
       "status": "ok",
@@ -6928,7 +7001,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "mangadotnet",
       "nsfw": false,
-      "ms": 575
+      "ms": 590
     },
     {
       "status": "ok",
@@ -6939,7 +7012,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "atsumoe",
       "nsfw": false,
-      "ms": 1034
+      "ms": 232
     },
     {
       "status": "ok",
@@ -6950,7 +7023,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "mangasee",
       "nsfw": false,
-      "ms": 553
+      "ms": 498
     },
     {
       "status": "ok",
@@ -6961,18 +7034,18 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "mangago",
       "nsfw": false,
-      "ms": 475
+      "ms": 348
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "OniSaga",
       "url": "https://onisaga.com/",
       "section": "Manga Reading",
       "rank": 7,
       "slug": "onisaga",
       "nsfw": false,
-      "ms": 465
+      "ms": 245
     },
     {
       "status": "ok",
@@ -6983,7 +7056,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "vyvymanga",
       "nsfw": false,
-      "ms": 1134
+      "ms": 554
     },
     {
       "status": "ok",
@@ -6994,7 +7067,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "mangapeak",
       "nsfw": false,
-      "ms": 531
+      "ms": 528
     },
     {
       "status": "ok",
@@ -7005,7 +7078,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "allmanga",
       "nsfw": false,
-      "ms": 144
+      "ms": 103
     },
     {
       "status": "ok",
@@ -7016,7 +7089,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "mangacloud",
       "nsfw": false,
-      "ms": 260
+      "ms": 216
     },
     {
       "status": "ok",
@@ -7027,7 +7100,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "mangakatana",
       "nsfw": false,
-      "ms": 1191
+      "ms": 1172
     },
     {
       "status": "ok",
@@ -7038,7 +7111,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "mangabuddy",
       "nsfw": false,
-      "ms": 372
+      "ms": 368
     },
     {
       "status": "ok",
@@ -7049,7 +7122,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "cubariproxy",
       "nsfw": false,
-      "ms": 164
+      "ms": 172
     },
     {
       "status": "ok",
@@ -7060,7 +7133,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "mangahub",
       "nsfw": false,
-      "ms": 630
+      "ms": 556
     },
     {
       "status": "ok",
@@ -7071,7 +7144,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "scansgg",
       "nsfw": false,
-      "ms": 807
+      "ms": 744
     },
     {
       "status": "ok",
@@ -7082,7 +7155,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "dynastyscans",
       "nsfw": false,
-      "ms": 693
+      "ms": 634
     },
     {
       "status": "ok",
@@ -7093,7 +7166,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "likemangaio",
       "nsfw": false,
-      "ms": 391
+      "ms": 362
     },
     {
       "status": "ok",
@@ -7104,7 +7177,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "coolmic",
       "nsfw": false,
-      "ms": 312
+      "ms": 292
     },
     {
       "status": "ok",
@@ -7115,7 +7188,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "azuki",
       "nsfw": false,
-      "ms": 2151
+      "ms": 1792
     },
     {
       "status": "ok",
@@ -7126,7 +7199,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "taadd",
       "nsfw": false,
-      "ms": 1579
+      "ms": 848
     },
     {
       "status": "ok",
@@ -7137,7 +7210,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "manganato",
       "nsfw": false,
-      "ms": 532
+      "ms": 522
     },
     {
       "status": "ok",
@@ -7148,7 +7221,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "zinmanga",
       "nsfw": false,
-      "ms": 510
+      "ms": 475
     },
     {
       "status": "ok",
@@ -7159,7 +7232,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "fanfox",
       "nsfw": false,
-      "ms": 336
+      "ms": 193
     },
     {
       "status": "ok",
@@ -7170,7 +7243,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "mfreak",
       "nsfw": false,
-      "ms": 633
+      "ms": 451
     },
     {
       "status": "ok",
@@ -7181,7 +7254,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "mangatown",
       "nsfw": false,
-      "ms": 557
+      "ms": 357
     },
     {
       "status": "ok",
@@ -7192,7 +7265,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "mangahome",
       "nsfw": false,
-      "ms": 302
+      "ms": 202
     },
     {
       "status": "ok",
@@ -7203,7 +7276,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "linkmanga",
       "nsfw": false,
-      "ms": 853
+      "ms": 822
     },
     {
       "status": "ok",
@@ -7214,7 +7287,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "reimanga",
       "nsfw": false,
-      "ms": 970
+      "ms": 957
     },
     {
       "status": "ok",
@@ -7225,7 +7298,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "mangabtt",
       "nsfw": false,
-      "ms": 246
+      "ms": 173
     },
     {
       "status": "ok",
@@ -7236,7 +7309,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "ninekon",
       "nsfw": false,
-      "ms": 392
+      "ms": 322
     },
     {
       "status": "ok",
@@ -7247,7 +7320,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "manhuaplus",
       "nsfw": false,
-      "ms": 1005
+      "ms": 1135
     },
     {
       "status": "ok",
@@ -7258,7 +7331,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "mangapill",
       "nsfw": false,
-      "ms": 552
+      "ms": 536
     },
     {
       "status": "ok",
@@ -7269,7 +7342,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "mangakawaii",
       "nsfw": false,
-      "ms": 357
+      "ms": 274
     },
     {
       "status": "ok",
@@ -7280,7 +7353,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "mangageko",
       "nsfw": false,
-      "ms": 377
+      "ms": 376
     },
     {
       "status": "ok",
@@ -7291,7 +7364,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "godacomic",
       "nsfw": false,
-      "ms": 203
+      "ms": 139
     },
     {
       "status": "ok",
@@ -7302,7 +7375,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "jpbookstore",
       "nsfw": false,
-      "ms": 490
+      "ms": 1153
     },
     {
       "status": "ok",
@@ -7313,7 +7386,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "pixivcomic",
       "nsfw": false,
-      "ms": 800
+      "ms": 719
     },
     {
       "status": "ok",
@@ -7324,7 +7397,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "inkr",
       "nsfw": false,
-      "ms": 279
+      "ms": 240
     },
     {
       "status": "ok",
@@ -7335,7 +7408,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "lunaranimemanga",
       "nsfw": false,
-      "ms": 320
+      "ms": 302
     },
     {
       "status": "ok",
@@ -7346,7 +7419,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "kissmangain",
       "nsfw": false,
-      "ms": 367
+      "ms": 274
     },
     {
       "status": "ok",
@@ -7357,7 +7430,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "yaoiscan",
       "nsfw": false,
-      "ms": 415
+      "ms": 271
     },
     {
       "status": "ok",
@@ -7368,7 +7441,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "demonicscans",
       "nsfw": false,
-      "ms": 1427
+      "ms": 153
     },
     {
       "status": "ok",
@@ -7379,7 +7452,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "mangadex",
       "nsfw": false,
-      "ms": 201
+      "ms": 173
     },
     {
       "status": "ok",
@@ -7390,7 +7463,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "rawotaku",
       "nsfw": false,
-      "ms": 606
+      "ms": 360
     },
     {
       "status": "ok",
@@ -7401,7 +7474,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "klto9",
       "nsfw": false,
-      "ms": 1342
+      "ms": 1488
     },
     {
       "status": "ok",
@@ -7412,7 +7485,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "hachiraw",
       "nsfw": false,
-      "ms": 474
+      "ms": 363
     },
     {
       "status": "ok",
@@ -7423,7 +7496,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "mangaraw4u",
       "nsfw": false,
-      "ms": 642
+      "ms": 553
     },
     {
       "status": "ok",
@@ -7434,7 +7507,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "nicomanga",
       "nsfw": false,
-      "ms": 817
+      "ms": 763
     },
     {
       "status": "ok",
@@ -7445,7 +7518,7 @@ var MONITOR_DATA = {
       "rank": 50,
       "slug": "rawuwu",
       "nsfw": false,
-      "ms": 504
+      "ms": 342
     },
     {
       "status": "ok",
@@ -7456,7 +7529,7 @@ var MONITOR_DATA = {
       "rank": 51,
       "slug": "rawsakura",
       "nsfw": false,
-      "ms": 352
+      "ms": 298
     },
     {
       "status": "ok",
@@ -7467,7 +7540,7 @@ var MONITOR_DATA = {
       "rank": 52,
       "slug": "bilingualmanga",
       "nsfw": false,
-      "ms": 189
+      "ms": 221
     },
     {
       "status": "ok",
@@ -7478,7 +7551,7 @@ var MONITOR_DATA = {
       "rank": 53,
       "slug": "nihonkuni",
       "nsfw": false,
-      "ms": 1493
+      "ms": 1500
     },
     {
       "status": "ok",
@@ -7489,7 +7562,7 @@ var MONITOR_DATA = {
       "rank": 54,
       "slug": "mangaraw",
       "nsfw": false,
-      "ms": 307
+      "ms": 268
     },
     {
       "status": "ok",
@@ -7500,7 +7573,7 @@ var MONITOR_DATA = {
       "rank": 55,
       "slug": "rawkuma",
       "nsfw": false,
-      "ms": 315
+      "ms": 309
     },
     {
       "status": "ok",
@@ -7511,7 +7584,7 @@ var MONITOR_DATA = {
       "rank": 56,
       "slug": "mangarawbest",
       "nsfw": false,
-      "ms": 479
+      "ms": 462
     },
     {
       "status": "ok",
@@ -7522,7 +7595,7 @@ var MONITOR_DATA = {
       "rank": 57,
       "slug": "welomaraw",
       "nsfw": false,
-      "ms": 476
+      "ms": 467
     },
     {
       "status": "ok",
@@ -7533,7 +7606,7 @@ var MONITOR_DATA = {
       "rank": 58,
       "slug": "spoilerplus",
       "nsfw": false,
-      "ms": 363
+      "ms": 380
     },
     {
       "status": "ok",
@@ -7544,7 +7617,7 @@ var MONITOR_DATA = {
       "rank": 59,
       "slug": "rawlazy",
       "nsfw": false,
-      "ms": 1372
+      "ms": 1311
     },
     {
       "status": "ok",
@@ -7555,7 +7628,7 @@ var MONITOR_DATA = {
       "rank": 60,
       "slug": "raw1001",
       "nsfw": false,
-      "ms": 719
+      "ms": 647
     },
     {
       "status": "ok",
@@ -7566,7 +7639,7 @@ var MONITOR_DATA = {
       "rank": 61,
       "slug": "happymh",
       "nsfw": false,
-      "ms": 424
+      "ms": 414
     },
     {
       "status": "ok",
@@ -7577,7 +7650,7 @@ var MONITOR_DATA = {
       "rank": 62,
       "slug": "baozimhorg",
       "nsfw": false,
-      "ms": 172
+      "ms": 165
     },
     {
       "status": "ok",
@@ -7588,7 +7661,7 @@ var MONITOR_DATA = {
       "rank": 63,
       "slug": "twmanga",
       "nsfw": false,
-      "ms": 1034
+      "ms": 527
     },
     {
       "status": "ok",
@@ -7599,7 +7672,7 @@ var MONITOR_DATA = {
       "rank": 64,
       "slug": "senmanga",
       "nsfw": false,
-      "ms": 397
+      "ms": 344
     },
     {
       "status": "ok",
@@ -7610,7 +7683,7 @@ var MONITOR_DATA = {
       "rank": 65,
       "slug": "rawfree",
       "nsfw": false,
-      "ms": 605
+      "ms": 752
     },
     {
       "status": "ok",
@@ -7621,7 +7694,7 @@ var MONITOR_DATA = {
       "rank": 66,
       "slug": "mangaplaza",
       "nsfw": false,
-      "ms": 380
+      "ms": 347
     },
     {
       "status": "ok",
@@ -7632,7 +7705,7 @@ var MONITOR_DATA = {
       "rank": 67,
       "slug": "mangamirai",
       "nsfw": false,
-      "ms": 529
+      "ms": 512
     },
     {
       "status": "ok",
@@ -7643,7 +7716,7 @@ var MONITOR_DATA = {
       "rank": 68,
       "slug": "mangamikan",
       "nsfw": false,
-      "ms": 594
+      "ms": 597
     },
     {
       "status": "ok",
@@ -7654,18 +7727,18 @@ var MONITOR_DATA = {
       "rank": 69,
       "slug": "mangaberri",
       "nsfw": false,
-      "ms": 536
+      "ms": 547
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "MangaCherri",
       "url": "https://mangacherri.com/home.php",
       "section": "Manga Reading",
       "rank": 70,
       "slug": "mangacherri",
       "nsfw": false,
-      "ms": 570
+      "ms": 432
     },
     {
       "status": "ok",
@@ -7676,7 +7749,7 @@ var MONITOR_DATA = {
       "rank": 71,
       "slug": "dankemoe",
       "nsfw": false,
-      "ms": 343
+      "ms": 394
     },
     {
       "status": "ok",
@@ -7687,7 +7760,7 @@ var MONITOR_DATA = {
       "rank": 72,
       "slug": "hachirumi",
       "nsfw": false,
-      "ms": 943
+      "ms": 496
     },
     {
       "status": "ok",
@@ -7698,7 +7771,7 @@ var MONITOR_DATA = {
       "rank": 73,
       "slug": "silentquill",
       "nsfw": false,
-      "ms": 1772
+      "ms": 1320
     },
     {
       "status": "ok",
@@ -7709,7 +7782,7 @@ var MONITOR_DATA = {
       "rank": 74,
       "slug": "akarimanga",
       "nsfw": false,
-      "ms": 357
+      "ms": 247
     },
     {
       "status": "ok",
@@ -7720,7 +7793,7 @@ var MONITOR_DATA = {
       "rank": 75,
       "slug": "nineanime",
       "nsfw": false,
-      "ms": 1086
+      "ms": 851
     },
     {
       "status": "ok",
@@ -7731,7 +7804,7 @@ var MONITOR_DATA = {
       "rank": 76,
       "slug": "manhuabuddy",
       "nsfw": false,
-      "ms": 591
+      "ms": 567
     },
     {
       "status": "ok",
@@ -7742,7 +7815,7 @@ var MONITOR_DATA = {
       "rank": 77,
       "slug": "readmangacc",
       "nsfw": false,
-      "ms": 1142
+      "ms": 880
     },
     {
       "status": "ok",
@@ -7753,7 +7826,7 @@ var MONITOR_DATA = {
       "rank": 78,
       "slug": "pawmanga",
       "nsfw": false,
-      "ms": 400
+      "ms": 156
     },
     {
       "status": "ok",
@@ -7764,7 +7837,7 @@ var MONITOR_DATA = {
       "rank": 79,
       "slug": "lilymanga",
       "nsfw": false,
-      "ms": 472
+      "ms": 417
     },
     {
       "status": "ok",
@@ -7775,7 +7848,7 @@ var MONITOR_DATA = {
       "rank": 80,
       "slug": "comicless",
       "nsfw": false,
-      "ms": 281
+      "ms": 260
     },
     {
       "status": "ok",
@@ -7786,7 +7859,7 @@ var MONITOR_DATA = {
       "rank": 81,
       "slug": "mangadoom",
       "nsfw": false,
-      "ms": 1293
+      "ms": 1203
     },
     {
       "status": "ok",
@@ -7797,7 +7870,7 @@ var MONITOR_DATA = {
       "rank": 82,
       "slug": "mangakakalottv",
       "nsfw": false,
-      "ms": 1252
+      "ms": 1007
     },
     {
       "status": "ok",
@@ -7808,7 +7881,7 @@ var MONITOR_DATA = {
       "rank": 83,
       "slug": "mangareadorg",
       "nsfw": false,
-      "ms": 967
+      "ms": 671
     },
     {
       "status": "ok",
@@ -7819,18 +7892,18 @@ var MONITOR_DATA = {
       "rank": 84,
       "slug": "mangagoio",
       "nsfw": false,
-      "ms": 757
+      "ms": 488
     },
     {
       "status": "ok",
-      "detail": "HTTP 403",
+      "detail": "HTTP 200",
       "name": "Aqua manga",
       "url": "https://aquareader.net/",
       "section": "Manga Reading",
       "rank": 85,
       "slug": "aquamanga",
       "nsfw": false,
-      "ms": 649
+      "ms": 712
     },
     {
       "status": "ok",
@@ -7841,7 +7914,7 @@ var MONITOR_DATA = {
       "rank": 86,
       "slug": "todaymanga",
       "nsfw": false,
-      "ms": 1792
+      "ms": 1312
     },
     {
       "status": "ok",
@@ -7852,7 +7925,7 @@ var MONITOR_DATA = {
       "rank": 87,
       "slug": "mangahotto",
       "nsfw": false,
-      "ms": 487
+      "ms": 440
     },
     {
       "status": "ok",
@@ -7863,7 +7936,7 @@ var MONITOR_DATA = {
       "rank": 88,
       "slug": "mangablaze",
       "nsfw": false,
-      "ms": 523
+      "ms": 520
     },
     {
       "status": "ok",
@@ -7874,7 +7947,7 @@ var MONITOR_DATA = {
       "rank": 89,
       "slug": "coffeemanga",
       "nsfw": false,
-      "ms": 534
+      "ms": 388
     },
     {
       "status": "ok",
@@ -7885,7 +7958,7 @@ var MONITOR_DATA = {
       "rank": 90,
       "slug": "mangasushi",
       "nsfw": false,
-      "ms": 1510
+      "ms": 1024
     },
     {
       "status": "ok",
@@ -7896,7 +7969,7 @@ var MONITOR_DATA = {
       "rank": 91,
       "slug": "kagane",
       "nsfw": false,
-      "ms": 650
+      "ms": 582
     },
     {
       "status": "ok",
@@ -7907,7 +7980,7 @@ var MONITOR_DATA = {
       "rank": 92,
       "slug": "mangago",
       "nsfw": false,
-      "ms": 444
+      "ms": 341
     },
     {
       "status": "ok",
@@ -7918,7 +7991,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "projectsuki",
       "nsfw": false,
-      "ms": 1087
+      "ms": 963
     },
     {
       "status": "ok",
@@ -7929,7 +8002,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "madaradex",
       "nsfw": true,
-      "ms": 444
+      "ms": 779
     },
     {
       "status": "ok",
@@ -7940,7 +8013,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "readoppai",
       "nsfw": true,
-      "ms": 802
+      "ms": 944
     },
     {
       "status": "ok",
@@ -7951,7 +8024,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "hentai20",
       "nsfw": true,
-      "ms": 194
+      "ms": 188
     },
     {
       "status": "ok",
@@ -7962,7 +8035,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "toomicsfree",
       "nsfw": true,
-      "ms": 665
+      "ms": 512
     },
     {
       "status": "ok",
@@ -7973,7 +8046,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "hiperdex",
       "nsfw": true,
-      "ms": 343
+      "ms": 344
     },
     {
       "status": "ok",
@@ -7984,7 +8057,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "comicland",
       "nsfw": true,
-      "ms": 201
+      "ms": 154
     },
     {
       "status": "ok",
@@ -7995,7 +8068,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "pornhwaz",
       "nsfw": true,
-      "ms": 367
+      "ms": 273
     },
     {
       "status": "ok",
@@ -8006,7 +8079,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "manhwaz",
       "nsfw": false,
-      "ms": 594
+      "ms": 431
     },
     {
       "status": "ok",
@@ -8017,7 +8090,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "mangagg",
       "nsfw": false,
-      "ms": 907
+      "ms": 825
     },
     {
       "status": "ok",
@@ -8028,7 +8101,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "toonily",
       "nsfw": false,
-      "ms": 312
+      "ms": 323
     },
     {
       "status": "ok",
@@ -8039,7 +8112,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "manhwatop",
       "nsfw": false,
-      "ms": 869
+      "ms": 800
     },
     {
       "status": "ok",
@@ -8050,7 +8123,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "kuramanga",
       "nsfw": false,
-      "ms": 552
+      "ms": 457
     },
     {
       "status": "ok",
@@ -8061,7 +8134,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "topmanhua",
       "nsfw": false,
-      "ms": 727
+      "ms": 687
     },
     {
       "status": "ok",
@@ -8072,7 +8145,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "cocomic",
       "nsfw": false,
-      "ms": 437
+      "ms": 660
     },
     {
       "status": "ok",
@@ -8083,7 +8156,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "galaxymanga",
       "nsfw": false,
-      "ms": 1232
+      "ms": 1226
     },
     {
       "status": "ok",
@@ -8094,7 +8167,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "manta",
       "nsfw": false,
-      "ms": 428
+      "ms": 268
     },
     {
       "status": "ok",
@@ -8105,7 +8178,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "manhwatoonme",
       "nsfw": false,
-      "ms": 1793
+      "ms": 1832
     },
     {
       "status": "ok",
@@ -8116,7 +8189,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "manga18fx",
       "nsfw": true,
-      "ms": 428
+      "ms": 528
     },
     {
       "status": "ok",
@@ -8127,7 +8200,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "mangator",
       "nsfw": true,
-      "ms": 224
+      "ms": 138
     },
     {
       "status": "ok",
@@ -8138,7 +8211,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "webtoonxyz",
       "nsfw": true,
-      "ms": 372
+      "ms": 246
     },
     {
       "status": "ok",
@@ -8149,7 +8222,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "manhwahentai",
       "nsfw": true,
-      "ms": 547
+      "ms": 250
     },
     {
       "status": "ok",
@@ -8160,7 +8233,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "toonflix",
       "nsfw": false,
-      "ms": 1293
+      "ms": 1220
     },
     {
       "status": "ok",
@@ -8171,7 +8244,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "nicelink22",
       "nsfw": false,
-      "ms": 606
+      "ms": 508
     },
     {
       "status": "ok",
@@ -8182,7 +8255,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "toonkor",
       "nsfw": false,
-      "ms": 1144
+      "ms": 1170
     },
     {
       "status": "ok",
@@ -8193,7 +8266,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "blacktoon",
       "nsfw": false,
-      "ms": 957
+      "ms": 1073
     },
     {
       "status": "ok",
@@ -8204,7 +8277,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "happytoon",
       "nsfw": true,
-      "ms": 341
+      "ms": 274
     },
     {
       "status": "ok",
@@ -8215,7 +8288,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "xtoon2",
       "nsfw": false,
-      "ms": 665
+      "ms": 569
     },
     {
       "status": "ok",
@@ -8226,7 +8299,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "funbe512",
       "nsfw": false,
-      "ms": 1104
+      "ms": 1041
     },
     {
       "status": "ok",
@@ -8237,7 +8310,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "kingofshojo",
       "nsfw": false,
-      "ms": 800
+      "ms": 700
     },
     {
       "status": "ok",
@@ -8248,7 +8321,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "omegascans",
       "nsfw": true,
-      "ms": 373
+      "ms": 344
     },
     {
       "status": "ok",
@@ -8259,7 +8332,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "toongod",
       "nsfw": true,
-      "ms": 316
+      "ms": 257
     },
     {
       "status": "ok",
@@ -8270,7 +8343,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "manhwabuddy",
       "nsfw": true,
-      "ms": 601
+      "ms": 388
     },
     {
       "status": "ok",
@@ -8281,7 +8354,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "mangadistrict",
       "nsfw": true,
-      "ms": 843
+      "ms": 498
     },
     {
       "status": "ok",
@@ -8292,7 +8365,7 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "manga18",
       "nsfw": true,
-      "ms": 515
+      "ms": 597
     },
     {
       "status": "ok",
@@ -8303,7 +8376,7 @@ var MONITOR_DATA = {
       "rank": 36,
       "slug": "manhwa18",
       "nsfw": true,
-      "ms": 585
+      "ms": 597
     },
     {
       "status": "ok",
@@ -8314,7 +8387,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "mangatx",
       "nsfw": true,
-      "ms": 687
+      "ms": 621
     },
     {
       "status": "ok",
@@ -8325,7 +8398,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "manhwaden",
       "nsfw": true,
-      "ms": 1471
+      "ms": 1283
     },
     {
       "status": "ok",
@@ -8336,7 +8409,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "manhwasusu",
       "nsfw": true,
-      "ms": 674
+      "ms": 694
     },
     {
       "status": "ok",
@@ -8347,7 +8420,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "theblank",
       "nsfw": true,
-      "ms": 295
+      "ms": 302
     },
     {
       "status": "ok",
@@ -8358,7 +8431,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "luacomic",
       "nsfw": false,
-      "ms": 615
+      "ms": 575
     },
     {
       "status": "ok",
@@ -8369,7 +8442,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "asuragg",
       "nsfw": false,
-      "ms": 216
+      "ms": 141
     },
     {
       "status": "ok",
@@ -8380,7 +8453,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "templescan",
       "nsfw": false,
-      "ms": 507
+      "ms": 532
     },
     {
       "status": "ok",
@@ -8391,7 +8464,7 @@ var MONITOR_DATA = {
       "rank": 44,
       "slug": "flamescans",
       "nsfw": false,
-      "ms": 346
+      "ms": 343
     },
     {
       "status": "ok",
@@ -8402,18 +8475,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "rokaricomics",
       "nsfw": false,
-      "ms": 351
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 503",
-      "name": "Reset Scans",
-      "url": "https://reset-scans.org/",
-      "section": "Manhwa Reading",
-      "rank": 46,
-      "slug": "resetscans",
-      "nsfw": false,
-      "ms": 1436
+      "ms": 650
     },
     {
       "status": "ok",
@@ -8424,7 +8486,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "hivescans",
       "nsfw": false,
-      "ms": 3168
+      "ms": 1762
     },
     {
       "status": "ok",
@@ -8435,7 +8497,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "divascans",
       "nsfw": false,
-      "ms": 663
+      "ms": 490
     },
     {
       "status": "ok",
@@ -8446,7 +8508,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "plutoscans",
       "nsfw": false,
-      "ms": 753
+      "ms": 775
     },
     {
       "status": "ok",
@@ -8457,7 +8519,7 @@ var MONITOR_DATA = {
       "rank": 50,
       "slug": "utoon",
       "nsfw": false,
-      "ms": 3599
+      "ms": 3109
     },
     {
       "status": "ok",
@@ -8468,7 +8530,7 @@ var MONITOR_DATA = {
       "rank": 51,
       "slug": "erosscans",
       "nsfw": false,
-      "ms": 1459
+      "ms": 1575
     },
     {
       "status": "ok",
@@ -8479,7 +8541,7 @@ var MONITOR_DATA = {
       "rank": 52,
       "slug": "manhuafast",
       "nsfw": false,
-      "ms": 330
+      "ms": 271
     },
     {
       "status": "ok",
@@ -8490,7 +8552,7 @@ var MONITOR_DATA = {
       "rank": 53,
       "slug": "mangack",
       "nsfw": false,
-      "ms": 458
+      "ms": 408
     },
     {
       "status": "ok",
@@ -8501,7 +8563,7 @@ var MONITOR_DATA = {
       "rank": 54,
       "slug": "manhwaepisodes",
       "nsfw": true,
-      "ms": 393
+      "ms": 276
     },
     {
       "status": "ok",
@@ -8512,7 +8574,7 @@ var MONITOR_DATA = {
       "rank": 55,
       "slug": "manhuarmmtl",
       "nsfw": false,
-      "ms": 1643
+      "ms": 1525
     },
     {
       "status": "ok",
@@ -8523,7 +8585,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "chiaki",
       "nsfw": false,
-      "ms": 271
+      "ms": 436
     },
     {
       "status": "ok",
@@ -8534,7 +8596,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "malsync",
       "nsfw": false,
-      "ms": 224
+      "ms": 163
     },
     {
       "status": "ok",
@@ -8545,7 +8607,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "saucenao",
       "nsfw": false,
-      "ms": 269
+      "ms": 359
     },
     {
       "status": "ok",
@@ -8556,7 +8618,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "tracemoe",
       "nsfw": false,
-      "ms": 223
+      "ms": 176
     },
     {
       "status": "ok",
@@ -8567,7 +8629,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "cubari",
       "nsfw": false,
-      "ms": 258
+      "ms": 139
     },
     {
       "status": "ok",
@@ -8578,7 +8640,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "duemoe",
       "nsfw": false,
-      "ms": 357
+      "ms": 276
     },
     {
       "status": "ok",
@@ -8589,7 +8651,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "karamoeapp",
       "nsfw": false,
-      "ms": 1266
+      "ms": 1321
     },
     {
       "status": "ok",
@@ -8600,7 +8662,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "taigamoe",
       "nsfw": false,
-      "ms": 444
+      "ms": 389
     },
     {
       "status": "ok",
@@ -8611,7 +8673,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "shoko",
       "nsfw": false,
-      "ms": 612
+      "ms": 260
     },
     {
       "status": "ok",
@@ -8622,7 +8684,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "trackma",
       "nsfw": false,
-      "ms": 124
+      "ms": 136
     },
     {
       "status": "ok",
@@ -8633,7 +8695,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "komga",
       "nsfw": false,
-      "ms": 209
+      "ms": 241
     },
     {
       "status": "ok",
@@ -8644,7 +8706,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "opencomic",
       "nsfw": false,
-      "ms": 645
+      "ms": 545
     },
     {
       "status": "ok",
@@ -8655,7 +8717,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "onegaimoe",
       "nsfw": false,
-      "ms": 202
+      "ms": 268
     },
     {
       "status": "ok",
@@ -8666,7 +8728,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "panelsdesu",
       "nsfw": false,
-      "ms": 261
+      "ms": 279
     },
     {
       "status": "ok",
@@ -8677,7 +8739,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "iqdb",
       "nsfw": false,
-      "ms": 805
+      "ms": 1386
     },
     {
       "status": "ok",
@@ -8688,7 +8750,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "mydublist",
       "nsfw": false,
-      "ms": 258
+      "ms": 282
     },
     {
       "status": "ok",
@@ -8699,7 +8761,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "fancaps",
       "nsfw": false,
-      "ms": 167
+      "ms": 204
     },
     {
       "status": "ok",
@@ -8710,7 +8772,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "tundra",
       "nsfw": false,
-      "ms": 165
+      "ms": 243
     },
     {
       "status": "ok",
@@ -8721,7 +8783,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "nyaatui",
       "nsfw": false,
-      "ms": 659
+      "ms": 541
     },
     {
       "status": "ok",
@@ -8732,7 +8794,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "anicour",
       "nsfw": false,
-      "ms": 644
+      "ms": 511
     },
     {
       "status": "ok",
@@ -8743,7 +8805,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "wrongopinions",
       "nsfw": false,
-      "ms": 237
+      "ms": 139
     },
     {
       "status": "ok",
@@ -8754,7 +8816,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "relatedanime",
       "nsfw": false,
-      "ms": 318
+      "ms": 187
     },
     {
       "status": "ok",
@@ -8765,7 +8827,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "randomanime",
       "nsfw": false,
-      "ms": 322
+      "ms": 208
     },
     {
       "status": "ok",
@@ -8776,7 +8838,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "spinmoe",
       "nsfw": false,
-      "ms": 2196
+      "ms": 2000
     },
     {
       "status": "ok",
@@ -8787,7 +8849,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "animebracket",
       "nsfw": false,
-      "ms": 423
+      "ms": 408
     },
     {
       "status": "ok",
@@ -8798,7 +8860,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "pnganime",
       "nsfw": false,
-      "ms": 394
+      "ms": 395
     },
     {
       "status": "ok",
@@ -8809,7 +8871,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "1shows",
       "nsfw": false,
-      "ms": 175
+      "ms": 152
     },
     {
       "status": "ok",
@@ -8820,7 +8882,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "1tube",
       "nsfw": false,
-      "ms": 178
+      "ms": 163
     },
     {
       "status": "ok",
@@ -8831,7 +8893,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "alienflix",
       "nsfw": false,
-      "ms": 1009
+      "ms": 932
     },
     {
       "status": "ok",
@@ -8842,7 +8904,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "wooflix",
       "nsfw": false,
-      "ms": 653
+      "ms": 283
     },
     {
       "status": "ok",
@@ -8853,18 +8915,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "cinemabz",
       "nsfw": false,
-      "ms": 449
-    },
-    {
-      "status": "ok",
-      "detail": "HTTP 522",
-      "name": "Spenflix",
-      "url": "https://watch.spencerdevs.xyz/",
-      "section": "Movies & TV Streaming",
-      "rank": 6,
-      "slug": "spenflix",
-      "nsfw": false,
-      "ms": 35156
+      "ms": 309
     },
     {
       "status": "ok",
@@ -8875,7 +8926,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "filmcave",
       "nsfw": false,
-      "ms": 277
+      "ms": 564
     },
     {
       "status": "ok",
@@ -8886,7 +8937,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "corsflix",
       "nsfw": false,
-      "ms": 184
+      "ms": 148
     },
     {
       "status": "ok",
@@ -8897,7 +8948,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "streamx",
       "nsfw": false,
-      "ms": 504
+      "ms": 448
     },
     {
       "status": "ok",
@@ -8908,18 +8959,18 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "cinezo",
       "nsfw": false,
-      "ms": 461
+      "ms": 329
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Cineby",
       "url": "https://www.cineby.gd/",
       "section": "Movies & TV Streaming",
       "rank": 11,
       "slug": "cineby",
       "nsfw": false,
-      "ms": 1176
+      "ms": 1802
     },
     {
       "status": "ok",
@@ -8930,7 +8981,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "donkeyto",
       "nsfw": false,
-      "ms": 427
+      "ms": 431
     },
     {
       "status": "ok",
@@ -8941,7 +8992,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "willow",
       "nsfw": false,
-      "ms": 259
+      "ms": 208
     },
     {
       "status": "ok",
@@ -8952,7 +9003,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "neputo",
       "nsfw": false,
-      "ms": 326
+      "ms": 269
     },
     {
       "status": "ok",
@@ -8963,7 +9014,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "fmovies",
       "nsfw": false,
-      "ms": 771
+      "ms": 759
     },
     {
       "status": "ok",
@@ -8974,7 +9025,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "67movies",
       "nsfw": false,
-      "ms": 183
+      "ms": 161
     },
     {
       "status": "ok",
@@ -8985,7 +9036,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "smashystream",
       "nsfw": false,
-      "ms": 256
+      "ms": 246
     },
     {
       "status": "ok",
@@ -8996,7 +9047,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "karamoe",
       "nsfw": false,
-      "ms": 2035
+      "ms": 711
     },
     {
       "status": "ok",
@@ -9007,7 +9058,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "animesonglyrics",
       "nsfw": false,
-      "ms": 285
+      "ms": 245
     },
     {
       "status": "ok",
@@ -9018,7 +9069,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "lyricalnonsense",
       "nsfw": false,
-      "ms": 164
+      "ms": 184
     },
     {
       "status": "ok",
@@ -9040,7 +9091,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "anisononline",
       "nsfw": false,
-      "ms": 649
+      "ms": 1176
     },
     {
       "status": "ok",
@@ -9051,7 +9102,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "anisongdb",
       "nsfw": false,
-      "ms": 451
+      "ms": 307
     },
     {
       "status": "ok",
@@ -9062,7 +9113,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "listenmoe",
       "nsfw": false,
-      "ms": 416
+      "ms": 344
     },
     {
       "status": "ok",
@@ -9073,7 +9124,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "radio",
       "nsfw": false,
-      "ms": 854
+      "ms": 785
     },
     {
       "status": "ok",
@@ -9084,7 +9135,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "sittingonclouds",
       "nsfw": false,
-      "ms": 720
+      "ms": 497
     },
     {
       "status": "ok",
@@ -9095,7 +9146,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "okamimiost",
       "nsfw": false,
-      "ms": 749
+      "ms": 571
     },
     {
       "status": "ok",
@@ -9106,7 +9157,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "doujinstyle",
       "nsfw": true,
-      "ms": 1171
+      "ms": 548
     },
     {
       "status": "ok",
@@ -9117,7 +9168,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "tmlc",
       "nsfw": false,
-      "ms": 442
+      "ms": 354
     },
     {
       "status": "ok",
@@ -9128,7 +9179,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "touhoukuukunen",
       "nsfw": false,
-      "ms": 671
+      "ms": 647
     },
     {
       "status": "ok",
@@ -9139,18 +9190,18 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "khinsider",
       "nsfw": false,
-      "ms": 598
+      "ms": 520
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Sonix's OST",
       "url": "https://sonixgvn.net/",
       "section": "Music",
       "rank": 15,
       "slug": "sonixgvn",
       "nsfw": false,
-      "ms": 264
+      "ms": 258
     },
     {
       "status": "ok",
@@ -9161,7 +9212,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "osanime",
       "nsfw": false,
-      "ms": 315
+      "ms": 246
     },
     {
       "status": "ok",
@@ -9172,7 +9223,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "musicdex",
       "nsfw": false,
-      "ms": 661
+      "ms": 697
     },
     {
       "status": "ok",
@@ -9183,7 +9234,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "allanimusic",
       "nsfw": false,
-      "ms": 127
+      "ms": 117
     },
     {
       "status": "ok",
@@ -9194,7 +9245,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "openingsmoe",
       "nsfw": false,
-      "ms": 608
+      "ms": 565
     },
     {
       "status": "ok",
@@ -9205,7 +9256,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "sakuraost",
       "nsfw": false,
-      "ms": 342
+      "ms": 284
     },
     {
       "status": "ok",
@@ -9216,7 +9267,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "squidify",
       "nsfw": false,
-      "ms": 587
+      "ms": 15785
     },
     {
       "status": "ok",
@@ -9227,7 +9278,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "jpopsingles",
       "nsfw": false,
-      "ms": 1659
+      "ms": 1098
     },
     {
       "status": "ok",
@@ -9238,7 +9289,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "yggdrasilradio",
       "nsfw": false,
-      "ms": 474
+      "ms": 355
     },
     {
       "status": "ok",
@@ -9249,7 +9300,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "radioanime24",
       "nsfw": false,
-      "ms": 1140
+      "ms": 1123
     },
     {
       "status": "ok",
@@ -9260,7 +9311,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "gensokyoradio",
       "nsfw": false,
-      "ms": 507
+      "ms": 388
     },
     {
       "status": "ok",
@@ -9271,7 +9322,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "onepiecetracklist",
       "nsfw": false,
-      "ms": 496
+      "ms": 408
     },
     {
       "status": "ok",
@@ -9282,7 +9333,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "aniplaylist",
       "nsfw": false,
-      "ms": 378
+      "ms": 295
     },
     {
       "status": "ok",
@@ -9293,7 +9344,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "mangazipmusic",
       "nsfw": false,
-      "ms": 232
+      "ms": 261
     },
     {
       "status": "ok",
@@ -9304,7 +9355,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "novelfire",
       "nsfw": false,
-      "ms": 381
+      "ms": 425
     },
     {
       "status": "ok",
@@ -9315,7 +9366,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "novelarchive",
       "nsfw": false,
-      "ms": 641
+      "ms": 606
     },
     {
       "status": "ok",
@@ -9326,7 +9377,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "lightnovelworldorg",
       "nsfw": false,
-      "ms": 513
+      "ms": 684
     },
     {
       "status": "ok",
@@ -9337,7 +9388,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "novelbuddy",
       "nsfw": false,
-      "ms": 707
+      "ms": 395
     },
     {
       "status": "ok",
@@ -9348,7 +9399,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "noveldex",
       "nsfw": false,
-      "ms": 300
+      "ms": 259
     },
     {
       "status": "ok",
@@ -9359,7 +9410,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "wuxiap",
       "nsfw": false,
-      "ms": 549
+      "ms": 312
     },
     {
       "status": "ok",
@@ -9370,7 +9421,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "wuxiaclick",
       "nsfw": false,
-      "ms": 769
+      "ms": 561
     },
     {
       "status": "ok",
@@ -9381,7 +9432,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "innread",
       "nsfw": false,
-      "ms": 1200
+      "ms": 1371
     },
     {
       "status": "ok",
@@ -9392,18 +9443,18 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "ranobestop",
       "nsfw": false,
-      "ms": 663
+      "ms": 966
     },
     {
       "status": "ok",
-      "detail": "HTTP 503",
+      "detail": "HTTP 200",
       "name": "NovelsOnline",
       "url": "https://novelsonline.org/",
       "section": "Novel Reading",
       "rank": 10,
       "slug": "novelsonline",
       "nsfw": false,
-      "ms": 1867
+      "ms": 1794
     },
     {
       "status": "ok",
@@ -9414,7 +9465,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "bakatsuki",
       "nsfw": false,
-      "ms": 604
+      "ms": 641
     },
     {
       "status": "ok",
@@ -9425,7 +9476,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "fullnovels",
       "nsfw": false,
-      "ms": 397
+      "ms": 256
     },
     {
       "status": "ok",
@@ -9436,7 +9487,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "novelcool",
       "nsfw": false,
-      "ms": 513
+      "ms": 481
     },
     {
       "status": "ok",
@@ -9447,18 +9498,18 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "lncrawler",
       "nsfw": false,
-      "ms": 773
+      "ms": 797
     },
     {
       "status": "ok",
-      "detail": "HTTP 522",
+      "detail": "Connection error",
       "name": "Novel Bin",
       "url": "https://novelbin.com/",
       "section": "Novel Reading",
       "rank": 15,
       "slug": "novelusb",
       "nsfw": false,
-      "ms": 34925
+      "ms": 42
     },
     {
       "status": "ok",
@@ -9469,7 +9520,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "novelhall",
       "nsfw": false,
-      "ms": 406
+      "ms": 169
     },
     {
       "status": "ok",
@@ -9480,7 +9531,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "mvlempyr",
       "nsfw": false,
-      "ms": 588
+      "ms": 501
     },
     {
       "status": "ok",
@@ -9491,7 +9542,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "fucknovelpia",
       "nsfw": false,
-      "ms": 419
+      "ms": 319
     },
     {
       "status": "ok",
@@ -9502,7 +9553,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "lnori",
       "nsfw": false,
-      "ms": 319
+      "ms": 214
     },
     {
       "status": "ok",
@@ -9513,7 +9564,7 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "annasarchive",
       "nsfw": false,
-      "ms": 628
+      "ms": 658
     },
     {
       "status": "ok",
@@ -9524,7 +9575,7 @@ var MONITOR_DATA = {
       "rank": 21,
       "slug": "elscioneserver",
       "nsfw": false,
-      "ms": 712
+      "ms": 762
     },
     {
       "status": "ok",
@@ -9535,7 +9586,7 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "foxaholic",
       "nsfw": false,
-      "ms": 342
+      "ms": 275
     },
     {
       "status": "ok",
@@ -9546,7 +9597,7 @@ var MONITOR_DATA = {
       "rank": 23,
       "slug": "kurehaone",
       "nsfw": false,
-      "ms": 4130
+      "ms": 2523
     },
     {
       "status": "ok",
@@ -9557,7 +9608,7 @@ var MONITOR_DATA = {
       "rank": 24,
       "slug": "jnovels",
       "nsfw": false,
-      "ms": 652
+      "ms": 563
     },
     {
       "status": "ok",
@@ -9568,7 +9619,7 @@ var MONITOR_DATA = {
       "rank": 25,
       "slug": "armaelllib",
       "nsfw": false,
-      "ms": 799
+      "ms": 788
     },
     {
       "status": "ok",
@@ -9579,7 +9630,7 @@ var MONITOR_DATA = {
       "rank": 26,
       "slug": "chrysanthemumgarden",
       "nsfw": false,
-      "ms": 258
+      "ms": 222
     },
     {
       "status": "ok",
@@ -9590,7 +9641,7 @@ var MONITOR_DATA = {
       "rank": 27,
       "slug": "justlightnovels",
       "nsfw": false,
-      "ms": 310
+      "ms": 288
     },
     {
       "status": "ok",
@@ -9601,7 +9652,7 @@ var MONITOR_DATA = {
       "rank": 28,
       "slug": "jpbookstoreln",
       "nsfw": false,
-      "ms": 490
+      "ms": 1153
     },
     {
       "status": "ok",
@@ -9612,7 +9663,7 @@ var MONITOR_DATA = {
       "rank": 29,
       "slug": "cherreads",
       "nsfw": false,
-      "ms": 600
+      "ms": 607
     },
     {
       "status": "ok",
@@ -9623,7 +9674,7 @@ var MONITOR_DATA = {
       "rank": 30,
       "slug": "wuxiaworld",
       "nsfw": false,
-      "ms": 805
+      "ms": 738
     },
     {
       "status": "ok",
@@ -9634,7 +9685,7 @@ var MONITOR_DATA = {
       "rank": 31,
       "slug": "katreadingarchive",
       "nsfw": false,
-      "ms": 318
+      "ms": 257
     },
     {
       "status": "ok",
@@ -9645,7 +9696,7 @@ var MONITOR_DATA = {
       "rank": 32,
       "slug": "asianovelnet",
       "nsfw": false,
-      "ms": 692
+      "ms": 10253
     },
     {
       "status": "ok",
@@ -9656,7 +9707,7 @@ var MONITOR_DATA = {
       "rank": 33,
       "slug": "royalroad",
       "nsfw": false,
-      "ms": 705
+      "ms": 691
     },
     {
       "status": "ok",
@@ -9667,7 +9718,7 @@ var MONITOR_DATA = {
       "rank": 34,
       "slug": "wuxiaworldcom",
       "nsfw": false,
-      "ms": 201
+      "ms": 183
     },
     {
       "status": "ok",
@@ -9678,18 +9729,18 @@ var MONITOR_DATA = {
       "rank": 35,
       "slug": "webnovelcom",
       "nsfw": false,
-      "ms": 661
+      "ms": 422
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "ScribbleHub",
       "url": "https://www.scribblehub.com/",
       "section": "Novel Reading",
       "rank": 36,
       "slug": "scribblehub",
       "nsfw": false,
-      "ms": 732
+      "ms": 248
     },
     {
       "status": "ok",
@@ -9700,7 +9751,7 @@ var MONITOR_DATA = {
       "rank": 37,
       "slug": "allnovelfull",
       "nsfw": false,
-      "ms": 357
+      "ms": 314
     },
     {
       "status": "ok",
@@ -9711,7 +9762,7 @@ var MONITOR_DATA = {
       "rank": 38,
       "slug": "woopread",
       "nsfw": false,
-      "ms": 855
+      "ms": 334
     },
     {
       "status": "ok",
@@ -9722,7 +9773,7 @@ var MONITOR_DATA = {
       "rank": 39,
       "slug": "ranovel",
       "nsfw": false,
-      "ms": 1997
+      "ms": 1978
     },
     {
       "status": "ok",
@@ -9733,7 +9784,7 @@ var MONITOR_DATA = {
       "rank": 40,
       "slug": "wuxiadreams",
       "nsfw": false,
-      "ms": 776
+      "ms": 544
     },
     {
       "status": "ok",
@@ -9744,7 +9795,7 @@ var MONITOR_DATA = {
       "rank": 41,
       "slug": "novelpia",
       "nsfw": false,
-      "ms": 307
+      "ms": 259
     },
     {
       "status": "ok",
@@ -9755,7 +9806,7 @@ var MONITOR_DATA = {
       "rank": 42,
       "slug": "9kafe",
       "nsfw": false,
-      "ms": 199
+      "ms": 138
     },
     {
       "status": "ok",
@@ -9766,7 +9817,7 @@ var MONITOR_DATA = {
       "rank": 43,
       "slug": "wtrlab",
       "nsfw": false,
-      "ms": 383
+      "ms": 332
     },
     {
       "status": "ok",
@@ -9777,7 +9828,7 @@ var MONITOR_DATA = {
       "rank": 45,
       "slug": "lnmtl",
       "nsfw": false,
-      "ms": 368
+      "ms": 763
     },
     {
       "status": "ok",
@@ -9788,7 +9839,7 @@ var MONITOR_DATA = {
       "rank": 46,
       "slug": "mtlnation",
       "nsfw": false,
-      "ms": 889
+      "ms": 874
     },
     {
       "status": "ok",
@@ -9799,7 +9850,7 @@ var MONITOR_DATA = {
       "rank": 47,
       "slug": "readnovelmtl",
       "nsfw": false,
-      "ms": 320
+      "ms": 260
     },
     {
       "status": "ok",
@@ -9810,7 +9861,7 @@ var MONITOR_DATA = {
       "rank": 48,
       "slug": "requiemtls",
       "nsfw": false,
-      "ms": 1539
+      "ms": 710
     },
     {
       "status": "ok",
@@ -9821,7 +9872,7 @@ var MONITOR_DATA = {
       "rank": 49,
       "slug": "novelhi",
       "nsfw": false,
-      "ms": 227
+      "ms": 212
     },
     {
       "status": "ok",
@@ -9832,7 +9883,7 @@ var MONITOR_DATA = {
       "rank": 50,
       "slug": "mtlbooks",
       "nsfw": false,
-      "ms": 781
+      "ms": 756
     },
     {
       "status": "ok",
@@ -9843,7 +9894,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "AnimeMusicQuiz",
       "nsfw": false,
-      "ms": 616
+      "ms": 552
     },
     {
       "status": "ok",
@@ -9854,7 +9905,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "aniguessr",
       "nsfw": false,
-      "ms": 684
+      "ms": 624
     },
     {
       "status": "ok",
@@ -9865,7 +9916,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "chiakiquiz",
       "nsfw": false,
-      "ms": 424
+      "ms": 307
     },
     {
       "status": "ok",
@@ -9876,7 +9927,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "aniconnections",
       "nsfw": false,
-      "ms": 258
+      "ms": 188
     },
     {
       "status": "ok",
@@ -9887,7 +9938,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "erogemusicquiz",
       "nsfw": false,
-      "ms": 351
+      "ms": 319
     },
     {
       "status": "ok",
@@ -9898,7 +9949,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "guesstheopening",
       "nsfw": false,
-      "ms": 307
+      "ms": 191
     },
     {
       "status": "ok",
@@ -9909,7 +9960,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "animeopeningquiz",
       "nsfw": false,
-      "ms": 660
+      "ms": 587
     },
     {
       "status": "ok",
@@ -9920,7 +9971,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "animesongsorg",
       "nsfw": false,
-      "ms": 550
+      "ms": 488
     },
     {
       "status": "ok",
@@ -9931,7 +9982,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "animerdle",
       "nsfw": false,
-      "ms": 216
+      "ms": 149
     },
     {
       "status": "ok",
@@ -9942,7 +9993,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "animetrivia",
       "nsfw": false,
-      "ms": 309
+      "ms": 251
     },
     {
       "status": "ok",
@@ -9953,7 +10004,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "animeguess",
       "nsfw": false,
-      "ms": 392
+      "ms": 355
     },
     {
       "status": "ok",
@@ -9964,7 +10015,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "animestats",
       "nsfw": false,
-      "ms": 833
+      "ms": 797
     },
     {
       "status": "ok",
@@ -9975,7 +10026,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "animekarmalist",
       "nsfw": false,
-      "ms": 241
+      "ms": 155
     },
     {
       "status": "ok",
@@ -9986,7 +10037,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "anitrendz",
       "nsfw": false,
-      "ms": 658
+      "ms": 777
     },
     {
       "status": "ok",
@@ -9997,7 +10048,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "animecorner",
       "nsfw": false,
-      "ms": 289
+      "ms": 144
     },
     {
       "status": "ok",
@@ -10008,7 +10059,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "mangatumeo",
       "nsfw": false,
-      "ms": 332
+      "ms": 251
     },
     {
       "status": "ok",
@@ -10019,7 +10070,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "mangacodex",
       "nsfw": false,
-      "ms": 1214
+      "ms": 1318
     },
     {
       "status": "ok",
@@ -10030,7 +10081,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "jajanken",
       "nsfw": false,
-      "ms": 595
+      "ms": 603
     },
     {
       "status": "ok",
@@ -10041,7 +10092,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "livechart",
       "nsfw": false,
-      "ms": 308
+      "ms": 261
     },
     {
       "status": "ok",
@@ -10052,7 +10103,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "anichart",
       "nsfw": false,
-      "ms": 204
+      "ms": 148
     },
     {
       "status": "ok",
@@ -10063,7 +10114,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "syoboi",
       "nsfw": false,
-      "ms": 514
+      "ms": 503
     },
     {
       "status": "ok",
@@ -10074,7 +10125,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "animeschedule",
       "nsfw": false,
-      "ms": 439
+      "ms": 432
     },
     {
       "status": "ok",
@@ -10085,7 +10136,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "upcomingdubanime",
       "nsfw": false,
-      "ms": 551
+      "ms": 588
     },
     {
       "status": "ok",
@@ -10096,7 +10147,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "teamupdubschedule",
       "nsfw": false,
-      "ms": 223
+      "ms": 173
     },
     {
       "status": "ok",
@@ -10107,7 +10158,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "otakucalendar",
       "nsfw": false,
-      "ms": 1288
+      "ms": 1195
     },
     {
       "status": "ok",
@@ -10118,7 +10169,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "lnrelease",
       "nsfw": false,
-      "ms": 143
+      "ms": 131
     },
     {
       "status": "ok",
@@ -10129,7 +10180,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "yattatachi",
       "nsfw": false,
-      "ms": 369
+      "ms": 322
     },
     {
       "status": "ok",
@@ -10140,7 +10191,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "animeairing",
       "nsfw": false,
-      "ms": 528
+      "ms": 463
     },
     {
       "status": "ok",
@@ -10151,7 +10202,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "anicountdown",
       "nsfw": false,
-      "ms": 389
+      "ms": 335
     },
     {
       "status": "ok",
@@ -10162,7 +10213,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "senpaimoe",
       "nsfw": false,
-      "ms": 820
+      "ms": 663
     },
     {
       "status": "ok",
@@ -10173,7 +10224,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "anicajp",
       "nsfw": false,
-      "ms": 731
+      "ms": 664
     },
     {
       "status": "ok",
@@ -10184,7 +10235,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "holodex",
       "nsfw": false,
-      "ms": 208
+      "ms": 190
     },
     {
       "status": "ok",
@@ -10195,7 +10246,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "amatsukaze",
       "nsfw": false,
-      "ms": 594
+      "ms": 577
     },
     {
       "status": "ok",
@@ -10206,7 +10257,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "vtubie",
       "nsfw": false,
-      "ms": 492
+      "ms": 256
     },
     {
       "status": "ok",
@@ -10217,7 +10268,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "hololist",
       "nsfw": false,
-      "ms": 417
+      "ms": 340
     },
     {
       "status": "ok",
@@ -10228,7 +10279,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "ragtagmoe",
       "nsfw": false,
-      "ms": 1083
+      "ms": 704
     },
     {
       "status": "ok",
@@ -10239,7 +10290,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "patchwork",
       "nsfw": false,
-      "ms": 316
+      "ms": 387
     },
     {
       "status": "ok",
@@ -10250,7 +10301,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "asmrarchive",
       "nsfw": false,
-      "ms": 905
+      "ms": 907
     },
     {
       "status": "ok",
@@ -10261,7 +10312,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "ovumoe",
       "nsfw": false,
-      "ms": 411
+      "ms": 535
     },
     {
       "status": "ok",
@@ -10272,7 +10323,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "hololyzer",
       "nsfw": false,
-      "ms": 1892
+      "ms": 1684
     },
     {
       "status": "ok",
@@ -10283,7 +10334,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "mogu",
       "nsfw": false,
-      "ms": 768
+      "ms": 694
     },
     {
       "status": "ok",
@@ -10294,7 +10345,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "vrabi",
       "nsfw": false,
-      "ms": 179
+      "ms": 173
     },
     {
       "status": "ok",
@@ -10305,7 +10356,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "holoclips",
       "nsfw": false,
-      "ms": 369
+      "ms": 367
     },
     {
       "status": "ok",
@@ -10316,7 +10367,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "trackholo",
       "nsfw": false,
-      "ms": 580
+      "ms": 632
     },
     {
       "status": "ok",
@@ -10327,7 +10378,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "vtubernewsdrop",
       "nsfw": false,
-      "ms": 617
+      "ms": 684
     },
     {
       "status": "ok",
@@ -10338,7 +10389,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "goodvtubersubs",
       "nsfw": false,
-      "ms": 244
+      "ms": 215
     },
     {
       "status": "ok",
@@ -10349,18 +10400,18 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "vtuberschedules",
       "nsfw": false,
-      "ms": 248
+      "ms": 162
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Cineby",
       "url": "https://www.cineby.sc/",
       "section": "Western Streaming",
       "rank": 1,
       "slug": "cinebyapp",
       "nsfw": false,
-      "ms": 338
+      "ms": 626
     },
     {
       "status": "ok",
@@ -10371,7 +10422,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "shuttletv",
       "nsfw": false,
-      "ms": 897
+      "ms": 794
     },
     {
       "status": "ok",
@@ -10382,7 +10433,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "hydrahd",
       "nsfw": false,
-      "ms": 323
+      "ms": 303
     },
     {
       "status": "ok",
@@ -10393,7 +10444,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "m4uhd",
       "nsfw": false,
-      "ms": 772
+      "ms": 632
     },
     {
       "status": "ok",
@@ -10404,7 +10455,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "cinemaos",
       "nsfw": false,
-      "ms": 736
+      "ms": 620
     },
     {
       "status": "ok",
@@ -10415,7 +10466,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "watchroo",
       "nsfw": false,
-      "ms": 862
+      "ms": 665
     },
     {
       "status": "ok",
@@ -10426,7 +10477,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "vidboxto",
       "nsfw": false,
-      "ms": 612
+      "ms": 465
     },
     {
       "status": "ok",
@@ -10437,7 +10488,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "hexawatch",
       "nsfw": false,
-      "ms": 392
+      "ms": 352
     },
     {
       "status": "ok",
@@ -10448,7 +10499,7 @@ var MONITOR_DATA = {
       "rank": 1,
       "slug": "japanesewithanimewiki",
       "nsfw": true,
-      "ms": 425
+      "ms": 265
     },
     {
       "status": "ok",
@@ -10459,7 +10510,7 @@ var MONITOR_DATA = {
       "rank": 2,
       "slug": "wotaku",
       "nsfw": false,
-      "ms": 396
+      "ms": 337
     },
     {
       "status": "ok",
@@ -10470,7 +10521,7 @@ var MONITOR_DATA = {
       "rank": 3,
       "slug": "anifillerlist",
       "nsfw": false,
-      "ms": 1318
+      "ms": 260
     },
     {
       "status": "ok",
@@ -10481,7 +10532,7 @@ var MONITOR_DATA = {
       "rank": 4,
       "slug": "animefillerguide",
       "nsfw": false,
-      "ms": 448
+      "ms": 395
     },
     {
       "status": "ok",
@@ -10492,7 +10543,7 @@ var MONITOR_DATA = {
       "rank": 5,
       "slug": "vnclub",
       "nsfw": false,
-      "ms": 650
+      "ms": 641
     },
     {
       "status": "ok",
@@ -10503,7 +10554,7 @@ var MONITOR_DATA = {
       "rank": 6,
       "slug": "animechrono",
       "nsfw": false,
-      "ms": 518
+      "ms": 704
     },
     {
       "status": "ok",
@@ -10514,7 +10565,7 @@ var MONITOR_DATA = {
       "rank": 7,
       "slug": "miyomi",
       "nsfw": false,
-      "ms": 285
+      "ms": 197
     },
     {
       "status": "ok",
@@ -10525,7 +10576,7 @@ var MONITOR_DATA = {
       "rank": 8,
       "slug": "hentaitagsearch",
       "nsfw": true,
-      "ms": 515
+      "ms": 199
     },
     {
       "status": "ok",
@@ -10536,7 +10587,7 @@ var MONITOR_DATA = {
       "rank": 9,
       "slug": "touhouwiki",
       "nsfw": false,
-      "ms": 317
+      "ms": 375
     },
     {
       "status": "ok",
@@ -10547,7 +10598,7 @@ var MONITOR_DATA = {
       "rank": 10,
       "slug": "recommendmeanime",
       "nsfw": false,
-      "ms": 387
+      "ms": 419
     },
     {
       "status": "ok",
@@ -10558,7 +10609,7 @@ var MONITOR_DATA = {
       "rank": 11,
       "slug": "fmhy",
       "nsfw": false,
-      "ms": 180
+      "ms": 199
     },
     {
       "status": "ok",
@@ -10569,7 +10620,7 @@ var MONITOR_DATA = {
       "rank": 12,
       "slug": "indexfansubcar",
       "nsfw": false,
-      "ms": 331
+      "ms": 279
     },
     {
       "status": "ok",
@@ -10580,7 +10631,7 @@ var MONITOR_DATA = {
       "rank": 13,
       "slug": "theindex",
       "nsfw": false,
-      "ms": 319
+      "ms": 327
     },
     {
       "status": "ok",
@@ -10591,7 +10642,7 @@ var MONITOR_DATA = {
       "rank": 14,
       "slug": "quicksandscans",
       "nsfw": false,
-      "ms": 178
+      "ms": 223
     },
     {
       "status": "ok",
@@ -10602,7 +10653,7 @@ var MONITOR_DATA = {
       "rank": 15,
       "slug": "fansubguide",
       "nsfw": false,
-      "ms": 899
+      "ms": 760
     },
     {
       "status": "ok",
@@ -10613,7 +10664,7 @@ var MONITOR_DATA = {
       "rank": 16,
       "slug": "wdalf",
       "nsfw": false,
-      "ms": 352
+      "ms": 371
     },
     {
       "status": "ok",
@@ -10624,7 +10675,7 @@ var MONITOR_DATA = {
       "rank": 17,
       "slug": "howtoanime",
       "nsfw": false,
-      "ms": 653
+      "ms": 684
     },
     {
       "status": "ok",
@@ -10635,7 +10686,7 @@ var MONITOR_DATA = {
       "rank": 18,
       "slug": "animeguides",
       "nsfw": false,
-      "ms": 395
+      "ms": 392
     },
     {
       "status": "ok",
@@ -10646,7 +10697,7 @@ var MONITOR_DATA = {
       "rank": 19,
       "slug": "encodemoe",
       "nsfw": false,
-      "ms": 377
+      "ms": 160
     },
     {
       "status": "ok",
@@ -10657,18 +10708,18 @@ var MONITOR_DATA = {
       "rank": 20,
       "slug": "synthvinfo",
       "nsfw": false,
-      "ms": 240
+      "ms": 282
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Beginner's Guide to VN",
       "url": "https://forums.fuwanovel.net/topic/5625-beginners-guide-to-visual-novels/",
       "section": "Wiki/Guides",
       "rank": 21,
       "slug": "fuwanovelforum",
       "nsfw": false,
-      "ms": 1330
+      "ms": 484
     },
     {
       "status": "ok",
@@ -10679,31 +10730,31 @@ var MONITOR_DATA = {
       "rank": 22,
       "slug": "trueharemcarrd",
       "nsfw": false,
-      "ms": 503
+      "ms": 400
     },
     {
       "status": "ok",
-      "detail": "HTTP 200",
+      "detail": "HTTP 403",
       "name": "Fandom - Anime",
       "url": "https://www.fandom.com/topics/anime",
       "section": "Wiki/Guides",
       "rank": 23,
       "slug": "fandomcom",
       "nsfw": false,
-      "ms": 675
+      "ms": 284
     }
   ],
   "sections": {
     "AMV": {
       "total": 6,
-      "up": 5,
-      "down": 1,
+      "up": 6,
+      "down": 0,
       "blocked": 0
     },
     "Anime Streaming": {
       "total": 70,
-      "up": 66,
-      "down": 4,
+      "up": 67,
+      "down": 3,
       "blocked": 0
     },
     "Apps": {
@@ -10720,8 +10771,8 @@ var MONITOR_DATA = {
     },
     "Asian Drama": {
       "total": 20,
-      "up": 20,
-      "down": 0,
+      "up": 18,
+      "down": 2,
       "blocked": 0
     },
     "Cosplay": {
@@ -10768,8 +10819,8 @@ var MONITOR_DATA = {
     },
     "Hentai Reading": {
       "total": 49,
-      "up": 49,
-      "down": 0,
+      "up": 47,
+      "down": 2,
       "blocked": 0
     },
     "Hentai Streaming": {
@@ -10780,8 +10831,8 @@ var MONITOR_DATA = {
     },
     "Live TV & Sports": {
       "total": 8,
-      "up": 8,
-      "down": 0,
+      "up": 7,
+      "down": 1,
       "blocked": 0
     },
     "Manga Reading": {
@@ -10792,8 +10843,8 @@ var MONITOR_DATA = {
     },
     "Manhwa Reading": {
       "total": 55,
-      "up": 55,
-      "down": 0,
+      "up": 54,
+      "down": 1,
       "blocked": 0
     },
     "Misc Tools": {
@@ -10804,8 +10855,8 @@ var MONITOR_DATA = {
     },
     "Movies & TV Streaming": {
       "total": 17,
-      "up": 17,
-      "down": 0,
+      "up": 16,
+      "down": 1,
       "blocked": 0
     },
     "Music": {
@@ -10859,8 +10910,12 @@ var MONITOR_DATA = {
   }
 };
 
+
+
+
+
 const LIST_KEY = 'sakura_list_data';
-const PRESETS_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/info.json';
+const PRESETS_URL = './need%20for%20the%20website%20to%20work/info.json';
 
 const CAT_META = {
   'movies-tv':    { label: 'Movies / TV',       emoji: '🎬' },
@@ -10879,6 +10934,7 @@ const CAT_META = {
   'amv':          { label: 'AMV',                emoji: '🎞️'  },
   'cosplay':      { label: 'Cosplay',            emoji: '🦸' },
   'schedule':     { label: 'Schedule',           emoji: '📅' },
+  'release-schedule': { label: 'Release Schedule',  emoji: '📅' },
   'database':     { label: 'Database',           emoji: '🗃️'  },
   'tools':        { label: 'Tools',              emoji: '🛠️'  },
   'quiz':         { label: 'Quiz',               emoji: '🧠' },
@@ -10894,17 +10950,108 @@ const CAT_META = {
   'search':       { label: 'Search Engines',     emoji: '🔍' },
   'software':     { label: 'Software',           emoji: '💻' },
   'other':        { label: 'Other',              emoji: '📁' },
+  'AI':               { label: 'AI',                  emoji: '🤖' },
+  'Adblocking / Privacy': { label: 'Adblocking / Privacy', emoji: '🔒' },
+  'Educational':      { label: 'Educational',          emoji: '🎓' },
+  'Developer Tools':  { label: 'Developer Tools',      emoji: '🔧' },
+  'Design Resources': { label: 'Design Resources',     emoji: '🎨' },
+  'Video Editing':    { label: 'Video Editing',        emoji: '🎬' },
+  'Health & Fitness': { label: 'Health & Fitness',     emoji: '💪' },
+  'Food & Recipes':   { label: 'Food & Recipes',       emoji: '🍳' },
+  'Browser Extensions': { label: 'Browser Extensions', emoji: '🧩' },
+  'Cloud Storage':    { label: 'Cloud Storage',        emoji: '☁️' },
+  'Torrenting':       { label: 'Torrenting',           emoji: '🌀' },
+  'Media Centers':    { label: 'Media Centers',        emoji: '📺' },
+  'Internet Tools':   { label: 'Internet Tools',       emoji: '🌐' },
+  'News':             { label: 'News',                 emoji: '📰' },
+  'Travel Tools':     { label: 'Travel Tools',         emoji: '✈️' },
+  'android':          { label: 'Android',              emoji: '📱' },
+  'ios':              { label: 'iOS',                  emoji: '🍎' },
+  'linux':            { label: 'Linux',                emoji: '🐧' },
+  'debrid':           { label: 'Debrid Services',      emoji: '⚡' },
+  'usenet':           { label: 'Usenet',               emoji: '📰' },
+  'irc':              { label: 'IRC',                  emoji: '💬' },
+  'automation':       { label: 'Automation',           emoji: '🤖' },
+  'seedboxes':        { label: 'Seedboxes',            emoji: '🖥️'  },
+  'monitoring':       { label: 'Monitoring',           emoji: '📊' },
 };
+
+const SECTION_MAP = {
+  'Games': 'games', 'Apps': 'apps', 'Music': 'music', 'AMV': 'amv',
+  'Anime Streaming': 'anime', 'Anime Piracy': 'anime', 'Donghua Streaming': 'anime',
+  'Manga Reading': 'manga', 'Manga Piracy': 'manga',
+  'Manhwa Reading': 'manhwa', 'Novel Reading': 'novel',
+  'Hentai Streaming': 'hentai', 'Hentai Reading': 'hentai',
+  'Movies & TV Streaming': 'movies-tv', 'Asian Drama': 'drama',
+  'Live TV & Sports': 'live-tv',
+  'Pirated Games': 'games', 'PS4 Piracy': 'games', 'PS4 Homebrew': 'games',
+  'Gacha Games': 'gacha',
+  'Forums/Community': 'forums', 'Art/Imageboards': 'imageboards',
+  'Database/Tracker': 'database', 'Rank/Trends': 'trends',
+  'Wiki/Guides': 'guides', 'Western Streaming': 'western',
+  'Open Directories': 'download', 'Piracy Resources': 'tools',
+  'Download': 'download', 'Tools': 'tools',
+  'Cosplay': 'cosplay', 'VTuber': 'vtuber', 'Quiz': 'quiz',
+  'Schedule': 'release-schedule',
+  'Misc Tools': 'tools', 'Collections': 'other',
+  'All Purpose': 'other', 'Greatest Treasures': 'other',
+  'Mobile Apps': 'apps',
+  'AI': 'AI',
+  'Adblocking / Privacy': 'Adblocking / Privacy',
+  'Educational': 'Educational',
+  'Developer Tools': 'Developer Tools',
+  'Design Resources': 'Design Resources',
+  'Video Editing': 'Video Editing',
+  'Health & Fitness': 'Health & Fitness',
+  'Food & Recipes': 'Food & Recipes',
+  'Browser Extensions': 'Browser Extensions',
+  'Cloud Storage': 'Cloud Storage',
+  'Torrenting': 'Torrenting',
+  'Media Centers': 'Media Centers',
+  'Internet Tools': 'Internet Tools',
+  'News': 'News',
+  'Travel Tools': 'Travel Tools',
+  'Android': 'android',
+  'iOS': 'ios',
+  'Linux': 'linux',
+  'Debrid Services': 'debrid',
+  'Debrid / Leeches': 'debrid',
+  'Usenet': 'usenet',
+  'IRC': 'irc',
+  'IRC Tools': 'irc',
+  'Release Schedule': 'release-schedule',
+  'Trackers': 'tools',
+  'Automation': 'automation',
+  'Seedboxes': 'seedboxes',
+  'Monitoring': 'monitoring',
+};
+
+function getSectionMeta(section) {
+  var key = SECTION_MAP[section];
+  if (!key) key = section.toLowerCase();
+  return CAT_META[key] || { label: section, emoji: autoEmoji(section) };
+}
 
 function loadData() {
   data = JSON.parse(MAIN_SAKURA_DATA);
-  try { let l = localStorage.getItem(LIST_KEY); if (l) listSites = JSON.parse(l); } catch {}
+  try {
+    let l = localStorage.getItem(LIST_KEY);
+    let ver = localStorage.getItem(LIST_KEY + '_ver');
+    if (l && ver === '3') {
+      listSites = JSON.parse(l);
+    } else if (l) {
+      localStorage.removeItem(LIST_KEY);
+    }
+  } catch {}
   mode = 'info';
   render();
 }
 
 function saveListToStorage() {
-  if (listSites) localStorage.setItem(LIST_KEY, JSON.stringify(listSites));
+  if (listSites) {
+    localStorage.setItem(LIST_KEY, JSON.stringify(listSites));
+    localStorage.setItem(LIST_KEY + '_ver', '3');
+  }
 }
 
 function esc(s) {
@@ -11090,7 +11237,7 @@ function navigateTo(path) {
         .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function(sites) {
           listSites = sites;
-          saveListToStorage();
+          try { saveListToStorage(); } catch(e) { console.warn('localStorage full, skipping cache', e); }
           mode = 'list';
           render();
           setTimeout(function() { applyListNav(category); }, 200);
@@ -11448,6 +11595,23 @@ function renderChangelogContent() {
   if (!entries || !entries.length) {
     entries = [
       {
+        version: 'Sneaker Resell Simulator',
+        date: '2026-07-21',
+        changes: [
+          'Rebranded everything from "Fadded Market / FM" to "Sakura\'s Hub / Sakura"',
+          'Reworked shoe app auto buy — added strike retries with notifications',
+          'Reworked full auto shoe app buy — added error tracking per shoe, backs off on failures',
+          'Reworked auto dig — added shovel dropdown with real prices, buy shovel button, buy treasure button',
+          'Added new treasure prices from game dump (Level1=$10K → BLOX=$25M)',
+          'Added shovel info (Garden=$100K/+10% → Gold=$100M/+100%)',
+          'Added buyNewTreasure() function to fire BuyTreasure remote',
+          'Added stat labels (money, spent, bought, sold, treasures dug) to info tab',
+          'Added serverhop + join-same-server buttons',
+          'New UI layout',
+          'Various fixes'
+        ]
+      },
+      {
         version: 'Sneaker Con Shoe Sniper',
         date: '2026-05-29',
         changes: ['Script rework', 'Max buy system per shoe', 'Config tab rework', 'Cleaned up unused code']
@@ -11781,17 +11945,42 @@ function autoEmoji(catId) {
   return '🔗';
 }
 
+function isAvoidSite(site) {
+  if (site.avoid) return true;
+  var avoidTags = ['scam','avoid','dangerous','unsafe','malware','virus','sketchy','shady','fake','fraud'];
+  var tags = normalizeTags(site.tags);
+  for (var i = 0; i < tags.length; i++) {
+    if (avoidTags.indexOf(tags[i].toLowerCase()) !== -1) return true;
+  }
+  return false;
+}
+
 function buildListCard(site) {
   let tags = normalizeTags(site.tags);
-  let h = '<a href="' + esc(site.url) + '" target="_blank" rel="noopener noreferrer" class="preset-card" data-name="' + esc((site.name + ' ' + tags.join(' ')).toLowerCase()) + '"';
+  let siteAvoid = isAvoidSite(site);
+  let h = '<a href="' + esc(site.url) + '" target="_blank" rel="noopener noreferrer" class="preset-card' + (siteAvoid ? ' preset-avoid' : '') + '" data-name="' + esc((site.name + ' ' + tags.join(' ')).toLowerCase()) + '"';
   if (site.nsfw) h += ' data-nsfw="true"';
+  if (siteAvoid) h += ' data-avoid="true"';
   h += '>';
   h += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
   h += '<div class="preset-body">';
   h += '<div class="preset-top"><span class="preset-name">' + (site.emoji ? site.emoji + ' ' : '') + esc(site.name) + '</span><span class="preset-rank">#' + site.rank + '</span></div>';
-  h += '<div class="preset-tags">';
+  h += '<div class="preset-meta">';
+  if (siteAvoid) {
+    var reason = site.avoid_reason || 'Known unsafe site - avoid';
+    h += '<span class="preset-avoid-badge">🚫 ' + esc(reason) + '</span>';
+  }
   if (site.nsfw) h += '<span class="preset-nsfw">🔞 NSFW</span>';
-  tags.forEach(function(t) { h += '<span class="preset-tag">' + esc(t) + '</span>'; });
+  if (site.pricing && site.pricing !== 'free*' && site.pricing !== 'free') h += '<span class="preset-pricing">' + esc(site.pricing) + '</span>';
+  if (site.section) {
+    var secMeta = getSectionMeta(site.section);
+    h += '<span class="preset-section-tag">' + secMeta.emoji + ' ' + esc(secMeta.label) + '</span>';
+  }
+  h += '</div>';
+  h += '<div class="preset-tags">';
+  var maxTags = 4;
+  tags.slice(0, maxTags).forEach(function(t) { h += '<span class="preset-tag">' + esc(t) + '</span>'; });
+  if (tags.length > maxTags) h += '<span class="preset-tag preset-tag-more">+' + (tags.length - maxTags) + '</span>';
   h += '</div></div>';
   h += '<span class="preset-arrow">→</span>';
   h += '</a>';
@@ -11844,7 +12033,7 @@ function toggleMode() {
         .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function(sites) {
           listSites = sites;
-          saveListToStorage();
+          try { saveListToStorage(); } catch(e) { console.warn('localStorage full, skipping cache', e); }
           mode = 'list';
           render();
           toast('Loaded ' + sites.length + ' sites', '#22c55e');
@@ -13114,6 +13303,8 @@ function toggleVouchesMode() {
 
 function renderListMode() {
   try {
+    // Reset monitor state so it doesn't leak across mode/tab switches
+    monitorActive = false;
     updateHero('Free Stuff', 'Streaming, Games, Apps & More');
     let tw = document.querySelector('.tabbar-wrap');
     if (tw) tw.style.display = 'none';
@@ -13126,9 +13317,75 @@ function renderListMode() {
       return;
     }
 
+    // Normalize section names to merge similar categories
+    var SECTION_NORMALIZE = {
+      'Pirated Games': 'Games',
+      'PS4 Piracy': 'Games',
+      'PS4 Homebrew': 'Games',
+      'Greatest Treasures': 'Misc Tools',
+      'Mobile Apps': 'Apps',
+      'AMV': 'Misc Tools'
+    };
+
+    // Tag-based routing: split Misc Tools into proper sections
+    var TAG_ROUTES = [
+      { tags: ['AI','Artificial Intelligence'],                          section: 'AI' },
+      { tags: ['Adblocking','Privacy','VPN'],                            section: 'Adblocking / Privacy' },
+      { tags: ['Developer','Dev'],                                       section: 'Developer Tools' },
+      { tags: ['Science','Research','Courses','Learning','Education'],   section: 'Educational' },
+      { tags: ['Fonts','Typography','Design','Photography','Photo','Editing'], section: 'Design Resources' },
+      { tags: ['Video Editing'],                                         section: 'Video Editing' },
+      { tags: ['Health','Fitness'],                                      section: 'Health & Fitness' },
+      { tags: ['Food','Recipes'],                                        section: 'Food & Recipes' },
+      { tags: ['Extension','Browser'],                                   section: 'Browser Extensions' },
+      { tags: ['Cloud','Storage'],                                       section: 'Cloud Storage' },
+      { tags: ['Torrent'],                                               section: 'Torrenting' },
+      { tags: ['Plex','Kodi','Stremio','Jellyfin'],                      section: 'Media Centers' },
+      { tags: ['Internet'],                                              section: 'Internet Tools' },
+      { tags: ['News','RSS'],                                            section: 'News' },
+      { tags: ['Travel','Booking'],                                      section: 'Travel Tools' },
+      { tags: ['Reddit'],                                                section: 'Internet Tools' },
+    ];
+
+    function routeByTags(site) {
+      var tagsRaw = site.tags;
+      var tagList = [];
+      if (Array.isArray(tagsRaw)) {
+        tagList = tagsRaw;
+      } else if (typeof tagsRaw === 'string' && tagsRaw) {
+        tagList = tagsRaw.split(',').map(function(t) { return t.trim(); });
+      }
+      for (var ti = 0; ti < tagList.length; ti++) {
+        var t = tagList[ti];
+        for (var ri = 0; ri < TAG_ROUTES.length; ri++) {
+          if (TAG_ROUTES[ri].tags.indexOf(t) !== -1) return TAG_ROUTES[ri].section;
+        }
+      }
+      return null;
+    }
+
+    // Filter out Reddit links and normalize sections
+    var cleanSites = [];
+    listSites.forEach(function(site) {
+      var url = (site.url || '').toLowerCase();
+      if (url.indexOf('reddit.com') !== -1) return;
+      var s = site;
+      var norm = SECTION_NORMALIZE[site.section];
+      if (norm) s = { url: site.url, name: site.name, section: norm, nsfw: site.nsfw, tags: site.tags, avoid: site.avoid, avoid_reason: site.avoid_reason, rank: site.rank, emoji: site.emoji, pricing: site.pricing };
+      // Split Misc Tools into proper categories based on tags
+      if ((norm || site.section) === 'Misc Tools') {
+        var routed = routeByTags(site);
+        if (routed) {
+          if (s === site) s = { url: site.url, name: site.name, section: routed, nsfw: site.nsfw, tags: site.tags, avoid: site.avoid, avoid_reason: site.avoid_reason, rank: site.rank, emoji: site.emoji, pricing: site.pricing };
+          else s.section = routed;
+        }
+      }
+      cleanSites.push(s);
+    });
+
     let groups = {};
     let order = [];
-    listSites.forEach(function(site) {
+    cleanSites.forEach(function(site) {
       let key = site.section || 'other';
       if (!groups[key]) { groups[key] = []; order.push(key); }
       groups[key].push(site);
@@ -13145,7 +13402,7 @@ function renderListMode() {
     });
 
     let catTotals = {}, catNsfw = {};
-    listSites.forEach(function(s) {
+    cleanSites.forEach(function(s) {
       let k = s.section || 'other';
       catTotals[k] = (catTotals[k] || 0) + 1;
       if (s.nsfw) catNsfw[k] = (catNsfw[k] || 0) + 1;
@@ -13164,10 +13421,13 @@ function renderListMode() {
     html += '<span class="fl-dd-arrow">▾</span>';
     html += '<div class="fl-dd-menu">';
     html += '<div class="fl-dd-item selected" data-value="all">📋 All Categories</div>';
+    var ddSeen = {};
     order.forEach(function(key) {
       if (!listShowNSFW && allNsfwCat[key]) return;
-      let meta = CAT_META[key] || { label: key, emoji: autoEmoji(key) };
+      let meta = getSectionMeta(key);
       let display = meta.emoji + ' ' + meta.label;
+      if (ddSeen[display]) return;
+      ddSeen[display] = true;
       html += '<div class="fl-dd-item' + (listFilter === key ? ' selected' : '') + '" data-value="' + key + '">' + display + '</div>';
     });
     html += '</div></div>';
@@ -13176,45 +13436,108 @@ function renderListMode() {
     html += '</div>';
 
     order.forEach(function(key) {
-      let meta = CAT_META[key] || { label: key, emoji: autoEmoji(key) };
+      let meta = getSectionMeta(key);
       let catMatch = listFilter === 'all' || key === listFilter;
       html += '<div class="fl-section" data-category="' + key + '"' + (catMatch ? '' : ' style="display:none"') + '>';
       html += '<h2 class="fl-section-header">' + meta.emoji + ' ' + meta.label + '</h2>';
-      html += '<div class="preset-grid">';
-      if (catMatch) {
-        groups[key].forEach(function(site) { html += buildListCard(site); });
-      }
-      html += '</div></div>';
+      html += '<div class="preset-grid"></div></div>';
     });
 
     html += '</div>';
     panel.innerHTML = html;
 
+    // Render ALL cards in batches to avoid freezing (always render all sections regardless of filter)
+    var renderQueue = [];
+    order.forEach(function(key) {
+      var grid = panel.querySelector('.fl-section[data-category="' + key + '"] .preset-grid');
+      if (!grid) return;
+      var sites = groups[key] || [];
+      renderQueue.push({ grid: grid, sites: sites, index: 0 });
+    });
+
+    var BATCH_SIZE = 300;
+    function renderBatch() {
+      try {
+      var start = performance.now();
+      while (renderQueue.length > 0 && performance.now() - start < 40) {
+        var item = renderQueue[0];
+        var htmlChunk = '';
+        var batchCards = [];
+        var count = 0;
+        while (item.index < item.sites.length && count < BATCH_SIZE && performance.now() - start < 40) {
+          htmlChunk += buildListCard(item.sites[item.index]);
+          item.index++;
+          count++;
+        }
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = htmlChunk;
+        // Snapshot children array (live HTMLCollection shifts on remove!)
+        var cards = [].slice.call(wrapper.children);
+        for (var ci = 0; ci < cards.length; ci++) {
+          batchCards.push(cards[ci]);
+          item.grid.appendChild(cards[ci]);
+        }
+        var filterInput = document.getElementById('listSearch');
+        var filterQuery = filterInput ? filterInput.value.toLowerCase().trim() : '';
+        if (listShowAvoid || listShowNSFW || filterQuery || listFilter !== 'all') {
+          var sectionCat = item.grid.closest('.fl-section').dataset.category;
+          for (var nc = 0; nc < batchCards.length; nc++) {
+            var c = batchCards[nc];
+            var avoidOk = !listShowAvoid || c.dataset.avoid === 'true';
+            var nsfwOk = listShowNSFW || c.dataset.nsfw !== 'true';
+            var catOk = listFilter === 'all' || sectionCat === listFilter;
+            var nameOk = !filterQuery || (c.dataset.name || '').indexOf(filterQuery) !== -1;
+            if (!(avoidOk && nsfwOk && catOk && nameOk)) {
+              c.classList.add('fl-hide');
+            }
+          }
+        }
+        if (item.index >= item.sites.length) {
+          renderQueue.shift();
+        }
+      }
+      if (renderQueue.length > 0) {
+        requestAnimationFrame(renderBatch);
+      } else {
+        filterListMode();
+      }
+      } catch (e) { console.error('renderBatch CRASH:', e, e.stack); }
+    }
+    requestAnimationFrame(renderBatch);
+
     var flBar = panel.querySelector('.fl-bar');
     if (flBar && !document.getElementById('monitorToggle')) {
+      // Add Avoid toggle button (after NSFW, before Monitor)
+      var avoidBtn = document.createElement('button');
+      avoidBtn.id = 'listAvoidToggle';
+      avoidBtn.className = 'fl-avoid-toggle' + (listShowAvoid ? ' active' : '');
+      avoidBtn.textContent = '\ud83d\udeab ' + (listShowAvoid ? 'Show All Safe Sites' : 'Show Avoid (' + (cleanSites ? cleanSites.filter(function(s) { return s.avoid; }).length : '?') + ')');
+      avoidBtn.addEventListener('click', function(e) { e.stopPropagation(); toggleListAvoid(); });
+      // Add Monitor toggle button (after Avoid)
       var mtBtn = document.createElement('button');
       mtBtn.id = 'monitorToggle';
       mtBtn.className = 'fl-nsfw-toggle';
-      mtBtn.textContent = '📊 Monitor';
+      mtBtn.textContent = '\ud83d\udcca Monitor';
       mtBtn.style.cssText = 'margin-left:6px';
       mtBtn.addEventListener('click', function(e) { e.stopPropagation(); toggleMonitor(); });
+      // Insert: NSFW -> Avoid -> Monitor
       var nsfwToggle = flBar.querySelector('#listNsfwToggle');
       if (nsfwToggle) {
-        flBar.insertBefore(mtBtn, nsfwToggle.nextSibling);
-        // Intercept NSFW toggle when monitor is active
+        flBar.insertBefore(avoidBtn, nsfwToggle.nextSibling);
+        flBar.insertBefore(mtBtn, avoidBtn.nextSibling);
         nsfwToggle.addEventListener('click', function(ev) {
           if (monitorActive) {
             ev.stopImmediatePropagation();
             listShowNSFW = !listShowNSFW;
-            this.textContent = listShowNSFW ? '🔞 Hide NSFW' : '🔞 Show NSFW';
+            this.textContent = listShowNSFW ? '\ud83d\udd1e Hide NSFW' : '\ud83d\udd1e Show NSFW';
             this.classList.toggle('active', listShowNSFW);
             renderMonitorSection();
           }
         });
       } else {
+        flBar.appendChild(avoidBtn);
         flBar.appendChild(mtBtn);
       }
-      // Intercept category dropdown when monitor is active
       var catMenu = flBar.querySelector('#flCategory .fl-dd-menu');
       if (catMenu) {
         catMenu.addEventListener('click', function(ev) {
@@ -13236,8 +13559,7 @@ function renderListMode() {
     if (monitorActive) {
       renderMonitorSection();
       var bt = document.getElementById('monitorToggle');
-      if (bt) { bt.textContent = '✖ Close Monitor'; bt.classList.add('active'); }
-      // Restore category trigger text after rebuild
+      if (bt) { bt.textContent = '\u2716 Close Monitor'; bt.classList.add('active'); }
       if (listFilter && listFilter !== 'all') {
         var selItem = document.querySelector('.fl-dd-item.selected');
         var trig = document.querySelector('#flCategory .fl-trigger');
@@ -13245,13 +13567,11 @@ function renderListMode() {
       }
     }
 
-
     let ls = document.getElementById('listSearch');
     if (ls) ls.addEventListener('input', filterListMode);
     let nt = document.getElementById('listNsfwToggle');
     if (nt) nt.addEventListener('click', toggleListNSFW);
     initListDropdown();
-    filterListMode();
   } catch (err) {
     console.error('renderListMode error:', err);
     let p = document.getElementById('panels');
@@ -13264,19 +13584,39 @@ function filterListMode() {
     let searchEl = document.getElementById('listSearch');
     if (!searchEl) return;
     let query = searchEl.value.toLowerCase().trim();
-    document.querySelectorAll('.fl-section').forEach(function(section) {
+    let sections = document.querySelectorAll('.fl-section');
+    for (let si = 0; si < sections.length; si++) {
+      let section = sections[si];
       let cat = section.dataset.category;
       let catMatch = listFilter === 'all' || cat === listFilter;
       let hasVisible = false;
-      section.querySelectorAll('.preset-card').forEach(function(card) {
+      let cards = section.children[1]; // .preset-grid
+      if (!cards) continue;
+      let items = cards.children;
+      if (items.length === 0) {
+        // Section not yet rendered by batch renderer - keep visible
+        if (section.classList.contains('fl-hide')) section.classList.remove('fl-hide');
+        continue;
+      }
+      for (let ci = 0; ci < items.length; ci++) {
+        let card = items[ci];
         let nameMatch = !query || (card.dataset.name || '').toLowerCase().indexOf(query) !== -1;
         let nsfwMatch = listShowNSFW || card.dataset.nsfw !== 'true';
-        let show = catMatch && nameMatch && nsfwMatch;
-        card.style.display = show ? '' : 'none';
-        if (show) hasVisible = true;
-      });
-      section.style.display = (catMatch && hasVisible) ? 'block' : 'none';
-    });
+        let avoidMatch = !listShowAvoid || card.dataset.avoid === 'true';
+        let show = catMatch && nameMatch && nsfwMatch && avoidMatch;
+        if (show) {
+          card.classList.remove('fl-hide');
+          hasVisible = true;
+        } else {
+          card.classList.add('fl-hide');
+        }
+      }
+      if (catMatch && hasVisible) {
+        if (section.classList.contains('fl-hide')) section.classList.remove('fl-hide');
+      } else {
+        if (!section.classList.contains('fl-hide')) section.classList.add('fl-hide');
+      }
+    }
   } catch (err) { console.error('filterListMode error:', err); }
 }
 
@@ -13301,6 +13641,18 @@ function toggleListNSFW() {
     }
     renderListMode();
   } catch (err) { console.error('toggleListNSFW error:', err); }
+}
+
+function toggleListAvoid() {
+  try {
+    listShowAvoid = !listShowAvoid;
+    let btn = document.getElementById('listAvoidToggle');
+    if (btn) {
+      btn.textContent = listShowAvoid ? '🚫 Show All Safe Sites' : '🚫 Show Avoid (' + (listSites ? listSites.filter(function(s) { return s.avoid; }).length : '?') + ')';
+      btn.classList.toggle('active', listShowAvoid);
+    }
+    filterListMode();
+  } catch (err) { console.error('toggleListAvoid error:', err); }
 }
 
 function initListDropdown() {

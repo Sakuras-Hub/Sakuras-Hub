@@ -1,5 +1,22 @@
 [
   {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-07-21",
+    "changes": [
+      "Rebranded everything from \"Fadded Market / FM\" to \"Sakura's Hub / Sakura\"",
+      "Reworked shoe app auto buy — added strike retries with notifications",
+      "Reworked full auto shoe app buy — added error tracking per shoe, backs off on failures",
+      "Reworked auto dig — added shovel dropdown with real prices, buy shovel button, buy treasure button",
+      "Added new treasure prices from game dump (Level1=$10K → BLOX=$25M)",
+      "Added shovel info (Garden=$100K/+10% → Gold=$100M/+100%)",
+      "Added buyNewTreasure() function to fire BuyTreasure remote",
+      "Added stat labels (money, spent, bought, sold, treasures dug) to info tab",
+      "Added serverhop + join-same-server buttons",
+      "New UI layout",
+      "Various fixes"
+    ]
+  },
+  {
     "version": "Sneaker Con Shoe Sniper",
     "date": "2026-05-29",
     "changes": [
