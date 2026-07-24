@@ -117,16 +117,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/Sakuras-Hub?style=for-the-badge&logo=star&logoColor=white&labelColor=151225&color=ff00ff" />
-  <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Forgs%2FSakuras-Hub&labelColor=151225&color=ff00ff" />
   <img src="https://img.shields.io/github/languages/count/Sakuras-Hub/Sakuras-Hub?style=for-the-badge&logo=code&logoColor=white&labelColor=151225&color=ff00ff" />
   <img src="https://img.shields.io/github/languages/top/Sakuras-Hub/Sakuras-Hub?style=for-the-badge&logo=code&logoColor=white&labelColor=151225&color=ff88ff" />
 </p>
-
-<br/>
-
-<samp><p align="center">
-  <sub>Stats cards don't support org profiles — the numbers above are live from GitHub API</sub>
-</p></samp>
 
 <br/>
 <hr/>
