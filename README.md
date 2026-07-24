@@ -12,7 +12,7 @@
   <a href="https://sakuras-hub.github.io/Sakuras-Hub/"><img src="https://img.shields.io/badge/website-151225?style=flat-square&logo=firefoxbrowser&logoColor=ff00ff&color=ff00ff" /></a>
   <a href="https://discord.gg/f4X4jSRpHC"><img src="https://img.shields.io/badge/discord-151225?style=flat-square&logo=discord&logoColor=ff00ff&color=ff00ff" /></a>
   <a href="#"><img src="https://img.shields.io/github/stars/Sakuras-Hub?style=flat-square&logo=star&logoColor=white&labelColor=151225&color=ff00ff" /></a>
-  <a href="#"><img src="https://img.shields.io/github/followers/Sakuras-Hub?style=flat-square&logo=github&logoColor=white&labelColor=151225&color=ff88ff" /></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/count/Sakuras-Hub/Sakuras-Hub?style=flat-square&logo=code&logoColor=white&labelColor=151225&color=ff88ff" /></a>
   <a href="#"><img src="https://api.visitorbadge.io/api/visitors?path=Sakuras-Hub&label=visits&countColor=%23ff00ff&labelStyle=upper" /></a>
 </p>
 
@@ -116,17 +116,17 @@
 <br/>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sakuras-Hub&show_icons=true&count_private=true&bg_color=0a0a14&title_color=ff00ff&text_color=e2ddf2&icon_color=ff88ff&hide_border=true&border_radius=14&include_all_commits=true&rank_icon=percentile" width="420" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sakuras-Hub&layout=donut&bg_color=0a0a14&title_color=ff00ff&text_color=e2ddf2&icon_color=ff88ff&hide_border=true&border_radius=14&langs_count=10&size_weight=0.5&count_weight=0.5" width="340" />
+  <img src="https://img.shields.io/github/stars/Sakuras-Hub?style=for-the-badge&logo=star&logoColor=white&labelColor=151225&color=ff00ff" />
+  <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Forgs%2FSakuras-Hub&labelColor=151225&color=ff00ff" />
+  <img src="https://img.shields.io/github/languages/count/Sakuras-Hub/Sakuras-Hub?style=for-the-badge&logo=code&logoColor=white&labelColor=151225&color=ff00ff" />
+  <img src="https://img.shields.io/github/languages/top/Sakuras-Hub/Sakuras-Hub?style=for-the-badge&logo=code&logoColor=white&labelColor=151225&color=ff88ff" />
 </p>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=Sakuras-Hub&background=0a0a14&stroke=ff00ff20&ring=ff00ff&fire=ff88ff&currStreakNum=e2ddf2&sideNums=e2ddf2&currStreakLabel=ff88ff&sideLabels=7a7394&dates=e2ddf2&hide_border=true&border_radius=14" width="69%" />
-</p>
+<br/>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Sakuras-Hub&bg_color=0a0a14&color=ff00ff&line=ff88ff&point=ffffff&area=true&area_color=ff00ff20&hide_border=true&radius=14" width="90%" />
-</p>
+<samp><p align="center">
+  <sub>Stats cards don't support org profiles — the numbers above are live from GitHub API</sub>
+</p></samp>
 
 <br/>
 <hr/>
@@ -136,11 +136,19 @@
 
 <br/>
 
-<p align="center">
-  <a href="https://github.com/Sakuras-Hub/Sakuras-Hub">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sakuras-Hub&repo=Sakuras-Hub&bg_color=0a0a14&title_color=ff00ff&text_color=e2ddf2&icon_color=ff88ff&hide_border=true&border_radius=14&description_lines_count=2&show_owner=true" width="460" />
-  </a>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" bgcolor="0a0a14" style="background: #0a0a14; border: 1px solid #ff00ff20; border-radius: 14px; padding: 20px 30px;">
+      <a href="https://github.com/Sakuras-Hub/Sakuras-Hub" style="text-decoration: none;">
+        <samp><b style="color:#ff00ff; font-size:18px;">📁 Sakuras-Hub/Sakuras-Hub</b></samp>
+        <br/>
+        <samp><sub style="color:#e2ddf2;">The main hub — scripts, tools, resources & more</sub></samp>
+        <br/><br/>
+        <samp><sub style="color:#7a7394;">⭐ Stars · 🍴 Forks · live on GitHub</sub></samp>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <br/>
 <hr/>
