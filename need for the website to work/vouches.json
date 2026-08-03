@@ -6,13 +6,5 @@
     "rating": 5,
     "review": "test",
     "date": "2026-08-03"
-  },
-  {
-    "id": 1,
-    "seller_id": 1451898760220377141,
-    "buyer_name": "krazy404",
-    "rating": 5,
-    "review": "test",
-    "date": "2026-08-03"
   }
 ]
