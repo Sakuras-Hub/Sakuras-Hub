@@ -1,13 +1,6 @@
 [
   {
     "version": "Sneaker Resell Simulator",
-    "date": "2026-08-04",
-    "changes": [
-      "-Added a smart money check system to hopefully fix the auto-buy fail loop. -fixed some other things"
-    ]
-  },
-  {
-    "version": "Sneaker Resell Simulator",
     "date": "2026-07-21",
     "changes": [
       "Rebranded everything from \"Fadded Market / FM\" to \"Sakura's Hub / Sakura\"",
