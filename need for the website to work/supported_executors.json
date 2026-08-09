@@ -1,5 +1,9 @@
 [
   {
+    "name": "DIAG-62002",
+    "platform": "pc"
+  },
+  {
     "name": "TESTE2E-61880",
     "platform": "pc"
   }
