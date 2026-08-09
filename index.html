@@ -510,9 +510,14 @@
   .script-game-row .sg-name a { color: var(--accent-text); text-decoration: none; }
   .script-game-row .sg-name a:hover { text-decoration: underline; }
   .script-game-row .sg-status { font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+  .exe-chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #fff; margin-left: 6px; vertical-align: middle; }
+  .exe-chip-pc { background: #2563eb; }
+  .exe-chip-android { background: #16a34a; }
+  .exe-chip-ios { background: #dc2626; }
+  .exe-chip-other { background: #6b7280; }
   .script-status-hdr { font-size: 0.75rem; color: var(--accent-text); margin: 20px 0 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
   .script-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-  .sl-badge { display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: var(--radius); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3px; background: var(--surface); border: 1px solid var(--border); }
+  .sl-badge { display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: 999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3px; background: var(--surface); border: 1px solid var(--border); }
   .sl-badge.sl-fully { border-color: rgba(76,217,137,0.3); background: rgba(76,217,137,0.08); color: #4cd989; }
   .sl-badge.sl-partial { border-color: rgba(255,211,42,0.3); background: rgba(255,211,42,0.08); color: #ffd32a; }
   .sl-badge.sl-broken { border-color: rgba(255,71,87,0.3); background: rgba(255,71,87,0.08); color: #ff4757; }
@@ -11465,6 +11470,10 @@ const SUPPORTED_GAMES_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakur
 let supportedGames = null;
 let supportedGamesLoaded = false;
 
+const SUPPORTED_EXECUTORS_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/supported_executors.json';
+let supportedExecutors = null;
+let supportedExecutorsLoaded = false;
+
 const CHANGELOG_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/changelog.json';
 let changelogData = null;
 let changelogLoaded = false;
@@ -11497,6 +11506,17 @@ function loadSupportedGames() {
     .catch(function() { supportedGamesLoaded = true; });
 }
 
+function loadSupportedExecutors() {
+  fetch(SUPPORTED_EXECUTORS_URL + '?_=' + Date.now())
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data) {
+      supportedExecutors = data;
+      supportedExecutorsLoaded = true;
+      if (scriptSubTab === 'script') render();
+    })
+    .catch(function() { supportedExecutorsLoaded = true; });
+}
+
 function getScriptTabIndex() {
   for (let i = 0; i < data.length; i++) {
     if (data[i].id === 'roblox-script') return i;
@@ -11504,13 +11524,23 @@ function getScriptTabIndex() {
   return -1;
 }
 
-let statusMap = { fully: '🟢', partial: '🟡', broken: '🔴', coming: '🟣', discontinued: '⚫' };
-let statusLabel = { fully: 'Completely Working', partial: 'Partially Working', broken: 'Not Working', coming: 'Coming Soon', discontinued: 'Discontinued' };
+let statusMap = { fully: '🟩', partial: '🟨', broken: '🟥', coming: '🟪', discontinued: '⬛' };
+let statusLabel = { fully: 'Completely Working', partial: 'Partially Working', broken: 'Not Working or Bugged', coming: 'Coming Out', discontinued: 'Discontinued' };
 
 function buildGamesHtml(games) {
   if (!games || !games.length) return '<div style="color:var(--muted);padding:14px;text-align:center;font-size:0.82rem">No games loaded yet.</div>';
   return games.map(function(g) {
     return '<div class="script-game-row"><span class="sg-name"><a href="' + esc(g.url) + '" target="_blank" rel="noopener">' + esc(g.name) + '</a></span><span class="sg-status">' + (statusMap[g.status] || '') + ' ' + esc(statusLabel[g.status] || '') + '</span></div>';
+  }).join('');
+}
+
+function buildExecutorsHtml(executors) {
+  if (!executors || !executors.length) return '<div style="color:var(--muted);padding:14px;text-align:center;font-size:0.82rem">No executors loaded yet.</div>';
+  var platformLabel = { pc: 'PC', android: 'Android', ios: 'iOS' };
+  return executors.map(function(e) {
+    var nameHtml = e.url ? '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.name) + '</a>' : esc(e.name);
+    var chip = '<span class="exe-chip exe-chip-' + (platformLabel[e.platform] ? esc(e.platform) : 'other') + '">' + (platformLabel[e.platform] || 'Other') + '</span>';
+    return '<div class="script-game-row"><span class="sg-name">' + nameHtml + '</span><span class="sg-status">' + chip + '</span></div>';
   }).join('');
 }
 
@@ -11543,14 +11573,16 @@ function renderScriptContent(si) {
     + '</div>'
     + '<div class="script-status-hdr">Script Status Overview</div>'
     + '<div class="script-legend">'
-    + '<span class="sl-badge sl-fully">🟢 Completely Working</span>'
-    + '<span class="sl-badge sl-partial">🟡 Partially Working</span>'
-    + '<span class="sl-badge sl-broken">🔴 Not Working</span>'
-    + '<span class="sl-badge sl-coming">🟣 Coming Soon</span>'
-    + '<span class="sl-badge sl-discontinued">⚫ Discontinued</span>'
+    + '<span class="sl-badge sl-fully">🟩 Completely Working</span>'
+    + '<span class="sl-badge sl-partial">🟨 Partially Working</span>'
+    + '<span class="sl-badge sl-broken">🟥 Not Working or Bugged</span>'
+    + '<span class="sl-badge sl-coming">🟪 Coming Out</span>'
+    + '<span class="sl-badge sl-discontinued">⬛ Discontinued</span>'
     + '</div>'
     + '<div class="script-status-hdr" style="margin-top:0">Supported Games</div>'
-    + '<div class="script-games">' + loadingHtml + '</div>';
+    + '<div class="script-games">' + loadingHtml + '</div>'
+    + '<div class="script-status-hdr" style="margin-top:0">Supported Executors</div>'
+    + '<div class="script-games">' + (supportedExecutorsLoaded ? buildExecutorsHtml(supportedExecutors) : '<div style="color:var(--muted);padding:14px;text-align:center;font-size:0.82rem">Loading executors...</div>') + '</div>';
 }
 
 function renderFeaturesContent() {
@@ -14046,6 +14078,7 @@ const MAIN_SAKURA_DATA = JSON.stringify([
 
 loadData();
 loadSupportedGames();
+loadSupportedExecutors();
 loadChangelog();
 </script>
 
