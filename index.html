@@ -503,13 +503,21 @@
   .script-code-block .copy-btn { position: absolute; top: 10px; right: 10px; background: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.2); color: var(--accent-text); padding: 5px 12px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; border-radius: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .script-code-block .copy-btn:hover { background: rgba(var(--accent-rgb), 0.2); }
   .script-code-block .copy-btn.copied { background: rgba(76,217,137,0.2); border-color: var(--success); color: var(--success); }
-  .script-games { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
-  .script-game-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: rgba(17, 15, 28, 0.5); border: 1px solid var(--border); border-radius: 9px; gap: 10px; }
-  .script-game-row:hover { background: rgba(17, 15, 28, 0.8); }
-  .script-game-row .sg-name { font-size: 0.82rem; color: var(--text); font-weight: 500; }
-  .script-game-row .sg-name a { color: var(--accent-text); text-decoration: none; }
-  .script-game-row .sg-name a:hover { text-decoration: underline; }
-  .script-game-row .sg-status { font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+  .script-games { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; margin-top: 12px; }
+  @media (min-width: 641px) { .script-games { grid-template-columns: repeat(2, 1fr); } }
+  .script-game-card {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 12px 14px;
+    background: rgba(17, 15, 28, 0.55);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color .2s, background .2s, transform .2s;
+  }
+  .script-game-card:hover { background: rgba(17, 15, 28, 0.85); border-color: rgba(var(--accent-rgb), 0.25); transform: translateY(-1px); }
+  .script-game-card .sg-name { font-size: 0.8rem; color: var(--text); font-weight: 600; min-width: 0; }
+  .script-game-card .sg-name a { color: var(--accent-text); text-decoration: none; }
+  .script-game-card .sg-name a:hover { text-decoration: underline; }
+  .script-game-card .sg-status { font-size: 0.68rem; font-weight: 600; white-space: nowrap; }
   .exe-chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #fff; margin-left: 6px; vertical-align: middle; }
   .exe-chip-pc { background: #2563eb; }
   .exe-chip-android { background: #16a34a; }
@@ -1145,8 +1153,8 @@
     .social-links { gap: 4px; }
     .social-links a { font-size: 10px; padding: 8px 12px; gap: 3px; min-height: 36px; }
     .script-code-block { padding: 14px 12px; margin-bottom: 18px; }
-    .script-game-row { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 12px; }
-    .script-game-row .sg-status { align-self: flex-end; }
+    .script-game-card { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 12px; }
+    .script-game-card .sg-status { align-self: flex-end; }
     .preset-card { padding: 8px 10px; min-height: 46px; gap: 8px; }
     .preset-favicon, .preset-fallback-icon { width: 26px; height: 26px; min-width: 26px; }
     .preset-fallback-icon { font-size: 0.95rem; }
@@ -11524,13 +11532,13 @@ function getScriptTabIndex() {
   return -1;
 }
 
-let statusMap = { fully: '🟩', partial: '🟨', broken: '🟥', coming: '🟪', discontinued: '⬛' };
+let statusMap = { fully: '🟢', partial: '🟡', broken: '🔴', coming: '🟣', discontinued: '⚫' };
 let statusLabel = { fully: 'Completely Working', partial: 'Partially Working', broken: 'Not Working or Bugged', coming: 'Coming Out', discontinued: 'Discontinued' };
 
 function buildGamesHtml(games) {
   if (!games || !games.length) return '<div style="color:var(--muted);padding:14px;text-align:center;font-size:0.82rem">No games loaded yet.</div>';
   return games.map(function(g) {
-    return '<div class="script-game-row"><span class="sg-name"><a href="' + esc(g.url) + '" target="_blank" rel="noopener">' + esc(g.name) + '</a></span><span class="sg-status">' + (statusMap[g.status] || '') + ' ' + esc(statusLabel[g.status] || '') + '</span></div>';
+    return '<div class="script-game-card"><span class="sg-name"><a href="' + esc(g.url) + '" target="_blank" rel="noopener">' + esc(g.name) + '</a></span><span class="sg-status">' + (statusMap[g.status] || '') + ' ' + esc(statusLabel[g.status] || '') + '</span></div>';
   }).join('');
 }
 
@@ -11540,7 +11548,7 @@ function buildExecutorsHtml(executors) {
   return executors.map(function(e) {
     var nameHtml = e.url ? '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.name) + '</a>' : esc(e.name);
     var chip = '<span class="exe-chip exe-chip-' + (platformLabel[e.platform] ? esc(e.platform) : 'other') + '">' + (platformLabel[e.platform] || 'Other') + '</span>';
-    return '<div class="script-game-row"><span class="sg-name">' + nameHtml + '</span><span class="sg-status">' + chip + '</span></div>';
+    return '<div class="script-game-card"><span class="sg-name">' + nameHtml + '</span><span class="sg-status">' + chip + '</span></div>';
   }).join('');
 }
 
@@ -11573,11 +11581,11 @@ function renderScriptContent(si) {
     + '</div>'
     + '<div class="script-status-hdr">Script Status Overview</div>'
     + '<div class="script-legend">'
-    + '<span class="sl-badge sl-fully">🟩 Completely Working</span>'
-    + '<span class="sl-badge sl-partial">🟨 Partially Working</span>'
-    + '<span class="sl-badge sl-broken">🟥 Not Working or Bugged</span>'
-    + '<span class="sl-badge sl-coming">🟪 Coming Out</span>'
-    + '<span class="sl-badge sl-discontinued">⬛ Discontinued</span>'
++ '<span class="sl-badge sl-fully">🟢 Completely Working</span>'
+  + '<span class="sl-badge sl-partial">🟡 Partially Working</span>'
+  + '<span class="sl-badge sl-broken">🔴 Not Working or Bugged</span>'
+  + '<span class="sl-badge sl-coming">🟣 Coming Out</span>'
+  + '<span class="sl-badge sl-discontinued">⚫ Discontinued</span>'
     + '</div>'
     + '<div class="script-status-hdr" style="margin-top:0">Supported Games</div>'
     + '<div class="script-games">' + loadingHtml + '</div>'
