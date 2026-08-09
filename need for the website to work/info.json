@@ -5477,7 +5477,7 @@
     "url": "https://dl.betterrepack.com/",
     "name": "BetterRepack",
     "section": "Games",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
