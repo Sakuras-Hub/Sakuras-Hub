@@ -1,37 +1,27 @@
 [
   {
-    "name": "Code X",
-    "url": "",
-    "platform": "android"
+    "name": "FINALTEST-64020",
+    "platform": "other"
   },
   {
-    "name": "Delta",
-    "url": "",
-    "platform": "android"
+    "name": "{\" name\\:\\Code X\\,\\url\\:\\\\,\\platform\\:\\android\\}"
   },
   {
-    "name": "Delta",
-    "url": "",
-    "platform": "ios"
+    "name": "{\\name\\:\\Delta\\,\\url\\:\\\\,\\platform\\:\\android\\}"
   },
   {
-    "name": "Potassium",
-    "url": "",
-    "platform": "pc"
+    "name": "{\\name\\:\\Delta\\,\\url\\:\\\\,\\platform\\:\\ios\\}"
   },
   {
-    "name": "Seliware",
-    "url": "",
-    "platform": "pc"
+    "name": "{\\name\\:\\Potassium\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
   },
   {
-    "name": "Volt",
-    "url": "",
-    "platform": "pc"
+    "name": "{\\name\\:\\Seliware\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
   },
   {
-    "name": "Wave",
-    "url": "",
-    "platform": "pc"
+    "name": "{\\name\\:\\Volt\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
+  },
+  {
+    "name": "{\\name\\:\\Wave\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
   }
 ]
