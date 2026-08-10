@@ -15,6 +15,11 @@
     "platform": "pc"
   },
   {
+    "name": "Vega X",
+    "url": "https://www.vegax.gg/",
+    "platform": "android"
+  },
+  {
     "name": "Volt",
     "url": "https://voltbz.net/",
     "platform": "pc"
