@@ -8,5 +8,10 @@
     "name": "Volt",
     "url": "https://voltbz.net/",
     "platform": "pc"
+  },
+  {
+    "name": "Wave",
+    "url": "https://getwave.gg/",
+    "platform": "pc"
   }
 ]
