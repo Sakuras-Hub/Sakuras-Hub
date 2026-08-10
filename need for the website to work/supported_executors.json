@@ -1,5 +1,10 @@
 [
   {
+    "name": "Codex",
+    "url": "https://codex.lol/",
+    "platform": "android"
+  },
+  {
     "name": "Delta",
     "url": "https://deltaexploits.gg/",
     "platform": "android"
