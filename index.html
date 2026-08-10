@@ -11487,6 +11487,21 @@ let changelogData = null;
 let changelogLoaded = false;
 let scriptSubTab = 'script';
 
+const MAIN_SCRIPT_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/main_script.json';
+let mainScript = '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
+let mainScriptLoaded = false;
+
+function loadMainScript() {
+  fetch(MAIN_SCRIPT_URL + '?_=' + Date.now())
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data) {
+      if (data && typeof data === 'string' && data.trim()) mainScript = data;
+      mainScriptLoaded = true;
+      if (scriptSubTab === 'script') render();
+    })
+    .catch(function() { mainScriptLoaded = true; });
+}
+
 function loadChangelog() {
   fetch(CHANGELOG_URL + '?_=' + Date.now())
     .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -11577,7 +11592,7 @@ function renderScriptContent(si) {
     + '<p class="script-sub" style="font-size:0.7rem;color:var(--muted2);margin-top:-12px;margin-bottom:20px;">Only works with executors that have a high sUNC score. Check the score <a href="https://whatexpsare.online/" target="_blank" rel="noopener" style="color:#b388ff;text-decoration:underline">here</a> — click the sUNC button.</p>'
     + '<div class="script-code-block">'
     + '<button class="copy-btn" onclick="copyScript(this)">Copy</button>'
-    + "<pre>--[[\nSakura's Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua\"))()</pre>"
+    + "<pre>" + (mainScriptLoaded ? esc(mainScript) : 'Loading script...') + "</pre>"
     + '</div>'
     + '<div class="script-status-hdr">Script Status Overview</div>'
     + '<div class="script-legend">'
@@ -11875,7 +11890,7 @@ function renderHelpfulTab(si) {
 
 function copyScript(btn) {
   try {
-    let code = "--[[\nSakura's Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua\"))()";
+    let code = mainScript || '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(code).then(function() {
         btn.textContent = 'Copied!';
@@ -14087,6 +14102,7 @@ const MAIN_SAKURA_DATA = JSON.stringify([
 loadData();
 loadSupportedGames();
 loadSupportedExecutors();
+loadMainScript();
 loadChangelog();
 </script>
 
