@@ -10,6 +10,11 @@
     "platform": "android"
   },
   {
+    "name": "Delta",
+    "url": "https://deltaexploits.gg/",
+    "platform": "ios"
+  },
+  {
     "name": "MacSploit",
     "url": "https://www.raptor.fun/",
     "platform": "pc"
