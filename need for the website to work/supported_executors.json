@@ -1,23 +1,37 @@
 [
   {
-    "name": "{\" name\\:\\Code X\\,\\url\\:\\\\,\\platform\\:\\android\\}"
+    "name": "Code X",
+    "url": "",
+    "platform": "android"
   },
   {
-    "name": "{\\name\\:\\Delta\\,\\url\\:\\\\,\\platform\\:\\android\\}"
+    "name": "Delta",
+    "url": "",
+    "platform": "android"
   },
   {
-    "name": "{\\name\\:\\Delta\\,\\url\\:\\\\,\\platform\\:\\ios\\}"
+    "name": "Delta",
+    "url": "",
+    "platform": "ios"
   },
   {
-    "name": "{\\name\\:\\Potassium\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
+    "name": "Potassium",
+    "url": "",
+    "platform": "pc"
   },
   {
-    "name": "{\\name\\:\\Seliware\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
+    "name": "Seliware",
+    "url": "",
+    "platform": "pc"
   },
   {
-    "name": "{\\name\\:\\Volt\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
+    "name": "Volt",
+    "url": "",
+    "platform": "pc"
   },
   {
-    "name": "{\\name\\:\\Wave\\,\\url\\:\\\\,\\platform\\:\\pc\\}"
+    "name": "Wave",
+    "url": "",
+    "platform": "pc"
   }
 ]
