@@ -3,5 +3,10 @@
     "name": "Potassium",
     "url": "https://www.potassium.pro/",
     "platform": "pc"
+  },
+  {
+    "name": "Volt",
+    "url": "https://voltbz.net/",
+    "platform": "pc"
   }
 ]
