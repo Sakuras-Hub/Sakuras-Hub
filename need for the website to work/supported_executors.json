@@ -1,10 +1,6 @@
 [
   {
     "name": "Delta",
-    "platform": "android"
-  },
-  {
-    "name": "Delta",
     "platform": "ios"
   },
   {
