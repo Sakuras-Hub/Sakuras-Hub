@@ -1,5 +1,12 @@
 [
   {
+    "version": "main",
+    "date": "2026-08-11",
+    "changes": [
+      "-test -test"
+    ]
+  },
+  {
     "version": "Main Loader",
     "date": "2026-08-10",
     "changes": [
