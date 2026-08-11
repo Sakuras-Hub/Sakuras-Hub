@@ -3,6 +3,14 @@
     "version": "test",
     "date": "2026-08-11",
     "changes": [
+      "test",
+      "test"
+    ]
+  },
+  {
+    "version": "test",
+    "date": "2026-08-11",
+    "changes": [
       "test-test-test"
     ]
   },
