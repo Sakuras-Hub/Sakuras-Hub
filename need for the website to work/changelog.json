@@ -1,5 +1,19 @@
 [
   {
+    "version": "test",
+    "date": "2026-08-19",
+    "changes": [
+      "test"
+    ]
+  },
+  {
+    "version": "test",
+    "date": "2026-08-19",
+    "changes": [
+      "test"
+    ]
+  },
+  {
     "version": "Main Loader",
     "date": "2026-08-10",
     "changes": [
