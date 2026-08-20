@@ -1,3 +1,3 @@
 {
-  "notes": "Test note from verification"
+  "notes": ""
 }
