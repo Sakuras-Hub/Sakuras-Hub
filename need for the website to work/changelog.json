@@ -1,5 +1,56 @@
 [
   {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-08-20",
+    "changes": [
+      "converted the whole UI to SakuraUI",
+      "patched the UI for mobile — tappable/draggable top bar, swipe-to-scroll on every list (shop, inventory, blacklist), window auto-clamps to small screens",
+      "reworked the treasure buying — now only buys a new treasure when the old one is actually dug up, in BOTH auto-dig modes (walk + teleport), then waits up to 3s for the new dig spot to spawn so the loop never deadlocks or wastes cash",
+      "sped up the whole auto dig — inventory poll 8s → 3s, teleport delay 0.6s → 0.3s, post-dig wait 1s → 0.4s, outer loop waits 0.5s → 0.3s, E-spam delay 4 → 3",
+      "widened dig anchor radius 150 → 300 — digs register way more reliably now",
+      "fires the correct BuyTreasure remote at the right time — no more buying shovels when you wanted a dig more fixes nothing big",
+      "slowed down everything to stop bans due to reports"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator Shoe Sniper",
+    "date": "2026-08-20",
+    "changes": [
+      "converted the whole UI to SakuraUI",
+      "fixed the infinite hang when loading outside the market server — the old script waited forever for the market's Tables folder and froze the whole UI",
+      "added a background poller (every 2s) — spots the market tables the moment you're in the market server and wires the sniper up on its own",
+      "added an on-screen notification when it connects: \"market tables found",
+      "sniper online\"",
+      "guarded all 12 market-table touchpoints (scan, snipes, one-dollar mode, walk-buy modes, slot build, blacklist rebuild) — a missing table can never crash or hang it again",
+      "result: one script you can load anywhere — lobby, main game, or market — it just starts working when the market is there more fixes nothing big"
+    ]
+  },
+  {
+    "version": "UPD Chicken Farm 🐣",
+    "date": "2026-08-20",
+    "changes": [
+      "converted the whole UI to SakuraUI",
+      "added Redeem All Codes button — fires the game's redeem remote for every active code, 4/4 verified accepted live (THANKSFOR100K, 50MVisits, 666klikes, freecasssh!)",
+      "removed the bottom stats bar (cash/eggs HUD) — cleaner screen, stats still print in console every 10s",
+      "fixed tab icons to real lucide icons (zap / egg / rotate-cw) — were blank placeholders before",
+      "baked the pink-violet preset (255,95,175 accent, blossoms, 38% transparency) straight into the library — the whole \"main\" look loads on any machine, no preset file needed",
+      "fixed the settings gear icon + search icon in the top bar (were showing a cursor glyph)",
+      "reordered the loader: customized build → obfuscated fallback → HTTP — the pink look always wins, works offline too",
+      "kept all game logic byte-identical — same auto buy, merge, eggs, deposit, rebirth as before, just a new face more fixes nothing big"
+    ]
+  },
+  {
+    "version": "⚡Ninja Legends",
+    "date": "2026-08-20",
+    "changes": [
+      "converted the whole UI to SakuraUI",
+      "fixed the GUI being completely dead on load — one-char bug (Library:new vs Library.new) crashed the window build instantly; menu now opens clean with all 6 tabs (Farming / Auto-Buy / Pet Stuff / Misc / Teleports / Credits)",
+      "reworked Unlock Islands — it now walks through all 21 island unlock parts (Ancient Inferno → Inner Peace) so the server registers every touch and unlocks ALL islands, then ends you at the top-money sell circle — live-tested, works",
+      "added a Toggle Popups button in the menu, synced with the P keybind — mobile players can hide/show stat + hoop popups without a keyboard",
+      "kept all game logic identical — same boss farms, training loops, pet evolutions, code redeems as the original more fixes nothing big"
+    ]
+  },
+  {
     "version": "Main Loader",
     "date": "2026-08-10",
     "changes": [
