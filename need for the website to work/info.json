@@ -308,20 +308,6 @@
     "pricing": ""
   },
   {
-    "url": "https://animetsu.live/",
-    "name": "Animetsu",
-    "section": "Anime Streaming",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 5,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
     "url": "https://www.miruro.to/",
     "name": "Miruro",
     "section": "Anime Streaming",
@@ -355,25 +341,11 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Online"
+      "Down"
     ],
     "avoid": false,
     "avoid_reason": "",
     "rank": 8,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://senshi.live/",
-    "name": "Senshi",
-    "section": "Anime Streaming",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 9,
     "emoji": "",
     "pricing": ""
   },
@@ -397,7 +369,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Online"
+      "Down"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -570,20 +542,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 23,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://anidap.se/home",
-    "name": "Anidap",
-    "section": "Anime Streaming",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 24,
     "emoji": "",
     "pricing": ""
   },
@@ -854,20 +812,6 @@
     "pricing": ""
   },
   {
-    "url": "https://animelok.online/",
-    "name": "Animelok",
-    "section": "Anime Streaming",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 46,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
     "url": "https://animeyubi.com/",
     "name": "Animeyubi",
     "section": "Anime Streaming",
@@ -887,7 +831,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Online"
+      "Down"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -901,7 +845,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Online"
+      "Down"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -1032,20 +976,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 58,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://aniversehd.com/",
-    "name": "AniverseHD",
-    "section": "Anime Streaming",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 59,
     "emoji": "",
     "pricing": ""
   },
