@@ -193,7 +193,10 @@
     "avoid_reason": "",
     "rank": 2,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://amvnews.ru/",
@@ -207,7 +210,10 @@
     "avoid_reason": "",
     "rank": 3,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://hmvmania.com/video-category/amv/",
@@ -308,6 +314,20 @@
     "pricing": ""
   },
   {
+    "url": "https://animetsu.live/",
+    "name": "Animetsu",
+    "section": "Anime Streaming",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 5,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
     "url": "https://www.miruro.to/",
     "name": "Miruro",
     "section": "Anime Streaming",
@@ -341,11 +361,25 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Down"
+      "Online"
     ],
     "avoid": false,
     "avoid_reason": "",
     "rank": 8,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
+    "url": "https://senshi.live/",
+    "name": "Senshi",
+    "section": "Anime Streaming",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 9,
     "emoji": "",
     "pricing": ""
   },
@@ -369,7 +403,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Down"
+      "Online"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -529,7 +563,10 @@
     "avoid_reason": "",
     "rank": 22,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://animeheaven.me/",
@@ -546,6 +583,20 @@
     "pricing": ""
   },
   {
+    "url": "https://anidap.se/home",
+    "name": "Anidap",
+    "section": "Anime Streaming",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 24,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
     "url": "https://lunaranime.ru/",
     "name": "Lunar Animes",
     "section": "Anime Streaming",
@@ -557,7 +608,10 @@
     "avoid_reason": "",
     "rank": 25,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://www.animegg.org/",
@@ -812,6 +866,20 @@
     "pricing": ""
   },
   {
+    "url": "https://animelok.online/",
+    "name": "Animelok",
+    "section": "Anime Streaming",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 46,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
     "url": "https://animeyubi.com/",
     "name": "Animeyubi",
     "section": "Anime Streaming",
@@ -831,7 +899,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Down"
+      "Online"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -845,7 +913,7 @@
     "section": "Anime Streaming",
     "nsfw": false,
     "tags": [
-      "Down"
+      "Online"
     ],
     "avoid": false,
     "avoid_reason": "",
@@ -976,6 +1044,20 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 58,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
+    "url": "https://aniversehd.com/",
+    "name": "AniverseHD",
+    "section": "Anime Streaming",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 59,
     "emoji": "",
     "pricing": ""
   },
@@ -1543,7 +1625,7 @@
     "url": "https://github.com/FooIbar/EhViewer",
     "name": "Ehviewer",
     "section": "Apps",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -1557,7 +1639,7 @@
     "url": "https://ehpanda.app/",
     "name": "EhPanda",
     "section": "Apps",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -1627,7 +1709,7 @@
     "url": "https://codeberg.org/VioletKnight/Hentoid",
     "name": "Hentoid",
     "section": "Apps",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -2279,7 +2361,10 @@
     "avoid_reason": "",
     "rank": 83,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://beetv.download/",
@@ -2506,24 +2591,10 @@
     "pricing": ""
   },
   {
-    "url": "https://booru.cocomi.eu.org/",
-    "name": "booruwf",
-    "section": "Art/Imageboards",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 15,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
     "url": "https://kemono.cr/",
     "name": "Kemono",
     "section": "Art/Imageboards",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -2705,7 +2776,7 @@
     "url": "https://swfchan.com/",
     "name": "swfchan",
     "section": "Art/Imageboards",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -2740,20 +2811,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 31,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://booru.org/",
-    "name": "Booru Project",
-    "section": "Art/Imageboards",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 32,
     "emoji": "",
     "pricing": ""
   },
@@ -3489,7 +3546,7 @@
     "url": "https://pornhwadb.com/",
     "name": "Pornhwa Database",
     "section": "Database/Tracker",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -4309,7 +4366,10 @@
     "avoid_reason": "",
     "rank": 28,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "GB"
+    ]
   },
   {
     "url": "https://www.shanaproject.com/",
@@ -4449,7 +4509,10 @@
     "avoid_reason": "",
     "rank": 38,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "ID"
+    ]
   },
   {
     "url": "https://www.animekaizoku.xyz/",
@@ -4637,7 +4700,7 @@
     "url": "https://www.anime-sharing.com/",
     "name": "Anime-Sharing",
     "section": "Forums/Community",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -5513,7 +5576,10 @@
     "avoid_reason": "",
     "rank": 29,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "JP"
+    ]
   },
   {
     "url": "https://www.johren.games/",
@@ -7493,7 +7559,7 @@
     "url": "https://comic.pixiv.net/",
     "name": "Pixiv Comics",
     "section": "Manga Reading",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -7529,7 +7595,10 @@
     "avoid_reason": "",
     "rank": 40,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://kissmanga.in/",
@@ -7543,7 +7612,10 @@
     "avoid_reason": "",
     "rank": 41,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://yaoiscan.com/",
@@ -8117,7 +8189,10 @@
     "avoid_reason": "",
     "rank": 82,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://mangaread.org/",
@@ -8946,20 +9021,6 @@
     "pricing": ""
   },
   {
-    "url": "https://erosscans.xyz/",
-    "name": "ErosScan",
-    "section": "Manhwa Reading",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 51,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
     "url": "https://manhuafast.net/",
     "name": "manhuafast",
     "section": "Manhwa Reading",
@@ -9461,7 +9522,10 @@
     "avoid_reason": "",
     "rank": 7,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://watch.corsflix.net/",
@@ -9937,7 +10001,10 @@
     "avoid_reason": "",
     "rank": 24,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "PL"
+    ]
   },
   {
     "url": "https://gensokyoradio.net/",
@@ -10741,7 +10808,7 @@
     "url": "https://erogemusicquiz.com/",
     "name": "ErogeMusicQuiz",
     "section": "Quiz",
-    "nsfw": false,
+    "nsfw": true,
     "tags": [
       "Online"
     ],
@@ -10973,7 +11040,10 @@
     "avoid_reason": "",
     "rank": 3,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "JP"
+    ]
   },
   {
     "url": "https://animeschedule.net/",
@@ -11113,7 +11183,10 @@
     "avoid_reason": "",
     "rank": 13,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "JP"
+    ]
   },
   {
     "url": "https://holodex.net/",
@@ -11379,7 +11452,10 @@
     "avoid_reason": "",
     "rank": 3,
     "emoji": "",
-    "pricing": ""
+    "pricing": "",
+    "countries": [
+      "RU"
+    ]
   },
   {
     "url": "https://m4uhd.to/",
@@ -11770,6 +11846,48 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 23,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
+    "url": "https://booru.cocomi.eu.org/",
+    "name": "booruwf",
+    "section": "Art/Imageboards",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 15,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
+    "url": "https://booru.org/",
+    "name": "Booru Project",
+    "section": "Art/Imageboards",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 32,
+    "emoji": "",
+    "pricing": ""
+  },
+  {
+    "url": "https://erosscans.xyz/",
+    "name": "ErosScan",
+    "section": "Manhwa Reading",
+    "nsfw": false,
+    "tags": [
+      "Online"
+    ],
+    "avoid": false,
+    "avoid_reason": "",
+    "rank": 51,
     "emoji": "",
     "pricing": ""
   }

@@ -14,11 +14,11 @@
  *    CHUNK subrequests per invocation, under the free 50/request cap.
  *  - GET /status joins the cached site list with the status map into the
  *    exact payload scripts/monitor.js expects:
- *      { updated: ISO, sites: [{slug,name,url,section,nsfw,status,ms,code,detail}], pending, total }
+ *      { updated: ISO, sites: [{slug,name,url,section,nsfw,countries,status,ms,code,detail}], pending, total }
  *    where status is 'up' | 'down' | 'blocked' | 'unreachable' | 'pending'.
  *
  * KV schema (namespace MONITOR_KV):
- *  - "sites"    = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw}]}
+ *  - "sites"    = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw,countries}]}
  *  - "statuses" = {"updated": <ISO>, "map": {<url-slug>: {status,ms,code,detail,checkedAt}}}
  *  - "cursor"   = <stringified int index into list>
  *  - "sweeping" = "1" guard flag (TTL so a crashed tick can't wedge the sweep)
@@ -101,7 +101,8 @@ async function ensureSiteList(env) {
         name: String(s.name || ''),
         url: String(s.url || ''),
         section: String(s.section || ''),
-        nsfw: !!s.nsfw
+        nsfw: !!s.nsfw,
+        countries: Array.isArray(s.countries) ? s.countries.filter((c) => c && typeof c === 'string') : []
       }))
       .filter((s) => s.url && s.name);
     await env.MONITOR_KV.put(K.sites, JSON.stringify({ ts: Date.now(), list }), { expirationTtl: KEEP_TTL_S });

@@ -4,6 +4,9 @@
   ss.id = 'mc-styles';
     ss.textContent = '.monitor-view .monitor-wrap .bars-cell{white-space:nowrap;min-width:150px;display:flex;align-items:center;gap:4px}.bars-cell .mc-bars{display:inline-flex;gap:2px;height:14px;align-items:flex-end}.bars-cell .mc-ms{flex-shrink:0;font-size:.75rem;font-weight:600}.bars-cell .mc-ms-down{color:#f55e6a}.bars-cell .mc-code{flex-shrink:0;font-size:.7rem;opacity:.6;margin-left:2px}.bars-cell .mc-code-down{color:#f55e6a;opacity:1}.bars-cell .mc-code-blocked{color:#d29922;opacity:1}.st-label.label-wait{color:#d29922}.st-label.label-pending{color:#8b949e}.st-label.label-unreachable{color:#f0883e}@media(max-width:640px){.monitor-view .monitor-wrap table{table-layout:fixed;min-width:0}.monitor-view .monitor-wrap td{padding:4px 5px;font-size:.7rem;overflow:hidden;text-overflow:ellipsis}.monitor-view .monitor-wrap .url-cell a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.monitor-view .monitor-wrap .sec-cell{display:none}.monitor-view .monitor-wrap .bars-cell{min-width:70px}.monitor-view .monitor-wrap .name-cell{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}@media(max-width:480px){.monitor-view{overflow-x:hidden}.monitor-view .monitor-wrap{overflow-x:hidden}.monitor-view .monitor-wrap table,.monitor-view .monitor-wrap tbody,.monitor-view .monitor-wrap thead,.monitor-view .monitor-wrap tr{display:block;width:100%}.monitor-view .monitor-wrap thead{display:none}.monitor-view .monitor-wrap tr{margin-bottom:6px;padding:6px 8px;background:var(--surface2,rgba(255,255,255,0.04));border-radius:6px;display:flex;flex-wrap:wrap;gap:2px 8px}.monitor-view .monitor-wrap td{display:inline-flex;align-items:center;gap:3px;padding:2px 0;font-size:.68rem;border:none;overflow:visible;text-overflow:clip}.monitor-view .monitor-wrap .st-cell{width:auto;flex-shrink:0}.monitor-view .monitor-wrap .name-cell{max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:1}.monitor-view .monitor-wrap .url-cell{display:none !important}.monitor-view .monitor-wrap .sec-cell{display:none !important}.monitor-view .monitor-wrap .bars-cell{min-width:0;width:auto;flex-shrink:1;white-space:nowrap;display:inline-flex}}';
   document.head.appendChild(ss);
+  var ss2 = document.createElement('style');
+  ss2.textContent = '.cc-badge{display:inline-block;padding:0 6px;margin-left:4px;border-radius:4px;background:var(--surface2,rgba(255,255,255,0.06));border:1px solid var(--border);font-size:.62rem;font-weight:600;color:var(--text);cursor:default;white-space:nowrap}.cc-global{opacity:.55;font-size:.68rem}.monitor-search-row select{padding:4px 8px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.75rem;max-width:150px}';
+  document.head.appendChild(ss2);
   function mc_initToggle() {
     if (document.getElementById('monitorToggle')) return;
     var flBar = document.querySelector('.fl-bar');
@@ -25,6 +28,8 @@ var MONITOR_POLL_MS = 5 * 60 * 1000;
 var monitorPollTimer = null;
 var monitorApiData = null;
 var monitorSearchTerm = '';
+var monitorCountryFilter = '';
+var CC_LABELS = { RU: '🇷🇺 Russia', IN: '🇮🇳 India', JP: '🇯🇵 Japan', PL: '🇵🇱 Poland', GB: '🇬🇧 United Kingdom', ID: '🇮🇩 Indonesia' };
 var MAX_BARS = 24;
 
 function esc2(s) {
@@ -80,6 +85,24 @@ function mc_siteSlug(s) {
   return String(s.slug || '').toLowerCase() || String(s.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+function mc_countryCodes(s) {
+  var c = s && s.countries;
+  if (!c || !c.length) return [];
+  return c.filter(function(x) { return x && typeof x === 'string'; });
+}
+
+function mc_countryLabel(s) {
+  var codes = mc_countryCodes(s);
+  if (!codes.length) return 'Global';
+  return codes.map(function(c) { return CC_LABELS[c] || c; }).join(', ');
+}
+
+function mc_countryBadge(s) {
+  var codes = mc_countryCodes(s);
+  if (!codes.length) return '';
+  return ' <span class="cc-badge" title="' + esc2(mc_countryLabel(s)) + '">' + codes.map(function(c) { return CC_LABELS[c] ? (CC_LABELS[c].split(' ')[0] + ' ' + c) : c; }).join(' ') + '</span>';
+}
+
 function mc_buildState(s) {
   var initial = mc_toStatus(s);
   return {
@@ -122,6 +145,11 @@ function monitorSearchInput(val) {
   if (monitorActive) renderMonitorSection(true);
 }
 
+function monitorCountryInput(val) {
+  monitorCountryFilter = String(val || '');
+  if (monitorActive) renderMonitorSection(true);
+}
+
 function mc_requeueAll() {
   if (!monitorActive) return;
   fetchMonitorData(true);
@@ -158,6 +186,9 @@ var sites = (source.sites || []).slice();
       var ra = sortRank[mc_toStatus(a)] != null ? sortRank[mc_toStatus(a)] : 5;
       var rb = sortRank[mc_toStatus(b)] != null ? sortRank[mc_toStatus(b)] : 5;
       if (ra !== rb) return ra - rb;
+      var ca = mc_countryCodes(a).join(',');
+      var cb = mc_countryCodes(b).join(',');
+      if (ca !== cb) return ca.localeCompare(cb);
       return String(a.name || '').localeCompare(String(b.name || ''));
     });
 
@@ -170,8 +201,13 @@ var sites = (source.sites || []).slice();
       var slug = mc_siteSlug(s);
       if (seen[slug]) return;
       seen[slug] = true;
-      if (!showAll && s.nsfw) { hiddenNSFW++; return; }
+if (!showAll && s.nsfw) { hiddenNSFW++; return; }
       if (catFilter && s.section !== catFilter) return;
+      if (monitorCountryFilter) {
+        var codes = mc_countryCodes(s);
+        var ccOk = monitorCountryFilter === '__global__' ? codes.length === 0 : codes.indexOf(monitorCountryFilter) !== -1;
+        if (!ccOk) return;
+      }
       var nameL = String(s.name).toLowerCase();
       var urlL = String(s.url).toLowerCase();
       if (monitorSearchTerm && nameL.indexOf(monitorSearchTerm) === -1 && urlL.indexOf(monitorSearchTerm) === -1) return;
@@ -197,7 +233,7 @@ var st = mc_toStatus(s);
 
       rows += '<tr>';
       rows += '<td style="text-align:center"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
-      rows += '<td class="name-cell">' + esc2(s.name) + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + '</td>';
+      rows += '<td class="name-cell">' + esc2(s.name) + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
       rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
       rows += '<td class="sec-cell">' + esc2(s.section || '—') + '</td>';
       rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
@@ -206,17 +242,30 @@ var st = mc_toStatus(s);
 
     var updated = source.updated ? String(source.updated) : 'unknown';
 
+var ccOptions = '<option value="">🌍 All countries</option><option value="__global__">🌐 Global</option>';
+    var ccSeen = {};
+    sites.forEach(function(s) {
+      var codes = mc_countryCodes(s);
+      for (var i = 0; i < codes.length; i++) {
+        if (!ccSeen[codes[i]]) { ccSeen[codes[i]] = true; ccOptions += '<option value="' + esc2(codes[i]) + '">' + esc2(CC_LABELS[codes[i]] || codes[i]) + '</option>'; }
+      }
+    });
+    if (monitorCountryFilter) {
+      var ccRx = new RegExp('value="' + monitorCountryFilter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"');
+      ccOptions = ccOptions.replace(ccRx, 'value="' + monitorCountryFilter + '" selected');
+    }
+
     var mv = '<div class="monitor-view">';
     mv += '<div class="monitor-stats">';
     mv += '<span class="monitor-stat stat-up">🟢 ' + up + ' Up</span>';
     mv += '<span class="monitor-stat stat-down">🔴 ' + down + ' Down</span>';
-mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
+    mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
     mv += '<span class="monitor-stat">🟠 ' + unreachable + ' Unreachable</span>';
     mv += '<span class="monitor-stat">⚪ ' + pending + ' Pending</span>';
     mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
     if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
     mv += '</div>';
-    mv += '<div class="monitor-search-row"><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
+    mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
     mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Re-check</button></div>';
     mv += '<div class="monitor-wrap"><table><thead><tr><th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Response</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
     mv += '<div class="monitor-updated">🕐 Last checked: ' + esc2(updated) + '</div>';
