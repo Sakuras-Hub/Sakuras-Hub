@@ -19,414 +19,215 @@
   setTimeout(mc_initToggle, 600);
   setTimeout(mc_initToggle, 2500);
 })();
-
 var monitorActive = false;
-var MAX_BARS = 24;
-var PING_INTERVAL_MS = 600000;
-var PROBE_TIMEOUT_MS = 20000;
-var MAX_CONCURRENT = 60;
-var monitorPingTimers = {};
-var monitorPingState = {};
+var MONITOR_API_URL = 'https://sakura-monitor.fadded-market.workers.dev/status';
+var MONITOR_POLL_MS = 5 * 60 * 1000;
+var monitorPollTimer = null;
+var monitorApiData = null;
 var monitorSearchTerm = '';
-var mc_queue = [];
-var mc_active = 0;
+var MAX_BARS = 24;
 
-function esc2(s) { return (typeof esc === 'function') ? esc(s) : String(s).replace(/[&<>"']/g, function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];}); }
+function esc2(s) {
+  if (s == null) return '';
+  var d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
 
-function mc_initialStatus(s) {
-  if (s.status === 'ok') return 'up';
-  if (s.status === 'dead') return 'down';
+function mc_toStatus(s) {
+  var st = String(s.status || s.liveStatus || '').toLowerCase();
+  if (st === 'ok' || st === 'up' || st === 'live') return 'up';
+  if (st === 'dead' || st === 'down') return 'down';
   return 'blocked';
 }
 
+function mc_extractCode(s) {
+  if (s.code != null) return parseInt(s.code, 10) || null;
+  var m = s.detail ? String(s.detail).match(/HTTP (\d{3})/) : null;
+  return m ? parseInt(m[1], 10) : null;
+}
+
 function mc_seedHistory(initial, serverMs) {
+  var edges = ['4m', '3m', '2m', '1m', '30s', 'now'];
   var hist = [];
-  var n = Math.max(6, Math.min(MAX_BARS, 12));
-  for (var i = 0; i < n; i++) {
-    hist.push({ status: initial, ms: (i === n - 1) ? serverMs : null });
+  for (var i = 0; i < edges.length; i++) {
+    hist.push({ label: edges[i], status: initial, ms: null });
   }
+  hist.push({ label: 'now', status: initial, ms: (serverMs != null ? serverMs : null) });
+  if (hist.length > MAX_BARS) hist = hist.slice(hist.length - MAX_BARS);
   return hist;
 }
 
 function mc_fmtMs(ms) {
-  if (ms == null) return '\u2014';
+  if (ms == null || isNaN(ms)) return '—';
   if (ms >= 1000) return (ms / 1000).toFixed(1) + 's';
-  return ms + 'ms';
+  return Math.round(ms) + 'ms';
 }
 
-function mc_fmtCode(s) {
-  if (s.status === 'blocked') return 'BLOCKED';
-  if (s.detail) {
-    var m = s.detail.match(/HTTP (\d{3})/);
-    if (m) return m[1];
-  }
-  return '';
-}
-
-function mc_codeCls(s) {
-  if (s.status === 'ok') return 'mc-code';
-  if (s.status === 'dead') return 'mc-code mc-code-down';
-  return 'mc-code mc-code-blocked';
-}
-
-function mc_barClass(st) {
-  if (st === 'up') return 'up';
-  if (st === 'down') return 'down';
-  if (st === 'blocked') return 'blocked';
-  return '';
-}
-
-function mc_renderBars(slug) {
-  var st = monitorPingState[slug];
-  if (!st) return '';
+function mc_renderBars(st) {
   var out = '';
-  var len = st.history.length;
-  for (var i = 0; i < len; i++) {
+  for (var i = 0; i < st.history.length; i++) {
     var h = st.history[i];
-    var c = h.status === 'up' ? '#3fb950' : (h.status === 'down' ? '#f55e6a' : '#d29922');
-    out += '<span style="display:inline-block;width:4px;height:10px;border-radius:2px;background:' + c + '"></span>';
+    var col = h.status === 'up' ? '#3fb950' : (h.status === 'down' ? '#f55e6a' : '#d29922');
+    out += '<span style="display:inline-block;width:4px;height:10px;border-radius:2px;background:' + col + ';margin-right:2px"></span>';
   }
   return out;
 }
 
-function mc_updateCardDOM(slug) {
-  var row = document.querySelector('tr[data-slug="' + slug + '"]');
-  if (!row) return;
-  var st = monitorPingState[slug];
-  if (!st) return;
-  var last = st.history[st.history.length - 1];
-  var msEl = row.querySelector('.mc-ms');
-  var barsEl = row.querySelector('.mc-bars');
-  if (msEl) {
-    msEl.textContent = mc_fmtMs(last.ms);
-    msEl.className = last.status === 'down' ? 'mc-ms mc-ms-down' : 'mc-ms';
-  }
-  if (barsEl) { barsEl.innerHTML = mc_renderBars(slug); }
-  if (st.liveStatus) {
-    var isBlocked = st.liveStatus === 'blocked';
-    var isUp = st.liveStatus === 'up';
-    var dotEl = row.querySelector('.st-dot');
-    var labelEl = row.querySelector('.st-label');
-    var codeEl = row.querySelector('.mc-code');
-    if (dotEl) {
-      dotEl.textContent = isUp ? '\ud83d\udfe2' : (isBlocked ? '\ud83d\udfe1' : '\ud83d\udd34');
-    }
-    if (labelEl) {
-      if (isBlocked) {
-        labelEl.textContent = 'BLOCKED';
-        labelEl.className = 'st-label label-blocked';
-      } else {
-        labelEl.textContent = isUp ? 'LIVE' : 'DEAD';
-        labelEl.className = 'st-label ' + (isUp ? 'label-up' : 'label-down');
-      }
-    }
-    if (codeEl) {
-      var displayCode = st.httpStatus || st.initialCode;
-      if (displayCode) {
-        codeEl.textContent = (displayCode >= 400 ? '\u2717' : '\u2713') + displayCode;
-        codeEl.className = 'mc-code' + (displayCode >= 400 ? ' mc-code-down' : '');
-      } else if (isBlocked) {
-        codeEl.textContent = '\u26a0';
-        codeEl.className = 'mc-code mc-code-blocked';
-      } else {
-        codeEl.textContent = isUp ? '\u2713' : '\u2717';
-        codeEl.className = 'mc-code' + (isUp ? '' : ' mc-code-down');
-      }
-    }
-  }
-  mc_updateStats();
+function mc_siteSlug(s) {
+  return String(s.slug || '').toLowerCase() || String(s.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-function mc_updateStats() {
-  var mv = document.querySelector('.monitor-view');
-  if (!mv) return;
-  var up = 0, down = 0, blocked = 0, total = 0;
-  Object.keys(monitorPingState).forEach(function(slug) {
-    var st = monitorPingState[slug];
-    total++;
-    if (st.liveStatus === 'up') up++;
-    else if (st.liveStatus === 'blocked') blocked++;
-    else if (st.liveStatus === 'dead' || st.liveStatus === 'down') down++;
-  });
-  var checked = up + down + blocked;
-  var statsEl = mv.querySelector('.monitor-stats');
-  if (!statsEl) return;
-  var html = '';
-  if (checked === 0) {
-    html += '<span class="monitor-stat stat-total">\ud83d\udfe1 Starting probes for ' + total + ' sites...</span>';
-  } else if (checked < total) {
-    html += '<span class="monitor-stat stat-total">\ud83d\udfe1 Checking ' + checked + '/' + total + '...</span>';
-  }
-  if (up > 0) html += '<span class="monitor-stat stat-up">\ud83d\udfe2 ' + up + ' Up</span>';
-  if (down > 0) html += '<span class="monitor-stat stat-down">\ud83d\udd34 ' + down + ' Down</span>';
-  if (blocked > 0) html += '<span class="monitor-stat stat-blocked">\ud83d\udfe1 ' + blocked + ' Blocked</span>';
-  html += '<span class="monitor-stat stat-total">\ud83d\udccb ' + total + ' Total</span>';
-  statsEl.innerHTML = html;
+function mc_buildState(s) {
+  var initial = mc_toStatus(s);
+  return {
+    url: s.url,
+    history: mc_seedHistory(initial, (s.ms != null ? s.ms : null)),
+    staticStatus: initial,
+    liveStatus: initial,
+    code: mc_extractCode(s)
+  };
 }
 
-function mc_checkHttpStatus(url) {
-  return new Promise(function(resolve) {
-    fetch(url, { mode: 'cors', method: 'HEAD', cache: 'no-store' }).then(function(r) {
-      resolve(r.status);
-    }).catch(function() {
-      resolve(null);
+function stopPolling() {
+  if (monitorPollTimer) { clearInterval(monitorPollTimer); monitorPollTimer = null; }
+}
+
+function fetchMonitorData(showToast) {
+  if (!MONITOR_API_URL) {
+    if (showToast) toast('Monitor API not configured — see SETUP.md', '#f59e0b');
+    return Promise.resolve(false);
+  }
+  return fetch(MONITOR_API_URL + '?_=' + Date.now(), { cache: 'no-store' })
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(d) {
+      if (!d || !d.sites || !d.sites.length) throw new Error('empty payload');
+      monitorApiData = d;
+      if (monitorActive) renderMonitorSection(true);
+      return true;
+    })
+    .catch(function(err) {
+      console.warn('Monitor API failed:', err && err.message ? err.message : err);
+      if (showToast) toast('Monitor API unreachable — showing cached data', '#f59e0b');
+      monitorApiData = null;
+      if (monitorActive) renderMonitorSection(true);
+      return false;
     });
-  });
-}
-
-function mc_probe(url) {
-  return new Promise(function(resolve) {
-    var t0 = performance.now();
-    var done = false;
-    var elements = [];
-
-    function cleanup() {
-      elements.forEach(function(el) {
-        if (el.parentNode) el.parentNode.removeChild(el);
-      });
-      elements = [];
-    }
-
-    var timer = setTimeout(function() {
-      if (!done) { done = true; cleanup(); resolve(null); }
-    }, PROBE_TIMEOUT_MS);
-
-    function win() {
-      if (done) return;
-      done = true; clearTimeout(timer); cleanup();
-      resolve({ ok: true, ms: Math.round(performance.now() - t0) });
-    }
-
-    function detectReach() {
-      if (done) return;
-      var elapsed = Math.round(performance.now() - t0);
-      if (elapsed < 4000) {
-        done = true; clearTimeout(timer); cleanup();
-        resolve({ ok: true, ms: elapsed });
-      }
-    }
-
-    var httpsUrl = url.replace(/^http:/, 'https:');
-    var isHttp = url.indexOf('http:') === 0;
-
-    fetch(httpsUrl, { mode: 'no-cors', cache: 'no-store' }).then(win).catch(function(){});
-    fetch(httpsUrl, { mode: 'no-cors', method: 'HEAD', cache: 'no-store' }).then(win).catch(function(){});
-    if (isHttp) {
-      fetch(url, { mode: 'no-cors', cache: 'no-store' }).then(win).catch(function(){});
-    }
-
-    var img = new Image();
-    img.onload = win;
-    img.onerror = detectReach;
-    img.src = url.replace(/\/?$/, '/') + 'favicon.ico?cb=' + Date.now();
-
-    if (isHttp) {
-      var img2 = new Image();
-      img2.onload = win;
-      img2.onerror = detectReach;
-      img2.src = httpsUrl.replace(/\/?$/, '/') + 'favicon.ico?cb=' + Date.now();
-    }
-
-    [httpsUrl, isHttp ? url : null].forEach(function(s) {
-      if (!s) return;
-      var el = document.createElement('script');
-      el.onload = win;
-      el.onerror = detectReach;
-      el.src = s + '?cb=' + Date.now();
-      document.head.appendChild(el);
-      elements.push(el);
-    });
-  });
-}
-
-function mc_drain() {
-  while (mc_active < MAX_CONCURRENT && mc_queue.length > 0) {
-    var slug = mc_queue.shift();
-    mc_active++;
-    mc_pingOnce(slug);
-  }
-}
-
-function mc_pingOnce(slug) {
-  var st = monitorPingState[slug];
-  if (!st) { mc_active--; mc_drain(); return; }
-  if (!monitorActive || !document.querySelector('tr[data-slug="' + slug + '"]')) {
-    mc_active--; mc_drain(); return;
-  }
-
-  mc_probe(st.url).then(function(r) {
-    mc_active--;
-    st.justUpdated = true;
-    if (r && r.ok) {
-      mc_checkHttpStatus(st.url).then(function(code) {
-        if (code !== null && code >= 500) {
-          st.history.push({ status: 'down', ms: r.ms || PROBE_TIMEOUT_MS });
-          if (st.history.length > MAX_BARS) st.history.shift();
-          st.liveStatus = 'dead';
-          st.httpStatus = code;
-        } else if (code === null && st.initialCode && st.initialCode >= 500) {
-          st.history.push({ status: 'down', ms: r.ms || PROBE_TIMEOUT_MS });
-          if (st.history.length > MAX_BARS) st.history.shift();
-          st.liveStatus = 'dead';
-          st.httpStatus = st.initialCode;
-        } else {
-          st.history.push({ status: 'up', ms: r.ms });
-          if (st.history.length > MAX_BARS) st.history.shift();
-          st.liveStatus = 'up';
-          if (code) st.httpStatus = code;
-        }
-        mc_updateCardDOM(slug);
-        monitorPingTimers[slug] = setTimeout(function() {
-          mc_queue.push(slug);
-          mc_drain();
-        }, PING_INTERVAL_MS + Math.floor(Math.random() * 1500));
-        mc_drain();
-      });
-    } else {
-      st.history.push({ status: 'down', ms: PROBE_TIMEOUT_MS });
-      if (st.history.length > MAX_BARS) st.history.shift();
-      st.liveStatus = 'dead';
-      mc_updateCardDOM(slug);
-      monitorPingTimers[slug] = setTimeout(function() {
-        mc_queue.push(slug);
-        mc_drain();
-      }, PING_INTERVAL_MS + Math.floor(Math.random() * 1500));
-      mc_drain();
-    }
-  });
-}
-
-function mc_startPinging(slugList) {
-  slugList.forEach(function(slug) {
-    if (!monitorPingTimers[slug]) mc_queue.push(slug);
-  });
-  mc_drain();
-}
-
-function mc_stopAllPinging() {
-  Object.keys(monitorPingTimers).forEach(function(slug) {
-    clearTimeout(monitorPingTimers[slug]);
-  });
-  monitorPingTimers = {};
-  mc_queue = [];
-}
-
-function mc_requeueAll() {
-  var rows = document.querySelectorAll('.monitor-view tr[data-slug]');
-  rows.forEach(function(r) {
-    var slug = r.getAttribute('data-slug');
-    if (slug && monitorPingState[slug]) {
-      if (monitorPingTimers[slug]) clearTimeout(monitorPingTimers[slug]);
-      mc_queue.push(slug);
-    }
-  });
-  mc_drain();
 }
 
 function monitorSearchInput(val) {
-  monitorSearchTerm = (val || '').toLowerCase();
-  renderMonitorSection(true);
+  monitorSearchTerm = String(val || '').toLowerCase().trim();
+  if (monitorActive) renderMonitorSection(true);
+}
+
+function mc_requeueAll() {
+  if (!monitorActive) return;
+  fetchMonitorData(true);
 }
 
 function renderMonitorSection(preserveState) {
   try {
-    if (typeof MONITOR_DATA === 'undefined') { console.warn('MONITOR_DATA not defined'); return; }
-    var d = MONITOR_DATA;
-    if (!d || !d.sites) { console.warn('MONITOR_DATA invalid'); return; }
-
     var p = document.getElementById('panels');
-    if (!p) { console.warn('panels not found'); return; }
-
+    if (!p) return;
     var panel = p.querySelector('.panel.active');
-    if (!panel) { console.warn('no active panel'); return; }
+    if (!panel) return;
 
     var sections = panel.querySelectorAll('.fl-section');
     sections.forEach(function(s) { s.style.display = 'none'; });
 
-    if (!preserveState) mc_stopAllPinging();
+    if (!preserveState) stopPolling();
 
     var existing = panel.querySelector('.monitor-view');
     if (existing) existing.remove();
 
+    var source = monitorApiData || ((typeof MONITOR_DATA !== 'undefined' && MONITOR_DATA) ? MONITOR_DATA : null);
     var showAll = (typeof listShowNSFW !== 'undefined' && listShowNSFW);
     var catFilter = (typeof listFilter !== 'undefined' && listFilter && listFilter !== 'all') ? listFilter : null;
-    var hiddenNSFW = 0;
-    var visibleCount = 0;
-    var visibleSlugs = [];
 
-    var rows = '';
-    var sortOrder = { 'dead': 0, 'blocked': 1 };
-    var sorted = d.sites.slice().sort(function(a, b) {
-      var pa = sortOrder[a.status] !== undefined ? sortOrder[a.status] : 2;
-      var pb = sortOrder[b.status] !== undefined ? sortOrder[b.status] : 2;
-      if (pa !== pb) return pa - pb;
-      return (a.name || '').localeCompare(b.name || '');
+    if (!source) {
+      panel.insertAdjacentHTML('beforeend',
+        '<div class="monitor-view"><div class="monitor-wrap"><p style="padding:24px;color:var(--muted);font-size:.8rem;text-align:center">No monitor data. Deploy the Worker and set MONITOR_API_URL (see SETUP.md).</p></div></div>');
+      return;
+    }
+
+    var sites = (source.sites || []).slice();
+    var sortRank = { down: 0, blocked: 1, up: 2 };
+    sites.sort(function(a, b) {
+      var ra = sortRank[mc_toStatus(a)] != null ? sortRank[mc_toStatus(a)] : 3;
+      var rb = sortRank[mc_toStatus(b)] != null ? sortRank[mc_toStatus(b)] : 3;
+      if (ra !== rb) return ra - rb;
+      return String(a.name || '').localeCompare(String(b.name || ''));
     });
-    sorted.forEach(function(s) {
+
+    var seen = {};
+    var rows = '';
+    var up = 0, down = 0, blocked = 0, shown = 0, hiddenNSFW = 0;
+
+    sites.forEach(function(s) {
+      if (!s || !s.url || !s.name) return;
+      var slug = mc_siteSlug(s);
+      if (seen[slug]) return;
+      seen[slug] = true;
       if (!showAll && s.nsfw) { hiddenNSFW++; return; }
       if (catFilter && s.section !== catFilter) return;
-      if (monitorSearchTerm && s.name.toLowerCase().indexOf(monitorSearchTerm) === -1 && s.url.toLowerCase().indexOf(monitorSearchTerm) === -1) return;
-      visibleCount++;
+      var nameL = String(s.name).toLowerCase();
+      var urlL = String(s.url).toLowerCase();
+      if (monitorSearchTerm && nameL.indexOf(monitorSearchTerm) === -1 && urlL.indexOf(monitorSearchTerm) === -1) return;
+      shown++;
 
-      var slug = s.slug || s.name.toLowerCase().replace(/[^a-z0-9]/g, '');
-      if (!monitorPingState[slug]) {
-        var initial = mc_initialStatus(s);
-        var initCode = null;
-        var dm = s.detail ? s.detail.match(/HTTP (\d{3})/) : null;
-        if (dm) initCode = parseInt(dm[1], 10);
-        monitorPingState[slug] = { url: s.url, history: mc_seedHistory(initial, s.ms), justUpdated: false, staticStatus: initial, liveStatus: null, initialCode: initCode, initialDetail: s.detail || '' };
-      }
-      visibleSlugs.push(slug);
+      var st = mc_toStatus(s);
+      var state = mc_buildState(s);
+      if (st === 'up') up++; else if (st === 'blocked') blocked++; else down++;
 
-      var st = monitorPingState[slug];
-      var last = st.history[st.history.length - 1];
+      var last = state.history[state.history.length - 1];
       var msText = mc_fmtMs(last.ms);
-      var msCls = last.status === 'down' ? 'mc-ms mc-ms-down' : 'mc-ms';
-      var codeText = mc_fmtCode(s);
-      var codeCls = mc_codeCls(s);
-      var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '...' : s.url;
-      var dot, cls, label;
-      if (st.staticStatus === 'up') {
-        dot = '\ud83d\udfe2'; cls = 'label-up'; label = 'LIVE';
-      } else if (st.staticStatus === 'down') {
-        dot = '\ud83d\udd34'; cls = 'label-down'; label = 'DEAD';
-      } else if (st.staticStatus === 'blocked') {
-        dot = '\ud83d\udfe1'; cls = 'label-blocked'; label = 'BLOCKED';
-      } else {
-        dot = '\ud83d\udfe1'; cls = 'label-wait'; label = '?';
-      }
+      var msCls = 'mc-ms' + (state.liveStatus === 'down' ? ' mc-ms-down' : '');
+      var code = state.code;
+      var codeText, codeCls;
+      if (st === 'blocked') { codeText = '⚠'; codeCls = 'mc-code mc-code-blocked'; }
+      else if (code != null) { codeText = (code >= 400 ? '✗' : '✓') + code; codeCls = 'mc-code' + (code >= 400 ? ' mc-code-down' : ''); }
+      else { codeText = '—'; codeCls = 'mc-code'; }
 
-      rows += '<tr data-slug="' + slug + '">';
-      rows += '<td class="st-cell"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
-      rows += '<td class="name-cell">' + esc2(s.name) + (s.nsfw ? ' <span style="font-size:0.65rem;opacity:0.5">\ud83d\udd1e</span>' : '') + '</td>';
-      rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank">' + esc2(shortUrl) + '</a></td>';
-      rows += '<td class="sec-cell">' + esc2(s.section || '') + '</td>';
-      rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(slug) + '</span><span class="' + msCls + '">' + msText + '</span><span class="' + codeCls + '">' + codeText + '</span></td>';
+      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : '🔴');
+      var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : 'label-down');
+      var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : 'DEAD');
+      var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
+
+      rows += '<tr>';
+      rows += '<td style="text-align:center"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
+      rows += '<td class="name-cell">' + esc2(s.name) + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + '</td>';
+      rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
+      rows += '<td class="sec-cell">' + esc2(s.section || '—') + '</td>';
+      rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
       rows += '</tr>';
     });
 
+    var updated = source.updated ? String(source.updated) : 'unknown';
+
     var mv = '<div class="monitor-view">';
     mv += '<div class="monitor-stats">';
-    mv += '<span class="monitor-stat stat-total">\ud83d\udfe1 Checking ' + visibleCount + ' sites...</span>';
-    mv += '<span class="monitor-stat stat-total">\ud83d\udccb ' + visibleCount + ' Total</span>';
-    if (hiddenNSFW > 0) {
-      mv += '<span class="monitor-stat" style="color:var(--muted2);border-color:var(--border);background:var(--surface)">\ud83d\udd1e ' + hiddenNSFW + ' hidden</span>';
-    }
+    mv += '<span class="monitor-stat stat-up">🟢 ' + up + ' Up</span>';
+    mv += '<span class="monitor-stat stat-down">🔴 ' + down + ' Down</span>';
+    mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
+    mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
+    if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
     mv += '</div>';
-    mv += '<div class="monitor-search-row"><input type="text" placeholder="Search sites..." oninput="monitorSearchInput(this.value)" value="' + esc2(monitorSearchTerm) + '"><button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">\u27f3 Re-check</button></div>';
-    mv += '<div class="monitor-wrap">';
-    mv += '<table><thead><tr>';
-    mv += '<th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Website Down Dectector</th>';
-    mv += '</tr></thead><tbody>' + rows + '</tbody></table></div>';
-    mv += '<div class="monitor-updated">\u23f1 Last checked: ' + d.updated + '</div>';
+    mv += '<div class="monitor-search-row"><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
+    mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Re-check</button></div>';
+    mv += '<div class="monitor-wrap"><table><thead><tr><th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Response</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    mv += '<div class="monitor-updated">🕐 Last checked: ' + esc2(updated) + '</div>';
     mv += '</div>';
 
     panel.insertAdjacentHTML('beforeend', mv);
-    mc_updateStats();
-    mc_startPinging(visibleSlugs);
-    console.log('Monitor view rendered: ' + visibleCount + ' sites' + (hiddenNSFW ? ' (' + hiddenNSFW + ' NSFW hidden)' : ''));
-  } catch(e) {
-    console.warn('Monitor error:', e.message || e);
+
+    if (monitorActive) {
+      if (!monitorPollTimer && MONITOR_API_URL) {
+        monitorPollTimer = setInterval(function() { fetchMonitorData(false); }, MONITOR_POLL_MS);
+      }
+      if (!monitorApiData && MONITOR_API_URL) fetchMonitorData(false);
+    }
+  } catch (e) {
+    console.warn('renderMonitorSection error:', e && e.message ? e.message : e);
   }
 }
 
@@ -442,19 +243,19 @@ function toggleMonitor() {
 
     if (mv) {
       monitorActive = false;
-      mc_stopAllPinging();
+      stopPolling();
       mv.remove();
       var sections = panel.querySelectorAll('.fl-section');
       sections.forEach(function(s) { s.style.display = ''; });
-      btn.textContent = '\ud83d\udcca Monitor';
+      btn.textContent = '📊 Monitor';
       btn.classList.remove('active');
     } else {
       monitorActive = true;
       renderMonitorSection();
-      btn.textContent = '\u2716 Close Monitor';
+      btn.textContent = '✖ Close Monitor';
       btn.classList.add('active');
     }
-  } catch(e) {
-    console.warn('toggleMonitor error:', e.message || e);
+  } catch (e) {
+    console.warn('toggleMonitor error:', e && e.message ? e.message : e);
   }
 }

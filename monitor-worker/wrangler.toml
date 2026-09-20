@@ -1,0 +1,15 @@
+# Sakura's Hub — site monitor worker
+# Deploy from this folder:  npx wrangler deploy
+name = "sakura-monitor"
+main = "worker.js"
+compatibility_date = "2025-03-01"
+account_id = "9c21fa6acafb90ca946d29ae6fe1c2bb"
+
+[triggers]
+# Every minute: probe the next chunk of sites (rolling sweep, ~22 min full pass).
+crons = ["* * * * *"]
+
+[[kv_namespaces]]
+binding = "MONITOR_KV"
+id = "57a769a24d1f468d84ad10d4e55c2fbf"        # from: npx wrangler kv namespace create MONITOR_KV
+# preview_id = "PASTE_PREVIEW_ID_HERE"   # uncomment after: npx wrangler kv namespace create MONITOR_KV --preview

@@ -7,8 +7,9 @@
 <link rel="icon" href="https://i.imgur.com/X2drtCc.jpeg" type="image/jpeg">
 <meta name="color-scheme" content="dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/kdbxweb@2.1.1/dist/kdbxweb.min.js"></script>
 <style>
   
   :root {
@@ -1433,6 +1434,7 @@
 
 <script src="scripts/vouches.js"></script>
 <script src="scripts/monitor.js"></script>
+<script src="scripts/dpad.js"></script>
 <script>
 let data = [];
 let activeTab = 0;
@@ -10928,7 +10930,8 @@ var MONITOR_DATA = {
 
 
 const LIST_KEY = 'sakura_list_data';
-const PRESETS_URL = './need%20for%20the%20website%20to%20work/info.json';
+const LIST_TTL_MS = 15 * 60 * 1000;
+const PRESETS_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/info.json';
 
 const CAT_META = {
   'movies-tv':    { label: 'Movies / TV',       emoji: '🎬' },
@@ -11050,10 +11053,13 @@ function loadData() {
   try {
     let l = localStorage.getItem(LIST_KEY);
     let ver = localStorage.getItem(LIST_KEY + '_ver');
-    if (l && ver === '3') {
+    let ts = parseInt(localStorage.getItem(LIST_KEY + '_ts'), 10) || 0;
+    if (l && ver === '3' && Date.now() - ts < LIST_TTL_MS) {
       listSites = JSON.parse(l);
     } else if (l) {
       localStorage.removeItem(LIST_KEY);
+      localStorage.removeItem(LIST_KEY + '_ver');
+      localStorage.removeItem(LIST_KEY + '_ts');
     }
   } catch {}
   mode = 'info';
@@ -11064,7 +11070,23 @@ function saveListToStorage() {
   if (listSites) {
     localStorage.setItem(LIST_KEY, JSON.stringify(listSites));
     localStorage.setItem(LIST_KEY + '_ver', '3');
+    localStorage.setItem(LIST_KEY + '_ts', String(Date.now()));
   }
+}
+
+function refreshListIfStale() {
+  let ts = parseInt(localStorage.getItem(LIST_KEY + '_ts'), 10) || 0;
+  if (Date.now() - ts < LIST_TTL_MS) return;
+  if (typeof navigator !== 'undefined' && !navigator.onLine) return;
+  fetch(PRESETS_URL + '?_=' + Date.now())
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(fresh) {
+      if (!fresh || !fresh.length) return;
+      listSites = fresh;
+      try { saveListToStorage(); } catch(e) {}
+      if (mode === 'list') render();
+    })
+    .catch(function() {});
 }
 
 function esc(s) {
@@ -11208,6 +11230,8 @@ function renderPanels() {
       html += renderScriptTab(si);
     } else if (section.id === 'helpful-stuff' || (section.title && section.title.toLowerCase().replace(/[^a-z0-9]/g,'').indexOf('helpfulstuff') !== -1)) {
       html += renderHelpfulTab(si);
+    } else if (section.id === 'vouches') {
+      html += `<div id="vouches-tab-root"><div class="panel-empty"><h3>Loading Vouches...</h3><p style="opacity:0.5">Fetching customer feedback</p></div></div>`;
     } else {
       html += `<div class="cards-wrap">`;
       if (!section.entries || !section.entries.length) {
@@ -11224,6 +11248,13 @@ function renderPanels() {
   });
 
   container.innerHTML = html;
+
+  // Auto-load vouches tab content if active
+  if (data[activeTab] && data[activeTab].id === 'vouches') {
+    if (typeof loadVouchesTabContent === 'function') {
+      loadVouchesTabContent();
+    }
+  }
 }
 
 function navigateTo(path) {
@@ -11246,7 +11277,7 @@ function navigateTo(path) {
     const category = rest;
     if (!listSites || !listSites.length) {
       toast('Loading list...', '#8b5cf6');
-      fetch(PRESETS_URL)
+      fetch(PRESETS_URL + '?_=' + Date.now())
         .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function(sites) {
           listSites = sites;
@@ -11271,6 +11302,7 @@ function navigateTo(path) {
     }
     mode = 'list';
     render();
+    refreshListIfStale();
     setTimeout(function() { applyListNav(category); }, 200);
     return;
   }
@@ -11596,11 +11628,11 @@ function renderScriptContent(si) {
     + '</div>'
     + '<div class="script-status-hdr">Script Status Overview</div>'
     + '<div class="script-legend">'
-+ '<span class="sl-badge sl-fully">🟢 Completely Working</span>'
-  + '<span class="sl-badge sl-partial">🟡 Partially Working</span>'
-  + '<span class="sl-badge sl-broken">🔴 Not Working or Bugged</span>'
-  + '<span class="sl-badge sl-coming">🟣 Coming Out</span>'
-  + '<span class="sl-badge sl-discontinued">⚫ Discontinued</span>'
+    + '<span class="sl-badge sl-fully">🟢 Completely Working</span>'
+    + '<span class="sl-badge sl-partial">🟡 Partially Working</span>'
+    + '<span class="sl-badge sl-broken">🔴 Not Working or Bugged</span>'
+    + '<span class="sl-badge sl-coming">🟣 Coming Out</span>'
+    + '<span class="sl-badge sl-discontinued">⚫ Discontinued</span>'
     + '</div>'
     + '<div class="script-status-hdr" style="margin-top:0">Supported Games</div>'
     + '<div class="script-games">' + loadingHtml + '</div>'
@@ -11914,11 +11946,14 @@ function fallbackCopy(text, btn) {
 
 
 
+function getHost(siteUrl) {
+  try { return new URL(siteUrl).hostname; } catch { return ''; }
+}
+
 function getFaviconUrl(siteUrl) {
-  try {
-    const host = new URL(siteUrl).hostname;
-    return 'https://icons.duckduckgo.com/ip3/' + host + '.ico';
-  } catch { return ''; }
+  const host = getHost(siteUrl);
+  if (!host) return '';
+  return 'https://www.google.com/s2/favicons?domain=' + host + '&sz=64';
 }
 
 function getCatEmoji(site) {
@@ -11926,6 +11961,16 @@ function getCatEmoji(site) {
 }
 
 function faviconError(img) {
+  if (!img.dataset.retried) {
+    img.dataset.retried = '1';
+    img.onerror = function() {
+      img.outerHTML = '<span class="preset-fallback-icon">' + (img.dataset.fallback || '🔗') + '</span>';
+    };
+    if (img.dataset.host) {
+      img.src = 'https://icons.duckduckgo.com/ip3/' + img.dataset.host + '.ico';
+      return;
+    }
+  }
   img.outerHTML = '<span class="preset-fallback-icon">' + (img.dataset.fallback || '🔗') + '</span>';
 }
 
@@ -11944,7 +11989,7 @@ function renderPresetPanel(section, si) {
   sites.forEach(function(site) {
     let t = normalizeTags(site.tags);
     html += '<a href="' + esc(site.url) + '" target="_blank" rel="noopener noreferrer" class="preset-card" data-name="' + esc((site.name + ' ' + t.join(' ')).toLowerCase()) + '">';
-    html += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
+    html += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-host="' + getHost(site.url) + '" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
     html += '<div class="preset-body">';
     html += '<div class="preset-top"><span class="preset-name">' + (site.emoji ? site.emoji + ' ' : '') + esc(site.name) + '</span><span class="preset-rank">#' + site.rank + '</span></div>';
     html += '<div class="preset-tags">';
@@ -12028,7 +12073,7 @@ function buildListCard(site) {
   if (site.nsfw) h += ' data-nsfw="true"';
   if (siteAvoid) h += ' data-avoid="true"';
   h += '>';
-  h += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
+  h += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-host="' + getHost(site.url) + '" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
   h += '<div class="preset-body">';
   h += '<div class="preset-top"><span class="preset-name">' + (site.emoji ? site.emoji + ' ' : '') + esc(site.name) + '</span><span class="preset-rank">#' + site.rank + '</span></div>';
   h += '<div class="preset-meta">';
@@ -12117,7 +12162,7 @@ function toggleMode() {
         return;
       }
       toast('Loading list...', '#8b5cf6');
-      fetch(PRESETS_URL)
+      fetch(PRESETS_URL + '?_=' + Date.now())
         .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function(sites) {
           listSites = sites;
@@ -12144,6 +12189,7 @@ function toggleMode() {
     }
     mode = 'list';
     render();
+    refreshListIfStale();
   } catch (err) {
     console.error('toggleMode error:', err);
     document.getElementById('panels').innerHTML = '<div class="panel active"><div class="panel-empty"><h3>⚠️ Error</h3><p style="color:#ff6677;font-size:0.82rem;word-break:break-all">' + esc(err.message || String(err)) + '</p></div></div>';
@@ -12151,6 +12197,7 @@ function toggleMode() {
 }
 
 const VOUCHES_RAW = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/vouches.json';
+const VOUCHES_API_BASE = 'https://myvouch.es'; // Change to your bot's ngrok URL + seller Discord ID, e.g. 'https://abc123.ngrok.io/api/vouches/123456789'
 
 function toggleSuitMode() {
   try {
@@ -12789,11 +12836,28 @@ let suitVaultEntries = [];
 let suitVaultFilter = '';
 let suitSelectedEntry = null;
 let SuitditingEntry = null;
+let suitKdbxPromise = null;
+
+function suitEnsureKdbx(cb) {
+  if (typeof kdbxweb !== 'undefined') { cb(); return; }
+  if (!suitKdbxPromise) {
+    suitKdbxPromise = new Promise(function(resolve, reject) {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/kdbxweb@2.1.1/dist/kdbxweb.min.js';
+      s.onload = resolve;
+      s.onerror = function() { suitKdbxPromise = null; reject(new Error('kdbxweb load failed')); };
+      document.head.appendChild(s);
+    });
+  }
+  suitKdbxPromise.then(cb).catch(function(err) {
+    suitToast('Failed to load vault library. Check your connection.', '#f85c5c');
+  });
+}
 
 function suitCreateNewVault() {
   const pw = document.getElementById('suit-vault-pw-input').value;
   if(!pw) { suitToast('Enter a master password.', '#f59e0b'); return; }
-  if(typeof kdbxweb === 'undefined') { suitToast('kdbxweb library not loaded yet. Try again.', '#f85c5c'); return; }
+  if(typeof kdbxweb === 'undefined') { suitToast('Loading vault library…', '#f59e0b'); suitEnsureKdbx(suitCreateNewVault); return; }
   try {
     const credentials = new kdbxweb.Credentials(kdbxweb.ProtectedValue.fromString(pw));
     suitKdbxDb = kdbxweb.Kdbx.create(credentials, "Sakura's Suit Vault");
@@ -12811,7 +12875,7 @@ function suitLoadVaultFile(input) {
   if(!file) return;
   const pw = document.getElementById('suit-vault-pw-input').value;
   if(!pw) { suitToast('Enter the master password.', '#f59e0b'); return; }
-  if(typeof kdbxweb === 'undefined') { suitToast('kdbxweb library not loaded yet.', '#f85c5c'); return; }
+  if(typeof kdbxweb === 'undefined') { suitToast('Loading vault library…', '#f59e0b'); suitEnsureKdbx(function() { suitLoadVaultFile(input); }); return; }
   const msg = document.getElementById('suit-vault-msg');
   if(msg) msg.textContent = 'Decrypting...';
   const reader = new FileReader();
@@ -14092,6 +14156,11 @@ const MAIN_SAKURA_DATA = JSON.stringify([
         "updated": "2026-06-26T20:17:18.633Z"
       }
     ]
+  },
+  {
+    "id": "vouches",
+    "title": "💬 Vouches",
+    "entries": []
   }
 ]);
 
