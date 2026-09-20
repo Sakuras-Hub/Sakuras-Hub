@@ -2,7 +2,7 @@
   if (document.getElementById('mc-styles')) return;
   var ss = document.createElement('style');
   ss.id = 'mc-styles';
-    ss.textContent = '.monitor-view .monitor-wrap .bars-cell{white-space:nowrap;min-width:150px;display:flex;align-items:center;gap:4px}.bars-cell .mc-bars{display:inline-flex;gap:2px;height:14px;align-items:flex-end}.bars-cell .mc-ms{flex-shrink:0;font-size:.75rem;font-weight:600}.bars-cell .mc-ms-down{color:#f55e6a}.bars-cell .mc-code{flex-shrink:0;font-size:.7rem;opacity:.6;margin-left:2px}.bars-cell .mc-code-down{color:#f55e6a;opacity:1}.bars-cell .mc-code-blocked{color:#d29922;opacity:1}.st-label.label-wait{color:#d29922}@media(max-width:640px){.monitor-view .monitor-wrap table{table-layout:fixed;min-width:0}.monitor-view .monitor-wrap td{padding:4px 5px;font-size:.7rem;overflow:hidden;text-overflow:ellipsis}.monitor-view .monitor-wrap .url-cell a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.monitor-view .monitor-wrap .sec-cell{display:none}.monitor-view .monitor-wrap .bars-cell{min-width:70px}.monitor-view .monitor-wrap .name-cell{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}@media(max-width:480px){.monitor-view{overflow-x:hidden}.monitor-view .monitor-wrap{overflow-x:hidden}.monitor-view .monitor-wrap table,.monitor-view .monitor-wrap tbody,.monitor-view .monitor-wrap thead,.monitor-view .monitor-wrap tr{display:block;width:100%}.monitor-view .monitor-wrap thead{display:none}.monitor-view .monitor-wrap tr{margin-bottom:6px;padding:6px 8px;background:var(--surface2,rgba(255,255,255,0.04));border-radius:6px;display:flex;flex-wrap:wrap;gap:2px 8px}.monitor-view .monitor-wrap td{display:inline-flex;align-items:center;gap:3px;padding:2px 0;font-size:.68rem;border:none;overflow:visible;text-overflow:clip}.monitor-view .monitor-wrap .st-cell{width:auto;flex-shrink:0}.monitor-view .monitor-wrap .name-cell{max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:1}.monitor-view .monitor-wrap .url-cell{display:none !important}.monitor-view .monitor-wrap .sec-cell{display:none !important}.monitor-view .monitor-wrap .bars-cell{min-width:0;width:auto;flex-shrink:1;white-space:nowrap;display:inline-flex}}';
+    ss.textContent = '.monitor-view .monitor-wrap .bars-cell{white-space:nowrap;min-width:150px;display:flex;align-items:center;gap:4px}.bars-cell .mc-bars{display:inline-flex;gap:2px;height:14px;align-items:flex-end}.bars-cell .mc-ms{flex-shrink:0;font-size:.75rem;font-weight:600}.bars-cell .mc-ms-down{color:#f55e6a}.bars-cell .mc-code{flex-shrink:0;font-size:.7rem;opacity:.6;margin-left:2px}.bars-cell .mc-code-down{color:#f55e6a;opacity:1}.bars-cell .mc-code-blocked{color:#d29922;opacity:1}.st-label.label-wait{color:#d29922}.st-label.label-pending{color:#8b949e}.st-label.label-unreachable{color:#f0883e}@media(max-width:640px){.monitor-view .monitor-wrap table{table-layout:fixed;min-width:0}.monitor-view .monitor-wrap td{padding:4px 5px;font-size:.7rem;overflow:hidden;text-overflow:ellipsis}.monitor-view .monitor-wrap .url-cell a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.monitor-view .monitor-wrap .sec-cell{display:none}.monitor-view .monitor-wrap .bars-cell{min-width:70px}.monitor-view .monitor-wrap .name-cell{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}@media(max-width:480px){.monitor-view{overflow-x:hidden}.monitor-view .monitor-wrap{overflow-x:hidden}.monitor-view .monitor-wrap table,.monitor-view .monitor-wrap tbody,.monitor-view .monitor-wrap thead,.monitor-view .monitor-wrap tr{display:block;width:100%}.monitor-view .monitor-wrap thead{display:none}.monitor-view .monitor-wrap tr{margin-bottom:6px;padding:6px 8px;background:var(--surface2,rgba(255,255,255,0.04));border-radius:6px;display:flex;flex-wrap:wrap;gap:2px 8px}.monitor-view .monitor-wrap td{display:inline-flex;align-items:center;gap:3px;padding:2px 0;font-size:.68rem;border:none;overflow:visible;text-overflow:clip}.monitor-view .monitor-wrap .st-cell{width:auto;flex-shrink:0}.monitor-view .monitor-wrap .name-cell{max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:1}.monitor-view .monitor-wrap .url-cell{display:none !important}.monitor-view .monitor-wrap .sec-cell{display:none !important}.monitor-view .monitor-wrap .bars-cell{min-width:0;width:auto;flex-shrink:1;white-space:nowrap;display:inline-flex}}';
   document.head.appendChild(ss);
   function mc_initToggle() {
     if (document.getElementById('monitorToggle')) return;
@@ -38,6 +38,8 @@ function mc_toStatus(s) {
   var st = String(s.status || s.liveStatus || '').toLowerCase();
   if (st === 'ok' || st === 'up' || st === 'live') return 'up';
   if (st === 'dead' || st === 'down') return 'down';
+  if (st === 'unreachable') return 'unreachable';
+  if (st === 'pending' || st === 'waiting' || st === 'not checked yet') return 'pending';
   return 'blocked';
 }
 
@@ -65,10 +67,10 @@ function mc_fmtMs(ms) {
 }
 
 function mc_renderBars(st) {
-  var out = '';
+var out = '';
   for (var i = 0; i < st.history.length; i++) {
     var h = st.history[i];
-    var col = h.status === 'up' ? '#3fb950' : (h.status === 'down' ? '#f55e6a' : '#d29922');
+    var col = h.status === 'up' ? '#3fb950' : (h.status === 'down' ? '#f55e6a' : (h.status === 'unreachable' ? '#f0883e' : (h.status === 'pending' ? '#444c56' : '#d29922')));
     out += '<span style="display:inline-block;width:4px;height:10px;border-radius:2px;background:' + col + ';margin-right:2px"></span>';
   }
   return out;
@@ -150,18 +152,18 @@ function renderMonitorSection(preserveState) {
       return;
     }
 
-    var sites = (source.sites || []).slice();
-    var sortRank = { down: 0, blocked: 1, up: 2 };
+var sites = (source.sites || []).slice();
+    var sortRank = { down: 0, blocked: 1, unreachable: 2, up: 3, pending: 4 };
     sites.sort(function(a, b) {
-      var ra = sortRank[mc_toStatus(a)] != null ? sortRank[mc_toStatus(a)] : 3;
-      var rb = sortRank[mc_toStatus(b)] != null ? sortRank[mc_toStatus(b)] : 3;
+      var ra = sortRank[mc_toStatus(a)] != null ? sortRank[mc_toStatus(a)] : 5;
+      var rb = sortRank[mc_toStatus(b)] != null ? sortRank[mc_toStatus(b)] : 5;
       if (ra !== rb) return ra - rb;
       return String(a.name || '').localeCompare(String(b.name || ''));
     });
 
     var seen = {};
     var rows = '';
-    var up = 0, down = 0, blocked = 0, shown = 0, hiddenNSFW = 0;
+    var up = 0, down = 0, blocked = 0, unreachable = 0, pending = 0, shown = 0, hiddenNSFW = 0;
 
     sites.forEach(function(s) {
       if (!s || !s.url || !s.name) return;
@@ -175,22 +177,22 @@ function renderMonitorSection(preserveState) {
       if (monitorSearchTerm && nameL.indexOf(monitorSearchTerm) === -1 && urlL.indexOf(monitorSearchTerm) === -1) return;
       shown++;
 
-      var st = mc_toStatus(s);
+var st = mc_toStatus(s);
       var state = mc_buildState(s);
-      if (st === 'up') up++; else if (st === 'blocked') blocked++; else down++;
+      if (st === 'up') up++; else if (st === 'blocked') blocked++; else if (st === 'unreachable') unreachable++; else if (st === 'pending') pending++; else down++;
 
       var last = state.history[state.history.length - 1];
       var msText = mc_fmtMs(last.ms);
       var msCls = 'mc-ms' + (state.liveStatus === 'down' ? ' mc-ms-down' : '');
       var code = state.code;
       var codeText, codeCls;
-      if (st === 'blocked') { codeText = '⚠'; codeCls = 'mc-code mc-code-blocked'; }
+      if (st === 'blocked' || st === 'unreachable') { codeText = '⚠'; codeCls = 'mc-code mc-code-blocked'; }
       else if (code != null) { codeText = (code >= 400 ? '✗' : '✓') + code; codeCls = 'mc-code' + (code >= 400 ? ' mc-code-down' : ''); }
       else { codeText = '—'; codeCls = 'mc-code'; }
 
-      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : '🔴');
-      var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : 'label-down');
-      var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : 'DEAD');
+      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
+      var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : (st === 'unreachable' ? 'label-unreachable' : (st === 'pending' ? 'label-pending' : 'label-down')));
+      var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : (st === 'unreachable' ? 'UNREACHABLE' : (st === 'pending' ? 'PENDING' : 'DEAD')));
       var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
 
       rows += '<tr>';
@@ -208,7 +210,9 @@ function renderMonitorSection(preserveState) {
     mv += '<div class="monitor-stats">';
     mv += '<span class="monitor-stat stat-up">🟢 ' + up + ' Up</span>';
     mv += '<span class="monitor-stat stat-down">🔴 ' + down + ' Down</span>';
-    mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
+mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
+    mv += '<span class="monitor-stat">🟠 ' + unreachable + ' Unreachable</span>';
+    mv += '<span class="monitor-stat">⚪ ' + pending + ' Pending</span>';
     mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
     if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
     mv += '</div>';

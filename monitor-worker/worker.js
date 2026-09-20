@@ -14,8 +14,8 @@
  *    CHUNK subrequests per invocation, under the free 50/request cap.
  *  - GET /status joins the cached site list with the status map into the
  *    exact payload scripts/monitor.js expects:
- *      { updated: ISO, sites: [{slug,name,url,section,nsfw,status,ms,code,detail}] }
- *    where status is 'up' | 'down' | 'blocked'.
+ *      { updated: ISO, sites: [{slug,name,url,section,nsfw,status,ms,code,detail}], pending, total }
+ *    where status is 'up' | 'down' | 'blocked' | 'unreachable' | 'pending'.
  *
  * KV schema (namespace MONITOR_KV):
  *  - "sites"    = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw}]}
@@ -28,11 +28,16 @@ const INFO_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs
 
 const CHUNK = 40;                              // sites per cron tick (<= 50-subrequest free cap, 1 GET each)
 const CONCURRENCY = 5;                         // parallel probes per tick (<= 8 rounds x ~6s <= 48s < 60s tick)
-const PROBE_TIMEOUT_MS = 6000;                 // AbortSignal.timeout per probe
+const PROBE_TIMEOUT_MS = 8000;                 // AbortSignal.timeout per probe (slow sites need headroom)
 const LIST_REFRESH_MS = 6 * 60 * 60 * 1000;    // refetch info.json if the cached list is older than 6h
 const SWEEP_GUARD_TTL_S = 600;                 // TTL for the "sweeping" guard flag
 const KEEP_TTL_S = 7 * 24 * 3600;              // expiry safety net for sites/statuses keys
-const UA = 'SakurasHub-Monitor/1.0 (uptime probe)';
+// Browser-like request headers: a bare bot UA gets 403'd by modern anti-bot (Cloudflare, Akamai, DDoS-Guard).
+const HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9'
+};
 
 const K = { sites: 'sites', statuses: 'statuses', cursor: 'cursor', sweeping: 'sweeping' };
 
@@ -54,24 +59,31 @@ export function classifyStatus(status, headers) {
   return 'down';
 }
 
-/** Probe one site: single GET, headers already received, body never read. */
-async function probeSite(url) {
+/** One probe attempt with the browser-like headers. */
+async function probeOnce(url) {
   const t0 = performance.now();
   try {
     const res = await fetch(url, {
       method: 'GET',
       redirect: 'manual',
-      headers: { 'User-Agent': UA },
+      headers: HEADERS,
       signal: AbortSignal.timeout(PROBE_TIMEOUT_MS)
     });
     const ms = Math.round(performance.now() - t0);
     if (res.body && res.body.cancel) res.body.cancel().catch(() => {});
     return { status: classifyStatus(res.status, res.headers), ms, code: res.status, detail: 'HTTP ' + res.status };
   } catch (err) {
-    // Connection-level failure / timeout: unreachable from the edge -> blocked.
     const detail = err && err.name ? err.name + (err.message ? ': ' + err.message : '') : String(err);
-    return { status: 'blocked', ms: null, code: null, detail };
+    return { status: 'unreachable', ms: null, code: null, detail };
   }
+}
+
+/** Probe one site; retries once when the first attempt is unreachable (transient timeouts are common). */
+async function probeSite(url) {
+  const first = await probeOnce(url);
+  if (first.status !== 'unreachable') return first;
+  const second = await probeOnce(url);
+  return second.status === 'up' || second.status === 'down' || second.status === 'blocked' ? second : first;
 }
 
 /** Fetch + flatten info.json into the list, cached in KV; falls back to the old list on failure. */
@@ -79,7 +91,7 @@ async function ensureSiteList(env) {
   const cached = await env.MONITOR_KV.get(K.sites, 'json');
   if (cached && cached.list && cached.ts && Date.now() - cached.ts < LIST_REFRESH_MS) return cached.list;
   try {
-    const res = await fetch(INFO_URL, { headers: { 'User-Agent': UA } });
+    const res = await fetch(INFO_URL, { headers: HEADERS });
     if (!res.ok) throw new Error('info.json HTTP ' + res.status);
     const raw = await res.json();
     const base = Array.isArray(raw) ? raw : (raw && raw.sites) || [];
@@ -160,10 +172,11 @@ async function handleStatus(env) {
   const list = (sitesRaw && sitesRaw.list) || [];
   const map = (statuses && statuses.map) || {};
   const sites = list.map((s) =>
-    Object.assign({}, s, map[s.slug] || { status: 'blocked', ms: null, code: null, detail: 'not checked yet' })
+    Object.assign({}, s, map[s.slug] || { status: 'pending', ms: null, code: null, detail: 'waiting for sweep' })
   );
-  if (!sites.length) return json({ updated: null, sites: [], error: 'no data yet — cron sweep has not run' }, 503);
-  return json({ updated: (statuses && statuses.updated) || null, sites });
+  if (!sites.length) return json({ updated: null, sites: [], error: 'no data yet — cron sweep has not run', pending: 0, total: 0 }, 503);
+  const pending = sites.filter((s) => s.status === 'pending').length;
+  return json({ updated: (statuses && statuses.updated) || null, sites, pending, total: sites.length });
 }
 
 export default {
