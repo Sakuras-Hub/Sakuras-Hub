@@ -8,6 +8,7 @@ import os
 import ssl
 import time
 import datetime
+import hashlib
 from urllib.parse import urlparse
 from collections import OrderedDict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -50,6 +51,13 @@ EXCLUDED_DOMAINS = [
 
 EXCLUDED_URL_PATTERNS = [r"tbcpl\.lol/site-request", r"example\.com"]
 
+REGION_COUNTRY_CODES = {
+    "BRAZIL": "BR", "EGYPT": "EG", "FINLAND": "FI", "FRANCE": "FR",
+    "GERMANY": "DE", "INDIA": "IN", "ITALY": "IT", "JAPAN": "JP",
+    "NETHERLANDS": "NL", "POLAND": "PL", "PORTUGAL": "PT", "RUSSIA": "RU",
+    "SOUTHKOREA": "KR", "SPAIN": "ES",
+}
+
 TBCPL_SECTION_MAP = {
     "movies":  ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
     "anime":   ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD"),
@@ -57,6 +65,314 @@ TBCPL_SECTION_MAP = {
     "livetv":  ("Live TV & Sports", "live-tv", "Live TV, Sports, Streaming, Free"),
     "apps":    ("Apps", "apps", "Apps, Free, Android, Streaming"),
 }
+
+# Additional source registry: {id, fetch, parse}
+# fetch() -> raw, parse(raw) -> {normalized_url: site_dict}
+# site_dict keys: name, url, slug, section, category, pricing,
+#                 nsfw, emoji, tags, source
+ADDITIONAL_SOURCES = []
+
+def run_additional_sources():
+    """Fetch and parse every registered source; failures are logged and skipped."""
+    sites = OrderedDict()
+    for src in ADDITIONAL_SOURCES:
+        src_id = src.get("id", "?")
+        try:
+            raw = src["fetch"]()
+        except Exception as e:
+            print(f"  [!] {src_id}: fetch raised {e}")
+            continue
+        if raw is None:
+            print(f"  [!] {src_id}: fetch failed (None)")
+            continue
+        try:
+            parsed = src["parse"](raw)
+        except Exception as e:
+            print(f"  [!] {src_id}: parse raised {e}")
+            continue
+        if parsed:
+            sites.update(parsed)
+        print(f"  -> {src_id}: {len(parsed)} free sites")
+    return sites
+
+def parse_markdown_links(md_text, base_url="", skip_domains=()):
+    """Extract [name](url) link pairs from markdown text.
+
+    Returns {normalized_url: (display_name, absolute_url)}.
+    Relative links are resolved against base_url; links whose domain
+    is in skip_domains are dropped. Used by markdown-wiki sources.
+    """
+    out = {}
+    skip = {d.lower().lstrip("www.") for d in skip_domains}
+    for m in re.finditer(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", md_text):
+        name, url = m.group(1).strip(), m.group(2).strip()
+        if not name or not url:
+            continue
+        try:
+            parsed = urlparse(url)
+            domain = (parsed.netloc or "").lower().lstrip("www.")
+        except ValueError:
+            continue
+        if not domain or domain in skip:
+            continue
+        norm = normalize_url(url)
+        if norm not in out:
+            out[norm] = (name, url)
+    for m in re.finditer(r"\[([^\]]+)\]\((/[^)\s]+)\)", md_text):
+        name, path = m.group(1).strip(), m.group(2).strip()
+        if not name or not base_url:
+            continue
+        url = base_url.rstrip("/") + path
+        norm = normalize_url(url)
+        if norm not in out:
+            out[norm] = (name, url)
+    return out
+
+EXTRA_SKIP_DOMAINS = {
+    "discord.gg", "discord.com", "discordapp.com", "reddit.com", "t.me",
+    "telegram.me", "rentry.co", "rentry.org", "pastebin.com",
+}
+
+def _extra_skip(url):
+    try:
+        domain = urlparse(url).netloc.lower().lstrip("www.")
+    except ValueError:
+        return True
+    if not domain:
+        return True
+    for d in EXTRA_SKIP_DOMAINS:
+        if domain == d or domain.endswith("." + d):
+            return True
+    return False
+
+def _sane_site(name, url):
+    if not url or not name:
+        return False
+    if not re.match(r"^https?://", url, re.IGNORECASE):
+        return False
+    name = name.strip()
+    if re.fullmatch(r"\d+", name):
+        return False  # markdown mirror token like [2](url)
+    if _extra_skip(url):
+        return False
+    if is_paid_or_legal(name, url):
+        return False
+    if any(re.search(p, url, re.IGNORECASE) for p in EXCLUDED_URL_PATTERNS):
+        return False
+    return True
+
+def parse_markdown_sections(md_text, rules, default_section, base_url="", source="", rule_depth=0):
+    sites = {}
+    current = default_section
+    for line in md_text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("#"):
+            header = stripped.lstrip("#").strip().lower()
+            depth = len(stripped) - len(stripped.lstrip("#"))
+            if rule_depth and depth > rule_depth:
+                continue
+            for pattern, meta in rules:
+                if re.search(pattern, header):
+                    current = meta
+                    break
+            else:
+                if depth == 1:
+                    current = default_section
+            continue
+        if current is None:
+            continue
+        m = re.search(r"\[([^\]]+)\]\(([^)\s]+)\)", stripped)
+        if not m:
+            continue
+        name, url = m.group(1).strip(), m.group(2).strip()
+        if url.startswith("/") and base_url:
+            url = base_url.rstrip("/") + url
+        if not _sane_site(name, url):
+            continue
+        norm = normalize_url(url)
+        if norm in sites:
+            continue
+        section, category, tags = current
+        sites[norm] = {
+            "name": name, "url": url, "slug": make_slug(name),
+            "section": section, "category": category,
+            "pricing": "free*", "nsfw": False, "emoji": "",
+            "tags": tags, "source": source,
+        }
+    return sites
+
+FMHY_FILES = ["video.md", "reading.md", "downloading.md", "audio.md"]
+
+FMHY_RULES = {
+    "video.md": [
+        (r"streaming apps|smart tv|android tv|firestick|torrent apps", ("Apps", "apps", "Apps, Streaming, Android, TV, Free")),
+        (r"torrent|ddl", ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free")),
+        (r"anime", ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD")),
+        (r"drama", ("Asian Drama", "drama", "Drama, Asian Drama, Streaming, Free")),
+        (r"sports|live tv|live-tv|replays|iptv", ("Live TV & Sports", "live-tv", "Live TV, Sports, Streaming, Free")),
+        (r"telegram|downloading|download", ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free")),
+        (r"tracking|databases|calendar|upcoming", ("Database/Tracker", "database", "Database, Tracker, Anime, Manga, Free")),
+        (r"recommendation|tools|subtitle|helpful", ("Misc Tools", "tools", "Tools, Subtitles, Recommendations, Free")),
+        (r"aggregator|streaming|cartoon|tv streaming|classics|public domain|film archives|stream|movie|\btv\b|video|4k|hd", ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD")),
+    ],
+    "reading.md": [
+        (r"manhwa|manhua", ("Manhwa Reading", "manhwa", "Manhwa, Manga, Reading, Free")),
+        (r"tracking|databases", ("Database/Tracker", "database", "Database, Tracker, Anime, Manga, Free")),
+        (r"recommendation|tools|helpful|apps", ("Misc Tools", "tools", "Tools, Reading, Free")),
+        (r"manga|comic", ("Manga Reading", "manga", "Manga, Reading, Free")),
+        (r"light novel|fanfiction|ebook|audiobook|book", ("Novel Reading", "novel", "Novel, Light Novel, Reading, Free")),
+    ],
+    "downloading.md": [
+        (r"software|foss|freeware|managers", ("Apps", "apps", "Apps, Software, Free, Download")),
+        (r"usenet|indexers|providers|downloaders", ("Download", "download", "Download, Usenet, Indexers, Free")),
+        (r"debrid|leeches", ("Download", "download", "Download, Debrid, Leech, Free")),
+        (r"irc", ("Misc Tools", "tools", "Tools, IRC, Download, Free")),
+        (r"download|sites|search|directories|torrent|ddl|direct", ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free")),
+    ],
+    "audio.md": [
+        (r"tracking|databases", ("Database/Tracker", "database", "Database, Tracker, Music, Free")),
+        (r"music tools|audio tools|audio editing|audio editor|song|lyric|karaoke|sheet|players|servers|artwork|analyzer|plugin|synth|sfx|sample|editor", ("Misc Tools", "tools", "Tools, Music, Audio, Free")),
+        (r"torrenting|ripping|downloading|download", ("Music", "music", "Music, Anime Music, OST, Free")),
+        (r"streaming|radio|podcast|spotify|soundtrack|concerts|ambient|lofi|royalty|discovery|genre|music", ("Music", "music", "Music, Anime Music, OST, Free")),
+        (r"audio", ("Music", "music", "Music, Anime Music, OST, Free")),
+    ],
+}
+
+FMHY_DEFAULTS = {
+    "video.md": ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
+    "reading.md": ("Novel Reading", "novel", "Novel, Light Novel, Reading, Free"),
+    "downloading.md": ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free"),
+    "audio.md": ("Music", "music", "Music, Anime Music, OST, Free"),
+}
+
+def fetch_fmhy():
+    data = {}
+    for fname in FMHY_FILES:
+        raw = fetch_html(f"https://raw.githubusercontent.com/fmhy/edit/main/docs/{fname}")
+        if raw is None:
+            continue
+        data[fname] = raw
+    return data
+
+def parse_fmhy(raw):
+    sites = {}
+    for fname, text in (raw or {}).items():
+        if fname not in FMHY_RULES:
+            continue
+        sites.update(parse_markdown_sections(
+            text, FMHY_RULES[fname], FMHY_DEFAULTS[fname],
+            base_url="https://fmhy.net/", source="FMHY"))
+    return sites
+
+def fetch_keiyoushi():
+    return fetch_json("https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json")
+
+def parse_keiyoushi(raw):
+    sites = {}
+    exts = []
+    if isinstance(raw, dict):
+        exts = raw.get("extensionList", {}).get("extensions", []) or []
+    elif isinstance(raw, list):
+        exts = raw
+    for ext in exts:
+        if not isinstance(ext, dict):
+            continue
+        pkg = ext.get("packageName", "") or ""
+        is_anime = ".anime." in pkg
+        meta = (("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD")
+                if is_anime else ("Manga Reading", "manga", "Manga, Reading, Free"))
+        nsfw = ext.get("contentWarning") == "CONTENT_WARNING_NSFW"
+        for src in ext.get("sources", []) or []:
+            if not isinstance(src, dict):
+                continue
+            url = (src.get("homeUrl") or "").strip()
+            name = (src.get("name") or "").strip()
+            if not _sane_site(name, url):
+                continue
+            norm = normalize_url(url)
+            if norm in sites:
+                continue
+            section, category, tags = meta
+            sites[norm] = {
+                "name": name, "url": url, "slug": make_slug(name),
+                "section": section, "category": category,
+                "pricing": "free*", "nsfw": nsfw, "emoji": "",
+                "tags": tags + (", NSFW" if nsfw else ""),
+                "source": "keiyoushi/extensions",
+            }
+    return sites
+
+def fetch_awesome_piracy():
+    return fetch_html("https://raw.githubusercontent.com/Shakil-Shahadat/awesome-piracy/main/Readme.md")
+
+AP_RULES = [
+    (r"anime", ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD")),
+    (r"sports|live tv|live-tv", ("Live TV & Sports", "live-tv", "Live TV, Sports, Streaming, Free")),
+    (r"manga|comic|reading", ("Manga Reading", "manga", "Manga, Reading, Free")),
+    (r"torrent|ddl|direct download", ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free")),
+    (r"stream|movie|\btv\b|video|media", ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD")),
+]
+
+def parse_awesome_piracy(raw):
+    return parse_markdown_sections(
+        raw or "", AP_RULES,
+        ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
+        source="awesome-piracy")
+
+WOTAKU_URLS = [
+    "https://raw.githubusercontent.com/wotakumoe/wotaku/main/docs/websites.md",
+    "https://raw.githubusercontent.com/wotakumoe/wotaku/f138fa52/docs/websites.md",
+]
+
+WOTAKU_RULES = [
+    (r"legal", None),
+    (r"anime", ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD")),
+    (r"manga", ("Manga Reading", "manga", "Manga, Reading, Free")),
+    (r"novels", ("Novel Reading", "novel", "Novel, Light Novel, Reading, Free")),
+    (r"tokusatsu", ("Asian Drama", "drama", "Drama, Tokusatsu, Live-Action, Free")),
+    (r"comics", ("Manga Reading", "manga", "Comics, Manga, Reading, Free")),
+]
+
+def fetch_wotaku():
+    for url in WOTAKU_URLS:
+        raw = fetch_html(url)
+        if raw:
+            return {"websites.md": raw}
+    return {}
+
+def parse_wotaku(raw):
+    sites = {}
+    for text in (raw or {}).values():
+        sites.update(parse_markdown_sections(
+            text, WOTAKU_RULES,
+            ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD"),
+            source="wotaku", rule_depth=1))
+    return sites
+
+def fetch_piracy_wiki():
+    return fetch_html("https://raw.githubusercontent.com/7x5rg/piracy-wiki/main/README.md")
+
+PW_RULES = [
+    (r"anime", ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD")),
+    (r"sports|live", ("Live TV & Sports", "live-tv", "Live TV, Sports, Streaming, Free")),
+    (r"manga|reading", ("Manga Reading", "manga", "Manga, Reading, Free")),
+    (r"torrent|ddl", ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free")),
+    (r"stream|movie|tv", ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD")),
+]
+
+def parse_piracy_wiki(raw):
+    return parse_markdown_sections(
+        raw or "", PW_RULES,
+        ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
+        source="piracy-wiki")
+
+ADDITIONAL_SOURCES[:] = [
+    {"id": "FMHY", "fetch": fetch_fmhy, "parse": parse_fmhy},
+    {"id": "keiyoushi/extensions", "fetch": fetch_keiyoushi, "parse": parse_keiyoushi},
+    {"id": "awesome-piracy", "fetch": fetch_awesome_piracy, "parse": parse_awesome_piracy},
+    {"id": "wotaku", "fetch": fetch_wotaku, "parse": parse_wotaku},
+    {"id": "piracy-wiki", "fetch": fetch_piracy_wiki, "parse": parse_piracy_wiki},
+]
 
 EVERYTHINGMOE_SECTION_MAP = {
     "anime":    ("Anime Streaming", "anime", "Anime, Streaming, Sub, Dub, Free, HD"),
@@ -119,7 +435,11 @@ def normalize_name(name):
     return re.sub(r"[^a-zA-Z0-9]", "", name).lower()
 
 def make_slug(name):
-    return re.sub(r"[^a-zA-Z0-9]+", "", name).lower()
+    slug = re.sub(r"[^a-zA-Z0-9]+", "", name).lower()
+    if slug:
+        return slug
+    # Non-ASCII names (e.g. Arabic) strip to empty; fall back to a stable hash-based slug.
+    return "site-" + hashlib.sha1(name.encode("utf-8")).hexdigest()[:10]
 
 def is_paid_or_legal(site_name, site_url):
     name = site_name.lower()
@@ -196,6 +516,7 @@ def parse_everythingmoe_section(html, section_id):
 
 def extract_sites_from_tbcpl(data, region_name=None):
     sites = {}
+    country_code = REGION_COUNTRY_CODES.get(region_name or "")
     categories = data.get("categories", [])
     for cat in categories:
         cat_id = cat.get("id", "")
@@ -227,6 +548,7 @@ def extract_sites_from_tbcpl(data, region_name=None):
                     "emoji": "",
                     "tags": tags,
                     "source": f"TBCPL/{region_name or 'Global'}",
+                    "countries": [country_code] if country_code else [],
                 }
     return sites
 
@@ -629,6 +951,12 @@ def main():
     all_source_sites.update(all_ev_sites)
     print(f"\n  Combined unique free sites (TBCPL + EverythingMoe): {len(all_source_sites)}")
 
+    print("\n[2.5/4] Fetching additional sources...")
+    all_extra_sites = run_additional_sources()
+    all_source_sites.update(all_extra_sites)
+    if all_extra_sites:
+        print(f"\n  Combined unique free sites (all sources): {len(all_source_sites)}")
+
     print("\n[3/4] Loading Sakuras-Hub info.json...")
     if merge_mode:
         if os.path.exists(MERGE_PATH):
@@ -723,6 +1051,7 @@ def main():
             "nsfw": site["nsfw"],
             "emoji": site["emoji"],
             "tags": site["tags"],
+            "countries": site.get("countries", []),
         })
 
     if merge_mode and os.path.exists(MERGE_PATH):
