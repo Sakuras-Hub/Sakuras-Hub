@@ -259,7 +259,7 @@ var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachab
       var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : (st === 'unreachable' ? 'label-unreachable' : (st === 'pending' ? 'label-pending' : 'label-down')));
       var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : (st === 'unreachable' ? 'UNREACHABLE' : (st === 'pending' ? 'PENDING' : 'DEAD')));
       var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
-      var flapBadge = s.flapping ? ' <span class="cc-badge" title="Keeps flipping between live/dead — pending confirmation">🦋 flapping</span>' : '';
+      var flapBadge = s.flapping ? ' <span class="cc-badge" title="Keeps flipping between live/dead — pending confirmation">flapping</span>' : '';
 
       rows += '<tr>';
       rows += '<td style="text-align:center"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
@@ -294,7 +294,7 @@ var ccOptions = '<option value="">🌍 All countries</option><option value="__gl
     mv += '<span class="monitor-stat">⚪ ' + pending + ' Pending</span>';
     mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
     if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
-    if (source.removed && source.removed.length) mv += '<span class="monitor-stat" title="Sites removed after 21+ days dead">🗑 ' + source.removed.length + ' Removed</span>';
+    if (source.removed && source.removed.length) mv += '<span class="monitor-stat" title="Sites removed after 21+ days dead">' + source.removed.length + ' Removed</span>';
     mv += '</div>';
     mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
     mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Re-check</button></div>';
