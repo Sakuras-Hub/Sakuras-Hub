@@ -1,37 +1,51 @@
 /**
- * Sakura's Hub — site monitor worker
+ * Sakura's Hub — site monitor worker (rewritten for free-tier compliance)
  *
  * Probes every site in info.json on a rolling cron sweep and serves the
  * status list to the page monitor (scripts/monitor.js). Runs on Cloudflare
  * Workers free tier + Workers KV.
  *
  * Design:
- *  - Cron every minute probes one chunk (CHUNK sites), so a full sweep of
- *    ~840 sites completes in ~22 minutes. Statuses live in ONE KV object
- *    rewritten on each tick (1 read + 1 write per tick — far below free
- *    limits: 100k reads/day, 1k writes/day).
- *  - Each probe is a single GET (headers-only, body never read) -> at most
- *    CHUNK subrequests per invocation, under the free 50/request cap.
- *  - GET /status joins the cached site list with the status map into the
- *    exact payload scripts/monitor.js expects:
- *      { updated: ISO, sites: [{slug,name,url,section,nsfw,countries,status,ms,code,detail}], pending, total }
- *    where status is 'up' | 'down' | 'blocked' | 'unreachable' | 'pending'.
+ *  - Cron every 2 minutes (cron: every 2 minutes) probes one chunk (CHUNK=20 sites).
+ *    A full sweep of 5,811 sites completes in ~291 ticks x 2 min ~= 9.7h.
+ *  - ONE KV read + ONE KV write per tick (state key). Free-tier daily:
+ *      reads ~720/day, writes ~720/day (well under 1k writes/day cap).
+ *  - Subrequest cap 48/tick (CHUNK=20 × max 1 retry + list refresh).
+ *  - Timing: CHUNK=20, CONCURRENCY=5, PROBE_TIMEOUT_MS=7000.
+ *    Worst case 4 rounds × 7s = 28s < 30s wall-clock limit.
+ *  - Hysteresis: CONFIRM_COUNT=3. Non-up verdicts increment streak;
+ *    published status changes only when streak >= 3. Up publishes
+ *    immediately and resets streak. New sites start as 'pending'.
+ *  - Dead-site removal: REMOVE_AFTER_DAYS=21. When a site is confirmed
+ *    dead for ≥21 days it moves to state.removed[] and is excluded from
+ *    future sweeps and /status sites. Prune removed > ~90 days.
+ *  - Sharding (forward-compatible): SHARD_COUNT (default 1), SHARD_INDEX
+ *    (default 0) via env. Deterministic FNV-1a hash on slug. Each shard
+ *    has independent state cursor/map/removed. /status includes shard info.
+ *  - KV schema (namespace MONITOR_KV):
+ *      "sites"  = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw,countries}]}
+ *      "state"  = {"updated": <ISO>, "cursor": <int>, "map": {<slug>: {status,ms,code,detail,checkedAt,streak?,since?,flapping?,deadSince?}}, "removed": [{slug,name,url,section,deadSince,removedAt,lastStatus,lastMs,lastCode}]}
+ *  - GET /status returns backward-compatible superset payload with
+ *    streak/since/flapping/deadSince plus removed[] and shard{}.
  *
- * KV schema (namespace MONITOR_KV):
- *  - "sites"    = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw,countries}]}
- *  - "statuses" = {"updated": <ISO>, "map": {<url-slug>: {status,ms,code,detail,checkedAt}}}
- *  - "cursor"   = <stringified int index into list>
- *  - "sweeping" = "1" guard flag (TTL so a crashed tick can't wedge the sweep)
+ * Crash recovery: no guard flag, no deletes. A tick that dies before the
+ * write simply means the cursor did not advance and the map was not
+ * updated; next tick re-probes the same chunk. Map merge is idempotent
+ * (last-writer-wins on checkedAt). No wedge possible.
  */
 
 const INFO_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/info.json';
 
-const CHUNK = 40;                              // sites per cron tick (<= 50-subrequest free cap, 1 GET each)
-const CONCURRENCY = 5;                         // parallel probes per tick (<= 8 rounds x ~6s <= 48s < 60s tick)
-const PROBE_TIMEOUT_MS = 8000;                 // AbortSignal.timeout per probe (slow sites need headroom)
-const LIST_REFRESH_MS = 6 * 60 * 60 * 1000;    // refetch info.json if the cached list is older than 6h
-const SWEEP_GUARD_TTL_S = 600;                 // TTL for the "sweeping" guard flag
-const KEEP_TTL_S = 7 * 24 * 3600;              // expiry safety net for sites/statuses keys
+const CHUNK = 20;                              // sites per cron tick (20 × 1 retry + list = ≤ 41 fetches < 48 cap)
+const CONCURRENCY = 5;                         // parallel probes per tick (4 rounds max)
+const PROBE_TIMEOUT_MS = 7000;                 // AbortSignal.timeout per probe
+const LIST_REFRESH_MS = 6 * 60 * 60 * 1000;    // refetch info.json if cached list older than 6h
+const KEEP_TTL_S = 7 * 24 * 3600;              // sliding TTL for sites/state keys (rewritten each tick)
+const CONFIRM_COUNT = 3;                       // hysteresis: non-up streak needed to confirm
+const REMOVE_AFTER_DAYS = 21;                  // dead ≥ 21 days -> move to removed[]
+const REMOVE_PRUNE_DAYS = 90;                  // prune removed[] entries older than this
+const MAX_FETCHES_PER_TICK = 48;               // hard subrequest cap
+
 // Browser-like request headers: a bare bot UA gets 403'd by modern anti-bot (Cloudflare, Akamai, DDoS-Guard).
 const HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
@@ -39,7 +53,7 @@ const HEADERS = {
   'Accept-Language': 'en-US,en;q=0.9'
 };
 
-const K = { sites: 'sites', statuses: 'statuses', cursor: 'cursor', sweeping: 'sweeping' };
+const K = { sites: 'sites', state: 'state' };
 
 /** Stable per-site key: normalized URL (host + path). Unique per distinct URL, stable across list reorders. */
 export function siteSlug(url) {
@@ -50,7 +64,24 @@ export function siteSlug(url) {
     .replace(/\/+$/, '');
 }
 
-/** Classify an HTTP status into the client's 3-state model. */
+/** Deterministic 32-bit FNV-1a hash for sharding. */
+export function siteHash(slug) {
+  let hash = 0x811c9dc5; // FNV offset basis
+  for (let i = 0; i < slug.length; i++) {
+    hash ^= slug.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193); // FNV prime
+  }
+  // Force to unsigned 32-bit
+  return hash >>> 0;
+}
+
+/** Check if a site belongs to this shard. */
+function inMyShard(slug, shardCount, shardIndex) {
+  if (shardCount <= 1) return true;
+  return (siteHash(slug) % shardCount) === shardIndex;
+}
+
+/** Classify an HTTP status into the client's 5-state model. */
 export function classifyStatus(status, headers) {
   if (status >= 200 && status <= 399) return 'up';
   // Auth/geo walls and Cloudflare challenges read as "blocked" for the user; everything else 4xx/5xx is "down".
@@ -78,12 +109,25 @@ async function probeOnce(url) {
   }
 }
 
-/** Probe one site; retries once when the first attempt is unreachable (transient timeouts are common). */
-async function probeSite(url) {
+/**
+ * Probe one site with at most one retry on transient conditions.
+ * Retries only on: 'unreachable', HTTP 5xx, or HTTP 429.
+ * Respects the tick's fetch budget (MAX_FETCHES_PER_TICK).
+ */
+async function probeSite(url, fetchesUsed) {
   const first = await probeOnce(url);
-  if (first.status !== 'unreachable') return first;
+  if (fetchesUsed >= MAX_FETCHES_PER_TICK) return first;
+
+  const isTransient =
+    first.status === 'unreachable' ||
+    (first.code !== null && first.code >= 500) ||
+    first.code === 429;
+
+  if (!isTransient) return first;
+
   const second = await probeOnce(url);
-  return second.status === 'up' || second.status === 'down' || second.status === 'blocked' ? second : first;
+  // Accept the retry result if it's a definitive verdict; otherwise keep first
+  return (second.status === 'up' || second.status === 'down' || second.status === 'blocked') ? second : first;
 }
 
 /** Fetch + flatten info.json into the list, cached in KV; falls back to the old list on failure. */
@@ -113,42 +157,146 @@ async function ensureSiteList(env) {
   }
 }
 
-/** One cron tick: probe the next chunk of sites, merge into statuses, advance the cursor. */
+/** Read the unified state object. */
+async function readState(env) {
+  return await env.MONITOR_KV.get(K.state, 'json');
+}
+
+/** Write the unified state object (sliding 7-day TTL). */
+async function writeState(env, state) {
+  await env.MONITOR_KV.put(K.state, JSON.stringify(state), { expirationTtl: KEEP_TTL_S });
+}
+
+/** One cron tick: probe the next chunk of sites, merge into state, advance cursor. */
 async function scheduleSweep(env) {
-  if (await env.MONITOR_KV.get(K.sweeping)) return; // previous tick still running — skip
-  await env.MONITOR_KV.put(K.sweeping, '1', { expirationTtl: SWEEP_GUARD_TTL_S });
-  try {
-    const list = await ensureSiteList(env);
-    if (!list.length) return;
+  // Read sharding config from env vars (defaults: 1 shard, index 0)
+  const shardCount = parseInt(env.SHARD_COUNT || '1', 10);
+  const shardIndex = parseInt(env.SHARD_INDEX || '0', 10);
 
-    const cursorRaw = await env.MONITOR_KV.get(K.cursor);
-    const cursor = cursorRaw != null ? parseInt(cursorRaw, 10) || 0 : 0;
-    const chunk = [];
-    for (let i = 0; i < CHUNK && i < list.length; i++) chunk.push(list[(cursor + i) % list.length]);
+  const list = await ensureSiteList(env);
+  if (!list.length) return;
 
-    const results = [];
-    for (let i = 0; i < chunk.length; i += CONCURRENCY) {
-      const batch = await Promise.all(chunk.slice(i, i + CONCURRENCY).map((s) => probeSite(s.url)));
-      results.push(...batch);
+  // Filter to this shard's sites
+  const mySites = list.filter((s) => inMyShard(s.slug, shardCount, shardIndex));
+  if (!mySites.length) return;
+
+  const state = (await readState(env)) || { updated: null, cursor: 0, map: {}, removed: [] };
+  const map = state.map || {};
+  const removed = state.removed || [];
+  const cursor = typeof state.cursor === 'number' ? state.cursor : 0;
+
+  // Take next chunk
+  const chunk = [];
+  for (let i = 0; i < CHUNK && i < mySites.length; i++) {
+    chunk.push(mySites[(cursor + i) % mySites.length]);
+  }
+  if (!chunk.length) return;
+
+  // Probe with fetch budget tracking
+  let fetchesUsed = 0;
+  const results = [];
+  for (let i = 0; i < chunk.length; i += CONCURRENCY) {
+    const batch = chunk.slice(i, i + CONCURRENCY);
+    const batchResults = await Promise.all(
+      batch.map(async (site) => {
+        const result = await probeSite(site.url, fetchesUsed);
+        fetchesUsed++;
+        return result;
+      })
+    );
+    results.push(...batchResults);
+    if (fetchesUsed >= MAX_FETCHES_PER_TICK) break;
+  }
+
+  const nowIso = new Date().toISOString();
+  const nowMs = Date.now();
+  const removeAfterMs = REMOVE_AFTER_DAYS * 24 * 60 * 60 * 1000;
+  const pruneBeforeMs = nowMs - REMOVE_PRUNE_DAYS * 24 * 60 * 60 * 1000;
+
+  // Merge results with hysteresis
+  chunk.forEach((site, i) => {
+    const result = results[i];
+    const slug = site.slug;
+    const prev = map[slug];
+    const prevStatus = prev?.status || 'pending';
+    const prevStreak = prev?.streak || 0;
+    const prevSince = prev?.since;
+    const prevDeadSince = prev?.deadSince;
+
+    let newStatus = prevStatus;
+    let streak = prevStreak;
+    let since = prevSince;
+    let deadSince = prevDeadSince;
+    let flapping = false;
+
+    if (result.status === 'up') {
+      newStatus = 'up';
+      streak = 0;
+      since = undefined;
+      deadSince = undefined;
+      flapping = false;
+    } else {
+      // Non-up verdict
+      if (streak === 0) {
+        streak = 1;
+        since = nowIso;
+      } else {
+        streak++;
+      }
+      flapping = streak < CONFIRM_COUNT;
+
+      if (streak >= CONFIRM_COUNT) {
+        newStatus = result.status;
+        if (!deadSince) {
+          deadSince = nowIso;
+        }
+      }
     }
 
-    const prev = (await env.MONITOR_KV.get(K.statuses, 'json')) || { updated: null, map: {} };
-    // Prune stale slugs (sites removed from the list) while carrying over the rest.
-    const slugs = new Set(list.map((s) => s.slug));
-    const map = {};
-    Object.keys(prev.map || {}).forEach((k) => {
-      if (slugs.has(k)) map[k] = prev.map[k];
-    });
-    const checkedAt = new Date().toISOString();
-    chunk.forEach((site, i) => {
-      map[site.slug] = Object.assign({ checkedAt }, results[i]);
-    });
+    // Check for 21-day removal
+    if (deadSince) {
+      const deadSinceMs = new Date(deadSince).getTime();
+      if (nowMs - deadSinceMs >= removeAfterMs) {
+        // Move to removed[]
+        removed.push({
+          slug,
+          name: site.name,
+          url: site.url,
+          section: site.section,
+          deadSince,
+          removedAt: nowIso,
+          lastStatus: newStatus,
+          lastMs: result.ms,
+          lastCode: result.code
+        });
+        delete map[slug];
+        return;
+      }
+    }
 
-    await env.MONITOR_KV.put(K.statuses, JSON.stringify({ updated: checkedAt, map }), { expirationTtl: KEEP_TTL_S });
-    await env.MONITOR_KV.put(K.cursor, String((cursor + chunk.length) % list.length));
-  } finally {
-    await env.MONITOR_KV.delete(K.sweeping).catch(() => {});
-  }
+    map[slug] = {
+      status: newStatus,
+      ms: result.ms,
+      code: result.code,
+      detail: result.detail,
+      checkedAt: nowIso,
+      ...(streak > 0 && { streak }),
+      ...(since && { since }),
+      ...(flapping && { flapping: true }),
+      ...(deadSince && { deadSince })
+    };
+  });
+
+  // Prune old removed entries
+  state.removed = removed.filter((r) => new Date(r.removedAt).getTime() >= pruneBeforeMs);
+
+  // Update state
+  state.updated = nowIso;
+  state.cursor = (cursor + chunk.length) % mySites.length;
+  state.map = map;
+  // state.removed already updated above
+
+  await writeState(env, state);
 }
 
 const CORS = {
@@ -166,18 +314,44 @@ function json(data, status) {
 }
 
 async function handleStatus(env) {
-  const [sitesRaw, statuses] = await Promise.all([
+  const shardCount = parseInt(env.SHARD_COUNT || '1', 10);
+  const shardIndex = parseInt(env.SHARD_INDEX || '0', 10);
+
+  const [sitesRaw, state] = await Promise.all([
     env.MONITOR_KV.get(K.sites, 'json'),
-    env.MONITOR_KV.get(K.statuses, 'json')
+    env.MONITOR_KV.get(K.state, 'json')
   ]);
+
   const list = (sitesRaw && sitesRaw.list) || [];
-  const map = (statuses && statuses.map) || {};
-  const sites = list.map((s) =>
-    Object.assign({}, s, map[s.slug] || { status: 'pending', ms: null, code: null, detail: 'waiting for sweep' })
-  );
-  if (!sites.length) return json({ updated: null, sites: [], error: 'no data yet — cron sweep has not run', pending: 0, total: 0 }, 503);
+  const map = (state && state.map) || {};
+  const removed = (state && state.removed) || [];
+
+  // Filter to this shard's sites
+  const mySites = list.filter((s) => inMyShard(s.slug, shardCount, shardIndex));
+
+  const sites = mySites.map((s) => {
+    const entry = map[s.slug];
+    if (!entry) {
+      return Object.assign({}, s, { status: 'pending', ms: null, code: null, detail: 'waiting for sweep' });
+    }
+    return Object.assign({}, s, entry);
+  });
+
+  // 503 only when state key is entirely absent (no data yet)
+  if (!state && !sites.length) {
+    return json({ updated: null, sites: [], error: 'no data yet', pending: 0, total: 0 }, 503);
+  }
+
   const pending = sites.filter((s) => s.status === 'pending').length;
-  return json({ updated: (statuses && statuses.updated) || null, sites, pending, total: sites.length });
+
+  return json({
+    updated: (state && state.updated) || null,
+    sites,
+    pending,
+    total: sites.length,
+    removed,
+    shard: { index: shardIndex, count: shardCount }
+  });
 }
 
 export default {

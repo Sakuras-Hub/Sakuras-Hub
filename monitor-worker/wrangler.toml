@@ -6,8 +6,8 @@ compatibility_date = "2025-03-01"
 account_id = "9c21fa6acafb90ca946d29ae6fe1c2bb"
 
 [triggers]
-# Every minute: probe the next chunk of sites (rolling sweep, ~22 min full pass).
-crons = ["* * * * *"]
+# Every 2 minutes: probe the next chunk of sites (rolling sweep, ~9.7h full pass at 5,811 sites).
+crons = ["*/2 * * * *"]
 
 [[kv_namespaces]]
 binding = "MONITOR_KV"

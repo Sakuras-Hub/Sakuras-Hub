@@ -319,6 +319,47 @@ def parse_awesome_piracy(raw):
         ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
         source="awesome-piracy")
 
+
+def fetch_awesome_privacy():
+    return fetch_html("https://raw.githubusercontent.com/pluja/awesome-privacy/main/README.md")
+
+
+PRIVACY_SKIP_DOMAINS = {
+    "github.com", "gitlab.com", "codeberg.org", "raw.githubusercontent.com", "wikipedia.org",
+    "shields.tosdr.org", "shields.io", "img.shields.io",
+}
+
+
+def parse_awesome_privacy(raw):
+    if not raw:
+        return {}
+    links = parse_markdown_links(
+        raw,
+        skip_domains=PRIVACY_SKIP_DOMAINS)
+    sites = {}
+    for norm_url, (name, url) in links.items():
+        if not name or len(name.strip()) == 0:
+            continue
+        if not re.match(r"^https?://", url, re.IGNORECASE):
+            continue
+        clean_name = name.strip()[:60]
+        if len(name.strip()) > 60:
+            clean_name = clean_name.rstrip() + "..."
+        sites[norm_url] = {
+            "name": clean_name,
+            "url": url,
+            "slug": make_slug(clean_name),
+            "section": "Adblocking / Privacy",
+            "category": "privacy",
+            "pricing": "free",
+            "nsfw": False,
+            "emoji": "🔒",
+            "tags": [],
+            "source": "awesome-privacy",
+        }
+    return sites
+
+
 WOTAKU_URLS = [
     "https://raw.githubusercontent.com/wotakumoe/wotaku/main/docs/websites.md",
     "https://raw.githubusercontent.com/wotakumoe/wotaku/f138fa52/docs/websites.md",
@@ -370,6 +411,7 @@ ADDITIONAL_SOURCES[:] = [
     {"id": "FMHY", "fetch": fetch_fmhy, "parse": parse_fmhy},
     {"id": "keiyoushi/extensions", "fetch": fetch_keiyoushi, "parse": parse_keiyoushi},
     {"id": "awesome-piracy", "fetch": fetch_awesome_piracy, "parse": parse_awesome_piracy},
+    {"id": "awesome-privacy", "fetch": fetch_awesome_privacy, "parse": parse_awesome_privacy},
     {"id": "wotaku", "fetch": fetch_wotaku, "parse": parse_wotaku},
     {"id": "piracy-wiki", "fetch": fetch_piracy_wiki, "parse": parse_piracy_wiki},
 ]
@@ -417,6 +459,27 @@ def fetch_html(url, timeout=30):
     except Exception as e:
         print(f"  [!] Failed to fetch {url}: {e}")
         return None
+
+
+def load_blocklist():
+    """Load dead sites blocklist from scripts/dead_sites.txt (absolute path)."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    blocklist_path = os.path.join(script_dir, "dead_sites.txt")
+    blocklist = set()
+    if os.path.exists(blocklist_path):
+        try:
+            with open(blocklist_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    norm = normalize_url(line)
+                    if norm:
+                        blocklist.add(norm)
+        except Exception as e:
+            print(f"  [!] Failed to load blocklist: {e}")
+    return blocklist
+
 
 def normalize_url(url):
     url = url.strip().rstrip("/")
@@ -984,9 +1047,20 @@ def main():
 
     print("\n[4/4] Comparing and building missing sites in your format...")
     missing = []
+
+    # Load dead_sites.txt blocklist for merge mode
+    blocklist = load_blocklist()
+    blocklist_total = len(blocklist)
+    blocklist_matched = 0
+
     for norm_url, site_info in all_source_sites.items():
         name = site_info["name"]
         url = site_info["url"]
+
+        # Skip if URL is in dead_sites.txt blocklist (merge mode only)
+        if merge_mode and norm_url in blocklist:
+            blocklist_matched += 1
+            continue
 
         already_in_sakuras = False
 
@@ -1022,6 +1096,9 @@ def main():
                 missing.append(site_info)
 
     missing.sort(key=lambda s: (s["section"], s["name"].lower()))
+
+    if merge_mode:
+        print(f"  -> dead_sites.txt blocklist: {blocklist_total} urls, {blocklist_matched} matched")
 
     used_slugs = {}
     ranked = []

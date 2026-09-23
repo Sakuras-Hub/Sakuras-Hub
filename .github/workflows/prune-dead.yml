@@ -1,0 +1,100 @@
+name: Prune dead sites
+
+on:
+  schedule:
+    # weekly, Monday 04:00 UTC
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prune-dead
+  cancel-in-progress: false
+
+env:
+  MONITOR_API_URL: https://sakura-monitor.fadded-market.workers.dev/status
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Prune dead sites from info.json and update blocklist
+        run: |
+          python - <<'EOF'
+          import json, os, sys, urllib.request
+
+          MONITOR_API_URL = os.environ.get(
+              'MONITOR_API_URL', 'https://sakura-monitor.fadded-market.workers.dev/status'
+          )
+          INFO_JSON = 'need for the website to work/info.json'
+          BLOCKLIST = 'scripts/dead_sites.txt'
+
+          def norm(url):
+              """Normalize a URL for matching: lowercase, drop trailing slash."""
+              u = (url or '').strip().lower()
+              return u.rstrip('/')
+
+          req = urllib.request.Request(
+              MONITOR_API_URL,
+              headers={'User-Agent': 'SakurasHub-prune/1.0', 'Accept': 'application/json'},
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=10) as resp:
+                  data = json.loads(resp.read().decode('utf-8'))
+          except Exception as exc:
+              print(f'ERROR: failed to fetch {MONITOR_API_URL}: {exc}')
+              sys.exit(1)
+
+          removed = data.get('removed') or []
+          removed_urls = {norm(entry.get('url')) for entry in removed if entry.get('url')}
+          removed_slugs = {entry.get('slug') for entry in removed if entry.get('slug')}
+
+          with open(INFO_JSON, 'r', encoding='utf-8') as fh:
+              entries = json.load(fh)
+          before = len(entries)
+          kept = [
+              e for e in entries
+              if norm(e.get('url')) not in removed_urls and e.get('slug') not in removed_slugs
+          ]
+          pruned = before - len(kept)
+
+          # Blocklist: existing URLs + newly removed URLs, normalized, deduped, order-preserving.
+          block = []
+          if os.path.exists(BLOCKLIST):
+              with open(BLOCKLIST, 'r', encoding='utf-8') as fh:
+                  block = [norm(line) for line in fh.read().splitlines() if line.strip()]
+          seen = set(block)
+          for url in sorted(removed_urls):
+              if url and url not in seen:
+                  seen.add(url)
+                  block.append(url)
+
+          with open(INFO_JSON, 'w', encoding='utf-8') as fh:
+              json.dump(kept, fh, indent=2, ensure_ascii=False)
+              fh.write('\n')
+          with open(BLOCKLIST, 'w', encoding='utf-8') as fh:
+              fh.write('\n'.join(block) + ('\n' if block else ''))
+
+          print(f'pruned {pruned} removed-sites (was {before}, now {len(kept)}), '
+                f'blocklist now {len(block)} urls')
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- 'need for the website to work/info.json' 'scripts/dead_sites.txt'; then
+            echo "no changes"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- 'need for the website to work/info.json' 'scripts/dead_sites.txt'
+            git commit -m 'chore: prune dead sites from info.json'
+            git push origin HEAD:main
+          fi

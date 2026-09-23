@@ -23,7 +23,12 @@
   setTimeout(mc_initToggle, 2500);
 })();
 var monitorActive = false;
-var MONITOR_API_URL = 'https://sakura-monitor.fadded-market.workers.dev/status';
+var MONITOR_API_URLS = (typeof MONITOR_API_URLS !== 'undefined' && MONITOR_API_URLS)
+  ? MONITOR_API_URLS
+  : ((typeof MONITOR_API_URL !== 'undefined' && MONITOR_API_URL)
+      ? [MONITOR_API_URL]
+      : ['https://sakura-monitor.fadded-market.workers.dev/status']);
+var MONITOR_API_URL = MONITOR_API_URLS[0];
 var MONITOR_POLL_MS = 5 * 60 * 1000;
 var monitorPollTimer = null;
 var monitorApiData = null;
@@ -119,25 +124,49 @@ function stopPolling() {
 }
 
 function fetchMonitorData(showToast) {
-  if (!MONITOR_API_URL) {
+  var urls = MONITOR_API_URLS || [];
+  if (!urls.length) {
     if (showToast) toast('Monitor API not configured — see SETUP.md', '#f59e0b');
     return Promise.resolve(false);
   }
-  return fetch(MONITOR_API_URL + '?_=' + Date.now(), { cache: 'no-store' })
-    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function(d) {
-      if (!d || !d.sites || !d.sites.length) throw new Error('empty payload');
-      monitorApiData = d;
-      if (monitorActive) renderMonitorSection(true);
-      return true;
-    })
-    .catch(function(err) {
-      console.warn('Monitor API failed:', err && err.message ? err.message : err);
-      if (showToast) toast('Monitor API unreachable — showing cached data', '#f59e0b');
-      monitorApiData = null;
-      if (monitorActive) renderMonitorSection(true);
-      return false;
+  return Promise.all(urls.map(function(u) {
+    return fetch(u + '?_=' + Date.now(), { cache: 'no-store' })
+      .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .catch(function(err) {
+        console.warn('Monitor API failed:', u, err && err.message ? err.message : err);
+        return null;
+      });
+  })).then(function(results) {
+    var ok = results.filter(Boolean);
+    if (!ok.length) throw new Error('all endpoints failed');
+    var merged = { sites: [], removed: [], updated: ok[0].updated };
+    var seen = {};
+    var removedSeen = {};
+    ok.forEach(function(d) {
+      if (d.updated && (!merged.updated || d.updated > merged.updated)) merged.updated = d.updated;
+      (d.sites || []).forEach(function(s) {
+        var slug = mc_siteSlug(s);
+        if (!slug || seen[slug]) return;
+        seen[slug] = true;
+        merged.sites.push(s);
+      });
+      (d.removed || []).forEach(function(r) {
+        var slug = mc_siteSlug(r);
+        if (!slug || removedSeen[slug]) return;
+        removedSeen[slug] = true;
+        merged.removed.push(r);
+      });
     });
+    monitorApiData = merged;
+    if (monitorActive) renderMonitorSection(true);
+    return true;
+  }).catch(function(err) {
+    console.warn('Monitor API failed:', err && err.message ? err.message : err);
+    if (showToast) toast('Monitor API unreachable — showing cached data', '#f59e0b');
+    monitorApiData = null;
+    if (monitorActive) renderMonitorSection(true);
+    return false;
+  });
 }
 
 function monitorSearchInput(val) {
@@ -226,14 +255,15 @@ var st = mc_toStatus(s);
       else if (code != null) { codeText = (code >= 400 ? '✗' : '✓') + code; codeCls = 'mc-code' + (code >= 400 ? ' mc-code-down' : ''); }
       else { codeText = '—'; codeCls = 'mc-code'; }
 
-      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
+var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
       var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : (st === 'unreachable' ? 'label-unreachable' : (st === 'pending' ? 'label-pending' : 'label-down')));
       var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : (st === 'unreachable' ? 'UNREACHABLE' : (st === 'pending' ? 'PENDING' : 'DEAD')));
       var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
+      var flapBadge = s.flapping ? ' <span class="cc-badge" title="Keeps flipping between live/dead — pending confirmation">🦋 flapping</span>' : '';
 
       rows += '<tr>';
       rows += '<td style="text-align:center"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
-      rows += '<td class="name-cell">' + esc2(s.name) + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
+      rows += '<td class="name-cell">' + esc2(s.name) + flapBadge + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
       rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
       rows += '<td class="sec-cell">' + esc2(s.section || '—') + '</td>';
       rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
@@ -264,6 +294,7 @@ var ccOptions = '<option value="">🌍 All countries</option><option value="__gl
     mv += '<span class="monitor-stat">⚪ ' + pending + ' Pending</span>';
     mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
     if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
+    if (source.removed && source.removed.length) mv += '<span class="monitor-stat" title="Sites removed after 21+ days dead">🗑 ' + source.removed.length + ' Removed</span>';
     mv += '</div>';
     mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
     mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Re-check</button></div>';

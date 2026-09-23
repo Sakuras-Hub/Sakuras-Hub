@@ -11252,7 +11252,7 @@ function renderPanels() {
       html += renderWelcomePage(si);
     } else if (section.id === 'roblox-script') {
       html += renderScriptTab(si);
-    } else if (section.id === 'helpful-stuff' || (section.title && section.title.toLowerCase().replace(/[^a-z0-9]/g,'').indexOf('helpfulstuff') !== -1)) {
+    } else if (section.id === 'helpful-stuff' || section.id === 'privacy-guide' || (section.title && section.title.toLowerCase().replace(/[^a-z0-9]/g,'').indexOf('helpfulstuff') !== -1)) {
       html += renderHelpfulTab(si);
     } else if (section.id === 'vouches') {
       html += `<div id="vouches-tab-root"><div class="panel-empty"><h3>Loading Vouches...</h3><p style="opacity:0.5">Fetching customer feedback</p></div></div>`;
@@ -11917,10 +11917,12 @@ function getHelpfulIcon(title) {
 function renderHelpfulTab(si) {
   let section = data[si];
   let entries = (section && section.entries) ? section.entries : [];
+  let pageTitle = (section && section.title) ? section.title.replace(/^\s*\S+\s*/, '') : 'Helpful Stuff';
+  let pageSub = (section && section.sub) ? section.sub : 'Tools, guides, and resources for a smoother and safer online experience.';
 
   let html = '<div class="helpful-page">'
-    + '<h2>Helpful Stuff</h2>'
-    + '<p class="helpful-sub">Tools, guides, and resources for a smoother and safer online experience.</p>';
+    + '<h2>' + esc(pageTitle) + '</h2>'
+    + '<p class="helpful-sub">' + esc(pageSub) + '</p>';
 
   if (!entries.length) {
     html += '<div class="panel-empty"><h3>No entries yet</h3></div>';
@@ -14197,6 +14199,33 @@ const MAIN_SAKURA_DATA = JSON.stringify([
         "id": "mqrkvvog1gy5",
         "title": "Privacy, Ad Blockers & Torrenting",
         "body": "Use an ad blocker. Get [uBlock Origin](https://ublockorigin.com/)\n\nOr use [Brave Browser](https://brave.com/) — built in ad blocker\n\nRoute your internet with [Tor Browser](https://www.torproject.org/download/)\n\nPaid VPN with no logs — [Mullvad](https://mullvad.net/). Pay with crypto.\n\nDownload torrents with [BitTorrent](https://www.bittorrent.com/products/win/bittorrent-classic-compare/). Use a VPN to hide your IP.\n\nSeedbox for fast torrenting with lots of storage — [check it out](https://seedit4.me/)"
+      }
+    ]
+  },
+  {
+    "id": "privacy-guide",
+    "title": "🔒 Privacy Guide",
+    "sub": "Step-by-step guides to lock down your setup: browsers, passwords, VPNs, and account hygiene.",
+    "entries": [
+      {
+        "id": "pg-browser",
+        "title": "Browser Privacy Setup",
+        "body": "Start with a hardened browser. [Brave](https://brave.com/) ships with ad and tracker blocking built in. For maximum blocking, add [uBlock Origin](https://ublockorigin.com/) to Firefox, Brave, or Chrome.\n\nNext, kill fingerprinting: in Brave go to `brave://settings/shields` and set *Fingerprinting blocking* to *Strict*. Turn on *Block scripts* only on sites you trust.\n\nUse a search engine that doesn't profile you — [DuckDuckGo](https://duckduckgo.com/) or [Startpage](https://www.startpage.com/).\n\nClear cookies and site data on exit, and disable third-party cookies entirely in settings."
+      },
+      {
+        "id": "pg-passwords",
+        "title": "Passwords & 2FA",
+        "body": "Never reuse passwords. Use a password manager so every account gets a unique random one. Free, open-source options: [Bitwarden](https://bitwarden.com/), [KeePassXC](https://keepassxc.org/) (offline).\n\nA long passphrase beats a short complex password: four random words is harder to crack than `P@ssw0rd!`.\n\nTurn on two-factor authentication everywhere it's offered. Prefer authenticator apps (e.g. [Aegis](https://getaegis.app/)) or hardware keys over SMS codes — SMS can be hijacked via SIM swapping.\n\nCheck if your accounts were in a breach at [haveibeenpwned.com](https://haveibeenpwned.com/)."
+      },
+      {
+        "id": "pg-vpn",
+        "title": "Choosing & Using a VPN",
+        "body": "A VPN hides your IP and encrypts traffic from your ISP. It doesn't make you anonymous by itself.\n\nNo-log paid VPNs worth paying for: [Mullvad](https://mullvad.net/) (pay with crypto, no email required), [ProtonVPN](https://protonvpn.com/).\n\nFree option: [Riseup VPN](https://riseup.net/en/vpn) — no logs, community-run.\n\nUse the VPN for: public Wi-Fi, torrenting (check your VPN's policy first), and bypassing geo-blocks. \n\nSome VPNs are free because they sell your data. If a service is free and logged, it's the product."
+      },
+      {
+        "id": "pg-accounts",
+        "title": "Account Hygiene & Data Minimization",
+        "body": "Give out as little as possible. Use a [temp email](https://temp-mail.org/) for signups you'll never use again.\n\nUse different emails for different services so one breach doesn't link everything.\n\nReview app permissions: on Android, revoke location/contacts for apps that don't need them. Check `Privacy Dashboard` in iOS/Android settings.\n\nTurn off ad personalization: Google `myadcenter.google.com`, Meta `Ad Preferences`. You see the same ads, but less of your data is hoarded.\n\nDownload your data (GDPR export) and delete accounts you no longer use — [justdeleteme](https://justdeleteme.xyz/) lists deletion links for most services."
       }
     ]
   },
