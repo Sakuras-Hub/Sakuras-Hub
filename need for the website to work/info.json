@@ -9784,6 +9784,62 @@
     "countries": []
   },
   {
+    "rank": 328,
+    "name": "AniClover",
+    "url": "https://aniclover.cc/",
+    "slug": "aniclover",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 329,
+    "name": "meusanimes",
+    "url": "https://meusanimes.blog/",
+    "slug": "meusanimes",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "BR"
+    ]
+  },
+  {
+    "rank": 330,
+    "name": "NaszeAnime",
+    "url": "https://naszeanime.pl/",
+    "slug": "naszeanime",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "PL"
+    ]
+  },
+  {
+    "rank": 331,
+    "name": "⁠Anime Tosho",
+    "url": "https://animetosho.net/",
+    "slug": "animetosho2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -28576,6 +28632,19 @@
     "name": "⁠FCTV33",
     "url": "https://www.fctv33hd.co/",
     "slug": "fctv332",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 223,
+    "name": "goalzen",
+    "url": "https://www.goalzen.site/",
+    "slug": "goalzen",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -54614,6 +54683,19 @@
     "countries": []
   },
   {
+    "rank": 395,
+    "name": "⁠FilmDilemma",
+    "url": "https://filmdilemma.com/",
+    "slug": "filmdilemma",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Subtitles, Recommendations, Free",
+    "countries": []
+  },
+  {
     "url": "https://www.1shows.org/",
     "name": "1Shows",
     "section": "Movies & TV Streaming",
@@ -67683,6 +67765,51 @@
     "countries": []
   },
   {
+    "rank": 992,
+    "name": "bowdtv",
+    "url": "https://bowdtv.com/",
+    "slug": "bowdtv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "FR"
+    ]
+  },
+  {
+    "rank": 993,
+    "name": "fexini",
+    "url": "https://fexini.net/",
+    "slug": "fexini",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "FR"
+    ]
+  },
+  {
+    "rank": 994,
+    "name": "MovieRulz",
+    "url": "https://www.5movierulz.forex/",
+    "slug": "movierulz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -74400,6 +74527,19 @@
     "name": "⁠OpenTracks",
     "url": "https://opentracks.com/en/",
     "slug": "opentracks",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 516,
+    "name": "⁠Octave",
+    "url": "https://octavestreaming.com/",
+    "slug": "octave",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
