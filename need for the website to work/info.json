@@ -15778,6 +15778,19 @@
     "countries": []
   },
   {
+    "rank": 143,
+    "name": "⁠VerseDb",
+    "url": "https://versedb.com/",
+    "slug": "versedb",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
     "url": "https://animekhor.org/",
     "name": "AnimeKhor",
     "section": "Donghua Streaming",
@@ -48648,6 +48661,58 @@
     "countries": []
   },
   {
+    "rank": 1530,
+    "name": "Komikzoid",
+    "url": "https://01.komikzoid.id",
+    "slug": "komikzoid2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1531,
+    "name": "Manga Crab",
+    "url": "https://es.mangacrab.org",
+    "slug": "mangacrab2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1532,
+    "name": "Mangaball",
+    "url": "https://mangaball.com/",
+    "slug": "mangaball",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1533,
+    "name": "Sekte Komik",
+    "url": "https://01.sektekomik.id",
+    "slug": "sektekomik2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -54693,6 +54758,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Subtitles, Recommendations, Free",
+    "countries": []
+  },
+  {
+    "rank": 396,
+    "name": "⁠Karaoke Studio",
+    "url": "https://karaoke.zoryva.me/",
+    "slug": "karaokestudio",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Music, Audio, Free",
     "countries": []
   },
   {
@@ -67810,6 +67888,86 @@
     ]
   },
   {
+    "rank": 995,
+    "name": "dulo",
+    "url": "https://dulo.mov/",
+    "slug": "dulo",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 996,
+    "name": "KMMovies",
+    "url": "https://kmmovies.cyou/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 997,
+    "name": "moanatv.",
+    "url": "https://lfmx.app/",
+    "slug": "moanatv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 998,
+    "name": "MovieNerds",
+    "url": "https://movienerds.site/",
+    "slug": "movienerds",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 999,
+    "name": "Toflix",
+    "url": "https://toflix.co/",
+    "slug": "toflix",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 1000,
+    "name": "TouStream",
+    "url": "https://toustream.xyz/",
+    "slug": "toustream",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -74540,6 +74698,32 @@
     "name": "⁠Octave",
     "url": "https://octavestreaming.com/",
     "slug": "octave",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 517,
+    "name": "Sonora",
+    "url": "https://sonorahq.org/",
+    "slug": "sonora2",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 518,
+    "name": "⁠Popify",
+    "url": "https://popify.cc/",
+    "slug": "popify",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
