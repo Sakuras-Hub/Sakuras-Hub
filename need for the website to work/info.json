@@ -247,23 +247,6 @@
   },
   {
     "rank": 13,
-    "name": "Crypt.ee",
-    "url": "https://crypt.ee/",
-    "slug": "cryptee",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Digital Notes",
-      "Productivity",
-      "Paid"
-    ],
-    "countries": []
-  },
-  {
-    "rank": 13,
     "name": "crypt.fyi",
     "url": "https://crypt.fyi",
     "slug": "cryptfyi",
@@ -637,23 +620,6 @@
     "nsfw": false,
     "emoji": "🔒",
     "tags": [],
-    "countries": []
-  },
-  {
-    "rank": 23,
-    "name": "OrangeWebsite",
-    "url": "https://www.orangewebsite.com/",
-    "slug": "orangewebsite",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Domain Registrars",
-      "Networking",
-      "Paid"
-    ],
     "countries": []
   },
   {
@@ -3023,23 +2989,6 @@
     "countries": []
   },
   {
-    "rank": 24,
-    "name": "Mailfence",
-    "url": "https://mailfence.com",
-    "slug": "mailfence",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Encrypted Email",
-      "Communication",
-      "Paid"
-    ],
-    "countries": []
-  },
-  {
     "rank": 224,
     "name": "Manifest v3",
     "url": "https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening",
@@ -3375,23 +3324,6 @@
     "nsfw": false,
     "emoji": "🔒",
     "tags": [],
-    "countries": []
-  },
-  {
-    "rank": 25,
-    "name": "Obsidian",
-    "url": "https://obsidian.md",
-    "slug": "obsidian",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Digital Notes",
-      "Productivity",
-      "Paid"
-    ],
     "countries": []
   },
   {
@@ -3912,23 +3844,6 @@
     "nsfw": false,
     "emoji": "🔒",
     "tags": [],
-    "countries": []
-  },
-  {
-    "rank": 26,
-    "name": "ProtonMail",
-    "url": "https://protonmail.com/",
-    "slug": "protonmail",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Encrypted Email",
-      "Communication",
-      "Paid"
-    ],
     "countries": []
   },
   {
@@ -4631,23 +4546,6 @@
     "nsfw": false,
     "emoji": "🔒",
     "tags": [],
-    "countries": []
-  },
-  {
-    "rank": 27,
-    "name": "Threema",
-    "url": "https://threema.ch/en",
-    "slug": "threema",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Encrypted Messaging",
-      "Communication",
-      "Paid"
-    ],
     "countries": []
   },
   {
@@ -9625,6 +9523,34 @@
     "countries": []
   },
   {
+    "rank": 329,
+    "name": "animeytx",
+    "url": "https://wwv.veranimes.net/",
+    "slug": "animeytx2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "ES"
+    ]
+  },
+  {
+    "rank": 330,
+    "name": "Witch Cult Translations",
+    "url": "https://witchculttranslation.com/",
+    "slug": "witchculttranslations",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -12467,6 +12393,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Apps, Software, Free, Download",
+    "countries": []
+  },
+  {
+    "rank": 212,
+    "name": "⁠Twoku",
+    "url": "https://github.com/worldreboot/twitch-reloaded-roku",
+    "slug": "twoku",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Streaming, Android, TV, Free",
     "countries": []
   },
   {
@@ -26250,6 +26189,23 @@
     "countries": []
   },
   {
+    "rank": 13,
+    "name": "Crypt.ee",
+    "url": "https://crypt.ee/",
+    "slug": "cryptee",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Digital Notes",
+      "Productivity",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
     "rank": 14,
     "name": "Mojeek",
     "url": "https://mojeek.com",
@@ -26398,6 +26354,142 @@
     "tags": [
       "Search Engines",
       "Essentials",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 23,
+    "name": "OrangeWebsite",
+    "url": "https://www.orangewebsite.com/",
+    "slug": "orangewebsite",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Domain Registrars",
+      "Networking",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 24,
+    "name": "Mailfence",
+    "url": "https://mailfence.com",
+    "slug": "mailfence",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Encrypted Email",
+      "Communication",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 25,
+    "name": "Obsidian",
+    "url": "https://obsidian.md",
+    "slug": "obsidian",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Digital Notes",
+      "Productivity",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 26,
+    "name": "ProtonMail",
+    "url": "https://protonmail.com/",
+    "slug": "protonmail",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Encrypted Email",
+      "Communication",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 27,
+    "name": "Threema",
+    "url": "https://threema.ch/en",
+    "slug": "threema",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Encrypted Messaging",
+      "Communication",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 28,
+    "name": "Njalla",
+    "url": "https://njal.la/",
+    "slug": "njalla",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Domain Registrars",
+      "Networking",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 29,
+    "name": "1Password",
+    "url": "https://1password.com/",
+    "slug": "1password",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Password Managers",
+      "Essentials",
+      "Paid"
+    ],
+    "countries": []
+  },
+  {
+    "rank": 30,
+    "name": "O&O ShutUp10++",
+    "url": "https://www.oo-software.com/en/shutup10",
+    "slug": "ooshutup10",
+    "section": "Legal / Paid",
+    "category": "privacy",
+    "pricing": "paid",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [
+      "Windows Defences",
+      "Operating Systems",
       "Paid"
     ],
     "countries": []
@@ -29093,6 +29185,19 @@
     "rank": 205,
     "name": "⁠FCTV33",
     "url": "https://www.fctv33hd.co/",
+    "slug": "fctv332",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 206,
+    "name": "⁠FCTV33",
+    "url": "https://www.fctv33hd.uno/",
     "slug": "fctv332",
     "section": "Live TV & Sports",
     "category": "live-tv",
@@ -61542,23 +61647,6 @@
     "countries": []
   },
   {
-    "rank": 28,
-    "name": "Njalla",
-    "url": "https://njal.la/",
-    "slug": "njalla",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Domain Registrars",
-      "Networking",
-      "Paid"
-    ],
-    "countries": []
-  },
-  {
     "rank": 593,
     "name": "PressPlay",
     "url": "https://pressplayz.to/",
@@ -64797,23 +64885,6 @@
     "countries": []
   },
   {
-    "rank": 29,
-    "name": "1Password",
-    "url": "https://1password.com/",
-    "slug": "1password",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Password Managers",
-      "Essentials",
-      "Paid"
-    ],
-    "countries": []
-  },
-  {
     "rank": 841,
     "name": "Awesome Windows Privacy",
     "url": "https://github.com/TemporalAgent7/awesome-windows-privacy",
@@ -65372,23 +65443,6 @@
     "countries": []
   },
   {
-    "rank": 30,
-    "name": "O&O ShutUp10++",
-    "url": "https://www.oo-software.com/en/shutup10",
-    "slug": "ooshutup10",
-    "section": "Legal / Paid",
-    "category": "privacy",
-    "pricing": "paid",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [
-      "Windows Defences",
-      "Operating Systems",
-      "Paid"
-    ],
-    "countries": []
-  },
-  {
     "rank": 883,
     "name": "Organizr",
     "url": "https://github.com/causefx/Organizr",
@@ -65748,6 +65802,45 @@
     "name": "TouStream",
     "url": "https://toustream.xyz/",
     "slug": "toustream",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 911,
+    "name": "bCine",
+    "url": "https://bciney.to/",
+    "slug": "bcine2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 912,
+    "name": "Red Bull TV",
+    "url": "https://www.redbull.tv/",
+    "slug": "redbulltv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 913,
+    "name": "⁠Vanillo",
+    "url": "https://vanillo.tv/",
+    "slug": "vanillo",
     "section": "Movies & TV Streaming",
     "category": "movies-tv",
     "pricing": "free*",
@@ -80610,6 +80703,19 @@
     "name": "Read From",
     "url": "https://readfrom.net/",
     "slug": "readfrom",
+    "section": "Novel Reading",
+    "category": "novel",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Novel, Light Novel, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 554,
+    "name": "eBooks1001",
+    "url": "https://ebooks1001.com/",
+    "slug": "ebooks1001",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
