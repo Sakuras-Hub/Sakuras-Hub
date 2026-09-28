@@ -9,7 +9,7 @@ import ssl
 import time
 import datetime
 import hashlib
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 from collections import OrderedDict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -103,14 +103,14 @@ def parse_markdown_links(md_text, base_url="", skip_domains=()):
     is in skip_domains are dropped. Used by markdown-wiki sources.
     """
     out = {}
-    skip = {d.lower().lstrip("www.") for d in skip_domains}
+    skip = {d.lower().removeprefix("www.") for d in skip_domains}
     for m in re.finditer(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", md_text):
         name, url = m.group(1).strip(), m.group(2).strip()
         if not name or not url:
             continue
         try:
             parsed = urlparse(url)
-            domain = (parsed.netloc or "").lower().lstrip("www.")
+            domain = (parsed.netloc or "").lower().removeprefix("www.")
         except ValueError:
             continue
         if not domain or domain in skip:
@@ -135,7 +135,7 @@ EXTRA_SKIP_DOMAINS = {
 
 def _extra_skip(url):
     try:
-        domain = urlparse(url).netloc.lower().lstrip("www.")
+        domain = urlparse(url).netloc.lower().removeprefix("www.")
     except ValueError:
         return True
     if not domain:
@@ -360,6 +360,127 @@ def parse_awesome_privacy(raw):
     return sites
 
 
+LISSY93_SKIP_DOMAINS = {
+    "wikipedia.org", "discord.gg", "reddit.com", "t.me", "rentry.co", "pastebin.com",
+}
+
+LISSY93_LEGAL_PAT = re.compile(
+    r"\(proprietary\)|\bclosed[- ]source\b|\bnot open source\b|"
+    r"\bit is proprietary\b|\b(?:is|are)\s+(?:paid)\b|\bproprietary\b",
+    re.IGNORECASE)
+LISSY93_LEGAL_FALSE_POS = re.compile(
+    r"replaces the official proprietary|removes proprietary components|"
+    r"without the proprietary|\banti[- ]proprietary\b|remove proprietary",
+    re.IGNORECASE)
+
+LISSY93_TRACKING_PARAMS = {"src", "a_aid"}
+
+
+def fetch_lissy93_awesome_privacy():
+    return fetch_html("https://raw.githubusercontent.com/lissy93/awesome-privacy/main/awesome-privacy.yml")
+
+
+def clean_tracking_params(url):
+    """Strip marketing/tracking query params, keep functional ones (?id=, ?collection_id=)."""
+    parsed = urlparse(url)
+    if not parsed.query:
+        return url
+    pairs = parsed.query.split("&")
+    kept = [p for p in pairs
+            if p.split("=", 1)[0].lower() not in LISSY93_TRACKING_PARAMS
+            and not p.split("=", 1)[0].lower().startswith("utm_")]
+    if len(kept) == len(pairs):
+        return url
+    if not kept:
+        return urlunparse((parsed.scheme, parsed.netloc, parsed.path,
+                           parsed.params, "", parsed.fragment))
+    return urlunparse((parsed.scheme, parsed.netloc, parsed.path,
+                       parsed.params, "&".join(kept), parsed.fragment))
+
+
+def _lissy93_is_legal(svc):
+    """True if the lissy93 entry is paid/proprietary -> belongs in Legal / Paid."""
+    if svc.get("openSource") is False:
+        return True
+    if svc.get("openSource") is True:
+        return False
+    desc = str(svc.get("description") or "")
+    if not LISSY93_LEGAL_PAT.search(desc):
+        return False
+    if LISSY93_LEGAL_FALSE_POS.search(desc):
+        return False
+    return True
+
+
+def _lissy93_site(svc, cat_name, tag_base):
+    if not isinstance(svc, dict):
+        return {}
+    name = str(svc.get("name") or "").strip()[:60]
+    url = str(svc.get("url") or "").strip()
+    if not name or not url:
+        return {}
+    if not re.match(r"^https?://", url, re.IGNORECASE):
+        return {}
+    domain = urlparse(url).netloc.lower()
+    if domain.startswith("www."):
+        domain = domain[4:]
+    if any(domain == d or domain.endswith("." + d) for d in LISSY93_SKIP_DOMAINS):
+        return {}
+    if any(re.search(p, url, re.IGNORECASE) for p in EXCLUDED_URL_PATTERNS):
+        return {}
+    url = clean_tracking_params(url)
+    legal = _lissy93_is_legal(svc)
+    tags = [t for t in tag_base if t]
+    if legal:
+        tags.append("Paid")
+    return {
+        normalize_url(url): {
+            "name": name,
+            "url": url,
+            "slug": make_slug(name),
+            "section": "Legal / Paid" if legal else cat_name,
+            "category": "privacy",
+            "pricing": "paid" if legal else "free*",
+            "nsfw": False,
+            "emoji": "🔒",
+            "tags": tags,
+            "source": "lissy93/awesome-privacy",
+        }
+    }
+
+
+def parse_lissy93_awesome_privacy(raw):
+    """Parse lissy93/awesome-privacy YAML: 13 category sections + Legal / Paid.
+
+    Paid/proprietary entries (openSource: false or desc-flagged) are routed
+    to a dedicated 'Legal / Paid' section instead of being dropped. List-type
+    notableMentions are included; prose (string) mentions are skipped.
+    """
+    import yaml
+    sites = {}
+    if not raw:
+        return sites
+    try:
+        data = yaml.safe_load(raw)
+    except Exception as e:
+        print(f"  [!] lissy93/awesome-privacy: YAML parse failed: {e}")
+        return sites
+    for cat in data.get("categories", []) or []:
+        cat_name = str(cat.get("name") or "").strip()
+        if not cat_name:
+            continue
+        for sec in cat.get("sections", []) or []:
+            sec_name = str(sec.get("name") or "").strip()
+            tag_base = [sec_name, cat_name]
+            for svc in sec.get("services", []) or []:
+                sites.update(_lissy93_site(svc, cat_name, tag_base))
+            mentions = sec.get("notableMentions")
+            if isinstance(mentions, list):
+                for svc in mentions:
+                    sites.update(_lissy93_site(svc, cat_name, tag_base))
+    return sites
+
+
 WOTAKU_URLS = [
     "https://raw.githubusercontent.com/wotakumoe/wotaku/main/docs/websites.md",
     "https://raw.githubusercontent.com/wotakumoe/wotaku/f138fa52/docs/websites.md",
@@ -412,6 +533,7 @@ ADDITIONAL_SOURCES[:] = [
     {"id": "keiyoushi/extensions", "fetch": fetch_keiyoushi, "parse": parse_keiyoushi},
     {"id": "awesome-piracy", "fetch": fetch_awesome_piracy, "parse": parse_awesome_piracy},
     {"id": "awesome-privacy", "fetch": fetch_awesome_privacy, "parse": parse_awesome_privacy},
+    {"id": "lissy93/awesome-privacy", "fetch": fetch_lissy93_awesome_privacy, "parse": parse_lissy93_awesome_privacy},
     {"id": "wotaku", "fetch": fetch_wotaku, "parse": parse_wotaku},
     {"id": "piracy-wiki", "fetch": fetch_piracy_wiki, "parse": parse_piracy_wiki},
 ]
@@ -637,6 +759,11 @@ def extract_sites_from_sakuras(data):
 GENERIC_HOSTING_DOMAINS = {
     "github.com", "gitlab.com", "codeberg.org", "bitbucket.org",
     "git.rebelonion.dev", "gitlab.com",
+    # Multi-product hosts: same domain does NOT imply same product,
+    # so domain-level dedup must not suppress distinct tools on them.
+    "play.google.com", "addons.mozilla.org", "sourceforge.net",
+    "xdaforums.com", "gnu.org", "wiki.gnome.org", "bleepingcomputer.com",
+    "f-droid.org", "nitter.net",
 }
 
 EV_SECTIONS = [
@@ -1068,24 +1195,26 @@ def main():
             already_in_sakuras = True
 
         if not already_in_sakuras:
-            strict_url = normalize_url_strict(url)
-            if strict_url in sakuras_strict:
-                already_in_sakuras = True
+            this_domain = urlparse(url).netloc.lower().removeprefix("www.")
+            if this_domain not in GENERIC_HOSTING_DOMAINS:
+                strict_url = normalize_url_strict(url)
+                if strict_url in sakuras_strict:
+                    already_in_sakuras = True
 
         if not already_in_sakuras:
             nname = normalize_name(name)
             if nname in sakuras_by_name:
                 existing = sakuras_by_name[nname]
-                existing_domain = urlparse(existing["url"]).netloc.lower().lstrip("www.")
-                this_domain = urlparse(url).netloc.lower().lstrip("www.")
+                existing_domain = urlparse(existing["url"]).netloc.lower().removeprefix("www.")
+                this_domain = urlparse(url).netloc.lower().removeprefix("www.")
                 if existing_domain == this_domain:
                     already_in_sakuras = True
 
         if not already_in_sakuras:
-            this_domain = urlparse(url).netloc.lower().lstrip("www.")
+            this_domain = urlparse(url).netloc.lower().removeprefix("www.")
             if this_domain not in GENERIC_HOSTING_DOMAINS:
                 for snorm, sentry in sakuras_exact.items():
-                    sdomain = urlparse(sentry["url"]).netloc.lower().lstrip("www.")
+                    sdomain = urlparse(sentry["url"]).netloc.lower().removeprefix("www.")
                     if this_domain == sdomain and sdomain not in GENERIC_HOSTING_DOMAINS:
                         already_in_sakuras = True
                         break
