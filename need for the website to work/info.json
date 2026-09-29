@@ -47811,6 +47811,97 @@
     "countries": []
   },
   {
+    "rank": 1424,
+    "name": "Catoons",
+    "url": "https://cattoons.org",
+    "slug": "catoons2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1425,
+    "name": "JuraTempest",
+    "url": "https://juratempe.st",
+    "slug": "juratempest",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1426,
+    "name": "LoLoBun",
+    "url": "https://www.lolobun.com",
+    "slug": "lolobun",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1427,
+    "name": "Manga-Bay",
+    "url": "https://manga-bay.biz",
+    "slug": "mangabay2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1428,
+    "name": "One Punch Man Online",
+    "url": "https://1punchman.com",
+    "slug": "onepunchmanonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1429,
+    "name": "Siren Scans",
+    "url": "https://sirenscans.org",
+    "slug": "sirenscans2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1430,
+    "name": "Toonkor",
+    "url": "https://toonkor0.org",
+    "slug": "toonkor2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -65848,6 +65939,92 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 914,
+    "name": "altadefinizionex",
+    "url": "https://altadefinizionex.me/",
+    "slug": "altadefinizionex2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 915,
+    "name": "Bollyflix",
+    "url": "https://new.bollyflix.vote/",
+    "slug": "bollyflix2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 916,
+    "name": "Cineblog01",
+    "url": "https://cineblog001.cv/",
+    "slug": "cineblog012",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 917,
+    "name": "Flixway",
+    "url": "https://flixway.to/",
+    "slug": "flixway2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 918,
+    "name": "FMovies",
+    "url": "https://ffmovies.org/",
+    "slug": "fmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 919,
+    "name": "streamingcommunityz",
+    "url": "https://streamingcommunityz.pictures/",
+    "slug": "streamingcommunityz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
   },
   {
     "url": "https://kara.moe/",
