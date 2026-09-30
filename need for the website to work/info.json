@@ -9551,6 +9551,19 @@
     "countries": []
   },
   {
+    "rank": 331,
+    "name": "Kaizoku Anime",
+    "url": "https://anime.kaizoku.site/",
+    "slug": "kaizokuanime",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -12406,6 +12419,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
+    "rank": 213,
+    "name": "Tatakai",
+    "url": "https://tatakai.me/",
+    "slug": "tatakai",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Free, Android, Streaming",
     "countries": []
   },
   {
@@ -23116,6 +23142,19 @@
     "name": "WorldFree4u",
     "url": "https://worldfree4u.expert/",
     "slug": "worldfree4u2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
+    "rank": 516,
+    "name": "⁠ReleaseHive",
+    "url": "https://releasehive.com/",
+    "slug": "releasehive",
     "section": "Download",
     "category": "download",
     "pricing": "free*",
@@ -47902,6 +47941,84 @@
     "countries": []
   },
   {
+    "rank": 1431,
+    "name": "ArazNovel",
+    "url": "https://manga.araznovel.com",
+    "slug": "araznovel2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1432,
+    "name": "Catharsis World",
+    "url": "https://newcatharsis.dig-it.info",
+    "slug": "catharsisworld2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1433,
+    "name": "LectorManga.lat",
+    "url": "https://lector-mangas.lat",
+    "slug": "lectormangalat2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1434,
+    "name": "VoraToon",
+    "url": "https://v4.voratoon.com",
+    "slug": "voratoon2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1435,
+    "name": "爱奇艺叭嗒",
+    "url": "https://bud.m.iqiyi.com",
+    "slug": "site-af48d7119b",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1436,
+    "name": "늑대닷컴 - 웹툰",
+    "url": "https://wfwf507.com",
+    "slug": "site-41d04f541d",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -66025,6 +66142,90 @@
     "countries": [
       "IT"
     ]
+  },
+  {
+    "rank": 920,
+    "name": "carateen",
+    "url": "https://web.topcinema.io/",
+    "slug": "carateen2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 921,
+    "name": "hdfilme",
+    "url": "https://hdfilme.ceo/",
+    "slug": "hdfilme2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "DE"
+    ]
+  },
+  {
+    "rank": 922,
+    "name": "hdhub4u",
+    "url": "https://new1.hdhub4u.free/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 923,
+    "name": "StreamingUnity",
+    "url": "https://streamingunity.fun/",
+    "slug": "streamingunity2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 924,
+    "name": "Vivarium",
+    "url": "https://vivarium.su/",
+    "slug": "vivarium2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 925,
+    "name": "WatchSeries",
+    "url": "https://watchseries.free/",
+    "slug": "watchseries2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
   },
   {
     "url": "https://kara.moe/",
