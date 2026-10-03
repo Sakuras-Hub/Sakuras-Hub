@@ -10006,6 +10006,21 @@
     "countries": []
   },
   {
+    "rank": 333,
+    "name": "Kartoonsme",
+    "url": "https://kartoons.to/",
+    "slug": "kartoonsme2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -29689,6 +29704,19 @@
     "countries": []
   },
   {
+    "rank": 207,
+    "name": "TimStreams",
+    "url": "https://timst.top//",
+    "slug": "timstreams2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
     "url": "https://mangaball.net/",
     "name": "Mangaball",
     "section": "Manga Reading",
@@ -48851,6 +48879,19 @@
     "countries": []
   },
   {
+    "rank": 1467,
+    "name": "GoodToon",
+    "url": "https://www.goodtoon005.com",
+    "slug": "goodtoon2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -67100,6 +67141,21 @@
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": [
       "EG"
+    ]
+  },
+  {
+    "rank": 928,
+    "name": "MovieRulz",
+    "url": "https://www.5movierulz.works/",
+    "slug": "movierulz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
     ]
   },
   {
