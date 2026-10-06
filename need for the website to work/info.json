@@ -12918,6 +12918,32 @@
     "countries": []
   },
   {
+    "rank": 215,
+    "name": "⁠Atlas",
+    "url": "https://atlas.hls.lol/",
+    "slug": "atlas",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
+    "rank": 216,
+    "name": "⁠Vega-Desktop",
+    "url": "https://github.com/vega-org/vega-desktop",
+    "slug": "vegadesktop",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
     "url": "https://rule34.xxx/",
     "name": "Rule 34",
     "section": "Art/Imageboards",
@@ -49126,6 +49152,58 @@
     "countries": []
   },
   {
+    "rank": 1484,
+    "name": "Aniverse",
+    "url": "https://aniverse.fr",
+    "slug": "aniverse",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1485,
+    "name": "NewXToon",
+    "url": "https://newxtoon1.com",
+    "slug": "newxtoon",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1486,
+    "name": "Nexus Mangás",
+    "url": "https://www.nexusmangas.com",
+    "slug": "nexusmangs",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1487,
+    "name": "Snafu Comics",
+    "url": "https://www.snafu-comics.com",
+    "slug": "snafucomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -67499,6 +67577,66 @@
     "countries": []
   },
   {
+    "rank": 937,
+    "name": "altadefinizionex",
+    "url": "https://altadefinizionex.surf/",
+    "slug": "altadefinizionex2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 938,
+    "name": "Cineblog01",
+    "url": "https://cineblog001.tattoo/",
+    "slug": "cineblog012",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 939,
+    "name": "movizlands",
+    "url": "https://ty.movizlands.com/",
+    "slug": "movizlands2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 940,
+    "name": "streamingcommunityz",
+    "url": "https://streamingcommunityz.promo/",
+    "slug": "streamingcommunityz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -74242,6 +74380,19 @@
     "name": "⁠jumbletop",
     "url": "https://jumble.top/",
     "slug": "jumbletop",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 518,
+    "name": "⁠Death.FM",
+    "url": "https://death.fm/",
+    "slug": "deathfm",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
