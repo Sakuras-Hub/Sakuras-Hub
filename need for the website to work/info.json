@@ -10034,6 +10034,34 @@
     "countries": []
   },
   {
+    "rank": 335,
+    "name": "Anime Lok",
+    "url": "https://animelok.cc/",
+    "slug": "animelok",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 336,
+    "name": "MultiAnime",
+    "url": "https://multinime.site/",
+    "slug": "multianime",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -12941,6 +12969,34 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
+    "rank": 217,
+    "name": "anivortex",
+    "url": "https://anivortex.in/",
+    "slug": "anivortex",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Free, Android, Streaming",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 218,
+    "name": "MobiFlix",
+    "url": "https://mobiflix.net/",
+    "slug": "mobiflix2",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Free, Android, Streaming",
     "countries": []
   },
   {
@@ -23673,6 +23729,32 @@
     "countries": []
   },
   {
+    "rank": 517,
+    "name": "Youplex Torrents",
+    "url": "https://youplex.cc/",
+    "slug": "youplextorrents2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
+    "rank": 518,
+    "name": "⁠DVDeez",
+    "url": "https://dvdeez.top/",
+    "slug": "dvdeez",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "2of3 by Ente",
     "url": "https://2of3.ente.com",
@@ -24771,6 +24853,19 @@
     "name": "uma.moe",
     "url": "https://uma.moe/",
     "slug": "umamoe",
+    "section": "Gacha Games",
+    "category": "gacha",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Gacha, Games, Mobile, Free",
+    "countries": []
+  },
+  {
+    "rank": 17,
+    "name": "WuWaWiki",
+    "url": "https://wuwawiki.com/",
+    "slug": "wuwawiki",
     "section": "Gacha Games",
     "category": "gacha",
     "pricing": "free*",
@@ -29760,6 +29855,34 @@
     "name": "TimStreams",
     "url": "https://timst.top//",
     "slug": "timstreams2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 208,
+    "name": "espnl",
+    "url": "https://www.espn.nl/watch/",
+    "slug": "espnl",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": [
+      "NL"
+    ]
+  },
+  {
+    "rank": 209,
+    "name": "⁠AuraSports",
+    "url": "https://aurasports.xyz/",
+    "slug": "aurasports",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -49204,6 +49327,84 @@
     "countries": []
   },
   {
+    "rank": 1488,
+    "name": "Hakusensha e-net",
+    "url": "https://www.hakusensha-e.net",
+    "slug": "hakusenshaenet",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1489,
+    "name": "Honto",
+    "url": "https://honto.jp",
+    "slug": "honto",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1490,
+    "name": "Komix",
+    "url": "https://komix.to/",
+    "slug": "komix",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1491,
+    "name": "MangaBox",
+    "url": "https://www.mangabox.me",
+    "slug": "mangabox",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1492,
+    "name": "Mangastash",
+    "url": "https://mangastash.org/",
+    "slug": "mangastash",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1493,
+    "name": "Sugo Comics",
+    "url": "https://nadeshiko-shoten.jp",
+    "slug": "sugocomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -67637,6 +67838,64 @@
     ]
   },
   {
+    "rank": 941,
+    "name": "Cinelite",
+    "url": "https://cinelite.xyz/",
+    "slug": "cinelite",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 942,
+    "name": "hdhub4u",
+    "url": "https://new2.hdhub4u.free/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 943,
+    "name": "KMMovies",
+    "url": "https://kmmovies.baby/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 944,
+    "name": "world4u",
+    "url": "https://worldfree4u.blog/",
+    "slug": "world4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -82568,6 +82827,19 @@
     "name": "KnoxT",
     "url": "https://knoxt.space/",
     "slug": "knoxt",
+    "section": "Novel Reading",
+    "category": "novel",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Novel, Light Novel, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 556,
+    "name": "lightnovel.to",
+    "url": "https://lightnovel.to",
+    "slug": "lightnovelto",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
