@@ -13000,6 +13000,19 @@
     "countries": []
   },
   {
+    "rank": 219,
+    "name": "⁠Showberry",
+    "url": "https://github.com/Dackerie/showberry",
+    "slug": "showberry",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
     "url": "https://rule34.xxx/",
     "name": "Rule 34",
     "section": "Art/Imageboards",
@@ -16548,6 +16561,19 @@
     "name": "⁠VerseDb",
     "url": "https://versedb.com/",
     "slug": "versedb",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 139,
+    "name": "⁠Bookfeed.io",
+    "url": "https://bookfeed.io/",
+    "slug": "bookfeedio",
     "section": "Database/Tracker",
     "category": "database",
     "pricing": "free*",
@@ -24875,6 +24901,19 @@
     "countries": []
   },
   {
+    "rank": 18,
+    "name": "MyGachaList",
+    "url": "https://mygachalist.com/",
+    "slug": "mygachalist",
+    "section": "Gacha Games",
+    "category": "gacha",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Gacha, Games, Mobile, Free",
+    "countries": []
+  },
+  {
     "url": "https://vndb.org/",
     "name": "Visual Novel DB",
     "section": "Games",
@@ -29890,6 +29929,21 @@
     "emoji": "",
     "tags": "Live TV, Sports, Streaming, Free",
     "countries": []
+  },
+  {
+    "rank": 210,
+    "name": "FreeStream-live1h",
+    "url": "https://freestreams-live1i.pk/",
+    "slug": "freestreamlive1h2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": [
+      "PL"
+    ]
   },
   {
     "url": "https://mangaball.net/",
@@ -49405,6 +49459,71 @@
     "countries": []
   },
   {
+    "rank": 1494,
+    "name": "Newtoki (SBXH)",
+    "url": "https://sbxh9.com",
+    "slug": "newtokisbxh",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1495,
+    "name": "Nexus Toons",
+    "url": "https://nexustoons.com",
+    "slug": "nexustoons2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1496,
+    "name": "Super Ecchi",
+    "url": "https://superecchi.com",
+    "slug": "superecchi",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1497,
+    "name": "Webnex",
+    "url": "https://webnex.cc",
+    "slug": "webnex",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1498,
+    "name": "آر هنتاي",
+    "url": "https://arhentai.net",
+    "slug": "site-d09094b08f",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -55390,6 +55509,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Subtitles, Recommendations, Free",
+    "countries": []
+  },
+  {
+    "rank": 393,
+    "name": "⁠eBook Fonts Showcase",
+    "url": "https://ebook-fonts.nicoverbruggen.be/",
+    "slug": "ebookfontsshowcase",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Reading, Free",
     "countries": []
   },
   {
@@ -67893,6 +68025,36 @@
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": [
       "IN"
+    ]
+  },
+  {
+    "rank": 945,
+    "name": "MovieRulz",
+    "url": "https://www.5movierulz.academy/",
+    "slug": "movierulz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 946,
+    "name": "streamingcommunityz",
+    "url": "https://streamingcommunityz.rip/",
+    "slug": "streamingcommunityz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
     ]
   },
   {
@@ -86392,6 +86554,19 @@
     "name": "Fandom - Anime",
     "url": "https://www.fandom.com/topics/anime",
     "slug": "fandomanime",
+    "section": "Wiki/Guides",
+    "category": "guides",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Wiki, Guide, Anime, Manga, Information",
+    "countries": []
+  },
+  {
+    "rank": 26,
+    "name": "Yomoru",
+    "url": "https://yomoru.com/",
+    "slug": "yomoru",
     "section": "Wiki/Guides",
     "category": "guides",
     "pricing": "free*",
