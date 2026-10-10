@@ -10088,6 +10088,19 @@
     "countries": []
   },
   {
+    "rank": 339,
+    "name": "⁠Zenbu",
+    "url": "https://zen-bu.cc/",
+    "slug": "zenbu",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -23811,6 +23824,19 @@
     "name": "⁠DVDeez",
     "url": "https://dvdeez.top/",
     "slug": "dvdeez",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
+    "rank": 519,
+    "name": "HDHub4u",
+    "url": "https://hdhub4u.bi/",
+    "slug": "hdhub4u2",
     "section": "Download",
     "category": "download",
     "pricing": "free*",
@@ -49667,6 +49693,19 @@
     "countries": []
   },
   {
+    "rank": 1507,
+    "name": "Toonkotsu",
+    "url": "https://toonkotsu.com/",
+    "slug": "toonkotsu",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -55678,6 +55717,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 394,
+    "name": "⁠Unison",
+    "url": "https://unison.betterlyrics.org/",
+    "slug": "unison2",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Music, Audio, Free",
     "countries": []
   },
   {
@@ -68333,6 +68385,21 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 956,
+    "name": "HINDILINKS4U",
+    "url": "https://hindilinks4u.cafe/",
+    "slug": "hindilinks4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://kara.moe/",
