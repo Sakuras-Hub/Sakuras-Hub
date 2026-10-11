@@ -10101,6 +10101,19 @@
     "countries": []
   },
   {
+    "rank": 340,
+    "name": "Mmani.com",
+    "url": "https://mmani.com/",
+    "slug": "mmanicom",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -49706,6 +49719,136 @@
     "countries": []
   },
   {
+    "rank": 1508,
+    "name": "Bully Manga",
+    "url": "https://bully-manga.com",
+    "slug": "bullymanga",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1509,
+    "name": "FSI Comics",
+    "url": "https://fsicomics.com",
+    "slug": "fsicomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1510,
+    "name": "FSI Comics",
+    "url": "https://es.fsicomics.com",
+    "slug": "fsicomics2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1511,
+    "name": "FSI Comics",
+    "url": "https://de.fsicomics.com",
+    "slug": "fsicomics3",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1512,
+    "name": "FSI Comics",
+    "url": "https://fr.fsicomics.com",
+    "slug": "fsicomics4",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1513,
+    "name": "FSI Comics",
+    "url": "https://it.fsicomics.com",
+    "slug": "fsicomics5",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1514,
+    "name": "Hentai Kai",
+    "url": "https://hentaikai.com",
+    "slug": "hentaikai",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1515,
+    "name": "Mantraz Scan",
+    "url": "https://mantrazscanss.lat",
+    "slug": "mantrazscan2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1516,
+    "name": "Read The Beginning After The End Manga Online",
+    "url": "https://w22.thebeginningaftertheendmanga.com",
+    "slug": "readthebeginningaftertheendmangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1517,
+    "name": "Tower Of God Manga Online",
+    "url": "https://w82.thetowerofgod.com",
+    "slug": "towerofgodmangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -68402,6 +68545,36 @@
     ]
   },
   {
+    "rank": 957,
+    "name": "Bollyflix",
+    "url": "https://bollyflix.photo/",
+    "slug": "bollyflix2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 958,
+    "name": "hdhub4u",
+    "url": "https://new3.hdhub4u.free/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -86924,6 +87097,19 @@
     "name": "Yomoru",
     "url": "https://yomoru.com/",
     "slug": "yomoru",
+    "section": "Wiki/Guides",
+    "category": "guides",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Wiki, Guide, Anime, Manga, Information",
+    "countries": []
+  },
+  {
+    "rank": 27,
+    "name": "Anime Art Academy",
+    "url": "https://animeartacademy.com/",
+    "slug": "animeartacademy",
     "section": "Wiki/Guides",
     "category": "guides",
     "pricing": "free*",
