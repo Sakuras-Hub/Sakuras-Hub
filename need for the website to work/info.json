@@ -10114,6 +10114,19 @@
     "countries": []
   },
   {
+    "rank": 341,
+    "name": "AnimeLover",
+    "url": "https://animelover.site/",
+    "slug": "animelover",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -13062,6 +13075,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Apps, Streaming, Android, TV, Free",
+    "countries": []
+  },
+  {
+    "rank": 220,
+    "name": "Hikari",
+    "url": "https://github.com/codegeasse1/hikari",
+    "slug": "hikari",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Free, Android, Streaming",
     "countries": []
   },
   {
@@ -23859,6 +23885,19 @@
     "countries": []
   },
   {
+    "rank": 520,
+    "name": "⁠Get4All",
+    "url": "https://get4all.org/",
+    "slug": "get4all",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Debrid, Leech, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "2of3 by Ente",
     "url": "https://2of3.ente.com",
@@ -30022,6 +30061,19 @@
     "countries": [
       "PL"
     ]
+  },
+  {
+    "rank": 211,
+    "name": "⁠CMVTV",
+    "url": "https://cmvlr.lovable.app/",
+    "slug": "cmvtv2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
   },
   {
     "url": "https://mangaball.net/",
@@ -49849,6 +49901,175 @@
     "countries": []
   },
   {
+    "rank": 1518,
+    "name": "DB New Hope",
+    "url": "https://dbnewhope.com",
+    "slug": "dbnewhope",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1519,
+    "name": "DocTruyen3Q",
+    "url": "https://doctruyen3qhub.fit",
+    "slug": "doctruyen3q2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1520,
+    "name": "Dưa Leo Truyện",
+    "url": "https://dualeotruyenvie.com",
+    "slug": "daleotruyn2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1521,
+    "name": "Emperor Scan",
+    "url": "https://imperiomanhwa.com",
+    "slug": "emperorscan2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1522,
+    "name": "Kodoku Studio",
+    "url": "https://kodokueasyaccess.com",
+    "slug": "kodokustudio2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1523,
+    "name": "LectorXD",
+    "url": "https://lectorxd.com",
+    "slug": "lectorxd",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1524,
+    "name": "Luna Toons",
+    "url": "https://lunatoons.net",
+    "slug": "lunatoons2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1525,
+    "name": "NetTruyenS (unoriginal)",
+    "url": "https://nettruyen14s.com",
+    "slug": "nettruyensunoriginal2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1526,
+    "name": "ThienThaiTruyen",
+    "url": "https://thienthaitruyen16.com",
+    "slug": "thienthaitruyen2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1527,
+    "name": "Toonx",
+    "url": "https://toonx.to",
+    "slug": "toonx",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1528,
+    "name": "Top Truyen",
+    "url": "https://www.toptruyenzone12.com",
+    "slug": "toptruyen2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1529,
+    "name": "VinaHentai",
+    "url": "https://vinahentai.pics",
+    "slug": "vinahentai2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1530,
+    "name": "ZetTruyen",
+    "url": "https://www.zettruyen3.com",
+    "slug": "zettruyen2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -68573,6 +68794,73 @@
     "countries": [
       "IN"
     ]
+  },
+  {
+    "rank": 959,
+    "name": "Cinex",
+    "url": "https://cinex.lol/",
+    "slug": "cinex",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 960,
+    "name": "frameXTV",
+    "url": "https://framextv.xyz/",
+    "slug": "framextv2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 961,
+    "name": "GDriveLatino",
+    "url": "https://gdrivelatinohd.org/",
+    "slug": "gdrivelatino2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "ES"
+    ]
+  },
+  {
+    "rank": 962,
+    "name": "MilkBox",
+    "url": "https://milkbox.ddns.net/",
+    "slug": "milkbox2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 963,
+    "name": "PressPlay",
+    "url": "https://pressplayx.to/",
+    "slug": "pressplay2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
   },
   {
     "url": "https://kara.moe/",
