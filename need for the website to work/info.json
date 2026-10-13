@@ -10127,6 +10127,60 @@
     "countries": []
   },
   {
+    "rank": 342,
+    "name": "animezid",
+    "url": "https://animezid.org/",
+    "slug": "animezid2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 343,
+    "name": "Tsukuyomi",
+    "url": "https://tsukuyomi.tv/",
+    "slug": "tsukuyomi",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 344,
+    "name": "Zanix",
+    "url": "https://zanix.tr/home",
+    "slug": "zanix",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 345,
+    "name": "Zanora",
+    "url": "https://zanora.xyz/home",
+    "slug": "zanora",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -23895,6 +23949,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Download, Debrid, Leech, Free",
+    "countries": []
+  },
+  {
+    "rank": 521,
+    "name": "VegaMovies",
+    "url": "https://1vegamovies.baby/",
+    "slug": "vegamovies2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
     "countries": []
   },
   {
@@ -56097,6 +56164,19 @@
     "countries": []
   },
   {
+    "rank": 395,
+    "name": "⁠SongFinder",
+    "url": "https://songfinder.tech/",
+    "slug": "songfinder2",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Music, Audio, Free",
+    "countries": []
+  },
+  {
     "url": "https://www.1shows.org/",
     "name": "1Shows",
     "section": "Movies & TV Streaming",
@@ -68863,6 +68943,51 @@
     "countries": []
   },
   {
+    "rank": 964,
+    "name": "altadefinizionex",
+    "url": "https://altadefinizionex.life/",
+    "slug": "altadefinizionex2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 965,
+    "name": "Cineblog01",
+    "url": "https://cineblog001.delivery/",
+    "slug": "cineblog012",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 966,
+    "name": "streamingcommunityz",
+    "url": "https://streamingcommunityz.shiksha/",
+    "slug": "streamingcommunityz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -75619,6 +75744,19 @@
     "name": "⁠Death.FM",
     "url": "https://death.fm/",
     "slug": "deathfm",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 519,
+    "name": "TIDAL DL",
+    "url": "https://tidal.odskyler.com/",
+    "slug": "tidaldl2",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
