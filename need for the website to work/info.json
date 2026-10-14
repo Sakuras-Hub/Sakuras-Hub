@@ -10181,6 +10181,19 @@
     "countries": []
   },
   {
+    "rank": 346,
+    "name": "Aniverse",
+    "url": "https://www.aniverse.sbs/home",
+    "slug": "aniverse2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -50137,6 +50150,175 @@
     "countries": []
   },
   {
+    "rank": 1531,
+    "name": "BenDezOmniHero",
+    "url": "https://bendezomnihero.blogspot.com",
+    "slug": "bendezomnihero",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1532,
+    "name": "Fliptru",
+    "url": "https://fliptru.com.br",
+    "slug": "fliptru",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1533,
+    "name": "GoodToon",
+    "url": "https://www.goodtoon007.com",
+    "slug": "goodtoon2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1534,
+    "name": "Hentai Fusion",
+    "url": "https://hentaifusion.me",
+    "slug": "hentaifusion",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1535,
+    "name": "HentaiPill",
+    "url": "https://hentaipill.com",
+    "slug": "hentaipill",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1536,
+    "name": "ILikeComix",
+    "url": "https://ilikecomix.com",
+    "slug": "ilikecomix",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1537,
+    "name": "Kaiji Manga Online",
+    "url": "https://w9.kaijimanga.com",
+    "slug": "kaijimangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1538,
+    "name": "MangaciX",
+    "url": "https://mangacix.net",
+    "slug": "mangacix",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1539,
+    "name": "Manhwa List",
+    "url": "https://m1.manhwalist.my.id",
+    "slug": "manhwalist2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1540,
+    "name": "Reizu Comics",
+    "url": "https://reizucomics.com",
+    "slug": "reizucomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1541,
+    "name": "Rosyscans",
+    "url": "https://rosyscans.com",
+    "slug": "rosyscans",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1542,
+    "name": "SchaleNetwork",
+    "url": "https://shupogaki.moe",
+    "slug": "schalenetwork",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1543,
+    "name": "Siyah Melek",
+    "url": "https://siyahmelek.my",
+    "slug": "siyahmelek2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -50944,6 +51126,19 @@
     "name": "PandaToons",
     "url": "https://pandatoons.com/",
     "slug": "pandatoons",
+    "section": "Manhwa Reading",
+    "category": "manhwa",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manhwa, Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 60,
+    "name": "Fropi",
+    "url": "https://fropi.net/",
+    "slug": "fropi",
     "section": "Manhwa Reading",
     "category": "manhwa",
     "pricing": "free*",
@@ -68985,6 +69180,36 @@
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": [
       "IT"
+    ]
+  },
+  {
+    "rank": 967,
+    "name": "hdhub4u",
+    "url": "https://new7.hdhub4u.cl/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 968,
+    "name": "KMMovies",
+    "url": "https://kmmovies.cfd/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
     ]
   },
   {
