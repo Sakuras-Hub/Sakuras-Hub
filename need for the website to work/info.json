@@ -10233,6 +10233,62 @@
     "countries": []
   },
   {
+    "rank": 350,
+    "name": "animeflv",
+    "url": "https://vww.animeflv.one/",
+    "slug": "animeflv",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "ES"
+    ]
+  },
+  {
+    "rank": 351,
+    "name": "animesaturn",
+    "url": "https://www.animesaturn.net/",
+    "slug": "animesaturn",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 352,
+    "name": "jjba",
+    "url": "https://jjba.lol/",
+    "slug": "jjba",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 353,
+    "name": "Kagane",
+    "url": "https://kagane.si/",
+    "slug": "kagane2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -24017,6 +24073,19 @@
     "countries": []
   },
   {
+    "rank": 522,
+    "name": "Streamo",
+    "url": "https://streamo.st/",
+    "slug": "streamo2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "2of3 by Ente",
     "url": "https://2of3.ente.com",
@@ -30206,6 +30275,21 @@
     "emoji": "",
     "tags": "Live TV, Sports, Streaming, Free",
     "countries": []
+  },
+  {
+    "rank": 213,
+    "name": "minhatela",
+    "url": "https://minhatela.xyz/",
+    "slug": "minhatela",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": [
+      "BR"
+    ]
   },
   {
     "url": "https://mangaball.net/",
@@ -50605,6 +50689,175 @@
     "countries": []
   },
   {
+    "rank": 1562,
+    "name": "BRScans",
+    "url": "https://brscans.vercel.app",
+    "slug": "brscans",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1563,
+    "name": "Coffee Manga (Unoriginal)",
+    "url": "https://coffeemanga.net",
+    "slug": "coffeemangaunoriginal",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1564,
+    "name": "HongTraTeam",
+    "url": "https://hongtrateam.com",
+    "slug": "hongtrateam",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1565,
+    "name": "LectorTMO (unoriginal)",
+    "url": "https://lectortmo.vip",
+    "slug": "lectortmounoriginal",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1566,
+    "name": "MangaRaw",
+    "url": "https://mangaraw.co.uk",
+    "slug": "mangaraw",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1567,
+    "name": "MangaTik",
+    "url": "https://mangatik.com",
+    "slug": "mangatik",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1568,
+    "name": "NavyTeam",
+    "url": "https://navyteamz.com",
+    "slug": "navyteam",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1569,
+    "name": "Pzykosis666HFansub",
+    "url": "https://lector.pzykosis666hfansub.com",
+    "slug": "pzykosis666hfansub",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1570,
+    "name": "QuaDaoCute",
+    "url": "https://qadcuteo.cc",
+    "slug": "quadaocute",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1571,
+    "name": "Rùa Hấp Chanh Dây",
+    "url": "https://ruahapchanhday2.com",
+    "slug": "rahpchanhdy",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1572,
+    "name": "SoraRaw",
+    "url": "https://soraraw.com",
+    "slug": "soraraw",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1573,
+    "name": "Utifa",
+    "url": "https://bx.yaimer.com",
+    "slug": "utifa",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1574,
+    "name": "Webtoonia",
+    "url": "https://webtoonia.fun",
+    "slug": "webtoonia",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -69607,6 +69860,77 @@
     "countries": []
   },
   {
+    "rank": 977,
+    "name": "AniCine",
+    "url": "https://anicine.sbs/",
+    "slug": "anicine2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 978,
+    "name": "cinesouza",
+    "url": "https://cinesouza.online/",
+    "slug": "cinesouza",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "BR"
+    ]
+  },
+  {
+    "rank": 979,
+    "name": "ivyflix",
+    "url": "https://www.ivyflix.com/",
+    "slug": "ivyflix",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "KR"
+    ]
+  },
+  {
+    "rank": 980,
+    "name": "moviewala",
+    "url": "https://moviewala.tv/",
+    "slug": "moviewala",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 981,
+    "name": "rivo",
+    "url": "https://rivo.st/",
+    "slug": "rivo",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -84603,6 +84927,19 @@
     "name": "⁠Aftergleam",
     "url": "https://aftergleam.app/",
     "slug": "aftergleam",
+    "section": "Novel Reading",
+    "category": "novel",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Novel, Light Novel, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 558,
+    "name": "Novelito",
+    "url": "https://noveli.to/",
+    "slug": "novelito",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
