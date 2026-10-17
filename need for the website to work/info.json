@@ -50858,6 +50858,136 @@
     "countries": []
   },
   {
+    "rank": 1575,
+    "name": "KaliScan.org (unoriginal)",
+    "url": "https://kaliscan.org",
+    "slug": "kaliscanorgunoriginal",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1576,
+    "name": "LavibitWindroom",
+    "url": "https://lavibitwindroomgl.vercel.app",
+    "slug": "lavibitwindroom",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1577,
+    "name": "MangaMori",
+    "url": "https://mangamori.dev",
+    "slug": "mangamori",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1578,
+    "name": "ManhwaUS",
+    "url": "https://manhwaus.net",
+    "slug": "manhwaus",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1579,
+    "name": "ProComic",
+    "url": "https://procomic.pro",
+    "slug": "procomic",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1580,
+    "name": "Read Maid Sama Manga Online",
+    "url": "https://w14.maid-sama.com",
+    "slug": "readmaidsamamangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1581,
+    "name": "Read The Exiled Heavy Knight Manga Online",
+    "url": "https://w2.theexiledheavyknight.com",
+    "slug": "readtheexiledheavyknightmangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1582,
+    "name": "ReadManga18",
+    "url": "https://readmanga18.com",
+    "slug": "readmanga18",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1583,
+    "name": "RuriDragon Manga Online",
+    "url": "https://w2.ruridragon.com",
+    "slug": "ruridragonmangaonline",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1584,
+    "name": "Temple Scan",
+    "url": "https://aedexnox.syakaihoken-web.com",
+    "slug": "templescan2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -56908,6 +57038,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Music, Audio, Free",
+    "countries": []
+  },
+  {
+    "rank": 396,
+    "name": "⁠kindle-weather-dashboard",
+    "url": "https://kindle.hrincar.eu/weather/config.html",
+    "slug": "kindleweatherdashboard",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Reading, Free",
     "countries": []
   },
   {
@@ -69931,6 +70074,107 @@
     "countries": []
   },
   {
+    "rank": 982,
+    "name": "Bollyflix",
+    "url": "https://bollyflix1.lol/",
+    "slug": "bollyflix2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 983,
+    "name": "cineruv",
+    "url": "https://cineruv.website/",
+    "slug": "cineruv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 984,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.onl/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 985,
+    "name": "Ev01",
+    "url": "https://ev01.ws/",
+    "slug": "ev01",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 986,
+    "name": "hdhub4u",
+    "url": "https://new8.hdhub4u.cl/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 987,
+    "name": "KMMovies",
+    "url": "https://k1.kmmovies.cam/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 988,
+    "name": "MovieRulz",
+    "url": "https://www.5movierulz.recipes/",
+    "slug": "movierulz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -76726,6 +76970,32 @@
     "name": "Tiny Desk Concerts",
     "url": "https://www.npr.org/series/tiny-desk-concerts/",
     "slug": "tinydeskconcerts",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 522,
+    "name": "Playlister",
+    "url": "https://playlister.cc/",
+    "slug": "playlister",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 523,
+    "name": "⁠CYBROX",
+    "url": "https://cybrox.pro/",
+    "slug": "cybrox",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
