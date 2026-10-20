@@ -15646,6 +15646,19 @@
     "countries": []
   },
   {
+    "rank": 141,
+    "name": "NovelDB",
+    "url": "https://noveldb.pages.dev/",
+    "slug": "noveldb",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "Alacritty",
     "url": "https://alacritty.org/",
@@ -28116,6 +28129,19 @@
     "countries": [
       "BR"
     ]
+  },
+  {
+    "rank": 214,
+    "name": "⁠CMVTV",
+    "url": "https://cmvh.lovable.app/",
+    "slug": "cmvtv2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
   },
   {
     "url": "https://mangaball.net/",
@@ -47257,6 +47283,32 @@
     "countries": []
   },
   {
+    "rank": 1615,
+    "name": "Manga Rw",
+    "url": "https://mangarw.com",
+    "slug": "mangarw",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1616,
+    "name": "Sunset Manga",
+    "url": "https://sunsetscans.com.tr",
+    "slug": "sunsetmanga2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -53055,6 +53107,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 397,
+    "name": "Kakeizu",
+    "url": "https://kakeizu.moe/",
+    "slug": "kakeizu",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Extension, Utility, Free",
     "countries": []
   },
   {
@@ -65444,6 +65509,64 @@
     ]
   },
   {
+    "rank": 994,
+    "name": "altadefinizionex",
+    "url": "https://altadefinizionex.forum/",
+    "slug": "altadefinizionex2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 995,
+    "name": "carateen",
+    "url": "https://topcinema.film/",
+    "slug": "carateen2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 996,
+    "name": "Cineblog01",
+    "url": "https://cineblog001.loan/",
+    "slug": "cineblog012",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 997,
+    "name": "Cno.tv",
+    "url": "https://cno.to/",
+    "slug": "cnotv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -71911,6 +72034,19 @@
     "name": "⁠CYBROX",
     "url": "https://cybrox.pro/",
     "slug": "cybrox",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 524,
+    "name": "⁠Squidify Desktop",
+    "url": "https://github.com/kobayashi90/squidify-desktop",
+    "slug": "squidifydesktop",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
