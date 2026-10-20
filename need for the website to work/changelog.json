@@ -22,6 +22,51 @@
     ]
   },
   {
+    "version": "Sneaker Resell Simulator Shoe Sniper",
+    "date": "2026-10-20",
+    "changes": [
+      "• StockY now loads at boot, before the UI is built — the request is already in flight while SakuraUI loads, and the manual \"refresh first\" step is gone",
+      "• StockY is cached on disk (30 min) so re-joins start with prices instantly; it auto-refreshes every 5 min, only ever has ONE request in flight, and still accepts a late reply",
+      "• bad StockY replies can't hurt you — failures retry with backoff, and a reply under 25% of the current cache size is rejected so a half-empty response never replaces good prices",
+      "• scan loop fixed: it now paces only after an actual buy attempt — the old per-slot delay cost ~9s per cycle at 180 slots",
+      "• snipe now reacts instantly to PRICE DROPS on shoes that are already listed, not only new listings",
+      "• buys confirm in the background via inventory events — the scan loop never stalls waiting on a purchase, and the per-buy connection leak is gone",
+      "• every auto-buy passes one gate: listing unchanged, price ≥ $1, affordable (counting buys still in flight), StockY loaded, optional session spend cap, per-slot cooldown, 30ms fire spacing",
+      "• safety pause: 5 unverified buys in a row (shoe still there) pauses buying for 15s — losing a shoe to another player does NOT count against it",
+      "• price 0 / unreplicated price can no longer slip through as a \"free\" shoe in any mode",
+      "• money gate only enforces on a named cash stat (Cash / Money / Bucks / Coins / Balance) — set MoneyStatName if your game uses another",
+      "• log writes are buffered (flush every 2s) instead of rewriting the whole file twice a second, and repeated skip warnings are throttled",
+      "• boot uses bounded waits with clear errors instead of hanging forever on a missing remote or inventory",
+      "• kill switch now responds in ~2s (was up to 60s)",
+      "• new diagnostics: _sisyphus_srs_status.json every 2s, getgenv().SRS_API, live-tunable SRS_GATES, opt-in remote spy",
+      "• GUI rewritten in plain English on every tab — START HERE steps, a \"Not buying anything?\" checklist, and a live \"Why shoes were skipped\" line",
+      "• new Safety Limits section in Settings — can't-afford guard, cash reserve and session spend cap (these reset on rejoin)",
+      "• Configs tab now says what a config holds (settings + blacklist + per-shoe caps); all"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
+    "date": "2026-10-20",
+    "changes": [
+      "• prediction is now wired into EVERY sell path — UI Auto Sell, normal Full Auto, PC Full Auto and the external sell command all use the same Perfect-zone listener + adaptive latency controller",
+      "• live: 20 sales/min, 100% Perfect over the recent 24-sale window, adaptive lead ~23.7 ms (Perfect 1.1x / Good 1.0x / Miss 0.85x)",
+      "• sells only through the NPC “Sell Sneaker” prompt and the real green bar — the cashier bulk-sell shortcut (~55% payout) is gone",
+      "• sell walker fixed: walks to the NPC floor, stands 6.5 studs clear, prefers an enabled prompt, waits 5s for the bar, rejects NPCs 2,000+ studs away, and respawns a voided character",
+      "• inventory now counts total pairs, not UI stacks — the old 50-pair “inventory full” cap is gone",
+      "• Full Auto sells when the buy-budget snapshot is actually spent (or offers keep getting rejected) — worker income can no longer extend a buy phase",
+      "• PC shop now opens during buying and closes with the real ExitButton before selling / on stop — both normal Full Auto and PC Full Auto; a leftover sell bar is closed before any shop refresh",
+      "• every stop, mode switch and teleport now closes the sell bar + PC screen; a 6s post-stop verifier closes the bar again if an in-flight NPC prompt reopens it",
+      "• the visible cursor is 100% drawn — offer focus, sell-bar hover + press flash, NPC focus, idle drift; the real Windows mouse is never moved, so the script UI stays clickable",
+      "• auto-unlock is opt-in and OFF by default; it uses the slot’s real UnlockButton and the game’s progress-indexed u3 price table, not the stale on-screen label",
+      "• phone drops: sold-out cards skipped, 3s BuyShoesApp timeout (measured RTT 1.0–1.9s), phone drops take priority over the Limited Shop",
+      "• rarity-only blacklist with the game’s real colours — Common, Uncommon, Epic, Legendary, Legacy, Special, Limited, Grail",
+      "• daily quests are banked and claimed only while 2x is live, so the window stacks instead of being wasted",
+      "• SakuraUI v4.7 window, real lucide/gravity icons, K toggle / ReopenDot, and Full Auto reopens the UI so the stop controls are always visible",
+      "• sellToNPC is pcall-guarded in every sell loop — one bad NPC can’t kill the thread or leave Settings.Sell stuck on",
+      "more fixes nothing big"
+    ]
+  },
+  {
     "version": "Sneaker Resell Simulator shoe sniper",
     "date": "2026-10-20",
     "changes": [
