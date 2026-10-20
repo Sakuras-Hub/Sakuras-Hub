@@ -1,5 +1,27 @@
 [
   {
+    "version": "test",
+    "date": "2026-10-20",
+    "changes": [
+      "• prediction is now wired into EVERY sell path — UI Auto Sell, normal Full Auto, PC Full Auto and the external sell command all use the same Perfect-zone listener + adaptive latency controller",
+      "• live: 20 sales/min, 100% Perfect over the recent 24-sale window, adaptive lead ~23.7 ms (Perfect 1.1x / Good 1.0x / Miss 0.85x)",
+      "• sells only through the NPC “Sell Sneaker” prompt and the real green bar — the cashier bulk-sell shortcut (~55% payout) is gone",
+      "• sell walker fixed: walks to the NPC floor, stands 6.5 studs clear, prefers an enabled prompt, waits 5s for the bar, rejects NPCs 2,000+ studs away, and respawns a voided character",
+      "• inventory now counts total pairs, not UI stacks — the old 50-pair “inventory full” cap is gone",
+      "• Full Auto sells when the buy-budget snapshot is actually spent (or offers keep getting rejected) — worker income can no longer extend a buy phase",
+      "• PC shop now opens during buying and closes with the real ExitButton before selling / on stop — both normal Full Auto and PC Full Auto; a leftover sell bar is closed before any shop refresh",
+      "• every stop, mode switch and teleport now closes the sell bar + PC screen; a 6s post-stop verifier closes the bar again if an in-flight NPC prompt reopens it",
+      "• the visible cursor is 100% drawn — offer focus, sell-bar hover + press flash, NPC focus, idle drift; the real Windows mouse is never moved, so the script UI stays clickable",
+      "• auto-unlock is opt-in and OFF by default; it uses the slot’s real UnlockButton and the game’s progress-indexed u3 price table, not the stale on-screen label",
+      "• phone drops: sold-out cards skipped, 3s BuyShoesApp timeout (measured RTT 1.0–1.9s), phone drops take priority over the Limited Shop",
+      "• rarity-only blacklist with the game’s real colours — Common, Uncommon, Epic, Legendary, Legacy, Special, Limited, Grail",
+      "• daily quests are banked and claimed only while 2x is live, so the window stacks instead of being wasted",
+      "• SakuraUI v4.7 window, real lucide/gravity icons, K toggle / ReopenDot, and Full Auto reopens the UI so the stop controls are always visible",
+      "• sellToNPC is pcall-guarded in every sell loop — one bad NPC can’t kill the thread or leave Settings.Sell stuck on",
+      "more fixes nothing big"
+    ]
+  },
+  {
     "version": "Sneaker Resell Simulator",
     "date": "2026-08-20",
     "changes": [
