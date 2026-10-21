@@ -65567,6 +65567,51 @@
     "countries": []
   },
   {
+    "rank": 998,
+    "name": "Bollyflix",
+    "url": "https://bollyflix.co.za/",
+    "slug": "bollyflix2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 999,
+    "name": "KMMovies",
+    "url": "https://kmmovies.cam/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 1000,
+    "name": "streamingcommunityz",
+    "url": "https://streamingcommunityz.build/",
+    "slug": "streamingcommunityz",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -81043,6 +81088,19 @@
     "name": "English Dubbed",
     "url": "https://english-dubbed.com/",
     "slug": "englishdubbed",
+    "section": "Release Schedule",
+    "category": "schedule",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Schedule, Anime, Release, Calendar",
+    "countries": []
+  },
+  {
+    "rank": 15,
+    "name": "Weekly Anime",
+    "url": "https://weeklyanime.com/",
+    "slug": "weeklyanime",
     "section": "Release Schedule",
     "category": "schedule",
     "pricing": "free*",
