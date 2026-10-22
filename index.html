@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sakura's Hub — merged preview</title>
-<link rel="icon" href="https://i.imgur.com/X2drtCc.jpeg" type="image/jpeg">
+<title>Sakura's Hub</title>
+<meta name="description" content="A curated directory of free streaming, reading, gaming and privacy tools — plus script, status and security tools.">
+<meta name="theme-color" content="#0d0a1a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sakura's Hub">
+<meta property="og:description" content="A curated directory of free streaming, reading, gaming and privacy tools.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/icon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#ff2fd6;--accent-rgb:255,47,214;--purple:#c58aff;--pink:#ff9df0;--bg:#0d0a1a;--muted:#9b93b8;--text:#f5f2ff;--ok:#22c55e;--danger:#ff6677}
+:root{--accent:#ff2fd6;--accent-rgb:255,47,214;--purple:#c58aff;--pink:#ff9df0;--bg:#0d0a1a;--muted:#9b93b8;--text:#f5f2ff;--ok:#22c55e;--danger:#ff6677;--danger-rgb:255,102,119;--suit-surface:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));--suit-border:rgba(255,255,255,.09);--suit-input-bg:rgba(255,255,255,.05);--suit-input-border:rgba(255,255,255,.12);--suit-vweak:var(--danger);--suit-weak:#ffb454;--suit-fair:#ffd32a;--suit-good:var(--ok);--suit-strong:var(--purple)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--text);min-height:100vh;line-height:1.55;overflow-x:hidden;background:radial-gradient(ellipse at 20% 0%,rgba(var(--accent-rgb),.10),transparent 55%),radial-gradient(ellipse at 80% 10%,rgba(139,92,246,.10),transparent 50%),var(--bg)}
@@ -17,7 +24,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);min-height:100vh
 ::-webkit-scrollbar{width:10px}
 ::-webkit-scrollbar-track{background:#141021}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(var(--accent-rgb),.6),rgba(139,92,246,.6));border-radius:5px}
-.bg-particle{position:fixed;top:0;z-index:0;pointer-events:none;font-size:18px;text-shadow:0 0 12px rgba(255,0,255,.12);opacity:.25;user-select:none;display:block;will-change:transform,top,left}
+.bg-particle{position:fixed;top:0;z-index:0;pointer-events:none;font-size:18px;text-shadow:0 0 12px rgba(var(--accent-rgb),.12);opacity:.25;user-select:none;display:block;will-change:transform,top,left}
 .petal{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.5}
 .petal.p1{width:340px;height:340px;top:-90px;left:-70px;background:rgba(var(--accent-rgb),.34)}
 .petal.p2{width:300px;height:300px;top:28%;right:-110px;background:rgba(139,92,246,.36)}
@@ -147,27 +154,10 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
 .fl-toggle.danger.active{color:#ffb3bd;background:rgba(255,102,119,.18);border-color:rgba(255,102,119,.5)}
 .preset-country{border-color:rgba(197,138,255,.4)!important;color:#d7c6ff!important;background:rgba(197,138,255,.08)!important}
 
-/* ---- merged sections (wrap around snippet roots) ---- */
+/* ---- embedded app views (Suit / Script Hub / Guides / Monitor) ---- */
 .app-section{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:36px 28px 56px;border-top:1px solid rgba(255,255,255,.06)}
 .app-h2{font-size:1.25rem;font-weight:800;letter-spacing:-.2px;margin-bottom:4px}
 .app-sub{font-size:.8rem;color:var(--muted);margin:0 0 20px}
-
-/* Sakura's Suit — restyled to the target dark-glassmorphism design system.
-   Target tokens: --accent:#ff2fd6, --accent-rgb:255,47,214, --purple:#c58aff,
-   --pink:#ff9df0, --bg:#0d0a1a, --muted:#9b93b8, --text:#f5f2ff, --ok:#22c55e,
-   --danger:#ff6677. Font is Inter (loaded by the target page). */
-:root {
-  --danger-rgb: 255, 102, 119;
-  --suit-surface: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  --suit-border: rgba(255,255,255,.09);
-  --suit-input-bg: rgba(255,255,255,.05);
-  --suit-input-border: rgba(255,255,255,.12);
-  --suit-vweak: var(--danger);
-  --suit-weak: #ffb454;
-  --suit-fair: #ffd32a;
-  --suit-good: var(--ok);
-  --suit-strong: var(--purple);
-}
 
 @media (max-width: 640px) {
   .suit-embed { min-height: calc(100dvh - 160px); }
@@ -215,7 +205,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
 .suit-panel .suit-results .suit-listbox { flex: 1; max-height: none; min-height: 100px; }
 .vault-main { flex: 1; }
 
-/* Standalone panel visibility (the target page may not style .panel) */
+/* Standalone panel visibility */
 .suit-panel { display: none; }
 .suit-panel.active { display: block; }
 
@@ -314,18 +304,18 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   .suit-vault-detail { border-top: none; border-left: 1px solid var(--suit-border); width: 280px; flex-shrink: 0; }
 }
 
-/* Suit toast (scoped by id so it cannot collide with the target page's own toast) */
+/* Suit toast */
 #suit-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(16px); background: var(--suit-surface); color: var(--text); padding: 14px 26px; font-weight: 600; font-size: .76rem; opacity: 0; transition: all .35s; pointer-events: none; z-index: 9999; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; white-space: nowrap; max-width: 90vw; text-align: center; border-radius: 999px; border: 1px solid var(--suit-border); }
 #suit-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Bulk email progress bar (moved out of the inline <style> ROOT embedded in HTML) */
+/* Bulk email progress bar */
 #suit-bulk-progress { -webkit-appearance: none; appearance: none; border: none; background: rgba(255,255,255,.06); border-radius: 999px; height: 6px; width: 100%; }
 #suit-bulk-progress::-webkit-progress-bar { background: rgba(255,255,255,.06); border-radius: 999px; }
 #suit-bulk-progress::-webkit-progress-value { background: var(--accent); border-radius: 999px; }
 #suit-bulk-progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
 
 #guides.helpful-page { max-width: 100%; margin: 0 auto; padding: 8px 0; }
-#guides.helpful-page h2 { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 4px; letter-spacing: -0.3px; }
+#guides.helpful-page h2 { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 4px; letter-spacing: -0.2px; }
 .helpful-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 24px; }
 
 .welcome-hero { text-align: center; padding: 40px 20px 28px; }
@@ -474,12 +464,12 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   --surface: #151225;
   --radius: 9px;
   --radius-lg: 13px;
-  --border: rgba(255,0,255,0.12);
-  --border-hover: rgba(255,0,255,0.40);
+  --border: rgba(var(--accent-rgb),0.12);
+  --border-hover: rgba(var(--accent-rgb),0.40);
   --muted2: #524d66;
 }
 #script-hub.script-page { max-width: 100%; margin: 0 auto; padding: 8px 0; }
-#script-hub h2 { font-family: 'Syne', 'Inter', sans-serif; font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 2px; letter-spacing: -0.5px; }
+#script-hub h2 { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.2px; }
 #script-hub .script-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
 #script-hub .script-code-block { position: relative; background: #0a0a14; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 16px; margin-bottom: 24px; overflow-x: auto; }
 #script-hub .script-code-block pre { margin: 0; font-family: 'Inter', sans-serif; font-size: 0.78rem; line-height: 1.65; color: var(--text); white-space: pre-wrap; word-break: break-word; }
@@ -525,7 +515,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   padding: 12px 16px; cursor: pointer; user-select: none;
   background: rgba(17, 15, 28, 0.7); border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  font-family: 'Syne', 'Inter', sans-serif; font-size: 0.85rem; font-weight: 800;
+  font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 800;
   color: #fff; letter-spacing: -0.2px;
 }
 #script-hub .sf-acc-header:hover { border-color: var(--border-hover); background: rgba(17, 15, 28, 0.9); }
@@ -581,7 +571,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
 #script-hub .cl-changes { margin: 0; padding-left: 16px; }
 #script-hub .cl-changes li { font-size: 0.8rem; line-height: 1.7; color: rgba(226,221,242,0.72); }
 
-/* ── Sub-tabbar (renamed from .tabbar/.tab-btn to avoid collision with target page) ── */
+/* ── Sub-tabbar ── */
 #script-hub .script-tabbar {
   display: flex;
   align-items: stretch;
@@ -739,8 +729,8 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   --surface: #151225;
   --radius: 9px;
   --radius-lg: 13px;
-  --border: rgba(255,0,255,0.12);
-  --border-hover: rgba(255,0,255,0.40);
+  --border: rgba(var(--accent-rgb),0.12);
+  --border-hover: rgba(var(--accent-rgb),0.40);
   --muted2: #524d66;
   --surface2: rgba(255,255,255,0.04);
 }
@@ -770,7 +760,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   .monitor-view .monitor-wrap td {
     padding: 6px 10px; border-bottom: 1px solid var(--border);
   }
-  .monitor-view .monitor-wrap tr:hover td { background: rgba(255,0,255,0.03); }
+  .monitor-view .monitor-wrap tr:hover td { background: rgba(var(--accent-rgb),0.03); }
   .monitor-view .monitor-wrap .st-cell { white-space: nowrap; }
   .monitor-view .monitor-wrap .st-cell .st-dot { font-size: 0.85rem; }
   .monitor-view .monitor-wrap .st-cell .st-label { font-size: 0.7rem; font-weight: 600; margin-left: 3px; }
@@ -830,7 +820,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   <div class="stats" id="stats">
     <div class="stat"><b id="stSites">…</b><span>Sites</span></div>
     <div class="stat"><b id="stCats">…</b><span>Categories</span></div>
-    <div class="stat"><b>100%</b><span>Free</span></div>
+    <div class="stat"><b id="stFree">…</b><span>Free</span></div>
   </div>
   <div class="hero-links">
     <a href="#directory" data-view="directory">Browse the directory ↓</a>
@@ -1085,7 +1075,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
     </div>
   </div>
 
-  <div class="toast" id="suit-toast"></div>
+  <div class="toast" id="suit-toast" role="status" aria-live="polite"></div>
 </div>
 </section>
 </div><!-- /view-suit -->
@@ -1093,16 +1083,16 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
 <div class="view" id="view-script-hub">
   <div class="app-section" id="script-hub-wrap">
     <section id="script-hub" class="script-page">
-  <div class="script-tabbar" role="tablist">
-    <button class="script-tab-btn active" data-script-subtab="script" role="tab" aria-selected="true">📜 Script</button>
-    <button class="script-tab-btn" data-script-subtab="features" role="tab" aria-selected="false">⭐ Features</button>
-    <button class="script-tab-btn" data-script-subtab="changelog" role="tab" aria-selected="false">📋 Changelog</button>
-    <button class="script-tab-btn" data-script-subtab="live" role="tab" aria-selected="false">🖥️ Executors</button>
+      <div class="script-tabbar" role="tablist">
+        <button class="script-tab-btn active" data-script-subtab="script" role="tab" aria-selected="true">📜 Script</button>
+        <button class="script-tab-btn" data-script-subtab="features" role="tab" aria-selected="false">⭐ Features</button>
+        <button class="script-tab-btn" data-script-subtab="changelog" role="tab" aria-selected="false">📋 Changelog</button>
+        <button class="script-tab-btn" data-script-subtab="live" role="tab" aria-selected="false">🖥️ Executors</button>
+      </div>
+      <div id="script-hub-content"></div>
+    </section>
   </div>
-  <div id="script-hub-content"></div>
-</section>
-  </div>
-</div>
+</div><!-- /view-script-hub -->
 
 <div class="view" id="view-guides">
 <div class="app-section" id="guides-wrap">
@@ -1229,7 +1219,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
             <div class="helpful-entry-title">Books, Audiobooks &amp; Comics</div>
           </div>
         </div>
-        <div class="helpful-entry-body">Anna's Archive is the biggest book search engine: <a href="https://annas-archive.org" target="_blank" rel="noopener">annas-archive.org</a>. It indexes millions of books, papers, and comics. Search a title, pick a format, download. That is the whole workflow.<br><br>Pick the right format. EPUB for e-readers and phones. MOBI or KFX for Kindles. PDF for tablets, comics, and anything with fixed layout. If a book only comes in one format, convert it.<br><br>Calibre manages your library: <a href="https://calibre-ebook.com" target="_blank" rel="noopener">calibre-ebook.com</a>. It organizes books, converts between formats, and syncs to e-readers. Install it, point it at your downloads folder, and let it sort. It is free and open source.<br><br>Audiobooks come as .m4b or .mp3 files. .m4b supports chapters, .mp3 is plain audio. For long books, .m4b is better because you can skip chapters. Play them with any media player.<br><br>Comics come as CBR or CBZ files. Those are just zip archives of images with a different extension. Read them with a comic reader app. Calibre can also read them if you prefer one app.<br><br>Check the file size before downloading a book. A novel is 1 to 5 MB as EPUB. A 200 MB EPUB is probably a scan or a fake. Comics are bigger, 50 to 500 MB per volume, because they are images.</div>
+        <div class="helpful-entry-body">Anna's Archive is the biggest book search engine: <a href="https://annas-archive.li" target="_blank" rel="noopener">annas-archive.li</a>. It indexes millions of books, papers, and comics. Search a title, pick a format, download. That is the whole workflow.<br><br>Pick the right format. EPUB for e-readers and phones. MOBI or KFX for Kindles. PDF for tablets, comics, and anything with fixed layout. If a book only comes in one format, convert it.<br><br>Calibre manages your library: <a href="https://calibre-ebook.com" target="_blank" rel="noopener">calibre-ebook.com</a>. It organizes books, converts between formats, and syncs to e-readers. Install it, point it at your downloads folder, and let it sort. It is free and open source.<br><br>Audiobooks come as .m4b or .mp3 files. .m4b supports chapters, .mp3 is plain audio. For long books, .m4b is better because you can skip chapters. Play them with any media player.<br><br>Comics come as CBR or CBZ files. Those are just zip archives of images with a different extension. Read them with a comic reader app. Calibre can also read them if you prefer one app.<br><br>Check the file size before downloading a book. A novel is 1 to 5 MB as EPUB. A 200 MB EPUB is probably a scan or a fake. Comics are bigger, 50 to 500 MB per volume, because they are images.</div>
       </div>
 
       <div class="helpful-entry">
@@ -1343,7 +1333,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
             <div class="helpful-entry-title">*arr Automation Stack</div>
           </div>
         </div>
-        <div class="helpful-entry-body">The *arr stack is a set of open-source apps that automate the download pipeline. Sonarr handles TV, Radarr handles movies, Prowlarr manages your indexers, and Bazarr fetches subtitles. All of them coordinate through one download client.<br><br>You add a show to Sonarr. It searches your configured indexers, picks the best release, sends it to the download client, waits for completion, renames the file, and moves it into your media library. Bazarr grabs matching subtitles. New episodes download themselves from then on.<br><br>The stack needs a download client underneath. qBittorrent at <a href="https://qbittorrent.org" target="_blank" rel="noopener">qbittorrent.org</a> is the usual choice for torrents. A media server like Jellyfin or Plex sits on top and serves the library to your TV and phone.<br><br>Official docs live at <a href="https://servarr.com" target="_blank" rel="noopener">servarr.com</a>. Configuration guides with quality profiles and naming schemes are at <a href="https://trash-guides.info" target="_blank" rel="noopener">trash-guides.info</a>. Expect a real setup session: install each app, wire them together, set up paths, and pick quality profiles.<br><br>The software is free. You pay for the hardware it runs on, a PC, NAS, or seedbox, plus whatever your indexers and download client cost. After setup it runs unattended.<br><br>This is not a beginner project. You will debug Docker containers, permissions, and path mappings. Start with one app, Sonarr, get it stable, then add the rest.</div>
+        <div class="helpful-entry-body">The *arr stack is a set of open-source apps that automate the download pipeline. Sonarr handles TV, Radarr handles movies, Prowlarr manages your indexers, and Bazarr fetches subtitles. All of them coordinate through one download client.<br><br>You add a show to Sonarr. It searches your configured indexers, picks the best release, sends it to the download client, waits for completion, renames the file, and moves it into your media library. Bazarr grabs matching subtitles. New episodes download themselves from then on.<br><br>The stack needs a download client underneath. qBittorrent at <a href="https://qbittorrent.org" target="_blank" rel="noopener">qbittorrent.org</a> is the usual choice for torrents. A media server like Jellyfin or Plex sits on top and serves the library to your TV and phone.<br><br>Official docs live at <a href="https://wiki.servarr.com" target="_blank" rel="noopener">wiki.servarr.com</a>. Configuration guides with quality profiles and naming schemes are at <a href="https://trash-guides.info" target="_blank" rel="noopener">trash-guides.info</a>. Expect a real setup session: install each app, wire them together, set up paths, and pick quality profiles.<br><br>The software is free. You pay for the hardware it runs on, a PC, NAS, or seedbox, plus whatever your indexers and download client cost. After setup it runs unattended.<br><br>This is not a beginner project. You will debug Docker containers, permissions, and path mappings. Start with one app, Sonarr, get it stable, then add the rest.</div>
       </div>
 
       <div class="helpful-entry">
@@ -1501,7 +1491,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
             <div class="helpful-entry-title">Steam Deck Games</div>
           </div>
         </div>
-        <div class="helpful-entry-body">The Steam Deck is a handheld PC. Anything that runs on Linux can run on it. SteamOS ships with a Desktop Mode that gives you a full desktop. Switch to it from the power menu.<br><br>Heroic Games Launcher handles Epic and GOG libraries. Install it from the Discover store in Desktop Mode. It logs into both stores and downloads your freebies without the Epic launcher overhead. <a href="https://heroicgameslauncher.github.io" target="_blank" rel="noopener">heroicgameslauncher.github.io</a><br><br>Lutris is the game manager for everything else. It tracks installers, runners, and library entries in one place. <a href="https://lutris.net" target="_blank" rel="noopener">lutris.net</a>. Use it for games that do not come from Steam, Epic, or GOG.<br><br>Repacks from the directory run on Deck. They are Windows installers, so Proton does the translation. Proton is built into Steam. Add the installer as a non-Steam game, run it once, then point the shortcut at the installed exe. Check the game's ProtonDB rating before committing to a 20GB download.<br><br>Emulation on Deck is strong. RetroArch runs great and installs from Discover. Dolphin and PCSX2 have Linux builds that work in Desktop Mode. The Deck handles PS2 and GameCube at full speed.<br><br>Storage fills fast. 512GB sounds like a lot until you install three AAA games and a PS2 library. Use a microSD card for ROMs and older games. Buy A2-rated cards. A1 cards are slower and stutter on big reads.<br><br>Offline mode works, but plan ahead. Steam needs to verify the device before offline play. Launch each game once while online, then offline mode is reliable. Heroic and Lutris games need their launchers started once online too.</div>
+        <div class="helpful-entry-body">The Steam Deck is a handheld PC. Anything that runs on Linux can run on it. SteamOS ships with a Desktop Mode that gives you a full desktop. Switch to it from the power menu.<br><br>Heroic Games Launcher handles Epic and GOG libraries. Install it from the Discover store in Desktop Mode. It logs into both stores and downloads your freebies without the Epic launcher overhead. <a href="https://heroicgameslauncher.com" target="_blank" rel="noopener">heroicgameslauncher.com</a><br><br>Lutris is the game manager for everything else. It tracks installers, runners, and library entries in one place. <a href="https://lutris.net" target="_blank" rel="noopener">lutris.net</a>. Use it for games that do not come from Steam, Epic, or GOG.<br><br>Repacks from the directory run on Deck. They are Windows installers, so Proton does the translation. Proton is built into Steam. Add the installer as a non-Steam game, run it once, then point the shortcut at the installed exe. Check the game's ProtonDB rating before committing to a 20GB download.<br><br>Emulation on Deck is strong. RetroArch runs great and installs from Discover. Dolphin and PCSX2 have Linux builds that work in Desktop Mode. The Deck handles PS2 and GameCube at full speed.<br><br>Storage fills fast. 512GB sounds like a lot until you install three AAA games and a PS2 library. Use a microSD card for ROMs and older games. Buy A2-rated cards. A1 cards are slower and stutter on big reads.<br><br>Offline mode works, but plan ahead. Steam needs to verify the device before offline play. Launch each game once while online, then offline mode is reliable. Heroic and Lutris games need their launchers started once online too.</div>
       </div>
 
       <div class="helpful-entry">
@@ -1538,11 +1528,9 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
 </section>
 </div><!-- /view-monitor -->
 
-<footer>🌸 Sakura's Hub · merged preview · layout from the redesign mockup · falling-blossom style from the overhaul · real directory data &middot; Suit &amp; Guides merged</footer>
-
-<div class="modal-overlay" id="modal">
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="adultTitle">
   <div class="dialog-box">
-    <h2>🔞 Adult content</h2>
+    <h2 id="adultTitle">🔞 Adult content</h2>
     <p>You must be 18 or older to view adult sections. Entering shows NSFW sites in the directory. Your browser history stays clean — this is only a page-load confirmation.</p>
     <div class="dialog-actions">
       <button class="btn-exit" id="modalExit" type="button">Exit</button>
@@ -1563,7 +1551,7 @@ footer{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:26px 2
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
@@ -1742,7 +1730,7 @@ function buildListCard(site){
   if (countryCodes.length) h += ' data-country="' + esc(countryCodes.join(',')) + '"';
   h += '>';
   h += '<span class="preset-dot"></span>';
-  h += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" data-host="' + getHost(site.url) + '" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
+  h += '<img class="preset-favicon" src="' + getFaviconUrl(site.url) + '" alt="' + esc(site.name) + '" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-host="' + getHost(site.url) + '" data-fallback="' + getCatEmoji(site) + '" onerror="faviconError(this)">';
   h += '<div class="preset-body">';
   h += '<div class="preset-top"><span class="preset-name">' + (site.emoji ? site.emoji + ' ' : '') + esc(site.name) + '</span><span class="preset-rank">#' + site.rank + '</span></div>';
   h += '<div class="preset-meta">';
@@ -1805,7 +1793,7 @@ var sites = null;      // raw list from info.json
 var groups = {};       // section -> array of sites
 var sectionOrder = []; // section names, CAT_META order first, rest alpha
 var nsfwSections = {}; // section -> true if all sites nsfw
-var labelGroups = [];  // merged display labels: [{label, firstKey, sections:[], nsfwOnly, total}]
+var labelGroups = [];  // display labels: [{label, firstKey, sections:[], nsfwOnly, total}]
 var activeTab = '__all__';
 var unlocked = false;
 var query = '';
@@ -1822,6 +1810,7 @@ var el = {
   stats: document.getElementById('stats'),
   stSites: document.getElementById('stSites'),
   stCats: document.getElementById('stCats'),
+  stFree: document.getElementById('stFree'),
   search: document.getElementById('searchInput'),
   adultBtn: document.getElementById('adultBtn'),
   modal: document.getElementById('modal'),
@@ -1942,6 +1931,9 @@ function build(list){
   el.stSites.textContent = sites.length.toLocaleString();
   el.stCats.textContent = labelGroups.length;
 
+  const nonFree = sites.filter(s => s.pricing && s.pricing !== 'free*' && s.pricing !== 'free').length;
+  el.stFree.textContent = Math.round((sites.length - nonFree) / sites.length * 1000) / 10 + '%';
+
   buildCountryMenu();
   renderTabs();
   renderGrid();
@@ -2038,23 +2030,41 @@ function initCategoryDropdown(){
 
 function initViewTabs(){
   var ids = ['directory', 'suit', 'script-hub', 'guides', 'monitor'];
-  function show(v){
+  function show(v, remember, syncMonitor){
+    if (ids.indexOf(v) === -1) v = 'directory';
     ids.forEach(function(id){
       var vEl = document.getElementById('view-' + id);
       if (vEl) vEl.classList.toggle('show', id === v);
     });
     document.querySelectorAll('.nav-links a[data-view]').forEach(function(a){
-      a.classList.toggle('active', a.getAttribute('data-view') === v);
+      var on = a.getAttribute('data-view') === v;
+      a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
     });
+    if (remember && location.hash !== '#' + v) history.pushState(null, '', '#' + v);
     window.scrollTo(0, 0);
-    if (typeof ensureMonitorActive === 'function') ensureMonitorActive(v === 'monitor');
+    if (syncMonitor !== false && typeof ensureMonitorActive === 'function') ensureMonitorActive(v === 'monitor');
+  }
+  function fromHash(){
+    var h = (location.hash || '').replace(/^#/, '');
+    return ids.indexOf(h) === -1 ? 'directory' : h;
   }
   document.querySelectorAll('[data-view]').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
-      show(a.getAttribute('data-view'));
+      show(a.getAttribute('data-view'), true);
     });
   });
+  window.addEventListener('popstate', function(){ show(fromHash()); });
+
+  /* Deep links: render the requested view on load. Monitor data is defined
+     further down this script, so its first activation is deferred. */
+  var initial = fromHash();
+  show(initial, false, initial !== 'monitor');
+  if (initial === 'monitor') {
+    setTimeout(function(){ if (typeof ensureMonitorActive === 'function') ensureMonitorActive(true); }, 0);
+  }
 }
 
 /* ---------- guide reader ---------- */
@@ -11824,8 +11834,11 @@ var MONITOR_DATA = {
 var monitorActive = false;
 var MONITOR_API_URL = 'https://sakura-monitor.fadded-market.workers.dev/status';
 var MONITOR_POLL_MS = 5 * 60 * 1000;
+var MONITOR_RETRY_MS = 30 * 1000;
 var monitorPollTimer = null;
 var monitorApiData = null;
+var monitorFetchInFlight = false;
+var monitorFetchFailedAt = 0;
 var monitorSearchTerm = '';
 var monitorCountryFilter = '';
 var CC_LABELS = { RU: '🇷🇺 Russia', IN: '🇮🇳 India', JP: '🇯🇵 Japan', PL: '🇵🇱 Poland', GB: '🇬🇧 United Kingdom', ID: '🇮🇩 Indonesia' };
@@ -11922,20 +11935,34 @@ function fetchMonitorData(showToast) {
     if (showToast) toast('Monitor API not configured — see SETUP.md', '#f59e0b');
     return Promise.resolve(false);
   }
+  // One request at a time, and back off after a failure so a dead endpoint
+  // cannot trigger an endless fetch -> render -> fetch loop.
+  if (monitorFetchInFlight) return Promise.resolve(false);
+  if (monitorFetchFailedAt && Date.now() - monitorFetchFailedAt < MONITOR_RETRY_MS) {
+    if (showToast) toast('Monitor API unreachable — showing cached data', '#f59e0b');
+    return Promise.resolve(false);
+  }
+  monitorFetchInFlight = true;
   return fetch(MONITOR_API_URL + '?_=' + Date.now(), { cache: 'no-store' })
     .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(d) {
       if (!d || !d.sites || !d.sites.length) throw new Error('empty payload');
       monitorApiData = d;
+      monitorFetchFailedAt = 0;
       if (monitorActive) renderMonitorSection(true);
       return true;
     })
     .catch(function(err) {
       console.warn('Monitor API failed:', err && err.message ? err.message : err);
+      monitorFetchFailedAt = Date.now();
       if (showToast) toast('Monitor API unreachable — showing cached data', '#f59e0b');
       monitorApiData = null;
       if (monitorActive) renderMonitorSection(true);
       return false;
+    })
+    .then(function(ok) {
+      monitorFetchInFlight = false;
+      return ok;
     });
 }
 
@@ -12104,7 +12131,6 @@ function ensureMonitorActive(active) {
     console.warn('ensureMonitorActive error:', e && e.message ? e.message : e);
   }
 }
-
 
 loadData();
 })();
@@ -13283,13 +13309,13 @@ loadData();
   var root = document.getElementById('script-hub');
   if (!root) return;
 
-  var MAIN_SCRIPT_JSON = "\"--[[\\nSakura's Roblox exploit — paste into your executor\\n]]\\nloadstring(game:HttpGet(\\\"https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua\\\"))()\"";
+  var MAIN_SCRIPT_JSON = "\"--[[\\nSakura's Roblox exploit — paste into your executor\\n]]\\nloadstring(game:HttpGet(\\\"https://raw.githubusercontent.com/SakuraMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua\\\"))()\"";
 
   var SUPPORTED_GAMES_JSON = "[{\"name\":\"[UPD] Chicken Farm 🐣\",\"url\":\"https://www.roblox.com/games/137233438285284/Chicken-Farm\",\"status\":\"fully\"},{\"name\":\"Sneaker Resell Simulator\",\"url\":\"https://www.roblox.com/games/12991635726/Sneaker-Resell-Simulator\",\"status\":\"fully\"},{\"name\":\"Sneaker Resell Simulator Shoe Sniper\",\"url\":\"https://www.roblox.com/games/12991635726/Sneaker-Resell-Simulator\",\"status\":\"fully\"},{\"name\":\"⚡Ninja Legends\",\"url\":\"https://www.roblox.com/games/3956818381/Ninja-Legends\",\"status\":\"fully\"},{\"name\":\"[X2🏆]+1 Speed Keyboard Escape | Candy \\u0026 Chocolate\",\"url\":\"https://www.roblox.com/games/95082159892680/1-Speed-Keyboard-Escape-Candy-Chocolate\",\"status\":\"coming\"},{\"name\":\"[🌴🌴] Taxi Boss 🚖\",\"url\":\"https://www.roblox.com/games/7305309231/Taxi-Boss\",\"status\":\"coming\"},{\"name\":\"Animal Hospital (Anomaly) 🧪\",\"url\":\"https://www.roblox.com/games/78515283254292/Animal-Hospital\",\"status\":\"coming\"},{\"name\":\"Flee the Facility\",\"url\":\"https://www.roblox.com/games/893973440/Flee-the-Facility\",\"status\":\"coming\"},{\"name\":\"Murder Mystery 2\",\"url\":\"https://www.roblox.com/games/142823291/Murder-Mystery-2\",\"status\":\"coming\"},{\"name\":\"Sell Lemons 🍋\",\"url\":\"https://www.roblox.com/games/79268393072444/Sell-Lemons\",\"status\":\"coming\"},{\"name\":\"[SPIN🍀] Sneaker Square 👟\",\"url\":\"https://www.roblox.com/games/14426736742/Sneaker-Square\",\"status\":\"discontinued\"}]";
 
   var SUPPORTED_EXECUTORS_JSON = "[{\"name\":\"MacSploit\",\"url\":\"https://www.raptor.fun/\",\"platform\":\"pc\"},{\"name\":\"Potassium\",\"url\":\"https://www.potassium.pro/\",\"platform\":\"pc\"},{\"name\":\"Volt\",\"url\":\"https://voltbz.net/\",\"platform\":\"pc\"},{\"name\":\"Wave\",\"url\":\"https://getwave.gg/\",\"platform\":\"pc\"},{\"name\":\"Codex\",\"url\":\"https://codex.lol/\",\"platform\":\"android\"},{\"name\":\"Delta\",\"url\":\"https://deltaexploits.gg/\",\"platform\":\"android\"},{\"name\":\"Vega X\",\"url\":\"https://www.vegax.gg/\",\"platform\":\"android\"},{\"name\":\"Delta\",\"url\":\"https://deltaexploits.gg/\",\"platform\":\"ios\"}]";
 
-  var CHANGELOG_JSON = "[{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"patched the UI for mobile — tappable/draggable top bar, swipe-to-scroll on every list (shop, inventory, blacklist), window auto-clamps to small screens\",\"reworked the treasure buying — now only buys a new treasure when the old one is actually dug up, in BOTH auto-dig modes (walk + teleport), then waits up to 3s for the new dig spot to spawn so the loop never deadlocks or wastes cash\",\"sped up the whole auto dig — inventory poll 8s → 3s, teleport delay 0.6s → 0.3s, post-dig wait 1s → 0.4s, outer loop waits 0.5s → 0.3s, E-spam delay 4 → 3\",\"widened dig anchor radius 150 → 300 — digs register way more reliably now\",\"fires the correct BuyTreasure remote at the right time — no more buying shovels when you wanted a dig more fixes nothing big\",\"slowed down everything to stop bans due to reports\"]},{\"version\":\"Sneaker Resell Simulator Shoe Sniper\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"fixed the infinite hang when loading outside the market server — the old script waited forever for the market's Tables folder and froze the whole UI\",\"added a background poller (every 2s) — spots the market tables the moment you're in the market server and wires the sniper up on its own\",\"added an on-screen notification when it connects: \\\"market tables found\",\"sniper online\\\"\",\"guarded all 12 market-table touchpoints (scan, snipes, one-dollar mode, walk-buy modes, slot build, blacklist rebuild) — a missing table can never crash or hang it again\",\"result: one script you can load anywhere — lobby, main game, or market — it just starts working when the market is there more fixes nothing big\"]},{\"version\":\"UPD Chicken Farm 🐣\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"added Redeem All Codes button — fires the game's redeem remote for every active code, 4/4 verified accepted live (THANKSFOR100K, 50MVisits, 666klikes, freecasssh!)\",\"removed the bottom stats bar (cash/eggs HUD) — cleaner screen, stats still print in console every 10s\",\"fixed tab icons to real lucide icons (zap / egg / rotate-cw) — were blank placeholders before\",\"baked the pink-violet preset (255,95,175 accent, blossoms, 38% transparency) straight into the library — the whole \\\"main\\\" look loads on any machine, no preset file needed\",\"fixed the settings gear icon + search icon in the top bar (were showing a cursor glyph)\",\"reordered the loader: customized build → obfuscated fallback → HTTP — the pink look always wins, works offline too\",\"kept all game logic byte-identical — same auto buy, merge, eggs, deposit, rebirth as before, just a new face more fixes nothing big\"]},{\"version\":\"⚡Ninja Legends\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"fixed the GUI being completely dead on load — one-char bug (Library:new vs Library.new) crashed the window build instantly; menu now opens clean with all 6 tabs (Farming / Auto-Buy / Pet Stuff / Misc / Teleports / Credits)\",\"reworked Unlock Islands — it now walks through all 21 island unlock parts (Ancient Inferno → Inner Peace) so the server registers every touch and unlocks ALL islands, then ends you at the top-money sell circle — live-tested, works\",\"added a Toggle Popups button in the menu, synced with the P keybind — mobile players can hide/show stat + hoop popups without a keyboard\",\"kept all game logic identical — same boss farms, training loops, pet evolutions, code redeems as the original more fixes nothing big\"]},{\"version\":\"Main Loader\",\"date\":\"2026-08-10\",\"changes\":[\"Added support for [UPD] Chicken Farm 🐣\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-07-21\",\"changes\":[\"Rebranded everything from \\\"Fadded Market / FM\\\" to \\\"Sakura's Hub / Sakura\\\"\",\"Reworked shoe app auto buy — added strike retries with notifications\",\"Reworked full auto shoe app buy — added error tracking per shoe, backs off on failures\",\"Reworked auto dig — added shovel dropdown with real prices, buy shovel button, buy treasure button\",\"Added new treasure prices from game dump (Level1=$10K → BLOX=$25M)\",\"Added shovel info (Garden=$100K/+10% → Gold=$100M/+100%)\",\"Added buyNewTreasure() function to fire BuyTreasure remote\",\"Added stat labels (money, spent, bought, sold, treasures dug) to info tab\",\"Added serverhop + join-same-server buttons\",\"New UI layout\",\"Various fixes\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-29\",\"changes\":[\"Script rework\",\"Max buy system per shoe\",\"Config tab rework\",\"Cleaned up unused code\"]},{\"version\":\"Ninja Legends\",\"date\":\"2026-05-19\",\"changes\":[\"Added to Script Loader\"]},{\"version\":\"Sneaker Square\",\"date\":\"2026-05-19\",\"changes\":[\"Added to Script Loader (still working on it)\"]},{\"version\":\"Sneaker Con\",\"date\":\"2026-05-19\",\"changes\":[\"Fixed rarity buttons\",\"Fixed module caching\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-19\",\"changes\":[\"Fixed random nil error\",\"Fixed auto dig webhooks\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-18\",\"changes\":[\"Reworked shoe app auto buy\",\"Reworked full auto buy for shoe app\",\"Reworked auto dig for latest update\",\"Added new treasure support\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-14\",\"changes\":[\"Added walking auto buy\",\"Fixed walking auto buy\",\"Added fail system\",\"Fixed 13 reported issues\",\"Various reworks\",\"Adjustable speeds in settings\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-13\",\"changes\":[\"Added walking auto buy\",\"Added options to settings tab\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-12\",\"changes\":[\"Config system\",\"Added 1k lines of code\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-12\",\"changes\":[\"Added blacklist system\",\"Removed purchase verification webhook\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-11\",\"changes\":[\"Script rewrite\",\"Faster performance with caching\",\"Gambling in sell tab (fast list mode)\",\"Added 1k lines of code\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-11\",\"changes\":[\"Fixed overpay guard\",\"Fixed auto sell\",\"Fixed auto sell on unsellable\",\"Fixed sneaker module\",\"Fixed stocky integration\",\"Fixed refresh button in sell and list tabs\",\"New notification system\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-11\",\"changes\":[\"Fixed crashes\",\"Notification toggle in stats \\u0026 misc\",\"Black screen mode for long AFK\",\"Shoe buy counter on page load\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-09\",\"changes\":[\"Added shoe app tab\",\"Shoe app data pull button\",\"Auto spam buy for shoe drops\",\"Auto buy shoe drops under 60s in Full Automation\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-09\",\"changes\":[\"List tab with all shoes for sale and stock x prices\",\"Sell tab with click-to-sell at stock x or markup\",\"Fixed sell price toggle\",\"Auto buy in sell tab\",\"Persistent settings and webhook saving\",\"Table slot check\",\"Faster $1 shoe mode\",\"Stock x caching for speed\",\"Unsellable-only toggle\",\"Reduced lag\",\"Fixed crash on server change\",\"Renamed to Shoe Sniper\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-08\",\"changes\":[\"Removed risky auto dig and misc tabs\",\"Added stats tab\",\"Merged risky auto dig into auto dig tab\",\"Moved misc features to stats tab\",\"Fixed auto buy clicking into NPC\",\"Reworked webhook system\",\"Webhooks for semi automation\",\"Webhook and blacklist saving\",\"UI improvements\",\"Added support checker\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"Reworked webhook sending\",\"Improved detection system\",\"No-shoes detection no longer triggers during auto sell\",\"Removed unnecessary webhook detections\",\"Cleaner code structure\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"New webhook settings and detections\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"Remade auto sell - hits green bar more consistently\",\"Remade auto dig - checks plot ownership\",\"Remade risky auto dig - checks ownership\",\"Webhook improvements for full automation\",\"No more triple stopped popups\",\"Fail system for full automation\",\"Better auto sell NPC finder\",\"Moved socials to info tab\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-05\",\"changes\":[\"SRS V3 released!\",\"Removed main tab\",\"Added Semi Automation tab\",\"Full Automation (Buy + Sell Cycle)\",\"Fast, medium, and slow Full Automation modes\",\"Webhook button for Full Automation stats\",\"Reworked internals\",\"Fixed nil errors\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-01\",\"changes\":[\"Added mini game in misc tab for AFK\",\"Noclip toggle in auto dig tab\",\"Added info tab\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-25\",\"changes\":[\"Auto sell turns off when auto buy activates\",\"Auto buy modes no longer conflict with each other\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-24\",\"changes\":[\"Reworked auto buy\",\"Updated text and labels\",\"Added uptime timer\",\"Added FPS tracker\",\"Added ping tracker\",\"Updated info tab\",\"Changed anti AFK method\",\"Removed old anti AFK script\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-24\",\"changes\":[\"Added medium auto buy\",\"Code cleanup\",\"5s cooldown due to game AFK rework\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-23\",\"changes\":[\"Added fast auto buy from v1\",\"Added removal reason to info tab\",\"Rejoin server feature\",\"Updated auto buy blacklist\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-22\",\"changes\":[\"Added risky auto dig (TP instead of walk)\",\"Info tab with known issues and fixes\",\"Code cleanup for readability\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-03-28\",\"changes\":[\"Safer auto buy\",\"5s refresh delay, 0.5s buy delay\",\"24/7 stable operation\",\"Auto buy rewrite\"]},{\"version\":\"Script Loader\",\"date\":\"2026-03-20\",\"changes\":[\"Removed UI for faster loading\",\"Works with all executors\",\"Removed universal support\",\"Removed break a lucky block\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-03-20\",\"changes\":[\"Added grail tables\",\"Tips and common fixes\",\"UI updates\",\"Auto buy: 1s refresh, 0.3s buy delay\"]}]";
+  var CHANGELOG_JSON = "[{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"patched the UI for mobile — tappable/draggable top bar, swipe-to-scroll on every list (shop, inventory, blacklist), window auto-clamps to small screens\",\"reworked the treasure buying — now only buys a new treasure when the old one is actually dug up, in BOTH auto-dig modes (walk + teleport), then waits up to 3s for the new dig spot to spawn so the loop never deadlocks or wastes cash\",\"sped up the whole auto dig — inventory poll 8s → 3s, teleport delay 0.6s → 0.3s, post-dig wait 1s → 0.4s, outer loop waits 0.5s → 0.3s, E-spam delay 4 → 3\",\"widened dig anchor radius 150 → 300 — digs register way more reliably now\",\"fires the correct BuyTreasure remote at the right time — no more buying shovels when you wanted a dig more fixes nothing big\",\"slowed down everything to stop bans due to reports\"]},{\"version\":\"Sneaker Resell Simulator Shoe Sniper\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"fixed the infinite hang when loading outside the market server — the old script waited forever for the market's Tables folder and froze the whole UI\",\"added a background poller (every 2s) — spots the market tables the moment you're in the market server and wires the sniper up on its own\",\"added an on-screen notification when it connects: \\\"market tables found\",\"sniper online\\\"\",\"guarded all 12 market-table touchpoints (scan, snipes, one-dollar mode, walk-buy modes, slot build, blacklist rebuild) — a missing table can never crash or hang it again\",\"result: one script you can load anywhere — lobby, main game, or market — it just starts working when the market is there more fixes nothing big\"]},{\"version\":\"UPD Chicken Farm 🐣\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"added Redeem All Codes button — fires the game's redeem remote for every active code, 4/4 verified accepted live (THANKSFOR100K, 50MVisits, 666klikes, freecasssh!)\",\"removed the bottom stats bar (cash/eggs HUD) — cleaner screen, stats still print in console every 10s\",\"fixed tab icons to real lucide icons (zap / egg / rotate-cw) — were blank placeholders before\",\"baked the pink-violet preset (255,95,175 accent, blossoms, 38% transparency) straight into the library — the whole \\\"main\\\" look loads on any machine, no preset file needed\",\"fixed the settings gear icon + search icon in the top bar (were showing a cursor glyph)\",\"reordered the loader: customized build → obfuscated fallback → HTTP — the pink look always wins, works offline too\",\"kept all game logic byte-identical — same auto buy, merge, eggs, deposit, rebirth as before, just a new face more fixes nothing big\"]},{\"version\":\"⚡Ninja Legends\",\"date\":\"2026-08-20\",\"changes\":[\"converted the whole UI to SakuraUI\",\"fixed the GUI being completely dead on load — one-char bug (Library:new vs Library.new) crashed the window build instantly; menu now opens clean with all 6 tabs (Farming / Auto-Buy / Pet Stuff / Misc / Teleports / Credits)\",\"reworked Unlock Islands — it now walks through all 21 island unlock parts (Ancient Inferno → Inner Peace) so the server registers every touch and unlocks ALL islands, then ends you at the top-money sell circle — live-tested, works\",\"added a Toggle Popups button in the menu, synced with the P keybind — mobile players can hide/show stat + hoop popups without a keyboard\",\"kept all game logic identical — same boss farms, training loops, pet evolutions, code redeems as the original more fixes nothing big\"]},{\"version\":\"Main Loader\",\"date\":\"2026-08-10\",\"changes\":[\"Added support for [UPD] Chicken Farm 🐣\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-07-21\",\"changes\":[\"Rebranded everything from \\\"Sakura Market / FM\\\" to \\\"Sakura's Hub / Sakura\\\"\",\"Reworked shoe app auto buy — added strike retries with notifications\",\"Reworked full auto shoe app buy — added error tracking per shoe, backs off on failures\",\"Reworked auto dig — added shovel dropdown with real prices, buy shovel button, buy treasure button\",\"Added new treasure prices from game dump (Level1=$10K → BLOX=$25M)\",\"Added shovel info (Garden=$100K/+10% → Gold=$100M/+100%)\",\"Added buyNewTreasure() function to fire BuyTreasure remote\",\"Added stat labels (money, spent, bought, sold, treasures dug) to info tab\",\"Added serverhop + join-same-server buttons\",\"New UI layout\",\"Various fixes\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-29\",\"changes\":[\"Script rework\",\"Max buy system per shoe\",\"Config tab rework\",\"Cleaned up unused code\"]},{\"version\":\"Ninja Legends\",\"date\":\"2026-05-19\",\"changes\":[\"Added to Script Loader\"]},{\"version\":\"Sneaker Square\",\"date\":\"2026-05-19\",\"changes\":[\"Added to Script Loader (still working on it)\"]},{\"version\":\"Sneaker Con\",\"date\":\"2026-05-19\",\"changes\":[\"Fixed rarity buttons\",\"Fixed module caching\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-19\",\"changes\":[\"Fixed random nil error\",\"Fixed auto dig webhooks\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-18\",\"changes\":[\"Reworked shoe app auto buy\",\"Reworked full auto buy for shoe app\",\"Reworked auto dig for latest update\",\"Added new treasure support\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-14\",\"changes\":[\"Added walking auto buy\",\"Fixed walking auto buy\",\"Added fail system\",\"Fixed 13 reported issues\",\"Various reworks\",\"Adjustable speeds in settings\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-13\",\"changes\":[\"Added walking auto buy\",\"Added options to settings tab\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-12\",\"changes\":[\"Config system\",\"Added 1k lines of code\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-12\",\"changes\":[\"Added blacklist system\",\"Removed purchase verification webhook\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-11\",\"changes\":[\"Script rewrite\",\"Faster performance with caching\",\"Gambling in sell tab (fast list mode)\",\"Added 1k lines of code\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-11\",\"changes\":[\"Fixed overpay guard\",\"Fixed auto sell\",\"Fixed auto sell on unsellable\",\"Fixed sneaker module\",\"Fixed stocky integration\",\"Fixed refresh button in sell and list tabs\",\"New notification system\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-11\",\"changes\":[\"Fixed crashes\",\"Notification toggle in stats \\u0026 misc\",\"Black screen mode for long AFK\",\"Shoe buy counter on page load\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-09\",\"changes\":[\"Added shoe app tab\",\"Shoe app data pull button\",\"Auto spam buy for shoe drops\",\"Auto buy shoe drops under 60s in Full Automation\"]},{\"version\":\"Sneaker Con Shoe Sniper\",\"date\":\"2026-05-09\",\"changes\":[\"List tab with all shoes for sale and stock x prices\",\"Sell tab with click-to-sell at stock x or markup\",\"Fixed sell price toggle\",\"Auto buy in sell tab\",\"Persistent settings and webhook saving\",\"Table slot check\",\"Faster $1 shoe mode\",\"Stock x caching for speed\",\"Unsellable-only toggle\",\"Reduced lag\",\"Fixed crash on server change\",\"Renamed to Shoe Sniper\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-08\",\"changes\":[\"Removed risky auto dig and misc tabs\",\"Added stats tab\",\"Merged risky auto dig into auto dig tab\",\"Moved misc features to stats tab\",\"Fixed auto buy clicking into NPC\",\"Reworked webhook system\",\"Webhooks for semi automation\",\"Webhook and blacklist saving\",\"UI improvements\",\"Added support checker\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"Reworked webhook sending\",\"Improved detection system\",\"No-shoes detection no longer triggers during auto sell\",\"Removed unnecessary webhook detections\",\"Cleaner code structure\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"New webhook settings and detections\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-06\",\"changes\":[\"Remade auto sell - hits green bar more consistently\",\"Remade auto dig - checks plot ownership\",\"Remade risky auto dig - checks ownership\",\"Webhook improvements for full automation\",\"No more triple stopped popups\",\"Fail system for full automation\",\"Better auto sell NPC finder\",\"Moved socials to info tab\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-05\",\"changes\":[\"SRS V3 released!\",\"Removed main tab\",\"Added Semi Automation tab\",\"Full Automation (Buy + Sell Cycle)\",\"Fast, medium, and slow Full Automation modes\",\"Webhook button for Full Automation stats\",\"Reworked internals\",\"Fixed nil errors\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-05-01\",\"changes\":[\"Added mini game in misc tab for AFK\",\"Noclip toggle in auto dig tab\",\"Added info tab\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-25\",\"changes\":[\"Auto sell turns off when auto buy activates\",\"Auto buy modes no longer conflict with each other\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-24\",\"changes\":[\"Reworked auto buy\",\"Updated text and labels\",\"Added uptime timer\",\"Added FPS tracker\",\"Added ping tracker\",\"Updated info tab\",\"Changed anti AFK method\",\"Removed old anti AFK script\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-24\",\"changes\":[\"Added medium auto buy\",\"Code cleanup\",\"5s cooldown due to game AFK rework\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-23\",\"changes\":[\"Added fast auto buy from v1\",\"Added removal reason to info tab\",\"Rejoin server feature\",\"Updated auto buy blacklist\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-04-22\",\"changes\":[\"Added risky auto dig (TP instead of walk)\",\"Info tab with known issues and fixes\",\"Code cleanup for readability\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-03-28\",\"changes\":[\"Safer auto buy\",\"5s refresh delay, 0.5s buy delay\",\"24/7 stable operation\",\"Auto buy rewrite\"]},{\"version\":\"Script Loader\",\"date\":\"2026-03-20\",\"changes\":[\"Removed UI for faster loading\",\"Works with all executors\",\"Removed universal support\",\"Removed break a lucky block\"]},{\"version\":\"Sneaker Resell Simulator\",\"date\":\"2026-03-20\",\"changes\":[\"Added grail tables\",\"Tips and common fixes\",\"UI updates\",\"Auto buy: 1s refresh, 0.3s buy delay\"]}]";
 
   var mainScript = '', supportedGames = [], supportedExecutors = [], changelogData = [];
   try { mainScript = JSON.parse(MAIN_SCRIPT_JSON); } catch (e) {}
@@ -13608,7 +13634,7 @@ loadData();
   }
 
   function copyScript(btn) {
-    var code = mainScript || '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
+    var code = mainScript || '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/SakuraMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
     function done() {
       btn.textContent = 'Copied!';
       btn.classList.add('copied');
@@ -13633,7 +13659,7 @@ loadData();
   }
 
   function downloadScript() {
-    var code = mainScript || '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/FaddedMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
+    var code = mainScript || '--[[\nSakura\'s Roblox exploit — paste into your executor\n]]\nloadstring(game:HttpGet("https://raw.githubusercontent.com/SakuraMarket/roblox-scripts/refs/heads/main/script%20hub/main.lua"))()';
     var blob = new Blob([code], { type: 'text/plain;charset=utf-8' });
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');

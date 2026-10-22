@@ -126,7 +126,7 @@ old_vouch_fetch = """    fetch(VOUCHES_RAW + '?_=' + Date.now())
       });"""
 
 new_vouch_fetch = """    // Try myvouch.es API first; fallback to VOUCHES_RAW
-    var myVouchApi = 'https://myvouch.es/api/vouches/fadded';
+    var myVouchApi = 'https://myvouch.es/api/vouches/sakura';
     var myVouchUsed = false;
     fetch(myVouchApi + '?_=' + Date.now(), { headers: { 'Accept': 'application/json' } })
       .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -291,7 +291,7 @@ function renderMyVouches(data) {
       cards += '<div class="author">' + (avatarUrl ? '<img src="' + avatarUrl + '" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;margin-right:6px" alt="">' : '') + esc(v.platform_username || 'Anonymous') + ' <span class="badge">#' + v.vouch_number + '</span></div>';
       cards += '<div class="date">' + esc(v.date || '') + '</div>';
       cards += '</div>';
-      cards += '<div class="target">Fadded</div>';
+      cards += '<div class="target">Sakura</div>';
       cards += '<div class="content">' + starsHtml + '\\n' + esc(v.content || '') + '</div>';
       if (proofHtml) cards += '<div class="attachments">' + proofHtml + '</div>';
       cards += '</div>';
@@ -331,10 +331,10 @@ function renderMyVouches(data) {
       + '<span>\u2b50 4\u2605 <b>' + stars4 + '</b></span>'
       + '</div>'
       + '<div class="vouch-list">' + cards + '</div>'
-      + '<div class="footer">Fadded\u2019s Vouches \u00b7 Powered by MyVouches</div>'
+      + '<div class="footer">Sakura\u2019s Vouches \u00b7 Powered by MyVouches</div>'
       + '</div>';
     panel.innerHTML = '<div class="panel active" style="padding:0;max-width:100%;">' + vhtml + '</div>';
-    updateHero("Fadded's Vouches", 'Customer Feedback');
+    updateHero("Sakura's Vouches", 'Customer Feedback');
   } catch(e) {
     console.warn('renderMyVouches error:', e);
     var p = document.getElementById('panels');

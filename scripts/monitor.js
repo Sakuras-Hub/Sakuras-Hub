@@ -27,7 +27,7 @@ var MONITOR_API_URLS = (typeof MONITOR_API_URLS !== 'undefined' && MONITOR_API_U
   ? MONITOR_API_URLS
   : ((typeof MONITOR_API_URL !== 'undefined' && MONITOR_API_URL)
       ? [MONITOR_API_URL]
-      : ['https://sakura-monitor.fadded-market.workers.dev/status']);
+      : ['https://sakura-monitor.sakura-market.workers.dev/status']);
 var MONITOR_API_URL = MONITOR_API_URLS[0];
 var MONITOR_POLL_MS = 5 * 60 * 1000;
 var monitorPollTimer = null;
