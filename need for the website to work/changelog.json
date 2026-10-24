@@ -1,6 +1,24 @@
 [
   {
     "version": "Sneaker Resell Simulator",
+    "date": "2026-10-24",
+    "changes": [
+      "• updated the webhooks",
+      "• added a new halloween page",
+      "• make a new toggle to auto rade in and open the new halloween boxes and shoes",
+      "• some other small changes"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator Shoe Sniper",
+    "date": "2026-10-24",
+    "changes": [
+      "• updated the webhook",
+      "• some other small changes"
+    ]
+  },
+  {
+    "version": "Sneaker Resell Simulator",
     "date": "2026-08-20",
     "changes": [
       "converted the whole UI to SakuraUI",
