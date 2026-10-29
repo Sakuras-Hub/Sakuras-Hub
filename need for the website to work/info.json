@@ -9366,6 +9366,32 @@
     "countries": []
   },
   {
+    "rank": 364,
+    "name": "AniHosts",
+    "url": "https://anihosts.xyz/",
+    "slug": "anihosts",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 365,
+    "name": "Nekomiru",
+    "url": "https://nekomiru.com/",
+    "slug": "nekomiru",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -28015,6 +28041,19 @@
     "name": "⁠FCTV33",
     "url": "https://www.fctv33go.hair/",
     "slug": "fctv332",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 221,
+    "name": "TimStreams",
+    "url": "https://tim-streams.com/",
+    "slug": "timstreams2",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -47126,6 +47165,71 @@
     "countries": []
   },
   {
+    "rank": 1633,
+    "name": "BDplus",
+    "url": "https://bdplus.cc",
+    "slug": "bdplus",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1634,
+    "name": "Celestial Moon",
+    "url": "https://lecturacelestialmoon.site",
+    "slug": "celestialmoon2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1635,
+    "name": "Mikrokosmos Fansub",
+    "url": "https://mikrokosmos.fans",
+    "slug": "mikrokosmosfansub2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1636,
+    "name": "Nortverse",
+    "url": "https://nortverse.com",
+    "slug": "nortverse",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1637,
+    "name": "SlashLib",
+    "url": "https://v2.shlib.life",
+    "slug": "slashlib2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -65001,6 +65105,51 @@
     ]
   },
   {
+    "rank": 976,
+    "name": "carateen",
+    "url": "https://topcinema.ink/",
+    "slug": "carateen2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 977,
+    "name": "hdhub4u",
+    "url": "https://new10.hdhub4u.cl/",
+    "slug": "hdhub4u",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 978,
+    "name": "KMMovies",
+    "url": "https://kmmovies.autos/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -79045,6 +79194,19 @@
     "name": "NEPU Audiobooks",
     "url": "https://nepu.io/ebooks",
     "slug": "nepuaudiobooks",
+    "section": "Novel Reading",
+    "category": "novel",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Novel, Light Novel, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 562,
+    "name": "Novgo",
+    "url": "https://novgo.net/",
+    "slug": "novgo",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
