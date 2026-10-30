@@ -9392,6 +9392,34 @@
     "countries": []
   },
   {
+    "rank": 366,
+    "name": "Kagane",
+    "url": "https://kagane.moe/",
+    "slug": "kagane2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 367,
+    "name": "RARE TOONS INDIA",
+    "url": "https://www.rareanimes.fans/",
+    "slug": "raretoonsindia2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -12340,6 +12368,19 @@
     "countries": []
   },
   {
+    "rank": 225,
+    "name": "Mizuki",
+    "url": "https://mizuki.to/",
+    "slug": "mizuki",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Free, Android, Streaming",
+    "countries": []
+  },
+  {
     "url": "https://gelbooru.com/",
     "name": "Gelbooru",
     "section": "Art/Imageboards",
@@ -13164,6 +13205,19 @@
     "name": "⁠KissNeo",
     "url": "https://kissneo.co/",
     "slug": "kissneo",
+    "section": "Asian Drama",
+    "category": "drama",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Drama, Asian Drama, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 34,
+    "name": "KissAsian",
+    "url": "https://kissasian.com.gr/",
+    "slug": "kissasian2",
     "section": "Asian Drama",
     "category": "drama",
     "pricing": "free*",
@@ -15599,6 +15653,71 @@
     "name": "⁠Midloop",
     "url": "https://midloop.net/",
     "slug": "midloop",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 144,
+    "name": "Bandcamp Daily",
+    "url": "https://daily.bandcamp.com/",
+    "slug": "bandcampdaily",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Music, Free",
+    "countries": []
+  },
+  {
+    "rank": 145,
+    "name": "Resident Advisor",
+    "url": "https://ra.co/reviews",
+    "slug": "residentadvisor",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Music, Free",
+    "countries": []
+  },
+  {
+    "rank": 146,
+    "name": "The Drop",
+    "url": "https://the-drop-reviews.vercel.app/",
+    "slug": "thedrop",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Music, Free",
+    "countries": []
+  },
+  {
+    "rank": 147,
+    "name": "The Quietus",
+    "url": "https://thequietus.com/charts/",
+    "slug": "thequietus",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Music, Free",
+    "countries": []
+  },
+  {
+    "rank": 148,
+    "name": "VN Club",
+    "url": "https://vnclub.figamin.net/",
+    "slug": "vnclub",
     "section": "Database/Tracker",
     "category": "database",
     "pricing": "free*",
@@ -28054,6 +28173,19 @@
     "name": "TimStreams",
     "url": "https://tim-streams.com/",
     "slug": "timstreams2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 222,
+    "name": "⁠CMVTV",
+    "url": "https://cmvxd.lovable.app/",
+    "slug": "cmvtv2",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -47976,6 +48108,32 @@
     "countries": []
   },
   {
+    "rank": 62,
+    "name": "Funbe",
+    "url": "https://funbe.site/",
+    "slug": "funbe2",
+    "section": "Manhwa Reading",
+    "category": "manhwa",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manhwa, Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 63,
+    "name": "GoodToon",
+    "url": "https://goodtoon1.top/",
+    "slug": "goodtoon2",
+    "section": "Manhwa Reading",
+    "category": "manhwa",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manhwa, Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "Ente Photos",
     "url": "https://ente.com",
@@ -53066,6 +53224,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Music, Audio, Free",
+    "countries": []
+  },
+  {
+    "rank": 400,
+    "name": "Jiten",
+    "url": "https://jiten.moe/",
+    "slug": "jiten",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Extension, Utility, Free",
     "countries": []
   },
   {
@@ -65150,6 +65321,66 @@
     ]
   },
   {
+    "rank": 979,
+    "name": "Bollyflix",
+    "url": "https://bollyflix.church/",
+    "slug": "bollyflix2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 980,
+    "name": "carateen",
+    "url": "https://topcinemaa.vip/",
+    "slug": "carateen2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 981,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.boats/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 982,
+    "name": "MovieRulz",
+    "url": "https://www.5movierulz.delivery/",
+    "slug": "movierulz2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -71617,6 +71848,19 @@
     "name": "⁠Genre Sampler",
     "url": "https://genresampler.com/",
     "slug": "genresampler",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 527,
+    "name": "Anime Lyrics dot Com",
+    "url": "https://www.animelyrics.com/",
+    "slug": "animelyricsdotcom",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
@@ -82587,6 +82831,19 @@
     "name": "Yomoru",
     "url": "https://yomoru.com/",
     "slug": "yomoru",
+    "section": "Wiki/Guides",
+    "category": "guides",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Wiki, Guide, Anime, Manga, Information",
+    "countries": []
+  },
+  {
+    "rank": 28,
+    "name": "VN Club",
+    "url": "https://vnclub.figamin.net/guide/",
+    "slug": "vnclub2",
     "section": "Wiki/Guides",
     "category": "guides",
     "pricing": "free*",
