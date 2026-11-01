@@ -9433,6 +9433,32 @@
     "countries": []
   },
   {
+    "rank": 369,
+    "name": "AniDream",
+    "url": "https://anidream.to/",
+    "slug": "anidream",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 370,
+    "name": "Kuroko",
+    "url": "https://kuroko.cc/home",
+    "slug": "kuroko",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -47596,6 +47622,58 @@
     "countries": []
   },
   {
+    "rank": 1653,
+    "name": "Aethon Webcomics",
+    "url": "https://aethonwebcomics.com",
+    "slug": "aethonwebcomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1654,
+    "name": "CoTruyenDay",
+    "url": "https://cotruyenday1.com",
+    "slug": "cotruyenday",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1655,
+    "name": "ManhwaDesu",
+    "url": "https://manhwadesu.rest",
+    "slug": "manhwadesu2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1656,
+    "name": "TuLinhTruyen",
+    "url": "https://api.tulinh.workers.dev",
+    "slug": "tulinhtruyen",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -53484,6 +53562,32 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Extension, Utility, Free",
+    "countries": []
+  },
+  {
+    "rank": 402,
+    "name": "LibraryThing Awards",
+    "url": "https://www.librarything.com/award",
+    "slug": "librarythingawards",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 403,
+    "name": "Mornye",
+    "url": "https://desktop.mornye.com/",
+    "slug": "mornye2",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Music, Audio, Free",
     "countries": []
   },
   {
@@ -65641,6 +65745,47 @@
     "countries": [
       "IN"
     ]
+  },
+  {
+    "rank": 984,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.buzz/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 985,
+    "name": "TaroFlix",
+    "url": "https://taroflix.net/",
+    "slug": "taroflix",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 986,
+    "name": "WatchSeries",
+    "url": "https://watchseries.cool/",
+    "slug": "watchseries2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
   },
   {
     "url": "https://kara.moe/",
