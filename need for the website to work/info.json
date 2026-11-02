@@ -9405,6 +9405,19 @@
     "countries": []
   },
   {
+    "rank": 371,
+    "name": "Hopcorn",
+    "url": "https://hopmarks.com/",
+    "slug": "hopcorn",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -12309,6 +12322,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Apps, Free, Android, Streaming",
+    "countries": []
+  },
+  {
+    "rank": 226,
+    "name": "⁠SkyStream",
+    "url": "https://github.com/akashdh11/skystream",
+    "slug": "skystream",
+    "section": "Apps",
+    "category": "apps",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Apps, Streaming, Android, TV, Free",
     "countries": []
   },
   {
@@ -15625,6 +15651,58 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Database, Tracker, Music, Free",
+    "countries": []
+  },
+  {
+    "rank": 150,
+    "name": "All My Books",
+    "url": "https://www.bolidesoft.com/allmybooks.html",
+    "slug": "allmybooks",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 151,
+    "name": "BookBrainz",
+    "url": "https://bookbrainz.org/",
+    "slug": "bookbrainz",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 152,
+    "name": "WorldCat",
+    "url": "https://search.worldcat.org/",
+    "slug": "worldcat",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 153,
+    "name": "Yamtrack",
+    "url": "https://github.com/FuzzyGrim/Yamtrack",
+    "slug": "yamtrack",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
     "countries": []
   },
   {
@@ -22158,6 +22236,19 @@
     "name": "Hindi Anime Zone",
     "url": "https://hindianimeszone.com/",
     "slug": "hindianimezone",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
+    "rank": 525,
+    "name": "MyAnimeRoll",
+    "url": "https://myanimeroll.in/",
+    "slug": "myanimeroll",
     "section": "Download",
     "category": "download",
     "pricing": "free*",
@@ -47275,6 +47366,32 @@
     "countries": []
   },
   {
+    "rank": 1657,
+    "name": "MirrorKomik",
+    "url": "https://mirrorkomik.info",
+    "slug": "mirrorkomik",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1658,
+    "name": "Tailspace",
+    "url": "https://tailspace.com",
+    "slug": "tailspace",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -65333,6 +65450,21 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 987,
+    "name": "egydead",
+    "url": "https://a1.egydead.media/",
+    "slug": "egydead2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
   },
   {
     "url": "https://kara.moe/",
