@@ -1201,6 +1201,12 @@ body::before,.hero::before{display:none}
 .guide-panel,.dialog-box{box-shadow:var(--shadow-3)}
 .toast{box-shadow:var(--shadow-2)}
 .suit-tabbar,#script-hub .script-tabbar,.suit-btn,.suit-btn-sm,.monitor-view .mc-card{box-shadow:none}
+/* Stats: plain inline text, no box */
+.stats,html[data-theme="light"] .stats{border:none;background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-radius:0;gap:4px 8px}
+.stat{display:flex;align-items:baseline;gap:6px;padding:0 10px}
+.stat+.stat{border-left:none}
+.stat b{display:inline;background:none;-webkit-text-fill-color:currentColor;color:var(--text);font-size:1.05rem;font-weight:700}
+.stat span{display:inline;margin:0;font-size:.85rem;color:var(--muted);font-weight:500}
 </style>
 <script>(function(){try{var s=localStorage.getItem("sakura-theme");var d=(s==="light"||s==="dark")?s:((window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-theme",d);document.documentElement.style.colorScheme=d;}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();</script>
 </head>
