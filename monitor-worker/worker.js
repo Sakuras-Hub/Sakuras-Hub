@@ -11,8 +11,11 @@
  *  - ONE KV read + ONE KV write per tick (state key). Free-tier daily:
  *      reads ~720/day, writes ~720/day (well under 1k writes/day cap).
  *  - Subrequest cap 48/tick (CHUNK=20 × max 1 retry + list refresh).
- *  - Timing: CHUNK=20, CONCURRENCY=5, PROBE_TIMEOUT_MS=7000.
- *    Worst case 4 rounds × 7s = 28s < 30s wall-clock limit.
+ *  - Timing: CHUNK=20, CONCURRENCY=10, PROBE_TIMEOUT_MS=5000.
+ *    Worst case 2 rounds × (2 attempts × 5s) = 20s, and the loop stops
+ *    starting new rounds past TICK_BUDGET_MS-2×timeout, so state is always
+ *    written before the 30s invocation limit. Probes that did not run are
+ *    simply retried next tick (cursor advances only by probed sites).
  *  - Hysteresis: CONFIRM_COUNT=3. Non-up verdicts increment streak;
  *    published status changes only when streak >= 3. Up publishes
  *    immediately and resets streak. New sites start as 'pending'.
@@ -25,8 +28,13 @@
  *  - KV schema (namespace MONITOR_KV):
  *      "sites"  = {"ts": <epoch_ms>, "list": [{slug,name,url,section,nsfw,countries}]}
  *      "state"  = {"updated": <ISO>, "cursor": <int>, "map": {<slug>: {status,ms,code,detail,checkedAt,streak?,since?,flapping?,deadSince?}}, "removed": [{slug,name,url,section,deadSince,removedAt,lastStatus,lastMs,lastCode}]}
+ *  - Stats: each site keeps a compact probe history (HISTORY_LEN=24 verdict
+ *    chars) plus a rolling mean response time. /status derives uptime %
+ *    from that history, so the page shows real per-site and per-section
+ *    uptime instead of guessing from the latest verdict.
  *  - GET /status returns backward-compatible superset payload with
- *    streak/since/flapping/deadSince plus removed[] and shard{}.
+ *    streak/since/flapping/deadSince plus history/uptime/avgMs, removed[]
+ *    and shard{}.
  *
  * Crash recovery: no guard flag, no deletes. A tick that dies before the
  * write simply means the cursor did not advance and the map was not
@@ -37,8 +45,9 @@
 const INFO_URL = 'https://raw.githubusercontent.com/Sakuras-Hub/Sakuras-Hub/refs/heads/main/need%20for%20the%20website%20to%20work/info.json';
 
 const CHUNK = 20;                              // sites per cron tick (20 × 1 retry + list = ≤ 41 fetches < 48 cap)
-const CONCURRENCY = 5;                         // parallel probes per tick (4 rounds max)
-const PROBE_TIMEOUT_MS = 7000;                 // AbortSignal.timeout per probe
+const CONCURRENCY = 10;                        // parallel probes per tick (2 rounds max)
+const PROBE_TIMEOUT_MS = 5000;                 // AbortSignal.timeout per probe
+const TICK_BUDGET_MS = 20000;                  // stop starting probes after this, so state gets written
 const LIST_REFRESH_MS = 6 * 60 * 60 * 1000;    // refetch info.json if cached list older than 6h
 const KEEP_TTL_S = 7 * 24 * 3600;              // sliding TTL for sites/state keys (rewritten each tick)
 const CONFIRM_COUNT = 3;                       // hysteresis: non-up streak needed to confirm
@@ -54,6 +63,11 @@ const HEADERS = {
 };
 
 const K = { sites: 'sites', state: 'state' };
+
+// Probe history kept per site, as a string of verdict chars: 0=up 1=blocked 2=down 3=unreachable.
+// With one probe per site every ~9.7h (5.8k sites, 20/tick) 24 samples ~= 10 days.
+const HISTORY_LEN = 24;
+const HISTORY_CHAR = { up: '0', blocked: '1', down: '2', unreachable: '3' };
 
 /** Stable per-site key: normalized URL (host + path). Unique per distinct URL, stable across list reorders. */
 export function siteSlug(url) {
@@ -88,6 +102,29 @@ export function classifyStatus(status, headers) {
   if (status === 401 || status === 403 || status === 451) return 'blocked';
   if (headers && headers.get && headers.get('cf-mitigated')) return 'blocked';
   return 'down';
+}
+
+/** Append one probe verdict to a site's compact history string (oldest first). */
+export function pushHistory(prev, verdict) {
+  const h = String(prev || '') + (HISTORY_CHAR[verdict] || '2');
+  return h.length > HISTORY_LEN ? h.slice(h.length - HISTORY_LEN) : h;
+}
+
+/** Rolling mean response time carried as (avg, n) so state stays small. */
+export function rollMeanMs(prevAvg, prevN, ms) {
+  if (ms == null || !isFinite(ms)) return { avgMs: prevAvg == null ? null : prevAvg, msN: prevN || 0 };
+  const n = Math.min(prevN || 0, HISTORY_LEN - 1);
+  const avg = prevAvg == null || !n ? Math.round(ms) : Math.round((prevAvg * n + ms) / (n + 1));
+  return { avgMs: avg, msN: n + 1 };
+}
+
+/** Uptime over the stored history window; null until the site has been probed. */
+export function uptimeOf(entry) {
+  const h = (entry && entry.h) || '';
+  if (!h) return null;
+  let up = 0;
+  for (let i = 0; i < h.length; i++) if (h[i] === '0') up++;
+  return { pct: Math.round((up / h.length) * 1000) / 10, up, total: h.length };
 }
 
 /** One probe attempt with the browser-like headers. */
@@ -192,10 +229,14 @@ async function scheduleSweep(env) {
   }
   if (!chunk.length) return;
 
-  // Probe with fetch budget tracking
+  // Probe with a wall-clock budget. A chunk full of slow/dead sites must not
+  // swallow the whole invocation: if it does, writeState never runs, the
+  // cursor never moves, and every later tick re-probes the same chunk forever.
   let fetchesUsed = 0;
   const results = [];
+  const tickStart = Date.now();
   for (let i = 0; i < chunk.length; i += CONCURRENCY) {
+    if (Date.now() - tickStart > TICK_BUDGET_MS - PROBE_TIMEOUT_MS * 2) break;
     const batch = chunk.slice(i, i + CONCURRENCY);
     const batchResults = await Promise.all(
       batch.map(async (site) => {
@@ -208,13 +249,16 @@ async function scheduleSweep(env) {
     if (fetchesUsed >= MAX_FETCHES_PER_TICK) break;
   }
 
+  const probedSites = chunk.slice(0, results.length);
+  if (!probedSites.length) return;
+
   const nowIso = new Date().toISOString();
   const nowMs = Date.now();
   const removeAfterMs = REMOVE_AFTER_DAYS * 24 * 60 * 60 * 1000;
   const pruneBeforeMs = nowMs - REMOVE_PRUNE_DAYS * 24 * 60 * 60 * 1000;
 
   // Merge results with hysteresis
-  chunk.forEach((site, i) => {
+  probedSites.forEach((site, i) => {
     const result = results[i];
     const slug = site.slug;
     const prev = map[slug];
@@ -274,12 +318,17 @@ async function scheduleSweep(env) {
       }
     }
 
+    const roll = rollMeanMs(prev && prev.avgMs, prev && prev.msN, result.ms);
+
     map[slug] = {
       status: newStatus,
       ms: result.ms,
       code: result.code,
       detail: result.detail,
       checkedAt: nowIso,
+      h: pushHistory(prev && prev.h, result.status),
+      avgMs: roll.avgMs,
+      msN: roll.msN,
       ...(streak > 0 && { streak }),
       ...(since && { since }),
       ...(flapping && { flapping: true }),
@@ -292,7 +341,7 @@ async function scheduleSweep(env) {
 
   // Update state
   state.updated = nowIso;
-  state.cursor = (cursor + chunk.length) % mySites.length;
+  state.cursor = (cursor + probedSites.length) % mySites.length;
   state.map = map;
   // state.removed already updated above
 
@@ -334,7 +383,11 @@ async function handleStatus(env) {
     if (!entry) {
       return Object.assign({}, s, { status: 'pending', ms: null, code: null, detail: 'waiting for sweep' });
     }
-    return Object.assign({}, s, entry);
+    return Object.assign({}, s, entry, {
+      uptime: uptimeOf(entry),
+      avgMs: entry.avgMs != null ? entry.avgMs : entry.ms,
+      history: entry.h || null
+    });
   });
 
   // 503 only when state key is entirely absent (no data yet)
@@ -349,6 +402,7 @@ async function handleStatus(env) {
     sites,
     pending,
     total: sites.length,
+    historyWindow: HISTORY_LEN,
     removed,
     shard: { index: shardIndex, count: shardCount }
   });

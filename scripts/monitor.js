@@ -36,6 +36,8 @@ var monitorSearchTerm = '';
 var monitorCountryFilter = '';
 var CC_LABELS = { RU: '🇷🇺 Russia', IN: '🇮🇳 India', JP: '🇯🇵 Japan', PL: '🇵🇱 Poland', GB: '🇬🇧 United Kingdom', ID: '🇮🇩 Indonesia' };
 var MAX_BARS = 24;
+var MC_STATUS_BY_CHAR = { '0': 'up', '1': 'blocked', '2': 'down', '3': 'unreachable' };
+var MC_COLORS = { up: '#3fb950', blocked: '#d29922', down: '#f55e6a', unreachable: '#f0883e', pending: '#444c56' };
 
 function esc2(s) {
   if (s == null) return '';
@@ -59,15 +61,45 @@ function mc_extractCode(s) {
   return m ? parseInt(m[1], 10) : null;
 }
 
-function mc_seedHistory(initial, serverMs) {
-  var edges = ['4m', '3m', '2m', '1m', '30s', 'now'];
-  var hist = [];
-  for (var i = 0; i < edges.length; i++) {
-    hist.push({ label: edges[i], status: initial, ms: null });
-  }
-  hist.push({ label: 'now', status: initial, ms: (serverMs != null ? serverMs : null) });
-  if (hist.length > MAX_BARS) hist = hist.slice(hist.length - MAX_BARS);
-  return hist;
+function mc_ensureStyles() {
+  if (document.getElementById('mc-stats-styles')) return;
+  var st = document.createElement('style');
+  st.id = 'mc-stats-styles';
+  st.textContent =
+    '.mc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:14px 0 12px}' +
+    '.mc-card{padding:10px 14px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:8px;background:var(--surface,rgba(255,255,255,.03))}' +
+    '.mc-card-l{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin-bottom:2px}' +
+    '.mc-card-v{font-size:1.15rem;font-weight:700;line-height:1.25;font-variant-numeric:tabular-nums}' +
+    '.mc-card-s{font-size:.66rem;opacity:.5;margin-top:3px;line-height:1.35}' +
+    '.mc-up-hi{color:#3fb950}.mc-up-mid{color:#d29922}.mc-up-lo{color:#f55e6a}' +
+    '.mc-bars{display:inline-flex;align-items:flex-end;gap:2px;height:12px}' +
+    '.mc-bar{display:inline-block;width:4px;height:12px;border-radius:2px}' +
+    '.mc-uptime{font-weight:700;font-variant-numeric:tabular-nums}' +
+    '.mc-uptime-sub{opacity:.45;font-size:.65rem;margin-left:3px}' +
+    '.mc-note{font-size:.68rem;opacity:.55;margin:0 0 12px;line-height:1.5}' +
+    '.mc-sec{margin:0 0 16px}' +
+    '.mc-sec-title{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin:0 0 6px}' +
+    '.mc-sec .monitor-wrap table{font-size:.72rem}';
+  document.head.appendChild(st);
+}
+
+/** Real probe history from the worker (oldest first); a single bar when there is none. */
+function mc_history(s, fallback) {
+  var h = (s && typeof s.history === 'string') ? s.history : '';
+  var out = [];
+  for (var i = 0; i < h.length && out.length < MAX_BARS; i++) out.push(MC_STATUS_BY_CHAR[h[i]] || 'down');
+  if (!out.length) out.push(fallback || 'pending');
+  return out;
+}
+
+/** Uptime over the worker's probe window; null when the site has no recorded history. */
+function mc_uptime(s) {
+  if (s && s.uptime && typeof s.uptime.pct === 'number') return s.uptime;
+  var h = (s && typeof s.history === 'string') ? s.history : '';
+  if (!h) return null;
+  var up = 0;
+  for (var i = 0; i < h.length; i++) if (h[i] === '0') up++;
+  return { pct: Math.round(up / h.length * 1000) / 10, up: up, total: h.length };
 }
 
 function mc_fmtMs(ms) {
@@ -76,14 +108,62 @@ function mc_fmtMs(ms) {
   return Math.round(ms) + 'ms';
 }
 
-function mc_renderBars(st) {
-var out = '';
-  for (var i = 0; i < st.history.length; i++) {
-    var h = st.history[i];
-    var col = h.status === 'up' ? '#3fb950' : (h.status === 'down' ? '#f55e6a' : (h.status === 'unreachable' ? '#f0883e' : (h.status === 'pending' ? '#444c56' : '#d29922')));
-    out += '<span style="display:inline-block;width:4px;height:10px;border-radius:2px;background:' + col + ';margin-right:2px"></span>';
+function mc_renderBars(hist) {
+  var out = '';
+  for (var i = 0; i < hist.length; i++) {
+    var st = hist[i];
+    out += '<span class="mc-bar" style="background:' + (MC_COLORS[st] || MC_COLORS.pending) + '" title="' + esc2(st) + '"></span>';
   }
   return out;
+}
+
+function mc_pctCls(pct) {
+  if (pct == null) return '';
+  if (pct >= 99) return 'mc-up-hi';
+  if (pct >= 90) return 'mc-up-mid';
+  return 'mc-up-lo';
+}
+
+function mc_uptimeCell(u) {
+  if (!u) return '<span class="mc-uptime" style="opacity:.4">—</span>';
+  return '<span class="mc-uptime ' + mc_pctCls(u.pct) + '" title="' + esc2(u.up + ' of ' + u.total + ' probes up') + '">' +
+    u.pct.toFixed(1) + '%</span><span class="mc-uptime-sub">' + u.up + '/' + u.total + '</span>';
+}
+
+function mc_card(label, value, sub, cls) {
+  return '<div class="mc-card"><div class="mc-card-l">' + esc2(label) + '</div>' +
+    '<div class="mc-card-v ' + (cls || '') + '">' + value + '</div>' +
+    (sub ? '<div class="mc-card-s">' + esc2(sub) + '</div>' : '') + '</div>';
+}
+
+function mc_sectionPct(v) {
+  if (!v || !v.checks) return null;
+  return Math.round(v.upChecks / v.checks * 1000) / 10;
+}
+
+function mc_sectionTable(secStats) {
+  var names = [];
+  for (var k in secStats) if (secStats[k].total > 0) names.push(k);
+  if (!names.length) return '';
+  names.sort(function(a, b) {
+    var pa = mc_sectionPct(secStats[a]);
+    var pb = mc_sectionPct(secStats[b]);
+    if (pa !== pb) return (pa == null ? 101 : pa) - (pb == null ? 101 : pb);
+    return secStats[b].total - secStats[a].total;
+  });
+  var html = '<div class="mc-sec"><div class="mc-sec-title">Section health</div>' +
+    '<div class="monitor-wrap"><table><thead><tr><th>Section</th><th>Sites</th><th>Up</th><th>Failing</th><th>Uptime</th></tr></thead><tbody>';
+  for (var i = 0; i < names.length; i++) {
+    var v = secStats[names[i]];
+    var failing = v.down + v.blocked + v.unreachable;
+    var pct = mc_sectionPct(v);
+    html += '<tr><td class="mc-sec-name">' + esc2(names[i]) + '</td><td>' + v.total + '</td>' +
+      '<td class="mc-up-hi">' + v.up + '</td>' +
+      '<td class="' + (failing ? 'mc-up-lo' : '') + '">' + failing + '</td>' +
+      '<td>' + (pct == null ? '<span style="opacity:.4">—</span>' :
+        '<span class="mc-uptime ' + mc_pctCls(pct) + '">' + pct.toFixed(1) + '%</span>') + '</td></tr>';
+  }
+  return html + '</tbody></table></div></div>';
 }
 
 function mc_siteSlug(s) {
@@ -112,7 +192,7 @@ function mc_buildState(s) {
   var initial = mc_toStatus(s);
   return {
     url: s.url,
-    history: mc_seedHistory(initial, (s.ms != null ? s.ms : null)),
+    history: mc_history(s, initial),
     staticStatus: initial,
     liveStatus: initial,
     code: mc_extractCode(s)
@@ -139,11 +219,12 @@ function fetchMonitorData(showToast) {
   })).then(function(results) {
     var ok = results.filter(Boolean);
     if (!ok.length) throw new Error('all endpoints failed');
-    var merged = { sites: [], removed: [], updated: ok[0].updated };
+    var merged = { sites: [], removed: [], updated: ok[0].updated, historyWindow: ok[0].historyWindow };
     var seen = {};
     var removedSeen = {};
     ok.forEach(function(d) {
       if (d.updated && (!merged.updated || d.updated > merged.updated)) merged.updated = d.updated;
+      if (d.historyWindow && !merged.historyWindow) merged.historyWindow = d.historyWindow;
       (d.sites || []).forEach(function(s) {
         var slug = mc_siteSlug(s);
         if (!slug || seen[slug]) return;
@@ -199,6 +280,8 @@ function renderMonitorSection(preserveState) {
     var existing = panel.querySelector('.monitor-view');
     if (existing) existing.remove();
 
+    mc_ensureStyles();
+
     var source = monitorApiData || ((typeof MONITOR_DATA !== 'undefined' && MONITOR_DATA) ? MONITOR_DATA : null);
     var showAll = (typeof listShowNSFW !== 'undefined' && listShowNSFW);
     var catFilter = (typeof listFilter !== 'undefined' && listFilter && listFilter !== 'all') ? listFilter : null;
@@ -209,7 +292,7 @@ function renderMonitorSection(preserveState) {
       return;
     }
 
-var sites = (source.sites || []).slice();
+    var sites = (source.sites || []).slice();
     var sortRank = { down: 0, blocked: 1, unreachable: 2, up: 3, pending: 4 };
     sites.sort(function(a, b) {
       var ra = sortRank[mc_toStatus(a)] != null ? sortRank[mc_toStatus(a)] : 5;
@@ -224,13 +307,14 @@ var sites = (source.sites || []).slice();
     var seen = {};
     var rows = '';
     var up = 0, down = 0, blocked = 0, unreachable = 0, pending = 0, shown = 0, hiddenNSFW = 0;
+    var secStats = {}, totalChecks = 0, totalUpChecks = 0, msSum = 0, msCount = 0;
 
     sites.forEach(function(s) {
       if (!s || !s.url || !s.name) return;
       var slug = mc_siteSlug(s);
       if (seen[slug]) return;
       seen[slug] = true;
-if (!showAll && s.nsfw) { hiddenNSFW++; return; }
+      if (!showAll && s.nsfw) { hiddenNSFW++; return; }
       if (catFilter && s.section !== catFilter) return;
       if (monitorCountryFilter) {
         var codes = mc_countryCodes(s);
@@ -242,37 +326,52 @@ if (!showAll && s.nsfw) { hiddenNSFW++; return; }
       if (monitorSearchTerm && nameL.indexOf(monitorSearchTerm) === -1 && urlL.indexOf(monitorSearchTerm) === -1) return;
       shown++;
 
-var st = mc_toStatus(s);
+      var st = mc_toStatus(s);
       var state = mc_buildState(s);
-      if (st === 'up') up++; else if (st === 'blocked') blocked++; else if (st === 'unreachable') unreachable++; else if (st === 'pending') pending++; else down++;
+      var uptimeStat = mc_uptime(s);
+      var avgMs = (s.avgMs != null ? s.avgMs : (s.ms != null ? s.ms : null));
 
-      var last = state.history[state.history.length - 1];
-      var msText = mc_fmtMs(last.ms);
-      var msCls = 'mc-ms' + (state.liveStatus === 'down' ? ' mc-ms-down' : '');
+      if (st === 'up') up++; else if (st === 'blocked') blocked++; else if (st === 'unreachable') unreachable++; else if (st === 'pending') pending++; else down++;
+      if (uptimeStat) { totalChecks += uptimeStat.total; totalUpChecks += uptimeStat.up; }
+      if (avgMs != null) { msSum += avgMs; msCount++; }
+
+      var secKey = s.section || 'Uncategorised';
+      var sv = secStats[secKey];
+      if (!sv) sv = secStats[secKey] = { total: 0, up: 0, down: 0, blocked: 0, unreachable: 0, pending: 0, checks: 0, upChecks: 0 };
+      sv.total++;
+      sv[st]++;
+      if (uptimeStat) { sv.checks += uptimeStat.total; sv.upChecks += uptimeStat.up; }
+
+      var msText = mc_fmtMs(avgMs);
+      var msCls = 'mc-ms' + (st === 'down' ? ' mc-ms-down' : '');
       var code = state.code;
       var codeText, codeCls;
       if (st === 'blocked' || st === 'unreachable') { codeText = '⚠'; codeCls = 'mc-code mc-code-blocked'; }
       else if (code != null) { codeText = (code >= 400 ? '✗' : '✓') + code; codeCls = 'mc-code' + (code >= 400 ? ' mc-code-down' : ''); }
       else { codeText = '—'; codeCls = 'mc-code'; }
 
-var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
+      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
       var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : (st === 'unreachable' ? 'label-unreachable' : (st === 'pending' ? 'label-pending' : 'label-down')));
       var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : (st === 'unreachable' ? 'UNREACHABLE' : (st === 'pending' ? 'PENDING' : 'DEAD')));
       var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
       var flapBadge = s.flapping ? ' <span class="cc-badge" title="Keeps flipping between live/dead — pending confirmation">flapping</span>' : '';
 
       rows += '<tr>';
-      rows += '<td style="text-align:center"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
+      rows += '<td class="st-cell"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
       rows += '<td class="name-cell">' + esc2(s.name) + flapBadge + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
       rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
       rows += '<td class="sec-cell">' + esc2(s.section || '—') + '</td>';
-      rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
+      rows += '<td class="uptime-cell">' + mc_uptimeCell(uptimeStat) + '</td>';
+      rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state.history) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
       rows += '</tr>';
     });
 
     var updated = source.updated ? String(source.updated) : 'unknown';
+    var overallPct = totalChecks ? Math.round(totalUpChecks / totalChecks * 1000) / 10 : null;
+    var avgMsAll = msCount ? Math.round(msSum / msCount) : null;
+    var failing = down + blocked + unreachable;
 
-var ccOptions = '<option value="">🌍 All countries</option><option value="__global__">🌐 Global</option>';
+    var ccOptions = '<option value="">🌍 All countries</option><option value="__global__">🌐 Global</option>';
     var ccSeen = {};
     sites.forEach(function(s) {
       var codes = mc_countryCodes(s);
@@ -286,20 +385,22 @@ var ccOptions = '<option value="">🌍 All countries</option><option value="__gl
     }
 
     var mv = '<div class="monitor-view">';
-    mv += '<div class="monitor-stats">';
-    mv += '<span class="monitor-stat stat-up">🟢 ' + up + ' Up</span>';
-    mv += '<span class="monitor-stat stat-down">🔴 ' + down + ' Down</span>';
-    mv += '<span class="monitor-stat stat-blocked">🟡 ' + blocked + ' Blocked</span>';
-    mv += '<span class="monitor-stat">🟠 ' + unreachable + ' Unreachable</span>';
-    mv += '<span class="monitor-stat">⚪ ' + pending + ' Pending</span>';
-    mv += '<span class="monitor-stat stat-total">📋 ' + shown + ' Shown</span>';
-    if (hiddenNSFW > 0) mv += '<span class="monitor-stat">🔞 ' + hiddenNSFW + ' hidden</span>';
-    if (source.removed && source.removed.length) mv += '<span class="monitor-stat" title="Sites removed after 21+ days dead">' + source.removed.length + ' Removed</span>';
+    mv += '<div class="mc-cards">';
+    mv += mc_card('Uptime', overallPct == null ? '—' : overallPct.toFixed(1) + '%', 'last ' + (source.historyWindow || MAX_BARS) + ' probes per site', mc_pctCls(overallPct));
+    mv += mc_card('Avg response', mc_fmtMs(avgMsAll), 'across ' + msCount + ' sites', '');
+    mv += mc_card('Up', String(up), 'of ' + shown + ' shown', up ? 'mc-up-hi' : '');
+    mv += mc_card('Failing', String(failing), down + ' dead · ' + blocked + ' blocked · ' + unreachable + ' unreachable', failing ? 'mc-up-lo' : '');
+    mv += mc_card('Pending', String(pending), 'waiting for first sweep', '');
     mv += '</div>';
+    mv += '<div class="mc-note">Checks are a rolling sweep: every 2 min the worker probes the next 20 sites, so each site is re-checked roughly every 10 hours. Uptime is measured over the recorded probes only.' +
+      (totalChecks ? '' : ' This snapshot has no probe history yet — uptime fills in from the live worker.') + '</div>';
+    mv += mc_sectionTable(secStats);
     mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
-    mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Re-check</button></div>';
-    mv += '<div class="monitor-wrap"><table><thead><tr><th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Response</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
-    mv += '<div class="monitor-updated">🕐 Last checked: ' + esc2(updated) + '</div>';
+    mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Refresh</button></div>';
+    mv += '<div class="monitor-wrap"><table><thead><tr><th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Uptime</th><th>Response</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+    mv += '<div class="monitor-updated">🕐 Last sweep: ' + esc2(updated) +
+      (hiddenNSFW > 0 ? ' · 🔞 ' + hiddenNSFW + ' hidden' : '') +
+      (source.removed && source.removed.length ? ' · ' + source.removed.length + ' removed (dead 21+ days)' : '') + '</div>';
     mv += '</div>';
 
     panel.insertAdjacentHTML('beforeend', mv);
