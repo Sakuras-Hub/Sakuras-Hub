@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sakura's Hub</title>
 <meta name="description" content="Free streaming, reading, gaming and privacy sites, plus scripts and live uptime checks.">
-<meta name="theme-color" content="#08070d">
+<meta name="theme-color" content="#06060d">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sakura's Hub">
 <meta property="og:description" content="Free streaming, reading, gaming and privacy sites with live uptime checks.">
@@ -21,21 +21,21 @@
    ============================================================ */
 :root{
   color-scheme:dark;
-  --bg:#08070d;
-  --bg-soft:#0b0913;
-  --surface:#100d19;
-  --surface2:#161222;
-  --surface3:#1e1930;
-  --border:rgba(255,255,255,.075);
-  --border-hover:rgba(255,255,255,.16);
+  --bg:#06060d;
+  --bg-soft:#0a0814;
+  --surface:#171326;
+  --surface2:#1e1830;
+  --surface3:#2a2145;
+  --border:rgba(158,148,192,.16);
+  --border-hover:rgba(255,158,196,.30);
   --border-accent:rgba(var(--accent-rgb),.42);
-  --text:#f3f0fa;
-  --muted:#a49bbd;
-  --muted2:#6f6788;
-  --accent:#ff4bd8;
-  --accent-rgb:255,75,216;
-  --accent-text:#ff9be9;
-  --pink:#ffa8ef;
+  --text:#e8eaf6;
+  --muted:#9e94c0;
+  --muted2:#8277a6;
+  --accent:#ff5faf;
+  --accent-rgb:255,95,175;
+  --accent-text:#ff9ec4;
+  --pink:#ffb7c5;
   --purple:#b98cff;
   --ok:#3ecf8e;
   --success:#3ecf8e;
@@ -99,7 +99,7 @@ a{color:inherit}
 ::-webkit-scrollbar-thumb{background:#2b2440;border:2px solid var(--bg);border-radius:999px}
 ::-webkit-scrollbar-thumb:hover{background:#3b3257}
 *{scrollbar-color:#2b2440 var(--bg);scrollbar-width:thin}
-.bg-particle{position:fixed;top:0;z-index:0;pointer-events:none;font-size:16px;opacity:.2;user-select:none}
+
 
 /* ============================================================
    Top navigation
@@ -108,7 +108,7 @@ nav.top{
   position:sticky;top:0;z-index:60;
   display:flex;align-items:center;justify-content:flex-start;gap:8px;
   padding:10px 20px;
-  background:rgba(8,7,13,.84);
+  background:rgba(6,6,13,.82);
   -webkit-backdrop-filter:blur(14px) saturate(140%);
   backdrop-filter:blur(14px) saturate(140%);
   border-bottom:1px solid var(--border);
@@ -134,7 +134,7 @@ nav.top{
 .hero{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:clamp(44px,7vw,78px) var(--pad) 30px;text-align:center}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:.665rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase;
+  font-size:.75rem;font-weight:750;letter-spacing:0;text-transform:none;
   color:var(--accent-text);border:1px solid var(--border);background:rgba(16,13,25,.8);
   padding:6px 13px;border-radius:999px;margin-bottom:20px;
 }
@@ -150,7 +150,7 @@ nav.top{
 .stat{padding:11px 26px;text-align:center}
 .stat+.stat{border-left:1px solid var(--border)}
 .stat b{display:block;font-size:1.3rem;font-weight:750;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.2}
-.stat span{display:block;margin-top:3px;font-size:.615rem;color:var(--muted2);letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.stat span{display:block;margin-top:3px;font-size:.75rem;color:var(--muted2);letter-spacing:0;text-transform:none;font-weight:700}
 .hero-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
 .hero-links a,.hero-links button{
   display:inline-flex;align-items:center;gap:7px;
@@ -159,9 +159,9 @@ nav.top{
   border-radius:999px;padding:11px 20px;
   transition:border-color .16s,background .16s,transform .16s,filter .16s;
 }
-.hero-links a:first-child{background:linear-gradient(180deg,var(--accent),#e33abc);border-color:transparent;color:#170310;font-weight:700;box-shadow:0 8px 22px -12px rgba(var(--accent-rgb),.95)}
+.hero-links a:first-child{background:linear-gradient(180deg,var(--accent),#e8478f);border-color:transparent;color:#170310;font-weight:700;box-shadow:0 8px 22px -12px rgba(var(--accent-rgb),.95)}
 .hero-links a:hover,.hero-links button:hover{border-color:var(--border-hover);background:var(--surface2);transform:translateY(-1px)}
-.hero-links a:first-child:hover{background:linear-gradient(180deg,var(--accent),#e33abc);filter:brightness(1.07)}
+.hero-links a:first-child:hover{background:linear-gradient(180deg,var(--accent),#e8478f);filter:brightness(1.07)}
 .hero-search{max-width:520px;margin:0 auto;position:relative}
 .hero-search input{
   width:100%;font-size:.91rem;color:var(--text);
@@ -307,7 +307,7 @@ nav.top{
 .dialog-box p{font-size:.845rem;color:var(--muted);line-height:1.62;margin-bottom:20px}
 .dialog-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .dialog-actions button{font-size:.845rem;font-weight:650;cursor:pointer;border-radius:999px;padding:10px 20px;transition:filter .16s,transform .16s,border-color .16s,color .16s}
-.btn-enter{color:#170310;background:linear-gradient(180deg,var(--accent),#e33abc);border:1px solid transparent}
+.btn-enter{color:#170310;background:linear-gradient(180deg,var(--accent),#e8478f);border:1px solid transparent}
 .btn-enter:hover{filter:brightness(1.07);transform:translateY(-1px)}
 .btn-exit{color:var(--muted);background:var(--surface);border:1px solid var(--border)}
 .btn-exit:hover{color:var(--text);border-color:var(--border-hover)}
@@ -336,7 +336,7 @@ footer{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:2
 .welcome-icon{font-size:2.2rem;line-height:1;margin-bottom:12px;color:var(--accent-text)}
 .welcome-title{font-size:clamp(1.3rem,3.6vw,1.8rem);font-weight:750;color:var(--text);letter-spacing:-.032em;margin-bottom:8px}
 .welcome-sub{font-size:.85rem;color:var(--muted);line-height:1.62;max-width:480px;margin:0 auto}
-.helpful-section-hdr{display:flex;align-items:center;gap:10px;font-size:.675rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-text);margin:26px 0 13px}
+.helpful-section-hdr{display:flex;align-items:center;gap:10px;font-size:.75rem;font-weight:750;letter-spacing:0;text-transform:none;color:var(--accent-text);margin:26px 0 13px}
 .helpful-section-hdr::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(var(--accent-rgb),.3),transparent)}
 .helpful-section-hdr:first-of-type{margin-top:0}
 .helpful-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
@@ -352,7 +352,7 @@ footer{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:2
 .helpful-entry-body a::after{content:' ↗';font-size:.7em;opacity:.45;transition:opacity .16s}
 .helpful-entry-body a:hover{color:var(--accent-text);border-bottom-color:var(--accent)}
 .helpful-entry-body a:hover::after{opacity:1}
-.helpful-entry::after{content:'Read guide ↗';display:block;margin:0 14px 14px;padding:8px 12px;font-size:.675rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text);background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.2);border-radius:9px;text-align:center;transition:background .18s,color .18s,border-color .18s;pointer-events:none}
+.helpful-entry::after{content:'Read guide';display:block;margin:0 14px 14px;padding:8px 12px;font-size:.75rem;font-weight:700;letter-spacing:0;text-transform:none;color:var(--accent-text);background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.2);border-radius:9px;text-align:center;transition:background .18s,color .18s,border-color .18s;pointer-events:none}
 .helpful-entry:hover::after,.helpful-entry:focus-visible::after{background:rgba(var(--accent-rgb),.17);color:#fff;border-color:rgba(var(--accent-rgb),.42)}
 
 /* ============================================================
@@ -578,14 +578,14 @@ footer{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:2
 
 /* ============ Script Hub (retained verbatim) ============ */
 #script-hub {
-  --accent-text: #ff9be9;
+  --accent-text: #ff9ec4;
   --success: #3ecf8e;
-  --surface: #100d19;
+  --surface: #171326;
   --radius: 10px;
   --radius-lg: 16px;
-  --border: rgba(255,255,255,.075);
-  --border-hover: rgba(255,255,255,.16);
-  --muted2: #6f6788;
+  --border: rgba(158,148,192,.16);
+  --border-hover: rgba(255,158,196,.30);
+  --muted2: #8277a6;
 }
 #script-hub.script-page { max-width: 100%; margin: 0 auto; padding: 8px 0; }
 #script-hub h2 { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.2px; }
@@ -845,15 +845,15 @@ footer{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:2
 
 /* ============ Monitor panel (retained verbatim) ============ */
 #view-monitor {
-  --accent-text: #ff9be9;
+  --accent-text: #ff9ec4;
   --success: #3ecf8e;
-  --surface: #100d19;
+  --surface: #171326;
   --radius: 10px;
   --radius-lg: 16px;
-  --border: rgba(255,255,255,.075);
-  --border-hover: rgba(255,255,255,.16);
-  --muted2: #6f6788;
-  --surface2: #161222;
+  --border: rgba(158,148,192,.16);
+  --border-hover: rgba(255,158,196,.30);
+  --muted2: #8277a6;
+  --surface2: #1e1830;
 }
   .monitor-view { margin-top: 0; }
   .monitor-view .monitor-stats { display: flex; gap: 10px; margin: 14px 0 18px; flex-wrap: wrap; }
@@ -928,33 +928,33 @@ footer{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:2
   --accent-contrast:#170310;
   --scroll:#2b2440;
   --scroll-hover:#3b3257;
-  --nav-bg:rgba(8,7,13,.84);
+  --nav-bg:rgba(6,6,13,.82);
   --overlay:rgba(4,3,9,.74);
 }
 html[data-theme="light"]{
   color-scheme:light;
-  --bg:#f7f5fb;
-  --bg-soft:#efebf7;
-  --surface:#ffffff;
-  --surface2:#f4f1fa;
-  --surface3:#e9e3f4;
-  --border:rgba(24,18,40,.10);
+  --bg:#e3dfeb;
+  --bg-soft:#d9d4e5;
+  --surface:#efecf6;
+  --surface2:#e7e3f0;
+  --surface3:#dbd5e8;
+  --border:rgba(24,18,40,.15);
   --border-hover:rgba(24,18,40,.20);
   --border-accent:rgba(var(--accent-rgb),.45);
   --text:#171226;
   --muted:#57506d;
   --muted2:#7d7495;
-  --accent:#c9189b;
-  --accent-rgb:201,24,155;
-  --accent-text:#a80f81;
-  --pink:#d830ae;
+  --accent:#d01f7a;
+  --accent-rgb:208,31,122;
+  --accent-text:#a8115f;
+  --pink:#e0508f;
   --purple:#7436cc;
   --ok:#0f7a57;
   --success:#0f7a57;
   --warn:#8a5a00;
   --danger:#bf2434;
   --danger-rgb:191,36,52;
-  --panel:#ffffff;
+  --panel:#efecf6;
   --body-text:#3b3350;
   --chip-bg:rgba(24,18,40,.04);
   --ok-text:#0d6b4d;
@@ -963,7 +963,7 @@ html[data-theme="light"]{
   --accent-contrast:#ffffff;
   --scroll:#cfc6e2;
   --scroll-hover:#b9aed2;
-  --nav-bg:rgba(247,245,251,.86);
+  --nav-bg:rgba(227,223,235,.88);
   --overlay:rgba(23,18,38,.34);
   --shadow-1:0 1px 2px rgba(24,18,40,.06);
   --shadow-2:0 14px 30px -18px rgba(24,18,40,.22);
@@ -1016,7 +1016,7 @@ html[data-theme="light"] .suit-listbox{background:var(--surface2);border-color:v
 html[data-theme="light"] .suit-vault-detail,
 html[data-theme="light"] .suit-vault-toolbar{background:var(--surface2)}
 html[data-theme="light"] .suit-inbox-table th{background:var(--surface3);color:var(--accent-text)}
-html[data-theme="light"] #script-hub{--surface:#ffffff;--border:rgba(24,18,40,.10);--border-hover:rgba(24,18,40,.22);--muted2:#7d7495;--accent-text:#a80f81}
+html[data-theme="light"] #script-hub{--surface:#ffffff;--border:rgba(24,18,40,.10);--border-hover:rgba(24,18,40,.22);--muted2:#7d7495;--accent-text:#a8115f}
 html[data-theme="light"] #script-hub h2,
 html[data-theme="light"] #script-hub .sf-acc-header,
 html[data-theme="light"] #script-hub .sf-card-title,
@@ -1035,7 +1035,7 @@ html[data-theme="light"] #script-hub .script-game-card:hover,
 html[data-theme="light"] #script-hub .sf-acc-header:hover,
 html[data-theme="light"] #script-hub .live-card:hover{background:var(--surface2)}
 html[data-theme="light"] #script-hub .script-search{background:var(--surface)}
-html[data-theme="light"] #view-monitor{--surface:#ffffff;--surface2:#f4f1fa;--border:rgba(24,18,40,.10);--muted2:#7d7495;--accent-text:#a80f81}
+html[data-theme="light"] #view-monitor{--surface:#ffffff;--surface2:#f4f1fa;--border:rgba(24,18,40,.10);--muted2:#7d7495;--accent-text:#a8115f}
 html[data-theme="light"] .monitor-view .mc-search,
 html[data-theme="light"] .monitor-view .mc-select,
 html[data-theme="light"] .monitor-view .mc-search:focus{background:var(--surface2);color:var(--text)}
@@ -1075,23 +1075,150 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
 @media (max-width:820px){
   .theme-btn{width:32px;height:32px;font-size:.9rem}
 }
+
+/* ============================================================
+   Sakura theme pass (petal canvases, ornaments, glow, polish)
+   ============================================================ */
+.petal-canvas{position:fixed;left:0;top:0;width:100vw;height:100vh;pointer-events:none;display:block}
+.petal-back{z-index:0}
+.petal-front{z-index:45}
+html[data-theme="light"] .petal-back{opacity:1}
+html[data-theme="light"] .petal-front{opacity:1}
+
+:root{
+  --glow:0 0 0 1px rgba(var(--accent-rgb),.18),0 18px 44px -22px rgba(var(--accent-rgb),.55);
+  --grad-sakura:linear-gradient(96deg,#ffd1dc 0%,#ff9ec4 34%,var(--accent) 62%,#b98cff 100%);
+}
+
+/* soft aurora behind everything */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(620px 420px at 82% 78%,rgba(var(--accent-rgb),.08),transparent 70%),
+    radial-gradient(560px 380px at 8% 62%,rgba(139,92,246,.07),transparent 70%);
+}
+html[data-theme="light"] body::before{opacity:.7}
+html[data-theme="light"]{--grad-sakura:linear-gradient(96deg,#e0508f 0%,#d01f7a 45%,#9b3fd0 100%)}
+
+/* brand + nav */
+.brand-mark{display:inline-block;color:var(--accent);font-size:1.12em;line-height:1;transform-origin:50% 55%;animation:bloomSpin 14s linear infinite;filter:drop-shadow(0 0 8px rgba(var(--accent-rgb),.6))}
+@keyframes bloomSpin{to{transform:rotate(360deg)}}
+.brand .m{background:var(--grad-sakura);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.top{border-bottom:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),.42),rgba(185,140,255,.32),transparent) 1}
+.nav-links a.active{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.34),0 0 18px -6px rgba(var(--accent-rgb),.6)}
+
+/* hero */
+.hero{overflow:visible}
+.hero::before{
+  content:'';position:absolute;left:50%;top:6%;width:min(760px,92vw);height:340px;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(var(--accent-rgb),.20),rgba(var(--accent-rgb),.05) 55%,transparent 75%);
+  filter:blur(18px);z-index:-1;pointer-events:none;
+}
+.hero-orn,.foot-orn{display:flex;justify-content:center;align-items:center;gap:14px;color:var(--accent-text);opacity:.85;margin-bottom:14px}
+.hero-orn i,.foot-orn i{font-style:normal;font-size:.95rem;line-height:1}
+.hero-orn i:nth-child(2),.foot-orn i:nth-child(2){font-size:1.35rem;color:var(--accent);filter:drop-shadow(0 0 10px rgba(var(--accent-rgb),.7))}
+.hero-orn::before,.hero-orn::after,.foot-orn::before,.foot-orn::after{content:'';height:1px;width:clamp(36px,12vw,120px);background:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),.5))}
+.hero-orn::after,.foot-orn::after{transform:scaleX(-1)}
+.hero-title{text-shadow:0 0 42px rgba(var(--accent-rgb),.28)}
+html[data-theme="light"] .hero-title{text-shadow:none}
+.hero-title span{background:var(--grad-sakura);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s ease-in-out infinite alternate}
+@keyframes sheen{from{background-position:0% 50%}to{background-position:100% 50%}}
+.hero-badge::before{animation:pulseDot 2.6s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 3px rgba(var(--accent-rgb),.16)}50%{box-shadow:0 0 0 6px rgba(var(--accent-rgb),.04)}}
+.stats{box-shadow:var(--glow);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.stat b{background:var(--grad-sakura);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-search input{box-shadow:0 10px 30px -22px rgba(var(--accent-rgb),.8)}
+.hero-search input:focus{box-shadow:var(--ring),0 14px 36px -20px rgba(var(--accent-rgb),.9)}
+.hero-links a:first-child{box-shadow:0 10px 28px -12px rgba(var(--accent-rgb),.95)}
+
+/* directory cards */
+.section-head h2{background:var(--grad-sakura);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+html[data-theme="light"] .section-head h2{background:none;color:var(--text);-webkit-text-fill-color:currentColor}
+.preset-card{overflow:hidden;isolation:isolate}
+.preset-card::before{
+  content:'';position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .25s var(--ease);
+  background:radial-gradient(260px 120px at 12% 0%,rgba(var(--accent-rgb),.16),transparent 70%);
+}
+.preset-card:hover::before{opacity:1}
+.preset-card:hover{box-shadow:var(--glow);border-color:rgba(var(--accent-rgb),.5)}
+.preset-dot{box-shadow:0 0 0 3px rgba(62,207,142,.14),0 0 10px rgba(62,207,142,.55)}
+.preset-card.preset-avoid .preset-dot{background:var(--danger);box-shadow:0 0 0 3px rgba(var(--danger-rgb),.14),0 0 10px rgba(var(--danger-rgb),.5)}
+.preset-favicon{box-shadow:0 4px 12px -6px rgba(0,0,0,.7)}
+
+/* guides */
+.helpful-entry:hover{box-shadow:var(--glow);border-color:rgba(var(--accent-rgb),.5)}
+.helpful-entry-icon{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.18)}
+.welcome-icon{display:inline-block;color:var(--accent);filter:drop-shadow(0 0 14px rgba(var(--accent-rgb),.65));animation:bloomSpin 22s linear infinite}
+.welcome-title{background:var(--grad-sakura);-webkit-background-clip:text;background-clip:text;color:transparent}
+.guide-panel,.dialog-box{box-shadow:var(--shadow-3),0 0 0 1px rgba(var(--accent-rgb),.12),0 0 80px -30px rgba(var(--accent-rgb),.5)}
+
+/* dropdowns / toggles / toasts */
+.fl-custom-dd.open .fl-trigger{box-shadow:var(--ring)}
+.fl-dd-item.selected{box-shadow:inset 3px 0 0 var(--accent)}
+.toast{border-color:rgba(var(--accent-rgb),.4);box-shadow:var(--shadow-2),0 0 28px -10px rgba(var(--accent-rgb),.7)}
+
+/* embedded panels pick up the same glow */
+.suit-tabbar,#script-hub .script-tabbar{box-shadow:0 2px 18px rgba(0,0,0,.35),0 0 0 1px rgba(var(--accent-rgb),.08)}
+.suit-btn,.suit-btn-sm{box-shadow:0 6px 18px -12px rgba(var(--accent-rgb),.8)}
+#script-hub .script-game-card:hover,#script-hub .live-card:hover{box-shadow:var(--glow)}
+.monitor-view .mc-card{box-shadow:0 10px 30px -22px rgba(var(--accent-rgb),.7)}
+
+/* footer */
+footer{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),.35),transparent) 1;padding-top:34px}
+footer p{margin-top:2px}
+.foot-orn{margin-bottom:10px}
+
+.ascii-art{margin:0 auto 6px;width:max-content;max-width:100%;overflow:hidden;font:600 13px/1.15 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);text-align:left;white-space:pre;text-shadow:0 0 10px rgba(var(--accent-rgb),.55);user-select:none}
+html[data-theme="light"] .ascii-art{text-shadow:none}
+@media (max-width:520px){.ascii-art{font-size:9px}}
+
+/* petals/aurora sit under content; keep content above them */
+.hero,.container,.app-section,footer{position:relative;z-index:1}
+
+@media (max-width:640px){
+  .hero-orn{margin-bottom:10px}
+  .petal-front{opacity:.8}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-mark,.welcome-icon,.hero-title span,.hero-badge::before{animation:none}
+}
+
+.helpful-entry-icon,.hero-badge{display:none}
+.foot-orn,.hero-orn{display:none}
+/* No glow: gradients and motion stay, light halos go */
+:root{--glow:0 0 0 1px rgba(var(--accent-rgb),.18)}
+body::before,.hero::before{display:none}
+.hero-title{text-shadow:none}
+.brand-mark,.welcome-icon{filter:none}
+.ascii-art{text-shadow:none}
+.nav-links a.active{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.34)}
+.stats{box-shadow:none}
+.hero-search input,.hero-search input:focus{box-shadow:none}
+.hero-search input:focus{box-shadow:var(--ring)}
+.hero-links a:first-child{box-shadow:none}
+.preset-dot,.preset-card.preset-avoid .preset-dot{box-shadow:none}
+.preset-card:hover,.helpful-entry:hover,#script-hub .script-game-card:hover,#script-hub .live-card:hover{box-shadow:var(--shadow-2)}
+.guide-panel,.dialog-box{box-shadow:var(--shadow-3)}
+.toast{box-shadow:var(--shadow-2)}
+.suit-tabbar,#script-hub .script-tabbar,.suit-btn,.suit-btn-sm,.monitor-view .mc-card{box-shadow:none}
 </style>
 <script>(function(){try{var s=localStorage.getItem("sakura-theme");var d=(s==="light"||s==="dark")?s:((window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-theme",d);document.documentElement.style.colorScheme=d;}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();</script>
 </head>
 <body>
+<canvas id="petalsBack" class="petal-canvas petal-back" aria-hidden="true"></canvas>
 
 <nav class="top">
   <div class="fl-select-wrap nav-dd nav-dd-country">
     <div class="fl-custom-dd" id="flCountry">
-      <div class="fl-trigger" id="countryTrigger">🌍 All Countries</div>
+      <div class="fl-trigger" id="countryTrigger">All countries</div>
       <span class="fl-dd-arrow">▾</span>
       <div class="fl-dd-menu" id="countryMenu"></div>
     </div>
   </div>
-  <div class="brand">🌸 <span class="m">Sakura's Hub</span></div>
+  <div class="brand"><span class="m">Sakura's Hub</span></div>
   <div class="fl-select-wrap nav-dd nav-dd-cat">
     <div class="fl-custom-dd" id="navCatDd">
-      <div class="fl-trigger" id="catTrigger">🗂️ All Categories</div>
+      <div class="fl-trigger" id="catTrigger">All categories</div>
       <span class="fl-dd-arrow">▾</span>
       <div class="fl-dd-menu" id="catMenu"></div>
     </div>
@@ -1103,34 +1230,32 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
     <a href="#guides" data-view="guides">Guides</a>
     <a href="#monitor" data-view="monitor">Monitor</a>
     <button id="themeBtn" class="theme-btn" type="button" aria-label="Switch to light theme" title="Switch theme"><span id="themeIcon" aria-hidden="true">🌙</span></button>
-    <button id="adultBtn" type="button">🔞 18+</button>
+    <button id="adultBtn" type="button">18+</button>
   </div>
 </nav>
 
 <div class="view show" id="view-directory">
 <header class="hero">
-  <span class="hero-badge">Directory, tools, guides</span>
-  <h1 class="hero-title">Sakura's <span>Hub</span></h1>
-  <p class="hero-sub">Streaming, reading, gaming and privacy sites, sorted by section. Adult entries stay hidden until you press 🔞.</p>
+    <h1 class="hero-title">Sakura's <span>Hub</span></h1>
+  <p class="hero-sub">Streaming, reading, gaming and privacy sites, sorted by section. Adult entries stay hidden until you turn on 18+.</p>
   <div class="stats" id="stats">
     <div class="stat"><b id="stSites">…</b><span>Sites</span></div>
     <div class="stat"><b id="stCats">…</b><span>Categories</span></div>
     <div class="stat"><b id="stFree">…</b><span>Free</span></div>
   </div>
   <div class="hero-links">
-    <a href="#directory" data-view="directory">Browse the directory ↓</a>
+    <a href="#directory" data-view="directory">Browse the directory</a>
     <a href="#guides" data-view="guides">Guides</a>
   </div>
   <div class="hero-search">
     <input type="text" id="searchInput" placeholder="Search sites…" autocomplete="off" autocorrect="off" spellcheck="false">
-    <span class="sc">🔍</span>
   </div>
 </header>
 
 <main class="container" id="directory">
   <div class="filter-bar" id="filterBar">
-    <button class="fl-toggle" id="avoidToggle" type="button">🚫 Avoid</button>
-    <button class="fl-toggle danger" id="nsfwToggle" type="button">🔞 NSFW</button>
+    <button class="fl-toggle" id="avoidToggle" type="button">Avoid</button>
+    <button class="fl-toggle danger" id="nsfwToggle" type="button">NSFW</button>
   </div>
   <div id="grid"></div>
 
@@ -1139,15 +1264,15 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
 
 <div class="view" id="view-suit">
 <section id="suit" class="app-section">
-  <h2 class="app-h2">🧰 Sakura&apos;s Suit</h2>
+  <h2 class="app-h2">Sakura&apos;s Suit</h2>
   <p class="app-sub">Generate passwords, usernames and PINs. Read throwaway inboxes and keep a local vault.</p>
 <div id="suit-root">
   <div class="suit-tabbar" style="margin-bottom:16px;">
-    <button class="suit-tab-btn active" data-suit-action="tab" data-suit-tab="passwords">🔐 Passwords</button>
-    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="usernames">👤 Usernames</button>
-    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="pins">🔢 PINs</button>
-    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="email">📧 Email</button>
-    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="vault">🗄️ Vault</button>
+    <button class="suit-tab-btn active" data-suit-action="tab" data-suit-tab="passwords">Passwords</button>
+    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="usernames">Usernames</button>
+    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="pins">PINs</button>
+    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="email">Email</button>
+    <button class="suit-tab-btn" data-suit-action="tab" data-suit-tab="vault">Vault</button>
   </div>
 
   <div class="suit-panel panel active" id="suit-panel-passwords">
@@ -1265,8 +1390,8 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
       <button class="suit-prov-btn" data-suit-action="select-provider" data-suit-provider="tempmail">Temp-Mail</button>
     </div>
     <div class="suit-sub-tabbar">
-      <button class="suit-tab-btn active" id="suit-email-sub-single" data-suit-action="email-sub" data-suit-sub="single">📧 Single</button>
-      <button class="suit-tab-btn" id="suit-email-sub-bulk" data-suit-action="email-sub" data-suit-sub="bulk">📦 Bulk</button>
+      <button class="suit-tab-btn active" id="suit-email-sub-single" data-suit-action="email-sub" data-suit-sub="single">Single</button>
+      <button class="suit-tab-btn" id="suit-email-sub-bulk" data-suit-action="email-sub" data-suit-sub="bulk">Bulk</button>
     </div>
     <div id="suit-email-single">
       <div class="suit-section-lbl">EMAIL ADDRESS</div>
@@ -1379,10 +1504,10 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
   <div class="app-section" id="script-hub-wrap">
     <section id="script-hub" class="script-page">
       <div class="script-tabbar" role="tablist">
-        <button class="script-tab-btn active" data-script-subtab="script" role="tab" aria-selected="true">📜 Script</button>
-        <button class="script-tab-btn" data-script-subtab="features" role="tab" aria-selected="false">⭐ Features</button>
-        <button class="script-tab-btn" data-script-subtab="changelog" role="tab" aria-selected="false">📋 Changelog</button>
-        <button class="script-tab-btn" data-script-subtab="live" role="tab" aria-selected="false">🖥️ Executors</button>
+        <button class="script-tab-btn active" data-script-subtab="script" role="tab" aria-selected="true">Script</button>
+        <button class="script-tab-btn" data-script-subtab="features" role="tab" aria-selected="false">Features</button>
+        <button class="script-tab-btn" data-script-subtab="changelog" role="tab" aria-selected="false">Changelog</button>
+        <button class="script-tab-btn" data-script-subtab="live" role="tab" aria-selected="false">Executors</button>
       </div>
       <div id="script-hub-content"></div>
     </section>
@@ -1393,13 +1518,10 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
 <div class="app-section" id="guides-wrap">
 <section id="guides" class="helpful-page">
   <div class="welcome-hero">
-    <div class="welcome-icon">✦</div>
-    <h2 class="welcome-title">Welcome to Sakura's Hub</h2>
+        <h2 class="welcome-title">Guides</h2>
     <p class="welcome-sub">Guides for streaming safely and blocking ads, plus how to check a site before you trust it.</p>
   </div>
 
-  <h2>Helpful Stuff</h2>
-  <p class="helpful-sub">Each guide covers one job.</p>
 
   <div class="helpful-section-hdr">Start Here</div>
     <div class="helpful-grid">
@@ -1635,7 +1757,7 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
         <div class="helpful-entry-head">
           <div class="helpful-entry-icon">🗂️</div>
           <div class="helpful-entry-meta">
-            <div class="helpful-entry-title">File Hosts Deep Dive</div>
+            <div class="helpful-entry-title">File hosts</div>
           </div>
         </div>
         <div class="helpful-entry-body">File hosts store single files and hand them out over HTTP. Free tiers cap download speed, limit concurrent downloads, and daily volume caps. Premium accounts remove those limits.<br><br>DDL circles rotate through hosts based on speed and limits. Release pages list the same file on several hosts so you can pick one that works.<br><br>Large releases ship as multi-part RARs, usually 1 GB per part. Download every part, then extract part 1 only. One missing part means a corrupt extraction.<br><br>Many archives are password-protected. The password sits on the release page, usually in a spoiler tag or a text file next to the links. If the page does not show one, check the site's FAQ.<br><br>Some hosts sit behind link lockers: wait timers, captchas, and redirect chains before the real link appears. Skip hosts that make you click through more than a couple of pages.<br><br>JDownloader at <a href="https://jdownloader.org/download/index" target="_blank" rel="noopener">jdownloader.org</a> is a free link grabber. Paste a page of links and it detects the files, handles captchas, and queues downloads in batches. It also extracts archives after download.<br><br>Debrid services act as a middleman: you give them a host link, they download it on their servers, and hand you a fast direct link. That bypasses host limits and speed caps. See the Debrid card.<br><br>Check the file size before committing. A 50 GB game split into 50 parts is a long download on a capped free tier. Fake hosts and redirect pages exist to serve malware, stick to the hosts the release page lists.</div>
@@ -1773,7 +1895,7 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
         <div class="helpful-entry-head">
           <div class="helpful-entry-icon">🕹️</div>
           <div class="helpful-entry-meta">
-            <div class="helpful-entry-title">Emulation Deep Dive</div>
+            <div class="helpful-entry-title">Emulator setup</div>
           </div>
         </div>
         <div class="helpful-entry-body">RetroArch is the one frontend for most retro systems. It loads emulators as cores, so one install handles NES, SNES, Genesis, PS1, GBA, and DS. Get it from <a href="https://www.retroarch.com" target="_blank" rel="noopener">retroarch.com</a>, pull the cores you need from the built-in updater, and setup is done.<br><br>Heavy systems get standalone emulators. Dolphin runs GameCube and Wii. PCSX2 runs PS2. Both are mature, free, and updated regularly. Use them instead of RetroArch cores for those systems.<br><br>Some cores need BIOS files. PS1, PS2, and DS cores check for system BIOS before boot. The directory's ROM sites carry BIOS packs. Drop them in RetroArch's system folder or the emulator's bios directory and the check passes.<br><br>Pull ROMs from the directory's ROM sites. Check file sizes first. A full PS1 game is 300-700MB as .bin/.cue or .chd. GBA games are 8-32MB. A listing that claims a PS1 game is 5MB is a fake or a demo.<br><br>.chd compresses disc images into one file. .iso is raw and works everywhere. .zip is fine for cartridge systems. Convert .iso to .chd with chdman to shrink PS1 and PS2 libraries.<br><br>Shaders and bezels handle picture quality. CRT shaders emulate scanlines and aperture grille. RetroArch ships dozens built in. A good CRT shader does more for the look than any resolution setting.<br><br>Save states let you save anywhere, mid-frame. In-game saves are the game's own system. Use both. Save states for quick sessions, in-game saves for anything you want to keep.<br><br>Tune performance: enable frame pacing to stop stutter. Run-ahead cuts input lag by simulating frames ahead. Start with 1 or 2 frames on SNES and Genesis. If a game runs slow, check the core settings before blaming your hardware.</div>
@@ -1816,12 +1938,16 @@ html[data-theme="light"] .suit-strength-track{background:rgba(24,18,40,.10)}
 
 <div class="view" id="view-monitor">
 <section id="monitor" class="app-section">
-  <h2 class="app-h2">📊 Sakura Monitor</h2>
+  <h2 class="app-h2">Sakura Monitor</h2>
   <p class="app-sub">Uptime and response time for every listing. The worker checks 20 sites every two minutes.</p>
 <div id="monitorRoot">
 </div>
 </section>
 </div><!-- /view-monitor -->
+
+<footer><p>Sakura's Hub</p></footer>
+
+<canvas id="petalsFront" class="petal-canvas petal-front" aria-hidden="true"></canvas>
 
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="adultTitle">
   <div class="dialog-box">
@@ -2250,7 +2376,7 @@ function countryCodesInData(){
 
 function buildCountryMenu(){
   if (!el.countryMenu) return;
-  var h = '<div class="fl-dd-item' + (countryFilter === 'all' ? ' selected' : '') + '" data-value="all">🌍 All Countries</div>';
+  var h = '<div class="fl-dd-item' + (countryFilter === 'all' ? ' selected' : '') + '" data-value="all">All countries</div>';
   h += '<div class="fl-dd-item' + (countryFilter === '__global__' ? ' selected' : '') + '" data-value="__global__">🌐 Global</div>';
   countryCodesInData().forEach(function(cc){
     var cm = getCountryMeta(cc);
@@ -2299,7 +2425,7 @@ function renderTabs(){
   });
   el.catMenu.innerHTML = html;
   var lbl = findLabelGroup(activeTab);
-  el.catTrigger.textContent = activeTab === '__all__' || !lbl ? '🗂️ All Categories' : '🗂️ ' + lbl.label;
+  el.catTrigger.textContent = activeTab === '__all__' || !lbl ? 'All categories' : lbl.label;
 }
 
 function initCategoryDropdown(){
@@ -2499,7 +2625,7 @@ function closeModal(){ el.modal.classList.remove('show'); }
 function unlockAdults(){
   unlocked = true;
   el.adultBtn.classList.add('unlocked');
-  el.adultBtn.textContent = '🔞 18+ ✓';
+  el.adultBtn.textContent = '18+ on';
   closeModal();
   renderTabs();
   renderGrid();
@@ -2507,105 +2633,196 @@ function unlockAdults(){
   toast('Adult sections unlocked');
 }
 
-/* ---------- falling blossoms (ported physics; no #spot color box) ---------- */
-(function blossoms(){
-  var layerDefs = [
-    { sizeMin: 8, sizeMax: 12, speedMin: 0.8, speedMax: 1.4, swayMin: 5, swayMax: 10, opMin: 0.08, opMax: 0.15, blur: 'blur(0.6px)' },
-    { sizeMin: 13, sizeMax: 18, speedMin: 1.3, speedMax: 2.2, swayMin: 9, swayMax: 16, opMin: 0.16, opMax: 0.28, blur: '' },
-    { sizeMin: 19, sizeMax: 24, speedMin: 1.8, speedMax: 3.0, swayMin: 14, swayMax: 22, opMin: 0.25, opMax: 0.40, blur: '' }
+/* ---------- Sakura petal rain (ported from Luau Shield) ---------- */
+(function sakuraPetals(){
+  var back = document.getElementById('petalsBack');
+  var front = document.getElementById('petalsFront');
+  if (!back || !front || !back.getContext) return;
+
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+  // Same notched cherry-blossom outline and colours as the desktop app.
+  var UNIT = [
+    [0.00,-0.70],[0.30,-0.92],[0.62,-0.55],[0.66,0.05],
+    [0.40,0.62],[0.00,0.95],[-0.40,0.62],[-0.66,0.05],
+    [-0.62,-0.55],[-0.30,-0.92]
   ];
-  var totalCount = 6 + Math.floor(Math.random() * 3);
-  var particles = [];
-  for (var i = 0; i < totalCount; i++) {
-    var layer = layerDefs[i % 3];
-    var particleEl = document.createElement('div');
-    particleEl.className = 'bg-particle';
-    var size = layer.sizeMin + Math.random() * (layer.sizeMax - layer.sizeMin);
-    particleEl.style.fontSize = size + 'px';
-    particleEl.textContent = '🌸';
-    if (layer.blur) particleEl.style.filter = layer.blur;
-    var lx = Math.random() * 100;
-    var ly = Math.random() * 110 - 10;
-    particleEl.style.left = lx + '%';
-    particleEl.style.top = ly + '%';
-    particleEl.style.opacity = layer.opMin + Math.random() * (layer.opMax - layer.opMin);
-    var fallSpeed = layer.speedMin + Math.random() * (layer.speedMax - layer.speedMin);
-    var swayAmp = layer.swayMin + Math.random() * (layer.swayMax - layer.swayMin);
-    var swayFreq = 0.08 + Math.random() * 0.3;
-    var turbFreq = 0.03 + Math.random() * 0.07;
-    var windDrift = (Math.random() - 0.5) * 0.3;
-    var rotSpeed = (Math.random() - 0.5) * 3;
-    var phase = Math.random() * Math.PI * 2;
-    var altPhase = Math.random() * Math.PI * 2;
-    document.body.appendChild(particleEl);
-    particles.push({ el: particleEl, lx: lx, ly: ly, fallSpeed: fallSpeed, swayAmp: swayAmp, swayFreq: swayFreq, turbFreq: turbFreq, windDrift: windDrift, rotSpeed: rotSpeed, phase: phase, altPhase: altPhase, start: Date.now(), vx: 0, vy: 0 });
-  }
+  var COLORS = ['#FF9EC4','#F494B0','#FF7FB0','#FF5FAF','#FFA3C7'];
+  var TAU = Math.PI * 2;
 
-  var mouseX = -9999, mouseY = -9999, prevMouseX = -9999, prevMouseY = -9999;
-  var globalWindX = 0, globalWindY = 0, windTargetX = 0, windTargetY = 0;
-  var nextWindChange = Date.now() + 2000 + Math.random() * 4000;
-
-  document.addEventListener('mousemove', function(e){
-    prevMouseX = mouseX; prevMouseY = mouseY;
-    mouseX = e.clientX; mouseY = e.clientY;
-  });
-  document.addEventListener('touchmove', function(e){
-    prevMouseX = mouseX; prevMouseY = mouseY;
-    mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY;
-  });
-
-  function tick(){
-    if (document.hidden) return;
-    var now = Date.now();
-    var vh = window.innerHeight;
-    var mVX = mouseX - prevMouseX, mVY = mouseY - prevMouseY;
-
-    if (now > nextWindChange) {
-      windTargetX = (Math.random() - 0.5) * 0.5;
-      windTargetY = (Math.random() - 0.5) * 0.15;
-      nextWindChange = now + 3000 + Math.random() * 5000;
+  // Stipple fill (checkerboard dots), like the Tk gray50 stipple in the desktop app.
+  var pats = {};
+  function stipple(ctx, color){
+    var k = color;
+    if (!pats[k]){
+      var pc = document.createElement('canvas'); pc.width = 2; pc.height = 2;
+      var g = pc.getContext('2d'); g.fillStyle = color;
+      g.fillRect(0,0,1,1); g.fillRect(1,1,1,1);
+      pats[k] = ctx.createPattern(pc, 'repeat');
+      try { pats[k].setTransform(new DOMMatrix().scale(1 / dpr)); } catch (e) {}
     }
-    globalWindX += (windTargetX - globalWindX) * 0.01;
-    globalWindY += (windTargetY - globalWindY) * 0.01;
-
-    particles.forEach(function(p){
-      var t = (now - p.start) / 1000;
-      var gust = 1 + 0.25 * Math.sin(t * 0.12 + p.phase);
-      var fallY = t * p.fallSpeed * gust;
-      var swayX = Math.sin(t * p.swayFreq * Math.PI * 2 + p.phase) * p.swayAmp + Math.sin(t * p.turbFreq * Math.PI * 2 + p.altPhase) * p.swayAmp * 0.5;
-      var driftX = t * p.windDrift;
-      var rot = t * p.rotSpeed * 25;
-      var pPosX = p.lx / 100 * window.innerWidth + swayX + driftX + p.vx;
-      var pPosY = (p.ly + fallY) / 100 * vh + p.vy;
-      var dx = pPosX - mouseX, dy = pPosY - mouseY;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      var brushRadius = 140;
-      if (dist < brushRadius && dist > 0) {
-        var strength = (brushRadius - dist) / brushRadius;
-        var speed = Math.sqrt(mVX * mVX + mVY * mVY);
-        var wind = Math.min(speed * 0.12, 3) * strength;
-        var norm = Math.abs(mVX) + Math.abs(mVY) + 1;
-        p.vx += (mVX / norm) * wind;
-        p.vy += (mVY / norm) * wind;
-        p.vx += (Math.random() - 0.5) * 0.2 * strength;
-        p.vy += (Math.random() - 0.5) * 0.2 * strength;
-      }
-      p.vx += globalWindX * 0.15;
-      p.vy += globalWindY * 0.15;
-      p.vx *= 0.96;
-      p.vy *= 0.96;
-      var currentY = p.ly + fallY;
-      if (currentY > 105) {
-        p.start = now; p.ly = -5 - Math.random() * 15; p.lx = Math.random() * 100;
-        p.el.style.left = p.lx + '%'; p.vx = 0; p.vy = 0; p.windDrift = (Math.random() - 0.5) * 0.2; return;
-      }
-      p.el.style.top = currentY + '%';
-      p.el.style.transform = 'translate(' + (swayX + driftX + p.vx) + 'px, ' + p.vy + 'px) rotate(' + rot + 'deg)';
-    });
-    requestAnimationFrame(tick);
+    return pats[k];
   }
-document.addEventListener('visibilitychange', function(){ if (!document.hidden) requestAnimationFrame(tick); });
-  tick();
+
+  var layers = [
+    { c: back,  ctx: back.getContext('2d'),  n: 18, sMin: 10, sMax: 22, aMin: 1, aMax: 1, speed: 0.5, list: [] },
+    { c: front, ctx: front.getContext('2d'), n: 3,  sMin: 16, sMax: 24, aMin: 1, aMax: 1, speed: 0.65, list: [] }
+  ];
+
+  var W = 0, H = 0, dpr = 1;
+  function resize(){
+    W = window.innerWidth; H = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    pats = {};
+    layers.forEach(function(L){
+      L.c.width = Math.round(W * dpr);
+      L.c.height = Math.round(H * dpr);
+      L.c.style.width = W + 'px';
+      L.c.style.height = H + 'px';
+      L.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    });
+  }
+
+  function rnd(a, b){ return a + Math.random() * (b - a); }
+
+  function spawn(L, p, initial){
+    p = p || {};
+    p.size = rnd(L.sMin, L.sMax);
+    p.x = rnd(0, W);
+    p.y = initial ? rnd(-H * 0.1, H) : -p.size - rnd(0, 90);
+    p.vy = rnd(22, 62) * L.speed;
+    p.sway = rnd(10, 28);
+    p.spd = rnd(0.25, 0.8);
+    p.phase = rnd(0, TAU);
+    p.drift = rnd(-7, 12);
+    p.rot = rnd(0, TAU);
+    p.vrot = rnd(-0.8, 0.8);
+    p.age = rnd(0, 6);
+    p.alpha = rnd(L.aMin, L.aMax);
+    p.color = COLORS[(Math.random() * COLORS.length) | 0];
+    p.flip = rnd(0.6, 1);        // slight 3D tumble
+    p.flipSpd = rnd(0.6, 1.8);
+    p.ox = 0; p.oy = 0;          // cursor push offset
+    return p;
+  }
+
+  function build(){
+    layers.forEach(function(L){
+      var count = reduce ? Math.round(L.n * 0.35) : L.n;
+      if (W < 640) count = Math.round(count * 0.6);
+      L.list = [];
+      for (var i = 0; i < count; i++) L.list.push(spawn(L, null, true));
+    });
+  }
+
+  // cursor wind
+  var mx = -9999, my = -9999, pmx = -9999, pmy = -9999;
+  function onMove(x, y){ pmx = mx; pmy = my; mx = x; my = y; }
+  window.addEventListener('mousemove', function(e){ onMove(e.clientX, e.clientY); }, { passive: true });
+  window.addEventListener('touchmove', function(e){ if (e.touches[0]) onMove(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+
+  // ambient gusts
+  var gust = 0, gustTarget = 0, nextGust = 0;
+
+  function drawPetal(ctx, p, t){
+    var s = p.size;
+    var ca = Math.cos(p.rot), sa = Math.sin(p.rot);
+    var fy = 0.55 + 0.45 * Math.abs(Math.sin(t * p.flipSpd + p.phase)) * p.flip;
+    var cx = p.x + p.ox, cy = p.y + p.oy;
+    ctx.beginPath();
+    for (var i = 0; i < UNIT.length; i++){
+      var px = UNIT[i][0] * s;
+      var py = UNIT[i][1] * s * fy;
+      var X = cx + px * ca - py * sa;
+      var Y = cy + px * sa + py * ca;
+      if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y);
+    }
+    ctx.closePath();
+    ctx.globalAlpha = 0.38;
+    ctx.fillStyle = p.color;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = stipple(ctx, p.color);
+    ctx.fill();
+    ctx.globalAlpha = 0.55;
+    ctx.strokeStyle = p.color;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  var last = performance.now();
+  var running = true;
+
+  function frame(now){
+    if (!running) return;
+    var dt = (now - last) / 1000;
+    last = now;
+    if (dt > 0.1) dt = 0.1;
+    var t = now / 1000;
+
+    if (now > nextGust){
+      gustTarget = rnd(-22, 30);
+      nextGust = now + rnd(3000, 8000);
+    }
+    gust += (gustTarget - gust) * Math.min(1, dt * 0.6);
+
+    var mvx = mx - pmx, mvy = my - pmy;
+    var mspeed = Math.sqrt(mvx * mvx + mvy * mvy);
+    pmx = mx; pmy = my;
+
+    layers.forEach(function(L){
+      var ctx = L.ctx;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < L.list.length; i++){
+        var p = L.list[i];
+        p.age += dt;
+        p.y += p.vy * dt;
+        p.x += (Math.sin(p.age * p.spd + p.phase) * p.sway + p.drift + gust) * dt;
+        p.rot += p.vrot * dt;
+
+        // brush the petals away from a moving cursor
+        var dx = p.x + p.ox - mx, dy = p.y + p.oy - my;
+        var d2 = dx * dx + dy * dy;
+        if (d2 < 19600 && mspeed > 0.5){
+          var d = Math.sqrt(d2) || 1;
+          var k = (140 - d) / 140;
+          var push = Math.min(mspeed * 0.35, 9) * k;
+          p.ox += (mvx / (mspeed + 1)) * push + (dx / d) * k * 1.2;
+          p.oy += (mvy / (mspeed + 1)) * push + (dy / d) * k * 1.2;
+          p.vrot += (Math.random() - 0.5) * 0.25 * k;
+        }
+        p.ox *= 0.95; p.oy *= 0.95;
+
+        if (p.y - p.size > H || p.x < -p.size * 4 || p.x > W + p.size * 4){
+          spawn(L, p, false);
+          continue;
+        }
+        drawPetal(ctx, p, t);
+      }
+      ctx.globalAlpha = 1;
+    });
+    requestAnimationFrame(frame);
+  }
+
+  function start(){
+    if (running && start._on) return;
+    start._on = true; running = true;
+    last = performance.now();
+    requestAnimationFrame(frame);
+  }
+  function stop(){ running = false; start._on = false; }
+
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  var rt = null;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ resize(); build(); }, 150);
+  });
+
+  resize();
+  build();
+  start();
 })();
 
 /* ---------- wiring ---------- */
@@ -2652,7 +2869,7 @@ if (el.nsfwToggle) {
     var light = root.getAttribute('data-theme') === 'light';
     if (icon) icon.textContent = light ? '\u2600\uFE0F' : '\uD83C\uDF19';
     if (btn) btn.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
-    if (meta) meta.setAttribute('content', light ? '#f7f5fb' : '#08070d');
+    if (meta) meta.setAttribute('content', light ? '#f7f5fb' : '#06060d');
     root.style.colorScheme = light ? 'light' : 'dark';
   }
   if (!btn) return;
@@ -12221,17 +12438,17 @@ function mc_ensureStyles() {
     '.monitor-view .mc-card.mc-up-hi:before{background:#4cd989}',
     '.monitor-view .mc-card.mc-up-mid:before{background:#d29922}',
     '.monitor-view .mc-card.mc-up-lo:before{background:#f55e6a}',
-    '.monitor-view .mc-card-l{font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted2,#524d66);font-weight:800}',
+    '.monitor-view .mc-card-l{font-size:.75rem;letter-spacing:0;text-transform:none;color:var(--muted2,#524d66);font-weight:800}',
     '.monitor-view .mc-card-v{margin-top:6px;font-size:1.5rem;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:inherit}',
     '.monitor-view .mc-card-s{margin-top:6px;font-size:.64rem;color:var(--muted,#9aa0b5);line-height:1.4}',
     '.monitor-view .mc-note{font-size:.68rem;color:var(--muted,#9aa0b5);line-height:1.55;margin:0;opacity:.85}',
     '.monitor-view .mc-sec{display:flex;flex-direction:column;gap:8px}',
-    '.monitor-view .mc-sec-title{display:flex;align-items:center;gap:10px;font:800 .6rem/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2,#524d66)}',
+    '.monitor-view .mc-sec-title{display:flex;align-items:center;gap:10px;font:800 .75rem/1 Inter,sans-serif;letter-spacing:0;text-transform:none;color:var(--muted2,#524d66)}',
     '.monitor-view .mc-sec-title:after{content:"";flex:1;height:1px;background:var(--border,rgba(255,255,255,.12))}',
     '.monitor-view .mc-tbl-wrap{border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--radius-lg,13px);background:rgba(10,9,20,.5);overflow:hidden}',
     '.monitor-view .mc-sites-wrap{max-height:72vh;overflow:auto}',
     '.monitor-view .mc-tbl{width:100%;border-collapse:collapse;font-size:.76rem}',
-    '.monitor-view .mc-tbl thead th{position:sticky;top:0;z-index:2;padding:9px 12px;text-align:left;font:800 .57rem/1.3 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2,#524d66);background:#100e1c;border-bottom:1px solid var(--border,rgba(255,255,255,.12));white-space:nowrap}',
+    '.monitor-view .mc-tbl thead th{position:sticky;top:0;z-index:2;padding:9px 12px;text-align:left;font:800 .75rem/1.3 Inter,sans-serif;letter-spacing:0;text-transform:none;color:var(--muted2,#524d66);background:#100e1c;border-bottom:1px solid var(--border,rgba(255,255,255,.12));white-space:nowrap}',
     '.monitor-view .mc-tbl tbody td{padding:8px 12px;border-bottom:1px solid rgba(var(--accent-rgb),.07);vertical-align:middle}',
     '.monitor-view .mc-tbl tbody tr:last-child td{border-bottom:none}',
     '.monitor-view .mc-tbl tbody tr:hover td{background:rgba(var(--accent-rgb),.06)}',
@@ -13225,7 +13442,7 @@ loadData();
     var addrEl = suitEl('suit-email-addr');
     if(addrEl) addrEl.value = '';
     var st = suitEl('suit-email-status');
-    if(st) st.textContent = 'Ready — tap New to generate an address';
+    if(st) st.textContent = 'Tap New to generate an address';
     var ib = suitEl('suit-inbox-body');
     if(ib) ib.innerHTML = '';
     var mb = suitEl('suit-msg-body');
@@ -14114,7 +14331,7 @@ loadData();
     });
     var html = buildVersionsHtml(versions)
       + '<div class="live-toolbar">'
-      + '<button class="live-refresh-btn">🔄 Refresh</button>'
+      + '<button class="live-refresh-btn">Refresh</button>'
       + '<span class="live-updated">Updated ' + esc(updated) + '</span>'
       + '</div>';
     var any = false;
