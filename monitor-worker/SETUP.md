@@ -79,8 +79,11 @@ Commit and push the page files. GitHub Pages redeploys automatically.
 ## 6. How it works
 
 - Cron `*/2 * * * *` (every 2 minutes): probe the next chunk of 20 sites.
-  5 in parallel, 7s timeout each, so a tick finishes well under the 30s
-  wall-clock limit. A full sweep of 5,811 sites takes ~9.7 hours.
+  10 in parallel, 5s timeout each, with a 20s budget per tick. A tick that
+  runs long stops starting new probe rounds and still writes state, so the
+  cursor can never wedge on one slow chunk (it only advances past sites that
+  were actually probed). A full sweep of ~6,300 sites takes ~10.5 hours, and
+  each site keeps its last 24 probe verdicts.
 - Classification:
   - `up` — HTTP 2xx/3xx
   - `blocked` — 401/403/451, a Cloudflare challenge (`cf-mitigated`)
@@ -93,6 +96,13 @@ Commit and push the page files. GitHub Pages redeploys automatically.
   Removed entries older than 90 days are pruned.
 - Provenance / de-listing: the monitor page hides sites that are confirmed
   dead for over 3 weeks, which keeps the list honest without manual edits.
+- Stats: every site also carries a compact probe history (`h`, 24 verdict
+  chars: `0`=up `1`=blocked `2`=down `3`=unreachable) and a rolling mean
+  response time (`avgMs`). `/status` derives `uptime: {pct, up, total}` per
+  site and exposes `historyWindow`, so the panel can show a real uptime
+  column, per-site sparkline and section-health table instead of guessing
+  from the latest check. They ride along with the state key — no extra KV
+  reads or writes.
 - State lives in ONE KV key (`state`): `{updated, cursor, map, removed}`.
   One KV read + one KV write per tick, with a sliding 7-day TTL. No guard
   flags, no per-site keys, no deletes — a crashed tick just re-probes the
