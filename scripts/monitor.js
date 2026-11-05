@@ -34,6 +34,8 @@ var monitorPollTimer = null;
 var monitorApiData = null;
 var monitorSearchTerm = '';
 var monitorCountryFilter = '';
+var monitorStatusFilter = '';
+var monitorLimit = 200;
 var CC_LABELS = { RU: '🇷🇺 Russia', IN: '🇮🇳 India', JP: '🇯🇵 Japan', PL: '🇵🇱 Poland', GB: '🇬🇧 United Kingdom', ID: '🇮🇩 Indonesia' };
 var MAX_BARS = 24;
 var MC_STATUS_BY_CHAR = { '0': 'up', '1': 'blocked', '2': 'down', '3': 'unreachable' };
@@ -65,21 +67,77 @@ function mc_ensureStyles() {
   if (document.getElementById('mc-stats-styles')) return;
   var st = document.createElement('style');
   st.id = 'mc-stats-styles';
-  st.textContent =
-    '.mc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:14px 0 12px}' +
-    '.mc-card{padding:10px 14px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:8px;background:var(--surface,rgba(255,255,255,.03))}' +
-    '.mc-card-l{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin-bottom:2px}' +
-    '.mc-card-v{font-size:1.15rem;font-weight:700;line-height:1.25;font-variant-numeric:tabular-nums}' +
-    '.mc-card-s{font-size:.66rem;opacity:.5;margin-top:3px;line-height:1.35}' +
-    '.mc-up-hi{color:#3fb950}.mc-up-mid{color:#d29922}.mc-up-lo{color:#f55e6a}' +
-    '.mc-bars{display:inline-flex;align-items:flex-end;gap:2px;height:12px}' +
-    '.mc-bar{display:inline-block;width:4px;height:12px;border-radius:2px}' +
-    '.mc-uptime{font-weight:700;font-variant-numeric:tabular-nums}' +
-    '.mc-uptime-sub{opacity:.45;font-size:.65rem;margin-left:3px}' +
-    '.mc-note{font-size:.68rem;opacity:.55;margin:0 0 12px;line-height:1.5}' +
-    '.mc-sec{margin:0 0 16px}' +
-    '.mc-sec-title{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin:0 0 6px}' +
-    '.mc-sec .monitor-wrap table{font-size:.72rem}';
+  st.textContent = [
+    '.monitor-view{display:flex;flex-direction:column;gap:14px;margin-top:2px}',
+    '.monitor-view .mc-tool{display:flex;flex-wrap:wrap;gap:8px;align-items:center}',
+    '.monitor-view .mc-chips{display:flex;flex-wrap:wrap;gap:6px}',
+    '.monitor-view .mc-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.12));background:rgba(255,255,255,.03);color:var(--muted,#9aa0b5);font:600 .72rem/1 Inter,sans-serif;cursor:pointer;transition:border-color .15s,background .15s,color .15s}',
+    '.monitor-view .mc-chip:hover{border-color:rgba(var(--accent-rgb),.35);color:var(--text,#fff)}',
+    '.monitor-view .mc-chip b{font-weight:800;font-size:.68rem;color:var(--text,#fff);font-variant-numeric:tabular-nums;opacity:.85}',
+    '.monitor-view .mc-chip.is-on{background:rgba(var(--accent-rgb),.16);border-color:rgba(var(--accent-rgb),.5);color:#fff}',
+    '.monitor-view .mc-search{flex:1 1 220px;min-width:150px;padding:8px 13px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.12));background:rgba(0,0,0,.28);color:var(--text,#fff);font:500 .78rem Inter,sans-serif;outline:none;transition:border-color .15s,background .15s}',
+    '.monitor-view .mc-search::placeholder{color:var(--muted2,#524d66)}',
+    '.monitor-view .mc-search:focus{border-color:rgba(var(--accent-rgb),.55);background:rgba(0,0,0,.38)}',
+    '.monitor-view .mc-select{padding:8px 11px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.12));background:rgba(0,0,0,.28);color:var(--text,#fff);font:500 .76rem Inter,sans-serif;outline:none;cursor:pointer;max-width:180px}',
+    '.monitor-view .mc-btn{padding:8px 15px;border-radius:999px;border:1px solid rgba(var(--accent-rgb),.32);background:rgba(var(--accent-rgb),.12);color:var(--accent-text,#ff88ff);font:700 .74rem Inter,sans-serif;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}',
+    '.monitor-view .mc-btn:hover{background:rgba(var(--accent-rgb),.22);border-color:rgba(var(--accent-rgb),.55)}',
+    '.monitor-view .mc-btn.mc-more{align-self:center}',
+    '.monitor-view .mc-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}',
+    '.monitor-view .mc-card{position:relative;padding:13px 15px 12px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--radius-lg,13px);background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.012));overflow:hidden}',
+    '.monitor-view .mc-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:rgba(255,255,255,.1)}',
+    '.monitor-view .mc-card.mc-up-hi:before{background:#4cd989}',
+    '.monitor-view .mc-card.mc-up-mid:before{background:#d29922}',
+    '.monitor-view .mc-card.mc-up-lo:before{background:#f55e6a}',
+    '.monitor-view .mc-card-l{font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted2,#524d66);font-weight:800}',
+    '.monitor-view .mc-card-v{margin-top:6px;font-size:1.5rem;font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:inherit}',
+    '.monitor-view .mc-card-s{margin-top:6px;font-size:.64rem;color:var(--muted,#9aa0b5);line-height:1.4}',
+    '.monitor-view .mc-note{font-size:.68rem;color:var(--muted,#9aa0b5);line-height:1.55;margin:0;opacity:.85}',
+    '.monitor-view .mc-sec{display:flex;flex-direction:column;gap:8px}',
+    '.monitor-view .mc-sec-title{display:flex;align-items:center;gap:10px;font:800 .6rem/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2,#524d66)}',
+    '.monitor-view .mc-sec-title:after{content:"";flex:1;height:1px;background:var(--border,rgba(255,255,255,.12))}',
+    '.monitor-view .mc-tbl-wrap{border:1px solid var(--border,rgba(255,255,255,.12));border-radius:var(--radius-lg,13px);background:rgba(10,9,20,.5);overflow:hidden}',
+    '.monitor-view .mc-sites-wrap{max-height:72vh;overflow:auto}',
+    '.monitor-view .mc-tbl{width:100%;border-collapse:collapse;font-size:.76rem}',
+    '.monitor-view .mc-tbl thead th{position:sticky;top:0;z-index:2;padding:9px 12px;text-align:left;font:800 .57rem/1.3 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2,#524d66);background:#100e1c;border-bottom:1px solid var(--border,rgba(255,255,255,.12));white-space:nowrap}',
+    '.monitor-view .mc-tbl tbody td{padding:8px 12px;border-bottom:1px solid rgba(var(--accent-rgb),.07);vertical-align:middle}',
+    '.monitor-view .mc-tbl tbody tr:last-child td{border-bottom:none}',
+    '.monitor-view .mc-tbl tbody tr:hover td{background:rgba(var(--accent-rgb),.06)}',
+    '.monitor-view .mc-nm{color:#fff;font-weight:600;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
+    '.monitor-view .mc-url a{display:inline-block;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--muted,#9aa0b5);font-size:.72rem;text-decoration:none}',
+    '.monitor-view .mc-url a:hover{color:var(--accent-text,#ff88ff);text-decoration:underline}',
+    '.monitor-view .mc-secname{color:var(--muted,#9aa0b5);font-size:.7rem;white-space:nowrap}',
+    '.monitor-view .mc-sec-name{color:#fff;font-weight:600;white-space:nowrap}',
+    '.monitor-view .mc-num{font-variant-numeric:tabular-nums;color:var(--muted,#9aa0b5)}',
+    '.monitor-view .mc-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font:800 .56rem/1 Inter,sans-serif;letter-spacing:.07em;border:1px solid transparent;white-space:nowrap}',
+    '.monitor-view .mc-pill i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 7px currentColor}',
+    '.monitor-view .mc-pill-up{color:#4cd989;background:rgba(76,217,137,.1);border-color:rgba(76,217,137,.3)}',
+    '.monitor-view .mc-pill-down{color:#f55e6a;background:rgba(245,94,106,.1);border-color:rgba(245,94,106,.3)}',
+    '.monitor-view .mc-pill-blocked{color:#d29922;background:rgba(210,153,34,.1);border-color:rgba(210,153,34,.3)}',
+    '.monitor-view .mc-pill-unreachable{color:#f0883e;background:rgba(240,136,62,.1);border-color:rgba(240,136,62,.3)}',
+    '.monitor-view .mc-pill-pending{color:#8b949e;background:rgba(139,148,158,.1);border-color:rgba(139,148,158,.28)}',
+    '.monitor-view .mc-bars{display:inline-flex;align-items:flex-end;gap:2px;height:16px;margin-right:8px;vertical-align:middle}',
+    '.monitor-view .mc-bar{width:4px;height:16px;border-radius:2px;opacity:.85;transition:transform .12s,opacity .12s}',
+    '.monitor-view .mc-bars:hover .mc-bar{opacity:1}',
+    '.monitor-view .mc-bar:hover{transform:scaleY(1.18)}',
+    '.monitor-view .mc-ms{font-size:.74rem;font-weight:800;color:var(--text,#fff);font-variant-numeric:tabular-nums}',
+    '.monitor-view .mc-ms-down{color:#f55e6a}',
+    '.monitor-view .mc-code{font-size:.66rem;color:var(--muted2,#524d66);margin-left:6px;font-variant-numeric:tabular-nums}',
+    '.monitor-view .mc-code-down{color:#f55e6a}',
+    '.monitor-view .mc-code-blocked{color:#d29922}',
+    '.monitor-view .mc-uptime{font-weight:800;font-variant-numeric:tabular-nums}',
+    '.monitor-view .mc-uptime-sub{margin-left:5px;font-size:.62rem;color:var(--muted2,#524d66);font-variant-numeric:tabular-nums}',
+    '.monitor-view .mc-mini{display:block;margin-top:6px;height:3px;border-radius:2px;background:rgba(255,255,255,.07);overflow:hidden;min-width:70px;max-width:120px}',
+ '.monitor-view .mc-sec .mc-tbl tbody td{padding:6px 12px;font-size:.72rem}',
+ '.monitor-view .mc-sec .mc-tbl-wrap{max-height:320px;overflow:auto}',
+ '.monitor-view .mc-sec .mc-tbl thead th{position:static;top:auto}',
+    '.monitor-view .mc-mini i{display:block;height:100%;border-radius:2px;transition:width .3s}',
+    '.monitor-view .mc-empty{margin:0;padding:26px;text-align:center;color:var(--muted,#9aa0b5);font-size:.8rem}',
+    '.monitor-view .mc-foot{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:.68rem;color:var(--muted2,#524d66)}',
+    '.monitor-view .mc-foot b{color:var(--muted,#9aa0b5);font-weight:700;font-variant-numeric:tabular-nums}',
+    '@media(max-width:820px){.monitor-view .mc-tbl .mc-secname{display:none}.monitor-view .mc-nm{max-width:240px}}',
+    '@media(max-width:640px){.monitor-view .mc-cards{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))}.monitor-view .mc-card-v{font-size:1.28rem}.monitor-view .mc-tbl{font-size:.7rem}.monitor-view .mc-tbl thead th{padding:7px 7px;font-size:.52rem;letter-spacing:.08em}.monitor-view .mc-tbl tbody td{padding:6px 7px}.monitor-view .mc-url{display:none}.monitor-view .mc-nm{max-width:132px}.monitor-view .mc-search{flex:1 1 100%}.monitor-view .mc-sec .mc-tbl tbody td{padding:6px 7px;font-size:.68rem}.monitor-view .mc-sec .mc-tbl thead th{padding:7px 7px}.monitor-view .mc-sec .mc-tbl-wrap{max-height:260px}}',
+    '@media(max-width:480px){.monitor-view .mc-nm{max-width:104px;font-size:.68rem}.monitor-view .mc-uptime-sub{display:none}.monitor-view .mc-pill{padding:3px 6px;font-size:.5rem;gap:4px}.monitor-view .mc-code{display:none}.monitor-view .mc-bars{gap:1px;margin-right:4px;height:13px}.monitor-view .mc-bar{width:3px;height:13px}.monitor-view .mc-ms{font-size:.68rem}.monitor-view .mc-sec .mc-tbl{font-size:.64rem}.monitor-view .mc-sec .mc-tbl thead th{padding:6px 5px;font-size:.48rem}.monitor-view .mc-sec .mc-tbl tbody td{padding:6px 5px}.monitor-view .mc-mini{min-width:44px;max-width:70px}}',
+  ].join('');
   document.head.appendChild(st);
 }
 
@@ -131,8 +189,8 @@ function mc_uptimeCell(u) {
 }
 
 function mc_card(label, value, sub, cls) {
-  return '<div class="mc-card"><div class="mc-card-l">' + esc2(label) + '</div>' +
-    '<div class="mc-card-v ' + (cls || '') + '">' + value + '</div>' +
+  return '<div class="mc-card ' + (cls || '') + '"><div class="mc-card-l">' + esc2(label) + '</div>' +
+    '<div class="mc-card-v">' + value + '</div>' +
     (sub ? '<div class="mc-card-s">' + esc2(sub) + '</div>' : '') + '</div>';
 }
 
@@ -152,18 +210,24 @@ function mc_sectionTable(secStats) {
     return secStats[b].total - secStats[a].total;
   });
   var html = '<div class="mc-sec"><div class="mc-sec-title">Section health</div>' +
-    '<div class="monitor-wrap"><table><thead><tr><th>Section</th><th>Sites</th><th>Up</th><th>Failing</th><th title="Share of recorded probes that came back up. The small number under a percentage is how many of its sites have been probed so far.">Uptime</th></tr></thead><tbody>';
+    '<div class="mc-tbl-wrap"><table class="mc-tbl"><thead><tr><th>Section</th><th class="mc-num">Sites</th>' +
+    '<th class="mc-num">Up</th><th class="mc-num">Failing</th>' +
+    '<th title="Share of recorded probes that came back up. The small number beside it is how many of its sites have been probed so far.">Uptime</th>' +
+    '</tr></thead><tbody>';
   for (var i = 0; i < names.length; i++) {
     var v = secStats[names[i]];
     var failing = v.down + v.blocked + v.unreachable;
     var pct = mc_sectionPct(v);
-    html += '<tr><td class="mc-sec-name">' + esc2(names[i]) + '</td><td>' + v.total + '</td>' +
-      '<td class="mc-up-hi">' + v.up + '</td>' +
-      '<td class="' + (failing ? 'mc-up-lo' : '') + '">' + failing + '</td>' +
+    var color = pct == null ? 'rgba(255,255,255,.12)' : (pct >= 99 ? '#4cd989' : (pct >= 90 ? '#d29922' : '#f55e6a'));
+    html += '<tr><td class="mc-sec-name">' + esc2(names[i]) + '</td>' +
+      '<td class="mc-num">' + v.total + '</td>' +
+      '<td class="mc-num" style="color:#4cd989">' + v.up + '</td>' +
+      '<td class="mc-num"' + (failing ? ' style="color:#f55e6a"' : '') + '>' + failing + '</td>' +
       '<td>' + (pct == null
-        ? '<span style="opacity:.4">—</span><span class="mc-uptime-sub" title="The sweep has not reached this section yet, so there is nothing to average">' + v.probed + '/' + v.total + '</span>'
+        ? '<span class="mc-uptime" style="opacity:.35">—</span><span class="mc-uptime-sub" title="The sweep has not reached this section yet, so there is nothing to average">' + v.probed + '/' + v.total + '</span>'
         : '<span class="mc-uptime ' + mc_pctCls(pct) + '" title="' + esc2(v.upChecks + ' of ' + v.checks + ' probes up') + '">' + pct.toFixed(1) + '%</span>' +
-          '<span class="mc-uptime-sub" title="' + esc2(v.probed + ' of ' + v.total + ' sites probed so far') + '">' + v.probed + '/' + v.total + '</span>') + '</td></tr>';
+          '<span class="mc-uptime-sub" title="' + esc2(v.probed + ' of ' + v.total + ' sites probed so far') + '">' + v.probed + '/' + v.total + '</span>') +
+        '<span class="mc-mini"><i style="width:' + (pct == null ? 0 : pct) + '%;background:' + color + '"></i></span></td></tr>';
   }
   return html + '</tbody></table></div></div>';
 }
@@ -254,12 +318,32 @@ function fetchMonitorData(showToast) {
 
 function monitorSearchInput(val) {
   monitorSearchTerm = String(val || '').toLowerCase().trim();
+  monitorLimit = 200;
   if (monitorActive) renderMonitorSection(true);
+  var el = document.querySelector('.monitor-view .mc-search');
+  if (el) {
+    el.focus();
+    var n = el.value.length;
+    try { el.setSelectionRange(n, n); } catch (e) {}
+  }
 }
 
 function monitorCountryInput(val) {
   monitorCountryFilter = String(val || '');
+  monitorLimit = 200;
   if (monitorActive) renderMonitorSection(true);
+}
+
+function monitorStatusInput(val) {
+  monitorStatusFilter = String(val || '');
+  monitorLimit = 200;
+  if (monitorActive) renderMonitorSection(true);
+}
+
+function monitorMore() {
+  if (!monitorActive) return;
+  monitorLimit += 200;
+  renderMonitorSection(true);
 }
 
 function mc_requeueAll() {
@@ -308,7 +392,8 @@ function renderMonitorSection(preserveState) {
 
     var seen = {};
     var rows = '';
-    var up = 0, down = 0, blocked = 0, unreachable = 0, pending = 0, shown = 0, hiddenNSFW = 0;
+    var baseCounts = { up: 0, down: 0, blocked: 0, unreachable: 0, pending: 0 };
+    var matched = 0, rendered = 0, hiddenNSFW = 0;
     var secStats = {}, totalChecks = 0, totalUpChecks = 0, msSum = 0, msCount = 0, probedSites = 0;
 
     sites.forEach(function(s) {
@@ -326,14 +411,14 @@ function renderMonitorSection(preserveState) {
       var nameL = String(s.name).toLowerCase();
       var urlL = String(s.url).toLowerCase();
       if (monitorSearchTerm && nameL.indexOf(monitorSearchTerm) === -1 && urlL.indexOf(monitorSearchTerm) === -1) return;
-      shown++;
+      matched++;
 
       var st = mc_toStatus(s);
       var state = mc_buildState(s);
       var uptimeStat = mc_uptime(s);
       var avgMs = (s.avgMs != null ? s.avgMs : (s.ms != null ? s.ms : null));
 
-      if (st === 'up') up++; else if (st === 'blocked') blocked++; else if (st === 'unreachable') unreachable++; else if (st === 'pending') pending++; else down++;
+      if (baseCounts[st] != null) baseCounts[st]++;
       if (uptimeStat) { totalChecks += uptimeStat.total; totalUpChecks += uptimeStat.up; probedSites++; }
       if (avgMs != null) { msSum += avgMs; msCount++; }
 
@@ -344,6 +429,13 @@ function renderMonitorSection(preserveState) {
       sv[st]++;
       if (uptimeStat) { sv.checks += uptimeStat.total; sv.upChecks += uptimeStat.up; sv.probed++; }
 
+      var isFailing = (st === 'down' || st === 'blocked' || st === 'unreachable');
+      if (monitorStatusFilter === 'up' && st !== 'up') return;
+      if (monitorStatusFilter === 'failing' && !isFailing) return;
+      if (monitorStatusFilter === 'pending' && st !== 'pending') return;
+      if (rendered >= monitorLimit) return;
+      rendered++;
+
       var msText = mc_fmtMs(avgMs);
       var msCls = 'mc-ms' + (st === 'down' ? ' mc-ms-down' : '');
       var code = state.code;
@@ -352,26 +444,24 @@ function renderMonitorSection(preserveState) {
       else if (code != null) { codeText = (code >= 400 ? '✗' : '✓') + code; codeCls = 'mc-code' + (code >= 400 ? ' mc-code-down' : ''); }
       else { codeText = '—'; codeCls = 'mc-code'; }
 
-      var dot = st === 'up' ? '🟢' : (st === 'blocked' ? '🟡' : (st === 'unreachable' ? '🟠' : (st === 'pending' ? '⚪' : '🔴')));
-      var cls = st === 'up' ? 'label-up' : (st === 'blocked' ? 'label-blocked' : (st === 'unreachable' ? 'label-unreachable' : (st === 'pending' ? 'label-pending' : 'label-down')));
       var label = st === 'up' ? 'LIVE' : (st === 'blocked' ? 'BLOCKED' : (st === 'unreachable' ? 'UNREACHABLE' : (st === 'pending' ? 'PENDING' : 'DEAD')));
       var shortUrl = s.url.length > 60 ? s.url.slice(0, 60) + '…' : s.url;
       var flapBadge = s.flapping ? ' <span class="cc-badge" title="Keeps flipping between live/dead — pending confirmation">flapping</span>' : '';
 
       rows += '<tr>';
-      rows += '<td class="st-cell"><span class="st-dot">' + dot + '</span><span class="st-label ' + cls + '">' + label + '</span></td>';
-      rows += '<td class="name-cell">' + esc2(s.name) + flapBadge + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
-      rows += '<td class="url-cell"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
-      rows += '<td class="sec-cell">' + esc2(s.section || '—') + '</td>';
-      rows += '<td class="uptime-cell">' + mc_uptimeCell(uptimeStat) + '</td>';
-      rows += '<td class="bars-cell"><span class="mc-bars">' + mc_renderBars(state.history) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
+      rows += '<td><span class="mc-pill mc-pill-' + st + '"><i></i>' + label + '</span></td>';
+      rows += '<td class="mc-nm">' + esc2(s.name) + flapBadge + (s.nsfw ? ' <span style="font-size:.65rem;opacity:.5">🔞</span>' : '') + mc_countryBadge(s) + '</td>';
+      rows += '<td class="mc-url"><a href="' + s.url + '" target="_blank" rel="noopener">' + esc2(shortUrl) + '</a></td>';
+      rows += '<td class="mc-secname">' + esc2(s.section || '—') + '</td>';
+      rows += '<td>' + mc_uptimeCell(uptimeStat) + '</td>';
+      rows += '<td><span class="mc-bars">' + mc_renderBars(state.history) + '</span> <span class="' + msCls + '">' + msText + '</span> <span class="' + codeCls + '">' + codeText + '</span></td>';
       rows += '</tr>';
     });
 
     var updated = source.updated ? String(source.updated) : 'unknown';
     var overallPct = totalChecks ? Math.round(totalUpChecks / totalChecks * 1000) / 10 : null;
     var avgMsAll = msCount ? Math.round(msSum / msCount) : null;
-    var failing = down + blocked + unreachable;
+    var failing = baseCounts.down + baseCounts.blocked + baseCounts.unreachable;
 
     var ccOptions = '<option value="">🌍 All countries</option><option value="__global__">🌐 Global</option>';
     var ccSeen = {};
@@ -386,25 +476,48 @@ function renderMonitorSection(preserveState) {
       ccOptions = ccOptions.replace(ccRx, 'value="' + monitorCountryFilter + '" selected');
     }
 
+    var chip = function(val, label, n) {
+      return '<button type="button" class="mc-chip' + (monitorStatusFilter === val ? ' is-on' : '') +
+        '" onclick="monitorStatusInput(\'' + val + '\')">' + esc2(label) + '<b>' + n + '</b></button>';
+    };
     var mv = '<div class="monitor-view">';
+    mv += '<div class="mc-tool">' +
+      '<div class="mc-chips">' + chip('', 'All', matched) + chip('up', 'Live', baseCounts.up) +
+      chip('failing', 'Failing', failing) + chip('pending', 'Pending', baseCounts.pending) + '</div>' +
+      '<input class="mc-search" type="search" placeholder="Search name or URL…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">' +
+      '<select class="mc-select" onchange="monitorCountryInput(this.value)">' + ccOptions + '</select>' +
+      '<button type="button" class="mc-btn" onclick="mc_requeueAll()">⟳ Refresh</button>' +
+      '</div>';
     mv += '<div class="mc-cards">';
     mv += mc_card('Uptime', overallPct == null ? '—' : overallPct.toFixed(1) + '%',
-      overallPct == null ? 'no probes recorded yet'
-        : probedSites + ' of ' + shown + ' sites probed · last ' + (source.historyWindow || MAX_BARS) + ' probes', mc_pctCls(overallPct));
+      overallPct == null ? 'no probes recorded yet' : probedSites + ' of ' + matched + ' sites probed',
+      overallPct == null ? '' : mc_pctCls(overallPct));
     mv += mc_card('Avg response', mc_fmtMs(avgMsAll), 'across ' + msCount + ' sites', '');
-    mv += mc_card('Up', String(up), 'of ' + shown + ' shown', up ? 'mc-up-hi' : '');
-    mv += mc_card('Failing', String(failing), down + ' dead · ' + blocked + ' blocked · ' + unreachable + ' unreachable', failing ? 'mc-up-lo' : '');
-    mv += mc_card('Pending', String(pending), 'waiting for first sweep', '');
+    mv += mc_card('Up', String(baseCounts.up), 'of ' + matched + ' sites', baseCounts.up ? 'mc-up-hi' : '');
+    mv += mc_card('Failing', String(failing),
+      baseCounts.down + ' dead · ' + baseCounts.blocked + ' blocked · ' + baseCounts.unreachable + ' unreachable',
+      failing ? 'mc-up-lo' : '');
+    mv += mc_card('Pending', String(baseCounts.pending), 'waiting for first sweep', '');
     mv += '</div>';
-    mv += '<div class="mc-note">Checks are a rolling sweep: every 2 min the worker probes the next 20 sites, so each site is re-checked roughly every 10 hours. Uptime is measured over the recorded probes only, so sections fill in as the sweep reaches them.' +
-      (totalChecks ? '' : ' This snapshot has no probe history yet — uptime fills in from the live worker.') + '</div>';
+    mv += '<div class="mc-note">Every 2 min the worker probes the next 20 sites, so a full pass takes about 10 hours. ' +
+      'Uptime counts only recorded probes, so sections fill in as the sweep reaches them.</div>';
+    if (!matched) {
+      mv += '<div class="mc-tbl-wrap"><p class="mc-empty">No sites match this filter.</p></div>';
+    } else {
+      mv += '<div class="mc-sec"><div class="mc-sec-title">Sites</div><div class="mc-tbl-wrap mc-sites-wrap">' +
+        '<table class="mc-tbl"><thead><tr><th>Status</th><th>Site</th><th class="mc-url">URL</th>' +
+        '<th class="mc-secname">Section</th><th>Uptime</th><th>Checks</th></tr></thead>' +
+        '<tbody>' + rows + '</tbody></table></div></div>';
+      if (matched > rendered) {
+        mv += '<button type="button" class="mc-btn mc-more" onclick="monitorMore()">Show ' + Math.min(200, matched - rendered) + ' more · ' + (matched - rendered) + ' left</button>';
+      }
+    }
     mv += mc_sectionTable(secStats);
-    mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
-    mv += '<button onclick="mc_requeueAll()" style="margin-left:6px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:.75rem">⟳ Refresh</button></div>';
-    mv += '<div class="monitor-wrap"><table><thead><tr><th>Status</th><th>Site</th><th>URL</th><th>Section</th><th>Uptime</th><th>Response</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
-    mv += '<div class="monitor-updated">🕐 Last sweep: ' + esc2(updated) +
-      (hiddenNSFW > 0 ? ' · 🔞 ' + hiddenNSFW + ' hidden' : '') +
-      (source.removed && source.removed.length ? ' · ' + source.removed.length + ' removed (dead 21+ days)' : '') + '</div>';
+    mv += '<div class="mc-foot"><span>Showing <b>' + rendered + '</b> of <b>' + matched + '</b> sites</span>' +
+      '<span>Last sweep <b>' + esc2(updated) + '</b></span>' +
+      (hiddenNSFW > 0 ? '<span>🔞 ' + hiddenNSFW + ' hidden</span>' : '') +
+      (source.removed && source.removed.length ? '<span>' + source.removed.length + ' removed (dead 21+ days)</span>' : '') +
+      '</div>';
     mv += '</div>';
 
     panel.insertAdjacentHTML('beforeend', mv);
