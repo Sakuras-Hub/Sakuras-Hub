@@ -35,7 +35,6 @@ var monitorApiData = null;
 var monitorSearchTerm = '';
 var monitorCountryFilter = '';
 var monitorStatusFilter = '';
-var monitorLimit = 200;
 var CC_LABELS = { RU: '🇷🇺 Russia', IN: '🇮🇳 India', JP: '🇯🇵 Japan', PL: '🇵🇱 Poland', GB: '🇬🇧 United Kingdom', ID: '🇮🇩 Indonesia' };
 var MAX_BARS = 24;
 var MC_STATUS_BY_CHAR = { '0': 'up', '1': 'blocked', '2': 'down', '3': 'unreachable' };
@@ -185,7 +184,7 @@ function mc_pctCls(pct) {
 function mc_uptimeCell(u) {
   if (!u) return '<span class="mc-uptime" style="opacity:.4">—</span>';
   return '<span class="mc-uptime ' + mc_pctCls(u.pct) + '" title="' + esc2(u.up + ' of ' + u.total + ' probes up') + '">' +
-    u.pct.toFixed(1) + '%</span><span class="mc-uptime-sub">' + u.up + '/' + u.total + '</span>';
+    u.pct.toFixed(1) + '%</span> <span class="mc-uptime-sub">' + u.up + '/' + u.total + '</span>';
 }
 
 function mc_card(label, value, sub, cls) {
@@ -224,8 +223,8 @@ function mc_sectionTable(secStats) {
       '<td class="mc-num" style="color:#4cd989">' + v.up + '</td>' +
       '<td class="mc-num"' + (failing ? ' style="color:#f55e6a"' : '') + '>' + failing + '</td>' +
       '<td>' + (pct == null
-        ? '<span class="mc-uptime" style="opacity:.35">—</span><span class="mc-uptime-sub" title="The sweep has not reached this section yet, so there is nothing to average">' + v.probed + '/' + v.total + '</span>'
-        : '<span class="mc-uptime ' + mc_pctCls(pct) + '" title="' + esc2(v.upChecks + ' of ' + v.checks + ' probes up') + '">' + pct.toFixed(1) + '%</span>' +
+        ? '<span class="mc-uptime" style="opacity:.35">—</span> <span class="mc-uptime-sub" title="The sweep has not reached this section yet, so there is nothing to average">' + v.probed + '/' + v.total + '</span>'
+        : '<span class="mc-uptime ' + mc_pctCls(pct) + '" title="' + esc2(v.upChecks + ' of ' + v.checks + ' probes up') + '">' + pct.toFixed(1) + '%</span> ' +
           '<span class="mc-uptime-sub" title="' + esc2(v.probed + ' of ' + v.total + ' sites probed so far') + '">' + v.probed + '/' + v.total + '</span>') +
         '<span class="mc-mini"><i style="width:' + (pct == null ? 0 : pct) + '%;background:' + color + '"></i></span></td></tr>';
   }
@@ -318,7 +317,6 @@ function fetchMonitorData(showToast) {
 
 function monitorSearchInput(val) {
   monitorSearchTerm = String(val || '').toLowerCase().trim();
-  monitorLimit = 200;
   if (monitorActive) renderMonitorSection(true);
   var el = document.querySelector('.monitor-view .mc-search');
   if (el) {
@@ -330,20 +328,12 @@ function monitorSearchInput(val) {
 
 function monitorCountryInput(val) {
   monitorCountryFilter = String(val || '');
-  monitorLimit = 200;
   if (monitorActive) renderMonitorSection(true);
 }
 
 function monitorStatusInput(val) {
   monitorStatusFilter = String(val || '');
-  monitorLimit = 200;
   if (monitorActive) renderMonitorSection(true);
-}
-
-function monitorMore() {
-  if (!monitorActive) return;
-  monitorLimit += 200;
-  renderMonitorSection(true);
 }
 
 function mc_requeueAll() {
@@ -433,7 +423,6 @@ function renderMonitorSection(preserveState) {
       if (monitorStatusFilter === 'up' && st !== 'up') return;
       if (monitorStatusFilter === 'failing' && !isFailing) return;
       if (monitorStatusFilter === 'pending' && st !== 'pending') return;
-      if (rendered >= monitorLimit) return;
       rendered++;
 
       var msText = mc_fmtMs(avgMs);
@@ -478,15 +467,15 @@ function renderMonitorSection(preserveState) {
 
     var chip = function(val, label, n) {
       return '<button type="button" class="mc-chip' + (monitorStatusFilter === val ? ' is-on' : '') +
-        '" onclick="monitorStatusInput(\'' + val + '\')">' + esc2(label) + '<b>' + n + '</b></button>';
+        '" data-mc-status="' + val + '">' + esc2(label) + '<b>' + n + '</b></button>';
     };
     var mv = '<div class="monitor-view">';
     mv += '<div class="mc-tool">' +
       '<div class="mc-chips">' + chip('', 'All', matched) + chip('up', 'Live', baseCounts.up) +
       chip('failing', 'Failing', failing) + chip('pending', 'Pending', baseCounts.pending) + '</div>' +
-      '<input class="mc-search" type="search" placeholder="Search name or URL…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">' +
-      '<select class="mc-select" onchange="monitorCountryInput(this.value)">' + ccOptions + '</select>' +
-      '<button type="button" class="mc-btn" onclick="mc_requeueAll()">⟳ Refresh</button>' +
+      '<input class="mc-search" type="search" placeholder="Search name or URL…" value="' + esc2(monitorSearchTerm) + '" data-mc-search>' +
+      '<select class="mc-select" data-mc-country>' + ccOptions + '</select>' +
+      '<button type="button" class="mc-btn" data-mc-act="refresh">⟳ Refresh</button>' +
       '</div>';
     mv += '<div class="mc-cards">';
     mv += mc_card('Uptime', overallPct == null ? '—' : overallPct.toFixed(1) + '%',
@@ -508,12 +497,9 @@ function renderMonitorSection(preserveState) {
         '<table class="mc-tbl"><thead><tr><th>Status</th><th>Site</th><th class="mc-url">URL</th>' +
         '<th class="mc-secname">Section</th><th>Uptime</th><th>Checks</th></tr></thead>' +
         '<tbody>' + rows + '</tbody></table></div></div>';
-      if (matched > rendered) {
-        mv += '<button type="button" class="mc-btn mc-more" onclick="monitorMore()">Show ' + Math.min(200, matched - rendered) + ' more · ' + (matched - rendered) + ' left</button>';
-      }
     }
     mv += mc_sectionTable(secStats);
-    mv += '<div class="mc-foot"><span>Showing <b>' + rendered + '</b> of <b>' + matched + '</b> sites</span>' +
+    mv += '<div class="mc-foot"><span><b>' + matched + '</b> sites</span>' +
       '<span>Last sweep <b>' + esc2(updated) + '</b></span>' +
       (hiddenNSFW > 0 ? '<span>🔞 ' + hiddenNSFW + ' hidden</span>' : '') +
       (source.removed && source.removed.length ? '<span>' + source.removed.length + ' removed (dead 21+ days)</span>' : '') +
@@ -521,6 +507,19 @@ function renderMonitorSection(preserveState) {
     mv += '</div>';
 
     panel.insertAdjacentHTML('beforeend', mv);
+    var scope = panel;
+    var chipEls = scope.querySelectorAll('.mc-chip[data-mc-status]');
+    for (var ci = 0; ci < chipEls.length; ci++) {
+      chipEls[ci].addEventListener('click', function() {
+        monitorStatusInput(this.getAttribute('data-mc-status'));
+      });
+    }
+    var sInp = scope.querySelector('.mc-search');
+    if (sInp) sInp.addEventListener('input', function() { monitorSearchInput(this.value); });
+    var sSel = scope.querySelector('.mc-select');
+    if (sSel) sSel.addEventListener('change', function() { monitorCountryInput(this.value); });
+    var rBtn = scope.querySelector('.mc-btn[data-mc-act="refresh"]');
+    if (rBtn) rBtn.addEventListener('click', function() { mc_requeueAll(); });
 
     if (monitorActive) {
       if (!monitorPollTimer && MONITOR_API_URL) {
