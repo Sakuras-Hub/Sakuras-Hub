@@ -152,7 +152,7 @@ function mc_sectionTable(secStats) {
     return secStats[b].total - secStats[a].total;
   });
   var html = '<div class="mc-sec"><div class="mc-sec-title">Section health</div>' +
-    '<div class="monitor-wrap"><table><thead><tr><th>Section</th><th>Sites</th><th>Up</th><th>Failing</th><th>Uptime</th></tr></thead><tbody>';
+    '<div class="monitor-wrap"><table><thead><tr><th>Section</th><th>Sites</th><th>Up</th><th>Failing</th><th title="Share of recorded probes that came back up. The small number under a percentage is how many of its sites have been probed so far.">Uptime</th></tr></thead><tbody>';
   for (var i = 0; i < names.length; i++) {
     var v = secStats[names[i]];
     var failing = v.down + v.blocked + v.unreachable;
@@ -160,8 +160,10 @@ function mc_sectionTable(secStats) {
     html += '<tr><td class="mc-sec-name">' + esc2(names[i]) + '</td><td>' + v.total + '</td>' +
       '<td class="mc-up-hi">' + v.up + '</td>' +
       '<td class="' + (failing ? 'mc-up-lo' : '') + '">' + failing + '</td>' +
-      '<td>' + (pct == null ? '<span style="opacity:.4">—</span>' :
-        '<span class="mc-uptime ' + mc_pctCls(pct) + '">' + pct.toFixed(1) + '%</span>') + '</td></tr>';
+      '<td>' + (pct == null
+        ? '<span style="opacity:.4">—</span><span class="mc-uptime-sub" title="The sweep has not reached this section yet, so there is nothing to average">' + v.probed + '/' + v.total + '</span>'
+        : '<span class="mc-uptime ' + mc_pctCls(pct) + '" title="' + esc2(v.upChecks + ' of ' + v.checks + ' probes up') + '">' + pct.toFixed(1) + '%</span>' +
+          '<span class="mc-uptime-sub" title="' + esc2(v.probed + ' of ' + v.total + ' sites probed so far') + '">' + v.probed + '/' + v.total + '</span>') + '</td></tr>';
   }
   return html + '</tbody></table></div></div>';
 }
@@ -307,7 +309,7 @@ function renderMonitorSection(preserveState) {
     var seen = {};
     var rows = '';
     var up = 0, down = 0, blocked = 0, unreachable = 0, pending = 0, shown = 0, hiddenNSFW = 0;
-    var secStats = {}, totalChecks = 0, totalUpChecks = 0, msSum = 0, msCount = 0;
+    var secStats = {}, totalChecks = 0, totalUpChecks = 0, msSum = 0, msCount = 0, probedSites = 0;
 
     sites.forEach(function(s) {
       if (!s || !s.url || !s.name) return;
@@ -332,15 +334,15 @@ function renderMonitorSection(preserveState) {
       var avgMs = (s.avgMs != null ? s.avgMs : (s.ms != null ? s.ms : null));
 
       if (st === 'up') up++; else if (st === 'blocked') blocked++; else if (st === 'unreachable') unreachable++; else if (st === 'pending') pending++; else down++;
-      if (uptimeStat) { totalChecks += uptimeStat.total; totalUpChecks += uptimeStat.up; }
+      if (uptimeStat) { totalChecks += uptimeStat.total; totalUpChecks += uptimeStat.up; probedSites++; }
       if (avgMs != null) { msSum += avgMs; msCount++; }
 
       var secKey = s.section || 'Uncategorised';
       var sv = secStats[secKey];
-      if (!sv) sv = secStats[secKey] = { total: 0, up: 0, down: 0, blocked: 0, unreachable: 0, pending: 0, checks: 0, upChecks: 0 };
+      if (!sv) sv = secStats[secKey] = { total: 0, up: 0, down: 0, blocked: 0, unreachable: 0, pending: 0, checks: 0, upChecks: 0, probed: 0 };
       sv.total++;
       sv[st]++;
-      if (uptimeStat) { sv.checks += uptimeStat.total; sv.upChecks += uptimeStat.up; }
+      if (uptimeStat) { sv.checks += uptimeStat.total; sv.upChecks += uptimeStat.up; sv.probed++; }
 
       var msText = mc_fmtMs(avgMs);
       var msCls = 'mc-ms' + (st === 'down' ? ' mc-ms-down' : '');
@@ -386,13 +388,15 @@ function renderMonitorSection(preserveState) {
 
     var mv = '<div class="monitor-view">';
     mv += '<div class="mc-cards">';
-    mv += mc_card('Uptime', overallPct == null ? '—' : overallPct.toFixed(1) + '%', 'last ' + (source.historyWindow || MAX_BARS) + ' probes per site', mc_pctCls(overallPct));
+    mv += mc_card('Uptime', overallPct == null ? '—' : overallPct.toFixed(1) + '%',
+      overallPct == null ? 'no probes recorded yet'
+        : probedSites + ' of ' + shown + ' sites probed · last ' + (source.historyWindow || MAX_BARS) + ' probes', mc_pctCls(overallPct));
     mv += mc_card('Avg response', mc_fmtMs(avgMsAll), 'across ' + msCount + ' sites', '');
     mv += mc_card('Up', String(up), 'of ' + shown + ' shown', up ? 'mc-up-hi' : '');
     mv += mc_card('Failing', String(failing), down + ' dead · ' + blocked + ' blocked · ' + unreachable + ' unreachable', failing ? 'mc-up-lo' : '');
     mv += mc_card('Pending', String(pending), 'waiting for first sweep', '');
     mv += '</div>';
-    mv += '<div class="mc-note">Checks are a rolling sweep: every 2 min the worker probes the next 20 sites, so each site is re-checked roughly every 10 hours. Uptime is measured over the recorded probes only.' +
+    mv += '<div class="mc-note">Checks are a rolling sweep: every 2 min the worker probes the next 20 sites, so each site is re-checked roughly every 10 hours. Uptime is measured over the recorded probes only, so sections fill in as the sweep reaches them.' +
       (totalChecks ? '' : ' This snapshot has no probe history yet — uptime fills in from the live worker.') + '</div>';
     mv += mc_sectionTable(secStats);
     mv += '<div class="monitor-search-row"><select onchange="monitorCountryInput(this.value)" style="margin-right:6px">' + ccOptions + '</select><input type="text" placeholder="Search sites…" value="' + esc2(monitorSearchTerm) + '" oninput="monitorSearchInput(this.value)">';
