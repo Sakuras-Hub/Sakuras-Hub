@@ -1,5 +1,12 @@
 [
   {
+    "version": "Sneaker Resell Simulator Shoe Snipe",
+    "date": "2026-11-07",
+    "changes": [
+      "changed the black list tab to be nicer and better search"
+    ]
+  },
+  {
     "version": "Sneaker Resell Simulator",
     "date": "2026-10-24",
     "changes": [
