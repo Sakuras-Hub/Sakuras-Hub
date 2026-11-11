@@ -11040,6 +11040,19 @@
     "countries": []
   },
   {
+    "rank": 378,
+    "name": "Pahenime",
+    "url": "https://pahenime.com/",
+    "slug": "pahenime",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -14783,6 +14796,19 @@
     "name": "KissAsian",
     "url": "https://kissasian.com.gr/",
     "slug": "kissasian2",
+    "section": "Asian Drama",
+    "category": "drama",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Drama, Asian Drama, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 35,
+    "name": "KissBae",
+    "url": "https://kissbae.com/",
+    "slug": "kissbae",
     "section": "Asian Drama",
     "category": "drama",
     "pricing": "free*",
@@ -23862,6 +23888,19 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Download, Debrid, Leech, Free",
+    "countries": []
+  },
+  {
+    "rank": 528,
+    "name": "AnimeAlpha",
+    "url": "https://animealpha.cc/",
+    "slug": "animealpha",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
     "countries": []
   },
   {
@@ -50559,6 +50598,97 @@
     "countries": []
   },
   {
+    "rank": 1807,
+    "name": "Arabtaku",
+    "url": "https://arabtaku.com",
+    "slug": "arabtaku",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1808,
+    "name": "Drope Scan",
+    "url": "https://beta.dropescan.com",
+    "slug": "dropescan",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1809,
+    "name": "Lector Hentai",
+    "url": "https://lectorhentai.com",
+    "slug": "lectorhentai",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1810,
+    "name": "Lemoon",
+    "url": "https://lemoon.io",
+    "slug": "lemoon",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1811,
+    "name": "Merlin Manga",
+    "url": "https://merlinmanga.com",
+    "slug": "merlinmanga",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1812,
+    "name": "拷貝漫畫",
+    "url": "https://www.mangacopy.com",
+    "slug": "site-b0fe8b8c84",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1813,
+    "name": "极速漫画",
+    "url": "https://www.1kkk.com",
+    "slug": "site-301203f454",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -68942,6 +69072,79 @@
     "countries": [
       "IT"
     ]
+  },
+  {
+    "rank": 1022,
+    "name": "akwam",
+    "url": "https://akwam.ss/",
+    "slug": "akwam2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 1023,
+    "name": "egydead",
+    "url": "https://egydead.life/",
+    "slug": "egydead2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 1024,
+    "name": "Hidrama",
+    "url": "https://www.doramasqueen.in/",
+    "slug": "hidrama2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "KR"
+    ]
+  },
+  {
+    "rank": 1025,
+    "name": "KMMovies",
+    "url": "https://kmmovies.beer/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 1026,
+    "name": "⁠TokyVideo",
+    "url": "https://www.tokyvideo.com/",
+    "slug": "tokyvideo",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
   },
   {
     "url": "https://kara.moe/",
