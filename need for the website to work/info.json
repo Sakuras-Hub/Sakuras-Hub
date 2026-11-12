@@ -23904,6 +23904,19 @@
     "countries": []
   },
   {
+    "rank": 529,
+    "name": "HDHub4u",
+    "url": "https://hdhub4u.fr/",
+    "slug": "hdhub4u2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "2of3 by Ente",
     "url": "https://2of3.ente.com",
@@ -50689,6 +50702,34 @@
     "countries": []
   },
   {
+    "rank": 1814,
+    "name": "fujiscans",
+    "url": "https://fuji-scan.com/",
+    "slug": "fujiscans",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": [
+      "FR"
+    ]
+  },
+  {
+    "rank": 1815,
+    "name": "Ikiru",
+    "url": "https://10.ikiru.wtf",
+    "slug": "ikiru2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -69145,6 +69186,36 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 1027,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.lol/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 1028,
+    "name": "hdhub4u",
+    "url": "https://new13.hdhub4u.cl/",
+    "slug": "hdhub4u25",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://kara.moe/",
