@@ -6901,6 +6901,19 @@
     "countries": []
   },
   {
+    "rank": 553,
+    "name": "AFFiNE",
+    "url": "https://affine.pro",
+    "slug": "affine",
+    "section": "Adblocking / Privacy",
+    "category": "privacy",
+    "pricing": "free",
+    "nsfw": false,
+    "emoji": "🔒",
+    "tags": [],
+    "countries": []
+  },
+  {
     "url": "https://anikototv.to/home",
     "name": "Anikoto",
     "section": "Anime Streaming",
@@ -11090,6 +11103,60 @@
     "emoji": "",
     "tags": "Anime, Streaming, Sub, Dub, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 382,
+    "name": "a.214hz",
+    "url": "https://a.214hz.com/",
+    "slug": "a214hz",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 383,
+    "name": "Anikoto",
+    "url": "https://anikototv.bz/",
+    "slug": "anikoto",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 384,
+    "name": "aniwavebr",
+    "url": "https://aniwave.gr/",
+    "slug": "aniwavebr",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 385,
+    "name": "RARE TOONS INDIA",
+    "url": "https://www.rareanimes.foo/",
+    "slug": "raretoonsindia2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://mihon.app/",
@@ -23956,6 +24023,19 @@
     "countries": []
   },
   {
+    "rank": 530,
+    "name": "PSArips",
+    "url": "https://psarips.is/",
+    "slug": "psarips2",
+    "section": "Download",
+    "category": "download",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "2of3 by Ente",
     "url": "https://2of3.ente.com",
@@ -29785,6 +29865,32 @@
     "name": "Cinevid",
     "url": "https://cinevid.sbs/events",
     "slug": "cinevid2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 231,
+    "name": "AuraSports",
+    "url": "https://aurasports.cfd/",
+    "slug": "aurasports2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 232,
+    "name": "⁠ScoreZone TV",
+    "url": "https://scorezonetv.live/",
+    "slug": "scorezonetv",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -51042,6 +51148,19 @@
     "countries": []
   },
   {
+    "rank": 1837,
+    "name": "Torch Comics",
+    "url": "https://to-ti.in",
+    "slug": "torchcomics",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -56956,6 +57075,32 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Tools, Extension, Utility, Free",
+    "countries": []
+  },
+  {
+    "rank": 413,
+    "name": "Movie Vector Map",
+    "url": "https://mikeyguinness.com/movies/",
+    "slug": "movievectormap",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Subtitles, Recommendations, Free",
+    "countries": []
+  },
+  {
+    "rank": 414,
+    "name": "⁠HackerBooks",
+    "url": "https://hackerbooks.org/",
+    "slug": "hackerbooks",
+    "section": "Misc Tools",
+    "category": "tools",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Tools, Reading, Free",
     "countries": []
   },
   {
@@ -69558,6 +69703,60 @@
     "countries": []
   },
   {
+    "rank": 1031,
+    "name": "hdhub4u",
+    "url": "https://new14.hdhub4u.cl/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 1032,
+    "name": "ShuttleTV",
+    "url": "https://shuttletv.pk/",
+    "slug": "shuttletv",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 1033,
+    "name": "StreamingUnity",
+    "url": "https://streamingunity.day/",
+    "slug": "streamingunity",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 1034,
+    "name": "Vidbox",
+    "url": "https://vidbox.wtf/",
+    "slug": "vidbox2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -76258,6 +76457,58 @@
     "name": "⁠zig~zag",
     "url": "https://www.zig-zag.fm/",
     "slug": "zigzag",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 548,
+    "name": "⁠Limusic",
+    "url": "https://limusic.app/",
+    "slug": "limusic2",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 549,
+    "name": "⁠Riplet",
+    "url": "https://riplet.cc/",
+    "slug": "riplet",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 550,
+    "name": "⁠SpecialForDJs",
+    "url": "https://specialfordjs.org/",
+    "slug": "specialfordjs",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 551,
+    "name": "⁠The Cat Rave",
+    "url": "https://thecatrave.com/selector",
+    "slug": "thecatrave",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
@@ -84796,6 +85047,19 @@
     "name": "Yubori",
     "url": "https://yubori.com/",
     "slug": "yubori",
+    "section": "Quiz",
+    "category": "quiz",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Quiz, Trivia, Anime, Games",
+    "countries": []
+  },
+  {
+    "rank": 15,
+    "name": "Koma.moe",
+    "url": "https://koma.moe/",
+    "slug": "komamoe",
     "section": "Quiz",
     "category": "quiz",
     "pricing": "free*",
