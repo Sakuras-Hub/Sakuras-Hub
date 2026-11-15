@@ -183,7 +183,7 @@ Open http://localhost:8000
 <br/>
 
 <p align="center">
-  <a href="https://sakuras-hub.github.io/Sakuras-Hub/">
+  <a href="https://sakuras-hub.vercel.app/">
     <img src="https://img.shields.io/badge/WEBSITE-151225?style=for-the-badge&logo=firefoxbrowser&logoColor=ff88ff&color=ff00ff" />
   </a>
   <a href="https://discord.gg/f4X4jSRpHC">
