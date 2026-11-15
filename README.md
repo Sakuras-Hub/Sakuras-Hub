@@ -147,6 +147,37 @@
 <hr/>
 <br/>
 
+<samp><h3 align="center">REPO LAYOUT</h3></samp>
+
+<br/>
+
+| Path | What it is |
+|---|---|
+| `index.html`, `directory.html`, `products.html`, `about.html`, `donate.html`, `disclaimer.html`, `404.html` | The website pages |
+| `script-hub-data/` | Script Hub data the Products page reads live |
+| `need for the website to work/info.json` | Site list for the Directory (name must not change) |
+| `status/` | Status data |
+| `monitor-worker/` | Cloudflare Worker that checks sites every 2 minutes |
+| `scripts/` | Updater and helper scripts |
+| `.github/workflows/` | Daily link update and weekly dead-site prune |
+
+Full file-by-file list in [SITE-GUIDE.md](SITE-GUIDE.md).
+
+<details>
+<summary>Run it locally</summary>
+
+```
+python3 -m http.server 8000
+```
+
+Open http://localhost:8000
+
+</details>
+
+<br/>
+<hr/>
+<br/>
+
 <samp><h3 align="center">CONNECT</h3></samp>
 
 <br/>

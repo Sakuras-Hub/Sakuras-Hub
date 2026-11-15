@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /errors/
+
+Sitemap: https://sakuras-hub.github.io/Sakuras-Hub/sitemap.xml
