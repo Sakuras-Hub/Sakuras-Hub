@@ -1,0 +1,42 @@
+[
+  {
+    "name": "MacSploit",
+    "url": "https://www.raptor.fun/",
+    "platform": "pc"
+  },
+  {
+    "name": "Potassium",
+    "url": "https://www.potassium.pro/",
+    "platform": "pc"
+  },
+  {
+    "name": "Volt",
+    "url": "https://voltbz.net/",
+    "platform": "pc"
+  },
+  {
+    "name": "Wave",
+    "url": "https://getwave.gg/",
+    "platform": "pc"
+  },
+  {
+    "name": "Codex",
+    "url": "https://codex.lol/",
+    "platform": "android"
+  },
+  {
+    "name": "Delta",
+    "url": "https://deltaexploits.gg/",
+    "platform": "android"
+  },
+  {
+    "name": "Vega X",
+    "url": "https://www.vegax.gg/",
+    "platform": "android"
+  },
+  {
+    "name": "Delta",
+    "url": "https://deltaexploits.gg/",
+    "platform": "ios"
+  }
+]
