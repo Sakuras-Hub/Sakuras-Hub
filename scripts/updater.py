@@ -153,6 +153,10 @@ def _sane_site(name, url):
     name = name.strip()
     if re.fullmatch(r"\d+", name):
         return False  # markdown mirror token like [2](url)
+    if re.search(r"\.(svg|png|jpe?g|gif|webp|ico|pdf|zip)(\?|$)", url, re.IGNORECASE):
+        return False  # images and files are not sites
+    if name.startswith("!["):
+        return False  # broken markdown image
     if _extra_skip(url):
         return False
     if is_paid_or_legal(name, url):
@@ -239,7 +243,7 @@ FMHY_RULES = {
 }
 
 FMHY_DEFAULTS = {
-    "video.md": ("Movies & TV Streaming", "movies-tv", "Movies, TV, Streaming, Free, HD"),
+    "video.md": ("Misc Tools", "tools", "Tools, Subtitles, Recommendations, Free"),  # unmatched headings are tools, not streaming sites
     "reading.md": ("Novel Reading", "novel", "Novel, Light Novel, Reading, Free"),
     "downloading.md": ("Download", "download", "Download, Anime, Manga, Torrent, DDL, Free"),
     "audio.md": ("Music", "music", "Music, Anime Music, OST, Free"),

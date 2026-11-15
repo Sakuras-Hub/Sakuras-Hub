@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps sites: free list with uptime checks · Sakura’s Hub</title>
+<meta name="description" content="415 apps sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta name="theme-color" content="#06060d">
+<link rel="canonical" href="https://sakuras-hub.github.io/Sakuras-Hub/sections/apps">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../assets/icon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sakura’s Hub">
+<meta property="og:title" content="Apps sites: free list with uptime checks · Sakura’s Hub">
+<meta property="og:description" content="415 apps sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta property="og:url" content="https://sakuras-hub.github.io/Sakuras-Hub/sections/apps">
+<meta property="og:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url(../assets/fonts/inter-latin.woff2) format('woff2')}
+:root{color-scheme:dark light;--bg:#06060d;--surface:#171326;--text:#e8eaf6;--muted:#9e94c0;--accent:#ff9ec4;--border:rgba(158,148,192,.22)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f5fb;--surface:#ffffff;--text:#1d1830;--muted:#6a5f8c;--accent:#c01f75;--border:rgba(80,60,140,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:var(--accent)}
+header.top{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:18px 20px}
+header.top .brand{font-weight:800;text-decoration:none;color:var(--text)}
+header.top nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+main{max-width:960px;margin:0 auto;padding:8px 20px 56px}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:8px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.cta{display:inline-block;margin:4px 0 22px;padding:10px 18px;border-radius:999px;background:var(--accent);color:#16101f;font-weight:700;text-decoration:none}
+ul.sites{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+ul.sites li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 12px;min-width:0}
+ul.sites a{font-weight:600;text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.sites a:hover{text-decoration:underline}
+ul.sites .host{display:block;color:var(--muted);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+ul.cats li a{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--text);font-weight:600}
+ul.cats li a span{color:var(--muted);font-weight:400}
+footer{max-width:960px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:.85rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "Apps sites", "description": "415 apps sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.", "url": "https://sakuras-hub.github.io/Sakuras-Hub/sections/apps", "isPartOf": {"@type": "WebSite", "name": "Sakura’s Hub", "url": "https://sakuras-hub.github.io/Sakuras-Hub/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sakura’s Hub", "item": "https://sakuras-hub.github.io/Sakuras-Hub/"}, {"@type": "ListItem", "position": 2, "name": "Sections", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/"}, {"@type": "ListItem", "position": 3, "name": "Apps", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/apps"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../">Sakura’s Hub</a>
+  <nav aria-label="Main"><a href="../directory">Directory</a><a href="../products">Products</a><a href="../about">About</a><a href="../donate">Support</a></nav>
+</header>
+<main>
+<h1>📱 Apps sites</h1>
+<p class="sub">415 sites, hand-picked and checked for uptime. The live directory adds search, favorites and up/down status.</p>
+<a class="cta" href="../directory?cat=apps">Open Apps in the live directory</a>
+<ul class="sites">
+<li><a href="https://mihon.app/" target="_blank" rel="nofollow noopener noreferrer">Mihon</a><span class="host">mihon.app</span></li>
+<li><a href="https://github.com/Kotatsu-Redo/Kotatsu-Redo/" target="_blank" rel="nofollow noopener noreferrer">Kotatsu</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/komikku-app/komikku" target="_blank" rel="nofollow noopener noreferrer">Komikku</a><span class="host">github.com</span></li>
+<li><a href="https://aniyomi.org/" target="_blank" rel="nofollow noopener noreferrer">Aniyomi</a><span class="host">aniyomi.org</span></li>
+<li><a href="https://mihon.app/forks/TachiyomiSY/" target="_blank" rel="nofollow noopener noreferrer">TachiyomiSY</a><span class="host">mihon.app</span></li>
+<li><a href="https://github.com/kodjodevf/mangayomi" target="_blank" rel="nofollow noopener noreferrer">Mangayomi</a><span class="host">github.com</span></li>
+<li><a href="https://anymex.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">AnymeX</a><span class="host">anymex.vercel.app</span></li>
+<li><a href="https://anikku-app.github.io/" target="_blank" rel="nofollow noopener noreferrer">Anikku</a><span class="host">anikku-app.github.io</span></li>
+<li><a href="https://github.com/recloudstream/cloudstream" target="_blank" rel="nofollow noopener noreferrer">CloudStream</a><span class="host">github.com</span></li>
+<li><a href="https://hayase.watch/" target="_blank" rel="nofollow noopener noreferrer">Hayase</a><span class="host">hayase.watch</span></li>
+<li><a href="https://www.lnreader.app/" target="_blank" rel="nofollow noopener noreferrer">LNReader</a><span class="host">lnreader.app</span></li>
+<li><a href="https://github.com/LagradOst/QuickNovel" target="_blank" rel="nofollow noopener noreferrer">QuickNovel</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/null2264/yokai" target="_blank" rel="nofollow noopener noreferrer">Yokai</a><span class="host">github.com</span></li>
+<li><a href="https://manatan.com/" target="_blank" rel="nofollow noopener noreferrer">Manatan</a><span class="host">manatan.com</span></li>
+<li><a href="https://seanime.rahim.app/" target="_blank" rel="nofollow noopener noreferrer">Seanime</a><span class="host">seanime.rahim.app</span></li>
+<li><a href="https://tsundoku-otaku.github.io/" target="_blank" rel="nofollow noopener noreferrer">Tsundoku</a><span class="host">tsundoku-otaku.github.io</span></li>
+<li><a href="https://miru.js.org/en/" target="_blank" rel="nofollow noopener noreferrer">Miru</a><span class="host">miru.js.org</span></li>
+<li><a href="https://github.com/Suwayomi/Suwayomi-Server" target="_blank" rel="nofollow noopener noreferrer">Suwayomi</a><span class="host">github.com</span></li>
+<li><a href="https://houdoku.org/" target="_blank" rel="nofollow noopener noreferrer">Houdoku</a><span class="host">houdoku.org</span></li>
+<li><a href="https://github.com/dazedcat19/FMD2" target="_blank" rel="nofollow noopener noreferrer">FMD2</a><span class="host">github.com</span></li>
+<li><a href="https://hakuneko.download/" target="_blank" rel="nofollow noopener noreferrer">Hakuneko</a><span class="host">hakuneko.download</span></li>
+<li><a href="https://github.com/venera-app/venera" target="_blank" rel="nofollow noopener noreferrer">venera</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/RockinChaos/Shiru" target="_blank" rel="nofollow noopener noreferrer">Shiru</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/nekomangaorg/Neko" target="_blank" rel="nofollow noopener noreferrer">Neko</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/dipu-bd/lightnovel-crawler" target="_blank" rel="nofollow noopener noreferrer">Lightnovel Crawler</a><span class="host">github.com</span></li>
+<li><a href="https://shonenx.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">ShonenX</a><span class="host">shonenx.vercel.app</span></li>
+<li><a href="https://mangatoon.mobi/" target="_blank" rel="nofollow noopener noreferrer">MangaToon</a><span class="host">mangatoon.mobi</span></li>
+<li><a href="https://github.com/IReaderorg/IReader" target="_blank" rel="nofollow noopener noreferrer">IReader</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/cranci1/Luna" target="_blank" rel="nofollow noopener noreferrer">Luna</a><span class="host">github.com</span></li>
+<li><a href="https://animechicken.app/" target="_blank" rel="nofollow noopener noreferrer">AnimeChicken</a><span class="host">animechicken.app</span></li>
+<li><a href="https://github.com/MrBoomDeveloper/Awery" target="_blank" rel="nofollow noopener noreferrer">Awery</a><span class="host">github.com</span></li>
+<li><a href="https://www.mojuru.app/" target="_blank" rel="nofollow noopener noreferrer">Mojuru</a><span class="host">mojuru.app</span></li>
+<li><a href="https://github.com/amarullz/kaicodex/tree/main/generated/bin" target="_blank" rel="nofollow noopener noreferrer">AnimeTV</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/aayush2622/Dartotsu" target="_blank" rel="nofollow noopener noreferrer">Dartotsu</a><span class="host">github.com</span></li>
+<li><a href="https://mihon.app/forks/TachiyomiJ2K/" target="_blank" rel="nofollow noopener noreferrer">TachiyomiJ2K</a><span class="host">mihon.app</span></li>
+<li><a href="https://github.com/nanihadesuka/NovelDokusha" target="_blank" rel="nofollow noopener noreferrer">NovelDokusha</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/insomniachi/Totoro" target="_blank" rel="nofollow noopener noreferrer">Totoro</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/hitarth-gg/zenshin" target="_blank" rel="nofollow noopener noreferrer">Zenshin</a><span class="host">github.com</span></li>
+<li><a href="https://paperback.moe/" target="_blank" rel="nofollow noopener noreferrer">Paperback</a><span class="host">paperback.moe</span></li>
+<li><a href="https://ketsu.app/" target="_blank" rel="nofollow noopener noreferrer">Ketsu</a><span class="host">ketsu.app</span></li>
+<li><a href="https://github.com/frostnova721/animestream" target="_blank" rel="nofollow noopener noreferrer">animestream</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/reyyuuki/Azyx" target="_blank" rel="nofollow noopener noreferrer">Azyx</a><span class="host">github.com</span></li>
+<li><a href="https://gitlab.com/shosetsuorg/shosetsu" target="_blank" rel="nofollow noopener noreferrer">Shosetsu</a><span class="host">gitlab.com</span></li>
+<li><a href="https://zantaku.com/" target="_blank" rel="nofollow noopener noreferrer">Zantaku</a><span class="host">zantaku.com</span></li>
+<li><a href="https://global.manga-up.com/" target="_blank" rel="nofollow noopener noreferrer">Manga UP!</a><span class="host">global.manga-up.com</span></li>
+<li><a href="https://github.com/K3vinb5/Unyo" target="_blank" rel="nofollow noopener noreferrer">Unyo</a><span class="host">github.com</span></li>
+<li><a href="https://cabernetwork.github.io/" target="_blank" rel="nofollow noopener noreferrer">CaberNetwork</a><span class="host">cabernetwork.github.io</span></li>
+<li><a href="https://aidoku.app/" target="_blank" rel="nofollow noopener noreferrer">Aidoku</a><span class="host">aidoku.app</span></li>
+<li><a href="https://apps.apple.com/us/app/tachimanga/id6447486175" target="_blank" rel="nofollow noopener noreferrer">Tachimanga</a><span class="host">apps.apple.com</span></li>
+<li><a href="https://github.com/jakepurple13/OtakuWorld" target="_blank" rel="nofollow noopener noreferrer">OtakuWorld</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/kl3jvi/animity" target="_blank" rel="nofollow noopener noreferrer">Animity</a><span class="host">github.com</span></li>
+<li><a href="https://mangapin.com/" target="_blank" rel="nofollow noopener noreferrer">MangaPin</a><span class="host">mangapin.com</span></li>
+<li><a href="https://github.com/SenZmaKi/Senpwai" target="_blank" rel="nofollow noopener noreferrer">Senpwai</a><span class="host">github.com</span></li>
+<li><a href="https://www.teemii.io/" target="_blank" rel="nofollow noopener noreferrer">Teemii</a><span class="host">teemii.io</span></li>
+<li><a href="https://www.anisurge.lol/" target="_blank" rel="nofollow noopener noreferrer">AniSurge</a><span class="host">anisurge.lol</span></li>
+<li><a href="https://github.com/professorDeveloper/Kitsune-App" target="_blank" rel="nofollow noopener noreferrer">Kitsune App</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Kropatz/boorusphere" target="_blank" rel="nofollow noopener noreferrer">Boorusphere</a><span class="host">github.com</span></li>
+<li><a href="https://zhangboheng.github.io/Easy-Web-TV-M3u8/routes/tv.html" target="_blank" rel="nofollow noopener noreferrer">EasyWebTV</a><span class="host">zhangboheng.github.io</span></li>
+<li><a href="https://github.com/hoangvu12/kaguya-app" target="_blank" rel="nofollow noopener noreferrer">Kaguya App</a><span class="host">github.com</span></li>
+<li><a href="https://p2devs.github.io/InkNest/" target="_blank" rel="nofollow noopener noreferrer">InkNest</a><span class="host">p2devs.github.io</span></li>
+<li><a href="https://mangazoneapp.com/" target="_blank" rel="nofollow noopener noreferrer">MangaZone</a><span class="host">mangazoneapp.com</span></li>
+<li><a href="https://csc-lab.xyz/" target="_blank" rel="nofollow noopener noreferrer">CSC LAB</a><span class="host">csc-lab.xyz</span></li>
+<li><a href="https://github.com/SkyD666/AniVu" target="_blank" rel="nofollow noopener noreferrer">AniVu</a><span class="host">github.com</span></li>
+<li><a href="https://www.suwatte.app/" target="_blank" rel="nofollow noopener noreferrer">Suwatte</a><span class="host">suwatte.app</span></li>
+<li><a href="https://github.com/akuse-app/akuse" target="_blank" rel="nofollow noopener noreferrer">akuse</a><span class="host">github.com</span></li>
+<li><a href="https://comikey.com/" target="_blank" rel="nofollow noopener noreferrer">Comikey</a><span class="host">comikey.com</span></li>
+<li><a href="https://github.com/ranobe-org/ranobe" target="_blank" rel="nofollow noopener noreferrer">Ranobe</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Chouten-App" target="_blank" rel="nofollow noopener noreferrer">Chouten</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/astarivi/Kaizoyu" target="_blank" rel="nofollow noopener noreferrer">Kaizoyu!</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/middlegear/Saikou" target="_blank" rel="nofollow noopener noreferrer">Saikou</a><span class="host">github.com</span></li>
+<li><a href="https://miguapp.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">Migu</a><span class="host">miguapp.pages.dev</span></li>
+<li><a href="https://anilab.so/" target="_blank" rel="nofollow noopener noreferrer">Anilab</a><span class="host">anilab.so</span></li>
+<li><a href="https://playtorrio.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">Playtorrio</a><span class="host">playtorrio.pages.dev</span></li>
+<li><a href="https://onstreamapks.app/" target="_blank" rel="nofollow noopener noreferrer">OnStream APKs</a><span class="host">onstreamapks.app</span></li>
+<li><a href="https://hdobox.net/" target="_blank" rel="nofollow noopener noreferrer">HDO Box</a><span class="host">hdobox.net</span></li>
+<li><a href="https://pikashowtv.in/" target="_blank" rel="nofollow noopener noreferrer">PikaShow</a><span class="host">pikashowtv.in</span></li>
+<li><a href="https://www.moviesbox.com.co/home/" target="_blank" rel="nofollow noopener noreferrer">MovieBox</a><span class="host">moviesbox.com.co</span></li>
+<li><a href="https://netmirror.gg/2/en" target="_blank" rel="nofollow noopener noreferrer">NetMirror</a><span class="host">netmirror.gg</span></li>
+<li><a href="https://beetvs.com.co/" target="_blank" rel="nofollow noopener noreferrer">BeeTV</a><span class="host">beetvs.com.co</span></li>
+<li><a href="https://github.com/peterpt/IPTV-CHECK" target="_blank" rel="nofollow noopener noreferrer">IPTV Check</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/sohilsayed/chimahon" target="_blank" rel="nofollow noopener noreferrer">Chimahon</a><span class="host">github.com</span></li>
+<li><a href="https://fasselhd.com/" target="_blank" rel="nofollow noopener noreferrer">FasselHD</a><span class="host">fasselhd.com</span></li>
+<li><a href="https://flowflix.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">FlowFlix</a><span class="host">flowflix.vercel.app</span></li>
+<li><a href="https://4gray.github.io/iptvnator/" target="_blank" rel="nofollow noopener noreferrer">IPTVNator</a><span class="host">4gray.github.io</span></li>
+<li><a href="https://kototoro-app.github.io/Kototoro/" target="_blank" rel="nofollow noopener noreferrer">Kototoro</a><span class="host">kototoro-app.github.io</span></li>
+<li><a href="https://moggle.is-a-good.dev/" target="_blank" rel="nofollow noopener noreferrer">Novel DR</a><span class="host">moggle.is-a-good.dev</span></li>
+<li><a href="https://nyora.xyz/" target="_blank" rel="nofollow noopener noreferrer">Nyora</a><span class="host">nyora.xyz</span></li>
+<li><a href="https://playfy.live/" target="_blank" rel="nofollow noopener noreferrer">PlayFy</a><span class="host">playfy.live</span></li>
+<li><a href="https://majusss.github.io/" target="_blank" rel="nofollow noopener noreferrer">PureVideo</a><span class="host">majusss.github.io</span></li>
+<li><a href="https://seanime.app/" target="_blank" rel="nofollow noopener noreferrer">Seanime</a><span class="host">seanime.app</span></li>
+<li><a href="https://uvotv.com/" target="_blank" rel="nofollow noopener noreferrer">star sports</a><span class="host">uvotv.com</span></li>
+<li><a href="https://github.com/JohanKRS/Tankobun" target="_blank" rel="nofollow noopener noreferrer">Tankobun</a><span class="host">github.com</span></li>
+<li><a href="http://www.tving.com/" target="_blank" rel="nofollow noopener noreferrer">Tving</a><span class="host">tving.com</span></li>
+<li><a href="https://github.com/nilaoda/N_m3u8DL-RE/blob/main/README.en.md" target="_blank" rel="nofollow noopener noreferrer">M3u8DL-RE</a><span class="host">github.com</span></li>
+<li><a href="https://youcineapkpro.com/" target="_blank" rel="nofollow noopener noreferrer">YouCine</a><span class="host">youcineapkpro.com</span></li>
+<li><a href="https://zangetsu.online/" target="_blank" rel="nofollow noopener noreferrer">Zangetsu</a><span class="host">zangetsu.online</span></li>
+<li><a href="https://github.com/KenneyNL/Adobe-Alternatives" target="_blank" rel="nofollow noopener noreferrer">Adobe Alternatives</a><span class="host">github.com</span></li>
+<li><a href="https://adrama.app/" target="_blank" rel="nofollow noopener noreferrer">aDrama</a><span class="host">adrama.app</span></li>
+<li><a href="https://www.androidtv-guide.com/" target="_blank" rel="nofollow noopener noreferrer">Android TV Guide</a><span class="host">androidtv-guide.com</span></li>
+<li><a href="https://xdaforums.com/t/tool-all-in-one-tool-for-windows-android-tv-tools-v4.4648239/" target="_blank" rel="nofollow noopener noreferrer">Android TV Tools v4</a><span class="host">xdaforums.com</span></li>
+<li><a href="https://github.com/pystardust/ani-cli" target="_blank" rel="nofollow noopener noreferrer">ani-cli</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jerry08/Anikin" target="_blank" rel="nofollow noopener noreferrer">Anikin</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/rumboalla/apkupdater" target="_blank" rel="nofollow noopener noreferrer">APKUpdater</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Apps2Samsung" target="_blank" rel="nofollow noopener noreferrer">Apps2Samsung</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/RandomNinjaAtk/arr-scripts/" target="_blank" rel="nofollow noopener noreferrer">Arr Scripts</a><span class="host">github.com</span></li>
+<li><a href="https://arvio.tv/" target="_blank" rel="nofollow noopener noreferrer">ARVIO</a><span class="host">arvio.tv</span></li>
+<li><a href="https://github.com/bitxeno/atvloadly" target="_blank" rel="nofollow noopener noreferrer">ATVLoadly</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/autobrr/autobrr" target="_blank" rel="nofollow noopener noreferrer">Autobrr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/trossr32/sonarr-radarr-lidarr-autosearch-browser-extension" target="_blank" rel="nofollow noopener noreferrer">Autosearch Extension</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/fredolx/open-tv" target="_blank" rel="nofollow noopener noreferrer">Open TV</a><span class="host">github.com</span></li>
+<li><a href="https://ravencentric.cc/awesome-arr/" target="_blank" rel="nofollow noopener noreferrer">Awesome *Arr</a><span class="host">ravencentric.cc</span></li>
+<li><a href="https://github.com/Generator/Awesome-Android-TV-FOSS-Apps" target="_blank" rel="nofollow noopener noreferrer">Awesome Android TV</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/toolleeo/awesome-cli-apps-in-a-csv" target="_blank" rel="nofollow noopener noreferrer">Awesome CLI Apps</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Axorax/awesome-free-apps" target="_blank" rel="nofollow noopener noreferrer">Awesome Free Software</a><span class="host">github.com</span></li>
+<li><a href="https://awesomeopensource.com/" target="_blank" rel="nofollow noopener noreferrer">Awesome Open Source</a><span class="host">awesomeopensource.com</span></li>
+<li><a href="https://github.com/mahmoud/awesome-python-applications" target="_blank" rel="nofollow noopener noreferrer">Awesome Python Applications</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/NSSpiral/Blackb0x" target="_blank" rel="nofollow noopener noreferrer">Blackb0x</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/PredatH0r/ChanSort" target="_blank" rel="nofollow noopener noreferrer">ChanSort</a><span class="host">github.com</span></li>
+<li><a href="https://cracksurl.com/" target="_blank" rel="nofollow noopener noreferrer">CracksURL</a><span class="host">cracksurl.com</span></li>
+<li><a href="https://danstore-ms.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">DanStore</a><span class="host">danstore-ms.vercel.app</span></li>
+<li><a href="https://www.downloadha.com/" target="_blank" rel="nofollow noopener noreferrer">DownloadHa</a><span class="host">downloadha.com</span></li>
+<li><a href="https://www.fileeagle.com/" target="_blank" rel="nofollow noopener noreferrer">FileEagle</a><span class="host">fileeagle.com</span></li>
+<li><a href="https://www.filepuma.com/" target="_blank" rel="nofollow noopener noreferrer">FilePuma</a><span class="host">filepuma.com</span></li>
+<li><a href="https://github.com/yoshiask/FluentStore" target="_blank" rel="nofollow noopener noreferrer">FluentStore</a><span class="host">github.com</span></li>
+<li><a href="https://www.fosshub.com/" target="_blank" rel="nofollow noopener noreferrer">FossHub</a><span class="host">fosshub.com</span></li>
+<li><a href="https://fossies.org/" target="_blank" rel="nofollow noopener noreferrer">Fossies</a><span class="host">fossies.org</span></li>
+<li><a href="https://gadgeteer.co.za/opensourcesoftware/" target="_blank" rel="nofollow noopener noreferrer">Gadgeteer</a><span class="host">gadgeteer.co.za</span></li>
+<li><a href="https://github.com/KrumpetPirate/AAXtoMP3" target="_blank" rel="nofollow noopener noreferrer">AAXtoMP3</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/alexballas/go2tv" target="_blank" rel="nofollow noopener noreferrer">Go2TV</a><span class="host">github.com</span></li>
+<li><a href="https://www.grc.com/freepopular.htm" target="_blank" rel="nofollow noopener noreferrer">GRC</a><span class="host">grc.com</span></li>
+<li><a href="https://siptv.eu/converter/" target="_blank" rel="nofollow noopener noreferrer">SipTV Converter</a><span class="host">siptv.eu</span></li>
+<li><a href="https://isitreallyfoss.com" target="_blank" rel="nofollow noopener noreferrer">Is It Really FOSS</a><span class="host">isitreallyfoss.com</span></li>
+<li><a href="https://github.com/ValdikSS/aceproxy" target="_blank" rel="nofollow noopener noreferrer">aceproxy</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/dmunozv04/iSponsorBlockTV" target="_blank" rel="nofollow noopener noreferrer">iSponsorBlockTV</a><span class="host">github.com</span></li>
+<li><a href="https://linktr.ee/kpfire" target="_blank" rel="nofollow noopener noreferrer">KPFire</a><span class="host">linktr.ee</span></li>
+<li><a href="https://xdaforums.com/t/app-firetv-noroot-launcher-manager-change-launcher-without-root.4176349/" target="_blank" rel="nofollow noopener noreferrer">Launcher Manager</a><span class="host">xdaforums.com</span></li>
+<li><a href="https://www.lo4d.com/" target="_blank" rel="nofollow noopener noreferrer">LO4D</a><span class="host">lo4d.com</span></li>
+<li><a href="https://lrepacks.net/" target="_blank" rel="nofollow noopener noreferrer">LRepacks</a><span class="host">lrepacks.net</span></li>
+<li><a href="https://www.majorgeeks.com/" target="_blank" rel="nofollow noopener noreferrer">MajorGeeks</a><span class="host">majorgeeks.com</span></li>
+<li><a href="https://forum.mobilism.org/" target="_blank" rel="nofollow noopener noreferrer">Mobilism</a><span class="host">forum.mobilism.org</span></li>
+<li><a href="https://moum.top/en/" target="_blank" rel="nofollow noopener noreferrer">Moum</a><span class="host">moum.top</span></li>
+<li><a href="https://mov-cli.github.io/" target="_blank" rel="nofollow noopener noreferrer">mov-cli</a><span class="host">mov-cli.github.io</span></li>
+<li><a href="https://www.airdcpp.net/" target="_blank" rel="nofollow noopener noreferrer">AirDC++</a><span class="host">airdcpp.net</span></li>
+<li><a href="https://newreleases.io/" target="_blank" rel="nofollow noopener noreferrer">new(releases)</a><span class="host">newreleases.io</span></li>
+<li><a href="https://github.com/EnArvy/AniconforAnilist" target="_blank" rel="nofollow noopener noreferrer">AniconforAnilist</a><span class="host">github.com</span></li>
+<li><a href="https://www.nirsoft.net/" target="_blank" rel="nofollow noopener noreferrer">Nirsoft</a><span class="host">nirsoft.net</span></li>
+<li><a href="https://github.com/nova-video-player/aos-AVP" target="_blank" rel="nofollow noopener noreferrer">Nova Video Player</a><span class="host">github.com</span></li>
+<li><a href="https://www.nsaneforums.com/" target="_blank" rel="nofollow noopener noreferrer">Nsane Forums</a><span class="host">nsaneforums.com</span></li>
+<li><a href="https://nuvio.tv/" target="_blank" rel="nofollow noopener noreferrer">Nuvio</a><span class="host">nuvio.tv</span></li>
+<li><a href="https://github.com/NuvioMedia/NuvioTV" target="_blank" rel="nofollow noopener noreferrer">NuvioTV</a><span class="host">github.com</span></li>
+<li><a href="https://oldergeeks.com/" target="_blank" rel="nofollow noopener noreferrer">OlderGeeks</a><span class="host">oldergeeks.com</span></li>
+<li><a href="https://github.com/gogetta69/TMDB-To-VOD-Playlist" target="_blank" rel="nofollow noopener noreferrer">TMDB-To-VOD</a><span class="host">github.com</span></li>
+<li><a href="http://www.oldversion.com/" target="_blank" rel="nofollow noopener noreferrer">OldVersion</a><span class="host">oldversion.com</span></li>
+<li><a href="https://github.com/gabelluardo/anime-dl" target="_blank" rel="nofollow noopener noreferrer">anime-dl</a><span class="host">github.com</span></li>
+<li><a href="https://openalternative.co/" target="_blank" rel="nofollow noopener noreferrer">OpenAlternative</a><span class="host">openalternative.co</span></li>
+<li><a href="https://opensource.builders/" target="_blank" rel="nofollow noopener noreferrer">Opensource Builders</a><span class="host">opensource.builders</span></li>
+<li><a href="https://www.opensourcealternative.to/" target="_blank" rel="nofollow noopener noreferrer">opensourcealternative.to</a><span class="host">opensourcealternative.to</span></li>
+<li><a href="https://oss.gallery/" target="_blank" rel="nofollow noopener noreferrer">OSS Gallery</a><span class="host">oss.gallery</span></li>
+<li><a href="https://osssoftware.org/" target="_blank" rel="nofollow noopener noreferrer">OSSSoftware</a><span class="host">osssoftware.org</span></li>
+<li><a href="https://channelstore.roku.com/details/4a41d0921265a5e31429a7679442153f:b5bcb5b630c28b01e93bf59856317b43/playlet" target="_blank" rel="nofollow noopener noreferrer">Playlet</a><span class="host">channelstore.roku.com</span></li>
+<li><a href="https://github.com/jmir1/aniyomi" target="_blank" rel="nofollow noopener noreferrer">Aniyomi</a><span class="host">github.com</span></li>
+<li><a href="https://portableapps.com/" target="_blank" rel="nofollow noopener noreferrer">PortableApps.com</a><span class="host">portableapps.com</span></li>
+<li><a href="https://powder.media/" target="_blank" rel="nofollow noopener noreferrer">Powder</a><span class="host">powder.media</span></li>
+<li><a href="https://github.com/AnySoftKeyboard/AnySoftKeyboard" target="_blank" rel="nofollow noopener noreferrer">Any Soft Keyboard</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Prowlarr/Prowlarr" target="_blank" rel="nofollow noopener noreferrer">Prowlarr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/zunjae/anYme" target="_blank" rel="nofollow noopener noreferrer">AnYme</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/thomst08/requestrr" target="_blank" rel="nofollow noopener noreferrer">Requestrr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/aniyomiorg/aniyomi" target="_blank" rel="nofollow noopener noreferrer">Aniyomi</a><span class="host">github.com</span></li>
+<li><a href="https://retrosystemsrevival.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">RetroSystemRevival</a><span class="host">retrosystemsrevival.blogspot.com</span></li>
+<li><a href="https://www.macbed.com/" target="_blank" rel="nofollow noopener noreferrer">Appked</a><span class="host">macbed.com</span></li>
+<li><a href="https://github.com/ikatson/rqbit/" target="_blank" rel="nofollow noopener noreferrer">rqbit</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/S0und/S0undTV" target="_blank" rel="nofollow noopener noreferrer">S0undTV</a><span class="host">github.com</span></li>
+<li><a href="https://www.samsungtvplus.com/" target="_blank" rel="nofollow noopener noreferrer">SamsungTVPlus</a><span class="host">samsungtvplus.com</span></li>
+<li><a href="https://github.com/NineWorlds/serenity-android" target="_blank" rel="nofollow noopener noreferrer">Serenity Android</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/andrew-ld/smart-tv-telegram" target="_blank" rel="nofollow noopener noreferrer">smart-tv-telegram</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/yuliskov/SmartTube" target="_blank" rel="nofollow noopener noreferrer">SmartTube</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/CxWatcher/SmartTVKick" target="_blank" rel="nofollow noopener noreferrer">SmartTVKick</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/fgl27/SmartTwitchTV" target="_blank" rel="nofollow noopener noreferrer">SmartTwitchTV</a><span class="host">github.com</span></li>
+<li><a href="https://soft98.ir/" target="_blank" rel="nofollow noopener noreferrer">Soft98</a><span class="host">soft98.ir</span></li>
+<li><a href="https://github.com/tbeezy/ynotv/" target="_blank" rel="nofollow noopener noreferrer">ynoTV</a><span class="host">github.com</span></li>
+<li><a href="https://www.softwareok.com/" target="_blank" rel="nofollow noopener noreferrer">SoftwareOK</a><span class="host">softwareok.com</span></li>
+<li><a href="https://www.audiobookshelf.org/" target="_blank" rel="nofollow noopener noreferrer">AudioBookShelf</a><span class="host">audiobookshelf.org</span></li>
+<li><a href="https://sonarr.tv/" target="_blank" rel="nofollow noopener noreferrer">Sonarr</a><span class="host">sonarr.tv</span></li>
+<li><a href="https://suckless.org/" target="_blank" rel="nofollow noopener noreferrer">Suckless</a><span class="host">suckless.org</span></li>
+<li><a href="https://syncler.net/" target="_blank" rel="nofollow noopener noreferrer">Syncler</a><span class="host">syncler.net</span></li>
+<li><a href="https://goauthentik.io/" target="_blank" rel="nofollow noopener noreferrer">authentik</a><span class="host">goauthentik.io</span></li>
+<li><a href="https://tivimate.com/" target="_blank" rel="nofollow noopener noreferrer">TiviMate</a><span class="host">tivimate.com</span></li>
+<li><a href="https://b3n.org/automatic-ripping-machine/" target="_blank" rel="nofollow noopener noreferrer">Automatic Ripping Machine</a><span class="host">b3n.org</span></li>
+<li><a href="https://tizentube.app/" target="_blank" rel="nofollow noopener noreferrer">TizenTube</a><span class="host">tizentube.app</span></li>
+<li><a href="https://github.com/agermanidis/autosub" target="_blank" rel="nofollow noopener noreferrer">autosub</a><span class="host">github.com</span></li>
+<li><a href="https://unpackerr.zip/" target="_blank" rel="nofollow noopener noreferrer">Unpackerr</a><span class="host">unpackerr.zip</span></li>
+<li><a href="https://www.uwe-sieber.de/english.html" target="_blank" rel="nofollow noopener noreferrer">Uwe Sieber</a><span class="host">uwe-sieber.de</span></li>
+<li><a href="https://vetusware.com/" target="_blank" rel="nofollow noopener noreferrer">VETUSWARE</a><span class="host">vetusware.com</span></li>
+<li><a href="https://virgil.samidy.com/?engine=software" target="_blank" rel="nofollow noopener noreferrer">Virgil Software Search</a><span class="host">virgil.samidy.com</span></li>
+<li><a href="https://www.virustotal.com/gui/" target="_blank" rel="nofollow noopener noreferrer">VirusTotal</a><span class="host">virustotal.com</span></li>
+<li><a href="https://github.com/johang/vlc-bittorrent" target="_blank" rel="nofollow noopener noreferrer">VLC-Bittorrent</a><span class="host">github.com</span></li>
+<li><a href="https://www.webosbrew.org/" target="_blank" rel="nofollow noopener noreferrer">webOS Homebrew</a><span class="host">webosbrew.org</span></li>
+<li><a href="https://webtorrent.io/" target="_blank" rel="nofollow noopener noreferrer">WebTorrent</a><span class="host">webtorrent.io</span></li>
+<li><a href="https://mehotkhan.github.io/BandersnatchInteractive/" target="_blank" rel="nofollow noopener noreferrer">Bandersnatch Interactive Player</a><span class="host">mehotkhan.github.io</span></li>
+<li><a href="https://github.com/mrxdst/webtorrent-mpv-hook" target="_blank" rel="nofollow noopener noreferrer">webtorrent-mpv-hook</a><span class="host">github.com</span></li>
+<li><a href="https://wiztorrent.com/" target="_blank" rel="nofollow noopener noreferrer">WizTorrent</a><span class="host">wiztorrent.com</span></li>
+<li><a href="https://github.com/morpheus65535/bazarr" target="_blank" rel="nofollow noopener noreferrer">Bazarr</a><span class="host">github.com</span></li>
+<li><a href="https://sub.wyzie.io/" target="_blank" rel="nofollow noopener noreferrer">Wyzie Subs</a><span class="host">sub.wyzie.io</span></li>
+<li><a href="https://github.com/MarcoLucidi01/ytcast" target="_blank" rel="nofollow noopener noreferrer">YTCast</a><span class="host">github.com</span></li>
+<li><a href="https://zxpinstaller.com/" target="_blank" rel="nofollow noopener noreferrer">ZXPInstaller</a><span class="host">zxpinstaller.com</span></li>
+<li><a href="https://github.com/theothernt/AerialViews" target="_blank" rel="nofollow noopener noreferrer">⁠AerialViews</a><span class="host">github.com</span></li>
+<li><a href="http://beets.io/" target="_blank" rel="nofollow noopener noreferrer">Beets</a><span class="host">beets.io</span></li>
+<li><a href="https://github.com/bryanroscoe/shield_optimizer" target="_blank" rel="nofollow noopener noreferrer">⁠Android TV Optimizer</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/beetbox/beets" target="_blank" rel="nofollow noopener noreferrer">Beets</a><span class="host">github.com</span></li>
+<li><a href="https://commodore.software/search/" target="_blank" rel="nofollow noopener noreferrer">⁠Commodore Software</a><span class="host">commodore.software</span></li>
+<li><a href="https://github.com/mlm-games/flicky" target="_blank" rel="nofollow noopener noreferrer">⁠Flicky</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/awesome-jellyfin/awesome-jellyfin/blob/main/CLIENTS.md#-tv" target="_blank" rel="nofollow noopener noreferrer">⁠Jellyfin Smart TV Clients</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jellyfin/jellyfin-tizen" target="_blank" rel="nofollow noopener noreferrer">⁠Jellyfin Tizen</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/chwair/magnolia" target="_blank" rel="nofollow noopener noreferrer">⁠Magnolia</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Laskco/mpvNova" target="_blank" rel="nofollow noopener noreferrer">⁠mpvNova</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Exaphis/mutube" target="_blank" rel="nofollow noopener noreferrer">⁠MuTube</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/NuvioMedia/NuvioDesktop" target="_blank" rel="nofollow noopener noreferrer">⁠Nuvio Desktop</a><span class="host">github.com</span></li>
+<li><a href="https://sozo.azamov.me/" target="_blank" rel="nofollow noopener noreferrer">⁠Sozo</a><span class="host">sozo.azamov.me</span></li>
+<li><a href="https://strexoplayer.onrender.com/" target="_blank" rel="nofollow noopener noreferrer">⁠StrexoPlayer</a><span class="host">strexoplayer.onrender.com</span></li>
+<li><a href="https://torlink.bairon.dev/" target="_blank" rel="nofollow noopener noreferrer">⁠Torlink</a><span class="host">torlink.bairon.dev</span></li>
+<li><a href="http://booksonic.org/" target="_blank" rel="nofollow noopener noreferrer">Booksonic</a><span class="host">booksonic.org</span></li>
+<li><a href="https://www.bookstackapp.com/" target="_blank" rel="nofollow noopener noreferrer">BookStack</a><span class="host">bookstackapp.com</span></li>
+<li><a href="https://vyla.cc/" target="_blank" rel="nofollow noopener noreferrer">⁠Vyla Home</a><span class="host">vyla.cc</span></li>
+<li><a href="https://ravencentri.cc/awesome-arr/" target="_blank" rel="nofollow noopener noreferrer">Awesome *Arr</a><span class="host">ravencentri.cc</span></li>
+<li><a href="https://wikipedia.org/wiki/Portal:Free_and_open-source_software/Categories" target="_blank" rel="nofollow noopener noreferrer">FOSS Wiki</a><span class="host">wikipedia.org</span></li>
+<li><a href="https://anivortex.in/" target="_blank" rel="nofollow noopener noreferrer">anivortex</a><span class="host">anivortex.in</span></li>
+<li><a href="https://github.com/aldrinzigmundv/digilogtv" target="_blank" rel="nofollow noopener noreferrer">DigilogTV</a><span class="host">github.com</span></li>
+<li><a href="https://fushi.moe/" target="_blank" rel="nofollow noopener noreferrer">Fushi</a><span class="host">fushi.moe</span></li>
+<li><a href="https://github.com/codegeasse1/hikari" target="_blank" rel="nofollow noopener noreferrer">Hikari</a><span class="host">github.com</span></li>
+<li><a href="https://mobiflix.net/" target="_blank" rel="nofollow noopener noreferrer">MobiFlix</a><span class="host">mobiflix.net</span></li>
+<li><a href="https://shiroxapp.github.io/" target="_blank" rel="nofollow noopener noreferrer">Shirox</a><span class="host">shiroxapp.github.io</span></li>
+<li><a href="https://calibre-ebook.com/" target="_blank" rel="nofollow noopener noreferrer">Calibre</a><span class="host">calibre-ebook.com</span></li>
+<li><a href="https://tatakai.me/" target="_blank" rel="nofollow noopener noreferrer">Tatakai</a><span class="host">tatakai.me</span></li>
+<li><a href="https://github.com/janeczku/calibre-web" target="_blank" rel="nofollow noopener noreferrer">Calibre-Web</a><span class="host">github.com</span></li>
+<li><a href="https://atlas.hls.lol/" target="_blank" rel="nofollow noopener noreferrer">⁠Atlas</a><span class="host">atlas.hls.lol</span></li>
+<li><a href="https://github.com/wseemann/RoMote" target="_blank" rel="nofollow noopener noreferrer">⁠RoMote</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/xat/castnow" target="_blank" rel="nofollow noopener noreferrer">castnow</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Dackerie/showberry" target="_blank" rel="nofollow noopener noreferrer">⁠Showberry</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/worldreboot/twitch-reloaded-roku" target="_blank" rel="nofollow noopener noreferrer">⁠Twoku</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/vega-org/vega-desktop" target="_blank" rel="nofollow noopener noreferrer">⁠Vega-Desktop</a><span class="host">github.com</span></li>
+<li><a href="https://watchwave.pro/" target="_blank" rel="nofollow noopener noreferrer">⁠WatchWave</a><span class="host">watchwave.pro</span></li>
+<li><a href="https://mizuki.to/" target="_blank" rel="nofollow noopener noreferrer">Mizuki</a><span class="host">mizuki.to</span></li>
+<li><a href="https://github.com/akashdh11/skystream" target="_blank" rel="nofollow noopener noreferrer">⁠SkyStream</a><span class="host">github.com</span></li>
+<li><a href="https://atlantic.bz/android" target="_blank" rel="nofollow noopener noreferrer">Atlantic</a><span class="host">atlantic.bz</span></li>
+<li><a href="https://github.com/tolgakurtuluss/awesome-webos" target="_blank" rel="nofollow noopener noreferrer">⁠Awesome WebOS</a><span class="host">github.com</span></li>
+<li><a href="https://tatakai.app/" target="_blank" rel="nofollow noopener noreferrer">Tatakai</a><span class="host">tatakai.app</span></li>
+<li><a href="https://github.com/seblucas/cops" target="_blank" rel="nofollow noopener noreferrer">COPS</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/CouchPotato/CouchPotatoServer" target="_blank" rel="nofollow noopener noreferrer">CouchPotato</a><span class="host">github.com</span></li>
+<li><a href="https://cytu.be/" target="_blank" rel="nofollow noopener noreferrer">CyTube</a><span class="host">cytu.be</span></li>
+<li><a href="https://stremio-addons.net/addons/one-pace-addon" target="_blank" rel="nofollow noopener noreferrer">Stremio Addon</a><span class="host">stremio-addons.net</span></li>
+<li><a href="https://github.com/apprenticeharper/DeDRM_tools" target="_blank" rel="nofollow noopener noreferrer">DeDRM_tools</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/coppit/docker-filebot" target="_blank" rel="nofollow noopener noreferrer">docker-filebot</a><span class="host">github.com</span></li>
+<li><a href="http://dvddecrypter.org.uk/" target="_blank" rel="nofollow noopener noreferrer">DVD Decrypter</a><span class="host">dvddecrypter.org.uk</span></li>
+<li><a href="https://www.dvdfab.cn/" target="_blank" rel="nofollow noopener noreferrer">DVDFab</a><span class="host">dvdfab.cn</span></li>
+<li><a href="https://eddvault.notion.site/Eddvault-3b7700da57bd4d429b927c1733ccb772" target="_blank" rel="nofollow noopener noreferrer">Eddvault</a><span class="host">eddvault.notion.site</span></li>
+<li><a href="https://github.com/eiskaltdcpp/eiskaltdcpp" target="_blank" rel="nofollow noopener noreferrer">EiskaltDC++</a><span class="host">github.com</span></li>
+<li><a href="https://elementum.surge.sh/" target="_blank" rel="nofollow noopener noreferrer">Elementum</a><span class="host">elementum.surge.sh</span></li>
+<li><a href="https://emby.media/" target="_blank" rel="nofollow noopener noreferrer">Emby</a><span class="host">emby.media</span></li>
+<li><a href="https://github.com/ukdtom/ExportTools.bundle" target="_blank" rel="nofollow noopener noreferrer">ExportTools.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Xeroday/Spotify-Ad-Blocker/" target="_blank" rel="nofollow noopener noreferrer">EZBlocker</a><span class="host">github.com</span></li>
+<li><a href="https://ffmpeg.org/" target="_blank" rel="nofollow noopener noreferrer">ffmpeg</a><span class="host">ffmpeg.org</span></li>
+<li><a href="https://www.filebot.net/" target="_blank" rel="nofollow noopener noreferrer">FileBot</a><span class="host">filebot.net</span></li>
+<li><a href="https://github.com/filebot/filebot-node" target="_blank" rel="nofollow noopener noreferrer">filebot-node</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/devfake/flox" target="_blank" rel="nofollow noopener noreferrer">Flox</a><span class="host">github.com</span></li>
+<li><a href="http://www.flylinkdc.com/" target="_blank" rel="nofollow noopener noreferrer">FlylinkDC++</a><span class="host">flylinkdc.com</span></li>
+<li><a href="https://gaiakodi.com/" target="_blank" rel="nofollow noopener noreferrer">Gaia</a><span class="host">gaiakodi.com</span></li>
+<li><a href="https://github.com/JasonHHouse/Gaps" target="_blank" rel="nofollow noopener noreferrer">Gaps</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/gerbera/gerbera" target="_blank" rel="nofollow noopener noreferrer">Gerbera</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jrudio/go-plex-client" target="_blank" rel="nofollow noopener noreferrer">go-plex-client</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Ibit-to/google-unlocked#install-as-userscript" target="_blank" rel="nofollow noopener noreferrer">Google Unlocked</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/astrada/google-drive-ocamlfuse" target="_blank" rel="nofollow noopener noreferrer">google-drive-ocamlfuse</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/XanderStrike/goplaxt/" target="_blank" rel="nofollow noopener noreferrer">goplaxt</a><span class="host">github.com</span></li>
+<li><a href="https://handbrake.fr/" target="_blank" rel="nofollow noopener noreferrer">Handbrake</a><span class="host">handbrake.fr</span></li>
+<li><a href="https://github.com/jumpmanjay/HDGrandSlam.bundle" target="_blank" rel="nofollow noopener noreferrer">HDGrandSlam.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/zynine-/HDHRViewerV2.bundle" target="_blank" rel="nofollow noopener noreferrer">HDHRViewerV2.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/rembo10/headphones" target="_blank" rel="nofollow noopener noreferrer">Headphones</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Hellowlol/HTPC-Manager" target="_blank" rel="nofollow noopener noreferrer">HTPC-Manager</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/causefx/iDashboard-PHP" target="_blank" rel="nofollow noopener noreferrer">iDashboard-PHP</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Cigaras/IPTV.bundle" target="_blank" rel="nofollow noopener noreferrer">IPTV.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/kepoorhampond/irs" target="_blank" rel="nofollow noopener noreferrer">irs</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/blacktwin/JBOPS" target="_blank" rel="nofollow noopener noreferrer">JBOPS</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jellyfin/jellyfin" target="_blank" rel="nofollow noopener noreferrer">jellyfin</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/aldoborrero/k8s-usenet" target="_blank" rel="nofollow noopener noreferrer">k8s-usenet</a><span class="host">github.com</span></li>
+<li><a href="https://www.kavitareader.com/" target="_blank" rel="nofollow noopener noreferrer">Kavita</a><span class="host">kavitareader.com</span></li>
+<li><a href="https://github.com/pannal/Kitana" target="_blank" rel="nofollow noopener noreferrer">Kitana</a><span class="host">github.com</span></li>
+<li><a href="https://kodi.tv/" target="_blank" rel="nofollow noopener noreferrer">Kodi</a><span class="host">kodi.tv</span></li>
+<li><a href="https://github.com/munnerz/kube-plex" target="_blank" rel="nofollow noopener noreferrer">kube-plex</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/DobyTang/LazyLibrarian" target="_blank" rel="nofollow noopener noreferrer">LazyLibrarian</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/libre-tube/LibreTube" target="_blank" rel="nofollow noopener noreferrer">LibreTube</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/lidarr/Lidarr" target="_blank" rel="nofollow noopener noreferrer">Lidarr</a><span class="host">github.com</span></li>
+<li><a href="https://launchpad.net/linuxdcpp" target="_blank" rel="nofollow noopener noreferrer">LinuxDC++</a><span class="host">launchpad.net</span></li>
+<li><a href="https://github.com/linuxserver/docker-plex" target="_blank" rel="nofollow noopener noreferrer">linuxserver/docker-plex</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Twoure/lmwt-kiss.bundle" target="_blank" rel="nofollow noopener noreferrer">lmwt-kiss.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Monitorr/logarr" target="_blank" rel="nofollow noopener noreferrer">Logarr</a><span class="host">github.com</span></li>
+<li><a href="https://www.madsonic.org/" target="_blank" rel="nofollow noopener noreferrer">Madsonic</a><span class="host">madsonic.org</span></li>
+<li><a href="http://www.makemkv.com/" target="_blank" rel="nofollow noopener noreferrer">MakeMKV</a><span class="host">makemkv.com</span></li>
+<li><a href="https://github.com/physk/MediaButler" target="_blank" rel="nofollow noopener noreferrer">MediaButler</a><span class="host">github.com</span></li>
+<li><a href="https://www.kvibes.de/mediaelch/" target="_blank" rel="nofollow noopener noreferrer">MediaElch</a><span class="host">kvibes.de</span></li>
+<li><a href="https://mediaarea.net/en/MediaInfo" target="_blank" rel="nofollow noopener noreferrer">MediaInfo</a><span class="host">mediaarea.net</span></li>
+<li><a href="https://www.mediamonkey.com/" target="_blank" rel="nofollow noopener noreferrer">MediaMonkey</a><span class="host">mediamonkey.com</span></li>
+<li><a href="https://pymedusa.com/" target="_blank" rel="nofollow noopener noreferrer">Medusa</a><span class="host">pymedusa.com</span></li>
+<li><a href="https://github.com/v0idp/Mellow/" target="_blank" rel="nofollow noopener noreferrer">Mellow</a><span class="host">github.com</span></li>
+<li><a href="https://www.mp3tag.de/en/" target="_blank" rel="nofollow noopener noreferrer">MP3TAG</a><span class="host">mp3tag.de</span></li>
+<li><a href="https://mpv.io" target="_blank" rel="nofollow noopener noreferrer">MPV</a><span class="host">mpv.io</span></li>
+<li><a href="https://github.com/mpvnet-player/mpv.net" target="_blank" rel="nofollow noopener noreferrer">MPV.net</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/mescon/Muximux" target="_blank" rel="nofollow noopener noreferrer">Muximux</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/pastapojken/Myflix" target="_blank" rel="nofollow noopener noreferrer">Myflix</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/ntop/n2n" target="_blank" rel="nofollow noopener noreferrer">n2n</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/slackhq/nebula" target="_blank" rel="nofollow noopener noreferrer">Nebula</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Ch4t4r/Nebulo" target="_blank" rel="nofollow noopener noreferrer">Nebulo</a><span class="host">github.com</span></li>
+<li><a href="https://newpipe.net/" target="_blank" rel="nofollow noopener noreferrer">NewPipe</a><span class="host">newpipe.net</span></li>
+<li><a href="https://github.com/polymorphicshade/NewPipe" target="_blank" rel="nofollow noopener noreferrer">NewPipe x SponsorBlock x Return YouTube Dislike</a><span class="host">github.com</span></li>
+<li><a href="https://nextcloud.com/" target="_blank" rel="nofollow noopener noreferrer">NextCloud</a><span class="host">nextcloud.com</span></li>
+<li><a href="https://github.com/ninthwalker/NowShowing" target="_blank" rel="nofollow noopener noreferrer">NowShowing</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/keylase/nvidia-patch" target="_blank" rel="nofollow noopener noreferrer">nvidia-patch</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/caronc/nzb-subliminal" target="_blank" rel="nofollow noopener noreferrer">nzb-subliminal</a><span class="host">github.com</span></li>
+<li><a href="http://nzb360.com/" target="_blank" rel="nofollow noopener noreferrer">nzb360</a><span class="host">nzb360.com</span></li>
+<li><a href="https://github.com/plexinc-plugins" target="_blank" rel="nofollow noopener noreferrer">Official Plex Plugins</a><span class="host">github.com</span></li>
+<li><a href="http://ombi.io/" target="_blank" rel="nofollow noopener noreferrer">Ombi</a><span class="host">ombi.io</span></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.tidusjar.Ombi" target="_blank" rel="nofollow noopener noreferrer">Ombi</a><span class="host">play.google.com</span></li>
+<li><a href="https://github.com/RasPlex/OpenPHT" target="_blank" rel="nofollow noopener noreferrer">OpenPHT</a><span class="host">github.com</span></li>
+<li><a href="https://osmc.tv/" target="_blank" rel="nofollow noopener noreferrer">OSMC</a><span class="host">osmc.tv</span></li>
+<li><a href="https://overlook.cx/" target="_blank" rel="nofollow noopener noreferrer">Overlook</a><span class="host">overlook.cx</span></li>
+<li><a href="https://github.com/sct/overseerr" target="_blank" rel="nofollow noopener noreferrer">Overseerr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/d8ahazard/Phlex" target="_blank" rel="nofollow noopener noreferrer">Phlex</a><span class="host">github.com</span></li>
+<li><a href="https://picard.musicbrainz.org/" target="_blank" rel="nofollow noopener noreferrer">Picard</a><span class="host">picard.musicbrainz.org</span></li>
+<li><a href="https://github.com/sungshon/PimpMyStremio" target="_blank" rel="nofollow noopener noreferrer">PimpMyStremio</a><span class="host">github.com</span></li>
+<li><a href="http://www.wirelesshack.org/how-to-install-placenta-Kodi-addon.html" target="_blank" rel="nofollow noopener noreferrer">Placenta</a><span class="host">wirelesshack.org</span></li>
+<li><a href="https://watch.plex.tv/" target="_blank" rel="nofollow noopener noreferrer">Plex</a><span class="host">watch.plex.tv</span></li>
+<li><a href="https://www.plex.tv/" target="_blank" rel="nofollow noopener noreferrer">Plex</a><span class="host">plex.tv</span></li>
+<li><a href="https://github.com/ccjensen/PlexMediaTagger" target="_blank" rel="nofollow noopener noreferrer">Plex Media Tagger</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/ITRav4/PlexRedirect" target="_blank" rel="nofollow noopener noreferrer">Plex Redirect</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/barrycarey/Plex-Data-Collector-For-InfluxDB" target="_blank" rel="nofollow noopener noreferrer">Plex-Data-Collector-For-InfluxDB</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/wnielson/Plex-Remote-Transcoder" target="_blank" rel="nofollow noopener noreferrer">Plex-Remote-Transcoder</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/caridy/plex-subtitles-normalizer" target="_blank" rel="nofollow noopener noreferrer">plex-subtitles-normalizer</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jacobwgillespie/plex-sync" target="_blank" rel="nofollow noopener noreferrer">plex-sync</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/trakt/Plex-Trakt-Scrobbler" target="_blank" rel="nofollow noopener noreferrer">Plex-Trakt-Scrobbler</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/l3uddz/plex_autoscan" target="_blank" rel="nofollow noopener noreferrer">plex_autoscan</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/hjone72/PlexAuth" target="_blank" rel="nofollow noopener noreferrer">PlexAuth</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/iBaa/PlexConnect" target="_blank" rel="nofollow noopener noreferrer">PlexConnect</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/dweidenfeld/plexdrive" target="_blank" rel="nofollow noopener noreferrer">plexdrive</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jakewaldron/PlexEmail" target="_blank" rel="nofollow noopener noreferrer">PlexEmail</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/plexinc/pms-docker" target="_blank" rel="nofollow noopener noreferrer">plexinc/pms-docker</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/xiaodoudou/PlexIPTV" target="_blank" rel="nofollow noopener noreferrer">PlexIPTV</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/croneter/PlexKodiConnect" target="_blank" rel="nofollow noopener noreferrer">PlexKodiConnect</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/MysticRyuujin/PlexMissingEpisodes" target="_blank" rel="nofollow noopener noreferrer">PlexMissingEpisodes</a><span class="host">github.com</span></li>
+<li><a href="http://plexpi.com/" target="_blank" rel="nofollow noopener noreferrer">PlexPi</a><span class="host">plexpi.com</span></li>
+<li><a href="https://github.com/bstascavage/plexReport" target="_blank" rel="nofollow noopener noreferrer">plexReport</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/lokenx/plexrequests-meteor" target="_blank" rel="nofollow noopener noreferrer">plexrequests-meteor</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/mrworf/plexupdate" target="_blank" rel="nofollow noopener noreferrer">plexupdate</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/ljunkie/plexWatch" target="_blank" rel="nofollow noopener noreferrer">plexWatch</a><span class="host">github.com</span></li>
+<li><a href="https://forum.kodi.tv/showthread.php?tid=97657" target="_blank" rel="nofollow noopener noreferrer">Pneumatic</a><span class="host">forum.kodi.tv</span></li>
+<li><a href="https://popwatch.to/" target="_blank" rel="nofollow noopener noreferrer">PopcornTime</a><span class="host">popwatch.to</span></li>
+<li><a href="https://github.com/sjlu/popular-movies" target="_blank" rel="nofollow noopener noreferrer">popular-movies</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/adamgot/python-plexlibrary" target="_blank" rel="nofollow noopener noreferrer">Python-PlexLibrary</a><span class="host">github.com</span></li>
+<li><a href="http://quasar.surge.sh" target="_blank" rel="nofollow noopener noreferrer">Quasar</a><span class="host">quasar.surge.sh</span></li>
+<li><a href="https://radarr.video/" target="_blank" rel="nofollow noopener noreferrer">Radarr</a><span class="host">radarr.video</span></li>
+<li><a href="https://github.com/Sperryfreak01/RadarrSync" target="_blank" rel="nofollow noopener noreferrer">RadarrSync</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/RasPlex/RasPlex" target="_blank" rel="nofollow noopener noreferrer">RasPlex</a><span class="host">github.com</span></li>
+<li><a href="https://rclone.org/" target="_blank" rel="nofollow noopener noreferrer">rclone</a><span class="host">rclone.org</span></li>
+<li><a href="https://bytesized-hosting.com/pages/rclone-gdrive" target="_blank" rel="nofollow noopener noreferrer">rclone-gdrive</a><span class="host">bytesized-hosting.com</span></li>
+<li><a href="https://martins.ninja/RcloneBrowser/" target="_blank" rel="nofollow noopener noreferrer">RcloneBrowser</a><span class="host">martins.ninja</span></li>
+<li><a href="https://readarr.com/" target="_blank" rel="nofollow noopener noreferrer">Readarr</a><span class="host">readarr.com</span></li>
+<li><a href="https://github.com/ngovil21/RequestChannel.bundle" target="_blank" rel="nofollow noopener noreferrer">RequestChannel.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/revanced/revanced-manager/" target="_blank" rel="nofollow noopener noreferrer">ReVanced</a><span class="host">github.com</span></li>
+<li><a href="https://therokuchannel.roku.com/" target="_blank" rel="nofollow noopener noreferrer">Roku</a><span class="host">therokuchannel.roku.com</span></li>
+<li><a href="https://wiki.gnome.org/Projects/Rygel" target="_blank" rel="nofollow noopener noreferrer">Rygel</a><span class="host">wiki.gnome.org</span></li>
+<li><a href="http://serviio.org/" target="_blank" rel="nofollow noopener noreferrer">Serviio</a><span class="host">serviio.org</span></li>
+<li><a href="https://github.com/erming/shout" target="_blank" rel="nofollow noopener noreferrer">Shout</a><span class="host">github.com</span></li>
+<li><a href="http://sickbeard.com/" target="_blank" rel="nofollow noopener noreferrer">SickBeard</a><span class="host">sickbeard.com</span></li>
+<li><a href="https://github.com/mdhiggins/sickbeard_mp4_automator" target="_blank" rel="nofollow noopener noreferrer">sickbeard_mp4_automator</a><span class="host">github.com</span></li>
+<li><a href="https://sickchill.github.io/" target="_blank" rel="nofollow noopener noreferrer">SickChill</a><span class="host">sickchill.github.io</span></li>
+<li><a href="https://github.com/SickGear/SickGear" target="_blank" rel="nofollow noopener noreferrer">SickGear</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/SiCKRAGE/SiCKRAGE" target="_blank" rel="nofollow noopener noreferrer">SickRage</a><span class="host">github.com</span></li>
+<li><a href="https://snowstream.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">Snowstream</a><span class="host">snowstream.vercel.app</span></li>
+<li><a href="https://github.com/Sonarr/Sonarr" target="_blank" rel="nofollow noopener noreferrer">Sonarr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/amd64fox/SpotX" target="_blank" rel="nofollow noopener noreferrer">SpotX</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/jetfir3/SpotX-Bash" target="_blank" rel="nofollow noopener noreferrer">SpotX-Bash</a><span class="host">github.com</span></li>
+<li><a href="https://jwallet.github.io/spy-spotify/" target="_blank" rel="nofollow noopener noreferrer">Spytify</a><span class="host">jwallet.github.io</span></li>
+<li><a href="https://github.com/ukdtom/SRT2UTF-8.bundle" target="_blank" rel="nofollow noopener noreferrer">SRT2UTF-8.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://mikew.github.io/ss-plex.bundle/" target="_blank" rel="nofollow noopener noreferrer">SS Plex</a><span class="host">mikew.github.io</span></li>
+<li><a href="https://github.com/notclickable-jordan/starbase-80" target="_blank" rel="nofollow noopener noreferrer">starbase-80</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/streamaserver/streama" target="_blank" rel="nofollow noopener noreferrer">Streama</a><span class="host">github.com</span></li>
+<li><a href="https://www.stremio.com/" target="_blank" rel="nofollow noopener noreferrer">Stremio</a><span class="host">stremio.com</span></li>
+<li><a href="https://github.com/pannal/Sub-Zero.bundle" target="_blank" rel="nofollow noopener noreferrer">Sub-Zero.bundle</a><span class="host">github.com</span></li>
+<li><a href="http://www.subsonic.org/pages/index.jsp" target="_blank" rel="nofollow noopener noreferrer">Subsonic</a><span class="host">subsonic.org</span></li>
+<li><a href="https://github.com/smacke/subsync" target="_blank" rel="nofollow noopener noreferrer">subsync</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/calzoneman/sync/" target="_blank" rel="nofollow noopener noreferrer">sync</a><span class="host">github.com</span></li>
+<li><a href="https://synclounge.tv/" target="_blank" rel="nofollow noopener noreferrer">SyncLounge</a><span class="host">synclounge.tv</span></li>
+<li><a href="https://syncthing.net/" target="_blank" rel="nofollow noopener noreferrer">Syncthing</a><span class="host">syncthing.net</span></li>
+<li><a href="https://github.com/tapexyz/tape" target="_blank" rel="nofollow noopener noreferrer">Tape</a><span class="host">github.com</span></li>
+<li><a href="https://tautulli.com/" target="_blank" rel="nofollow noopener noreferrer">Tautulli</a><span class="host">tautulli.com</span></li>
+<li><a href="https://play.google.com/store/apps/details?id=ar.tvplayer.tv" target="_blank" rel="nofollow noopener noreferrer">TiviMate IPTV player</a><span class="host">play.google.com</span></li>
+<li><a href="https://tvbox.ag/" target="_blank" rel="nofollow noopener noreferrer">TVBox</a><span class="host">tvbox.ag</span></li>
+<li><a href="https://github.com/pgaubatz/TvplexendChannel.bundle" target="_blank" rel="nofollow noopener noreferrer">TvplexendChannel.bundle</a><span class="host">github.com</span></li>
+<li><a href="http://vaemendis.net/ubooquity/" target="_blank" rel="nofollow noopener noreferrer">Ubooquity</a><span class="host">vaemendis.net</span></li>
+<li><a href="https://github.com/UnicornTranscoder/UnicornTranscoder" target="_blank" rel="nofollow noopener noreferrer">UnicornTranscoder</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Boerderij/Varken" target="_blank" rel="nofollow noopener noreferrer">Varken</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/viewscreen/viewscreen" target="_blank" rel="nofollow noopener noreferrer">Viewscreen</a><span class="host">github.com</span></li>
+<li><a href="https://www.videolan.org/vlc" target="_blank" rel="nofollow noopener noreferrer">VLC</a><span class="host">videolan.org</span></li>
+<li><a href="https://github.com/exebetche/vlsub" target="_blank" rel="nofollow noopener noreferrer">vlsub</a><span class="host">github.com</span></li>
+<li><a href="https://www.watch2gether.com/" target="_blank" rel="nofollow noopener noreferrer">watch2gether</a><span class="host">watch2gether.com</span></li>
+<li><a href="https://github.com/nosmokingbandit/Watcher3" target="_blank" rel="nofollow noopener noreferrer">Watcher</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/ukdtom/WebTools.bundle" target="_blank" rel="nofollow noopener noreferrer">WebTools.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/xManager-v2/xManager-Spotify" target="_blank" rel="nofollow noopener noreferrer">xManager (Spotify)</a><span class="host">github.com</span></li>
+<li><a href="https://yggdrasil-network.github.io/about.html" target="_blank" rel="nofollow noopener noreferrer">Yggdrasil</a><span class="host">yggdrasil-network.github.io</span></li>
+<li><a href="https://github.com/Eveep23/Interactive-Player" target="_blank" rel="nofollow noopener noreferrer">⁠Interactive Player</a><span class="host">github.com</span></li>
+<li><a href="https://en.wikipedia.org/wiki/DC%2B%2B" target="_blank" rel="nofollow noopener noreferrer">DC++</a><span class="host">en.wikipedia.org</span></li>
+<li><a href="https://github.com/linuxserver/Heimdall" target="_blank" rel="nofollow noopener noreferrer">Heimdall</a><span class="host">github.com</span></li>
+<li><a href="https://homarr.dev/" target="_blank" rel="nofollow noopener noreferrer">Homarr</a><span class="host">homarr.dev</span></li>
+<li><a href="https://github.com/loki-project/loki-network" target="_blank" rel="nofollow noopener noreferrer">Loki</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/Monitorr/Monitorr" target="_blank" rel="nofollow noopener noreferrer">Monitorr</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/causefx/Organizr" target="_blank" rel="nofollow noopener noreferrer">Organizr</a><span class="host">github.com</span></li>
+<li><a href="https://keepass.info/plugins.html" target="_blank" rel="nofollow noopener noreferrer">Plugins</a><span class="host">keepass.info</span></li>
+<li><a href="https://app.kosmi.io/room/lobby" target="_blank" rel="nofollow noopener noreferrer">⁠Kosmi</a><span class="host">app.kosmi.io</span></li>
+</ul>
+</main>
+<footer>
+  <p>Outbound links open other websites that Sakura’s Hub does not run. Read the <a href="../disclaimer">disclaimer</a> and use an ad blocker. Adult and flagged sites are not listed on this page.</p>
+</footer>
+</body>
+</html>

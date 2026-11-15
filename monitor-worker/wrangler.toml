@@ -13,3 +13,9 @@ crons = ["*/2 * * * *"]
 binding = "MONITOR_KV"
 id = "57a769a24d1f468d84ad10d4e55c2fbf"        # from: npx wrangler kv namespace create MONITOR_KV
 # preview_id = "PASTE_PREVIEW_ID_HERE"   # uncomment after: npx wrangler kv namespace create MONITOR_KV --preview
+
+# Discord feed (optional). The webhook address is a secret: never put it in this file.
+#   npx wrangler secret put DISCORD_WEBHOOK_URL
+# Optional: list adult sites by name in the feed (default: only counted)
+# [vars]
+# NOTIFY_SHOW_NSFW = "1"

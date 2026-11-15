@@ -1,0 +1,78 @@
+/* Directory extras: quick search palette, recently visited, safety tip.
+   Source for the EXTRAS-CSS block in directory.html (see scripts/tools/inject-extras.py). */
+.kp-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:inline-flex;gap:3px;align-items:center;background:transparent;border:0;padding:6px;border-radius:var(--radius-sm);cursor:pointer;opacity:.75}
+.kp-btn:hover,.kp-btn:focus-visible{opacity:1;background:var(--surface3)}
+.kp-btn kbd,.kp kbd,.tip kbd{font:600 .66rem/1 var(--font);padding:3px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted)}
+.hero-search input{padding-right:84px}
+
+.kp{position:fixed;inset:0;z-index:130;display:flex;align-items:flex-start;justify-content:center;padding:12vh 14px 14px;background:rgba(6,6,13,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.kp[hidden]{display:none}
+.kp-box{width:100%;max-width:620px;background:var(--surface);border:1px solid var(--border-hover);border-radius:var(--radius-lg);box-shadow:var(--shadow-3);overflow:hidden;display:flex;flex-direction:column;max-height:70vh}
+.kp-top{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border)}
+.kp-top input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--text);font:500 1rem var(--font)}
+.kp-top input::placeholder{color:var(--muted2)}
+#kpList{list-style:none;margin:0;padding:6px;overflow-y:auto;flex:1}
+.kp-item{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:var(--radius);cursor:pointer;color:var(--text)}
+.kp-item.sel{background:rgba(var(--accent-rgb),.14);outline:1px solid rgba(var(--accent-rgb),.35)}
+.kp-item img{width:20px;height:20px;border-radius:5px;flex:none;background:var(--surface2)}
+.kp-ico{width:20px;text-align:center;flex:none}
+.kp-main{display:flex;flex-direction:column;min-width:0;flex:1}
+.kp-main b{font-weight:600;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kp-main small{color:var(--muted);font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kp-badge{font-size:.64rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid var(--border);color:var(--muted);flex:none}
+.kp-badge.warn{color:var(--danger);border-color:rgba(var(--danger-rgb),.45)}
+.kp-dot{width:8px;height:8px;border-radius:50%;background:var(--muted2);opacity:.5;flex:none}
+.kp-dot.on{background:var(--ok);opacity:1}
+.kp-empty{padding:22px 12px;text-align:center;color:var(--muted);font-size:.88rem}
+.kp-foot{display:flex;gap:16px;padding:9px 14px;border-top:1px solid var(--border);color:var(--muted);font-size:.72rem}
+.kp-foot kbd{margin-right:3px}
+html.kp-open{overflow:hidden}
+
+#recentsBar{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;margin:0 0 16px;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+#recentsBar[hidden]{display:none}
+.rc-title{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.rc-list{display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0}
+.rc-chip{display:inline-flex;align-items:center;gap:7px;max-width:190px;padding:5px 10px;border-radius:999px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:.78rem;text-decoration:none}
+.rc-chip:hover,.rc-chip:focus-visible{border-color:var(--border-hover)}
+.rc-chip img{width:16px;height:16px;border-radius:4px;flex:none}
+.rc-chip span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-clear{background:transparent;border:0;color:var(--muted);font:600 .74rem var(--font);cursor:pointer;padding:4px 6px;border-radius:6px}
+.rc-clear:hover{color:var(--text);background:var(--surface3)}
+
+.tip{position:fixed;left:18px;bottom:18px;z-index:115;max-width:340px;padding:14px 16px 14px;background:var(--surface2);border:1px solid var(--border-hover);border-radius:var(--radius-lg);box-shadow:var(--shadow-2);font-size:.82rem;color:var(--text);animation:tipIn .35s var(--ease)}
+.tip b{display:block;margin-bottom:4px;font-size:.88rem}
+.tip p{margin:0 0 8px;color:var(--muted);line-height:1.5}
+.tip a{color:var(--accent-text)}
+.tip-x{position:absolute;top:6px;right:8px;background:transparent;border:0;color:var(--muted);font-size:1.25rem;line-height:1;cursor:pointer;padding:4px 6px;border-radius:6px}
+.tip-x:hover{color:var(--text)}
+@keyframes tipIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:560px){.tip{left:10px;right:10px;bottom:10px;max-width:none}.kp{padding-top:7vh}.kp-foot{display:none}}
+@media (prefers-reduced-motion:reduce){.tip{animation:none}}
+
+.rp{position:fixed;inset:0;z-index:131;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(6,6,13,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.rp[hidden]{display:none}
+.rp-box{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--border-hover);border-radius:var(--radius-lg);box-shadow:var(--shadow-3);padding:20px;color:var(--text)}
+.rp-box h2{margin:0 0 4px;font-size:1.1rem}
+.rp-site{margin:0 0 14px;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}
+.rp-box label{display:block;margin:10px 0 4px;font-size:.8rem;font-weight:600}
+.rp-box label span{color:var(--muted);font-weight:400}
+.rp-box select,.rp-box textarea{width:100%;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:9px 10px;font:inherit;font-size:.88rem}
+.rp-box textarea{resize:vertical;min-height:70px}
+.rp-box select:focus,.rp-box textarea:focus{outline:2px solid rgba(var(--accent-rgb),.5);outline-offset:1px}
+.rp-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.rp-msg{min-height:1.2em;margin:10px 0 0;font-size:.8rem;color:var(--muted)}
+.rp-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.rp-actions button{font:600 .85rem var(--font);padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--text);cursor:pointer}
+.rp-actions .rp-send{background:var(--accent);border-color:var(--accent);color:#16101f}
+.rp-actions button:disabled{opacity:.6;cursor:default}
+
+.rp-box input[type=text]{width:100%;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:9px 10px;font:inherit;font-size:.88rem}
+.rp-box input[type=text]:focus{outline:2px solid rgba(var(--accent-rgb),.5);outline-offset:1px}
+.sg-btn,.sg-inline{font:600 .8rem var(--font);padding:7px 14px;border-radius:999px;border:1px dashed var(--border-hover);background:transparent;color:var(--accent-text);cursor:pointer}
+.sg-btn{display:block;margin:0 0 12px auto}
+.sg-btn:hover,.sg-inline:hover,.sg-btn:focus-visible,.sg-inline:focus-visible{background:rgba(var(--accent-rgb),.1)}
+.sg-inline{margin-top:10px}
+
+/* Speed: the browser skips layout and painting for cards that are off screen
+   (thousands of them in the full list). Browsers without support ignore this. */
+.grid > .preset-card{content-visibility:auto;contain-intrinsic-size:auto 104px}

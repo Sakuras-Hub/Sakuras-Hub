@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adblocking / Privacy sites: free list with uptime checks · Sakura’s Hub</title>
+<meta name="description" content="518 adblocking / privacy sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta name="theme-color" content="#06060d">
+<link rel="canonical" href="https://sakuras-hub.github.io/Sakuras-Hub/sections/adblocking-privacy">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../assets/icon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sakura’s Hub">
+<meta property="og:title" content="Adblocking / Privacy sites: free list with uptime checks · Sakura’s Hub">
+<meta property="og:description" content="518 adblocking / privacy sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta property="og:url" content="https://sakuras-hub.github.io/Sakuras-Hub/sections/adblocking-privacy">
+<meta property="og:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url(../assets/fonts/inter-latin.woff2) format('woff2')}
+:root{color-scheme:dark light;--bg:#06060d;--surface:#171326;--text:#e8eaf6;--muted:#9e94c0;--accent:#ff9ec4;--border:rgba(158,148,192,.22)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f5fb;--surface:#ffffff;--text:#1d1830;--muted:#6a5f8c;--accent:#c01f75;--border:rgba(80,60,140,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:var(--accent)}
+header.top{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:18px 20px}
+header.top .brand{font-weight:800;text-decoration:none;color:var(--text)}
+header.top nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+main{max-width:960px;margin:0 auto;padding:8px 20px 56px}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:8px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.cta{display:inline-block;margin:4px 0 22px;padding:10px 18px;border-radius:999px;background:var(--accent);color:#16101f;font-weight:700;text-decoration:none}
+ul.sites{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+ul.sites li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 12px;min-width:0}
+ul.sites a{font-weight:600;text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.sites a:hover{text-decoration:underline}
+ul.sites .host{display:block;color:var(--muted);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+ul.cats li a{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--text);font-weight:600}
+ul.cats li a span{color:var(--muted);font-weight:400}
+footer{max-width:960px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:.85rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "Adblocking / Privacy sites", "description": "518 adblocking / privacy sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.", "url": "https://sakuras-hub.github.io/Sakuras-Hub/sections/adblocking-privacy", "isPartOf": {"@type": "WebSite", "name": "Sakura’s Hub", "url": "https://sakuras-hub.github.io/Sakuras-Hub/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sakura’s Hub", "item": "https://sakuras-hub.github.io/Sakuras-Hub/"}, {"@type": "ListItem", "position": 2, "name": "Sections", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/"}, {"@type": "ListItem", "position": 3, "name": "Adblocking / Privacy", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/adblocking-privacy"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../">Sakura’s Hub</a>
+  <nav aria-label="Main"><a href="../directory">Directory</a><a href="../products">Products</a><a href="../about">About</a><a href="../donate">Support</a></nav>
+</header>
+<main>
+<h1>🔒 Adblocking / Privacy sites</h1>
+<p class="sub">518 sites, hand-picked and checked for uptime. The live directory adds search, favorites and up/down status.</p>
+<a class="cta" href="../directory?cat=adblocking-privacy">Open Adblocking / Privacy in the live directory</a>
+<ul class="sites">
+<li><a href="https://e.foundation/e-os" target="_blank" rel="nofollow noopener noreferrer">/e/OS</a><span class="host">e.foundation</span></li>
+<li><a href="https://www.1984hosting.com/" target="_blank" rel="nofollow noopener noreferrer">1984 Hosting</a><span class="host">1984hosting.com</span></li>
+<li><a href="https://age-encryption.org" target="_blank" rel="nofollow noopener noreferrer">age</a><span class="host">age-encryption.org</span></li>
+<li><a href="https://amnezia.org" target="_blank" rel="nofollow noopener noreferrer">Amnezia VPN</a><span class="host">amnezia.org</span></li>
+<li><a href="https://apertium.org/" target="_blank" rel="nofollow noopener noreferrer">Apertium</a><span class="host">apertium.org</span></li>
+<li><a href="https://auroraoss.com/download/#aurora-droid" target="_blank" rel="nofollow noopener noreferrer">Aurora Droid</a><span class="host">auroraoss.com</span></li>
+<li><a href="https://auroraoss.com/download/#aurora-store" target="_blank" rel="nofollow noopener noreferrer">Aurora Store</a><span class="host">auroraoss.com</span></li>
+<li><a href="https://brave.com/" target="_blank" rel="nofollow noopener noreferrer">Brave</a><span class="host">brave.com</span></li>
+<li><a href="https://search.brave.com" target="_blank" rel="nofollow noopener noreferrer">Brave Search</a><span class="host">search.brave.com</span></li>
+<li><a href="https://breezewiki.com/" target="_blank" rel="nofollow noopener noreferrer">BreezeWiki</a><span class="host">breezewiki.com</span></li>
+<li><a href="https://calyxos.org/" target="_blank" rel="nofollow noopener noreferrer">CalyxOS</a><span class="host">calyxos.org</span></li>
+<li><a href="https://clearurls.xyz/" target="_blank" rel="nofollow noopener noreferrer">ClearURLs</a><span class="host">clearurls.xyz</span></li>
+<li><a href="https://crypt.fyi" target="_blank" rel="nofollow noopener noreferrer">crypt.fyi</a><span class="host">crypt.fyi</span></li>
+<li><a href="https://cryptomator.org" target="_blank" rel="nofollow noopener noreferrer">Cryptomator</a><span class="host">cryptomator.org</span></li>
+<li><a href="https://crypton.sh/" target="_blank" rel="nofollow noopener noreferrer">Crypton</a><span class="host">crypton.sh</span></li>
+<li><a href="https://linguister.io/docs/CustomTranslator" target="_blank" rel="nofollow noopener noreferrer">custom translators</a><span class="host">linguister.io</span></li>
+<li><a href="https://dele.to" target="_blank" rel="nofollow noopener noreferrer">dele-to</a><span class="host">dele.to</span></li>
+<li><a href="https://lingva.ml/" target="_blank" rel="nofollow noopener noreferrer">Demo</a><span class="host">lingva.ml</span></li>
+<li><a href="https://simplytranslate.org/" target="_blank" rel="nofollow noopener noreferrer">Demo</a><span class="host">simplytranslate.org</span></li>
+<li><a href="https://duckduckgo.com" target="_blank" rel="nofollow noopener noreferrer">DuckDuckGo</a><span class="host">duckduckgo.com</span></li>
+<li><a href="https://kycnot.me/?categories=vpn" target="_blank" rel="nofollow noopener noreferrer">Find more at kycnot.me (VPN Category)</a><span class="host">kycnot.me</span></li>
+<li><a href="https://kycnot.me/?categories=vps" target="_blank" rel="nofollow noopener noreferrer">Find more at kycnot.me (VPS Category)</a><span class="host">kycnot.me</span></li>
+<li><a href="https://www.mozilla.org/en-US/firefox/mobile/" target="_blank" rel="nofollow noopener noreferrer">Firefox</a><span class="host">mozilla.org</span></li>
+<li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="nofollow noopener noreferrer">Firefox</a><span class="host">mozilla.org</span></li>
+<li><a href="https://floorp.app/" target="_blank" rel="nofollow noopener noreferrer">Floorp</a><span class="host">floorp.app</span></li>
+<li><a href="https://grapheneos.org/" target="_blank" rel="nofollow noopener noreferrer">GrapheneOS</a><span class="host">grapheneos.org</span></li>
+<li><a href="https://hat.sh/" target="_blank" rel="nofollow noopener noreferrer">Hat.sh</a><span class="host">hat.sh</span></li>
+<li><a href="https://iode.tech/iodeos" target="_blank" rel="nofollow noopener noreferrer">iodéOS</a><span class="host">iode.tech</span></li>
+<li><a href="https://ivpn.net" target="_blank" rel="nofollow noopener noreferrer">IVPN</a><span class="host">ivpn.net</span></li>
+<li><a href="https://jellyfin.org/" target="_blank" rel="nofollow noopener noreferrer">Jellyfin</a><span class="host">jellyfin.org</span></li>
+<li><a href="https://kycnot.me/" target="_blank" rel="nofollow noopener noreferrer">kycnot.me</a><span class="host">kycnot.me</span></li>
+<li><a href="https://libremdb.iket.me/" target="_blank" rel="nofollow noopener noreferrer">libremdb</a><span class="host">libremdb.iket.me</span></li>
+<li><a href="https://libretranslate.com/" target="_blank" rel="nofollow noopener noreferrer">Libretranslate</a><span class="host">libretranslate.com</span></li>
+<li><a href="https://librewolf.net/" target="_blank" rel="nofollow noopener noreferrer">LibreWolf</a><span class="host">librewolf.net</span></li>
+<li><a href="https://lineageos.org/" target="_blank" rel="nofollow noopener noreferrer">LineageOS</a><span class="host">lineageos.org</span></li>
+<li><a href="https://linguister.io" target="_blank" rel="nofollow noopener noreferrer">Linguist</a><span class="host">linguister.io</span></li>
+<li><a href="https://lnvpn.net" target="_blank" rel="nofollow noopener noreferrer">LNVPN</a><span class="host">lnvpn.net</span></li>
+<li><a href="https://maglit.me" target="_blank" rel="nofollow noopener noreferrer">MagLit</a><span class="host">maglit.me</span></li>
+<li><a href="https://mozilla.github.io/translate/" target="_blank" rel="nofollow noopener noreferrer">Mozilla Translate</a><span class="host">mozilla.github.io</span></li>
+<li><a href="https://netguard.me/" target="_blank" rel="nofollow noopener noreferrer">Netguard</a><span class="host">netguard.me</span></li>
+<li><a href="https://onlinesim.ru/" target="_blank" rel="nofollow noopener noreferrer">Onlinesim</a><span class="host">onlinesim.ru</span></li>
+<li><a href="https://peergos.org/" target="_blank" rel="nofollow noopener noreferrer">Peergos</a><span class="host">peergos.org</span></li>
+<li><a href="https://www.stoutner.com/privacy-browser/" target="_blank" rel="nofollow noopener noreferrer">Privacy Browser</a><span class="host">stoutner.com</span></li>
+<li><a href="https://private.storage/" target="_blank" rel="nofollow noopener noreferrer">PrivateStorage</a><span class="host">private.storage</span></li>
+<li><a href="https://www.pureos.net/" target="_blank" rel="nofollow noopener noreferrer">PureOS</a><span class="host">pureos.net</span></li>
+<li><a href="https://www.qwant.com/" target="_blank" rel="nofollow noopener noreferrer">Qwant</a><span class="host">qwant.com</span></li>
+<li><a href="https://riseup.net/en/about-us" target="_blank" rel="nofollow noopener noreferrer">Riseup</a><span class="host">riseup.net</span></li>
+<li><a href="https://scrt.link/file" target="_blank" rel="nofollow noopener noreferrer">scrt.link</a><span class="host">scrt.link</span></li>
+<li><a href="https://scrt.link" target="_blank" rel="nofollow noopener noreferrer">scrt.link</a><span class="host">scrt.link</span></li>
+<li><a href="https://shufflecake.net/index.html" target="_blank" rel="nofollow noopener noreferrer">Shufflecake</a><span class="host">shufflecake.net</span></li>
+<li><a href="https://smspva.com/" target="_blank" rel="nofollow noopener noreferrer">SmsPVA</a><span class="host">smspva.com</span></li>
+<li><a href="https://www.softcatala.org/traductor/" target="_blank" rel="nofollow noopener noreferrer">Softcatala</a><span class="host">softcatala.org</span></li>
+<li><a href="https://safing.io/" target="_blank" rel="nofollow noopener noreferrer">SPN</a><span class="host">safing.io</span></li>
+<li><a href="https://stegcloak.surge.sh/" target="_blank" rel="nofollow noopener noreferrer">Stegcloak</a><span class="host">stegcloak.surge.sh</span></li>
+<li><a href="https://tails.net/" target="_blank" rel="nofollow noopener noreferrer">Tails</a><span class="host">tails.net</span></li>
+<li><a href="https://tinfoil.sh/" target="_blank" rel="nofollow noopener noreferrer">Tinfoil</a><span class="host">tinfoil.sh</span></li>
+<li><a href="https://translatelocally.com/" target="_blank" rel="nofollow noopener noreferrer">TranslateLocally</a><span class="host">translatelocally.com</span></li>
+<li><a href="https://vanadium.app/" target="_blank" rel="nofollow noopener noreferrer">Vanadium</a><span class="host">vanadium.app</span></li>
+<li><a href="https://www.ventoy.net" target="_blank" rel="nofollow noopener noreferrer">Ventoy</a><span class="host">ventoy.net</span></li>
+<li><a href="https://www.veracrypt.fr/en/Home.html" target="_blank" rel="nofollow noopener noreferrer">Veracrypt</a><span class="host">veracrypt.fr</span></li>
+<li><a href="https://virtualsim.net/" target="_blank" rel="nofollow noopener noreferrer">Virtualsim</a><span class="host">virtualsim.net</span></li>
+<li><a href="https://wikiless.org/" target="_blank" rel="nofollow noopener noreferrer">wikiless.org</a><span class="host">wikiless.org</span></li>
+<li><a href="https://winden.app/" target="_blank" rel="nofollow noopener noreferrer">Winden</a><span class="host">winden.app</span></li>
+<li><a href="https://zen-browser.app/" target="_blank" rel="nofollow noopener noreferrer">Zen Browser</a><span class="host">zen-browser.app</span></li>
+<li><a href="https://reports.exodus-privacy.eu.org/en/" target="_blank" rel="nofollow noopener noreferrer">εxodus</a><span class="host">reports.exodus-privacy.eu.org</span></li>
+<li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496&amp;ref_=footer_privacy#GUID-8966E75F-9B92-4A2B-BFD5-967D57513A40__SECTION_87C837F9CCD84769B4AE2BEB14AF4F01" target="_blank" rel="nofollow noopener noreferrer">**examples** list</a><span class="host">amazon.com</span></li>
+<li><a href="https://2fas.com/auth" target="_blank" rel="nofollow noopener noreferrer">2FAS Auth</a><span class="host">2fas.com</span></li>
+<li><a href="https://42links.tuxproject.de" target="_blank" rel="nofollow noopener noreferrer">42links</a><span class="host">42links.tuxproject.de</span></li>
+<li><a href="https://ackee.electerious.com/" target="_blank" rel="nofollow noopener noreferrer">Ackee</a><span class="host">ackee.electerious.com</span></li>
+<li><a href="https://actualbudget.org" target="_blank" rel="nofollow noopener noreferrer">Actual</a><span class="host">actualbudget.org</span></li>
+<li><a href="https://getaegis.app/" target="_blank" rel="nofollow noopener noreferrer">Aegis</a><span class="host">getaegis.app</span></li>
+<li><a href="https://getaether.net/" target="_blank" rel="nofollow noopener noreferrer">Aether</a><span class="host">getaether.net</span></li>
+<li><a href="https://aider.chat" target="_blank" rel="nofollow noopener noreferrer">Aider</a><span class="host">aider.chat</span></li>
+<li><a href="https://www.aliasvault.net" target="_blank" rel="nofollow noopener noreferrer">AliasVault</a><span class="host">aliasvault.net</span></li>
+<li><a href="https://alovoa.com/" target="_blank" rel="nofollow noopener noreferrer">Alovoa</a><span class="host">alovoa.com</span></li>
+<li><a href="https://altcha.org" target="_blank" rel="nofollow noopener noreferrer">Altcha.org</a><span class="host">altcha.org</span></li>
+<li><a href="https://antennapod.org" target="_blank" rel="nofollow noopener noreferrer">Antennapod</a><span class="host">antennapod.org</span></li>
+<li><a href="https://anysoftkeyboard.github.io/" target="_blank" rel="nofollow noopener noreferrer">AnySoftKeyboard</a><span class="host">anysoftkeyboard.github.io</span></li>
+<li><a href="https://www.anytype.io/" target="_blank" rel="nofollow noopener noreferrer">Anytype</a><span class="host">anytype.io</span></li>
+<li><a href="https://source.android.com/" target="_blank" rel="nofollow noopener noreferrer">AOSP - Android Open Source Project</a><span class="host">source.android.com</span></li>
+<li><a href="https://guacamole.apache.org" target="_blank" rel="nofollow noopener noreferrer">Apache Guacamole</a><span class="host">guacamole.apache.org</span></li>
+<li><a href="https://www.appflowy.io/" target="_blank" rel="nofollow noopener noreferrer">AppFlowy</a><span class="host">appflowy.io</span></li>
+<li><a href="https://tosdr.org/en/service/158" target="_blank" rel="nofollow noopener noreferrer">Apple&#x27;s privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://appwrite.io/" target="_blank" rel="nofollow noopener noreferrer">Appwrite</a><span class="host">appwrite.io</span></li>
+<li><a href="https://aptabase.com" target="_blank" rel="nofollow noopener noreferrer">Aptabase</a><span class="host">aptabase.com</span></li>
+<li><a href="https://astrachat.com/" target="_blank" rel="nofollow noopener noreferrer">AstraChat</a><span class="host">astrachat.com</span></li>
+<li><a href="https://atlasos.net/" target="_blank" rel="nofollow noopener noreferrer">AtlasOS</a><span class="host">atlasos.net</span></li>
+<li><a href="https://ente.io/blog/cryptography-audit/" target="_blank" rel="nofollow noopener noreferrer">audited</a><span class="host">ente.io</span></li>
+<li><a href="https://baserow.io/" target="_blank" rel="nofollow noopener noreferrer">Baserow</a><span class="host">baserow.io</span></li>
+<li><a href="https://www.beekeeperstudio.io" target="_blank" rel="nofollow noopener noreferrer">Beekeeper Studio</a><span class="host">beekeeperstudio.io</span></li>
+<li><a href="https://berty.tech/" target="_blank" rel="nofollow noopener noreferrer">Berty</a><span class="host">berty.tech</span></li>
+<li><a href="https://betterdiscord.app/" target="_blank" rel="nofollow noopener noreferrer">BetterDiscord</a><span class="host">betterdiscord.app</span></li>
+<li><a href="https://bigbluebutton.org/" target="_blank" rel="nofollow noopener noreferrer">BigBlueButton</a><span class="host">bigbluebutton.org</span></li>
+<li><a href="https://bitcoin.org" target="_blank" rel="nofollow noopener noreferrer">Bitcoin</a><span class="host">bitcoin.org</span></li>
+<li><a href="https://yewtu.be/watch?v=QEnL5k0R08w" target="_blank" rel="nofollow noopener noreferrer">Bitcoin privacy series</a><span class="host">yewtu.be</span></li>
+<li><a href="https://bitwarden.com" target="_blank" rel="nofollow noopener noreferrer">Bitwarden</a><span class="host">bitwarden.com</span></li>
+<li><a href="https://git.xmpp-it.net/sch/Blasta" target="_blank" rel="nofollow noopener noreferrer">Blasta</a><span class="host">git.xmpp-it.net</span></li>
+<li><a href="https://blaze.now.sh/" target="_blank" rel="nofollow noopener noreferrer">Blaze</a><span class="host">blaze.now.sh</span></li>
+<li><a href="https://briarproject.org/" target="_blank" rel="nofollow noopener noreferrer">Briar</a><span class="host">briarproject.org</span></li>
+<li><a href="https://btcpayserver.org" target="_blank" rel="nofollow noopener noreferrer">BTCPay Server</a><span class="host">btcpayserver.org</span></li>
+<li><a href="https://budgetzen.net" target="_blank" rel="nofollow noopener noreferrer">Budget Zen</a><span class="host">budgetzen.net</span></li>
+<li><a href="https://fonts.bunny.net/" target="_blank" rel="nofollow noopener noreferrer">Bunny Fonts</a><span class="host">fonts.bunny.net</span></li>
+<li><a href="https://www.buskill.in/" target="_blank" rel="nofollow noopener noreferrer">BusKill</a><span class="host">buskill.in</span></li>
+<li><a href="https://www.eff.org/deeplinks/2017/05/how-opt-out-twitters-new-privacy-settings" target="_blank" rel="nofollow noopener noreferrer">by default</a><span class="host">eff.org</span></li>
+<li><a href="https://withcabin.com" target="_blank" rel="nofollow noopener noreferrer">Cabin</a><span class="host">withcabin.com</span></li>
+<li><a href="https://cakewallet.com" target="_blank" rel="nofollow noopener noreferrer">Cake Wallet</a><span class="host">cakewallet.com</span></li>
+<li><a href="https://carrypass.net" target="_blank" rel="nofollow noopener noreferrer">CarryPass</a><span class="host">carrypass.net</span></li>
+<li><a href="https://castopod.org" target="_blank" rel="nofollow noopener noreferrer">Castopod</a><span class="host">castopod.org</span></li>
+<li><a href="https://foundation.mozilla.org/en/blog/new-research-tinders-opaque-unfair-pricing-algorithm-can-charge-users-up-to-five-times-more-for-same-service/" target="_blank" rel="nofollow noopener noreferrer">charge users up to five times more for same service</a><span class="host">foundation.mozilla.org</span></li>
+<li><a href="https://chitchatter.im/" target="_blank" rel="nofollow noopener noreferrer">Chitchatter</a><span class="host">chitchatter.im</span></li>
+<li><a href="https://cinny.in/" target="_blank" rel="nofollow noopener noreferrer">Cinny</a><span class="host">cinny.in</span></li>
+<li><a href="https://cline.bot/" target="_blank" rel="nofollow noopener noreferrer">Cline</a><span class="host">cline.bot</span></li>
+<li><a href="https://www.comaps.app/" target="_blank" rel="nofollow noopener noreferrer">CoMaps</a><span class="host">comaps.app</span></li>
+<li><a href="https://comentario.app" target="_blank" rel="nofollow noopener noreferrer">Comentario</a><span class="host">comentario.app</span></li>
+<li><a href="https://conversations.im/" target="_blank" rel="nofollow noopener noreferrer">Conversations</a><span class="host">conversations.im</span></li>
+<li><a href="https://fonts.coollabs.io/" target="_blank" rel="nofollow noopener noreferrer">coolLabs Fonts</a><span class="host">fonts.coollabs.io</span></li>
+<li><a href="https://adaway.org/" target="_blank" rel="nofollow noopener noreferrer">AdAway</a><span class="host">adaway.org</span></li>
+<li><a href="https://cryptpad.fr/" target="_blank" rel="nofollow noopener noreferrer">Cryptpad</a><span class="host">cryptpad.fr</span></li>
+<li><a href="https://github.com/AdguardTeam/PopupBlocker" target="_blank" rel="nofollow noopener noreferrer">AdGuard Popup Blocker</a><span class="host">github.com</span></li>
+<li><a href="https://cryptpad.fr/form/" target="_blank" rel="nofollow noopener noreferrer">CryptPad Forms</a><span class="host">cryptpad.fr</span></li>
+<li><a href="https://adnauseam.io/" target="_blank" rel="nofollow noopener noreferrer">AdNauseam</a><span class="host">adnauseam.io</span></li>
+<li><a href="https://www.darktable.org/" target="_blank" rel="nofollow noopener noreferrer">darktable</a><span class="host">darktable.org</span></li>
+<li><a href="https://adsbypasser.github.io/" target="_blank" rel="nofollow noopener noreferrer">AdsBypasser</a><span class="host">adsbypasser.github.io</span></li>
+<li><a href="https://tosdr.org/en/service/417" target="_blank" rel="nofollow noopener noreferrer">data collection via Creative Cloud</a><span class="host">tosdr.org</span></li>
+<li><a href="https://ddocs.new" target="_blank" rel="nofollow noopener noreferrer">Ddocs</a><span class="host">ddocs.new</span></li>
+<li><a href="https://delta.chat/" target="_blank" rel="nofollow noopener noreferrer">DeltaChat</a><span class="host">delta.chat</span></li>
+<li><a href="https://leastauthority.com/community-matters/destiny/" target="_blank" rel="nofollow noopener noreferrer">Destiny</a><span class="host">leastauthority.com</span></li>
+<li><a href="https://www.digikam.org/" target="_blank" rel="nofollow noopener noreferrer">DigiKam</a><span class="host">digikam.org</span></li>
+<li><a href="https://dino.im/" target="_blank" rel="nofollow noopener noreferrer">Dino</a><span class="host">dino.im</span></li>
+<li><a href="https://discord.com/terms" target="_blank" rel="nofollow noopener noreferrer">Discord ToS</a><span class="host">discord.com</span></li>
+<li><a href="https://betterdiscord.app/plugin/DoNotTrack" target="_blank" rel="nofollow noopener noreferrer">DoNotTrack</a><span class="host">betterdiscord.app</span></li>
+<li><a href="https://dripapp.org/" target="_blank" rel="nofollow noopener noreferrer">Drip</a><span class="host">dripapp.org</span></li>
+<li><a href="https://dsheets.new" target="_blank" rel="nofollow noopener noreferrer">dSheets</a><span class="host">dsheets.new</span></li>
+<li><a href="https://averagelinuxuser.com/dualboot-linux-windows/" target="_blank" rel="nofollow noopener noreferrer">dual boot</a><span class="host">averagelinuxuser.com</span></li>
+<li><a href="https://tosdr.org/en/service/276" target="_blank" rel="nofollow noopener noreferrer">Dubitous priavcy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/1567" target="_blank" rel="nofollow noopener noreferrer">Dubitous privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://element.io/" target="_blank" rel="nofollow noopener noreferrer">Element</a><span class="host">element.io</span></li>
+<li><a href="https://proton.me/blog/password-encryption" target="_blank" rel="nofollow noopener noreferrer">end-to-end encrypted</a><span class="host">proton.me</span></li>
+<li><a href="https://ente.io/auth" target="_blank" rel="nofollow noopener noreferrer">ente Auth</a><span class="host">ente.io</span></li>
+<li><a href="https://ente.io" target="_blank" rel="nofollow noopener noreferrer">ente Photos</a><span class="host">ente.io</span></li>
+<li><a href="https://etherpad.org/" target="_blank" rel="nofollow noopener noreferrer">Etherpad</a><span class="host">etherpad.org</span></li>
+<li><a href="https://eukiapp.org/" target="_blank" rel="nofollow noopener noreferrer">Euki</a><span class="host">eukiapp.org</span></li>
+<li><a href="https://ezbookkeeping.mayswind.net/" target="_blank" rel="nofollow noopener noreferrer">ezBookkeeping</a><span class="host">ezbookkeeping.mayswind.net</span></li>
+<li><a href="https://featherwallet.org/" target="_blank" rel="nofollow noopener noreferrer">Feather Wallet</a><span class="host">featherwallet.org</span></li>
+<li><a href="https://getfedora.org/" target="_blank" rel="nofollow noopener noreferrer">Fedora</a><span class="host">getfedora.org</span></li>
+<li><a href="https://fileverse.io" target="_blank" rel="nofollow noopener noreferrer">Fileverse</a><span class="host">fileverse.io</span></li>
+<li><a href="https://www.firefly-iii.org/" target="_blank" rel="nofollow noopener noreferrer">Firefly III</a><span class="host">firefly-iii.org</span></li>
+<li><a href="https://floccus.org/" target="_blank" rel="nofollow noopener noreferrer">Floccus</a><span class="host">floccus.org</span></li>
+<li><a href="https://orenom.fi/" target="_blank" rel="nofollow noopener noreferrer">follow news here</a><span class="host">orenom.fi</span></li>
+<li><a href="https://forgejo.org/" target="_blank" rel="nofollow noopener noreferrer">Forgejo</a><span class="host">forgejo.org</span></li>
+<li><a href="https://formbricks.com" target="_blank" rel="nofollow noopener noreferrer">Formbricks</a><span class="host">formbricks.com</span></li>
+<li><a href="https://forwardemail.net" target="_blank" rel="nofollow noopener noreferrer">Forward Email</a><span class="host">forwardemail.net</span></li>
+<li><a href="https://fossdroid.com/" target="_blank" rel="nofollow noopener noreferrer">FossDroid</a><span class="host">fossdroid.com</span></li>
+<li><a href="https://framaforms.org/" target="_blank" rel="nofollow noopener noreferrer">FramaForms</a><span class="host">framaforms.org</span></li>
+<li><a href="https://techcrunch.com/2020/09/24/free-vpn-bad-for-privacy/" target="_blank" rel="nofollow noopener noreferrer">Free VPNs</a><span class="host">techcrunch.com</span></li>
+<li><a href="https://keyboard.futo.org/" target="_blank" rel="nofollow noopener noreferrer">Futo Keyboard</a><span class="host">keyboard.futo.org</span></li>
+<li><a href="https://gajim.org/" target="_blank" rel="nofollow noopener noreferrer">Gajim</a><span class="host">gajim.org</span></li>
+<li><a href="https://www.gimp.org/" target="_blank" rel="nofollow noopener noreferrer">GIMP</a><span class="host">gimp.org</span></li>
+<li><a href="https://giscus.app" target="_blank" rel="nofollow noopener noreferrer">Giscus</a><span class="host">giscus.app</span></li>
+<li><a href="https://gitea.com" target="_blank" rel="nofollow noopener noreferrer">Gitea</a><span class="host">gitea.com</span></li>
+<li><a href="https://about.gitlab.com/" target="_blank" rel="nofollow noopener noreferrer">GitLab</a><span class="host">about.gitlab.com</span></li>
+<li><a href="https://www.linux.com/what-is-linux/" target="_blank" rel="nofollow noopener noreferrer">GNU/Linux</a><span class="host">linux.com</span></li>
+<li><a href="https://gnucash.org/" target="_blank" rel="nofollow noopener noreferrer">GnuCash</a><span class="host">gnucash.org</span></li>
+<li><a href="https://www.goatcounter.com/" target="_blank" rel="nofollow noopener noreferrer">GoatCounter</a><span class="host">goatcounter.com</span></li>
+<li><a href="https://github.com/pluja/awesome-privacy" target="_blank" rel="nofollow noopener noreferrer">Awesome Privacy</a><span class="host">github.com</span></li>
+<li><a href="https://www.getgrist.com" target="_blank" rel="nofollow noopener noreferrer">Grist</a><span class="host">getgrist.com</span></li>
+<li><a href="https://redd.it/gn7fw5" target="_blank" rel="nofollow noopener noreferrer">Samsung Smart TV Adblock</a><span class="host">redd.it</span></li>
+<li><a href="https://hedgedoc.org/" target="_blank" rel="nofollow noopener noreferrer">HedgeDoc</a><span class="host">hedgedoc.org</span></li>
+<li><a href="https://anonymousplanet.org/guide.html#appendix-v1-hardening-your-browsers" target="_blank" rel="nofollow noopener noreferrer">Hitchhiker’s Guide to Online Anonymity</a><span class="host">anonymousplanet.org</span></li>
+<li><a href="https://www.home-assistant.io/" target="_blank" rel="nofollow noopener noreferrer">Home Assistant</a><span class="host">home-assistant.io</span></li>
+<li><a href="https://everestpipkin.github.io/image-scrubber/" target="_blank" rel="nofollow noopener noreferrer">hosted version provided by everestpipkin</a><span class="host">everestpipkin.github.io</span></li>
+<li><a href="https://ihatemoney.org/" target="_blank" rel="nofollow noopener noreferrer">IHateMoney</a><span class="host">ihatemoney.org</span></li>
+<li><a href="https://imageglass.org/" target="_blank" rel="nofollow noopener noreferrer">ImageGlass</a><span class="host">imageglass.org</span></li>
+<li><a href="https://petapixel.com/2022/08/22/google-flags-photos-of-fathers-sick-son-as-child-abuse-informs-police/" target="_blank" rel="nofollow noopener noreferrer">incident</a><span class="host">petapixel.com</span></li>
+<li><a href="https://www.minecraft.net/en-us/terms" target="_blank" rel="nofollow noopener noreferrer">it is tied</a><span class="host">minecraft.net</span></li>
+<li><a href="https://www.theguardian.com/technology/2017/sep/26/tinder-personal-data-dating-app-messages-hacked-sold" target="_blank" rel="nofollow noopener noreferrer">it may know more about you than yourself</a><span class="host">theguardian.com</span></li>
+<li><a href="https://xmpp.org/" target="_blank" rel="nofollow noopener noreferrer">Jabber / XMPP (Protocol)</a><span class="host">xmpp.org</span></li>
+<li><a href="https://jami.net/" target="_blank" rel="nofollow noopener noreferrer">Jami</a><span class="host">jami.net</span></li>
+<li><a href="https://k9mail.app/" target="_blank" rel="nofollow noopener noreferrer">K9</a><span class="host">k9mail.app</span></li>
+<li><a href="https://karakeep.app/" target="_blank" rel="nofollow noopener noreferrer">Karakeep</a><span class="host">karakeep.app</span></li>
+<li><a href="https://kdeconnect.kde.org/" target="_blank" rel="nofollow noopener noreferrer">KDE Connect</a><span class="host">kdeconnect.kde.org</span></li>
+<li><a href="https://kdenlive.org/" target="_blank" rel="nofollow noopener noreferrer">kdenlive</a><span class="host">kdenlive.org</span></li>
+<li><a href="https://www.keepassdx.com/" target="_blank" rel="nofollow noopener noreferrer">KeepassDX</a><span class="host">keepassdx.com</span></li>
+<li><a href="https://keepassxc.org/" target="_blank" rel="nofollow noopener noreferrer">KeepassXC</a><span class="host">keepassxc.org</span></li>
+<li><a href="https://www.blockaway.net/" target="_blank" rel="nofollow noopener noreferrer">BlockAway</a><span class="host">blockaway.net</span></li>
+<li><a href="https://keyoxide.org/" target="_blank" rel="nofollow noopener noreferrer">Keyoxide</a><span class="host">keyoxide.org</span></li>
+<li><a href="https://blokada.org" target="_blank" rel="nofollow noopener noreferrer">Blokada</a><span class="host">blokada.org</span></li>
+<li><a href="https://kisslauncher.com/" target="_blank" rel="nofollow noopener noreferrer">KISS</a><span class="host">kisslauncher.com</span></li>
+<li><a href="https://huggingface.co/hexgrad/Kokoro-82M" target="_blank" rel="nofollow noopener noreferrer">Kokoro-82M</a><span class="host">huggingface.co</span></li>
+<li><a href="https://krita.org/" target="_blank" rel="nofollow noopener noreferrer">Krita</a><span class="host">krita.org</span></li>
+<li><a href="https://helpx.adobe.com/in/download-install/kb/operating-system-guidelines.html" target="_blank" rel="nofollow noopener noreferrer">lack of Linux support</a><span class="host">helpx.adobe.com</span></li>
+<li><a href="https://lawnchair.app/" target="_blank" rel="nofollow noopener noreferrer">Lawnchair</a><span class="host">lawnchair.app</span></li>
+<li><a href="https://librechat.ai" target="_blank" rel="nofollow noopener noreferrer">LibreChat</a><span class="host">librechat.ai</span></li>
+<li><a href="https://www.libreoffice.org/" target="_blank" rel="nofollow noopener noreferrer">LibreOffice</a><span class="host">libreoffice.org</span></li>
+<li><a href="https://linkstack.org/" target="_blank" rel="nofollow noopener noreferrer">LinkStack</a><span class="host">linkstack.org</span></li>
+<li><a href="https://linkwarden.app" target="_blank" rel="nofollow noopener noreferrer">Linkwarden</a><span class="host">linkwarden.app</span></li>
+<li><a href="https://www.fosslinux.com/274/how-to-create-linux-mint-live-usb-drive-on-windows.htm" target="_blank" rel="nofollow noopener noreferrer">Live USB Stick</a><span class="host">fosslinux.com</span></li>
+<li><a href="https://localsend.org/" target="_blank" rel="nofollow noopener noreferrer">Localsend</a><span class="host">localsend.org</span></li>
+<li><a href="https://logseq.com/" target="_blank" rel="nofollow noopener noreferrer">Logseq</a><span class="host">logseq.com</span></li>
+<li><a href="https://www.luanti.org/" target="_blank" rel="nofollow noopener noreferrer">Luanti</a><span class="host">luanti.org</span></li>
+<li><a href="https://framagit.org/fiat-tux/hat-softwares/lufi" target="_blank" rel="nofollow noopener noreferrer">Lufi</a><span class="host">framagit.org</span></li>
+<li><a href="https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening" target="_blank" rel="nofollow noopener noreferrer">Manifest v3</a><span class="host">eff.org</span></li>
+<li><a href="https://marginalia-search.com/" target="_blank" rel="nofollow noopener noreferrer">Marginalia</a><span class="host">marginalia-search.com</span></li>
+<li><a href="https://joinmastodon.org/" target="_blank" rel="nofollow noopener noreferrer">Mastodon</a><span class="host">joinmastodon.org</span></li>
+<li><a href="https://joinmastodon.org/apps" target="_blank" rel="nofollow noopener noreferrer">Mastodon Apps</a><span class="host">joinmastodon.org</span></li>
+<li><a href="https://matomo.org/" target="_blank" rel="nofollow noopener noreferrer">Matomo</a><span class="host">matomo.org</span></li>
+<li><a href="https://matrix.org/" target="_blank" rel="nofollow noopener noreferrer">Matrix (Protocol)</a><span class="host">matrix.org</span></li>
+<li><a href="https://mattermost.com/" target="_blank" rel="nofollow noopener noreferrer">Mattermost</a><span class="host">mattermost.com</span></li>
+<li><a href="http://mcaptcha.org/" target="_blank" rel="nofollow noopener noreferrer">mCaptcha</a><span class="host">mcaptcha.org</span></li>
+<li><a href="https://meshcentral.com/" target="_blank" rel="nofollow noopener noreferrer">MeshCentral</a><span class="host">meshcentral.com</span></li>
+<li><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="nofollow noopener noreferrer">Microsoft privacy terms</a><span class="host">privacy.microsoft.com</span></li>
+<li><a href="https://content.minetest.net/packages/ryvnf/mineclonia/" target="_blank" rel="nofollow noopener noreferrer">Mineclonia</a><span class="host">content.minetest.net</span></li>
+<li><a href="https://help.minecraft.net/hc/en-us/articles/360050865492-Minecraft-Java-Edition-Account-Migration-FAQ" target="_blank" rel="nofollow noopener noreferrer">Minecraft FAQ</a><span class="host">help.minecraft.net</span></li>
+<li><a href="https://linuxmint.com/edition.php?id=305" target="_blank" rel="nofollow noopener noreferrer">Mint (Cinnamon)</a><span class="host">linuxmint.com</span></li>
+<li><a href="https://p2p.mirotalk.com/" target="_blank" rel="nofollow noopener noreferrer">Mirotalk P2P</a><span class="host">p2p.mirotalk.com</span></li>
+<li><a href="https://mobian-project.org/" target="_blank" rel="nofollow noopener noreferrer">mobian</a><span class="host">mobian-project.org</span></li>
+<li><a href="https://www.getmonero.org/" target="_blank" rel="nofollow noopener noreferrer">Monero</a><span class="host">getmonero.org</span></li>
+<li><a href="https://monerosms.com/" target="_blank" rel="nofollow noopener noreferrer">MoneroSMS</a><span class="host">monerosms.com</span></li>
+<li><a href="https://www.mumble.info/" target="_blank" rel="nofollow noopener noreferrer">Mumble</a><span class="host">mumble.info</span></li>
+<li><a href="https://mycroft.ai/" target="_blank" rel="nofollow noopener noreferrer">Mycroft</a><span class="host">mycroft.ai</span></li>
+<li><a href="https://neovim.io/" target="_blank" rel="nofollow noopener noreferrer">Neovim</a><span class="host">neovim.io</span></li>
+<li><a href="https://apps.nextcloud.com/apps/calendar" target="_blank" rel="nofollow noopener noreferrer">Nextcloud Calendar</a><span class="host">apps.nextcloud.com</span></li>
+<li><a href="https://apps.nextcloud.com/apps/cospend" target="_blank" rel="nofollow noopener noreferrer">Nextcloud Cospend</a><span class="host">apps.nextcloud.com</span></li>
+<li><a href="https://apps.nextcloud.com/apps/phonetrack" target="_blank" rel="nofollow noopener noreferrer">Nextcloud Phonetrack</a><span class="host">apps.nextcloud.com</span></li>
+<li><a href="https://notesnook.com/" target="_blank" rel="nofollow noopener noreferrer">Notesnook</a><span class="host">notesnook.com</span></li>
+<li><a href="https://nullitics.com/" target="_blank" rel="nofollow noopener noreferrer">Nullitics</a><span class="host">nullitics.com</span></li>
+<li><a href="https://obsproject.com/" target="_blank" rel="nofollow noopener noreferrer">OBS Studio</a><span class="host">obsproject.com</span></li>
+<li><a href="https://world.openfoodfacts.org/open-food-facts-mobile-app" target="_blank" rel="nofollow noopener noreferrer">OFF Apps</a><span class="host">world.openfoodfacts.org</span></li>
+<li><a href="https://olivevideoeditor.org/" target="_blank" rel="nofollow noopener noreferrer">Olive Video Editor</a><span class="host">olivevideoeditor.org</span></li>
+<li><a href="https://www.onlyoffice.com/" target="_blank" rel="nofollow noopener noreferrer">OnlyOffice</a><span class="host">onlyoffice.com</span></li>
+<li><a href="https://proton.me/community/open-source#apps" target="_blank" rel="nofollow noopener noreferrer">open source</a><span class="host">proton.me</span></li>
+<li><a href="https://www.openstreetmap.org/" target="_blank" rel="nofollow noopener noreferrer">Open Street Map (OSM)</a><span class="host">openstreetmap.org</span></li>
+<li><a href="https://openwebui.com" target="_blank" rel="nofollow noopener noreferrer">Open WebUI</a><span class="host">openwebui.com</span></li>
+<li><a href="https://openasar.dev/" target="_blank" rel="nofollow noopener noreferrer">OpenAsar</a><span class="host">openasar.dev</span></li>
+<li><a href="https://world.openfoodfacts.org/" target="_blank" rel="nofollow noopener noreferrer">OpenFoodFacts</a><span class="host">world.openfoodfacts.org</span></li>
+<li><a href="https://open-foundry.com/" target="_blank" rel="nofollow noopener noreferrer">OpenFoundry</a><span class="host">open-foundry.com</span></li>
+<li><a href="https://decentraleyes.org/" target="_blank" rel="nofollow noopener noreferrer">Decentraleyes</a><span class="host">decentraleyes.org</span></li>
+<li><a href="https://openvoiceos.org" target="_blank" rel="nofollow noopener noreferrer">OpenVoiceOS</a><span class="host">openvoiceos.org</span></li>
+<li><a href="https://organicmaps.app/" target="_blank" rel="nofollow noopener noreferrer">Organic Maps</a><span class="host">organicmaps.app</span></li>
+<li><a href="https://osmand.net/" target="_blank" rel="nofollow noopener noreferrer">OSMAnd</a><span class="host">osmand.net</span></li>
+<li><a href="https://owntracks.org/" target="_blank" rel="nofollow noopener noreferrer">OwnTracks</a><span class="host">owntracks.org</span></li>
+<li><a href="https://padloc.app/" target="_blank" rel="nofollow noopener noreferrer">Padloc</a><span class="host">padloc.app</span></li>
+<li><a href="https://parakeettdt.com/" target="_blank" rel="nofollow noopener noreferrer">ParakeetTDT</a><span class="host">parakeettdt.com</span></li>
+<li><a href="https://github.com/julian-klode/dns66" target="_blank" rel="nofollow noopener noreferrer">DNS66</a><span class="host">github.com</span></li>
+<li><a href="https://www.passbolt.com" target="_blank" rel="nofollow noopener noreferrer">Passbolt</a><span class="host">passbolt.com</span></li>
+<li><a href="https://passky.org" target="_blank" rel="nofollow noopener noreferrer">Passky</a><span class="host">passky.org</span></li>
+<li><a href="https://penpot.app/" target="_blank" rel="nofollow noopener noreferrer">Penpot</a><span class="host">penpot.app</span></li>
+<li><a href="https://photoprism.app" target="_blank" rel="nofollow noopener noreferrer">Photoprism</a><span class="host">photoprism.app</span></li>
+<li><a href="https://photostructure.com/" target="_blank" rel="nofollow noopener noreferrer">Photostructure</a><span class="host">photostructure.com</span></li>
+<li><a href="https://photoview.github.io/" target="_blank" rel="nofollow noopener noreferrer">Photoview</a><span class="host">photoview.github.io</span></li>
+<li><a href="http://bpatrik.github.io/pigallery2/" target="_blank" rel="nofollow noopener noreferrer">Pigallery2</a><span class="host">bpatrik.github.io</span></li>
+<li><a href="https://pirsch.io/" target="_blank" rel="nofollow noopener noreferrer">Pirsch</a><span class="host">pirsch.io</span></li>
+<li><a href="https://pixelfed.org/" target="_blank" rel="nofollow noopener noreferrer">Pixelfed</a><span class="host">pixelfed.org</span></li>
+<li><a href="https://www.plasma-mobile.org/" target="_blank" rel="nofollow noopener noreferrer">Plasma Mobile</a><span class="host">plasma-mobile.org</span></li>
+<li><a href="https://plausible.io/" target="_blank" rel="nofollow noopener noreferrer">Plausible</a><span class="host">plausible.io</span></li>
+<li><a href="https://pleroma.social/" target="_blank" rel="nofollow noopener noreferrer">Pleroma</a><span class="host">pleroma.social</span></li>
+<li><a href="https://plexus.techlore.tech/" target="_blank" rel="nofollow noopener noreferrer">Plexus</a><span class="host">plexus.techlore.tech</span></li>
+<li><a href="https://pocketbase.io/" target="_blank" rel="nofollow noopener noreferrer">Pocketbase</a><span class="host">pocketbase.io</span></li>
+<li><a href="https://poppy.usenostr.org" target="_blank" rel="nofollow noopener noreferrer">Poppy</a><span class="host">poppy.usenostr.org</span></li>
+<li><a href="https://www.portfolio-performance.info/en/" target="_blank" rel="nofollow noopener noreferrer">PortfolioPerformance</a><span class="host">portfolio-performance.info</span></li>
+<li><a href="https://postmarketos.org/" target="_blank" rel="nofollow noopener noreferrer">postmarketOS</a><span class="host">postmarketos.org</span></li>
+<li><a href="https://powercord.dev" target="_blank" rel="nofollow noopener noreferrer">Powercord</a><span class="host">powercord.dev</span></li>
+<li><a href="https://policies.google.com/privacy?hl=en-US#infocollect" target="_blank" rel="nofollow noopener noreferrer">privacy policy</a><span class="host">policies.google.com</span></li>
+<li><a href="https://tosdr.org/en/service/314" target="_blank" rel="nofollow noopener noreferrer">privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://proton.me/authenticator" target="_blank" rel="nofollow noopener noreferrer">Proton Authenticator</a><span class="host">proton.me</span></li>
+<li><a href="https://proton.me/calendar" target="_blank" rel="nofollow noopener noreferrer">Proton Calendar</a><span class="host">proton.me</span></li>
+<li><a href="https://proton.me/drive" target="_blank" rel="nofollow noopener noreferrer">Proton Drive</a><span class="host">proton.me</span></li>
+<li><a href="https://proton.me/pass" target="_blank" rel="nofollow noopener noreferrer">Proton Pass</a><span class="host">proton.me</span></li>
+<li><a href="https://qubes-os.org/" target="_blank" rel="nofollow noopener noreferrer">Qubes OS</a><span class="host">qubes-os.org</span></li>
+<li><a href="https://quillpad.github.io/" target="_blank" rel="nofollow noopener noreferrer">Quillpad</a><span class="host">quillpad.github.io</span></li>
+<li><a href="https://www.pcmag.com/news/does-youtubes-algorithm-lead-to-radicalization" target="_blank" rel="nofollow noopener noreferrer">radicalization tool</a><span class="host">pcmag.com</span></li>
+<li><a href="https://radicle.xyz/" target="_blank" rel="nofollow noopener noreferrer">Radicle</a><span class="host">radicle.xyz</span></li>
+<li><a href="https://rawtherapee.com" target="_blank" rel="nofollow noopener noreferrer">RawTherapee</a><span class="host">rawtherapee.com</span></li>
+<li><a href="https://reactos.org/" target="_blank" rel="nofollow noopener noreferrer">ReactOS</a><span class="host">reactos.org</span></li>
+<li><a href="https://github.com/FastForwardTeam/FastForward" target="_blank" rel="nofollow noopener noreferrer">FastForward</a><span class="host">github.com</span></li>
+<li><a href="https://readeck.org" target="_blank" rel="nofollow noopener noreferrer">Readeck</a><span class="host">readeck.org</span></li>
+<li><a href="https://www.redox-os.org/" target="_blank" rel="nofollow noopener noreferrer">RedoxOS</a><span class="host">redox-os.org</span></li>
+<li><a href="https://remark42.com" target="_blank" rel="nofollow noopener noreferrer">Remark42</a><span class="host">remark42.com</span></li>
+<li><a href="https://remmina.org/" target="_blank" rel="nofollow noopener noreferrer">Remmina</a><span class="host">remmina.org</span></li>
+<li><a href="https://www.replicant.us/" target="_blank" rel="nofollow noopener noreferrer">Replicant</a><span class="host">replicant.us</span></li>
+<li><a href="https://replugged.dev/" target="_blank" rel="nofollow noopener noreferrer">Replugged</a><span class="host">replugged.dev</span></li>
+<li><a href="https://restic.net/" target="_blank" rel="nofollow noopener noreferrer">Restic</a><span class="host">restic.net</span></li>
+<li><a href="https://revolt.chat/" target="_blank" rel="nofollow noopener noreferrer">Revolt</a><span class="host">revolt.chat</span></li>
+<li><a href="https://rocket.chat/" target="_blank" rel="nofollow noopener noreferrer">RocketChat</a><span class="host">rocket.chat</span></li>
+<li><a href="https://rustdesk.com/" target="_blank" rel="nofollow noopener noreferrer">RustDesk</a><span class="host">rustdesk.com</span></li>
+<li><a href="https://rybbit.io" target="_blank" rel="nofollow noopener noreferrer">Rybbit</a><span class="host">rybbit.io</span></li>
+<li><a href="https://screego.net/" target="_blank" rel="nofollow noopener noreferrer">screego</a><span class="host">screego.net</span></li>
+<li><a href="https://www.scribus.net/" target="_blank" rel="nofollow noopener noreferrer">Scribus</a><span class="host">scribus.net</span></li>
+<li><a href="https://www.seafile.com/en/home/" target="_blank" rel="nofollow noopener noreferrer">Seafile</a><span class="host">seafile.com</span></li>
+<li><a href="https://yewtu.be/watch?v=JN1Bowgcle8" target="_blank" rel="nofollow noopener noreferrer">see aantonop&#x27;s video</a><span class="host">yewtu.be</span></li>
+<li><a href="https://thenextweb.com/news/be-cautious-free-vpns-are-selling-your-data-to-3rd-parties" target="_blank" rel="nofollow noopener noreferrer">sell your data to advertisers</a><span class="host">thenextweb.com</span></li>
+<li><a href="https://getsession.org/" target="_blank" rel="nofollow noopener noreferrer">Session</a><span class="host">getsession.org</span></li>
+<li><a href="https://shlink.io/" target="_blank" rel="nofollow noopener noreferrer">Shlink</a><span class="host">shlink.io</span></li>
+<li><a href="https://www.shotcut.org/" target="_blank" rel="nofollow noopener noreferrer">Shotcut</a><span class="host">shotcut.org</span></li>
+<li><a href="https://signal.org/" target="_blank" rel="nofollow noopener noreferrer">Signal</a><span class="host">signal.org</span></li>
+<li><a href="https://simplex.chat/" target="_blank" rel="nofollow noopener noreferrer">SimpleX Chat</a><span class="host">simplex.chat</span></li>
+<li><a href="https://skymaponline.net/" target="_blank" rel="nofollow noopener noreferrer">Skymap</a><span class="host">skymaponline.net</span></li>
+<li><a href="https://snikket.org/" target="_blank" rel="nofollow noopener noreferrer">Snikket</a><span class="host">snikket.org</span></li>
+<li><a href="https://www.srb2.org/" target="_blank" rel="nofollow noopener noreferrer">Sonic Robo Blast 2</a><span class="host">srb2.org</span></li>
+<li><a href="https://mb.srb2.org/addons/srb2kart.2435/" target="_blank" rel="nofollow noopener noreferrer">Sonic Robo Blast 2 Kart</a><span class="host">mb.srb2.org</span></li>
+<li><a href="https://www.sparrowwallet.com/" target="_blank" rel="nofollow noopener noreferrer">Sparrow Wallet</a><span class="host">sparrowwallet.com</span></li>
+<li><a href="https://stalw.art/" target="_blank" rel="nofollow noopener noreferrer">Stalwart</a><span class="host">stalw.art</span></li>
+<li><a href="https://status.im/" target="_blank" rel="nofollow noopener noreferrer">Status</a><span class="host">status.im</span></li>
+<li><a href="https://stingle.org/" target="_blank" rel="nofollow noopener noreferrer">Stingle Photos</a><span class="host">stingle.org</span></li>
+<li><a href="https://app.lizardbyte.dev/Sunshine" target="_blank" rel="nofollow noopener noreferrer">Sunshine + Moonlight</a><span class="host">app.lizardbyte.dev</span></li>
+<li><a href="https://supabase.io/" target="_blank" rel="nofollow noopener noreferrer">Supabase</a><span class="host">supabase.io</span></li>
+<li><a href="https://supertuxkart.net/Main_Page" target="_blank" rel="nofollow noopener noreferrer">SuperTuxKart</a><span class="host">supertuxkart.net</span></li>
+<li><a href="https://swetrix.com" target="_blank" rel="nofollow noopener noreferrer">Swetrix</a><span class="host">swetrix.com</span></li>
+<li><a href="https://tabby.tabbyml.com" target="_blank" rel="nofollow noopener noreferrer">Tabby</a><span class="host">tabby.tabbyml.com</span></li>
+<li><a href="https://tasks.org" target="_blank" rel="nofollow noopener noreferrer">Tasks.org</a><span class="host">tasks.org</span></li>
+<li><a href="https://bugs.mojang.com/browse/MC-237493" target="_blank" rel="nofollow noopener noreferrer">telemetry embeded in it since v21w38a which you can&#x27;t opt-ou...</a><span class="host">bugs.mojang.com</span></li>
+<li><a href="https://freenetproject.org" target="_blank" rel="nofollow noopener noreferrer">Freenet</a><span class="host">freenetproject.org</span></li>
+<li><a href="https://adbappcontrol.com/en/terms/" target="_blank" rel="nofollow noopener noreferrer">terrible privacy policy</a><span class="host">adbappcontrol.com</span></li>
+<li><a href="https://www.w10privacy.de/english-home/" target="_blank" rel="nofollow noopener noreferrer">W10Privacy</a><span class="host">w10privacy.de</span></li>
+<li><a href="https://www.securemessagingapps.com/" target="_blank" rel="nofollow noopener noreferrer">Securemessagingapps</a><span class="host">securemessagingapps.com</span></li>
+<li><a href="https://www.thunderbird.net" target="_blank" rel="nofollow noopener noreferrer">Thunderbird</a><span class="host">thunderbird.net</span></li>
+<li><a href="https://tinylist.app/" target="_blank" rel="nofollow noopener noreferrer">TinyList</a><span class="host">tinylist.app</span></li>
+<li><a href="https://tnyr.me" target="_blank" rel="nofollow noopener noreferrer">tnyr.me</a><span class="host">tnyr.me</span></li>
+<li><a href="https://tox.chat/" target="_blank" rel="nofollow noopener noreferrer">Tox</a><span class="host">tox.chat</span></li>
+<li><a href="https://www.traccar.org/" target="_blank" rel="nofollow noopener noreferrer">Traccar</a><span class="host">traccar.org</span></li>
+<li><a href="https://trailbase.io/" target="_blank" rel="nofollow noopener noreferrer">TrailBase</a><span class="host">trailbase.io</span></li>
+<li><a href="https://www.altchar.com/game-news/the-latest-nintendo-switch-update-secretly-turns-on-user-data-sharing-adSyV7t35NPg" target="_blank" rel="nofollow noopener noreferrer">turn it back on</a><span class="host">altchar.com</span></li>
+<li><a href="https://twake.app/" target="_blank" rel="nofollow noopener noreferrer">Twake</a><span class="host">twake.app</span></li>
+<li><a href="https://typebot.io" target="_blank" rel="nofollow noopener noreferrer">TypeBot</a><span class="host">typebot.io</span></li>
+<li><a href="https://www.ubports.com/" target="_blank" rel="nofollow noopener noreferrer">UBPorts</a><span class="host">ubports.com</span></li>
+<li><a href="https://www.uvnc.com/" target="_blank" rel="nofollow noopener noreferrer">UltraVNC</a><span class="host">uvnc.com</span></li>
+<li><a href="https://umami.is/" target="_blank" rel="nofollow noopener noreferrer">Umami</a><span class="host">umami.is</span></li>
+<li><a href="https://unidentifiedanalytics.web.app/" target="_blank" rel="nofollow noopener noreferrer">Unidentified Analytics</a><span class="host">unidentifiedanalytics.web.app</span></li>
+<li><a href="https://mastodon.art/@Krita/109632425661190494" target="_blank" rel="nofollow noopener noreferrer">using users&#x27; work to train their AIs</a><span class="host">mastodon.art</span></li>
+<li><a href="https://vdo.ninja/" target="_blank" rel="nofollow noopener noreferrer">vdo.ninja</a><span class="host">vdo.ninja</span></li>
+<li><a href="https://www.velvetyne.fr/" target="_blank" rel="nofollow noopener noreferrer">Velvetyne</a><span class="host">velvetyne.fr</span></li>
+<li><a href="https://tosdr.org/en/service/217" target="_blank" rel="nofollow noopener noreferrer">very bad</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/244" target="_blank" rel="nofollow noopener noreferrer">very bad</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/190" target="_blank" rel="nofollow noopener noreferrer">Very bad</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/2745" target="_blank" rel="nofollow noopener noreferrer">Very bad privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/225" target="_blank" rel="nofollow noopener noreferrer">Very bad privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/2198" target="_blank" rel="nofollow noopener noreferrer">Very bad privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/219" target="_blank" rel="nofollow noopener noreferrer">Very bad privacy policy</a><span class="host">tosdr.org</span></li>
+<li><a href="https://tosdr.org/en/service/536" target="_blank" rel="nofollow noopener noreferrer">Very bad privacy policy.</a><span class="host">tosdr.org</span></li>
+<li><a href="https://vesktop.dev/" target="_blank" rel="nofollow noopener noreferrer">Vesktop</a><span class="host">vesktop.dev</span></li>
+<li><a href="https://vikunja.io" target="_blank" rel="nofollow noopener noreferrer">Vikunja</a><span class="host">vikunja.io</span></li>
+<li><a href="https://nitter.net/discord/status/1006178587731550208#m" target="_blank" rel="nofollow noopener noreferrer">violates</a><span class="host">nitter.net</span></li>
+<li><a href="https://vscodium.com/" target="_blank" rel="nofollow noopener noreferrer">VSCodium</a><span class="host">vscodium.com</span></li>
+<li><a href="https://wallabag.org/" target="_blank" rel="nofollow noopener noreferrer">Wallabag</a><span class="host">wallabag.org</span></li>
+<li><a href="https://wallosapp.com" target="_blank" rel="nofollow noopener noreferrer">Wallos</a><span class="host">wallosapp.com</span></li>
+<li><a href="https://www.wasabiwallet.io/" target="_blank" rel="nofollow noopener noreferrer">Wasabi Wallet</a><span class="host">wasabiwallet.io</span></li>
+<li><a href="https://splitpro.app" target="_blank" rel="nofollow noopener noreferrer">Splitpro</a><span class="host">splitpro.app</span></li>
+<li><a href="https://wger.de/en/software/features" target="_blank" rel="nofollow noopener noreferrer">wger</a><span class="host">wger.de</span></li>
+<li><a href="https://writefreely.org/" target="_blank" rel="nofollow noopener noreferrer">WriteFreely</a><span class="host">writefreely.org</span></li>
+<li><a href="https://www.xbrowsersync.org/" target="_blank" rel="nofollow noopener noreferrer">xBrowserSync</a><span class="host">xbrowsersync.org</span></li>
+<li><a href="https://geti2p.net/en/" target="_blank" rel="nofollow noopener noreferrer">I2P</a><span class="host">geti2p.net</span></li>
+<li><a href="https://yacy.net/" target="_blank" rel="nofollow noopener noreferrer">YaCy</a><span class="host">yacy.net</span></li>
+<li><a href="https://yourls.org/" target="_blank" rel="nofollow noopener noreferrer">Yourls</a><span class="host">yourls.org</span></li>
+<li><a href="https://zulip.com/" target="_blank" rel="nofollow noopener noreferrer">Zulip</a><span class="host">zulip.com</span></li>
+<li><a href="https://f-droid.org/en/packages/com.oF2pks.classyshark3xodus/" target="_blank" rel="nofollow noopener noreferrer">ClassyShark3xodus</a><span class="host">f-droid.org</span></li>
+<li><a href="https://f-droid.org/packages/com.ghostsq.commander/" target="_blank" rel="nofollow noopener noreferrer">Ghost Commander</a><span class="host">f-droid.org</span></li>
+<li><a href="https://www.f-droid.org/en/packages/app.fedilab.nitterizeme/" target="_blank" rel="nofollow noopener noreferrer">UntrackMe</a><span class="host">f-droid.org</span></li>
+<li><a href="https://www.aliasvault.com" target="_blank" rel="nofollow noopener noreferrer">AliasVault</a><span class="host">aliasvault.com</span></li>
+<li><a href="https://ipfs.io/" target="_blank" rel="nofollow noopener noreferrer">IPFS</a><span class="host">ipfs.io</span></li>
+<li><a href="https://appflowy.com/" target="_blank" rel="nofollow noopener noreferrer">AppFlowy</a><span class="host">appflowy.com</span></li>
+<li><a href="https://blaze.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">Blaze</a><span class="host">blaze.vercel.app</span></li>
+<li><a href="https://gitlab.e.foundation/e/os/BlissLauncher3" target="_blank" rel="nofollow noopener noreferrer">Bliss Launcher</a><span class="host">gitlab.e.foundation</span></li>
+<li><a href="https://www.mozillafoundation.org/en/blog/new-research-tinders-opaque-unfair-pricing-algorithm-can-charge-users-up-to-five-times-more-for-same-service/" target="_blank" rel="nofollow noopener noreferrer">charge users up to five times more for same service</a><span class="host">mozillafoundation.org</span></li>
+<li><a href="https://fedoraproject.org/" target="_blank" rel="nofollow noopener noreferrer">Fedora</a><span class="host">fedoraproject.org</span></li>
+<li><a href="https://freshrss.org/" target="_blank" rel="nofollow noopener noreferrer">FreshRSS</a><span class="host">freshrss.org</span></li>
+<li><a href="https://keyboard.futo.tech/" target="_blank" rel="nofollow noopener noreferrer">Futo Keyboard</a><span class="host">keyboard.futo.tech</span></li>
+<li><a href="https://www.globaleaks.org/" target="_blank" rel="nofollow noopener noreferrer">GlobaLeaks</a><span class="host">globaleaks.org</span></li>
+<li><a href="https://anonymousplanet.net/guide/#hardening-browsers" target="_blank" rel="nofollow noopener noreferrer">Hitchhiker’s Guide to Online Anonymity</a><span class="host">anonymousplanet.net</span></li>
+<li><a href="https://www.kicksecure.com/" target="_blank" rel="nofollow noopener noreferrer">Kicksecure</a><span class="host">kicksecure.com</span></li>
+<li><a href="https://content.luanti.org/packages/ryvnf/mineclonia/" target="_blank" rel="nofollow noopener noreferrer">Mineclonia</a><span class="host">content.luanti.org</span></li>
+<li><a href="https://miniflux.app/" target="_blank" rel="nofollow noopener noreferrer">Miniflux</a><span class="host">miniflux.app</span></li>
+<li><a href="https://netnewswire.com/" target="_blank" rel="nofollow noopener noreferrer">NetNewsWire</a><span class="host">netnewswire.com</span></li>
+<li><a href="https://keeweb.info/" target="_blank" rel="nofollow noopener noreferrer">KeeWeb</a><span class="host">keeweb.info</span></li>
+<li><a href="https://newsboat.org/" target="_blank" rel="nofollow noopener noreferrer">Newsboat</a><span class="host">newsboat.org</span></li>
+<li><a href="https://nostr.com/" target="_blank" rel="nofollow noopener noreferrer">Nostr</a><span class="host">nostr.com</span></li>
+<li><a href="https://nura.eco/" target="_blank" rel="nofollow noopener noreferrer">Nura</a><span class="host">nura.eco</span></li>
+<li><a href="https://onlinesim.io/" target="_blank" rel="nofollow noopener noreferrer">Onlinesim</a><span class="host">onlinesim.io</span></li>
+<li><a href="https://radicle.dev/" target="_blank" rel="nofollow noopener noreferrer">Radicle</a><span class="host">radicle.dev</span></li>
+<li><a href="https://rybbit.com" target="_blank" rel="nofollow noopener noreferrer">Rybbit</a><span class="host">rybbit.com</span></li>
+<li><a href="https://secureblue.dev/" target="_blank" rel="nofollow noopener noreferrer">secureblue</a><span class="host">secureblue.dev</span></li>
+<li><a href="https://securedrop.org/" target="_blank" rel="nofollow noopener noreferrer">SecureDrop</a><span class="host">securedrop.org</span></li>
+<li><a href="https://status.app/" target="_blank" rel="nofollow noopener noreferrer">Status</a><span class="host">status.app</span></li>
+<li><a href="https://stoat.chat/" target="_blank" rel="nofollow noopener noreferrer">Stoat</a><span class="host">stoat.chat</span></li>
+<li><a href="https://supabase.com/" target="_blank" rel="nofollow noopener noreferrer">Supabase</a><span class="host">supabase.com</span></li>
+<li><a href="https://threema.com/en" target="_blank" rel="nofollow noopener noreferrer">Threema</a><span class="host">threema.com</span></li>
+<li><a href="https://dyne.org/software/tomb/" target="_blank" rel="nofollow noopener noreferrer">Tomb</a><span class="host">dyne.org</span></li>
+<li><a href="https://lesspass.com/" target="_blank" rel="nofollow noopener noreferrer">LessPass</a><span class="host">lesspass.com</span></li>
+<li><a href="https://typebot.com" target="_blank" rel="nofollow noopener noreferrer">TypeBot</a><span class="host">typebot.com</span></li>
+<li><a href="https://x.com/discord/status/1006178587731550208" target="_blank" rel="nofollow noopener noreferrer">violates</a><span class="host">x.com</span></li>
+<li><a href="https://screenity.io/" target="_blank" rel="nofollow noopener noreferrer">Screenity</a><span class="host">screenity.io</span></li>
+<li><a href="https://www.collaboraoffice.com/" target="_blank" rel="nofollow noopener noreferrer">Collabora Office</a><span class="host">collaboraoffice.com</span></li>
+<li><a href="https://www.kartkrew.org/" target="_blank" rel="nofollow noopener noreferrer">Dr. Robotnik&#x27;s Ring Racers</a><span class="host">kartkrew.org</span></li>
+<li><a href="https://git-annex.branchable.com/" target="_blank" rel="nofollow noopener noreferrer">git-annex</a><span class="host">git-annex.branchable.com</span></li>
+<li><a href="https://www.gnu.org/software/emacs/" target="_blank" rel="nofollow noopener noreferrer">GNU Emacs</a><span class="host">gnu.org</span></li>
+<li><a href="https://lineage.microg.org/" target="_blank" rel="nofollow noopener noreferrer">LineageOS for microG</a><span class="host">lineage.microg.org</span></li>
+<li><a href="https://accrescent.app/" target="_blank" rel="nofollow noopener noreferrer">Accrescent</a><span class="host">accrescent.app</span></li>
+<li><a href="https://aspia.org/" target="_blank" rel="nofollow noopener noreferrer">Aspia</a><span class="host">aspia.org</span></li>
+<li><a href="https://bentopdf.com/" target="_blank" rel="nofollow noopener noreferrer">BentoPDF</a><span class="host">bentopdf.com</span></li>
+<li><a href="https://brie.fi/ng" target="_blank" rel="nofollow noopener noreferrer">Briefing</a><span class="host">brie.fi</span></li>
+<li><a href="https://www.collaboraonline.com/collabora-office/" target="_blank" rel="nofollow noopener noreferrer">Collabora Office</a><span class="host">collaboraonline.com</span></li>
+<li><a href="https://www.comfy.org/" target="_blank" rel="nofollow noopener noreferrer">ComfyUI</a><span class="host">comfy.org</span></li>
+<li><a href="https://www.crowdsec.net/" target="_blank" rel="nofollow noopener noreferrer">CrowdSec</a><span class="host">crowdsec.net</span></li>
+<li><a href="https://dawarich.app" target="_blank" rel="nofollow noopener noreferrer">Dawarich</a><span class="host">dawarich.app</span></li>
+<li><a href="https://deskreen.com/" target="_blank" rel="nofollow noopener noreferrer">Deskreen</a><span class="host">deskreen.com</span></li>
+<li><a href="https://droidify.app/" target="_blank" rel="nofollow noopener noreferrer">Droid-ify</a><span class="host">droidify.app</span></li>
+<li><a href="https://excalidraw.com/" target="_blank" rel="nofollow noopener noreferrer">Excalidraw</a><span class="host">excalidraw.com</span></li>
+<li><a href="https://fmd-foss.org/" target="_blank" rel="nofollow noopener noreferrer">Find My Device</a><span class="host">fmd-foss.org</span></li>
+<li><a href="https://florisboard.org/" target="_blank" rel="nofollow noopener noreferrer">FlorisBoard</a><span class="host">florisboard.org</span></li>
+<li><a href="https://ghostfol.io" target="_blank" rel="nofollow noopener noreferrer">Ghostfolio</a><span class="host">ghostfol.io</span></li>
+<li><a href="https://about.gitea.com/" target="_blank" rel="nofollow noopener noreferrer">Gitea</a><span class="host">about.gitea.com</span></li>
+<li><a href="https://godotengine.org/" target="_blank" rel="nofollow noopener noreferrer">Godot Engine</a><span class="host">godotengine.org</span></li>
+<li><a href="https://gpslogger.app/" target="_blank" rel="nofollow noopener noreferrer">GPSLogger</a><span class="host">gpslogger.app</span></li>
+<li><a href="https://hetty.xyz/" target="_blank" rel="nofollow noopener noreferrer">Hetty</a><span class="host">hetty.xyz</span></li>
+<li><a href="https://rimgo.codeberg.page/" target="_blank" rel="nofollow noopener noreferrer">instances</a><span class="host">rimgo.codeberg.page</span></li>
+<li><a href="https://isso-comments.de" target="_blank" rel="nofollow noopener noreferrer">Isso</a><span class="host">isso-comments.de</span></li>
+<li><a href="https://jan.ai/" target="_blank" rel="nofollow noopener noreferrer">Jan</a><span class="host">jan.ai</span></li>
+<li><a href="https://justdeleteme.xyz/" target="_blank" rel="nofollow noopener noreferrer">JustDeleteMe</a><span class="host">justdeleteme.xyz</span></li>
+<li><a href="https://karakeep.com/" target="_blank" rel="nofollow noopener noreferrer">Karakeep</a><span class="host">karakeep.com</span></li>
+<li><a href="https://kutt.to/" target="_blank" rel="nofollow noopener noreferrer">Kutt</a><span class="host">kutt.to</span></li>
+<li><a href="https://kvaesitso.mm20.de/" target="_blank" rel="nofollow noopener noreferrer">Kvaesitso</a><span class="host">kvaesitso.mm20.de</span></li>
+<li><a href="https://legcord.app" target="_blank" rel="nofollow noopener noreferrer">Legcord</a><span class="host">legcord.app</span></li>
+<li><a href="https://libreelec.tv/" target="_blank" rel="nofollow noopener noreferrer">LibreELEC</a><span class="host">libreelec.tv</span></li>
+<li><a href="https://libresprite.github.io/" target="_blank" rel="nofollow noopener noreferrer">LibreSprite</a><span class="host">libresprite.github.io</span></li>
+<li><a href="https://libretube.dev/" target="_blank" rel="nofollow noopener noreferrer">LibreTube</a><span class="host">libretube.dev</span></li>
+<li><a href="https://localai.io/" target="_blank" rel="nofollow noopener noreferrer">LocalAI</a><span class="host">localai.io</span></li>
+<li><a href="https://greasyfork.org/en/scripts/31088-morecaptcha" target="_blank" rel="nofollow noopener noreferrer">MoreCAPTCHA</a><span class="host">greasyfork.org</span></li>
+<li><a href="https://lockbook.net" target="_blank" rel="nofollow noopener noreferrer">Lockbook</a><span class="host">lockbook.net</span></li>
+<li><a href="https://joinmbin.org/" target="_blank" rel="nofollow noopener noreferrer">Mbin</a><span class="host">joinmbin.org</span></li>
+<li><a href="https://docs.breezewiki.com/Links.html" target="_blank" rel="nofollow noopener noreferrer">mirrors</a><span class="host">docs.breezewiki.com</span></li>
+<li><a href="https://moonshine.ai/" target="_blank" rel="nofollow noopener noreferrer">Moonshine</a><span class="host">moonshine.ai</span></li>
+<li><a href="https://motrix.app" target="_blank" rel="nofollow noopener noreferrer">Motrix</a><span class="host">motrix.app</span></li>
+<li><a href="https://www.xmox.nl" target="_blank" rel="nofollow noopener noreferrer">Mox</a><span class="host">xmox.nl</span></li>
+<li><a href="https://www.myexpenses.mobi/" target="_blank" rel="nofollow noopener noreferrer">My Expenses</a><span class="host">myexpenses.mobi</span></li>
+<li><a href="https://neomutt.org/" target="_blank" rel="nofollow noopener noreferrer">NeoMutt</a><span class="host">neomutt.org</span></li>
+<li><a href="https://obtainium.imranr.dev/" target="_blank" rel="nofollow noopener noreferrer">Obtainium</a><span class="host">obtainium.imranr.dev</span></li>
+<li><a href="https://ollama.com/" target="_blank" rel="nofollow noopener noreferrer">ollama</a><span class="host">ollama.com</span></li>
+<li><a href="https://opencode.ai/" target="_blank" rel="nofollow noopener noreferrer">OpenCode</a><span class="host">opencode.ai</span></li>
+<li><a href="https://opencut.app/" target="_blank" rel="nofollow noopener noreferrer">OpenCut</a><span class="host">opencut.app</span></li>
+<li><a href="https://opentabletdriver.net/" target="_blank" rel="nofollow noopener noreferrer">OpenTabletDriver</a><span class="host">opentabletdriver.net</span></li>
+<li><a href="https://opentracksapp.com/" target="_blank" rel="nofollow noopener noreferrer">OpenTracks</a><span class="host">opentracksapp.com</span></li>
+<li><a href="https://openwhispr.com/" target="_blank" rel="nofollow noopener noreferrer">OpenWhispr</a><span class="host">openwhispr.com</span></li>
+<li><a href="https://mullvad.net/en/" target="_blank" rel="nofollow noopener noreferrer">Mullvad</a><span class="host">mullvad.net</span></li>
+<li><a href="https://owncast.online/" target="_blank" rel="nofollow noopener noreferrer">Owncast</a><span class="host">owncast.online</span></li>
+<li><a href="https://mullvad.net" target="_blank" rel="nofollow noopener noreferrer">Mullvad</a><span class="host">mullvad.net</span></li>
+<li><a href="https://pasteguard.com/" target="_blank" rel="nofollow noopener noreferrer">PasteGuard</a><span class="host">pasteguard.com</span></li>
+<li><a href="https://git.pleroma.social/pleroma/pleroma" target="_blank" rel="nofollow noopener noreferrer">Pleroma</a><span class="host">git.pleroma.social</span></li>
+<li><a href="https://joinplu.me/" target="_blank" rel="nofollow noopener noreferrer">Plume</a><span class="host">joinplu.me</span></li>
+<li><a href="https://prismlauncher.org/" target="_blank" rel="nofollow noopener noreferrer">Prism Launcher</a><span class="host">prismlauncher.org</span></li>
+<li><a href="https://privatecaptcha.com" target="_blank" rel="nofollow noopener noreferrer">Private Captcha</a><span class="host">privatecaptcha.com</span></li>
+<li><a href="https://searx.space/" target="_blank" rel="nofollow noopener noreferrer">public instance</a><span class="host">searx.space</span></li>
+<li><a href="https://docs.invidious.io/instances/" target="_blank" rel="nofollow noopener noreferrer">public instances</a><span class="host">docs.invidious.io</span></li>
+<li><a href="https://rinigus.github.io/pure-maps/" target="_blank" rel="nofollow noopener noreferrer">Pure Maps</a><span class="host">rinigus.github.io</span></li>
+<li><a href="https://robertheaton.com/2020/02/05/wacom-drawing-tablets-track-name-of-every-application-you-open/" target="_blank" rel="nofollow noopener noreferrer">report every app you open</a><span class="host">robertheaton.com</span></li>
+<li><a href="https://pluja.github.io/sasayaki/" target="_blank" rel="nofollow noopener noreferrer">Sasayaki</a><span class="host">pluja.github.io</span></li>
+<li><a href="https://mysterium.network/" target="_blank" rel="nofollow noopener noreferrer">Mysterium Network</a><span class="host">mysterium.network</span></li>
+<li><a href="https://docs.searxng.org/" target="_blank" rel="nofollow noopener noreferrer">SearXNG</a><span class="host">docs.searxng.org</span></li>
+<li><a href="https://simpmusic.org/" target="_blank" rel="nofollow noopener noreferrer">SimpMusic</a><span class="host">simpmusic.org</span></li>
+<li><a href="https://snapdrop.me" target="_blank" rel="nofollow noopener noreferrer">Snapdrop</a><span class="host">snapdrop.me</span></li>
+<li><a href="https://socialstream.ninja/" target="_blank" rel="nofollow noopener noreferrer">Social Stream Ninja</a><span class="host">socialstream.ninja</span></li>
+<li><a href="https://speaches.ai/" target="_blank" rel="nofollow noopener noreferrer">Speaches</a><span class="host">speaches.ai</span></li>
+<li><a href="https://github.com/M66B/NetGuard/" target="_blank" rel="nofollow noopener noreferrer">NetGuard</a><span class="host">github.com</span></li>
+<li><a href="https://spliit.app" target="_blank" rel="nofollow noopener noreferrer">Spliit</a><span class="host">spliit.app</span></li>
+<li><a href="https://spotube.cc/" target="_blank" rel="nofollow noopener noreferrer">Spotube</a><span class="host">spotube.cc</span></li>
+<li><a href="https://sure.am" target="_blank" rel="nofollow noopener noreferrer">Sure</a><span class="host">sure.am</span></li>
+<li><a href="https://sync-in.com/" target="_blank" rel="nofollow noopener noreferrer">Sync-in</a><span class="host">sync-in.com</span></li>
+<li><a href="https://www.tabbyml.com/" target="_blank" rel="nofollow noopener noreferrer">Tabby</a><span class="host">tabbyml.com</span></li>
+<li><a href="https://vencord.dev" target="_blank" rel="nofollow noopener noreferrer">Vencord</a><span class="host">vencord.dev</span></li>
+<li><a href="https://veracrypt.io/en/Home.html" target="_blank" rel="nofollow noopener noreferrer">VeraCrypt</a><span class="host">veracrypt.io</span></li>
+<li><a href="https://wire.com/" target="_blank" rel="nofollow noopener noreferrer">Wire</a><span class="host">wire.com</span></li>
+<li><a href="https://xtremedownloadmanager.com/" target="_blank" rel="nofollow noopener noreferrer">Xtreme Download Manager</a><span class="host">xtremedownloadmanager.com</span></li>
+<li><a href="https://www.zoocode.dev/" target="_blank" rel="nofollow noopener noreferrer">Zoo Code</a><span class="host">zoocode.dev</span></li>
+<li><a href="https://voiceinput.futo.org/" target="_blank" rel="nofollow noopener noreferrer">FUTO Voice Input</a><span class="host">voiceinput.futo.org</span></li>
+<li><a href="https://useminutes.app/" target="_blank" rel="nofollow noopener noreferrer">Minutes</a><span class="host">useminutes.app</span></li>
+<li><a href="https://noscript.net/getit" target="_blank" rel="nofollow noopener noreferrer">NoScript</a><span class="host">noscript.net</span></li>
+<li><a href="https://www.infradead.org/openconnect/" target="_blank" rel="nofollow noopener noreferrer">OpenConnect</a><span class="host">infradead.org</span></li>
+<li><a href="https://openvpn.net/" target="_blank" rel="nofollow noopener noreferrer">OpenVPN</a><span class="host">openvpn.net</span></li>
+<li><a href="https://www.getoutline.org/" target="_blank" rel="nofollow noopener noreferrer">Outline by Alphabet</a><span class="host">getoutline.org</span></li>
+<li><a href="https://peervpn.net/" target="_blank" rel="nofollow noopener noreferrer">PeerVPN</a><span class="host">peervpn.net</span></li>
+<li><a href="https://www.zenz-solutions.de/personaldnsfilter-wp/" target="_blank" rel="nofollow noopener noreferrer">personalDNSfilter</a><span class="host">zenz-solutions.de</span></li>
+<li><a href="https://pi-hole.net/" target="_blank" rel="nofollow noopener noreferrer">Pi-hole</a><span class="host">pi-hole.net</span></li>
+<li><a href="https://prism-break.org/en/" target="_blank" rel="nofollow noopener noreferrer">Prism Break</a><span class="host">prism-break.org</span></li>
+<li><a href="https://pritunl.com/" target="_blank" rel="nofollow noopener noreferrer">Pritunl</a><span class="host">pritunl.com</span></li>
+<li><a href="https://privacybadger.org/" target="_blank" rel="nofollow noopener noreferrer">Privacy Badger</a><span class="host">privacybadger.org</span></li>
+<li><a href="https://privacy.com/" target="_blank" rel="nofollow noopener noreferrer">Privacy.com</a><span class="host">privacy.com</span></li>
+<li><a href="https://www.privacyguides.org/en/" target="_blank" rel="nofollow noopener noreferrer">PrivacyGuides.org</a><span class="host">privacyguides.org</span></li>
+<li><a href="https://www.privacytools.io/" target="_blank" rel="nofollow noopener noreferrer">PrivacyTools.io</a><span class="host">privacytools.io</span></li>
+<li><a href="https://protonvpn.com" target="_blank" rel="nofollow noopener noreferrer">Proton VPN</a><span class="host">protonvpn.com</span></li>
+<li><a href="https://psono.com/" target="_blank" rel="nofollow noopener noreferrer">Psono</a><span class="host">psono.com</span></li>
+<li><a href="https://github.com/celzero/rethink-app" target="_blank" rel="nofollow noopener noreferrer">RethinkDNS + Firewall</a><span class="host">github.com</span></li>
+<li><a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en" target="_blank" rel="nofollow noopener noreferrer">ScriptSafe</a><span class="host">chrome.google.com</span></li>
+<li><a href="https://shadowsocks.org/" target="_blank" rel="nofollow noopener noreferrer">Shadowsocks</a><span class="host">shadowsocks.org</span></li>
+<li><a href="https://github.com/sshuttle/sshuttle" target="_blank" rel="nofollow noopener noreferrer">sshuttle</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/basil00/TorWall" target="_blank" rel="nofollow noopener noreferrer">Tallow</a><span class="host">github.com</span></li>
+<li><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en" target="_blank" rel="nofollow noopener noreferrer">TamperMonkey</a><span class="host">chrome.google.com</span></li>
+<li><a href="https://tinc-vpn.org/" target="_blank" rel="nofollow noopener noreferrer">tinc</a><span class="host">tinc-vpn.org</span></li>
+<li><a href="https://www.torproject.org/" target="_blank" rel="nofollow noopener noreferrer">Tor</a><span class="host">torproject.org</span></li>
+<li><a href="https://github.com/TrackerControl/tracker-control-android" target="_blank" rel="nofollow noopener noreferrer">TrackerControl</a><span class="host">github.com</span></li>
+<li><a href="https://tuta.com/" target="_blank" rel="nofollow noopener noreferrer">Tuta</a><span class="host">tuta.com</span></li>
+<li><a href="https://github.com/gorhill/uBlock" target="_blank" rel="nofollow noopener noreferrer">uBlock Origin</a><span class="host">github.com</span></li>
+<li><a href="https://violentmonkey.github.io/" target="_blank" rel="nofollow noopener noreferrer">Violentmonkey</a><span class="host">violentmonkey.github.io</span></li>
+<li><a href="https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia?hl=en" target="_blank" rel="nofollow noopener noreferrer">WebRTC Network Limiter</a><span class="host">chrome.google.com</span></li>
+<li><a href="https://windscribe.com/" target="_blank" rel="nofollow noopener noreferrer">Windscribe</a><span class="host">windscribe.com</span></li>
+<li><a href="https://www.wireguard.com/" target="_blank" rel="nofollow noopener noreferrer">WireGuard VPN</a><span class="host">wireguard.com</span></li>
+<li><a href="https://zeronet.io/" target="_blank" rel="nofollow noopener noreferrer">Zeronet</a><span class="host">zeronet.io</span></li>
+<li><a href="https://www.zerotier.com" target="_blank" rel="nofollow noopener noreferrer">ZeroTier</a><span class="host">zerotier.com</span></li>
+<li><a href="https://1.1.1.1/" target="_blank" rel="nofollow noopener noreferrer">1.1.1.1</a><span class="host">1.1.1.1</span></li>
+<li><a href="https://10minutemail.net/" target="_blank" rel="nofollow noopener noreferrer">10 Minute Mail</a><span class="host">10minutemail.net</span></li>
+<li><a href="https://github.com/TemporalAgent7/awesome-windows-privacy" target="_blank" rel="nofollow noopener noreferrer">Awesome Windows Privacy</a><span class="host">github.com</span></li>
+<li><a href="https://ssd.eff.org/module/choosing-vpn-thats-right-you" target="_blank" rel="nofollow noopener noreferrer">Choosing the VPN That&#x27;s Right for You</a><span class="host">ssd.eff.org</span></li>
+<li><a href="https://www.dashlane.com/" target="_blank" rel="nofollow noopener noreferrer">Dashlane</a><span class="host">dashlane.com</span></li>
+<li><a href="https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/movie-web-sources.md" target="_blank" rel="nofollow noopener noreferrer">extension</a><span class="host">github.com</span></li>
+<li><a href="https://keepass.info/" target="_blank" rel="nofollow noopener noreferrer">KeePass</a><span class="host">keepass.info</span></li>
+<li><a href="https://github.com/PhilippC/keepass2android" target="_blank" rel="nofollow noopener noreferrer">Keepass2Android</a><span class="host">github.com</span></li>
+<li><a href="https://keepassium.com/" target="_blank" rel="nofollow noopener noreferrer">KeePassium</a><span class="host">keepassium.com</span></li>
+<li><a href="https://www.passwordstore.org/" target="_blank" rel="nofollow noopener noreferrer">Pass</a><span class="host">passwordstore.org</span></li>
+<li><a href="https://ssd.eff.org/" target="_blank" rel="nofollow noopener noreferrer">Surveillance Self-Defense</a><span class="host">ssd.eff.org</span></li>
+<li><a href="https://wiki.archlinux.org/title/VPN_over_SSH" target="_blank" rel="nofollow noopener noreferrer">VPN over SSH</a><span class="host">wiki.archlinux.org</span></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/keepass-tusk" target="_blank" rel="nofollow noopener noreferrer">Tusk</a><span class="host">addons.mozilla.org</span></li>
+</ul>
+</main>
+<footer>
+  <p>Outbound links open other websites that Sakura’s Hub does not run. Read the <a href="../disclaimer">disclaimer</a> and use an ad blocker. Adult and flagged sites are not listed on this page.</p>
+</footer>
+</body>
+</html>

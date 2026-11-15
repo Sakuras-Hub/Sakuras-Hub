@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music sites: free list with uptime checks · Sakura’s Hub</title>
+<meta name="description" content="525 music sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta name="theme-color" content="#06060d">
+<link rel="canonical" href="https://sakuras-hub.github.io/Sakuras-Hub/sections/music">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../assets/icon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sakura’s Hub">
+<meta property="og:title" content="Music sites: free list with uptime checks · Sakura’s Hub">
+<meta property="og:description" content="525 music sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.">
+<meta property="og:url" content="https://sakuras-hub.github.io/Sakuras-Hub/sections/music">
+<meta property="og:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sakuras-hub.github.io/Sakuras-Hub/assets/og-directory.png">
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url(../assets/fonts/inter-latin.woff2) format('woff2')}
+:root{color-scheme:dark light;--bg:#06060d;--surface:#171326;--text:#e8eaf6;--muted:#9e94c0;--accent:#ff9ec4;--border:rgba(158,148,192,.22)}
+@media (prefers-color-scheme:light){:root{--bg:#f7f5fb;--surface:#ffffff;--text:#1d1830;--muted:#6a5f8c;--accent:#c01f75;--border:rgba(80,60,140,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:var(--accent)}
+header.top{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto;padding:18px 20px}
+header.top .brand{font-weight:800;text-decoration:none;color:var(--text)}
+header.top nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+main{max-width:960px;margin:0 auto;padding:8px 20px 56px}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:8px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.cta{display:inline-block;margin:4px 0 22px;padding:10px 18px;border-radius:999px;background:var(--accent);color:#16101f;font-weight:700;text-decoration:none}
+ul.sites{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+ul.sites li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 12px;min-width:0}
+ul.sites a{font-weight:600;text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.sites a:hover{text-decoration:underline}
+ul.sites .host{display:block;color:var(--muted);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ul.cats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+ul.cats li a{display:flex;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--text);font-weight:600}
+ul.cats li a span{color:var(--muted);font-weight:400}
+footer{max-width:960px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:.85rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "Music sites", "description": "525 music sites, picked by hand and checked for uptime. Open the live directory to search, save favorites and see which sites are up.", "url": "https://sakuras-hub.github.io/Sakuras-Hub/sections/music", "isPartOf": {"@type": "WebSite", "name": "Sakura’s Hub", "url": "https://sakuras-hub.github.io/Sakuras-Hub/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sakura’s Hub", "item": "https://sakuras-hub.github.io/Sakuras-Hub/"}, {"@type": "ListItem", "position": 2, "name": "Sections", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/"}, {"@type": "ListItem", "position": 3, "name": "Music", "item": "https://sakuras-hub.github.io/Sakuras-Hub/sections/music"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../">Sakura’s Hub</a>
+  <nav aria-label="Main"><a href="../directory">Directory</a><a href="../products">Products</a><a href="../about">About</a><a href="../donate">Support</a></nav>
+</header>
+<main>
+<h1>🎵 Music sites</h1>
+<p class="sub">525 sites, hand-picked and checked for uptime. The live directory adds search, favorites and up/down status.</p>
+<a class="cta" href="../directory?cat=music">Open Music in the live directory</a>
+<ul class="sites">
+<li><a href="https://kara.moe/" target="_blank" rel="nofollow noopener noreferrer">Karaoke Mugen</a><span class="host">kara.moe</span></li>
+<li><a href="https://www.animesonglyrics.com/" target="_blank" rel="nofollow noopener noreferrer">Anime Song Lyrics</a><span class="host">animesonglyrics.com</span></li>
+<li><a href="https://www.lyrical-nonsense.com/global/" target="_blank" rel="nofollow noopener noreferrer">Lyrical Nonsense</a><span class="host">lyrical-nonsense.com</span></li>
+<li><a href="https://animethemes.moe/" target="_blank" rel="nofollow noopener noreferrer">AnimeThemes</a><span class="host">animethemes.moe</span></li>
+<li><a href="https://anison.online/en/" target="_blank" rel="nofollow noopener noreferrer">Anime Song Online</a><span class="host">anison.online</span></li>
+<li><a href="https://anisongdb.com/" target="_blank" rel="nofollow noopener noreferrer">AnisongDB</a><span class="host">anisongdb.com</span></li>
+<li><a href="https://listen.moe/" target="_blank" rel="nofollow noopener noreferrer">listen.moe</a><span class="host">listen.moe</span></li>
+<li><a href="https://r-a-d.io/" target="_blank" rel="nofollow noopener noreferrer">R/a/dio</a><span class="host">r-a-d.io</span></li>
+<li><a href="https://www.sittingonclouds.net/" target="_blank" rel="nofollow noopener noreferrer">Sitting on Clouds</a><span class="host">sittingonclouds.net</span></li>
+<li><a href="https://okamimiost.com/" target="_blank" rel="nofollow noopener noreferrer">OkamimiOST</a><span class="host">okamimiost.com</span></li>
+<li><a href="https://alist.thdisc.tk/" target="_blank" rel="nofollow noopener noreferrer">TLMC</a><span class="host">alist.thdisc.tk</span></li>
+<li><a href="https://touhou.kuukunen.net/" target="_blank" rel="nofollow noopener noreferrer">Touhou Player</a><span class="host">touhou.kuukunen.net</span></li>
+<li><a href="https://musicdex.org/" target="_blank" rel="nofollow noopener noreferrer">Musicdex</a><span class="host">musicdex.org</span></li>
+<li><a href="https://allmanga.to/music" target="_blank" rel="nofollow noopener noreferrer">AllManga Music</a><span class="host">allmanga.to</span></li>
+<li><a href="https://openings.moe/" target="_blank" rel="nofollow noopener noreferrer">Openings.moe</a><span class="host">openings.moe</span></li>
+<li><a href="https://www.squidify.org/" target="_blank" rel="nofollow noopener noreferrer">Squidify</a><span class="host">squidify.org</span></li>
+<li><a href="https://www.jpopsingles.eu/" target="_blank" rel="nofollow noopener noreferrer">JPopSingles</a><span class="host">jpopsingles.eu</span></li>
+<li><a href="https://yggdrasilradio.com/" target="_blank" rel="nofollow noopener noreferrer">Yggdrasil Radio</a><span class="host">yggdrasilradio.com</span></li>
+<li><a href="https://radioanime24.pl/" target="_blank" rel="nofollow noopener noreferrer">Radio Anime24</a><span class="host">radioanime24.pl</span></li>
+<li><a href="https://gensokyoradio.net/" target="_blank" rel="nofollow noopener noreferrer">Gensokyo Radio</a><span class="host">gensokyoradio.net</span></li>
+<li><a href="http://onepiecetracklist.com/" target="_blank" rel="nofollow noopener noreferrer">One Piece Tracklist</a><span class="host">onepiecetracklist.com</span></li>
+<li><a href="https://aniplaylist.com/" target="_blank" rel="nofollow noopener noreferrer">AniPlaylist</a><span class="host">aniplaylist.com</span></li>
+<li><a href="https://manga-zip.is/archives/category/music" target="_blank" rel="nofollow noopener noreferrer">MangaZip Music</a><span class="host">manga-zip.is</span></li>
+<li><a href="https://mikudb.moe/" target="_blank" rel="nofollow noopener noreferrer">MikuDB</a><span class="host">mikudb.moe</span></li>
+<li><a href="https://mkissa.to/search/music" target="_blank" rel="nofollow noopener noreferrer">MKissa Music</a><span class="host">mkissa.to</span></li>
+<li><a href="https://www.utatime.com/global/" target="_blank" rel="nofollow noopener noreferrer">UtaTime</a><span class="host">utatime.com</span></li>
+<li><a href="https://1001albumsgenerator.com/" target="_blank" rel="nofollow noopener noreferrer">1001 Albums Generator</a><span class="host">1001albumsgenerator.com</span></li>
+<li><a href="https://aboutdiscowithlove.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">aboutdisco</a><span class="host">aboutdiscowithlove.blogspot.com</span></li>
+<li><a href="https://www.accuradio.com/" target="_blank" rel="nofollow noopener noreferrer">AccuRadio</a><span class="host">accuradio.com</span></li>
+<li><a href="https://www.accuraterip.com/" target="_blank" rel="nofollow noopener noreferrer">AccurateRip</a><span class="host">accuraterip.com</span></li>
+<li><a href="https://album-selector-chi.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">Album Roulette</a><span class="host">album-selector-chi.vercel.app</span></li>
+<li><a href="https://alterportal.net/" target="_blank" rel="nofollow noopener noreferrer">AlterPortal</a><span class="host">alterportal.net</span></li>
+<li><a href="https://ambicular.com/" target="_blank" rel="nofollow noopener noreferrer">Ambicular</a><span class="host">ambicular.com</span></li>
+<li><a href="https://ambieapp.com/" target="_blank" rel="nofollow noopener noreferrer">Ambie</a><span class="host">ambieapp.com</span></li>
+<li><a href="https://www.ambient-mixer.com/" target="_blank" rel="nofollow noopener noreferrer">Ambient Mixer</a><span class="host">ambient-mixer.com</span></li>
+<li><a href="https://ambientsleepingpill.com/" target="_blank" rel="nofollow noopener noreferrer">Ambient Sleeping Pill</a><span class="host">ambientsleepingpill.com</span></li>
+<li><a href="https://ambiph.one/" target="_blank" rel="nofollow noopener noreferrer">ambiphone</a><span class="host">ambiph.one</span></li>
+<li><a href="https://amp3.cc/" target="_blank" rel="nofollow noopener noreferrer">AMP3</a><span class="host">amp3.cc</span></li>
+<li><a href="https://antra.hoshi.cfd/" target="_blank" rel="nofollow noopener noreferrer">Antra Web</a><span class="host">antra.hoshi.cfd</span></li>
+<li><a href="https://artistgrid.cx/" target="_blank" rel="nofollow noopener noreferrer">ArtistGrid</a><span class="host">artistgrid.cx</span></li>
+<li><a href="https://artistpath.cc/" target="_blank" rel="nofollow noopener noreferrer">ArtistPath</a><span class="host">artistpath.cc</span></li>
+<li><a href="https://cse.google.com/cse?cx=006516753008110874046:ibmyuhh72io" target="_blank" rel="nofollow noopener noreferrer">Audio Download CSE</a><span class="host">cse.google.com</span></li>
+<li><a href="https://cse.google.com/cse?cx=006516753008110874046:v75cyb4ci55" target="_blank" rel="nofollow noopener noreferrer">Audio Torrent CSE</a><span class="host">cse.google.com</span></li>
+<li><a href="https://audiomack.com/" target="_blank" rel="nofollow noopener noreferrer">Audiomack</a><span class="host">audiomack.com</span></li>
+<li><a href="https://audionautix.com/" target="_blank" rel="nofollow noopener noreferrer">AudionautiX</a><span class="host">audionautix.com</span></li>
+<li><a href="https://audiophile.fm/" target="_blank" rel="nofollow noopener noreferrer">Audiophile</a><span class="host">audiophile.fm</span></li>
+<li><a href="https://audius.co/" target="_blank" rel="nofollow noopener noreferrer">Audius</a><span class="host">audius.co</span></li>
+<li><a href="https://github.com/jnguyen1098/awesome-lastfm" target="_blank" rel="nofollow noopener noreferrer">Awesome Last.fm</a><span class="host">github.com</span></li>
+<li><a href="https://bsky.app/profile/feed.ballsack.tv" target="_blank" rel="nofollow noopener noreferrer">Ballsack TV</a><span class="host">bsky.app</span></li>
+<li><a href="https://bandcamp.com/discover/free-music" target="_blank" rel="nofollow noopener noreferrer">Bandcamp</a><span class="host">bandcamp.com</span></li>
+<li><a href="https://github.com/iheanyi/bandcamp-dl" target="_blank" rel="nofollow noopener noreferrer">BandCamp-DL</a><span class="host">github.com</span></li>
+<li><a href="https://www.bbc.com/audio" target="_blank" rel="nofollow noopener noreferrer">BBC Audio</a><span class="host">bbc.com</span></li>
+<li><a href="https://www.bbc.co.uk/sounds/podcasts" target="_blank" rel="nofollow noopener noreferrer">BBC Podcasts</a><span class="host">bbc.co.uk</span></li>
+<li><a href="https://beatboss.thevolecitor.qzz.io/" target="_blank" rel="nofollow noopener noreferrer">BeatBoss</a><span class="host">beatboss.thevolecitor.qzz.io</span></li>
+<li><a href="https://www.bensound.com/" target="_blank" rel="nofollow noopener noreferrer">BenSound</a><span class="host">bensound.com</span></li>
+<li><a href="https://alirezakj.com/bsc/" target="_blank" rel="nofollow noopener noreferrer">BetterSoundcloud</a><span class="host">alirezakj.com</span></li>
+<li><a href="https://blacktorrent.ru/" target="_blank" rel="nofollow noopener noreferrer">BlackTorrent</a><span class="host">blacktorrent.ru</span></li>
+<li><a href="https://bootleg.fm/" target="_blank" rel="nofollow noopener noreferrer">Bootleg.fm</a><span class="host">bootleg.fm</span></li>
+<li><a href="https://www.braggoscope.com/" target="_blank" rel="nofollow noopener noreferrer">Braggoscope</a><span class="host">braggoscope.com</span></li>
+<li><a href="https://www.broadcastify.com/" target="_blank" rel="nofollow noopener noreferrer">Broadcastify</a><span class="host">broadcastify.com</span></li>
+<li><a href="https://burningtheground.net/" target="_blank" rel="nofollow noopener noreferrer">BurningTheGround</a><span class="host">burningtheground.net</span></li>
+<li><a href="http://www.cadenza.org/" target="_blank" rel="nofollow noopener noreferrer">Cadenza</a><span class="host">cadenza.org</span></li>
+<li><a href="https://www.campus-fm.com/" target="_blank" rel="nofollow noopener noreferrer">Campus FM</a><span class="host">campus-fm.com</span></li>
+<li><a href="https://canna.to/?lang=eng" target="_blank" rel="nofollow noopener noreferrer">Canna</a><span class="host">canna.to</span></li>
+<li><a href="https://canna-power.to" target="_blank" rel="nofollow noopener noreferrer">CannaPower</a><span class="host">canna-power.to</span></li>
+<li><a href="https://www.canvasdownloader.com/" target="_blank" rel="nofollow noopener noreferrer">Canvas Downloader</a><span class="host">canvasdownloader.com</span></li>
+<li><a href="http://www.effectgames.com/demos/canvascycle/" target="_blank" rel="nofollow noopener noreferrer">CanvasCycle</a><span class="host">effectgames.com</span></li>
+<li><a href="https://github.com/xgi/castero" target="_blank" rel="nofollow noopener noreferrer">castero</a><span class="host">github.com</span></li>
+<li><a href="https://ccmixter.org/" target="_blank" rel="nofollow noopener noreferrer">ccMixter</a><span class="host">ccmixter.org</span></li>
+<li><a href="https://www.chartmymusic.com/spotify/" target="_blank" rel="nofollow noopener noreferrer">Chart My Music</a><span class="host">chartmymusic.com</span></li>
+<li><a href="https://www.chartmymusic.com/lastfm/" target="_blank" rel="nofollow noopener noreferrer">Chart My Music</a><span class="host">chartmymusic.com</span></li>
+<li><a href="https://app.chillhop.com/" target="_blank" rel="nofollow noopener noreferrer">Chillhop</a><span class="host">app.chillhop.com</span></li>
+<li><a href="http://www.chillouts.com/" target="_blank" rel="nofollow noopener noreferrer">ChillOuts</a><span class="host">chillouts.com</span></li>
+<li><a href="https://chiptune.app/" target="_blank" rel="nofollow noopener noreferrer">Chip Player JS</a><span class="host">chiptune.app</span></li>
+<li><a href="https://www.chosic.com/free-music/all/" target="_blank" rel="nofollow noopener noreferrer">Chosic</a><span class="host">chosic.com</span></li>
+<li><a href="https://www.chosic.com/" target="_blank" rel="nofollow noopener noreferrer">Chosic</a><span class="host">chosic.com</span></li>
+<li><a href="https://rabanetecomquiabo.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">chucrute com quiabo</a><span class="host">rabanetecomquiabo.blogspot.com</span></li>
+<li><a href="https://cirrusretro.com/" target="_blank" rel="nofollow noopener noreferrer">Cirrus Retro</a><span class="host">cirrusretro.com</span></li>
+<li><a href="https://citizenfreak.com/" target="_blank" rel="nofollow noopener noreferrer">CitizenFreak</a><span class="host">citizenfreak.com</span></li>
+<li><a href="https://www.cityhop.cafe/" target="_blank" rel="nofollow noopener noreferrer">CityHop</a><span class="host">cityhop.cafe</span></li>
+<li><a href="https://classical-music-download.com/" target="_blank" rel="nofollow noopener noreferrer">Classical Music Download</a><span class="host">classical-music-download.com</span></li>
+<li><a href="https://classicalmusiconly.com/" target="_blank" rel="nofollow noopener noreferrer">Classical Music Only</a><span class="host">classicalmusiconly.com</span></li>
+<li><a href="https://hamishlang.github.io/clickbath/" target="_blank" rel="nofollow noopener noreferrer">Click Bath</a><span class="host">hamishlang.github.io</span></li>
+<li><a href="https://hostrider.com/" target="_blank" rel="nofollow noopener noreferrer">Coding Cat</a><span class="host">hostrider.com</span></li>
+<li><a href="https://coreradio.online/" target="_blank" rel="nofollow noopener noreferrer">Core Radio</a><span class="host">coreradio.online</span></li>
+<li><a href="https://coreradio.online/listen" target="_blank" rel="nofollow noopener noreferrer">CoreRadio</a><span class="host">coreradio.online</span></li>
+<li><a href="https://josephbarulho.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Cova-Argh!!!!</a><span class="host">josephbarulho.blogspot.com</span></li>
+<li><a href="https://daftpunk.cafe/" target="_blank" rel="nofollow noopener noreferrer">Daft Punk Cafe</a><span class="host">daftpunk.cafe</span></li>
+<li><a href="https://www.deadpulpit.com/" target="_blank" rel="nofollow noopener noreferrer">DeadPulpit</a><span class="host">deadpulpit.com</span></li>
+<li><a href="https://gitlab.com/deeplydrumming/DeemixFix" target="_blank" rel="nofollow noopener noreferrer">DeemixFix</a><span class="host">gitlab.com</span></li>
+<li><a href="https://deepcut.live/" target="_blank" rel="nofollow noopener noreferrer">deepcut.fm</a><span class="host">deepcut.live</span></li>
+<li><a href="https://www.deezer.com/" target="_blank" rel="nofollow noopener noreferrer">Deezer</a><span class="host">deezer.com</span></li>
+<li><a href="https://descent.live/" target="_blank" rel="nofollow noopener noreferrer">Descent</a><span class="host">descent.live</span></li>
+<li><a href="https://radio.madza.dev/" target="_blank" rel="nofollow noopener noreferrer">DevTunes FM</a><span class="host">radio.madza.dev</span></li>
+<li><a href="https://dezflight-underground.com/" target="_blank" rel="nofollow noopener noreferrer">Dez Flight Underground</a><span class="host">dezflight-underground.com</span></li>
+<li><a href="https://www.di.fm/" target="_blank" rel="nofollow noopener noreferrer">Di.fm</a><span class="host">di.fm</span></li>
+<li><a href="https://diglib.library.vanderbilt.edu/ama-browse.pl" target="_blank" rel="nofollow noopener noreferrer">DigLib</a><span class="host">diglib.library.vanderbilt.edu</span></li>
+<li><a href="http://www.dimeadozen.org/" target="_blank" rel="nofollow noopener noreferrer">DimeADozen</a><span class="host">dimeadozen.org</span></li>
+<li><a href="https://www.discogc.com/" target="_blank" rel="nofollow noopener noreferrer">DiscogC</a><span class="host">discogc.com</span></li>
+<li><a href="https://www.discografias-completas.org/" target="_blank" rel="nofollow noopener noreferrer">Discografias Completas</a><span class="host">discografias-completas.org</span></li>
+<li><a href="https://dance-music.org/" target="_blank" rel="nofollow noopener noreferrer">DMO</a><span class="host">dance-music.org</span></li>
+<li><a href="https://doubledouble.top/" target="_blank" rel="nofollow noopener noreferrer">DoubleDouble</a><span class="host">doubledouble.top</span></li>
+<li><a href="https://drivefromhome.com/" target="_blank" rel="nofollow noopener noreferrer">Drive From Home</a><span class="host">drivefromhome.com</span></li>
+<li><a href="https://somafm.com/player/#/now-playing/dronezone" target="_blank" rel="nofollow noopener noreferrer">Drone Zone</a><span class="host">somafm.com</span></li>
+<li><a href="https://www.echowalk.com/" target="_blank" rel="nofollow noopener noreferrer">EchoWalk</a><span class="host">echowalk.com</span></li>
+<li><a href="https://greasyfork.org/en/scripts/485278" target="_blank" rel="nofollow noopener noreferrer">Edit Scrobbles</a><span class="host">greasyfork.org</span></li>
+<li><a href="https://edmwaves.org/" target="_blank" rel="nofollow noopener noreferrer">EDMWaves</a><span class="host">edmwaves.org</span></li>
+<li><a href="https://ektoplazm.com/" target="_blank" rel="nofollow noopener noreferrer">Ektoplazm</a><span class="host">ektoplazm.com</span></li>
+<li><a href="https://electronicfresh.com/" target="_blank" rel="nofollow noopener noreferrer">ElectronicFresh</a><span class="host">electronicfresh.com</span></li>
+<li><a href="https://essentialhouse.club/" target="_blank" rel="nofollow noopener noreferrer">EssentialHouse</a><span class="host">essentialhouse.club</span></li>
+<li><a href="https://etreedb.org/" target="_blank" rel="nofollow noopener noreferrer">etreedb</a><span class="host">etreedb.org</span></li>
+<li><a href="https://everynoise.com/" target="_blank" rel="nofollow noopener noreferrer">EveryNoise</a><span class="host">everynoise.com</span></li>
+<li><a href="https://everythingmoe.com/section/music" target="_blank" rel="nofollow noopener noreferrer">EverythingMoe</a><span class="host">everythingmoe.com</span></li>
+<li><a href="https://www.exactaudiocopy.de/" target="_blank" rel="nofollow noopener noreferrer">Exact Audio Copy</a><span class="host">exactaudiocopy.de</span></li>
+<li><a href="https://www.exotica.org.uk/" target="_blank" rel="nofollow noopener noreferrer">exotica</a><span class="host">exotica.org.uk</span></li>
+<li><a href="https://exportify.app/" target="_blank" rel="nofollow noopener noreferrer">Exportify</a><span class="host">exportify.app</span></li>
+<li><a href="https://exystence.net/" target="_blank" rel="nofollow noopener noreferrer">Exystence</a><span class="host">exystence.net</span></li>
+<li><a href="https://ezhevika.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Ezhevika</a><span class="host">ezhevika.blogspot.com</span></li>
+<li><a href="https://fpftp.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">F.P.F.T.P.</a><span class="host">fpftp.blogspot.com</span></li>
+<li><a href="https://www.firstsounds.org/" target="_blank" rel="nofollow noopener noreferrer">FirstSounds</a><span class="host">firstsounds.org</span></li>
+<li><a href="https://www.flacmusic.info/" target="_blank" rel="nofollow noopener noreferrer">FlacMusic</a><span class="host">flacmusic.info</span></li>
+<li><a href="https://www.flatblackandclassical.com/" target="_blank" rel="nofollow noopener noreferrer">FlatblackAndClassical</a><span class="host">flatblackandclassical.com</span></li>
+<li><a href="https://flicker-mini.pages.dev/radiostations" target="_blank" rel="nofollow noopener noreferrer">Flicker Radio</a><span class="host">flicker-mini.pages.dev</span></li>
+<li><a href="https://www.flowfi.app/" target="_blank" rel="nofollow noopener noreferrer">Flow-Fi</a><span class="host">flowfi.app</span></li>
+<li><a href="https://www.flowtunes.app/" target="_blank" rel="nofollow noopener noreferrer">FlowTunes</a><span class="host">flowtunes.app</span></li>
+<li><a href="https://fmstream.org/" target="_blank" rel="nofollow noopener noreferrer">FMSTREAM</a><span class="host">fmstream.org</span></li>
+<li><a href="https://foggynotion-flac.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">FoggyNotion</a><span class="host">foggynotion-flac.blogspot.com</span></li>
+<li><a href="https://www.fondsound.com/" target="_blank" rel="nofollow noopener noreferrer">FondSound</a><span class="host">fondsound.com</span></li>
+<li><a href="https://freemusicarchive.org/" target="_blank" rel="nofollow noopener noreferrer">Free Music Archive</a><span class="host">freemusicarchive.org</span></li>
+<li><a href="https://www.free-stock-music.com/" target="_blank" rel="nofollow noopener noreferrer">free-stock-music</a><span class="host">free-stock-music.com</span></li>
+<li><a href="https://coderadio.freecodecamp.org/" target="_blank" rel="nofollow noopener noreferrer">FreeCodeCamp</a><span class="host">coderadio.freecodecamp.org</span></li>
+<li><a href="https://freemp3cloud.com/" target="_blank" rel="nofollow noopener noreferrer">FreeMP3Cloud</a><span class="host">freemp3cloud.com</span></li>
+<li><a href="https://airsonic.github.io/" target="_blank" rel="nofollow noopener noreferrer">airsonic</a><span class="host">airsonic.github.io</span></li>
+<li><a href="https://funkwhale.audio/" target="_blank" rel="nofollow noopener noreferrer">FunkWhale</a><span class="host">funkwhale.audio</span></li>
+<li><a href="https://generative.fm/" target="_blank" rel="nofollow noopener noreferrer">Generative.fm</a><span class="host">generative.fm</span></li>
+<li><a href="https://www.midicities.com/GeoCities" target="_blank" rel="nofollow noopener noreferrer">Geocities MIDIs</a><span class="host">midicities.com</span></li>
+<li><a href="https://getrockmusic.net/" target="_blank" rel="nofollow noopener noreferrer">GetRockMusic</a><span class="host">getrockmusic.net</span></li>
+<li><a href="https://globaldjmix.com/" target="_blank" rel="nofollow noopener noreferrer">GlobalDJMix</a><span class="host">globaldjmix.com</span></li>
+<li><a href="https://glorybeats.com/" target="_blank" rel="nofollow noopener noreferrer">GloryBeats</a><span class="host">glorybeats.com</span></li>
+<li><a href="https://www.microsoft.com/store/productId/9NBLGGH6C4BC" target="_blank" rel="nofollow noopener noreferrer">Grover</a><span class="host">microsoft.com</span></li>
+<li><a href="https://www.guitars101.com/" target="_blank" rel="nofollow noopener noreferrer">Guitars101</a><span class="host">guitars101.com</span></li>
+<li><a href="https://halome.nu/" target="_blank" rel="nofollow noopener noreferrer">HaloMe</a><span class="host">halome.nu</span></li>
+<li><a href="https://www.happyhardcore.com/radio/" target="_blank" rel="nofollow noopener noreferrer">HappyHardcore</a><span class="host">happyhardcore.com</span></li>
+<li><a href="https://hate5six.com/" target="_blank" rel="nofollow noopener noreferrer">hate5six</a><span class="host">hate5six.com</span></li>
+<li><a href="https://hipstrumentals.com/" target="_blank" rel="nofollow noopener noreferrer">Hipstrumentals</a><span class="host">hipstrumentals.com</span></li>
+<li><a href="https://khuh.fm/" target="_blank" rel="nofollow noopener noreferrer">HollowEarthRadio</a><span class="host">khuh.fm</span></li>
+<li><a href="https://scoreascore.com/homesick" target="_blank" rel="nofollow noopener noreferrer">Homesick</a><span class="host">scoreascore.com</span></li>
+<li><a href="https://94hiphop.com/" target="_blank" rel="nofollow noopener noreferrer">HQ Hip Hop</a><span class="host">94hiphop.com</span></li>
+<li><a href="https://www.hvsc.c64.org/" target="_blank" rel="nofollow noopener noreferrer">HVSC</a><span class="host">hvsc.c64.org</span></li>
+<li><a href="https://hypem.com/popular" target="_blank" rel="nofollow noopener noreferrer">Hype Machine</a><span class="host">hypem.com</span></li>
+<li><a href="https://i78s.org/" target="_blank" rel="nofollow noopener noreferrer">i78s</a><span class="host">i78s.org</span></li>
+<li><a href="https://chunisama.github.io/Identifying-Music-Genres/" target="_blank" rel="nofollow noopener noreferrer">Identifying Music Genres</a><span class="host">chunisama.github.io</span></li>
+<li><a href="https://www.iheart.com/" target="_blank" rel="nofollow noopener noreferrer">iHeartRadio</a><span class="host">iheart.com</span></li>
+<li><a href="https://ilovemusic.de/" target="_blank" rel="nofollow noopener noreferrer">ilovemusic</a><span class="host">ilovemusic.de</span></li>
+<li><a href="https://imissmycafe.com/" target="_blank" rel="nofollow noopener noreferrer">imissmycafe</a><span class="host">imissmycafe.com</span></li>
+<li><a href="https://imisstheoffice.eu/" target="_blank" rel="nofollow noopener noreferrer">IMissTheOffice</a><span class="host">imisstheoffice.eu</span></li>
+<li><a href="https://www.imploded.com/" target="_blank" rel="nofollow noopener noreferrer">Imploded</a><span class="host">imploded.com</span></li>
+<li><a href="https://in-the-fog.ru/" target="_blank" rel="nofollow noopener noreferrer">In The Fog</a><span class="host">in-the-fog.ru</span></li>
+<li><a href="https://incompetech.com/music/royalty-free/music.html" target="_blank" rel="nofollow noopener noreferrer">Incompetech Music</a><span class="host">incompetech.com</span></li>
+<li><a href="https://inconstantsol.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">inconstant sol</a><span class="host">inconstantsol.blogspot.com</span></li>
+<li><a href="https://github.com/macr0dev/Audiobooks.bundle" target="_blank" rel="nofollow noopener noreferrer">Audiobooks.bundle</a><span class="host">github.com</span></li>
+<li><a href="https://instant.audio/" target="_blank" rel="nofollow noopener noreferrer">Instant.audio</a><span class="host">instant.audio</span></li>
+<li><a href="https://archive.org/details/audio?&amp;sort=-downloads&amp;page=1" target="_blank" rel="nofollow noopener noreferrer">Internet Archive</a><span class="host">archive.org</span></li>
+<li><a href="https://archive.org/details/audio" target="_blank" rel="nofollow noopener noreferrer">Internet Archive</a><span class="host">archive.org</span></li>
+<li><a href="https://internet-radio.com/" target="_blank" rel="nofollow noopener noreferrer">Internet-Radio</a><span class="host">internet-radio.com</span></li>
+<li><a href="https://intmusic.net/" target="_blank" rel="nofollow noopener noreferrer">IntMusic</a><span class="host">intmusic.net</span></li>
+<li><a href="https://www7.iplusfree.org/" target="_blank" rel="nofollow noopener noreferrer">iPlusFree</a><span class="host">www7.iplusfree.org</span></li>
+<li><a href="https://www.iramanusantara.org/en" target="_blank" rel="nofollow noopener noreferrer">Irama Nusantara</a><span class="host">iramanusantara.org</span></li>
+<li><a href="https://rec.torontocast.stream/player/" target="_blank" rel="nofollow noopener noreferrer">J1 Radio</a><span class="host">rec.torontocast.stream</span></li>
+<li><a href="https://www.jambase.com/videos" target="_blank" rel="nofollow noopener noreferrer">JamBase</a><span class="host">jambase.com</span></li>
+<li><a href="https://www.jamendo.com/" target="_blank" rel="nofollow noopener noreferrer">Jamendo</a><span class="host">jamendo.com</span></li>
+<li><a href="https://jetsetradio.live/" target="_blank" rel="nofollow noopener noreferrer">JetSetRadio</a><span class="host">jetsetradio.live</span></li>
+<li><a href="https://www.jiosaavn.com/" target="_blank" rel="nofollow noopener noreferrer">jiosaavn</a><span class="host">jiosaavn.com</span></li>
+<li><a href="https://pc.joshw.info/" target="_blank" rel="nofollow noopener noreferrer">joshw</a><span class="host">pc.joshw.info</span></li>
+<li><a href="https://www.joshwoodward.com/" target="_blank" rel="nofollow noopener noreferrer">joshwoodward</a><span class="host">joshwoodward.com</span></li>
+<li><a href="https://kdramaost.com/en/" target="_blank" rel="nofollow noopener noreferrer">KDramaOST</a><span class="host">kdramaost.com</span></li>
+<li><a href="https://keygenmusic.tk/" target="_blank" rel="nofollow noopener noreferrer">Keygen Music</a><span class="host">keygenmusic.tk</span></li>
+<li><a href="https://kid3.kde.org/" target="_blank" rel="nofollow noopener noreferrer">Kid3</a><span class="host">kid3.kde.org</span></li>
+<li><a href="http://www.kiddierecords.com/" target="_blank" rel="nofollow noopener noreferrer">Kiddie Records</a><span class="host">kiddierecords.com</span></li>
+<li><a href="https://kira.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">Kira</a><span class="host">kira.vercel.app</span></li>
+<li><a href="https://github.com/snuffyDev/Beatbump" target="_blank" rel="nofollow noopener noreferrer">Beatbump</a><span class="host">github.com</span></li>
+<li><a href="https://www.konserthuset.se/en/play/" target="_blank" rel="nofollow noopener noreferrer">Konserthuset</a><span class="host">konserthuset.se</span></li>
+<li><a href="https://github.com/dzirbel/kotify" target="_blank" rel="nofollow noopener noreferrer">Kotify</a><span class="host">github.com</span></li>
+<li><a href="https://kpopdownloadscmm.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">KPopMusicDownload</a><span class="host">kpopdownloadscmm.blogspot.com</span></li>
+<li><a href="https://ktimusic.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">KTI Music</a><span class="host">ktimusic.blogspot.com</span></li>
+<li><a href="https://kworb.net/" target="_blank" rel="nofollow noopener noreferrer">Kworb</a><span class="host">kworb.net</span></li>
+<li><a href="https://radio.kwsx.online/" target="_blank" rel="nofollow noopener noreferrer">KWSX Radio</a><span class="host">radio.kwsx.online</span></li>
+<li><a href="https://github.com/sentriz/betanin" target="_blank" rel="nofollow noopener noreferrer">betanin</a><span class="host">github.com</span></li>
+<li><a href="https://lastfm-iceberg.dawdle.space/" target="_blank" rel="nofollow noopener noreferrer">Last.fm Iceberg</a><span class="host">lastfm-iceberg.dawdle.space</span></li>
+<li><a href="https://www.last.fm/labs" target="_blank" rel="nofollow noopener noreferrer">Last.fm Labs</a><span class="host">last.fm</span></li>
+<li><a href="https://lastfmstats.com/" target="_blank" rel="nofollow noopener noreferrer">Last.fm Stats</a><span class="host">lastfmstats.com</span></li>
+<li><a href="https://leaked.cx/" target="_blank" rel="nofollow noopener noreferrer">LEAKED</a><span class="host">leaked.cx</span></li>
+<li><a href="https://lidarr.audio/" target="_blank" rel="nofollow noopener noreferrer">Lidarr</a><span class="host">lidarr.audio</span></li>
+<li><a href="https://www.listennotes.com/" target="_blank" rel="nofollow noopener noreferrer">Listen Notes</a><span class="host">listennotes.com</span></li>
+<li><a href="https://www.lbl.fm/" target="_blank" rel="nofollow noopener noreferrer">ListenByLabel</a><span class="host">lbl.fm</span></li>
+<li><a href="https://livebootlegconcert.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">LiveBootlegConcert</a><span class="host">livebootlegconcert.blogspot.com</span></li>
+<li><a href="https://liveonlineradio.net/" target="_blank" rel="nofollow noopener noreferrer">LiveOnlineRadio</a><span class="host">liveonlineradio.net</span></li>
+<li><a href="https://loa2k.neocities.org/" target="_blank" rel="nofollow noopener noreferrer">LOA2K</a><span class="host">loa2k.neocities.org</span></li>
+<li><a href="https://loadspot.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">LoaderSpot</a><span class="host">loadspot.vercel.app</span></li>
+<li><a href="https://www.lofi.rocks/" target="_blank" rel="nofollow noopener noreferrer">Lofi</a><span class="host">lofi.rocks</span></li>
+<li><a href="https://lofiandgames.com/" target="_blank" rel="nofollow noopener noreferrer">Lofi and Games</a><span class="host">lofiandgames.com</span></li>
+<li><a href="https://loficlub.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">Lofi Club</a><span class="host">loficlub.vercel.app</span></li>
+<li><a href="https://lofigenerator.com/" target="_blank" rel="nofollow noopener noreferrer">Lofi Generator</a><span class="host">lofigenerator.com</span></li>
+<li><a href="https://lofi.limo/" target="_blank" rel="nofollow noopener noreferrer">Lofi Limo</a><span class="host">lofi.limo</span></li>
+<li><a href="https://magenta.tensorflow.org/lofi-player" target="_blank" rel="nofollow noopener noreferrer">lofi-player</a><span class="host">magenta.tensorflow.org</span></li>
+<li><a href="https://www.loficafe.net/" target="_blank" rel="nofollow noopener noreferrer">LofiCafe</a><span class="host">loficafe.net</span></li>
+<li><a href="https://www.lofizen.co/" target="_blank" rel="nofollow noopener noreferrer">Lofizen</a><span class="host">lofizen.co</span></li>
+<li><a href="https://loofi.netlify.app/" target="_blank" rel="nofollow noopener noreferrer">Loofi</a><span class="host">loofi.netlify.app</span></li>
+<li><a href="https://losslessalbums.club/" target="_blank" rel="nofollow noopener noreferrer">LosslessAlbums</a><span class="host">losslessalbums.club</span></li>
+<li><a href="https://lostsongshc.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Lost Songs</a><span class="host">lostsongshc.blogspot.com</span></li>
+<li><a href="http://lostmyspace.com/" target="_blank" rel="nofollow noopener noreferrer">LostMyspace</a><span class="host">lostmyspace.com</span></li>
+<li><a href="https://lucida.to/" target="_blank" rel="nofollow noopener noreferrer">lucida</a><span class="host">lucida.to</span></li>
+<li><a href="https://madrotter-treasure-hunt.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">madrotter-treasure-hunt</a><span class="host">madrotter-treasure-hunt.blogspot.com</span></li>
+<li><a href="https://mapofmetal.com/" target="_blank" rel="nofollow noopener noreferrer">Map of Metal</a><span class="host">mapofmetal.com</span></li>
+<li><a href="https://measuringpolyphony.org/" target="_blank" rel="nofollow noopener noreferrer">Measuring Polyphony</a><span class="host">measuringpolyphony.org</span></li>
+<li><a href="https://metalminos.net/" target="_blank" rel="nofollow noopener noreferrer">Metalminos</a><span class="host">metalminos.net</span></li>
+<li><a href="https://luminescence-software.org/en/metatogger/about/" target="_blank" rel="nofollow noopener noreferrer">MetaTogger</a><span class="host">luminescence-software.org</span></li>
+<li><a href="https://mirlo.space/" target="_blank" rel="nofollow noopener noreferrer">Mirlo</a><span class="host">mirlo.space</span></li>
+<li><a href="https://miroppb.com/" target="_blank" rel="nofollow noopener noreferrer">MiroPPB</a><span class="host">miroppb.com</span></li>
+<li><a href="https://www.mixesdb.com/" target="_blank" rel="nofollow noopener noreferrer">MixesDB</a><span class="host">mixesdb.com</span></li>
+<li><a href="https://mixtapemonkey.com/" target="_blank" rel="nofollow noopener noreferrer">MixtapeMonkey</a><span class="host">mixtapemonkey.com</span></li>
+<li><a href="http://www.mixtapetorrent.com/" target="_blank" rel="nofollow noopener noreferrer">MixtapeTorrent</a><span class="host">mixtapetorrent.com</span></li>
+<li><a href="https://mixupload.com/" target="_blank" rel="nofollow noopener noreferrer">Mixupload</a><span class="host">mixupload.com</span></li>
+<li><a href="https://www.moonphaseradio.com/" target="_blank" rel="nofollow noopener noreferrer">Moon Phase Radio</a><span class="host">moonphaseradio.com</span></li>
+<li><a href="https://moss.garden/" target="_blank" rel="nofollow noopener noreferrer">Moss Garden</a><span class="host">moss.garden</span></li>
+<li><a href="https://mp3db.pro/" target="_blank" rel="nofollow noopener noreferrer">mp3db</a><span class="host">mp3db.pro</span></li>
+<li><a href="https://wantmymtv.xyz/" target="_blank" rel="nofollow noopener noreferrer">MTV REWIND</a><span class="host">wantmymtv.xyz</span></li>
+<li><a href="https://muffon.netlify.app/" target="_blank" rel="nofollow noopener noreferrer">Muffon</a><span class="host">muffon.netlify.app</span></li>
+<li><a href="https://murglar.app/" target="_blank" rel="nofollow noopener noreferrer">Murglar</a><span class="host">murglar.app</span></li>
+<li><a href="https://www.musebootlegs.com/" target="_blank" rel="nofollow noopener noreferrer">MuseBootlegs</a><span class="host">musebootlegs.com</span></li>
+<li><a href="https://musicrider.org/" target="_blank" rel="nofollow noopener noreferrer">Music Rider</a><span class="host">musicrider.org</span></li>
+<li><a href="https://music.ishkur.com/" target="_blank" rel="nofollow noopener noreferrer">Music.ishkur</a><span class="host">music.ishkur.com</span></li>
+<li><a href="https://www.musicgenretree.org/chart.html" target="_blank" rel="nofollow noopener noreferrer">MusicGenreTree</a><span class="host">musicgenretree.org</span></li>
+<li><a href="https://music-republic-world-traditional.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">MusicRepublic</a><span class="host">music-republic-world-traditional.blogspot.com</span></li>
+<li><a href="https://www.musicroamer.com/" target="_blank" rel="nofollow noopener noreferrer">Musicroamer</a><span class="host">musicroamer.com</span></li>
+<li><a href="https://junguler.github.io/m3u-player-web/" target="_blank" rel="nofollow noopener noreferrer">My Radio</a><span class="host">junguler.github.io</span></li>
+<li><a href="https://mynoise.net/" target="_blank" rel="nofollow noopener noreferrer">myNoise</a><span class="host">mynoise.net</span></li>
+<li><a href="https://mypromosound.com/" target="_blank" rel="nofollow noopener noreferrer">MyPromoSound</a><span class="host">mypromosound.com</span></li>
+<li><a href="https://ncs.io/" target="_blank" rel="nofollow noopener noreferrer">NCS</a><span class="host">ncs.io</span></li>
+<li><a href="https://www.scenestream.net/demovibes/streams/" target="_blank" rel="nofollow noopener noreferrer">Nectarine</a><span class="host">scenestream.net</span></li>
+<li><a href="https://newage.one/" target="_blank" rel="nofollow noopener noreferrer">New Age Music</a><span class="host">newage.one</span></li>
+<li><a href="https://new-team.org/" target="_blank" rel="nofollow noopener noreferrer">New-Team</a><span class="host">new-team.org</span></li>
+<li><a href="https://deemix.app/" target="_blank" rel="nofollow noopener noreferrer">Deemix</a><span class="host">deemix.app</span></li>
+<li><a href="https://www.newgrounds.com/audio" target="_blank" rel="nofollow noopener noreferrer">Newgrounds Audio</a><span class="host">newgrounds.com</span></li>
+<li><a href="https://nicotine-plus.org/" target="_blank" rel="nofollow noopener noreferrer">Nicotine+</a><span class="host">nicotine-plus.org</span></li>
+<li><a href="https://nightride.fm/" target="_blank" rel="nofollow noopener noreferrer">Nightride.fm</a><span class="host">nightride.fm</span></li>
+<li><a href="https://plaza.one/" target="_blank" rel="nofollow noopener noreferrer">Nightwave Plaza</a><span class="host">plaza.one</span></li>
+<li><a href="https://nodata.tv/" target="_blank" rel="nofollow noopener noreferrer">nodata</a><span class="host">nodata.tv</span></li>
+<li><a href="https://nsf.nesbbs.com/" target="_blank" rel="nofollow noopener noreferrer">NSF j</a><span class="host">nsf.nesbbs.com</span></li>
+<li><a href="https://www.nts.live/infinite-mixtapes/field-recordings" target="_blank" rel="nofollow noopener noreferrer">NTS Field Recordings</a><span class="host">nts.live</span></li>
+<li><a href="https://www.nts.live/infinite-mixtapes/otaku" target="_blank" rel="nofollow noopener noreferrer">NTS Otaku</a><span class="host">nts.live</span></li>
+<li><a href="https://www.nts.live/infinite-mixtapes/poolside" target="_blank" rel="nofollow noopener noreferrer">NTS Poolside</a><span class="host">nts.live</span></li>
+<li><a href="https://www.nts.live/" target="_blank" rel="nofollow noopener noreferrer">NTS Radio</a><span class="host">nts.live</span></li>
+<li><a href="https://nuclearplayer.com/" target="_blank" rel="nofollow noopener noreferrer">Nuclear</a><span class="host">nuclearplayer.com</span></li>
+<li><a href="https://nuclear-holocaust.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Nuclear Holocaust</a><span class="host">nuclear-holocaust.blogspot.com</span></li>
+<li><a href="https://www.oldtimeradiodownloads.com/" target="_blank" rel="nofollow noopener noreferrer">Old Time Radio Downloads</a><span class="host">oldtimeradiodownloads.com</span></li>
+<li><a href="https://ongaku.js.org/" target="_blank" rel="nofollow noopener noreferrer">Ongaku</a><span class="host">ongaku.js.org</span></li>
+<li><a href="https://onlineradiobox.com/" target="_blank" rel="nofollow noopener noreferrer">OnlineRadioBox</a><span class="host">onlineradiobox.com</span></li>
+<li><a href="https://github.com/justin025/onthespot" target="_blank" rel="nofollow noopener noreferrer">OnTheSpot</a><span class="host">github.com</span></li>
+<li><a href="https://openpodcast.dev" target="_blank" rel="nofollow noopener noreferrer">OpenPodcast</a><span class="host">openpodcast.dev</span></li>
+<li><a href="https://openscrobbler.com/" target="_blank" rel="nofollow noopener noreferrer">OpenScrobbler</a><span class="host">openscrobbler.com</span></li>
+<li><a href="https://openwhyd.org/" target="_blank" rel="nofollow noopener noreferrer">Openwhyd</a><span class="host">openwhyd.org</span></li>
+<li><a href="https://operavision.eu/" target="_blank" rel="nofollow noopener noreferrer">OperaVision</a><span class="host">operavision.eu</span></li>
+<li><a href="https://opslagify.deruever.nl/" target="_blank" rel="nofollow noopener noreferrer">Opslagify</a><span class="host">opslagify.deruever.nl</span></li>
+<li><a href="https://www.bbc.co.uk/orbitmusic" target="_blank" rel="nofollow noopener noreferrer">OrbitMusic</a><span class="host">bbc.co.uk</span></li>
+<li><a href="https://github.com/OrfiTeam/OrpheusDL" target="_blank" rel="nofollow noopener noreferrer">OrpheusDL</a><span class="host">github.com</span></li>
+<li><a href="https://pandacd.io/" target="_blank" rel="nofollow noopener noreferrer">PandaCD</a><span class="host">pandacd.io</span></li>
+<li><a href="https://www.pandora.com/" target="_blank" rel="nofollow noopener noreferrer">Pandora</a><span class="host">pandora.com</span></li>
+<li><a href="https://github.com/kawaiiDango/pano-scrobbler" target="_blank" rel="nofollow noopener noreferrer">Pano Scrobbler</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/pear-devs/pear-desktop" target="_blank" rel="nofollow noopener noreferrer">Pear Desktop</a><span class="host">github.com</span></li>
+<li><a href="https://phish.in/" target="_blank" rel="nofollow noopener noreferrer">Phish.in</a><span class="host">phish.in</span></li>
+<li><a href="https://playlisthospital.com/" target="_blank" rel="nofollow noopener noreferrer">Playlist Hospital</a><span class="host">playlisthospital.com</span></li>
+<li><a href="https://stevenaleong.com/tools/spotifyplaylistrandomizer" target="_blank" rel="nofollow noopener noreferrer">Playlist Randomizer</a><span class="host">stevenaleong.com</span></li>
+<li><a href="https://playlistor.io/" target="_blank" rel="nofollow noopener noreferrer">Playlistor</a><span class="host">playlistor.io</span></li>
+<li><a href="https://pluvior.com/" target="_blank" rel="nofollow noopener noreferrer">Pluvior</a><span class="host">pluvior.com</span></li>
+<li><a href="https://play.pocketcasts.com/discover" target="_blank" rel="nofollow noopener noreferrer">Pocket Casts</a><span class="host">play.pocketcasts.com</span></li>
+<li><a href="https://fildo.net/android/en/#" target="_blank" rel="nofollow noopener noreferrer">Fildo</a><span class="host">fildo.net</span></li>
+<li><a href="https://podbay.fm/" target="_blank" rel="nofollow noopener noreferrer">Podbay</a><span class="host">podbay.fm</span></li>
+<li><a href="https://fildo.net/android/en/" target="_blank" rel="nofollow noopener noreferrer">Fildo</a><span class="host">fildo.net</span></li>
+<li><a href="https://www.podbean.com/" target="_blank" rel="nofollow noopener noreferrer">Podbean</a><span class="host">podbean.com</span></li>
+<li><a href="https://www.podcastrepublic.net/" target="_blank" rel="nofollow noopener noreferrer">Podcast Republic</a><span class="host">podcastrepublic.net</span></li>
+<li><a href="https://github.com/lightpohl/podcast-dl" target="_blank" rel="nofollow noopener noreferrer">podcast-dl</a><span class="host">github.com</span></li>
+<li><a href="https://www.podchaser.com/charts" target="_blank" rel="nofollow noopener noreferrer">Podchaser</a><span class="host">podchaser.com</span></li>
+<li><a href="https://podscripts.co/" target="_blank" rel="nofollow noopener noreferrer">PodScripts</a><span class="host">podscripts.co</span></li>
+<li><a href="https://github.com/mxpv/podsync" target="_blank" rel="nofollow noopener noreferrer">PodSync</a><span class="host">github.com</span></li>
+<li><a href="https://www.progrockvintage.com/" target="_blank" rel="nofollow noopener noreferrer">ProgRockVintage</a><span class="host">progrockvintage.com</span></li>
+<li><a href="https://psyfp.ucoz.ru/" target="_blank" rel="nofollow noopener noreferrer">PSYFP</a><span class="host">psyfp.ucoz.ru</span></li>
+<li><a href="https://473999.net/pulse" target="_blank" rel="nofollow noopener noreferrer">pulse</a><span class="host">473999.net</span></li>
+<li><a href="https://punkcata.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">punk.cat</a><span class="host">punkcata.blogspot.com</span></li>
+<li><a href="https://www.purple-planet.com/" target="_blank" rel="nofollow noopener noreferrer">purple-planet</a><span class="host">purple-planet.com</span></li>
+<li><a href="https://www.q-3.eu/" target="_blank" rel="nofollow noopener noreferrer">Q-3</a><span class="host">q-3.eu</span></li>
+<li><a href="https://github.com/zaps166/QMPlay2" target="_blank" rel="nofollow noopener noreferrer">QMPlay2</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/vitiko98/qobuz-dl" target="_blank" rel="nofollow noopener noreferrer">qobuz-dl</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/ImAiiR/QobuzDownloaderX" target="_blank" rel="nofollow noopener noreferrer">QobuzDownloaderX</a><span class="host">github.com</span></li>
+<li><a href="https://radoxo.com/" target="_blank" rel="nofollow noopener noreferrer">raddio</a><span class="host">radoxo.com</span></li>
+<li><a href="https://radio.garden/" target="_blank" rel="nofollow noopener noreferrer">Radio Garden</a><span class="host">radio.garden</span></li>
+<li><a href="https://www.radioguide.fm/" target="_blank" rel="nofollow noopener noreferrer">Radio Guide</a><span class="host">radioguide.fm</span></li>
+<li><a href="https://radio-locator.com/" target="_blank" rel="nofollow noopener noreferrer">radio-locator</a><span class="host">radio-locator.com</span></li>
+<li><a href="https://radio.dubbeh.net/" target="_blank" rel="nofollow noopener noreferrer">Radio.dubbeh</a><span class="host">radio.dubbeh.net</span></li>
+<li><a href="https://www.radio.net/" target="_blank" rel="nofollow noopener noreferrer">Radio.net</a><span class="host">radio.net</span></li>
+<li><a href="https://radio.uwu.network/" target="_blank" rel="nofollow noopener noreferrer">radio.uwu</a><span class="host">radio.uwu.network</span></li>
+<li><a href="https://www.radioline.co/" target="_blank" rel="nofollow noopener noreferrer">radioline</a><span class="host">radioline.co</span></li>
+<li><a href="https://radiolise.com/" target="_blank" rel="nofollow noopener noreferrer">Radiolise</a><span class="host">radiolise.com</span></li>
+<li><a href="https://radioparadise.com/" target="_blank" rel="nofollow noopener noreferrer">RadioParadise</a><span class="host">radioparadise.com</span></li>
+<li><a href="https://www.radiopuppy.com/" target="_blank" rel="nofollow noopener noreferrer">RadioPuppy</a><span class="host">radiopuppy.com</span></li>
+<li><a href="https://www.radioreference.com/" target="_blank" rel="nofollow noopener noreferrer">RadioReference</a><span class="host">radioreference.com</span></li>
+<li><a href="https://radioside.com/v1/" target="_blank" rel="nofollow noopener noreferrer">RadioSide</a><span class="host">radioside.com</span></li>
+<li><a href="https://rainbowhunt.com/" target="_blank" rel="nofollow noopener noreferrer">Rainbow Hunt</a><span class="host">rainbowhunt.com</span></li>
+<li><a href="https://rainwave.cc/" target="_blank" rel="nofollow noopener noreferrer">Rainwave</a><span class="host">rainwave.cc</span></li>
+<li><a href="https://www.rainymood.com/" target="_blank" rel="nofollow noopener noreferrer">Rainy Mood</a><span class="host">rainymood.com</span></li>
+<li><a href="https://rainyscope.com/" target="_blank" rel="nofollow noopener noreferrer">Rainyscope</a><span class="host">rainyscope.com</span></li>
+<li><a href="https://random-song.com/" target="_blank" rel="nofollow noopener noreferrer">Random Music Generator</a><span class="host">random-song.com</span></li>
+<li><a href="https://randomsonggenerator.com/" target="_blank" rel="nofollow noopener noreferrer">Random Song Generator</a><span class="host">randomsonggenerator.com</span></li>
+<li><a href="https://rap-war-fam.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Rap War</a><span class="host">rap-war-fam.blogspot.com</span></li>
+<li><a href="https://rapload.org/" target="_blank" rel="nofollow noopener noreferrer">Rapload</a><span class="host">rapload.org</span></li>
+<li><a href="https://ratm.live/" target="_blank" rel="nofollow noopener noreferrer">RATM.live</a><span class="host">ratm.live</span></li>
+<li><a href="https://rekt.network/" target="_blank" rel="nofollow noopener noreferrer">Rekt FM</a><span class="host">rekt.network</span></li>
+<li><a href="https://unifycosmos.com/relaxing-sounds/" target="_blank" rel="nofollow noopener noreferrer">Relaxing Sounds</a><span class="host">unifycosmos.com</span></li>
+<li><a href="https://www.relay.fm/" target="_blank" rel="nofollow noopener noreferrer">Relay.fm</a><span class="host">relay.fm</span></li>
+<li><a href="https://www.relicradio.com/" target="_blank" rel="nofollow noopener noreferrer">Relic Radio</a><span class="host">relicradio.com</span></li>
+<li><a href="https://relisten.net/" target="_blank" rel="nofollow noopener noreferrer">Relisten</a><span class="host">relisten.net</span></li>
+<li><a href="https://renovatiorecords.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">RenovationRecords</a><span class="host">renovatiorecords.blogspot.com</span></li>
+<li><a href="https://rephonic.com/graph" target="_blank" rel="nofollow noopener noreferrer">Rephonic</a><span class="host">rephonic.com</span></li>
+<li><a href="https://retro.sx/" target="_blank" rel="nofollow noopener noreferrer">RetroTracks</a><span class="host">retro.sx</span></li>
+<li><a href="https://www.rhcplivearchive.com/" target="_blank" rel="nofollow noopener noreferrer">RHCPLiveArchive</a><span class="host">rhcplivearchive.com</span></li>
+<li><a href="https://www.rockdownload.org/" target="_blank" rel="nofollow noopener noreferrer">RockDownload</a><span class="host">rockdownload.org</span></li>
+<li><a href="https://www.rpgamers.net/radio/" target="_blank" rel="nofollow noopener noreferrer">RPGGamers Radio</a><span class="host">rpgamers.net</span></li>
+<li><a href="https://www.russian-records.com/" target="_blank" rel="nofollow noopener noreferrer">Russian Records</a><span class="host">russian-records.com</span></li>
+<li><a href="https://saavn-dl.pages.dev" target="_blank" rel="nofollow noopener noreferrer">saavn-dl</a><span class="host">saavn-dl.pages.dev</span></li>
+<li><a href="https://www.setlist.fm/" target="_blank" rel="nofollow noopener noreferrer">setlist.fm</a><span class="host">setlist.fm</span></li>
+<li><a href="https://somafm.com/player24/station/sf1033" target="_blank" rel="nofollow noopener noreferrer">SF 10-33</a><span class="host">somafm.com</span></li>
+<li><a href="https://github.com/sentriz/gonic" target="_blank" rel="nofollow noopener noreferrer">gonic</a><span class="host">github.com</span></li>
+<li><a href="https://nonnullish.github.io/share-liked-songs/" target="_blank" rel="nofollow noopener noreferrer">Share Liked Songs</a><span class="host">nonnullish.github.io</span></li>
+<li><a href="https://sharemania.us/" target="_blank" rel="nofollow noopener noreferrer">ShareMania</a><span class="host">sharemania.us</span></li>
+<li><a href="https://github.com/KraXen72/shira" target="_blank" rel="nofollow noopener noreferrer">Shira</a><span class="host">github.com</span></li>
+<li><a href="https://shortwave.live/" target="_blank" rel="nofollow noopener noreferrer">Shortwave.Live</a><span class="host">shortwave.live</span></li>
+<li><a href="https://directory.shoutcast.com/" target="_blank" rel="nofollow noopener noreferrer">ShoutCast</a><span class="host">directory.shoutcast.com</span></li>
+<li><a href="https://somafm.com/" target="_blank" rel="nofollow noopener noreferrer">SomaFM</a><span class="host">somafm.com</span></li>
+<li><a href="https://www.songkick.com/" target="_blank" rel="nofollow noopener noreferrer">SongKick</a><span class="host">songkick.com</span></li>
+<li><a href="https://github.com/nolight132/sonora" target="_blank" rel="nofollow noopener noreferrer">Sonora</a><span class="host">github.com</span></li>
+<li><a href="https://sophiesfloorboard.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">Sophie&#x27;s Floorboard</a><span class="host">sophiesfloorboard.blogspot.com</span></li>
+<li><a href="http://sortyourmusic.playlistmachinery.com/" target="_blank" rel="nofollow noopener noreferrer">Sort Your Music</a><span class="host">sortyourmusic.playlistmachinery.com</span></li>
+<li><a href="https://www.soundclick.com/default.cfm" target="_blank" rel="nofollow noopener noreferrer">SoundClick</a><span class="host">soundclick.com</span></li>
+<li><a href="https://songslover.li/" target="_blank" rel="nofollow noopener noreferrer">SongsLover</a><span class="host">songslover.li</span></li>
+<li><a href="https://soundcloud.com/" target="_blank" rel="nofollow noopener noreferrer">SoundCloud</a><span class="host">soundcloud.com</span></li>
+<li><a href="https://spicetify.app/" target="_blank" rel="nofollow noopener noreferrer">Spicetify</a><span class="host">spicetify.app</span></li>
+<li><a href="https://spoqify.com/" target="_blank" rel="nofollow noopener noreferrer">Spoqify</a><span class="host">spoqify.com</span></li>
+<li><a href="https://epsil.github.io/spotgen" target="_blank" rel="nofollow noopener noreferrer">spotgen</a><span class="host">epsil.github.io</span></li>
+<li><a href="https://github.com/spotbye/SpotiFLAC" target="_blank" rel="nofollow noopener noreferrer">SpotiFLAC</a><span class="host">github.com</span></li>
+<li><a href="https://open.spotify.com/" target="_blank" rel="nofollow noopener noreferrer">Spotify</a><span class="host">open.spotify.com</span></li>
+<li><a href="https://spotify-dedup.com/" target="_blank" rel="nofollow noopener noreferrer">Spotify Dedup</a><span class="host">spotify-dedup.com</span></li>
+<li><a href="https://spotifyplaylistarchive.com/" target="_blank" rel="nofollow noopener noreferrer">Spotify Playlist Archive</a><span class="host">spotifyplaylistarchive.com</span></li>
+<li><a href="https://open.spotify.com/browse/podcasts" target="_blank" rel="nofollow noopener noreferrer">Spotify Podcasts</a><span class="host">open.spotify.com</span></li>
+<li><a href="https://spotisaver.net/" target="_blank" rel="nofollow noopener noreferrer">Spotisaver</a><span class="host">spotisaver.net</span></li>
+<li><a href="https://www.spotlistr.com/" target="_blank" rel="nofollow noopener noreferrer">Spotlistr</a><span class="host">spotlistr.com</span></li>
+<li><a href="https://github.com/SpotX-Official/SpotX" target="_blank" rel="nofollow noopener noreferrer">SpotX</a><span class="host">github.com</span></li>
+<li><a href="https://squid.wtf/" target="_blank" rel="nofollow noopener noreferrer">squid.wtf</a><span class="host">squid.wtf</span></li>
+<li><a href="https://github.com/nathom/streamrip" target="_blank" rel="nofollow noopener noreferrer">streamrip</a><span class="host">github.com</span></li>
+<li><a href="https://streamurl.link/" target="_blank" rel="nofollow noopener noreferrer">StreamURL</a><span class="host">streamurl.link</span></li>
+<li><a href="https://streamwriter.org/en/" target="_blank" rel="nofollow noopener noreferrer">streamWriter</a><span class="host">streamwriter.org</span></li>
+<li><a href="https://streema.com/" target="_blank" rel="nofollow noopener noreferrer">Streema</a><span class="host">streema.com</span></li>
+<li><a href="https://github.com/akashrchandran/syrics-web" target="_blank" rel="nofollow noopener noreferrer">Syrics</a><span class="host">github.com</span></li>
+<li><a href="https://tagcloud.rainosullivan.com/" target="_blank" rel="nofollow noopener noreferrer">TagCloud</a><span class="host">tagcloud.rainosullivan.com</span></li>
+<li><a href="https://github.com/Martchus/tageditor" target="_blank" rel="nofollow noopener noreferrer">TagEditor</a><span class="host">github.com</span></li>
+<li><a href="https://www.xdlab.ru/en/" target="_blank" rel="nofollow noopener noreferrer">TagScanner</a><span class="host">xdlab.ru</span></li>
+<li><a href="https://takemetal.org/" target="_blank" rel="nofollow noopener noreferrer">Take Metal</a><span class="host">takemetal.org</span></li>
+<li><a href="https://tancpol.net/" target="_blank" rel="nofollow noopener noreferrer">Tancpol</a><span class="host">tancpol.net</span></li>
+<li><a href="https://www.tassomusic.org/" target="_blank" rel="nofollow noopener noreferrer">Tasso Music</a><span class="host">tassomusic.org</span></li>
+<li><a href="https://technicaldeathmetal.org/" target="_blank" rel="nofollow noopener noreferrer">TechnicalDeathMetal</a><span class="host">technicaldeathmetal.org</span></li>
+<li><a href="https://www.technobase.fm" target="_blank" rel="nofollow noopener noreferrer">TechnoBase</a><span class="host">technobase.fm</span></li>
+<li><a href="https://altmusictv.com/" target="_blank" rel="nofollow noopener noreferrer">The 120 Minutes Archive</a><span class="host">altmusictv.com</span></li>
+<li><a href="https://16bap.theclassicgamer.net/" target="_blank" rel="nofollow noopener noreferrer">The 16-bit Audiophile Project</a><span class="host">16bap.theclassicgamer.net</span></li>
+<li><a href="https://archive.org/details/noise-arch" target="_blank" rel="nofollow noopener noreferrer">The Noise-Arch Archive</a><span class="host">archive.org</span></li>
+<li><a href="https://tsquareplaza.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">The T-SQUARE Plaza</a><span class="host">tsquareplaza.blogspot.com</span></li>
+<li><a href="https://themfire.pro/" target="_blank" rel="nofollow noopener noreferrer">ThemFire</a><span class="host">themfire.pro</span></li>
+<li><a href="https://themixingbowl.org/" target="_blank" rel="nofollow noopener noreferrer">TheMixingBowl</a><span class="host">themixingbowl.org</span></li>
+<li><a href="https://thenonstopradio.com/" target="_blank" rel="nofollow noopener noreferrer">TheNonStop Radio</a><span class="host">thenonstopradio.com</span></li>
+<li><a href="http://www.thetradersden.org/" target="_blank" rel="nofollow noopener noreferrer">TheTradersDen</a><span class="host">thetradersden.org</span></li>
+<li><a href="https://thewhitenoisemachine.com/" target="_blank" rel="nofollow noopener noreferrer">TheWhiteNoiseMachine</a><span class="host">thewhitenoisemachine.com</span></li>
+<li><a href="https://tidal-dl.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">TIDAL DL</a><span class="host">tidal-dl.pages.dev</span></li>
+<li><a href="https://tierify.app/" target="_blank" rel="nofollow noopener noreferrer">Tierify</a><span class="host">tierify.app</span></li>
+<li><a href="https://tilderadio.org/" target="_blank" rel="nofollow noopener noreferrer">Tilderadio</a><span class="host">tilderadio.org</span></li>
+<li><a href="https://tomlehrersongs.com/" target="_blank" rel="nofollow noopener noreferrer">Tom Lehrer Songs</a><span class="host">tomlehrersongs.com</span></li>
+<li><a href="https://github.com/sandreas/tone" target="_blank" rel="nofollow noopener noreferrer">tone</a><span class="host">github.com</span></li>
+<li><a href="https://tooldriveproject.net/" target="_blank" rel="nofollow noopener noreferrer">ToolDriveProject</a><span class="host">tooldriveproject.net</span></li>
+<li><a href="https://topdjmixes.com/" target="_blank" rel="nofollow noopener noreferrer">TopDJMixes</a><span class="host">topdjmixes.com</span></li>
+<li><a href="https://thepiratebay.org/search.php?q=top100:100" target="_blank" rel="nofollow noopener noreferrer">TPB Music</a><span class="host">thepiratebay.org</span></li>
+<li><a href="https://www.trancefix.nl/index.php" target="_blank" rel="nofollow noopener noreferrer">TranceFix</a><span class="host">trancefix.nl</span></li>
+<li><a href="https://www.tribalmixes.com/" target="_blank" rel="nofollow noopener noreferrer">TribalMixes</a><span class="host">tribalmixes.com</span></li>
+<li><a href="https://trikatuka.aknakn.eu/" target="_blank" rel="nofollow noopener noreferrer">Trikatuka</a><span class="host">trikatuka.aknakn.eu</span></li>
+<li><a href="https://tunetank.com/" target="_blank" rel="nofollow noopener noreferrer">tunetank</a><span class="host">tunetank.com</span></li>
+<li><a href="https://tuneyou.com/" target="_blank" rel="nofollow noopener noreferrer">TuneYou</a><span class="host">tuneyou.com</span></li>
+<li><a href="https://tvradiotuner.com/" target="_blank" rel="nofollow noopener noreferrer">Tvradiotuner</a><span class="host">tvradiotuner.com</span></li>
+<li><a href="https://cylinders.library.ucsb.edu/index.php" target="_blank" rel="nofollow noopener noreferrer">UCSB Cylinders</a><span class="host">cylinders.library.ucsb.edu</span></li>
+<li><a href="https://ukradiolive.com/" target="_blank" rel="nofollow noopener noreferrer">UKRadioLive</a><span class="host">ukradiolive.com</span></li>
+<li><a href="https://www.unminus.com/" target="_blank" rel="nofollow noopener noreferrer">Unminus</a><span class="host">unminus.com</span></li>
+<li><a href="https://upbeatradio.net/" target="_blank" rel="nofollow noopener noreferrer">UpBeat</a><span class="host">upbeatradio.net</span></li>
+<li><a href="https://vaporarchive.neocities.org/" target="_blank" rel="nofollow noopener noreferrer">Vapor Archive</a><span class="host">vaporarchive.neocities.org</span></li>
+<li><a href="https://vdwn.cloud/" target="_blank" rel="nofollow noopener noreferrer">vdwn.cloud</a><span class="host">vdwn.cloud</span></li>
+<li><a href="https://versefy.app/" target="_blank" rel="nofollow noopener noreferrer">Versefy</a><span class="host">versefy.app</span></li>
+<li><a href="https://vgm.mmosvc.com/" target="_blank" rel="nofollow noopener noreferrer">VGM</a><span class="host">vgm.mmosvc.com</span></li>
+<li><a href="https://www.vgmpf.com/Wiki/index.php" target="_blank" rel="nofollow noopener noreferrer">VGMPF</a><span class="host">vgmpf.com</span></li>
+<li><a href="https://vgmradio.com/" target="_blank" rel="nofollow noopener noreferrer">VGMRadio</a><span class="host">vgmradio.com</span></li>
+<li><a href="https://vgmrips.net/packs/" target="_blank" rel="nofollow noopener noreferrer">VGMRips</a><span class="host">vgmrips.net</span></li>
+<li><a href="https://www.vipvgm.net/" target="_blank" rel="nofollow noopener noreferrer">VIP VGM</a><span class="host">vipvgm.net</span></li>
+<li><a href="https://virtocean.com/" target="_blank" rel="nofollow noopener noreferrer">VirtOcean</a><span class="host">virtocean.com</span></li>
+<li><a href="https://volume.com/" target="_blank" rel="nofollow noopener noreferrer">Volume</a><span class="host">volume.com</span></li>
+<li><a href="https://github.com/GladistonXD/votify-fix" target="_blank" rel="nofollow noopener noreferrer">Votify</a><span class="host">github.com</span></li>
+<li><a href="https://www.akouradio.com/" target="_blank" rel="nofollow noopener noreferrer">VRadio</a><span class="host">akouradio.com</span></li>
+<li><a href="https://vtuner.com/setupapp/guide/asp/BrowseStations/startpage.asp" target="_blank" rel="nofollow noopener noreferrer">vTuner</a><span class="host">vtuner.com</span></li>
+<li><a href="https://waveapp.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">WAVE</a><span class="host">waveapp.pages.dev</span></li>
+<li><a href="https://we-need-match.ru/" target="_blank" rel="nofollow noopener noreferrer">We Need Match</a><span class="host">we-need-match.ru</span></li>
+<li><a href="https://github.com/web-scrobbler/web-scrobbler" target="_blank" rel="nofollow noopener noreferrer">Web Scrobbler</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/HACKER097/wisdom-tree/" target="_blank" rel="nofollow noopener noreferrer">Wisdom Tree</a><span class="host">github.com</span></li>
+<li><a href="https://www.worldconcerthall.com/en/schedule-list/" target="_blank" rel="nofollow noopener noreferrer">WorldConcertHall</a><span class="host">worldconcerthall.com</span></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/worldwide-radio/" target="_blank" rel="nofollow noopener noreferrer">Worldwide Radio</a><span class="host">addons.mozilla.org</span></li>
+<li><a href="https://dir.xiph.org/" target="_blank" rel="nofollow noopener noreferrer">Xiph</a><span class="host">dir.xiph.org</span></li>
+<li><a href="https://xmplaylist.com/" target="_blank" rel="nofollow noopener noreferrer">xmplaylist</a><span class="host">xmplaylist.com</span></li>
+<li><a href="https://github.com/mps-youtube/yewtube" target="_blank" rel="nofollow noopener noreferrer">yewtube</a><span class="host">github.com</span></li>
+<li><a href="https://youarelistening.to/" target="_blank" rel="nofollow noopener noreferrer">You are Listening To</a><span class="host">youarelistening.to</span></li>
+<li><a href="https://you.radio/" target="_blank" rel="nofollow noopener noreferrer">You Radio</a><span class="host">you.radio</span></li>
+<li><a href="https://you-get.org/" target="_blank" rel="nofollow noopener noreferrer">you-get</a><span class="host">you-get.org</span></li>
+<li><a href="https://ytiz.xyz/" target="_blank" rel="nofollow noopener noreferrer">YTiz</a><span class="host">ytiz.xyz</span></li>
+<li><a href="https://www.zophar.net/music" target="_blank" rel="nofollow noopener noreferrer">Zophar&#x27;s Domain</a><span class="host">zophar.net</span></li>
+<li><a href="https://zvu4it.org/" target="_blank" rel="nofollow noopener noreferrer">zvu4no</a><span class="host">zvu4it.org</span></li>
+<li><a href="https://1000flights.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠1000 Flights</a><span class="host">1000flights.blogspot.com</span></li>
+<li><a href="https://8beats.co/" target="_blank" rel="nofollow noopener noreferrer">⁠8Beats</a><span class="host">8beats.co</span></li>
+<li><a href="https://adtunes.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Adtunes</a><span class="host">adtunes.com</span></li>
+<li><a href="https://github.com/anandprtp/Antra" target="_blank" rel="nofollow noopener noreferrer">⁠Antra</a><span class="host">github.com</span></li>
+<li><a href="https://player.arcod.xyz/" target="_blank" rel="nofollow noopener noreferrer">⁠Arcod</a><span class="host">player.arcod.xyz</span></li>
+<li><a href="https://arcod.xyz/" target="_blank" rel="nofollow noopener noreferrer">⁠ARCOD</a><span class="host">arcod.xyz</span></li>
+<li><a href="https://audiofetcher.com/" target="_blank" rel="nofollow noopener noreferrer">⁠AudioFetcher</a><span class="host">audiofetcher.com</span></li>
+<li><a href="https://bassblog.pro/" target="_blank" rel="nofollow noopener noreferrer">⁠BassBlog</a><span class="host">bassblog.pro</span></li>
+<li><a href="https://bestsellingalbums.org/" target="_blank" rel="nofollow noopener noreferrer">⁠BestSellingAlbums</a><span class="host">bestsellingalbums.org</span></li>
+<li><a href="https://bleh.yuzu.pet/" target="_blank" rel="nofollow noopener noreferrer">⁠bleh</a><span class="host">bleh.yuzu.pet</span></li>
+<li><a href="https://butterboycompilations.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Butterboy Compilations</a><span class="host">butterboycompilations.blogspot.com</span></li>
+<li><a href="https://www.certifiedmixtapez.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Certified Mixtapez</a><span class="host">certifiedmixtapez.com</span></li>
+<li><a href="https://cosine.club/" target="_blank" rel="nofollow noopener noreferrer">⁠cosine.club</a><span class="host">cosine.club</span></li>
+<li><a href="http://cvgm.net/" target="_blank" rel="nofollow noopener noreferrer">⁠CVGM</a><span class="host">cvgm.net</span></li>
+<li><a href="https://dieordiy2.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Die or DIY</a><span class="host">dieordiy2.blogspot.com</span></li>
+<li><a href="https://dova-s.jp/en/" target="_blank" rel="nofollow noopener noreferrer">⁠DOVA-SYNDROME</a><span class="host">dova-s.jp</span></li>
+<li><a href="https://www.dublab.com/" target="_blank" rel="nofollow noopener noreferrer">⁠DubLab</a><span class="host">dublab.com</span></li>
+<li><a href="https://www.freeformradio.directory/" target="_blank" rel="nofollow noopener noreferrer">⁠Freeform Radio</a><span class="host">freeformradio.directory</span></li>
+<li><a href="https://www.grimearchive.org/" target="_blank" rel="nofollow noopener noreferrer">⁠Grime Archive</a><span class="host">grimearchive.org</span></li>
+<li><a href="https://gtaradio.net/" target="_blank" rel="nofollow noopener noreferrer">⁠GTA Radio</a><span class="host">gtaradio.net</span></li>
+<li><a href="https://www.happyhardcore.com/forums/" target="_blank" rel="nofollow noopener noreferrer">⁠HappyHardcore</a><span class="host">happyhardcore.com</span></li>
+<li><a href="https://hdmixtapes.org/" target="_blank" rel="nofollow noopener noreferrer">⁠HD Mixtapes</a><span class="host">hdmixtapes.org</span></li>
+<li><a href="https://internetcheckpoint.page/" target="_blank" rel="nofollow noopener noreferrer">⁠Internet Checkpoint</a><span class="host">internetcheckpoint.page</span></li>
+<li><a href="https://simohypers.github.io/limusic/" target="_blank" rel="nofollow noopener noreferrer">⁠Limusic</a><span class="host">simohypers.github.io</span></li>
+<li><a href="https://matthewcwright.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Matthew C. Wright</a><span class="host">matthewcwright.com</span></li>
+<li><a href="https://github.com/CharlesPikachu/musicdl" target="_blank" rel="nofollow noopener noreferrer">⁠MusicDL</a><span class="host">github.com</span></li>
+<li><a href="https://nathannothinsez.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Nothin&#x27; Sez Somethin&#x27;</a><span class="host">nathannothinsez.blogspot.com</span></li>
+<li><a href="https://nullbeat.thevolecitor.qzz.io/" target="_blank" rel="nofollow noopener noreferrer">⁠NullBeat</a><span class="host">nullbeat.thevolecitor.qzz.io</span></li>
+<li><a href="https://ocremix.org/" target="_blank" rel="nofollow noopener noreferrer">⁠OC Remix</a><span class="host">ocremix.org</span></li>
+<li><a href="https://oldschoolmetalmusicz.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Old School Metal Music</a><span class="host">oldschoolmetalmusicz.blogspot.com</span></li>
+<li><a href="https://paradiseofgaragecomps.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Paradise of Garage Comps</a><span class="host">paradiseofgaragecomps.blogspot.com</span></li>
+<li><a href="https://podcasttomp3.com/" target="_blank" rel="nofollow noopener noreferrer">⁠PodcastToMP3</a><span class="host">podcasttomp3.com</span></li>
+<li><a href="https://podnews.net/" target="_blank" rel="nofollow noopener noreferrer">⁠Podnews</a><span class="host">podnews.net</span></li>
+<li><a href="https://primitiveofferings.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Primitive Offerings</a><span class="host">primitiveofferings.blogspot.com</span></li>
+<li><a href="https://radionations.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Radio Nations</a><span class="host">radionations.com</span></li>
+<li><a href="https://www.rinse.fm/" target="_blank" rel="nofollow noopener noreferrer">⁠Rinse FM</a><span class="host">rinse.fm</span></li>
+<li><a href="https://www.rovr.live/" target="_blank" rel="nofollow noopener noreferrer">⁠ROVR</a><span class="host">rovr.live</span></li>
+<li><a href="https://scrobblerad.io/" target="_blank" rel="nofollow noopener noreferrer">⁠ScrobbleRadio</a><span class="host">scrobblerad.io</span></li>
+<li><a href="https://soundimage.org/" target="_blank" rel="nofollow noopener noreferrer">⁠Sound Image</a><span class="host">soundimage.org</span></li>
+<li><a href="https://spotsponsorblock.org/" target="_blank" rel="nofollow noopener noreferrer">⁠Spot SponsorBlock</a><span class="host">spotsponsorblock.org</span></li>
+<li><a href="https://github.com/haroldalan/spotify-karaoke" target="_blank" rel="nofollow noopener noreferrer">⁠Spotify Karaoke</a><span class="host">github.com</span></li>
+<li><a href="https://github.com/schultzyyy271/SpotifyATVAdBlock" target="_blank" rel="nofollow noopener noreferrer">⁠SpotifyATVAdBlock</a><span class="host">github.com</span></li>
+<li><a href="https://www.systemsofromance.com/blog/" target="_blank" rel="nofollow noopener noreferrer">⁠Systems of Romance</a><span class="host">systemsofromance.com</span></li>
+<li><a href="https://tapeattack.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Tape Attack</a><span class="host">tapeattack.blogspot.com</span></li>
+<li><a href="https://www.testpressing.org/" target="_blank" rel="nofollow noopener noreferrer">⁠TestPressing</a><span class="host">testpressing.org</span></li>
+<li><a href="https://www.thelotradio.com/" target="_blank" rel="nofollow noopener noreferrer">⁠The Lot Radio</a><span class="host">thelotradio.com</span></li>
+<li><a href="https://toneandwave.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Tone and Wave</a><span class="host">toneandwave.blogspot.com</span></li>
+<li><a href="https://www.unify.fm/" target="_blank" rel="nofollow noopener noreferrer">⁠Unify.fm</a><span class="host">unify.fm</span></li>
+<li><a href="https://urbanaspirines.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Urban Asprines</a><span class="host">urbanaspirines.blogspot.com</span></li>
+<li><a href="https://watch.versusmedia.com/music-channel" target="_blank" rel="nofollow noopener noreferrer">⁠VersusMedia</a><span class="host">watch.versusmedia.com</span></li>
+<li><a href="https://vijaysradiovibes.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">⁠Vijay&#x27;s Radio Vibes</a><span class="host">vijaysradiovibes.pages.dev</span></li>
+<li><a href="https://volta-music.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Volta</a><span class="host">volta-music.com</span></li>
+<li><a href="https://app.volta-music.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Volta</a><span class="host">app.volta-music.com</span></li>
+<li><a href="https://wfmu.org/" target="_blank" rel="nofollow noopener noreferrer">⁠WFMU</a><span class="host">wfmu.org</span></li>
+<li><a href="https://forwardwiththesong.blogspot.com/" target="_blank" rel="nofollow noopener noreferrer">⁠With The Song Of Life</a><span class="host">forwardwiththesong.blogspot.com</span></li>
+<li><a href="https://www.wqxr.org/streams/" target="_blank" rel="nofollow noopener noreferrer">⁠WQXR</a><span class="host">wqxr.org</span></li>
+<li><a href="https://monochrome.st/" target="_blank" rel="nofollow noopener noreferrer">Monochrome</a><span class="host">monochrome.st</span></li>
+<li><a href="https://opslagify.app/" target="_blank" rel="nofollow noopener noreferrer">Opslagify</a><span class="host">opslagify.app</span></li>
+<li><a href="https://pocketcasts.com/discover" target="_blank" rel="nofollow noopener noreferrer">Pocket Casts</a><span class="host">pocketcasts.com</span></li>
+<li><a href="https://songslover.net/" target="_blank" rel="nofollow noopener noreferrer">SongsLover</a><span class="host">songslover.net</span></li>
+<li><a href="https://octavestreaming.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Octave</a><span class="host">octavestreaming.com</span></li>
+<li><a href="https://opentracks.com/en/" target="_blank" rel="nofollow noopener noreferrer">⁠OpenTracks</a><span class="host">opentracks.com</span></li>
+<li><a href="https://sonorahq.org/" target="_blank" rel="nofollow noopener noreferrer">Sonora</a><span class="host">sonorahq.org</span></li>
+<li><a href="https://jumo-dl.pages.dev/" target="_blank" rel="nofollow noopener noreferrer">Jumo-DL</a><span class="host">jumo-dl.pages.dev</span></li>
+<li><a href="https://playlister.cc/" target="_blank" rel="nofollow noopener noreferrer">Playlister</a><span class="host">playlister.cc</span></li>
+<li><a href="https://saavn.odskyler.com/" target="_blank" rel="nofollow noopener noreferrer">Rhythmax JioSaavn Downloader</a><span class="host">saavn.odskyler.com</span></li>
+<li><a href="https://tidal.odskyler.com/" target="_blank" rel="nofollow noopener noreferrer">Rhythmax TIDAL Downloader</a><span class="host">tidal.odskyler.com</span></li>
+<li><a href="https://www.npr.org/series/tiny-desk-concerts/" target="_blank" rel="nofollow noopener noreferrer">Tiny Desk Concerts</a><span class="host">npr.org</span></li>
+<li><a href="https://cybrox.pro/" target="_blank" rel="nofollow noopener noreferrer">⁠CYBROX</a><span class="host">cybrox.pro</span></li>
+<li><a href="https://death.fm/" target="_blank" rel="nofollow noopener noreferrer">⁠Death.FM</a><span class="host">death.fm</span></li>
+<li><a href="https://jumble.top/" target="_blank" rel="nofollow noopener noreferrer">⁠jumbletop</a><span class="host">jumble.top</span></li>
+<li><a href="https://noiseloop.app/" target="_blank" rel="nofollow noopener noreferrer">⁠NoiseLoop</a><span class="host">noiseloop.app</span></li>
+<li><a href="https://anything.rip/" target="_blank" rel="nofollow noopener noreferrer">⁠Rip Anything From Anywhere</a><span class="host">anything.rip</span></li>
+<li><a href="https://github.com/kobayashi90/squidify-desktop" target="_blank" rel="nofollow noopener noreferrer">⁠Squidify Desktop</a><span class="host">github.com</span></li>
+<li><a href="https://genresampler.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Genre Sampler</a><span class="host">genresampler.com</span></li>
+<li><a href="https://www.animelyrics.com/" target="_blank" rel="nofollow noopener noreferrer">Anime Lyrics dot Com</a><span class="host">animelyrics.com</span></li>
+<li><a href="https://www.besteveralbums.com/index.php" target="_blank" rel="nofollow noopener noreferrer">Best Ever Albums</a><span class="host">besteveralbums.com</span></li>
+<li><a href="https://www.gnod.com/" target="_blank" rel="nofollow noopener noreferrer">GNOD</a><span class="host">gnod.com</span></li>
+<li><a href="https://lazyrecords.app/" target="_blank" rel="nofollow noopener noreferrer">lazyrecords</a><span class="host">lazyrecords.app</span></li>
+<li><a href="https://github.com/mornyeapp/Mornye-Desktop" target="_blank" rel="nofollow noopener noreferrer">Mornye</a><span class="host">github.com</span></li>
+<li><a href="https://playlost.fm/" target="_blank" rel="nofollow noopener noreferrer">Playlost.fm</a><span class="host">playlost.fm</span></li>
+<li><a href="https://orpheus.network/" target="_blank" rel="nofollow noopener noreferrer">Orpheus</a><span class="host">orpheus.network</span></li>
+<li><a href="https://radiooooo.com/" target="_blank" rel="nofollow noopener noreferrer">Radiooooo</a><span class="host">radiooooo.com</span></li>
+<li><a href="https://www.superfridaychart.com/" target="_blank" rel="nofollow noopener noreferrer">SuperFridayChart</a><span class="host">superfridaychart.com</span></li>
+<li><a href="https://github.com/Flow-Tube/Flow-Desktop" target="_blank" rel="nofollow noopener noreferrer">Flow Desktop</a><span class="host">github.com</span></li>
+<li><a href="https://www.scientificsound.asia/radio-station/" target="_blank" rel="nofollow noopener noreferrer">Scientific Sound Asia</a><span class="host">scientificsound.asia</span></li>
+<li><a href="https://kobold.messy.quest/" target="_blank" rel="nofollow noopener noreferrer">⁠Kobold.FM</a><span class="host">kobold.messy.quest</span></li>
+<li><a href="https://moodist.mvze.net/" target="_blank" rel="nofollow noopener noreferrer">Moodist</a><span class="host">moodist.mvze.net</span></li>
+<li><a href="https://loficities.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Lofi Cities</a><span class="host">loficities.com</span></li>
+<li><a href="https://pinepods.online/" target="_blank" rel="nofollow noopener noreferrer">PinePods</a><span class="host">pinepods.online</span></li>
+<li><a href="https://podcastindex.org/" target="_blank" rel="nofollow noopener noreferrer">Podcast Index</a><span class="host">podcastindex.org</span></li>
+<li><a href="https://podstatus.com/charts" target="_blank" rel="nofollow noopener noreferrer">Podstatus</a><span class="host">podstatus.com</span></li>
+<li><a href="https://podverse.fm/" target="_blank" rel="nofollow noopener noreferrer">Podverse</a><span class="host">podverse.fm</span></li>
+<li><a href="https://meiro.elianiva.com/" target="_blank" rel="nofollow noopener noreferrer">⁠Meiro</a><span class="host">meiro.elianiva.com</span></li>
+<li><a href="https://pointify.qzz.io/" target="_blank" rel="nofollow noopener noreferrer">⁠pointify</a><span class="host">pointify.qzz.io</span></li>
+<li><a href="https://www.worldwidefm.net/" target="_blank" rel="nofollow noopener noreferrer">⁠Worldwide FM</a><span class="host">worldwidefm.net</span></li>
+<li><a href="https://www.zig-zag.fm/" target="_blank" rel="nofollow noopener noreferrer">⁠zig~zag</a><span class="host">zig-zag.fm</span></li>
+<li><a href="http://slider.kz/" target="_blank" rel="nofollow noopener noreferrer">slider.kz</a><span class="host">slider.kz</span></li>
+<li><a href="https://www.tuneskit.com/" target="_blank" rel="nofollow noopener noreferrer">TunesKit</a><span class="host">tuneskit.com</span></li>
+<li><a href="https://forum.xda-developers.com/android/apps-games/app-youtube-music-sound-stream-youtubes-t3399722" target="_blank" rel="nofollow noopener noreferrer">YMusic</a><span class="host">forum.xda-developers.com</span></li>
+</ul>
+</main>
+<footer>
+  <p>Outbound links open other websites that Sakura’s Hub does not run. Read the <a href="../disclaimer">disclaimer</a> and use an ad blocker. Adult and flagged sites are not listed on this page.</p>
+</footer>
+</body>
+</html>
