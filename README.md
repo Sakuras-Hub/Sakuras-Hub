@@ -132,7 +132,7 @@
 <table align="center">
   <tr>
     <td align="center" bgcolor="0a0a14" style="background: #0a0a14; border: 1px solid #ff00ff20; border-radius: 14px; padding: 20px 30px;">
-      <a href="https://github.com/Sakuras-Hub/Sakuras-Hub" style="text-decoration: none;">
+      <a href="https://sakuras-hub.vercel.app/" style="text-decoration: none;">
         <samp><b style="color:#ff00ff; font-size:18px;">📁 Sakuras-Hub/Sakuras-Hub</b></samp>
         <br/>
         <samp><sub style="color:#e2ddf2;">The main hub — scripts, tools, resources & more</sub></samp>
