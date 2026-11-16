@@ -479,19 +479,6 @@
     "countries": []
   },
   {
-    "rank": 32,
-    "name": "libremdb",
-    "url": "https://libremdb.iket.me/",
-    "slug": "libremdb",
-    "section": "Adblocking / Privacy",
-    "category": "privacy",
-    "pricing": "free",
-    "nsfw": false,
-    "emoji": "🔒",
-    "tags": [],
-    "countries": []
-  },
-  {
     "rank": 33,
     "name": "Libretranslate",
     "url": "https://libretranslate.com/",
@@ -3141,19 +3128,6 @@
     "nsfw": false,
     "emoji": "🔒",
     "tags": [],
-    "countries": []
-  },
-  {
-    "rank": 237,
-    "name": "Decentraleyes",
-    "url": "https://decentraleyes.org/",
-    "slug": "decentraleyes",
-    "section": "Adblocking / Privacy",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
   },
   {
@@ -13866,19 +13840,6 @@
     "countries": []
   },
   {
-    "rank": 314,
-    "name": "NewPipe x SponsorBlock x Return YouTube Dislike",
-    "url": "https://github.com/polymorphicshade/NewPipe",
-    "slug": "newpipexsponsorblockxreturnyoutubedislike",
-    "section": "Apps",
-    "category": "apps",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Apps, Streaming, Android, TV, Free",
-    "countries": []
-  },
-  {
     "rank": 315,
     "name": "NextCloud",
     "url": "https://nextcloud.com/",
@@ -15637,19 +15598,6 @@
     "countries": []
   },
   {
-    "rank": 30,
-    "name": "Sankaku Complex",
-    "url": "https://sankakucomplex.com/",
-    "slug": "sankakucomplex",
-    "section": "Art/Imageboards",
-    "category": "imageboards",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Art, Imageboard, Fan Art, Gallery",
-    "countries": []
-  },
-  {
     "url": "https://dramacool.com.tr/",
     "name": "Kdramaweb",
     "section": "Asian Drama",
@@ -17138,20 +17086,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 5,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://vnclub.org/",
-    "name": "VN Club",
-    "section": "Database/Tracker",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 6,
     "emoji": "",
     "pricing": ""
   },
@@ -22763,19 +22697,6 @@
     "countries": []
   },
   {
-    "rank": 227,
-    "name": "mgnet.me",
-    "url": "http://mgnet.me/",
-    "slug": "mgnetme",
-    "section": "Download",
-    "category": "download",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
-    "countries": []
-  },
-  {
     "rank": 228,
     "name": "mktorrent",
     "url": "https://github.com/Rudde/mktorrent",
@@ -26121,19 +26042,6 @@
     "countries": []
   },
   {
-    "rank": 485,
-    "name": "ZXCFiles",
-    "url": "http://www.zxcfiles.net",
-    "slug": "zxcfiles",
-    "section": "Download",
-    "category": "download",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
-    "countries": []
-  },
-  {
     "rank": 486,
     "name": "βTorrent",
     "url": "https://btorrent.xyz/",
@@ -26229,19 +26137,6 @@
     "name": "⁠RetroShare",
     "url": "https://github.com/RetroShare/RetroShare/",
     "slug": "retroshare",
-    "section": "Download",
-    "category": "download",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
-    "countries": []
-  },
-  {
-    "rank": 494,
-    "name": "⁠XDMovies",
-    "url": "https://top.xdmovies.wtf/",
-    "slug": "xdmovies",
     "section": "Download",
     "category": "download",
     "pricing": "free*",
@@ -26567,19 +26462,6 @@
     "name": "⁠XDMovies",
     "url": "https://xdmovies.com/",
     "slug": "xdmovies2",
-    "section": "Download",
-    "category": "download",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Download, Anime, Manga, Torrent, DDL, Free",
-    "countries": []
-  },
-  {
-    "rank": 520,
-    "name": "KimoiTV",
-    "url": "https://kimoitv.com/",
-    "slug": "kimoitv",
     "section": "Download",
     "category": "download",
     "pricing": "free*",
@@ -27920,20 +27802,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 11,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://www.animenation.com/",
-    "name": "AnimeNation Forums",
-    "section": "Forums/Community",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 12,
     "emoji": "",
     "pricing": ""
   },
@@ -35136,36 +35004,10 @@
     "countries": []
   },
   {
-    "rank": 169,
-    "name": "Big Comics",
-    "url": "https://bigcomics.jp",
-    "slug": "bigcomics",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 170,
     "name": "BigBBS.eu",
     "url": "http://bigbbs.eu/",
     "slug": "bigbbseu",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 171,
-    "name": "BigSolo",
-    "url": "https://bigsolo.org",
-    "slug": "bigsolo",
     "section": "Manga Reading",
     "category": "manga",
     "pricing": "free*",
@@ -38204,19 +38046,6 @@
     "countries": []
   },
   {
-    "rank": 405,
-    "name": "Harem de Kira",
-    "url": "https://kiraproject.lat",
-    "slug": "haremdekira",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 406,
     "name": "Hattori Manga",
     "url": "https://hattorimanga.net",
@@ -39508,19 +39337,6 @@
     "name": "KillSixBillionDemons",
     "url": "https://killsixbilliondemons.com",
     "slug": "killsixbilliondemons",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 506,
-    "name": "KimiComi",
-    "url": "https://kimicomi.com",
-    "slug": "kimicomi",
     "section": "Manga Reading",
     "category": "manga",
     "pricing": "free*",
@@ -42793,19 +42609,6 @@
     "countries": []
   },
   {
-    "rank": 758,
-    "name": "MoeTruyenSuiCao (unoriginal)",
-    "url": "https://moe.suicaodex.com",
-    "slug": "moetruyensuicaounoriginal",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 759,
     "name": "Mokuro",
     "url": "https://mokuro.moe",
@@ -45666,19 +45469,6 @@
     "countries": []
   },
   {
-    "rank": 979,
-    "name": "Senkognito",
-    "url": "https://senkuro.me",
-    "slug": "senkognito",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": true,
-    "emoji": "",
-    "tags": "Manga, Reading, Free, NSFW",
-    "countries": []
-  },
-  {
     "rank": 980,
     "name": "SeraphicDeviltry",
     "url": "https://seraphic-deviltry.com",
@@ -46346,19 +46136,6 @@
     "name": "Team Lạnh Lùng",
     "url": "https://lanhlungteam3.top",
     "slug": "teamlnhlng",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 1032,
-    "name": "Team Shadowi",
-    "url": "https://www.team-shadowi.com",
-    "slug": "teamshadowi",
     "section": "Manga Reading",
     "category": "manga",
     "pricing": "free*",
@@ -47119,19 +46896,6 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 1091,
-    "name": "UmeTruyen",
-    "url": "https://umetruyenz.org",
-    "slug": "umetruyen",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": true,
-    "emoji": "",
-    "tags": "Manga, Reading, Free, NSFW",
     "countries": []
   },
   {
@@ -47932,19 +47696,6 @@
     "name": "Young Animal",
     "url": "https://younganimal.com",
     "slug": "younganimal",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 1154,
-    "name": "Young Champion",
-    "url": "https://youngchampion.jp",
-    "slug": "youngchampion",
     "section": "Manga Reading",
     "category": "manga",
     "pricing": "free*",
@@ -51557,19 +51308,6 @@
     ]
   },
   {
-    "rank": 1432,
-    "name": "Pixiv",
-    "url": "https://www.pixiv.net",
-    "slug": "pixiv",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 1433,
     "name": "RawBaka",
     "url": "https://rawbaka.site",
@@ -51606,19 +51344,6 @@
     "nsfw": false,
     "emoji": "",
     "tags": "Manga, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 1436,
-    "name": "禁漫天堂",
-    "url": "https://18comic.vip",
-    "slug": "site-6cc00cf51c",
-    "section": "Manga Reading",
-    "category": "manga",
-    "pricing": "free*",
-    "nsfw": true,
-    "emoji": "",
-    "tags": "Manga, Reading, Free, NSFW",
     "countries": []
   },
   {
@@ -60856,19 +60581,6 @@
     "countries": []
   },
   {
-    "rank": 359,
-    "name": "⁠The Book Prize Index",
-    "url": "https://book-prize-index.vercel.app/",
-    "slug": "thebookprizeindex",
-    "section": "Misc Tools",
-    "category": "tools",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Tools, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 360,
     "name": "⁠The Book Rex",
     "url": "https://thebookrex.com/",
@@ -63186,19 +62898,6 @@
     "countries": []
   },
   {
-    "rank": 124,
-    "name": "AniWatch (formerly zoro.to)",
-    "url": "https://aniwatch.to/home",
-    "slug": "aniwatchformerlyzoroto",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 125,
     "name": "AniWave (formerly 9anime.me)",
     "url": "https://aniwave.to/home",
@@ -63554,19 +63253,6 @@
     "name": "Bingeflix",
     "url": "https://bingeflix.tv/",
     "slug": "bingeflix",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
-    "rank": 153,
-    "name": "Boomflix",
-    "url": "https://boomflix.qzz.io/",
-    "slug": "boomflix",
     "section": "Movies & TV Streaming",
     "category": "movies-tv",
     "pricing": "free*",
@@ -64239,36 +63925,10 @@
     "countries": []
   },
   {
-    "rank": 205,
-    "name": "Flixzy",
-    "url": "https://flixzy.pages.dev/",
-    "slug": "flixzy",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 206,
     "name": "FLNK",
     "url": "https://flnk.fun/",
     "slug": "flnk",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
-    "rank": 207,
-    "name": "FluxTV",
-    "url": "https://fluxtv.co.uk/",
-    "slug": "fluxtv",
     "section": "Movies & TV Streaming",
     "category": "movies-tv",
     "pricing": "free*",
@@ -64447,19 +64107,6 @@
     "countries": []
   },
   {
-    "rank": 221,
-    "name": "GaiaFlix",
-    "url": "https://gaiaflix.live/",
-    "slug": "gaiaflix",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 222,
     "name": "GlobalShakespeares",
     "url": "https://globalshakespeares.mit.edu/",
@@ -64607,19 +64254,6 @@
     "name": "HuntleyArchives",
     "url": "https://www.huntleyarchives.com/",
     "slug": "huntleyarchives",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
-    "rank": 234,
-    "name": "IceFY",
-    "url": "https://icefy.top/",
-    "slug": "icefy",
     "section": "Movies & TV Streaming",
     "category": "movies-tv",
     "pricing": "free*",
@@ -64828,19 +64462,6 @@
     "name": "M4uHD",
     "url": "https://m4uhd.vip",
     "slug": "m4uhd",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
-    "rank": 251,
-    "name": "Mapple",
-    "url": "https://mapple.fun/",
-    "slug": "mapple",
     "section": "Movies & TV Streaming",
     "category": "movies-tv",
     "pricing": "free*",
@@ -66384,19 +66005,6 @@
     "countries": []
   },
   {
-    "rank": 370,
-    "name": "ZFlix",
-    "url": "https://zflix.me/",
-    "slug": "zflix",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 371,
     "name": "⁠Cinefork",
     "url": "https://cinefork.net/",
@@ -66503,19 +66111,6 @@
     "countries": []
   },
   {
-    "rank": 379,
-    "name": "Boomflix",
-    "url": "https://boomflix.pages.dev/",
-    "slug": "boomflix2",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 380,
     "name": "bowdtv",
     "url": "https://bowdtv.com/",
@@ -66529,19 +66124,6 @@
     "countries": [
       "FR"
     ]
-  },
-  {
-    "rank": 381,
-    "name": "CineStream",
-    "url": "https://cinestream.kje.us/",
-    "slug": "cinestream",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
   },
   {
     "rank": 382,
@@ -66693,19 +66275,6 @@
     "countries": []
   },
   {
-    "rank": 393,
-    "name": "Toflix",
-    "url": "https://toflix.co/",
-    "slug": "toflix",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": []
-  },
-  {
     "rank": 394,
     "name": "AniCine",
     "url": "https://anicine.sbs/",
@@ -66758,21 +66327,6 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
-  },
-  {
-    "rank": 398,
-    "name": "cinesouza",
-    "url": "https://cinesouza.online/",
-    "slug": "cinesouza",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": [
-      "BR"
-    ]
   },
   {
     "rank": 399,
@@ -66855,21 +66409,6 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
-  },
-  {
-    "rank": 405,
-    "name": "hdhub4u",
-    "url": "https://new8.hdhub4u.cl/",
-    "slug": "hdhub4u2",
-    "section": "Movies & TV Streaming",
-    "category": "movies-tv",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Movies, TV, Streaming, Free, HD",
-    "countries": [
-      "IN"
-    ]
   },
   {
     "rank": 406,
@@ -68286,19 +67825,6 @@
     "pricing": ""
   },
   {
-    "rank": 25,
-    "name": "MikuDB",
-    "url": "https://mikudb.moe/",
-    "slug": "mikudb",
-    "section": "Music",
-    "category": "music",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Music, Anime Music, OST, Free",
-    "countries": []
-  },
-  {
     "rank": 26,
     "name": "MKissa Music",
     "url": "https://mkissa.to/search/music",
@@ -68979,19 +68505,6 @@
     "name": "chucrute com quiabo",
     "url": "https://rabanetecomquiabo.blogspot.com/",
     "slug": "chucrutecomquiabo",
-    "section": "Music",
-    "category": "music",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Music, Anime Music, OST, Free",
-    "countries": []
-  },
-  {
-    "rank": 79,
-    "name": "Cirrus Retro",
-    "url": "https://cirrusretro.com/",
-    "slug": "cirrusretro",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
@@ -71146,19 +70659,6 @@
     "countries": []
   },
   {
-    "rank": 245,
-    "name": "Newgrounds Audio",
-    "url": "https://www.newgrounds.com/audio",
-    "slug": "newgroundsaudio",
-    "section": "Music",
-    "category": "music",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Music, Anime Music, OST, Free",
-    "countries": []
-  },
-  {
     "rank": 246,
     "name": "Nicotine+",
     "url": "https://nicotine-plus.org/",
@@ -72502,19 +72002,6 @@
     "name": "spotgen",
     "url": "https://epsil.github.io/spotgen",
     "slug": "spotgen",
-    "section": "Music",
-    "category": "music",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Music, Anime Music, OST, Free",
-    "countries": []
-  },
-  {
-    "rank": 350,
-    "name": "SpotiFLAC",
-    "url": "https://github.com/spotbye/SpotiFLAC",
-    "slug": "spotiflac",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
@@ -78238,19 +77725,6 @@
     "countries": []
   },
   {
-    "rank": 190,
-    "name": "Free Astronomy Resources",
-    "url": "https://er-cryptid.tumblr.com/post/176809097526/free-astronomy-resources",
-    "slug": "freeastronomyresources",
-    "section": "Novel Reading",
-    "category": "novel",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Novel, Light Novel, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 191,
     "name": "Free Ebooks Download List",
     "url": "https://free-ebook-download-links.blogspot.com/",
@@ -79295,19 +78769,6 @@
     "name": "Logoi Library",
     "url": "https://logoilibrary.com/",
     "slug": "logoilibrary",
-    "section": "Novel Reading",
-    "category": "novel",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Novel, Light Novel, Reading, Free",
-    "countries": []
-  },
-  {
-    "rank": 272,
-    "name": "lol my thesis",
-    "url": "https://lolmythesis.com/",
-    "slug": "lolmythesis",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
@@ -81475,19 +80936,6 @@
     "countries": []
   },
   {
-    "rank": 439,
-    "name": "Typewriter",
-    "url": "https://tetw.org/",
-    "slug": "typewriter",
-    "section": "Novel Reading",
-    "category": "novel",
-    "pricing": "free*",
-    "nsfw": false,
-    "emoji": "",
-    "tags": "Novel, Light Novel, Reading, Free",
-    "countries": []
-  },
-  {
     "rank": 440,
     "name": "Ultimate Electronics Book",
     "url": "https://ultimateelectronicsbook.com/",
@@ -83577,23 +83025,6 @@
     "rank": 1,
     "emoji": "",
     "pricing": ""
-  },
-  {
-    "url": "https://cal.syoboi.jp/",
-    "name": "Syoboi Calendar",
-    "section": "Release Schedule",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 2,
-    "emoji": "",
-    "pricing": "",
-    "countries": [
-      "JP"
-    ]
   },
   {
     "url": "https://animeschedule.net/",
@@ -85751,20 +85182,6 @@
     "avoid": false,
     "avoid_reason": "",
     "rank": 4,
-    "emoji": "",
-    "pricing": ""
-  },
-  {
-    "url": "https://vnclub.org/",
-    "name": "VN Club",
-    "section": "Wiki/Guides",
-    "nsfw": false,
-    "tags": [
-      "Online"
-    ],
-    "avoid": false,
-    "avoid_reason": "",
-    "rank": 5,
     "emoji": "",
     "pricing": ""
   },
