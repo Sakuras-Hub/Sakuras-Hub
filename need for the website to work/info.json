@@ -9699,6 +9699,19 @@
     "countries": []
   },
   {
+    "rank": 211,
+    "name": "Vumeto",
+    "url": "https://vumeto.live/#/anime",
+    "slug": "vumeto",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -55821,6 +55834,138 @@
     "countries": []
   },
   {
+    "rank": 1771,
+    "name": "Fleur Blanche",
+    "url": "https://squadxfbs.com",
+    "slug": "fleurblanche2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1772,
+    "name": "Gallery Epic",
+    "url": "https://galleryepic.com",
+    "slug": "galleryepic",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1773,
+    "name": "Hentai20.ink (unoriginal)",
+    "url": "https://www.hentai20.ink",
+    "slug": "hentai20inkunoriginal",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1774,
+    "name": "HentaiDeck",
+    "url": "https://hentaideck.com",
+    "slug": "hentaideck",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1775,
+    "name": "Kaguya",
+    "url": "https://01.kaguya.re",
+    "slug": "kaguya",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1776,
+    "name": "Luvyaa",
+    "url": "https://v6.luvyaa.co",
+    "slug": "luvyaa2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1777,
+    "name": "MangaKakalot",
+    "url": "https://www.katamanga.com/",
+    "slug": "mangakakalot2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1778,
+    "name": "natomanga",
+    "url": "https://www.natumanga.com/",
+    "slug": "natomanga2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 1779,
+    "name": "RidiBooks",
+    "url": "https://ridibooks.com",
+    "slug": "ridibooks",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1780,
+    "name": "Siikomik",
+    "url": "https://siikomik.com",
+    "slug": "siikomik2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -68300,6 +68445,90 @@
     ]
   },
   {
+    "rank": 489,
+    "name": "Comvie",
+    "url": "https://comvie.lol/",
+    "slug": "comvie",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 490,
+    "name": "KMMovies",
+    "url": "https://kmmovies.quest/",
+    "slug": "kmmovies2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 491,
+    "name": "moviesmod",
+    "url": "https://moviesmod.fi/",
+    "slug": "moviesmod2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
+    "rank": 492,
+    "name": "Play4u",
+    "url": "https://play4u.org/",
+    "slug": "play4u",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 493,
+    "name": "Vumeto",
+    "url": "https://vumeto.live/",
+    "slug": "vumeto2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 494,
+    "name": "WeCima",
+    "url": "https://wecima.tips/",
+    "slug": "wecima",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -75195,6 +75424,19 @@
     "name": "cobalt",
     "url": "https://cobalt.directory/",
     "slug": "cobalt2",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 534,
+    "name": "⁠ytm-rs",
+    "url": "https://grapedjuice.github.io/ytm-rs/",
+    "slug": "ytmrs",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
