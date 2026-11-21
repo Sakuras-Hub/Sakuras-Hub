@@ -56265,6 +56265,60 @@
     "countries": []
   },
   {
+    "rank": 1801,
+    "name": "Manga Kütüphanem",
+    "url": "https://mangakutuphanem.com",
+    "slug": "mangaktphanem",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1802,
+    "name": "mangaworldmx",
+    "url": "https://www.mangaworld.me/",
+    "slug": "mangaworldmx",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 1803,
+    "name": "Read The Exiled Heavy Knight Manga Online",
+    "url": "https://w4.theexiledheavyknight.com",
+    "slug": "readtheexiledheavyknightmangaonline2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1804,
+    "name": "Yaoi Haven Reborn",
+    "url": "https://yaoihavenreborn.com",
+    "slug": "yaoihavenreborn",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -68975,6 +69029,34 @@
     "countries": [
       "IN"
     ]
+  },
+  {
+    "rank": 505,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.mom/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 506,
+    "name": "Vivarium",
+    "url": "https://vivarium.st/",
+    "slug": "vivarium2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
   },
   {
     "url": "https://kara.moe/",
