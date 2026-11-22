@@ -9725,6 +9725,19 @@
     "countries": []
   },
   {
+    "rank": 213,
+    "name": "Animei",
+    "url": "https://animei.space/",
+    "slug": "animei",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -16169,6 +16182,19 @@
     "countries": []
   },
   {
+    "rank": 36,
+    "name": "Dramadex",
+    "url": "https://www.dramadex.com/",
+    "slug": "dramadex",
+    "section": "Asian Drama",
+    "category": "drama",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Drama, Asian Drama, Streaming, Free",
+    "countries": []
+  },
+  {
     "rank": 1,
     "name": "Addy",
     "url": "https://addy.io",
@@ -19419,6 +19445,19 @@
     "name": "Aniworks",
     "url": "https://aniworks.net/",
     "slug": "aniworks",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 177,
+    "name": "DubOnly",
+    "url": "https://dubonly.com/",
+    "slug": "dubonly",
     "section": "Database/Tracker",
     "category": "database",
     "pricing": "free*",
@@ -32901,6 +32940,32 @@
     "name": "⁠PFlix Live",
     "url": "https://pflix.net/live",
     "slug": "pflixlive",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 166,
+    "name": "MMA Replay All",
+    "url": "https://mmareplayall.com/",
+    "slug": "mmareplayall",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 167,
+    "name": "SportOnTV",
+    "url": "https://sportontv.stream/",
+    "slug": "sportontv2",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -56319,6 +56384,34 @@
     "countries": []
   },
   {
+    "rank": 1805,
+    "name": "MangaKakalot",
+    "url": "https://www.mangagoku.com/",
+    "slug": "mangakakalot2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1806,
+    "name": "natomanga",
+    "url": "https://www.saiyanmanga.com/",
+    "slug": "natomanga2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": [
+      "IN"
+    ]
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -69059,6 +69152,19 @@
     "countries": []
   },
   {
+    "rank": 507,
+    "name": "ThugTV",
+    "url": "https://thugtv.st",
+    "slug": "thugtv2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
     "url": "https://kara.moe/",
     "name": "Karaoke Mugen",
     "section": "Music",
@@ -75980,6 +76086,19 @@
     "name": "unreleased.world",
     "url": "https://www.unreleased.world/",
     "slug": "unreleasedworld",
+    "section": "Music",
+    "category": "music",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Music, Anime Music, OST, Free",
+    "countries": []
+  },
+  {
+    "rank": 536,
+    "name": "⁠Aidoru Online",
+    "url": "https://aidoru-online.me/",
+    "slug": "aidoruonline",
     "section": "Music",
     "category": "music",
     "pricing": "free*",
@@ -83527,6 +83646,19 @@
     "name": "⁠SumatraPDF Reader",
     "url": "https://online.sumatrapdfreader.org/",
     "slug": "sumatrapdfreader2",
+    "section": "Novel Reading",
+    "category": "novel",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Novel, Light Novel, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 514,
+    "name": "Sign Language Dataset Compendium",
+    "url": "https://www.sign-lang.uni-hamburg.de/lr/compendium/index.html",
+    "slug": "signlanguagedatasetcompendium",
     "section": "Novel Reading",
     "category": "novel",
     "pricing": "free*",
