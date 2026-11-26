@@ -9762,6 +9762,34 @@
     "countries": []
   },
   {
+    "rank": 218,
+    "name": "HinataTV",
+    "url": "https://hinatatv.site/",
+    "slug": "hinatatv",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 219,
+    "name": "VoirAnime",
+    "url": "https://voiranime.cx/",
+    "slug": "voiranime2",
+    "section": "Anime Streaming",
+    "category": "anime",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Anime, Streaming, Sub, Dub, Free, HD",
+    "countries": [
+      "FR"
+    ]
+  },
+  {
     "url": "https://mihon.app/",
     "name": "Mihon",
     "section": "Apps",
@@ -19469,6 +19497,19 @@
     "name": "DubOnly",
     "url": "https://dubonly.com/",
     "slug": "dubonly",
+    "section": "Database/Tracker",
+    "category": "database",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Database, Tracker, Anime, Manga, Free",
+    "countries": []
+  },
+  {
+    "rank": 178,
+    "name": "KeyFrame Staff List",
+    "url": "https://keyframe-staff-list.com/",
+    "slug": "keyframestafflist",
     "section": "Database/Tracker",
     "category": "database",
     "pricing": "free*",
@@ -33029,6 +33070,32 @@
     "name": "⁠FalconStreams",
     "url": "https://falconstreams.st/",
     "slug": "falconstreams2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 176,
+    "name": "⁠Matchora",
+    "url": "https://matchora.st/channels",
+    "slug": "matchora2",
+    "section": "Live TV & Sports",
+    "category": "live-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Live TV, Sports, Streaming, Free",
+    "countries": []
+  },
+  {
+    "rank": 177,
+    "name": "⁠Matchora",
+    "url": "https://matchora.st/",
+    "slug": "matchora2",
     "section": "Live TV & Sports",
     "category": "live-tv",
     "pricing": "free*",
@@ -56774,6 +56841,45 @@
     "countries": []
   },
   {
+    "rank": 1836,
+    "name": "Doro Toons",
+    "url": "https://dorotoons.com",
+    "slug": "dorotoons",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": true,
+    "emoji": "",
+    "tags": "Manga, Reading, Free, NSFW",
+    "countries": []
+  },
+  {
+    "rank": 1837,
+    "name": "Ikiru",
+    "url": "https://v1.ikiru.wtf",
+    "slug": "ikiru2",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
+    "rank": 1838,
+    "name": "مانجا اون لاين",
+    "url": "https://www.onma.me",
+    "slug": "site-096c50c5b5",
+    "section": "Manga Reading",
+    "category": "manga",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Manga, Reading, Free",
+    "countries": []
+  },
+  {
     "url": "https://projectsuki.com/",
     "name": "Projectsuki",
     "section": "Manhwa Reading",
@@ -69672,6 +69778,64 @@
     "emoji": "",
     "tags": "Movies, TV, Streaming, Free, HD",
     "countries": []
+  },
+  {
+    "rank": 524,
+    "name": "Basement",
+    "url": "https://basementx.rest/",
+    "slug": "basement2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": []
+  },
+  {
+    "rank": 525,
+    "name": "Cineblog01",
+    "url": "https://cine-blog01.uno/",
+    "slug": "cineblog012",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IT"
+    ]
+  },
+  {
+    "rank": 526,
+    "name": "DramaCafe",
+    "url": "https://ddramacafe-tv.wtf/",
+    "slug": "dramacafe2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "EG"
+    ]
+  },
+  {
+    "rank": 527,
+    "name": "hdhub4u",
+    "url": "https://new17.hdhub4u.cl/",
+    "slug": "hdhub4u2",
+    "section": "Movies & TV Streaming",
+    "category": "movies-tv",
+    "pricing": "free*",
+    "nsfw": false,
+    "emoji": "",
+    "tags": "Movies, TV, Streaming, Free, HD",
+    "countries": [
+      "IN"
+    ]
   },
   {
     "url": "https://kara.moe/",
